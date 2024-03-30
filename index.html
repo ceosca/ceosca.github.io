@@ -15,7 +15,7 @@
         <select id="streamSelector">
             <option value="https://bvsat02.cdn.rcs.net.ar/mnp/a24/output.mpd">A24</option>
             <option value="https://bvsat02.cdn.rcs.net.ar/mnp/c5n/output.mpd">C5N</option>
-            <option value="https://edge-live16-sl.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd?keyId=24f2b3e741f0d9e9a8d516faff38bddc&key=bbd3fd02fb104e1463ac528a13f67e4a">ESPN4</option>
+            <option value="ESPN4">ESPN4</option>
         </select>
         <button onclick="cargarStream()">Cargar Audio del Stream de Video</button>
     </div>
@@ -31,13 +31,23 @@
         function cargarStream() {
             var selectBox = document.getElementById("streamSelector");
             var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+            var keyId = "";
+            var key = "";
+            
+            if (selectedValue === "ESPN4") {
+                selectedValue = "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd";
+                keyId = "24f2b3e741f0d9e9a8d516faff38bddc";
+                key = "bbd3fd02fb104e1463ac528a13f67e4a";
+            }
             
             playerInstance = jwplayer("player").setup({
                 playlist: [{
                     title: "Audio del Stream Seleccionado",
                     sources: [{
                         file: selectedValue,
-                        type: "mpd" // Cambia el tipo de archivo según corresponda (mpd, m3u8, etc.)
+                        type: "mpd", // Cambia el tipo de archivo según corresponda (mpd, m3u8, etc.)
+                        keyId: keyId, // Agregar la keyId
+                        key: key // Agregar la key
                     }]
                 }],
                 width: 0,
