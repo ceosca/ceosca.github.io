@@ -26,8 +26,23 @@
         function cargarStream() {
             var selectBox = document.getElementById("streamSelector");
             selectedStream = selectBox.options[selectBox.selectedIndex].value;
-            audioPlayer.src = selectedStream;
-            audioPlayer.play();
+
+            fetch(selectedStream)
+                .then(response => response.text())
+                .then(data => {
+                    // Extraer la URL del archivo de audio de la representación de audio deseada
+                    var parser = new DOMParser();
+                    var xmlDoc = parser.parseFromString(data, "text/xml");
+                    var audioRepresentation = xmlDoc.querySelector("Representation"); // Puedes ajustar este selector según la estructura de tu MPD
+                    var audioURL = audioRepresentation.querySelector("BaseURL").textContent;
+
+                    // Cargar la URL del archivo de audio en el reproductor de audio
+                    audioPlayer.src = audioURL;
+                    audioPlayer.play();
+                })
+                .catch(error => {
+                    console.error('Error al cargar el MPD:', error);
+                });
         }
 
         function playPause() {
