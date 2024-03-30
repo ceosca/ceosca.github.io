@@ -369,5 +369,12 @@
         "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Canal12URU/SA_Live_dash_enc/Canal12URU.mpd",
         "keyId": "dfde9d35d7438bfdf61da5dfac0557c1",
         "key": "acb13370c03a7254e2bb9cc9d2125017"
+    },
+    {
+        "nombre": "Telemundo",
+        "categoria": "Internacionales",
+        "url": "https://bvsat02.cdn.rcs.net.ar/mnp/telemundo/output.mpd",
+        "keyId": "",
+        "key": ""
     }
 ]
