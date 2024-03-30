@@ -39,6 +39,7 @@
         var playerInstance = null;
         var canales = [];
         var categorias = [];
+        var lang = 1;
 
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
@@ -136,8 +137,8 @@
 
         function changeAudioLanguage() {
             var selectBox = document.getElementById("languageSelector");
-            var selectedLanguage = selectBox.value;
-            playerInstance.setCurrentAudioTrack(selectedLanguage);
+            lang = selectBox.value;
+            playerInstance.setCurrentAudioTrack(lang);
         }
     </script>
 </body>
