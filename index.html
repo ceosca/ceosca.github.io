@@ -49,15 +49,12 @@
         function cargarStream() {
             var selectBox = document.getElementById("streamSelector");
             var selectedValue = JSON.parse(selectBox.value);
-            
-            playerInstance = jwplayer("player").setup({
+            var config = {
                 playlist: [{
                     title: "Audio del Stream Seleccionado",
                     sources: [{
                         file: selectedValue.url,
-                        type: "mpd",
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
+                        type: "mpd"
                     }]
                 }],
                 width: 0,
@@ -67,7 +64,18 @@
                     audioOnly: true
                 },
                 controls: false
-            });
+            };
+            
+            if (selectedValue.keyId && selectedValue.key) {
+                config.drm = {
+                    clearkey: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
+                    }
+                };
+            }
+            
+            playerInstance = jwplayer("player").setup(config);
         }
 
         function playPause() {
