@@ -54,13 +54,16 @@
                     title: "Audio del Stream Seleccionado",
                     sources: [{
                         file: selectedValue.url,
-                        type: "mp3" // Cambia el tipo de archivo según corresponda
+                        type: "mpd"
                     }]
                 }],
                 width: 0,
                 height: 0,
                 autostart: true,
-                controls: true // Mostrar controles
+                cast: {
+                    audioOnly: true
+                },
+                controls: false
             };
             
             if (selectedValue.keyId && selectedValue.key) {
