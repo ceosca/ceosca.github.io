@@ -3,7 +3,6 @@
 <head>
     <title>Reproductor de Audio de Streams de Video</title>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
-    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
     <style>
         #controls {
             margin-top: 10px;
@@ -32,40 +31,24 @@
     </div>
     <div>
         <label for="languageSelector">Selecciona un idioma de audio:</label>
-        <select id="languageSelector" onchange="changeAudioLanguage()">
+        <select id="languageSelector">
         </select>
     </div>
     <script type='text/javascript'>
-        var playerInstance = null;
-        var canales = [];
-        var categorias = [];
-        var lang = 1;
+        var player = jwplayer();
 
-        fetch('https://ceosca.github.io/canales.json')
-            .then(response => response.json())
-            .then(data => {
-                canales = data;
-                categorias = obtenerCategoriasOrdenadas();
-                cargarCategorias();
-                updateChannelList();
-            })
-            .catch(error => console.error('Error al cargar el JSON:', error));
+        var playerConfig = player.getConfig();
 
-        function cargarCategorias() {
-            var selectBox = document.getElementById("categorySelector");
-            categorias.forEach(function(categoria) {
-                var option = document.createElement("option");
-                option.text = categoria;
-                selectBox.add(option);
+        if (playerConfig && playerConfig.tracks && playerConfig.tracks.length > 0) {
+            var languageSelector = document.getElementById("languageSelector");
+            playerConfig.tracks.forEach(function(track) {
+                if (track.kind === "captions" && track.language) {
+                    var option = document.createElement("option");
+                    option.text = track.label || track.language;
+                    option.value = track.language;
+                    languageSelector.add(option);
+                }
             });
-        }
-
-        function obtenerCategoriasOrdenadas() {
-            var categoriasSet = new Set();
-            canales.forEach(function(canal) {
-                categoriasSet.add(canal.categoria);
-            });
-            return Array.from(categoriasSet).sort();
         }
 
         function updateChannelList() {
@@ -133,12 +116,6 @@
             var currentVolume = playerInstance.getVolume();
             var newVolume = Math.max(0, Math.min(100, currentVolume + amount));
             playerInstance.setVolume(newVolume);
-        }
-
-        function changeAudioLanguage() {
-            var selectBox = document.getElementById("languageSelector");
-            lang = selectBox.value;
-            playerInstance.setCurrentAudioTrack(lang);
         }
     </script>
 </body>
