@@ -1,6 +1,12 @@
-<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
-<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
 
+<meta name="robots" content="noindex">
+<meta content='width=device-width, initial-scale=1' name='viewport'>	
+<meta http-equiv="Content-Language" content="es" />	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+<body  style="padding: 0px; margin:0px;"><body>
+<script src="//ssl.p.jwpcdn.com/player/v/8.25.8/jwplayer.js"></script>
+<script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
+<body>
 <script type="text/javascript">
 function getParameterByName(name) {
 	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
@@ -10,17 +16,11 @@ function getParameterByName(name) {
 }
 
 var getURL = getParameterByName('get');
-var getIMG = getParameterByName('img');
-var getKEY  = getParameterByName('key');
-var getKEY2  = getParameterByName('key2');
-if (getURL == "") {alert('Vuelve a la pÃƒÆ’Ã‚Â¡gina anterior');}
-
+var getLang = getParameterByName('lang');
+if (getURL == "#") {alert('Vuelve a la p�gina anterior');}
 </script>
-
-
 <div id="player"></div>
 <script>
-
 var playerInstance= jwplayer("player");
 
 if (getURL == "QTNfQ2luZQ==" || getURL == "Rmxvd19NdXNpY19YUA==" || getURL == "QUVIRA==" || getURL == "SG9sYV9UVg==" || getURL == "QVhOSEQ=" || getURL == "TVRWMDA=" || getURL == "V2FybmVySEQ=" || getURL == "R0VOX1RW" || getURL == "Rm94X1Nwb3J0c19QcmVtaXVuX0hE" || getURL == "VG9kb05vdGljaWFz" || getURL == "VHlDU3BvcnQ" || getURL == "QW1lcmljYTI0" || getURL == "QzVO" || getURL == "TGFfTmFjaW9u" || getURL == "Q3JvbmljYVRW" || getURL == "Q2FuYWxfOF9UdWN1bWFu" || getURL == "UGFyYWd1YXlfVFY=" || getURL == "UGFyYW1vdW50" || getURL == "Q29tZWR5Q2VudHJhbA" || getURL == "Rmxvd19NdXNpY19YUA==" || getURL == "Rmxvd19NdXNpY18x" || getURL == "Rmxvd19NdXNpY18y" || getURL == "Rmxvd19NdXNpY18z" || getURL == "Qm9vbWVyYW5n" || getURL == "RHJlYW13b3Jrcw==" || getURL == "QW5pbWFsUGxhbmV0" || getURL == "SGlzdG9yeUhE" ||  getURL == "SUQ=" || getURL == "QnJhdm9UVg==" || getURL == "U29ueUhE" || getURL == "VHJ1VFY=" || getURL == "SEJPX1BPUA==" || getURL == "RGlzY292ZXJ5VHVyYm8=" || getURL == "RGlzbmV5SnI=" || getURL == "SW52ZXN0aWdhY2lvbl9QZXJpb2Rpc3RpY2E=" || getURL == "Rm94U3BvcnRzMl9VWQ==" || getURL == "RVNQTjQ=" || getURL == "Rm94U3BvcnRzM19VWQ==" || getURL == "RXZlbnRvc19IRF9VeQ==")
@@ -36,57 +36,8 @@ number = 4;
 else
 number = 3;
 
-if (getURL == "Rm94X1Nwb3J0c19QcmVtaXVuX0hE" || getURL == "VE5UX1Nwb3J0c19IRA")
-{
-	var mt = [ "edge-live01-mun", "edge-live01-bel", "edge-live11-hr", "edge-live12-hr", "edge-live13-hr", "edge-live14-hr", "edge-live15-hr", "edge-live16-hr", "edge-live17-hr", "edge-live31-hr", "edge-live32-hr", "edge-live34-hr", "edge-live11-sl", "edge-live12-sl", "edge-live13-sl", "edge-live15-sl", "edge-live16-sl", "edge-live17-sl", "edge-live31-sl", "edge-live32-sl", "edge-vod02-sl", "edge9-sl", "edge10-sl", "edge-vod01-hr", "edge-vod02-hr", "edge-vod03-hr", "edge-vod04-hr", "edge-live01-cen", "edge-live02-cen", "edge-live03-cen", "edge-live01-coe", "edge-mix01-coe", "edge-mix02-coe", "edge-mix03-coe", "edge-mix01-ird", "edge-mix02-ird"];
-}
-else
-{
-	
-	
-	var mt = ["edge-live02-mun", "edge-live11-hr", "edge-live12-hr", "edge-live13-hr", "edge-live14-hr", "edge-live15-hr", "edge-live16-hr", "edge-live17-hr", "edge-live31-hr", "edge-live32-hr", "edge-live34-hr", "edge-live11-sl", "edge-live12-sl", "edge-live13-sl", "edge-live15-sl", "edge-live16-sl", "edge-live17-sl", "edge-live32-sl", "edge-vod04-sl", "edge-vod06-sl", "edge9-sl", "edge10-sl", "edge-vod01-hr", "edge-vod03-hr", "edge-vod04-hr", "edge1-ccast-sl", "edge2-ccast-sl", "edge6-ccast-sl", "edge7-ccast-sl", "edge-mix01-cte", "edge-mix02-cte",  "edge-live01-cte", "edge-live01-coe", "edge-mix04-coe", "edge-mix05-coe", "edge-mix01-ird", "edge-mix02-ird", "edge-mix01-mus", "edge-mix02-mus"];
-}
-var random = Math.floor(Math.random() * mt.length)	
-console.log("Selected mt:", mt[random]);
-	
-/*async function testSubdomains() {
-  for (let i = 0; i < mt.length; i++) {
-    let subdomain = mt[i];
-    let mpdURL = "//" + subdomain + ".cvattv.com.ar/live/c" + number + "eds/" + atob(getURL) + "/SA_Live_dash_enc/" + atob(getURL) + ".mpd";
+var mpd = "https://edge-live16-sl.cvattv.com.ar/live/c"+number+"eds/"+atob(getURL)+"/SA_Live_dash_enc/"+atob(getURL)+".mpd";
 
-    try {
-      await testMpdURL(mpdURL);
-      console.log("Subdomain", subdomain, "is working.");
-    } catch (error) {
-      console.error("Subdomain", subdomain, "is not working. Error:", error.message);
-    }
-  }
-}
-
-function testMpdURL(url) {
-  return new Promise((resolve, reject) => {
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          resolve();
-        } else {
-          reject(new Error("HTTP request failed with status " + xhr.status));
-        }
-      }
-    };
-    xhr.open("GET", url, true);
-    xhr.send();
-  });
-}
-testSubdomains();*/
-
-var mpd = "//" + mt[random] + ".cvattv.com.ar/live/c"+number+"eds/"+atob(getURL)+"/SA_Live_dash_enc_wl";
-
-if (getURL == "Rm94X1Nwb3J0c19QcmVtaXVuX0hE" || getURL == "VE5UX1Nwb3J0c19IRA")
-	mpd += ""; //_wl _2A
-	mpd += "/"+atob(getURL)+".mpd";
-var mpd2 = "//" + mt[random] +".cvattv.com.ar/live/c3eds/Eventos1HD/SA_Live_dash_enc/Eventos1HD.mpd";
 if (getURL == "RVNQTjJIRA")
 {
 	keyId = "e884b711ab111beb8a7ba1e7bcbdc9bf";
@@ -905,22 +856,35 @@ else if (getURL == "RXZlbnRvczFIRA")
         keyId = "5c86e237317c2231ac1bc130e995fad6";
         key = "dcacf7b239ee03df3c69ca11dbcde4eb";
 }
-if (getURL == "RXZlbnRvczFIRA")
-{
-	playerInstance.setup({
-		"type": "dash",
-		"file": mpd2,
-		"drm": {
-                            "clearkey": {
-                                "keyId": "5c86e237317c2231ac1bc130e995fad6",
-                                "key": "dcacf7b239ee03df3c69ca11dbcde4eb"
-                            }
-                        },
-		width: "100%",
-		height: "100%",
-		aspectratio: "16:9",
-		autostart: false,
-		cast: {},
-		sharing: {}
-	});
-}
+
+
+
+playerInstance.setup({
+
+	playlist: [{
+		"sources": [
+			{
+				"default": false,
+				"type": "dash",
+				"file": mpd,
+				"drm": {
+					"clearkey": { "keyId": keyId, "key": key }
+				},
+				"label": "0"
+			}
+		]
+	}],
+	width: "100%",
+	height: "100%",
+	aspectratio: "16:9",
+	autostart: true,
+	cast: {},
+	sharing: {}
+});  
+		if (getLang == "") {
+			lang = 1;
+		}
+		jwplayer().on('play', function(e) {
+		  jwplayer().setCurrentAudioTrack(lang);
+		});
+</script>
