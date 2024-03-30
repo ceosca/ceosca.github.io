@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Reproductor M3U8 Audio Player</title>
+  <style type="text/css">
+    body {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="player"></div>
+  <select id="channelSelect">
+<option value="http://190.94.186.158:9981/play/a04o/index.m3u8">A&E</option>
+<option value="http://190.94.186.158:9981/play/a04r/index.m3u8">AMC</option>
+<option value="http://190.94.186.158:9981/play/a05c/index.m3u8">AXN</option>
+<option value="http://190.94.186.158:9981/play/a030/index.m3u8">America TV HD</option>
+<option value="http://190.94.186.158:9981/play/a04e/index.m3u8">Animal Planet</option>
+<option value="http://190.94.186.158:9981/play/a035/index.m3u8">Bravo</option>
+<option value="http://190.94.186.158:9981/play/a034/index.m3u8">Canal 9 HD</option>
+<option value="http://190.94.186.158:9981/play/a033/index.m3u8">Canal 9 Parana</option>
+<option value="http://190.94.186.158:9981/play/a04w/index.m3u8">Canal a</option>
+<option value="http://190.94.186.158:9981/play/a03m/index.m3u8">Cartoon Network</option>
+<option value="http://190.94.186.158:9981/play/a03i/index.m3u8">Cartoonito</option>
+<option value="http://190.94.186.158:9981/play/a04u/index.m3u8">Cine AR</option>
+<option value="http://190.94.186.158:9981/play/a03s/index.m3u8">Cinecanal</option>
+<option value="http://190.94.186.158:9981/play/a03o/index.m3u8">Cinemax</option>
+<option value="http://190.94.186.158:9981/play/a04t/index.m3u8">Comedy Central HD</option>
+<option value="http://190.94.186.158:9981/play/a04d/index.m3u8">Discovery HD</option>
+<option value="http://190.94.186.158:9981/play/a04a/index.m3u8">Discovery Home and Health</option>
+<option value="http://190.94.186.158:9981/play/a04s/index.m3u8">Discovery ID</option>
+<option value="http://190.94.186.158:9981/play/a03j/index.m3u8">Discovery Kids</option>
+<option value="http://190.94.186.158:9981/play/a03g/index.m3u8">Disney HD</option>
+<option value="http://190.94.186.158:9981/play/a03k/index.m3u8">Disney Jr</option>
+<option value="http://190.94.186.158:9981/play/a04y/index.m3u8">E! Entertainment Television</option>
+<option value="http://190.94.186.158:9981/play/a039/index.m3u8">ESPN 2 HD</option>
+<option value="http://190.94.186.158:9981/play/a03b/index.m3u8">ESPN 3 HD</option>
+<option value="http://190.94.186.158:9981/play/a03c/index.m3u8">ESPN Extra HD</option>
+<option value="http://190.94.186.158:9981/play/a03a/index.m3u8">ESPN HD</option>
+<option value="http://190.94.186.158:9981/play/a049/index.m3u8">El Garage</option>
+<option value="http://190.94.186.158:9981/play/a048/index.m3u8">El Gourmet</option>
+<option value="http://190.94.186.158:9981/play/a04b/index.m3u8">Encuentro</option>
+<option value="http://190.94.186.158:9981/play/a057/index.m3u8">FX</option>
+<option value="http://190.94.186.158:9981/play/a03e/index.m3u8">Fox Sports 2 HD</option>
+<option value="http://190.94.186.158:9981/play/a03f/index.m3u8">Fox Sports 3 HD</option>
+<option value="http://190.94.186.158:9981/play/a03d/index.m3u8">Fox Sports HD</option>
+<option value="http://190.94.186.158:9981/play/a04x/index.m3u8">History 2</option>
+<option value="http://190.94.186.158:9981/play/a04f/index.m3u8">History HD</option>
+<option value="http://190.94.186.158:9981/play/a03r/index.m3u8">I-SaT</option>
+<option value="http://190.94.186.158:9981/play/a036/index.m3u8">Investigacion PeriodTstica</option>
+<option value="http://190.94.186.158:9981/play/a037/index.m3u8">KZO</option>
+<option value="http://190.94.186.158:9981/play/a050/index.m3u8">MTV</option>
+<option value="http://190.94.186.158:9981/play/a02z/index.m3u8">Metro HD</option>
+<option value="http://190.94.186.158:9981/play/a04c/index.m3u8">National Geographic</option>
+<option value="http://190.94.186.158:9981/play/a03h/index.m3u8">Nickelodeon</option>
+<option value="http://190.94.186.158:9981/play/a03l/index.m3u8">Paka Paka</option>
+<option value="http://190.94.186.158:9981/play/a03p/index.m3u8">Paramount HD</option>
+<option value="http://190.94.186.158:9981/play/a04z/index.m3u8">Quiero Musica</option>
+<option value="http://190.94.186.158:9981/play/a053/index.m3u8">RAI</option>
+<option value="http://190.94.186.158:9981/play/a02y/index.m3u8">Santa Fe Canal</option>
+<option value="http://190.94.186.158:9981/play/a02x/index.m3u8">Somos Santa Fe</option>
+<option value="http://190.94.186.158:9981/play/a059/index.m3u8">Sony</option>
+<option value="http://190.94.186.158:9981/play/a03n/index.m3u8">Space</option>
+<option value="http://190.94.186.158:9981/play/a058/index.m3u8">Star Channel</option>
+<option value="http://190.94.186.158:9981/play/a04v/index.m3u8">Studio Universal</option>
+<option value="http://190.94.186.158:9981/play/a04q/index.m3u8">TCM</option>
+<option value="http://190.94.186.158:9981/play/a055/index.m3u8">TNT HD</option>
+<option value="http://190.94.186.158:9981/play/a04p/index.m3u8">TNT Novelas</option>
+<option value="http://190.94.186.158:9981/play/a056/index.m3u8">TNT Series</option>
+<option value="http://190.94.186.158:9981/play/a032/index.m3u8">TV Publica HD</option>
+<option value="http://190.94.186.158:9981/play/a052/index.m3u8">TVE</option>
+<option value="http://190.94.186.158:9981/play/a031/index.m3u8">Telefe Santa Fe HD</option>
+<option value="http://190.94.186.158:9981/play/a051/index.m3u8">Telemundo HD</option>
+<option value="http://190.94.186.158:9981/play/a038/index.m3u8">TyC Sports HD</option>
+<option value="http://190.94.186.158:9981/play/a05b/index.m3u8">Universal Channel</option>
+<option value="http://190.94.186.158:9981/play/a03q/index.m3u8">Volver</option>
+<option value="http://190.94.186.158:9981/play/a05a/index.m3u8">Warner Channel</option>
+  </select>
+  <button onclick="reproducir()">Reproducir</button>
+
+  <script src="/player/clappr.min.js"></script>
+  <script src="/player/dash-shaka-playback.js"></script>
+
+  <script>
+    function reproducir() {
+      var channelUrl = document.getElementById("channelSelect").value;
+      player.configure({source: channelUrl});
+    }
+
+    var player = new Clappr.Player({
+      source: "http://190.94.186.158:9981/play/a04o/index.m3u8", // URL del canal por defecto
+      parentId: "#player",
+      plugins: [DashShakaPlayback],
+      height: 0,
+      width: 0,
+      autoPlay: true,
+      mute: false,
+      playback: {
+        controls: false,
+        disableVideo: true // Esto asegura que solo se reproduzca el audio
+      }
+    });
+  </script>
+</body>
+
+</html>
