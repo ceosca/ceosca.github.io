@@ -30,10 +30,14 @@
             fetch(selectedStream)
                 .then(response => response.text())
                 .then(data => {
-                    // Extraer la URL del archivo de audio de la representación de audio deseada
+                    // Parsear el XML del MPD
                     var parser = new DOMParser();
                     var xmlDoc = parser.parseFromString(data, "text/xml");
-                    var audioRepresentation = xmlDoc.querySelector("Representation"); // Puedes ajustar este selector según la estructura de tu MPD
+
+                    // Encontrar la representación de audio
+                    var audioRepresentation = xmlDoc.querySelector("AdaptationSet[mimeType='audio/mp4'] Representation");
+
+                    // Obtener la URL del archivo de audio
                     var audioURL = audioRepresentation.querySelector("BaseURL").textContent;
 
                     // Cargar la URL del archivo de audio en el reproductor de audio
