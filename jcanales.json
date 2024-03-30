@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "A24",
+    "categoria": "Noticias",
+    "url": "https://bvsat02.cdn.rcs.net.ar/mnp/a24/output.mpd",
+    "keyId": "",
+    "key": ""
+  },
+  {
+    "nombre": "C5N",
+    "categoria": "Noticias",
+    "url": "https://bvsat02.cdn.rcs.net.ar/mnp/c5n/output.mpd",
+    "keyId": "",
+    "key": ""
+  },
+  {
+    "nombre": "ESPN4",
+    "categoria": "Deportes",
+    "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
+    "keyId": "24f2b3e741f0d9e9a8d516faff38bddc",
+    "key": "bbd3fd02fb104e1463ac528a13f67e4a"
+  }
+]

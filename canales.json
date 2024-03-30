@@ -1,23 +1,30 @@
 [
-  {
-    "nombre": "A24",
-    "categoria": "Noticias",
-    "url": "https://bvsat02.cdn.rcs.net.ar/mnp/a24/output.mpd",
-    "keyId": "",
-    "key": ""
-  },
-  {
-    "nombre": "C5N",
-    "categoria": "Noticias",
-    "url": "https://bvsat02.cdn.rcs.net.ar/mnp/c5n/output.mpd",
-    "keyId": "",
-    "key": ""
-  },
-  {
-    "nombre": "ESPN4",
-    "categoria": "Deportes",
-    "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
-    "keyId": "24f2b3e741f0d9e9a8d516faff38bddc",
-    "key": "bbd3fd02fb104e1463ac528a13f67e4a"
-  }
+    {
+        "nombre": "A24",
+        "categoria": "Noticias",
+        "url": "https://bvsat02.cdn.rcs.net.ar/mnp/a24/output.mpd",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "C5N",
+        "categoria": "Noticias",
+        "url": "https://bvsat02.cdn.rcs.net.ar/mnp/c5n/output.mpd",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN4",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
+        "keyId": "24f2b3e741f0d9e9a8d516faff38bddc",
+        "key": "bbd3fd02fb104e1463ac528a13f67e4a"
+    },
+    {
+        "nombre": "d sports 2",
+        "categoria": "deportes",
+        "url": "https://1063-vos-da-mt.dtvott.com/DASH/manifest.mpd",
+        "keyId": "c44d52b11dce3875ad2765c9d469075b",
+        "key": "af4ba31c1324eb92ac88463f7bd941d5"
+    }
 ]
