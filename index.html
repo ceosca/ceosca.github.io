@@ -40,13 +40,7 @@
     </style>
 </head>
 <body>
-    <div class="category">
-        <label>Selecciona una categoría:</label>
-    </div>
-
-    <div id="channelButtonsContainer">
-        <!-- Encabezados de categoría y botones de canal se llenarán dinámicamente aquí -->
-    </div>
+    <div id="channelButtonsContainer"></div>
 
     <div id="player">CARGANDO...</div>
     
@@ -72,16 +66,6 @@
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
-        // Cargar categorías en el encabezado
-        function cargarCategorias() {
-            var categoryContainer = document.querySelector('.category');
-            categorias.forEach(function(categoria) {
-                var header = document.createElement('h2');
-                header.textContent = categoria;
-                categoryContainer.appendChild(header);
-            });
-        }
-
         // Obtener categorías ordenadas alfabéticamente
         function obtenerCategoriasOrdenadas() {
             var categoriasSet = new Set();
@@ -91,16 +75,14 @@
             return Array.from(categoriasSet).sort();
         }
 
-        // Actualizar lista de canales al cambiar la categoría seleccionada
-        function updateChannelList() {
+        // Cargar categorías y canales
+        function cargarCategorias() {
             var channelButtonsContainer = document.getElementById("channelButtonsContainer");
-            // Limpiar el contenedor de botones de canal
-            channelButtonsContainer.innerHTML = "";
             categorias.forEach(function(categoria) {
                 var categoryChannels = canales.filter(function(canal) {
                     return canal.categoria === categoria;
                 });
-                var header = document.createElement('h3');
+                var header = document.createElement('h2');
                 header.textContent = categoria;
                 channelButtonsContainer.appendChild(header);
                 categoryChannels.forEach(function(canal) {
@@ -113,10 +95,6 @@
                     channelButtonsContainer.appendChild(button);
                 });
             });
-            // Cargar el primer canal automáticamente si existe
-            if (canales.length > 0) {
-                cargarStream(canales[0]);
-            }
         }
 
         // Cargar el stream seleccionado
