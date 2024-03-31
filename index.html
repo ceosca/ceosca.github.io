@@ -8,11 +8,17 @@
         #controls {
             margin-top: 10px;
         }
+        #channelSelector {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div>
         <button onclick="toggleChannelList()">Mostrar Lista de Canales</button>
+        <select id="channelSelector" onchange="changeChannel()">
+            <!-- Opciones de canales se agregarán aquí dinámicamente -->
+        </select>
     </div>
     <div id="player">CARGANDO...</div>
     <div id="controls">
@@ -38,7 +44,13 @@
 
         // Cargar opciones en el select
         function cargarOpciones() {
-            cargarStream(); // Cargar el primer canal al cargar las opciones
+            var selectBox = document.getElementById("channelSelector");
+            canales.forEach(function(canal, index) {
+                var option = document.createElement("option");
+                option.text = canal.nombre;
+                option.value = index;
+                selectBox.add(option);
+            });
         }
 
         // Cargar el stream seleccionado
@@ -88,7 +100,14 @@
         }
 
         function toggleChannelList() {
-            // Implementación de tu lógica aquí si deseas mostrar/ocultar algo relacionado con los canales
+            var selectBox = document.getElementById("channelSelector");
+            selectBox.style.display = (selectBox.style.display === "none") ? "block" : "none";
+        }
+
+        function changeChannel() {
+            var selectBox = document.getElementById("channelSelector");
+            currentChannelIndex = selectBox.value;
+            cargarStream();
         }
 
         function previousChannel() {
@@ -109,11 +128,12 @@
             var pressedKey = parseInt(event.key);
             if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
                 var channelNumber = parseInt(event.key);
-                if (channelNumber === 0) {
-                    channelNumber = 10; // Para manejar el número 0 como 10
+                if (pressedKey === 0) {
+                    channelNumber = 10; // 0 se considera como 10
                 }
-                if (channelNumber <= canales.length) {
-                    currentChannelIndex = channelNumber - 1;
+                var nextChannelIndex = parseInt(currentChannelIndex.toString() + channelNumber.toString()) - 1;
+                if (nextChannelIndex >= 0 && nextChannelIndex < canales.length) {
+                    currentChannelIndex = nextChannelIndex;
                     cargarStream();
                 }
             }
