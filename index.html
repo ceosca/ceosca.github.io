@@ -82,7 +82,7 @@
         }
 
         function cargarStream() {
-            permitirCargaHTTPM3U8(); // Llamada a la función para permitir la carga de m3u8 HTTP
+            permitirCargaHTTPM3U8();
             var selectBox = document.getElementById("channelSelector");
             var selectedValue = JSON.parse(selectBox.value);
             var config = {
@@ -124,9 +124,7 @@
             var cspMeta = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
             if (cspMeta) {
                 var cspContent = cspMeta.getAttribute('content');
-                // Agregar la directiva para permitir recursos m3u8 HTTP al contenido CSP existente
                 cspContent += " media-src 'self' http://*.m3u8;";
-                // Establecer la nueva CSP
                 cspMeta.setAttribute('content', cspContent);
             }
         }
