@@ -100,6 +100,11 @@
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
             cargarStream();
+            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
+        }
+
+        function ocultarSelector() {
+            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
         }
 
         document.addEventListener("keydown", function(event) {
