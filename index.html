@@ -17,6 +17,7 @@
         .category label {
             display: block;
             font-weight: bold;
+            font-size: 1.2em;
         }
         .channel-button {
             display: block;
@@ -25,6 +26,7 @@
             background-color: #f0f0f0;
             border: 1px solid #ccc;
             cursor: pointer;
+            width: fit-content;
         }
         .channel-button:focus {
             outline: 2px solid blue;
@@ -39,22 +41,19 @@
 </head>
 <body>
     <div class="category">
-        <label for="categorySelector">Selecciona una categoría:</label>
-        <select id="categorySelector" onchange="updateChannelList()" tabindex="1">
-        </select>
+        <label>Selecciona una categoría:</label>
     </div>
 
-    <div id="channelButtonsContainer" class="category">
-        <label>Selecciona un canal:</label>
-        <div id="channelButtons"></div>
+    <div id="channelButtonsContainer">
+        <!-- Encabezados de categoría y botones de canal se llenarán dinámicamente aquí -->
     </div>
 
     <div id="player">CARGANDO...</div>
     
     <div id="controls">
-        <button onclick="playPause()" tabindex="3">Play/Pausa</button>
-        <button onclick="changeVolume(-5)" tabindex="4">Bajar Volumen</button>
-        <button onclick="changeVolume(5)" tabindex="5">Subir Volumen</button>
+        <button onclick="playPause()">Play/Pausa</button>
+        <button onclick="changeVolume(-5)">Bajar Volumen</button>
+        <button onclick="changeVolume(5)">Subir Volumen</button>
     </div>
 
     <script type="text/javascript">
@@ -73,13 +72,13 @@
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
-        // Cargar categorías en el select
+        // Cargar categorías en el encabezado
         function cargarCategorias() {
-            var selectBox = document.getElementById("categorySelector");
+            var categoryContainer = document.querySelector('.category');
             categorias.forEach(function(categoria) {
-                var option = document.createElement("option");
-                option.text = categoria;
-                selectBox.add(option);
+                var header = document.createElement('h2');
+                header.textContent = categoria;
+                categoryContainer.appendChild(header);
             });
         }
 
@@ -94,36 +93,29 @@
 
         // Actualizar lista de canales al cambiar la categoría seleccionada
         function updateChannelList() {
-            var selectedCategory = document.getElementById("categorySelector").value;
-            var channelButtonsContainer = document.getElementById("channelButtons");
+            var channelButtonsContainer = document.getElementById("channelButtonsContainer");
             // Limpiar el contenedor de botones de canal
             channelButtonsContainer.innerHTML = "";
-            // Filtrar los canales por categoría seleccionada
-            var filteredChannels = canales.filter(function(canal) {
-                return canal.categoria === selectedCategory;
+            categorias.forEach(function(categoria) {
+                var categoryChannels = canales.filter(function(canal) {
+                    return canal.categoria === categoria;
+                });
+                var header = document.createElement('h3');
+                header.textContent = categoria;
+                channelButtonsContainer.appendChild(header);
+                categoryChannels.forEach(function(canal) {
+                    var button = document.createElement("button");
+                    button.classList.add("channel-button");
+                    button.textContent = canal.nombre;
+                    button.onclick = function() {
+                        cargarStream(canal);
+                    };
+                    channelButtonsContainer.appendChild(button);
+                });
             });
-            // Ordenar los canales alfabéticamente
-            filteredChannels.sort(function(a, b) {
-                return a.nombre.localeCompare(b.nombre);
-            });
-            // Llenar el contenedor de botones de canal
-            filteredChannels.forEach(function(canal) {
-                var button = document.createElement("button");
-                button.classList.add("channel-button");
-                button.textContent = canal.nombre;
-                button.onclick = function() {
-                    cargarStream(canal);
-                };
-                channelButtonsContainer.appendChild(button);
-            });
-            // Enfocar el primer botón de canal
-            var firstChannelButton = channelButtonsContainer.querySelector(".channel-button");
-            if (firstChannelButton) {
-                firstChannelButton.focus();
-            }
             // Cargar el primer canal automáticamente si existe
-            if (filteredChannels.length > 0) {
-                cargarStream(filteredChannels[0]);
+            if (canales.length > 0) {
+                cargarStream(canales[0]);
             }
         }
 
