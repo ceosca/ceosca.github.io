@@ -1,8 +1,8 @@
 [
     {
-        "nombre": "A24",
-        "categoria": "Noticias",
-        "url": "https://bvsat02.cdn.rcs.net.ar/mnp/a24/output.mpd",
+        "nombre": "ESPN (sur)",
+        "categoria": "Deportes",
+        "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN_t2.stream/playlist.m3u8",
         "keyId": "",
         "key": ""
     },
@@ -374,6 +374,48 @@
         "nombre": "Telemundo",
         "categoria": "Internacionales",
         "url": "https://bvsat02.cdn.rcs.net.ar/mnp/telemundo/output.mpd",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 2 (sur)",
+        "categoria": "Deportes",
+        "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN2_t2.stream/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 3 (sur)",
+        "categoria": "Deportes",
+        "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN3_t2.stream/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 4 (sur)",
+        "categoria": "Deportes",
+        "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN4_t2.stream/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 5 (sur)",
+        "categoria": "Deportes",
+        "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN5_t2.stream/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 6 (sur)",
+        "categoria": "Deportes",
+        "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN6_t2.stream/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 7 (sur)",
+        "categoria": "Deportes",
+        "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN7_t2.stream/playlist.m3u8",
         "keyId": "",
         "key": ""
     }
