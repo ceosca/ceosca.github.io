@@ -8,9 +8,6 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
-        <select id="channelSelector" onchange="announceChannel()">
-        </select>
-    </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
@@ -18,7 +15,15 @@
         var channelNumberBuffer = "";
         var timeoutId = null;
 
-        // Función para cargar opciones del selector de canales
+        fetch('https://ceosca.github.io/canales.json')
+            .then(response => response.json())
+            .then(data => {
+                canales = data;
+                cargarOpciones();
+                cargarStream();
+            })
+            .catch(error => console.error('Error al cargar el JSON:', error));
+
         function cargarOpciones() {
             var selectBox = document.getElementById("channelSelector");
             canales.forEach(function(canal, index) {
@@ -30,7 +35,6 @@
             selectBox.selectedIndex = 0;
         }
 
-        // Función para cargar el stream del canal seleccionado
         function cargarStream() {
             var selectedValue = canales[currentChannelIndex];
             var config = {
@@ -42,7 +46,7 @@
                     }]
                 }],
                 width: "100%",
-                height: "100%",
+    height: "100%",
                 aspectratio: "16:9",
                 autostart: true,
                 cast: {},
@@ -63,22 +67,20 @@
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
 
-        // Función para anunciar el canal actual utilizando TTS
-        function announceChannel() {
-            var selectedChannel = canales[document.getElementById("channelSelector").value].nombre;
-            var speechText = "Canal cambiado a " + selectedChannel;
-
-            // Verificación de compatibilidad con la API de síntesis de voz
-            if ('speechSynthesis' in window) {
-                var msg = new SpeechSynthesisUtterance();
-                msg.text = speechText;
-                window.speechSynthesis.speak(msg);
+        function playPause() {
+            if (playerInstance.getState() === "playing") {
+                playerInstance.pause();
             } else {
-                console.error("La API de síntesis de voz no está soportada en este navegador.");
+                playerInstance.play();
             }
         }
 
-        // Función para cambiar de canal y anunciar el canal cambiado
+        function changeVolume(amount) {
+            var currentVolume = playerInstance.getVolume();
+            var newVolume = Math.max(0, Math.min(100, currentVolume + amount));
+            playerInstance.setVolume(newVolume);
+        }
+
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
                 currentChannelIndex = parseInt(channelNumberBuffer);
@@ -88,30 +90,15 @@
                 currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
                 cargarStream();
             }
-            announceChannel(); // Llamar a la función para anunciar el canal
         }
 
-        // Función para cambiar de canal manualmente y anunciar el canal cambiado
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
             cargarStream();
-            announceChannel(); // Llamar a la función para anunciar el canal
         }
 
-        // Código para cargar los canales y configurar el reproductor
-        fetch('https://ceosca.github.io/canales.json')
-            .then(response => response.json())
-            .then(data => {
-                canales = data;
-                cargarOpciones();
-                currentChannelIndex = 0; // Puedes establecer el canal inicial aquí
-                cargarStream();
-            })
-            .catch(error => console.error('Error al cargar el JSON:', error));
-
-        // Event listener para detectar las teclas presionadas
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
             if (keyCode === 37) {
@@ -128,7 +115,6 @@
                             currentChannelIndex = parseInt(channelNumberBuffer);
                             channelNumberBuffer = "";
                             cargarStream();
-                            announceChannel(); // Llamar a la función para anunciar el canal
                         }
                     }, 1000);
                 }
