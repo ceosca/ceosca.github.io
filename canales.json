@@ -411,5 +411,12 @@
         "url": "http://bantel.iptvperu.tv:1935/transcoderip/ESPN7_t2.stream/playlist.m3u8",
         "keyId": "",
         "key": ""
+    },
+    {
+        "nombre": "El Trece Internacional",
+        "categoria": "Argentina",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Artear_Internacional/SA_Live_dash_enc/Artear_Internacional.mpd",
+        "keyId": "5bd469f8bf268d5d148c3971c7c23fca",
+        "key": "89157cdd25df25d56f1ecccee3850888"
     }
 ]
