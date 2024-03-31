@@ -6,11 +6,6 @@
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
 <body>
-    <div>
-        <select id="channelSelector" onchange="changeChannel()">
-            <!-- Opciones de canales se agregarán aquí dinámicamente -->
-        </select>
-    </div>
     <div id="player">CARGANDO...</div>
     <div id="controls">
         <button onclick="playPause()">Play/Pausa</button>
@@ -18,6 +13,8 @@
         <button onclick="changeVolume(5)">Subir Volumen</button>
         <button onclick="previousChannel()">Canal Anterior</button>
         <button onclick="nextChannel()">Siguiente Canal</button>
+        <select id="channelSelector" onchange="changeChannel()">
+        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
