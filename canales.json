@@ -7,13 +7,6 @@
         "key": ""
     },
     {
-        "nombre": "C5N",
-        "categoria": "Noticias",
-        "url": "https://bvsat02.cdn.rcs.net.ar/mnp/c5n/output.mpd",
-        "keyId": "",
-        "key": ""
-    },
-    {
         "nombre": "d sports 2",
         "categoria": "deportes",
         "url": "https://1063-vos-da-mt.dtvott.com/DASH/manifest.mpd",
