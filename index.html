@@ -20,6 +20,7 @@
         var playerInstance = null;
         var canales = [];
         var currentChannelIndex = null;
+        var channelNumberBuffer = ""; // Buffer para almacenar los números ingresados secuencialmente
         var timeoutId = null;
 
         fetch('https://ceosca.github.io/canales.json')
@@ -91,13 +92,20 @@
         }
 
         function changeChannel(offset) {
-            currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-            cargarStream();
+            if (channelNumberBuffer !== "") {
+                currentChannelIndex = parseInt(channelNumberBuffer);
+                channelNumberBuffer = "";
+                cargarStream();
+            } else {
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
+                cargarStream();
+            }
         }
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
             currentChannelIndex = parseInt(selectBox.value);
+            channelNumberBuffer = "";
             cargarStream();
         }
 
@@ -105,23 +113,16 @@
             var pressedKey = parseInt(event.key);
             if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
                 clearTimeout(timeoutId);
-                if (currentChannelIndex !== null) {
-                    var channelNumber = parseInt(event.key);
-                    currentChannelIndex = currentChannelIndex * 10 + channelNumber;
-                    if (currentChannelIndex < canales.length) {
+                channelNumberBuffer += event.key; // Agregar el número al buffer
+                timeoutId = setTimeout(function() {
+                    if (channelNumberBuffer !== "") {
+                        currentChannelIndex = parseInt(channelNumberBuffer);
+                        channelNumberBuffer = "";
                         cargarStream();
                     }
-                } else {
-                    currentChannelIndex = pressedKey;
-                    cargarStream();
-                }
-                timeoutId = setTimeout(resetChannelInput, 1000);
+                }, 1000); // Esperar 1 segundo para confirmar el canal
             }
         });
-
-        function resetChannelInput() {
-            currentChannelIndex = null;
-        }
     </script>
 </body>
 </html>
