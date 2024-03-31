@@ -8,15 +8,13 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
-        <select id="channelSelector">
+        <select id="channelSelector" onchange="announceChannel()">
         </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
         var currentChannelIndex = null;
-        var channelNumberBuffer = "";
-        var timeoutId = null;
 
         // Función para cargar opciones del selector de canales
         function cargarOpciones() {
@@ -61,44 +59,20 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-
-            // Anunciar el nombre del canal cuando se inicie la reproducción
-            announceChannel();
         }
 
-        // Función para anunciar el canal actual utilizando TTS
+        // Función para anunciar el canal actual mediante una alerta
         function announceChannel() {
-            var selectedChannel = canales[currentChannelIndex].nombre;
-            var speechText = "Reproduciendo canal " + selectedChannel;
-
-            // Verificación de compatibilidad con la API de síntesis de voz
-            if ('speechSynthesis' in window) {
-                var msg = new SpeechSynthesisUtterance();
-                msg.text = speechText;
-                window.speechSynthesis.speak(msg);
-            } else {
-                console.error("La API de síntesis de voz no está soportada en este navegador.");
-            }
+            var selectedChannel = canales[document.getElementById("channelSelector").value].nombre;
+            alert("Canal cambiado a " + selectedChannel);
         }
 
         // Función para cambiar de canal y cargar el stream
-        function changeChannel(offset) {
-            if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer);
-                channelNumberBuffer = "";
-                cargarStream();
-            } else {
-                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-                cargarStream();
-            }
-        }
-
-        // Función para cambiar de canal manualmente
-        function changeChannelManually() {
+        function changeChannel() {
             var selectBox = document.getElementById("channelSelector");
             currentChannelIndex = parseInt(selectBox.value);
-            channelNumberBuffer = "";
             cargarStream();
+            announceChannel();
         }
 
         // Código para cargar los canales y configurar el reproductor
@@ -111,29 +85,6 @@
                 cargarStream();
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
-
-        // Event listener para detectar las teclas presionadas
-        document.addEventListener("keydown", function(event) {
-            var keyCode = event.keyCode;
-            if (keyCode === 37) {
-                changeChannel(-1);
-            } else if (keyCode === 39) {
-                changeChannel(1);
-            } else {
-                var pressedKey = parseInt(event.key);
-                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
-                    clearTimeout(timeoutId);
-                    channelNumberBuffer += event.key;
-                    timeoutId = setTimeout(function() {
-                        if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer);
-                            channelNumberBuffer = "";
-                            cargarStream();
-                        }
-                    }, 1000);
-                }
-            }
-        });
     </script>
 </body>
 </html>
