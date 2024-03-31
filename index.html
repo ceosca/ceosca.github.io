@@ -31,9 +31,9 @@
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
-        var currentChannelIndex = 0;
+        var currentChannelIndex = null;
+        var timeoutId = null;
 
-        // Cargar datos del JSON
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
             .then(data => {
@@ -42,7 +42,6 @@
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
-        // Cargar opciones en el select
         function cargarOpciones() {
             var selectBox = document.getElementById("channelSelector");
             canales.forEach(function(canal, index) {
@@ -51,40 +50,40 @@
                 option.value = index;
                 selectBox.add(option);
             });
-            // Seleccionar el canal actualmente cargado
             selectBox.selectedIndex = currentChannelIndex;
         }
 
-        // Cargar el stream seleccionado
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex];
-            var config = {
-                playlist: [{
-                    title: "Audio del Stream Seleccionado",
-                    sources: [{
-                        file: selectedValue.url,
-                        type: "mpd"
-                    }]
-                }],
-                width: 0,
-                height: 0,
-                autostart: true,
-                cast: {
-                    audioOnly: true
-                },
-                controls: false
-            };
-            
-            if (selectedValue.keyId && selectedValue.key) {
-                config.drm = {
-                    clearkey: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
-                    }
+            if (currentChannelIndex !== null) {
+                var selectedValue = canales[currentChannelIndex];
+                var config = {
+                    playlist: [{
+                        title: "Audio del Stream Seleccionado",
+                        sources: [{
+                            file: selectedValue.url,
+                            type: "mpd"
+                        }]
+                    }],
+                    width: 0,
+                    height: 0,
+                    autostart: true,
+                    cast: {
+                        audioOnly: true
+                    },
+                    controls: false
                 };
+
+                if (selectedValue.keyId && selectedValue.key) {
+                    config.drm = {
+                        clearkey: {
+                            keyId: selectedValue.keyId,
+                            key: selectedValue.key
+                        }
+                    };
+                }
+
+                playerInstance = jwplayer("player").setup(config);
             }
-            
-            playerInstance = jwplayer("player").setup(config);
         }
 
         function playPause() {
@@ -110,33 +109,45 @@
             var selectBox = document.getElementById("channelSelector");
             currentChannelIndex = selectBox.value;
             cargarStream();
+            clearTimeout(timeoutId);
+            timeoutId = null;
+            timeoutId = setTimeout(resetChannelInput, 1000);
         }
 
         function previousChannel() {
             if (currentChannelIndex > 0) {
                 currentChannelIndex--;
                 cargarStream();
-                // Actualizar la opción seleccionada en el cuadro combinado
                 document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
+            clearTimeout(timeoutId);
+            timeoutId = null;
+            timeoutId = setTimeout(resetChannelInput, 1000);
         }
 
         function nextChannel() {
             if (currentChannelIndex < canales.length - 1) {
                 currentChannelIndex++;
                 cargarStream();
-                // Actualizar la opción seleccionada en el cuadro combinado
                 document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
+            clearTimeout(timeoutId);
+            timeoutId = null;
+            timeoutId = setTimeout(resetChannelInput, 1000);
+        }
+
+        function resetChannelInput() {
+            currentChannelIndex = null;
         }
 
         document.addEventListener("keydown", function(event) {
             var pressedKey = parseInt(event.key);
             if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
+                clearTimeout(timeoutId);
                 if (currentChannelIndex !== null) {
                     var channelNumber = parseInt(event.key);
                     if (pressedKey === 0) {
-                        channelNumber = 10; // 0 se considera como 10
+                        channelNumber = 10;
                     }
                     if (currentChannelIndex * 10 + channelNumber - 1 < canales.length) {
                         currentChannelIndex = currentChannelIndex * 10 + channelNumber - 1;
@@ -146,6 +157,7 @@
                     currentChannelIndex = pressedKey - 1;
                     cargarStream();
                 }
+                timeoutId = setTimeout(resetChannelInput, 1000);
             }
         });
     </script>
