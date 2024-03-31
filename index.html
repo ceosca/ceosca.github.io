@@ -11,8 +11,8 @@
         <button onclick="playPause()">Play/Pausa</button>
         <button onclick="changeVolume(-5)">Bajar Volumen</button>
         <button onclick="changeVolume(5)">Subir Volumen</button>
-        <button onclick="previousChannel()">Canal Anterior</button>
-        <button onclick="nextChannel()">Siguiente Canal</button>
+        <button onclick="changeChannel(-1)">Canal Anterior</button>
+        <button onclick="changeChannel(1)">Siguiente Canal</button>
         <select id="channelSelector" onchange="changeChannel()">
         </select>
     </div>
@@ -91,39 +91,15 @@
             playerInstance.setVolume(newVolume);
         }
 
-        function changeChannel() {
-            var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = selectBox.value;
-            cargarStream();
-            clearTimeout(timeoutId);
-            timeoutId = null;
-            timeoutId = setTimeout(resetChannelInput, 1000);
-        }
-
-        function previousChannel() {
-            if (currentChannelIndex > 0) {
-                currentChannelIndex--;
-            } else {
-                currentChannelIndex = canales.length - 1;
+        function changeChannel(offset) {
+            if (currentChannelIndex !== null) {
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
+                cargarStream();
+                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+                clearTimeout(timeoutId);
+                timeoutId = null;
+                timeoutId = setTimeout(resetChannelInput, 1000);
             }
-            cargarStream();
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-            clearTimeout(timeoutId);
-            timeoutId = null;
-            timeoutId = setTimeout(resetChannelInput, 1000);
-        }
-
-        function nextChannel() {
-            if (currentChannelIndex < canales.length - 1) {
-                currentChannelIndex++;
-            } else {
-                currentChannelIndex = 0;
-            }
-            cargarStream();
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-            clearTimeout(timeoutId);
-            timeoutId = null;
-            timeoutId = setTimeout(resetChannelInput, 1000);
         }
 
         function resetChannelInput() {
