@@ -106,8 +106,12 @@
         }
 
         document.addEventListener("keydown", function(event) {
-            if (event.key >= "1" && event.key <= "9") {
+            var pressedKey = parseInt(event.key);
+            if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
                 var channelNumber = parseInt(event.key);
+                if (channelNumber === 0) {
+                    channelNumber = 10; // Para manejar el número 0 como 10
+                }
                 if (channelNumber <= canales.length) {
                     currentChannelIndex = channelNumber - 1;
                     cargarStream();
