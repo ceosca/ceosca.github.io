@@ -16,8 +16,7 @@
 <body>
     <div>
         <button onclick="toggleChannelList()">Mostrar Lista de Canales</button>
-        <select id="streamSelector"></select>
-        <button onclick="cargarStream()">Cargar Audio del Stream de Video</button>
+        <select id="streamSelector" onchange="cargarStream()"></select>
     </div>
     <div id="player">CARGANDO...</div>
     <div id="controls">
@@ -44,12 +43,13 @@
         // Cargar opciones en el select
         function cargarOpciones() {
             var selectBox = document.getElementById("streamSelector");
-            canales.forEach(function(canal) {
+            canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
-                option.text = canal.nombre;
+                option.text = index + 1 + '. ' + canal.nombre;
                 option.value = JSON.stringify(canal);
                 selectBox.add(option);
             });
+            cargarStream(); // Cargar el primer canal al cargar las opciones
         }
 
         // Cargar el stream seleccionado
