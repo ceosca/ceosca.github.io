@@ -4,7 +4,6 @@
     <title>Reproductor de Audio de Streams de Video</title>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <style>
         #controls {
             margin-top: 10px;
@@ -33,6 +32,7 @@
         var canales = [];
         var categorias = [];
 
+        // Cargar datos del JSON
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
             .then(data => {
@@ -43,6 +43,7 @@
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
+        // Cargar categorías en el select
         function cargarCategorias() {
             var selectBox = document.getElementById("categorySelector");
             categorias.forEach(function(categoria) {
@@ -52,6 +53,7 @@
             });
         }
 
+        // Obtener categorías ordenadas alfabéticamente
         function obtenerCategoriasOrdenadas() {
             var categoriasSet = new Set();
             canales.forEach(function(canal) {
@@ -60,27 +62,34 @@
             return Array.from(categoriasSet).sort();
         }
 
+        // Actualizar lista de canales al cambiar la categoría seleccionada
         function updateChannelList() {
             var selectedCategory = document.getElementById("categorySelector").value;
             var channelSelector = document.getElementById("channelSelector");
+            // Limpiar el cuadro de selección de canales
             channelSelector.innerHTML = "";
+            // Filtrar los canales por categoría seleccionada
             var filteredChannels = canales.filter(function(canal) {
                 return canal.categoria === selectedCategory;
             });
+            // Ordenar los canales alfabéticamente
             filteredChannels.sort(function(a, b) {
                 return a.nombre.localeCompare(b.nombre);
             });
+            // Llenar el cuadro de selección de canales
             filteredChannels.forEach(function(canal) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
                 option.value = JSON.stringify(canal);
                 channelSelector.add(option);
             });
+            // Cargar el primer canal de la lista automáticamente
             if (filteredChannels.length > 0) {
                 cargarStream();
             }
         }
 
+        // Cargar el stream seleccionado
         function cargarStream() {
             permitirCargaHTTPM3U8();
             var selectBox = document.getElementById("channelSelector");
@@ -88,16 +97,10 @@
             var config = {
                 playlist: [{
                     title: "Audio del Stream Seleccionado",
-                    sources: [
-                        {
-                            file: selectedValue.url,
-                            type: "mpd"
-                        },
-                        {
-                            file: selectedValue.url,
-                            type: "hls"
-                        }
-                    ]
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }]
                 }],
                 width: 0,
                 height: 0,
@@ -120,6 +123,7 @@
             playerInstance = jwplayer("player").setup(config);
         }
 
+        // Función para permitir la carga de recursos m3u8 HTTP
         function permitirCargaHTTPM3U8() {
             var cspMeta = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
             if (cspMeta) {
