@@ -8,7 +8,7 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
-        <select id="channelSelector" onchange="announceChannel()">
+        <select id="channelSelector">
         </select>
     </div>
     <script type='text/javascript'>
@@ -61,12 +61,15 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+
+            // Anunciar el nombre del canal cuando se inicie la reproducción
+            announceChannel();
         }
 
         // Función para anunciar el canal actual utilizando TTS
         function announceChannel() {
-            var selectedChannel = canales[document.getElementById("channelSelector").value].nombre;
-            var speechText = "Canal cambiado a " + selectedChannel;
+            var selectedChannel = canales[currentChannelIndex].nombre;
+            var speechText = "Reproduciendo canal " + selectedChannel;
 
             // Verificación de compatibilidad con la API de síntesis de voz
             if ('speechSynthesis' in window) {
@@ -78,7 +81,7 @@
             }
         }
 
-        // Función para cambiar de canal y anunciar el canal cambiado
+        // Función para cambiar de canal y cargar el stream
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
                 currentChannelIndex = parseInt(channelNumberBuffer);
@@ -88,16 +91,14 @@
                 currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
                 cargarStream();
             }
-            announceChannel(); // Llamar a la función para anunciar el canal
         }
 
-        // Función para cambiar de canal manualmente y anunciar el canal cambiado
+        // Función para cambiar de canal manualmente
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
             cargarStream();
-            announceChannel(); // Llamar a la función para anunciar el canal
         }
 
         // Código para cargar los canales y configurar el reproductor
@@ -128,7 +129,6 @@
                             currentChannelIndex = parseInt(channelNumberBuffer);
                             channelNumberBuffer = "";
                             cargarStream();
-                            announceChannel(); // Llamar a la función para anunciar el canal
                         }
                     }, 1000);
                 }
