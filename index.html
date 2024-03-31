@@ -1,33 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de Audio de Streams de Video</title>
-    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
-    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <script type="text/javascript" src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
+    <script type="text/javascript">jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
     <style>
-        #controls {
-            margin-top: 10px;
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .category {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .category label {
+            display: block;
+            font-weight: bold;
+        }
+        .channel-button {
+            display: block;
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .channel-button:focus {
+            outline: 2px solid blue;
+        }
+        #player {
+            margin-top: 20px;
+        }
+        #controls button {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class="category">
         <label for="categorySelector">Selecciona una categoría:</label>
-        <select id="categorySelector" onchange="updateChannelList()">
+        <select id="categorySelector" onchange="updateChannelList()" tabindex="1">
         </select>
     </div>
-    <div>
-        <label for="channelSelector">Selecciona un canal:</label>
-        <select id="channelSelector" onchange="cargarStream()">
-        </select>
+
+    <div id="channelButtonsContainer" class="category">
+        <label>Selecciona un canal:</label>
+        <div id="channelButtons"></div>
     </div>
+
     <div id="player">CARGANDO...</div>
+    
     <div id="controls">
-        <button onclick="playPause()">Play/Pausa</button>
-        <button onclick="changeVolume(-5)">Bajar Volumen</button>
-        <button onclick="changeVolume(5)">Subir Volumen</button>
+        <button onclick="playPause()" tabindex="3">Play/Pausa</button>
+        <button onclick="changeVolume(-5)" tabindex="4">Bajar Volumen</button>
+        <button onclick="changeVolume(5)" tabindex="5">Subir Volumen</button>
     </div>
-    <script type='text/javascript'>
+
+    <script type="text/javascript">
         var playerInstance = null;
         var canales = [];
         var categorias = [];
@@ -65,9 +95,9 @@
         // Actualizar lista de canales al cambiar la categoría seleccionada
         function updateChannelList() {
             var selectedCategory = document.getElementById("categorySelector").value;
-            var channelSelector = document.getElementById("channelSelector");
-            // Limpiar el cuadro de selección de canales
-            channelSelector.innerHTML = "";
+            var channelButtonsContainer = document.getElementById("channelButtons");
+            // Limpiar el contenedor de botones de canal
+            channelButtonsContainer.innerHTML = "";
             // Filtrar los canales por categoría seleccionada
             var filteredChannels = canales.filter(function(canal) {
                 return canal.categoria === selectedCategory;
@@ -76,28 +106,34 @@
             filteredChannels.sort(function(a, b) {
                 return a.nombre.localeCompare(b.nombre);
             });
-            // Llenar el cuadro de selección de canales
+            // Llenar el contenedor de botones de canal
             filteredChannels.forEach(function(canal) {
-                var option = document.createElement("option");
-                option.text = canal.nombre;
-                option.value = JSON.stringify(canal);
-                channelSelector.add(option);
+                var button = document.createElement("button");
+                button.classList.add("channel-button");
+                button.textContent = canal.nombre;
+                button.onclick = function() {
+                    cargarStream(canal);
+                };
+                channelButtonsContainer.appendChild(button);
             });
-            // Cargar el primer canal de la lista automáticamente
+            // Enfocar el primer botón de canal
+            var firstChannelButton = channelButtonsContainer.querySelector(".channel-button");
+            if (firstChannelButton) {
+                firstChannelButton.focus();
+            }
+            // Cargar el primer canal automáticamente si existe
             if (filteredChannels.length > 0) {
-                cargarStream();
+                cargarStream(filteredChannels[0]);
             }
         }
 
         // Cargar el stream seleccionado
-        function cargarStream() {
-            var selectBox = document.getElementById("channelSelector");
-            var selectedValue = JSON.parse(selectBox.value);
+        function cargarStream(selectedChannel) {
             var config = {
                 playlist: [{
                     title: "Audio del Stream Seleccionado",
                     sources: [{
-                        file: selectedValue.url,
+                        file: selectedChannel.url,
                         type: "mpd"
                     }]
                 }],
@@ -110,11 +146,11 @@
                 controls: false
             };
             
-            if (selectedValue.keyId && selectedValue.key) {
+            if (selectedChannel.keyId && selectedChannel.key) {
                 config.drm = {
                     clearkey: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
+                        keyId: selectedChannel.keyId,
+                        key: selectedChannel.key
                     }
                 };
             }
