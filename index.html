@@ -112,15 +112,12 @@
                 clearTimeout(timeoutId);
                 if (currentChannelIndex !== null) {
                     var channelNumber = parseInt(event.key);
-                    if (pressedKey === 0) {
-                        channelNumber = 10;
-                    }
-                    if (currentChannelIndex * 10 + channelNumber - 1 < canales.length) {
-                        currentChannelIndex = currentChannelIndex * 10 + channelNumber - 1;
+                    currentChannelIndex = currentChannelIndex * 10 + channelNumber;
+                    if (currentChannelIndex < canales.length) {
                         cargarStream();
                     }
                 } else {
-                    currentChannelIndex = pressedKey - 1;
+                    currentChannelIndex = pressedKey;
                     cargarStream();
                 }
                 timeoutId = setTimeout(resetChannelInput, 1000);
