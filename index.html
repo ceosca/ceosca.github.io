@@ -98,13 +98,17 @@
         }
 
         function changeToPreviousChannel() {
-            currentChannelIndex = (currentChannelIndex - 1 + canales.length) % canales.length;
-            cargarStream();
+            if (currentChannelIndex !== null) {
+                currentChannelIndex = (currentChannelIndex - 1 + canales.length) % canales.length;
+                cargarStream();
+            }
         }
 
         function changeToNextChannel() {
-            currentChannelIndex = (currentChannelIndex + 1) % canales.length;
-            cargarStream();
+            if (currentChannelIndex !== null) {
+                currentChannelIndex = (currentChannelIndex + 1) % canales.length;
+                cargarStream();
+            }
         }
 
         function resetChannelInput() {
