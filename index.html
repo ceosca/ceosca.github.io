@@ -97,6 +97,28 @@
             currentChannelIndex = parseInt(selectBox.value);
             cargarStream();
         }
+
+        document.addEventListener("keydown", function(event) {
+            var pressedKey = parseInt(event.key);
+            if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
+                clearTimeout(timeoutId);
+                if (currentChannelIndex !== null) {
+                    var channelNumber = parseInt(event.key);
+                    currentChannelIndex = currentChannelIndex * 10 + channelNumber;
+                    if (currentChannelIndex < canales.length) {
+                        cargarStream();
+                    }
+                } else {
+                    currentChannelIndex = pressedKey;
+                    cargarStream();
+                }
+                timeoutId = setTimeout(resetChannelInput, 1000);
+            }
+        });
+
+        function resetChannelInput() {
+            currentChannelIndex = null;
+        }
     </script>
 </body>
 </html>
