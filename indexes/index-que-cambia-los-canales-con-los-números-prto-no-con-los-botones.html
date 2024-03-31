@@ -93,19 +93,12 @@
 
         function changeChannel(offset) {
             if (currentChannelIndex !== null) {
-                if (offset !== undefined) {
-                    currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-                } else {
-                    clearTimeout(timeoutId);
-                    timeoutId = null;
-                    timeoutId = setTimeout(resetChannelInput, 1000);
-                    var channelNumber = parseInt(document.getElementById("channelSelector").value);
-                    if (!isNaN(channelNumber) && channelNumber >= 0 && channelNumber < canales.length) {
-                        currentChannelIndex = channelNumber;
-                    }
-                }
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
                 cargarStream();
                 document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+                clearTimeout(timeoutId);
+                timeoutId = null;
+                timeoutId = setTimeout(resetChannelInput, 1000);
             }
         }
 
