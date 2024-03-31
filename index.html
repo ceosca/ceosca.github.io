@@ -13,7 +13,7 @@
         <button onclick="changeVolume(5)">Subir Volumen</button>
         <button onclick="changeChannel(-1)">Canal Anterior</button>
         <button onclick="changeChannel(1)">Siguiente Canal</button>
-        <select id="channelSelector" onchange="changeChannel()">
+        <select id="channelSelector" onchange="changeChannelFromSelector()">
         </select>
     </div>
     <script type='text/javascript'>
@@ -70,7 +70,11 @@
                     };
                 }
 
-                playerInstance = jwplayer("player").setup(config);
+                if (playerInstance) {
+                    playerInstance.load(config);
+                } else {
+                    playerInstance = jwplayer("player").setup(config);
+                }
 
                 // Actualizar el cuadro combinado con el canal actual
                 document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
@@ -95,15 +99,12 @@
             if (currentChannelIndex !== null) {
                 currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
                 cargarStream();
-                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-                clearTimeout(timeoutId);
-                timeoutId = null;
-                timeoutId = setTimeout(resetChannelInput, 1000);
             }
         }
 
-        function resetChannelInput() {
-            currentChannelIndex = null;
+        function changeChannelFromSelector() {
+            currentChannelIndex = document.getElementById("channelSelector").value;
+            cargarStream();
         }
 
         document.addEventListener("keydown", function(event) {
@@ -123,6 +124,10 @@
                 timeoutId = setTimeout(resetChannelInput, 1000);
             }
         });
+
+        function resetChannelInput() {
+            currentChannelIndex = null;
+        }
     </script>
 </body>
 </html>
