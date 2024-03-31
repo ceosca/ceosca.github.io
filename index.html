@@ -103,9 +103,11 @@
         function previousChannel() {
             if (currentChannelIndex > 0) {
                 currentChannelIndex--;
-                cargarStream();
-                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+            } else {
+                currentChannelIndex = canales.length - 1;
             }
+            cargarStream();
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             clearTimeout(timeoutId);
             timeoutId = null;
             timeoutId = setTimeout(resetChannelInput, 1000);
@@ -114,9 +116,11 @@
         function nextChannel() {
             if (currentChannelIndex < canales.length - 1) {
                 currentChannelIndex++;
-                cargarStream();
-                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+            } else {
+                currentChannelIndex = 0;
             }
+            cargarStream();
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             clearTimeout(timeoutId);
             timeoutId = null;
             timeoutId = setTimeout(resetChannelInput, 1000);
