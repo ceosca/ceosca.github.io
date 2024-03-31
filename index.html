@@ -8,6 +8,9 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
+        </select>
+    </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
@@ -25,9 +28,7 @@
             .catch(error => console.error('Error al cargar el JSON:', error));
 
         function cargarOpciones() {
-            var selectBox = document.createElement("select");
-            selectBox.id = "channelSelector";
-            document.getElementById("controls").appendChild(selectBox);
+            var selectBox = document.getElementById("channelSelector");
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
@@ -103,7 +104,10 @@
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
-            if (keyCode === 37) {
+            if (keyCode === 13) { // Si la tecla presionada es Enter
+                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
+                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
+            } else if (keyCode === 37) {
                 changeChannel(-1);
             } else if (keyCode === 39) {
                 changeChannel(1);
@@ -123,6 +127,5 @@
             }
         });
     </script>
-    </div>
 </body>
 </html>
