@@ -11,8 +11,8 @@
         <button onclick="playPause()">Play/Pausa</button>
         <button onclick="changeVolume(-5)">Bajar Volumen</button>
         <button onclick="changeVolume(5)">Subir Volumen</button>
-        <button onclick="changeChannel(-1)">Canal Anterior</button>
-        <button onclick="changeChannel(1)">Siguiente Canal</button>
+        <button onclick="changeToPreviousChannel()">Canal Anterior</button>
+        <button onclick="changeToNextChannel()">Siguiente Canal</button>
         <select id="channelSelector" onchange="changeChannel()">
         </select>
     </div>
@@ -89,18 +89,22 @@
             playerInstance.setVolume(newVolume);
         }
 
-        function changeChannel(offset) {
+        function changeChannel() {
             if (currentChannelIndex !== null) {
-                var newIndex = currentChannelIndex + offset;
-                if (newIndex < 0) {
-                    newIndex = canales.length - 1;
-                } else if (newIndex >= canales.length) {
-                    newIndex = 0;
-                }
-                currentChannelIndex = newIndex;
+                var selectBox = document.getElementById("channelSelector");
+                currentChannelIndex = parseInt(selectBox.value);
                 cargarStream();
-                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
+        }
+
+        function changeToPreviousChannel() {
+            currentChannelIndex = (currentChannelIndex - 1 + canales.length) % canales.length;
+            cargarStream();
+        }
+
+        function changeToNextChannel() {
+            currentChannelIndex = (currentChannelIndex + 1) % canales.length;
+            cargarStream();
         }
 
         function resetChannelInput() {
