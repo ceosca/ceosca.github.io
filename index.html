@@ -8,6 +8,8 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
+        <select id="channelSelector"></select>
+    </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
@@ -65,16 +67,6 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-            anunciarCanal();
-        }
-
-        function anunciarCanal() {
-            var selectedChannel = canales[currentChannelIndex].nombre;
-            var message = "Estás escuchando el canal " + selectedChannel;
-            var tts = window.speechSynthesis;
-            tts.cancel();
-            var utterance = new SpeechSynthesisUtterance(message);
-            tts.speak(utterance);
         }
 
         function playPause() {
@@ -115,6 +107,9 @@
                 changeChannel(-1);
             } else if (keyCode === 39) {
                 changeChannel(1);
+            } else if (keyCode === 13) { // Tecla Enter
+                var selectBox = document.getElementById("channelSelector");
+                selectBox.focus();
             } else {
                 var pressedKey = parseInt(event.key);
                 if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
@@ -130,7 +125,15 @@
                 }
             }
         });
+
+        // Agregar evento de escucha para el botón OK en el control remoto de TV
+        document.addEventListener("keydown", function(event) {
+            var keyCode = event.keyCode;
+            if (keyCode === 13) { // Tecla Enter
+                var selectBox = document.getElementById("channelSelector");
+                selectBox.focus();
+            }
+        });
     </script>
-    <button onclick="anunciarCanal()">Anunciar Canal</button>
 </body>
 </html>
