@@ -11,16 +11,15 @@
         <button onclick="playPause()">Play/Pausa</button>
         <button onclick="changeVolume(-5)">Bajar Volumen</button>
         <button onclick="changeVolume(5)">Subir Volumen</button>
-        <button onclick="changeChannelManually(-1)">Canal Anterior</button>
-        <button onclick="changeChannelManually(1)">Siguiente Canal</button>
-        <select id="channelSelector" onchange="changeChannel()">
+        <button onclick="changeChannel(-1)">Canal Anterior</button>
+        <button onclick="changeChannel(1)">Siguiente Canal</button>
+        <select id="channelSelector" onchange="changeChannelManually()">
         </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
         var currentChannelIndex = null;
-        var manualChannelIndex = null; // Nueva variable para almacenar el canal seleccionado manualmente
         var timeoutId = null;
 
         fetch('https://ceosca.github.io/canales.json')
@@ -28,6 +27,7 @@
             .then(data => {
                 canales = data;
                 cargarOpciones();
+                cargarStream();
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
@@ -39,42 +39,38 @@
                 option.value = index;
                 selectBox.add(option);
             });
-            selectBox.selectedIndex = currentChannelIndex;
+            selectBox.selectedIndex = 0; // Por defecto selecciona el primer canal
         }
 
         function cargarStream() {
-            var indexToUse = currentChannelIndex !== null ? currentChannelIndex : manualChannelIndex;
-            if (indexToUse !== null) {
-                var selectedValue = canales[indexToUse];
-                var config = {
-                    playlist: [{
-                        title: "Audio del Stream Seleccionado",
-                        sources: [{
-                            file: selectedValue.url,
-                            type: "mpd"
-                        }]
-                    }],
-                    width: 0,
-                    height: 0,
-                    autostart: true,
-                    cast: {
-                        audioOnly: true
-                    },
-                    controls: false
+            var selectedValue = canales[currentChannelIndex];
+            var config = {
+                playlist: [{
+                    title: "Audio del Stream Seleccionado",
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }]
+                }],
+                width: 0,
+                height: 0,
+                autostart: true,
+                cast: {
+                    audioOnly: true
+                },
+                controls: false
+            };
+
+            if (selectedValue.keyId && selectedValue.key) {
+                config.drm = {
+                    clearkey: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
+                    }
                 };
-
-                if (selectedValue.keyId && selectedValue.key) {
-                    config.drm = {
-                        clearkey: {
-                            keyId: selectedValue.keyId,
-                            key: selectedValue.key
-                        }
-                    };
-                }
-
-                playerInstance = jwplayer("player").setup(config);
-                document.getElementById("channelSelector").selectedIndex = indexToUse;
             }
+
+            playerInstance = jwplayer("player").setup(config);
         }
 
         function playPause() {
@@ -91,43 +87,16 @@
             playerInstance.setVolume(newVolume);
         }
 
-        function changeChannel() {
-            if (currentChannelIndex !== null) {
-                var selectBox = document.getElementById("channelSelector");
-                currentChannelIndex = parseInt(selectBox.value);
-                manualChannelIndex = currentChannelIndex; // Actualizar el canal seleccionado manualmente
-                cargarStream();
-            }
+        function changeChannel(offset) {
+            currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
+            cargarStream();
         }
 
-        function changeChannelManually(offset) {
-            if (manualChannelIndex !== null) {
-                manualChannelIndex = (manualChannelIndex + offset + canales.length) % canales.length;
-                cargarStream();
-            }
+        function changeChannelManually() {
+            var selectBox = document.getElementById("channelSelector");
+            currentChannelIndex = parseInt(selectBox.value);
+            cargarStream();
         }
-
-        function resetChannelInput() {
-            currentChannelIndex = null;
-        }
-
-        document.addEventListener("keydown", function(event) {
-            var pressedKey = parseInt(event.key);
-            if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
-                clearTimeout(timeoutId);
-                if (currentChannelIndex !== null) {
-                    var channelNumber = parseInt(event.key);
-                    currentChannelIndex = currentChannelIndex * 10 + channelNumber;
-                    if (currentChannelIndex < canales.length) {
-                        cargarStream();
-                    }
-                } else {
-                    currentChannelIndex = pressedKey;
-                    cargarStream();
-                }
-                timeoutId = setTimeout(resetChannelInput, 1000);
-            }
-        });
     </script>
 </body>
 </html>
