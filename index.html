@@ -71,7 +71,7 @@
                 }
 
                 if (playerInstance) {
-                    playerInstance.load(config);
+                    playerInstance.load(config); // Aquí usamos load en lugar de setup para cargar un nuevo video sin reiniciar el reproductor
                 } else {
                     playerInstance = jwplayer("player").setup(config);
                 }
