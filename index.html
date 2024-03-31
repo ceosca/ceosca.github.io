@@ -91,7 +91,6 @@
 
         // Cargar el stream seleccionado
         function cargarStream() {
-            permitirCargaHTTPM3U8();
             var selectBox = document.getElementById("channelSelector");
             var selectedValue = JSON.parse(selectBox.value);
             var config = {
@@ -100,10 +99,6 @@
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
-                    },
-                    {
-                        file: selectedValue.url,
-                        type: "hls"
                     }]
                 }],
                 width: 0,
@@ -125,15 +120,6 @@
             }
             
             playerInstance = jwplayer("player").setup(config);
-        }
-
-        // Función para permitir la carga de recursos m3u8 HTTP
-        function permitirCargaHTTPM3U8() {
-            var selectBox = document.getElementById("channelSelector");
-            var selectedValue = JSON.parse(selectBox.value);
-            if (selectedValue.url.startsWith("http://")) {
-                selectedValue.url = selectedValue.url.replace("http://", "https://");
-            }
         }
 
         function playPause() {
