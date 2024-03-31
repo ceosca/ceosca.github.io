@@ -71,8 +71,6 @@
                 }
 
                 playerInstance = jwplayer("player").setup(config);
-
-                // Actualizar el cuadro combinado con el canal actual
                 document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
         }
@@ -93,17 +91,13 @@
 
         function changeChannel(offset) {
             if (currentChannelIndex !== null) {
-                if (offset !== undefined) {
-                    currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-                } else {
-                    clearTimeout(timeoutId);
-                    timeoutId = null;
-                    timeoutId = setTimeout(resetChannelInput, 1000);
-                    var channelNumber = parseInt(document.getElementById("channelSelector").value);
-                    if (!isNaN(channelNumber) && channelNumber >= 0 && channelNumber < canales.length) {
-                        currentChannelIndex = channelNumber;
-                    }
+                var newIndex = currentChannelIndex + offset;
+                if (newIndex < 0) {
+                    newIndex = canales.length - 1;
+                } else if (newIndex >= canales.length) {
+                    newIndex = 0;
                 }
+                currentChannelIndex = newIndex;
                 cargarStream();
                 document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
