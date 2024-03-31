@@ -71,6 +71,9 @@
                 }
 
                 playerInstance = jwplayer("player").setup(config);
+
+                // Actualizar el cuadro combinado con el canal actual
+                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
         }
 
