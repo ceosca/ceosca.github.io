@@ -51,6 +51,8 @@
                 option.value = index;
                 selectBox.add(option);
             });
+            // Seleccionar el canal actualmente cargado
+            selectBox.selectedIndex = currentChannelIndex;
         }
 
         // Cargar el stream seleccionado
@@ -114,6 +116,8 @@
             if (currentChannelIndex > 0) {
                 currentChannelIndex--;
                 cargarStream();
+                // Actualizar la opción seleccionada en el cuadro combinado
+                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
         }
 
@@ -121,19 +125,25 @@
             if (currentChannelIndex < canales.length - 1) {
                 currentChannelIndex++;
                 cargarStream();
+                // Actualizar la opción seleccionada en el cuadro combinado
+                document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
             }
         }
 
         document.addEventListener("keydown", function(event) {
             var pressedKey = parseInt(event.key);
             if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
-                var channelNumber = parseInt(event.key);
-                if (pressedKey === 0) {
-                    channelNumber = 10; // 0 se considera como 10
-                }
-                var nextChannelIndex = parseInt(currentChannelIndex.toString() + channelNumber.toString()) - 1;
-                if (nextChannelIndex >= 0 && nextChannelIndex < canales.length) {
-                    currentChannelIndex = nextChannelIndex;
+                if (currentChannelIndex !== null) {
+                    var channelNumber = parseInt(event.key);
+                    if (pressedKey === 0) {
+                        channelNumber = 10; // 0 se considera como 10
+                    }
+                    if (currentChannelIndex * 10 + channelNumber - 1 < canales.length) {
+                        currentChannelIndex = currentChannelIndex * 10 + channelNumber - 1;
+                        cargarStream();
+                    }
+                } else {
+                    currentChannelIndex = pressedKey - 1;
                     cargarStream();
                 }
             }
