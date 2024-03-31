@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reproductor de Audio de Streams</title>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
@@ -42,7 +41,6 @@
             var selectedValue = canales[currentChannelIndex];
             var config = {
                 playlist: [{
-                    title: "Audio del Canal Actual",
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
@@ -68,6 +66,9 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+
+            // Hacer que el video se vea en pantalla completa al cargar
+            playerInstance.setFullscreen(true);
         }
 
         function playPause() {
