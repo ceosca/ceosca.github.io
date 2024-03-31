@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reproductor de Audio de Streams</title>
+    <title>Reproductor de Audio de Streams de Video</title>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
@@ -47,7 +47,7 @@
             var selectedValue = canales[currentChannelIndex];
             var config = {
                 playlist: [{
-                    title: "Audio del Canal Actual",
+                    title: "Audio del Stream Seleccionado",
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
@@ -110,24 +110,17 @@
         }
 
         document.addEventListener("keydown", function(event) {
-            var keyCode = event.keyCode;
-            if (keyCode === 37) { // Flecha izquierda
-                changeChannel(-1);
-            } else if (keyCode === 39) { // Flecha derecha
-                changeChannel(1);
-            } else {
-                var pressedKey = parseInt(event.key);
-                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
-                    clearTimeout(timeoutId);
-                    channelNumberBuffer += event.key; // Agregar el número al buffer
-                    timeoutId = setTimeout(function() {
-                        if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer);
-                            channelNumberBuffer = "";
-                            cargarStream();
-                        }
-                    }, 1000); // Esperar 1 segundo para confirmar el canal
-                }
+            var pressedKey = parseInt(event.key);
+            if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
+                clearTimeout(timeoutId);
+                channelNumberBuffer += event.key; // Agregar el número al buffer
+                timeoutId = setTimeout(function() {
+                    if (channelNumberBuffer !== "") {
+                        currentChannelIndex = parseInt(channelNumberBuffer);
+                        channelNumberBuffer = "";
+                        cargarStream();
+                    }
+                }, 1000); // Esperar 1 segundo para confirmar el canal
             }
         });
     </script>
