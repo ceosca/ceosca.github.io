@@ -100,6 +100,10 @@
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
+                    },
+                    {
+                        file: selectedValue.url,
+                        type: "hls"
                     }]
                 }],
                 width: 0,
@@ -125,11 +129,10 @@
 
         // Función para permitir la carga de recursos m3u8 HTTP
         function permitirCargaHTTPM3U8() {
-            var cspMeta = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
-            if (cspMeta) {
-                var cspContent = cspMeta.getAttribute('content');
-                cspContent += " media-src 'self' http://*.m3u8;";
-                cspMeta.setAttribute('content', cspContent);
+            var selectBox = document.getElementById("channelSelector");
+            var selectedValue = JSON.parse(selectBox.value);
+            if (selectedValue.url.startsWith("http://")) {
+                selectedValue.url = selectedValue.url.replace("http://", "https://");
             }
         }
 
