@@ -413,10 +413,10 @@
         "key": ""
     },
     {
-        "nombre": "El Trece Internacional",
-        "categoria": "Argentina",
-        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Artear_Internacional/SA_Live_dash_enc/Artear_Internacional.mpd",
-        "keyId": "5bd469f8bf268d5d148c3971c7c23fca",
+        "nombre": "espn-3-uy-py",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ESPN3_Uy-Py/SA_Live_dash_enc/ESPN3_Uy-Py.mpd",
+        "keyId": "ed53871dc50dcdc59a6271db3c8c51b3",
         "key": "89157cdd25df25d56f1ecccee3850888"
     }
 ]
