@@ -3,12 +3,40 @@
 <head>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <style>
+        #audioTracks {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        #audioTracks a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        #audioTracks a:hover {
+            background-color: #f1f1f1;
+        }
+        #audioTracks.show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
+        <div id="audioMenu">
+            <button onclick="toggleAudioMenu()">Audio Track</button>
+            <div id="audioTracks">
+                <!-- Audio tracks will be populated dynamically -->
+            </div>
+        </div>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -62,9 +90,27 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+            loadAudioTracks();
+        }
 
-            // Establecer el idioma al español (lang=1)
-            playerInstance.setCurrentAudioTrack(1);
+        function loadAudioTracks() {
+            var audioTracks = playerInstance.getAudioTracks();
+            var audioTracksMenu = document.getElementById("audioTracks");
+            audioTracksMenu.innerHTML = "";
+            audioTracks.forEach(function(track, index) {
+                var trackOption = document.createElement("a");
+                trackOption.textContent = track.name;
+                trackOption.onclick = function() {
+                    playerInstance.setCurrentAudioTrack(index);
+                    toggleAudioMenu();
+                };
+                audioTracksMenu.appendChild(trackOption);
+            });
+        }
+
+        function toggleAudioMenu() {
+            var audioMenu = document.getElementById("audioTracks");
+            audioMenu.classList.toggle("show");
         }
 
         function playPause() {
@@ -113,6 +159,8 @@
                 changeChannel(-1);
             } else if (keyCode === 39) {
                 changeChannel(1);
+            } else if (keyCode === 40) { // Flecha abajo
+                toggleAudioMenu();
             } else {
                 var pressedKey = parseInt(event.key);
                 if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
