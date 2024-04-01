@@ -31,14 +31,14 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Ajustar el valor del índice
+                option.value = index;
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
         }
 
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex - 1]; // Ajustar el índice
+            var selectedValue = canales[currentChannelIndex];
             var config = {
                 playlist: [{
                     sources: [{
@@ -61,7 +61,7 @@
             }
 
             playerInstance = jwplayer("playerContainer").setup(config);
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex - 1; // Ajustar el índice
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
 
         function playPause() {
@@ -84,7 +84,7 @@
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
-                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length + 1; // Ajustar el índice
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
                 cargarStream();
             }
         }
@@ -112,7 +112,7 @@
                 changeChannel(1);
             } else {
                 var pressedKey = parseInt(event.key);
-                if (!isNaN(pressedKey) && pressedKey >= 1 && pressedKey <= canales.length) { // Ajustar el rango de teclas
+                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
                     clearTimeout(timeoutId);
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
