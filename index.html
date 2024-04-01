@@ -42,7 +42,7 @@
             var config = {
                 playlist: [{
                     sources: [{
-                        file: selectedValue.url,
+                        file: obtenerArchivoConLang1(selectedValue),
                         type: "mpd"
                     }]
                 }],
@@ -62,6 +62,16 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+        }
+
+        function obtenerArchivoConLang1(canal) {
+            for (var i = 0; i < canal.archivos.length; i++) {
+                if (canal.archivos[i].lang === 1) {
+                    return canal.archivos[i].url;
+                }
+            }
+            // Si no se encuentra ningún archivo con lang=1, simplemente se devuelve el primer archivo
+            return canal.archivos[0].url;
         }
 
         function playPause() {
