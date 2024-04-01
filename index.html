@@ -90,21 +90,20 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-            
-            playerInstance.on('ready', function() {
-                loadAudioTracks();
-            });
+
+            // Retrasar la carga de pistas de audio para asegurarse de que el reproductor esté completamente configurado
+            setTimeout(loadAudioTracks, 500);
         }
 
         function loadAudioTracks() {
-            var audioTracks = playerInstance.getAudioTracks();
+            var qualityLevels = playerInstance.getCurrentQualityLevels();
             var audioTracksMenu = document.getElementById("audioTracks");
             audioTracksMenu.innerHTML = "";
-            audioTracks.forEach(function(track, index) {
+            qualityLevels.forEach(function(level, index) {
                 var trackOption = document.createElement("a");
-                trackOption.textContent = track.name;
+                trackOption.textContent = "Audio Track " + (index + 1);
                 trackOption.onclick = function() {
-                    playerInstance.setCurrentAudioTrack(index);
+                    playerInstance.setCurrentQualityLevel(index);
                     toggleAudioMenu();
                 };
                 audioTracksMenu.appendChild(trackOption);
@@ -156,7 +155,7 @@
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
             if (keyCode === 13) { // Si la tecla presionada es Enter
-                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
+                document.getElementById("channelSelector").style.display= "block"; // Mostrar el cuadro combinado
                 document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
             } else if (keyCode === 37) {
                 changeChannel(-1);
