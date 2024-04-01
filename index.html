@@ -9,8 +9,6 @@
     <div id="controls">
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
-        <select id="audioTrackSelector" style="display:none;" onchange="changeAudioTrack()">
-        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -33,14 +31,14 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Ajustar el valor del índice
+                option.value = index;
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
         }
 
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex - 1]; // Ajustar el índice
+            var selectedValue = canales[currentChannelIndex];
             var config = {
                 playlist: [{
                     sources: [{
@@ -63,8 +61,7 @@
             }
 
             playerInstance = jwplayer("playerContainer").setup(config);
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex - 1; // Ajustar el índice
-            cargarPistasAudio(); // Cargar las pistas de audio cuando se establece el stream
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
 
         function playPause() {
@@ -87,7 +84,7 @@
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
-                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length + 1; // Ajustar el índice
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
                 cargarStream();
             }
         }
@@ -100,45 +97,22 @@
             ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
         }
 
-        function cargarPistasAudio() {
-            var audioTracks = playerInstance.getAudioTracks();
-            var selectBox = document.getElementById("audioTrackSelector");
-            selectBox.innerHTML = ""; // Limpiar las opciones anteriores
-            audioTracks.forEach(function(track, index) {
-                var option = document.createElement("option");
-                option.text = track.name;
-                option.value = index;
-                selectBox.add(option);
-            });
-        }
-
-        function changeAudioTrack() {
-            var selectBox = document.getElementById("audioTrackSelector");
-            var selectedTrackIndex = parseInt(selectBox.value);
-            playerInstance.setCurrentAudioTrack(selectedTrackIndex);
-            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar una pista de audio
-        }
-
         function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado de canales
-            document.getElementById("audioTrackSelector").style.display = "none"; // Ocultar el cuadro combinado de pistas de audio
+            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
         }
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
             if (keyCode === 13) { // Si la tecla presionada es Enter
-                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado de canales
-                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado de canales
-            } else if (keyCode === 40) { // Si la tecla presionada es Flecha Abajo
-                document.getElementById("audioTrackSelector").style.display = "block"; // Mostrar el cuadro combinado de pistas de audio
-                document.getElementById("audioTrackSelector").focus(); // Enfocar el cuadro combinado de pistas de audio
+                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
+                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
             } else if (keyCode === 37) {
                 changeChannel(-1);
             } else if (keyCode === 39) {
                 changeChannel(1);
             } else {
                 var pressedKey = parseInt(event.key);
-                if (!isNaN(pressedKey) && pressedKey >= 1 && pressedKey <= canales.length) { // Ajustar el rango de teclas para seleccionar un canal manualmente
+                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
                     clearTimeout(timeoutId);
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
@@ -151,6 +125,25 @@
                 }
             }
         });
+        
+        var getLang = getParameterByName('lang');
+        if (getLang == "") {
+            lang = 1;
+        }
+        jwplayer().on('play', function(e) {
+            jwplayer().setCurrentAudioTrack(lang);
+        });
+        
+        // Function to get URL parameter value by name
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
     </script>
 </body>
 </html>
