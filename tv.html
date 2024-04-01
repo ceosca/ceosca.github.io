@@ -17,7 +17,7 @@
         var channelNumberBuffer = "";
         var timeoutId = null;
 
-        fetch('https://ceosca.github.io/tv/tv.json')
+        fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
             .then(data => {
                 canales = data;
