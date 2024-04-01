@@ -42,7 +42,7 @@
             var config = {
                 playlist: [{
                     sources: [{
-                        file: obtenerArchivoConLang1(selectedValue),
+                        file: selectedValue.url,
                         type: "mpd"
                     }]
                 }],
@@ -62,15 +62,9 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-        }
 
-        function obtenerArchivoConLang1(canal) {
-            for (var i = 0; i < canal.archivos.length; i++) {
-                if (canal.archivos[i].url.endsWith(".mpd&lang=1")) {
-                    return canal.archivos[i].url;
-                }
-            }
-            return canal.archivos[0].url;
+            // Establecer el idioma al español (lang=1)
+            playerInstance.setCurrentAudioTrack(1);
         }
 
         function playPause() {
@@ -103,18 +97,18 @@
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
             cargarStream();
-            ocultarSelector();
+            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
         }
 
         function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none";
+            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
         }
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
-            if (keyCode === 13) {
-                document.getElementById("channelSelector").style.display = "block";
-                document.getElementById("channelSelector").focus();
+            if (keyCode === 13) { // Si la tecla presionada es Enter
+                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
+                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
             } else if (keyCode === 37) {
                 changeChannel(-1);
             } else if (keyCode === 39) {
