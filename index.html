@@ -1,69 +1,116 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Video con Shaka Player</title>
-    <!-- Incluye la biblioteca Shaka Player -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.3/shaka-player.compiled.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.1/shaka-player.compiled.js"></script>
 </head>
 <body>
-    <!-- Contenedor del reproductor de video -->
-    <div id="playerContainer" style="width: 640px; height: 360px;"></div>
-
+    <div id="playerContainer"></div>
+    <div id="controls">
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
+        </select>
+    </div>
     <script>
-        // Función para inicializar y cargar el stream de video
-        function cargarStream() {
-            // URL del stream con cifrado "oct"
-            const url = 'https://edge-mix02-mun.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd';
+        var player = null;
+        var channels = [];
+        var currentChannelIndex = null;
+        var channelNumberBuffer = "";
+        var timeoutId = null;
 
-            // Obtener las claves del enlace proporcionado
-            fetch('https://listasm3u.live/arkey/Telemundo_HD.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Extraer las claves de cifrado del JSON
-                    const keyId = data.keys[0].kid;
-                    const key = data.keys[0].k;
+        fetch('https://ceosca.github.io/canales.json')
+            .then(response => response.json())
+            .then(data => {
+                channels = data;
+                loadOptions();
+                loadStream();
+            })
+            .catch(error => console.error('Error loading JSON:', error));
 
-                    // Configuración del reproductor Shaka Player
-                    const player = new shaka.Player(document.getElementById('playerContainer'));
-                    const drmConfiguration = {
-                        servers: {
-                            'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy'
-                        },
-                        advanced: {
-                            'com.widevine.alpha': {
-                                audioRobustness: 'AABSLegacy',
-                                videoRobustness: 'AABSLegacy',
-                                distinctiveIdentifierRequired: false,
-                                initDataTransformFunc: (initData) => {
-                                    // Retornar el initData sin modificar
-                                    return initData;
-                                },
-                                keyId: keyId,
-                                key: key
-                            }
+        function loadOptions() {
+            var selectBox = document.getElementById("channelSelector");
+            channels.forEach(function(channel, index) {
+                var option = document.createElement("option");
+                option.text = channel.nombre;
+                option.value = index;
+                selectBox.add(option);
+            });
+            selectBox.selectedIndex = 0;
+        }
+
+        function loadStream() {
+            var selectedChannel = channels[currentChannelIndex];
+            var manifestUri = selectedChannel.url;
+
+            var config = {};
+
+            if (selectedChannel.tipo_cifrado === "oct") {
+                config.drm = {
+                    servers: {
+                        'com.widevine.alpha': selectedChannel.url
+                    },
+                    clearKeys: {
+                        [selectedChannel.keyId]: selectedChannel.key
+                    }
+                };
+            }
+
+            player = new shaka.Player(document.getElementById('playerContainer'));
+            player.configure(config);
+            player.load(manifestUri).then(function() {
+                console.log('Stream loaded successfully');
+            }).catch(onError);
+        }
+
+        function changeChannel(offset) {
+            if (channelNumberBuffer !== "") {
+                currentChannelIndex = parseInt(channelNumberBuffer);
+                channelNumberBuffer = "";
+                loadStream();
+            } else {
+                currentChannelIndex = (currentChannelIndex + offset + channels.length) % channels.length;
+                loadStream();
+            }
+        }
+
+        function changeChannelManually() {
+            var selectBox = document.getElementById("channelSelector");
+            currentChannelIndex = parseInt(selectBox.value);
+            channelNumberBuffer = "";
+            loadStream();
+            hideSelector();
+        }
+
+        function hideSelector() {
+            document.getElementById("channelSelector").style.display = "none";
+        }
+
+        document.addEventListener("keydown", function(event) {
+            var keyCode = event.keyCode;
+            if (keyCode === 13) {
+                document.getElementById("channelSelector").style.display = "block";
+                document.getElementById("channelSelector").focus();
+            } else if (keyCode === 37) {
+                changeChannel(-1);
+            } else if (keyCode === 39) {
+                changeChannel(1);
+            } else {
+                var pressedKey = parseInt(event.key);
+                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
+                    clearTimeout(timeoutId);
+                    channelNumberBuffer += event.key;
+                    timeoutId = setTimeout(function() {
+                        if (channelNumberBuffer !== "") {
+                            currentChannelIndex = parseInt(channelNumberBuffer);
+                            channelNumberBuffer = "";
+                            loadStream();
                         }
-                    };
-                    player.configure({
-                        drm: drmConfiguration
-                    });
+                    }, 1000);
+                }
+            }
+        });
 
-                    // Inicia la reproducción del video
-                    player.load(url).then(function() {
-                        console.log('El video se ha cargado correctamente.');
-                    }).catch(onError);
-                })
-                .catch(onError);
-        }
-
-        // Maneja errores durante la carga o reproducción del video
         function onError(event) {
-            console.error('Error de reproducción:', event.detail);
+            console.error('Error code', event.detail.code, 'object', event.detail.data);
         }
-
-        // Carga el stream de video al cargar la página
-        window.onload = cargarStream;
     </script>
 </body>
 </html>
