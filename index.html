@@ -1,55 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de MPD con cifrado oct</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.0.3/shaka-player.compiled.js"></script>
+    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
+    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
 <body>
-    <video id="videoPlayer" controls autoplay></video>
+    <div id="playerContainer"></div>
+    <div id="controls">
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
+        </select>
+    </div>
+    <script type='text/javascript'>
+        var playerInstance = null;
+        var canales = [];
+        var currentChannelIndex = null;
+        var channelNumberBuffer = "";
+        var timeoutId = null;
 
-    <script>
-        var mpdUrl = "https://edge-mix02-mun.cvattv.com.ar/live/c7eds/A3_Series/SA_Live_dash_enc_2A/A3_Series.mpd";
-        var jsonUrl = "https://listasm3u.live/arkey/A3_Series.json";
-
-        fetch(jsonUrl)
+        fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
             .then(data => {
-                var key = data.keys[0].k;
-                var keyId = data.keys[0].kid;
-
-                var videoElement = document.getElementById('videoPlayer');
-                var player = new shaka.Player(videoElement);
-
-                player.configure({
-                    drm: {
-                        servers: {
-                            'org.w3.clearkey': null
-                        }
-                    }
-                });
-
-                player.load(mpdUrl).then(function() {
-                    console.log('El contenido se cargó correctamente!');
-                }).catch(function(error) {
-                    console.error('Error al cargar el contenido:', error);
-                });
-
-                // Configurar la clave de descifrado
-                var config = {
-                    'drm': {
-                        'servers': {
-                            'org.w3.clearkey': 'https://proxy.dashjs.org/widevine-proxy?url='
-                        },
-                        'clearKeys': {
-                            '0x' + keyId: key
-                        }
-                    }
-                };
-                player.configure(config);
+                canales = data;
+                cargarOpciones();
+                cargarStream();
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
+
+        function cargarOpciones() {
+            var selectBox = document.getElementById("channelSelector");
+            canales.forEach(function(canal, index) {
+                var option = document.createElement("option");
+                option.text = canal.nombre;
+                option.value = index;
+                selectBox.add(option);
+            });
+            selectBox.selectedIndex = 0;
+        }
+
+        function cargarStream() {
+            var selectedValue = canales[currentChannelIndex];
+            var config = {
+                playlist: [{
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }]
+                }],
+                autostart: true,
+                cast: {},
+                controls: false,
+            };
+
+            if (selectedValue.keyId && selectedValue.key) {
+                config.drm = {
+                    clearkey: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
+                    }
+                };
+            }
+
+            playerInstance = jwplayer("playerContainer").setup(config);
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+        }
+
+
+        function changeChannel(offset) {
+            if (channelNumberBuffer !== "") {
+                currentChannelIndex = parseInt(channelNumberBuffer);
+                channelNumberBuffer = "";
+                cargarStream();
+            } else {
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
+                cargarStream();
+            }
+        }
+
+        function changeChannelManually() {
+            var selectBox = document.getElementById("channelSelector");
+            currentChannelIndex = parseInt(selectBox.value);
+            channelNumberBuffer = "";
+            cargarStream();
+            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
+        }
+
+        function ocultarSelector() {
+            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
+        }
+
+        document.addEventListener("keydown", function(event) {
+            var keyCode = event.keyCode;
+            if (keyCode === 13) { // Si la tecla presionada es Enter
+                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
+                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
+            } else if (keyCode === 37) {
+                changeChannel(-1);
+            } else if (keyCode === 39) {
+                changeChannel(1);
+            } else {
+                var pressedKey = parseInt(event.key);
+                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
+                    clearTimeout(timeoutId);
+                    channelNumberBuffer += event.key;
+                    timeoutId = setTimeout(function() {
+                        if (channelNumberBuffer !== "") {
+                            currentChannelIndex = parseInt(channelNumberBuffer);
+                            channelNumberBuffer = "";
+                            cargarStream();
+                        }
+                    }, 1000);
+                }
+            }
+        });
     </script>
 </body>
 </html>
