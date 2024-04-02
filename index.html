@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet">
-    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/3.2.0/dash.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.13.8/videojs-dash.min.js"></script>
+    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
+    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
 <body>
-    <video id="playerContainer" class="video-js vjs-default-skin" controls></video>
+    <div id="playerContainer"></div>
     <div id="controls">
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
     </div>
-    <script>
-        var player = null;
-        var channels = [];
+    <script type='text/javascript'>
+        var playerInstance = null;
+        var canales = [];
         var currentChannelIndex = null;
         var channelNumberBuffer = "";
         var timeoutId = null;
@@ -22,69 +20,66 @@
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
             .then(data => {
-                channels = data;
-                loadOptions();
-                loadStream();
+                canales = data;
+                cargarOpciones();
+                cargarStream();
             })
-            .catch(error => console.error('Error loading JSON:', error));
+            .catch(error => console.error('Error al cargar el JSON:', error));
 
-        function loadOptions() {
+        function cargarOpciones() {
             var selectBox = document.getElementById("channelSelector");
-            channels.forEach(function(channel, index) {
+            canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
-                option.text = channel.nombre;
+                option.text = canal.nombre;
                 option.value = index;
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
         }
 
-        function loadStream() {
-            if (!channels || channels.length === 0) {
-                console.error('No channels available.');
-                return;
+        function cargarStream() {
+            var selectedValue = canales[currentChannelIndex];
+            var config = {
+                playlist: [{
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }]
+                }],
+                autostart: true,
+                cast: {},
+                controls: false,
+            };
+
+            if (selectedValue.tipo_cifrado === "oct") {
+                config.drm = {
+                    oct: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
+                    }
+                };
+            } else if (selectedValue.tipo_cifrado === "clearkey") {
+                config.drm = {
+                    clearkey: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
+                    }
+                };
             }
 
-            if (currentChannelIndex === null || currentChannelIndex < 0 || currentChannelIndex >= channels.length) {
-                console.error('Invalid channel index.');
-                return;
-            }
-
-            var selectedChannel = channels[currentChannelIndex];
-
-            if (!selectedChannel || !selectedChannel.url) {
-                console.error('Invalid selected channel.');
-                return;
-            }
-
-            var manifestUri = selectedChannel.url;
-
-            if (!videojs.getPlayers().playerContainer) {
-                player = videojs('playerContainer', {
-                    controls: true,
-                    autoplay: true,
-                    preload: 'auto'
-                });
-            } else {
-                player = videojs.getPlayers().playerContainer;
-            }
-
-            player.src({
-                src: manifestUri,
-                type: 'application/dash+xml'
-            });
-
-            player.play();
+            playerInstance = jwplayer("playerContainer").setup(config);
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
+
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
                 currentChannelIndex = parseInt(channelNumberBuffer);
                 channelNumberBuffer = "";
-                loadStream();
+                cargarStream();
             } else {
-                currentChannelIndex = (currentChannelIndex + offset + channels.length) % channels.length;
-                loadStream();
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
+                cargarStream();
             }
         }
 
@@ -92,19 +87,19 @@
             var selectBox = document.getElementById("channelSelector");
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
-            loadStream();
-            hideSelector();
+            cargarStream();
+            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
         }
 
-        function hideSelector() {
-            document.getElementById("channelSelector").style.display = "none";
+        function ocultarSelector() {
+            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
         }
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
-            if (keyCode === 13) {
-                document.getElementById("channelSelector").style.display = "block";
-                document.getElementById("channelSelector").focus();
+            if (keyCode === 13) { // Si la tecla presionada es Enter
+                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
+                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
             } else if (keyCode === 37) {
                 changeChannel(-1);
             } else if (keyCode === 39) {
@@ -118,7 +113,7 @@
                         if (channelNumberBuffer !== "") {
                             currentChannelIndex = parseInt(channelNumberBuffer);
                             channelNumberBuffer = "";
-                            loadStream();
+                            cargarStream();
                         }
                     }, 1000);
                 }
