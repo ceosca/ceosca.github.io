@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.1/shaka-player.compiled.js"></script>
+    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/3.2.0/dash.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.13.8/videojs-dash.min.js"></script>
 </head>
 <body>
-    <div id="playerContainer"></div>
+    <video id="playerContainer" class="video-js vjs-default-skin" controls></video>
     <div id="controls">
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
@@ -56,24 +59,22 @@
 
             var manifestUri = selectedChannel.url;
 
-            var config = {};
-
-            if (selectedChannel.tipo_cifrado === "oct") {
-                config.drm = {
-                    servers: {
-                        'com.widevine.alpha': selectedChannel.url
-                    },
-                    clearKeys: {
-                        [selectedChannel.keyId]: selectedChannel.key
-                    }
-                };
+            if (!videojs.getPlayers().playerContainer) {
+                player = videojs('playerContainer', {
+                    controls: true,
+                    autoplay: true,
+                    preload: 'auto'
+                });
+            } else {
+                player = videojs.getPlayers().playerContainer;
             }
 
-            player = new shaka.Player(document.getElementById('playerContainer'));
-            player.configure(config);
-            player.load(manifestUri).then(function() {
-                console.log('Stream loaded successfully');
-            }).catch(onError);
+            player.src({
+                src: manifestUri,
+                type: 'application/dash+xml'
+            });
+
+            player.play();
         }
 
         function changeChannel(offset) {
@@ -123,10 +124,6 @@
                 }
             }
         });
-
-        function onError(event) {
-            console.error('Error code', event.detail.code, 'object', event.detail.data);
-        }
     </script>
 </body>
 </html>
