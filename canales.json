@@ -1,10 +1,10 @@
 [
     {
-        "nombre": "a24",
-        "categoria": "Nacionales",
-        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/America24/SA_Live_dash_enc/America24.mpd",
-        "keyId": "3b1b027dd011af20fd9956c16dc084fb",
-        "key": "45f75aacf06593c9b693fe427c67e5b8"
+        "nombre": "telemundo-internacional",
+        "categoria": "Variedades",
+        "url": "https://edge-mix02-mun.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd",
+        "keyId": "U9dS5GSdrdgI2ROYX4budw",
+        "key": "0f0k2xth1jTKv8RFOM6bDg"
     },
     {
         "nombre": "C5N",
