@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de MPD con cifrado oct</title>
-    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
-    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
 </head>
 <body>
-    <div id="playerContainer"></div>
+    <video id="videoPlayer" controls autoplay></video>
 
-    <script type='text/javascript'>
-        var playerInstance = null;
+    <script>
         var mpdUrl = "https://edge-mix02-mun.cvattv.com.ar/live/c7eds/A3_Series/SA_Live_dash_enc_2A/A3_Series.mpd";
         var jsonUrl = "https://listasm3u.live/arkey/A3_Series.json";
 
@@ -21,25 +19,23 @@
                 var key = data.keys[0].k;
                 var keyId = data.keys[0].kid;
 
-                var config = {
-                    playlist: [{
-                        sources: [{
-                            file: mpdUrl,
-                            type: "mpd"
+                var player = dashjs.MediaPlayer().create();
+                player.initialize(document.querySelector("#videoPlayer"), mpdUrl, true);
+                player.setProtectionData({
+                    "com.widevine.alpha": {
+                        "serverURL": "https://widevine-proxy.appspot.com/proxy"
+                    },
+                    "com.microsoft.playready": {
+                        "serverURL": "https://playready.directtaps.net/pr/svc/rightsmanager.asmx?PlayRight=1&UseSimpleNonPersistentLicense=1"
+                    },
+                    "org.w3.clearkey": {
+                        "serverURL": null,
+                        "clearkeys": [{
+                            "kid": keyId,
+                            "k": key
                         }]
-                    }],
-                    autostart: true,
-                    cast: {},
-                    controls: true,
-                    drm: {
-                        oct: {
-                            keyId: keyId,
-                            key: key
-                        }
                     }
-                };
-
-                playerInstance = jwplayer("playerContainer").setup(config);
+                });
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
     </script>
