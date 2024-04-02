@@ -10,7 +10,7 @@
     {
         "nombre": "Telemundo",
         "categoria": "Entretenimiento",
-        "url": "https://edge-mix02-mun.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd",
         "tipo_cifrado": "oct",
         "keyId": "U9dS5GSdrdgI2ROYX4budw",
         "key": "0f0k2xth1jTKv8RFOM6bDg"
