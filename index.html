@@ -37,7 +37,23 @@
         }
 
         function loadStream() {
+            if (!channels || channels.length === 0) {
+                console.error('No channels available.');
+                return;
+            }
+
+            if (currentChannelIndex === null || currentChannelIndex < 0 || currentChannelIndex >= channels.length) {
+                console.error('Invalid channel index.');
+                return;
+            }
+
             var selectedChannel = channels[currentChannelIndex];
+
+            if (!selectedChannel || !selectedChannel.url) {
+                console.error('Invalid selected channel.');
+                return;
+            }
+
             var manifestUri = selectedChannel.url;
 
             var config = {};
