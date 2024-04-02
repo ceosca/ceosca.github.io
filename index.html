@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de MPD con cifrado oct</title>
-    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.0.3/shaka-player.compiled.js"></script>
 </head>
 <body>
     <video id="videoPlayer" controls autoplay></video>
@@ -19,23 +19,35 @@
                 var key = data.keys[0].k;
                 var keyId = data.keys[0].kid;
 
-                var player = dashjs.MediaPlayer().create();
-                player.initialize(document.querySelector("#videoPlayer"), mpdUrl, true);
-                player.setProtectionData({
-                    "com.widevine.alpha": {
-                        "serverURL": "https://widevine-proxy.appspot.com/proxy"
-                    },
-                    "com.microsoft.playready": {
-                        "serverURL": "https://playready.directtaps.net/pr/svc/rightsmanager.asmx?PlayRight=1&UseSimpleNonPersistentLicense=1"
-                    },
-                    "org.w3.clearkey": {
-                        "serverURL": null,
-                        "clearkeys": [{
-                            "kid": keyId,
-                            "k": key
-                        }]
+                var videoElement = document.getElementById('videoPlayer');
+                var player = new shaka.Player(videoElement);
+
+                player.configure({
+                    drm: {
+                        servers: {
+                            'org.w3.clearkey': null
+                        }
                     }
                 });
+
+                player.load(mpdUrl).then(function() {
+                    console.log('El contenido se cargó correctamente!');
+                }).catch(function(error) {
+                    console.error('Error al cargar el contenido:', error);
+                });
+
+                // Configurar la clave de descifrado
+                var config = {
+                    'drm': {
+                        'servers': {
+                            'org.w3.clearkey': 'https://proxy.dashjs.org/widevine-proxy?url='
+                        },
+                        'clearKeys': {
+                            '0x' + keyId: key
+                        }
+                    }
+                };
+                player.configure(config);
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
     </script>
