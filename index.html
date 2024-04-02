@@ -14,24 +14,30 @@
     <script>
         // Función para inicializar y cargar el stream de video
         function cargarStream() {
+            // URL del stream con cifrado "oct"
+            const url = 'https://edge-mix02-mun.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd';
+
             // Obtener las claves del enlace proporcionado
             fetch('https://listasm3u.live/arkey/Telemundo_HD.json')
                 .then(response => response.json())
                 .then(data => {
+                    // Extraer las claves de cifrado del JSON
                     const keyId = data.keys[0].kid;
                     const key = data.keys[0].k;
-                    
+
                     // Configuración del reproductor Shaka Player
                     const player = new shaka.Player(document.getElementById('playerContainer'));
                     const drmConfiguration = {
+                        servers: {
+                            'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy'
+                        },
                         advanced: {
                             'com.widevine.alpha': {
-                                serverURL: 'https://widevine-proxy.appspot.com/proxy',
                                 audioRobustness: 'AABSLegacy',
                                 videoRobustness: 'AABSLegacy',
                                 distinctiveIdentifierRequired: false,
                                 initDataTransformFunc: (initData) => {
-                                    // Return the initData unmodified
+                                    // Retornar el initData sin modificar
                                     return initData;
                                 },
                                 keyId: keyId,
@@ -42,9 +48,6 @@
                     player.configure({
                         drm: drmConfiguration
                     });
-
-                    // URL del stream con cifrado "oct"
-                    const url = 'https://edge-mix02-mun.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd';
 
                     // Inicia la reproducción del video
                     player.load(url).then(function() {
