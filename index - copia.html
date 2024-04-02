@@ -51,14 +51,7 @@
                 controls: false,
             };
 
-            if (selectedValue.tipo_cifrado === "oct") {
-                config.drm = {
-                    oct: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
-                    }
-                };
-            } else if (selectedValue.tipo_cifrado === "clearkey") {
+            if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
                         keyId: selectedValue.keyId,
