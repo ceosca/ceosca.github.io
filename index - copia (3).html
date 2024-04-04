@@ -126,10 +126,8 @@
             } else if (keyCode === 39) {
                 changeChannel(1);
             } else if (keyCode === 40) {
-                cancelUpArrowTimer(); // Cancelar temporizador de flecha arriba si se presiona la flecha abajo
                 handleDownArrow();
             } else if (keyCode === 38) {
-                cancelDownArrowTimer(); // Cancelar temporizador de flecha abajo si se presiona la flecha arriba
                 handleUpArrow();
             }
         });
