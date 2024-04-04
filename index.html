@@ -14,6 +14,7 @@
         var playerInstance = null;
         var canales = [];
         var currentChannelIndex = null;
+        var defaultAudioTrackIndex = 0;
         var channelNumberBuffer = "";
         var timeoutId = null;
         var downArrowTimer = null;
@@ -104,7 +105,7 @@
 
         function handleUpArrow() {
             upArrowTimer = setTimeout(function() {
-                changeAudioTrack(-1);
+                playerInstance.setCurrentAudioTrack(defaultAudioTrackIndex);
             }, 1000);
         }
 
@@ -126,10 +127,10 @@
             } else if (keyCode === 39) {
                 changeChannel(1);
             } else if (keyCode === 40) {
-                cancelUpArrowTimer(); // Cancelar temporizador de flecha arriba si se presiona la flecha abajo
+                cancelUpArrowTimer();
                 handleDownArrow();
             } else if (keyCode === 38) {
-                cancelDownArrowTimer(); // Cancelar temporizador de flecha abajo si se presiona la flecha arriba
+                cancelDownArrowTimer();
                 handleUpArrow();
             }
         });
