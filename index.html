@@ -7,10 +7,8 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
-        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
-        </select>
-        <select id="languageSelector" style="display:none;" onchange="changeLanguage()">
-        </select>
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()"></select>
+        <select id="languageSelector" style="display:none;" onchange="changeLanguage()"></select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -80,6 +78,8 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+
+            jwplayer().setCurrentAudioTrack(currentLanguageIndex);
         }
 
         function changeChannel(offset) {
@@ -104,7 +104,6 @@
         function changeLanguage() {
             var selectBox = document.getElementById("languageSelector");
             currentLanguageIndex = parseInt(selectBox.value);
-            languageCodeBuffer = "";
             cargarStream();
             ocultarSelector();
         }
