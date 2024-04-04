@@ -1,12 +1,5 @@
 [
     {
-        "nombre": "telemundo-internacional",
-        "categoria": "Variedades",
-        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd",
-        "keyId": "53d752e4649dadd808d913985f86ee77",
-        "key": "d1fd24db1b61d634cabfc44538ce9b0e"
-    },
-    {
         "nombre": "C5N",
         "categoria": "Noticias",
         "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/C5N/SA_Live_dash_enc/C5N.mpd",
@@ -126,11 +119,11 @@
         "key": ""
     },
     {
-        "nombre": "Telemundo Internacional Argentina",
-        "categoria": "Internacionales",
-        "url": "https://bvsat02.cdn.rcs.net.ar/mnp/telemundo/output.mpd",
-        "keyId": "",
-        "key": ""
+        "nombre": "telemundo-internacional",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd",
+        "keyId": "53d752e4649dadd808d913985f86ee77",
+        "key": "d1fd24db1b61d634cabfc44538ce9b0e"
     },
     {
         "nombre": "ESPN Premium",
