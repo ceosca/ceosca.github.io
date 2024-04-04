@@ -3,6 +3,11 @@
 <head>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <style>
+        body {
+            height: 2000px; /* Agrega suficiente espacio para hacer scroll */
+        }
+    </style>
 </head>
 <body>
     <div id="playerContainer"></div>
@@ -18,6 +23,7 @@
         var timeoutId = null;
         var downArrowTimer = null;
         var upArrowTimer = null;
+        var selectorVisible = false;
 
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
@@ -94,63 +100,43 @@
 
         function ocultarSelector() {
             document.getElementById("channelSelector").style.display = "none"; 
+            selectorVisible = false;
         }
 
-        function handleDownArrow() {
-            downArrowTimer = setTimeout(function() {
-                changeAudioTrack(1);
-            }, 1000);
+        function mostrarSelector() {
+            document.getElementById("channelSelector").style.display = "block"; 
+            selectorVisible = true;
         }
 
-        function handleUpArrow() {
-            upArrowTimer = setTimeout(function() {
-                changeAudioTrack(-1);
-            }, 1000);
+        function handleScroll(event) {
+            var scrollDirection = event.deltaY > 0 ? "down" : "up";
+            if (scrollDirection === "down") {
+                handleLeftArrow(); // Pulsar flecha izquierda al hacer scroll hacia abajo
+            } else {
+                handleRightArrow(); // Pulsar flecha derecha al hacer scroll hacia arriba
+            }
         }
 
-        function cancelDownArrowTimer() {
-            clearTimeout(downArrowTimer);
+        function handleRightArrow() {
+            if (!selectorVisible) {
+                mostrarSelector(); // Abrir el selector al hacer scroll hacia arriba
+            }
         }
 
-        function cancelUpArrowTimer() {
-            clearTimeout(upArrowTimer);
+        function handleLeftArrow() {
+            ocultarSelector(); // Cerrar el selector al hacer scroll hacia abajo
         }
+
+        document.addEventListener("wheel", handleScroll);
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
             if (keyCode === 13) { 
-                document.getElementById("channelSelector").style.display = "block"; 
-                document.getElementById("channelSelector").focus(); 
-            } else if (keyCode === 37) {
-                changeChannel(-1);
-            } else if (keyCode === 39) {
-                changeChannel(1);
-            } else if (keyCode === 40) {
-                handleDownArrow();
-            } else if (keyCode === 38) {
-                handleUpArrow();
-            } else {
-                var pressedKey = parseInt(event.key);
-                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
-                    clearTimeout(timeoutId);
-                    channelNumberBuffer += event.key;
-                    timeoutId = setTimeout(function() {
-                        if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
-                            channelNumberBuffer = "";
-                            cargarStream();
-                        }
-                    }, 1000);
+                if (selectorVisible) {
+                    ocultarSelector();
+                } else {
+                    mostrarSelector();
                 }
-            }
-        });
-
-        document.addEventListener("keyup", function(event) {
-            var keyCode = event.keyCode;
-            if (keyCode === 40) {
-                cancelDownArrowTimer();
-            } else if (keyCode === 38) {
-                cancelUpArrowTimer();
             }
         });
     </script>
