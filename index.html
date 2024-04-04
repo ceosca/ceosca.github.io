@@ -9,8 +9,6 @@
     <div id="controls">
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
-        <select id="audioTrackSelector" style="display:none;" onchange="changeAudioTrack()">
-        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -69,24 +67,9 @@
         }
 
         function openAudioTrackMenu() {
-            playerInstance.setCurrentAudioTrack(-1);
+            // Abre el menú de pistas de audio
+            playerInstance.setCurrentCaptions(-1);
         }
-
-        function updateAudioTracksMenu() {
-            var audioTracks = playerInstance.getAudioTracks();
-
-            var selectBox = document.getElementById("audioTrackSelector");
-            selectBox.innerHTML = "";
-
-            for (var i = 0; i < audioTracks.length; i++) {
-                var option = document.createElement("option");
-                option.text = audioTracks[i].name;
-                option.value = audioTracks[i].id;
-                selectBox.add(option);
-            }
-        }
-
-        playerInstance.on('ready', updateAudioTracksMenu);
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
@@ -104,27 +87,18 @@
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
             cargarStream();
-            ocultarSelector();
+            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
         }
 
         function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none";
-        }
-
-        function changeAudioTrack() {
-            var selectBox = document.getElementById("audioTrackSelector");
-            var selectedAudioTrackId = selectBox.value;
-            playerInstance.setCurrentAudioTrack(selectedAudioTrackId);
+            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
         }
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
-            if (keyCode === 13) {
-                var channelSelector = document.getElementById("channelSelector");
-                if (channelSelector.style.display === "none") {
-                    channelSelector.style.display = "block";
-                    channelSelector.focus();
-                }
+            if (keyCode === 13) { // Si la tecla presionada es Enter
+                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
+                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
             } else if (keyCode === 37) {
                 changeChannel(-1);
                 lastArrowKeyCode = keyCode;
@@ -136,10 +110,10 @@
                     downArrowClicks++;
                     if (downArrowClicks === 2) {
                         openAudioTrackMenu();
-                        downArrowClicks = 0;
+                        downArrowClicks = 0; // Resetear contador de clics
                     }
                 } else {
-                    downArrowClicks = 1;
+                    downArrowClicks = 1; // Iniciar contador de clics
                 }
                 lastArrowKeyCode = keyCode;
             } else {
