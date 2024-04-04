@@ -66,9 +66,11 @@
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
 
-        function openAudioTrackMenu() {
-            // Abre el menú de pistas de audio
-            playerInstance.setCurrentAudioTrack(-1);
+        function changeAudioTrack(offset) {
+            var currentAudioTrack = playerInstance.getCurrentAudioTrack();
+            var audioTracks = playerInstance.getAudioTracks();
+            var newTrackIndex = (currentAudioTrack + offset + audioTracks.length) % audioTracks.length;
+            playerInstance.setCurrentAudioTrack(newTrackIndex);
         }
 
         function changeChannel(offset) {
@@ -109,7 +111,7 @@
                 if (lastArrowKeyCode === 40) {
                     downArrowClicks++;
                     if (downArrowClicks === 2) {
-                        openAudioTrackMenu();
+                        changeAudioTrack(1);
                         downArrowClicks = 0; // Resetear contador de clics
                     }
                 } else {
