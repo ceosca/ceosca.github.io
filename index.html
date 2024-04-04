@@ -69,19 +69,15 @@
         }
 
         function openAudioTrackMenu() {
-            // Mostrar el menú de selección de pistas de audio
             playerInstance.setCurrentAudioTrack(-1);
         }
 
         function updateAudioTracksMenu() {
-            // Obtener las pistas de audio disponibles
             var audioTracks = playerInstance.getAudioTracks();
 
-            // Limpiar el menú desplegable de pistas de audio
             var selectBox = document.getElementById("audioTrackSelector");
             selectBox.innerHTML = "";
 
-            // Agregar las opciones al menú desplegable
             for (var i = 0; i < audioTracks.length; i++) {
                 var option = document.createElement("option");
                 option.text = audioTracks[i].name;
@@ -90,7 +86,6 @@
             }
         }
 
-        // Llamar a la función para actualizar el menú de pistas de audio al cargar el reproductor
         playerInstance.on('ready', updateAudioTracksMenu);
 
         function changeChannel(offset) {
@@ -109,11 +104,11 @@
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
             cargarStream();
-            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
+            ocultarSelector();
         }
 
         function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
+            document.getElementById("channelSelector").style.display = "none";
         }
 
         function changeAudioTrack() {
@@ -124,9 +119,12 @@
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
-            if (keyCode === 13) { // Si la tecla presionada es Enter
-                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
-                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
+            if (keyCode === 13) {
+                var channelSelector = document.getElementById("channelSelector");
+                if (channelSelector.style.display === "none") {
+                    channelSelector.style.display = "block";
+                    channelSelector.focus();
+                }
             } else if (keyCode === 37) {
                 changeChannel(-1);
                 lastArrowKeyCode = keyCode;
@@ -138,10 +136,10 @@
                     downArrowClicks++;
                     if (downArrowClicks === 2) {
                         openAudioTrackMenu();
-                        downArrowClicks = 0; // Resetear contador de clics
+                        downArrowClicks = 0;
                     }
                 } else {
-                    downArrowClicks = 1; // Iniciar contador de clics
+                    downArrowClicks = 1;
                 }
                 lastArrowKeyCode = keyCode;
             } else {
