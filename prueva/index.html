@@ -22,13 +22,16 @@
         function parseM3U(m3uContent) {
             var lines = m3uContent.split('\n');
             var channels = [];
+            var currentChannel = null;
 
             for (var i = 0; i < lines.length; i++) {
                 var line = lines[i].trim();
                 if (line.startsWith('#EXTINF:')) {
-                    var channelName = line.split(',')[1];
-                    var channelUrl = lines[i + 1];
-                    channels.push({ nombre: channelName, url: channelUrl });
+                    currentChannel = { nombre: line.split(',')[1] };
+                } else if (line && currentChannel) {
+                    currentChannel.url = line;
+                    channels.push(currentChannel);
+                    currentChannel = null;
                 }
             }
 
