@@ -15,8 +15,9 @@
         var canales = [];
         var currentChannelIndex = null;
         var channelNumberBuffer = "";
-        var downArrowInterval = null;
-        var audioIndex = 0;
+        var timeoutId = null;
+        var downArrowTimer = null;
+        var upArrowTimer = null;
 
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
@@ -49,7 +50,7 @@
                 }],
                 autostart: true,
                 cast: {},
-                controls: false,
+                controls: true,
             };
 
             if (selectedValue.keyId && selectedValue.key) {
@@ -96,13 +97,23 @@
         }
 
         function handleDownArrow() {
-            downArrowInterval = setInterval(function() {
+            downArrowTimer = setTimeout(function() {
                 changeAudioTrack(1);
             }, 1000);
         }
 
-        function stopChangingAudio() {
-            clearInterval(downArrowInterval);
+        function handleUpArrow() {
+            upArrowTimer = setTimeout(function() {
+                changeAudioTrack(-1);
+            }, 1000);
+        }
+
+        function cancelDownArrowTimer() {
+            clearTimeout(downArrowTimer);
+        }
+
+        function cancelUpArrowTimer() {
+            clearTimeout(upArrowTimer);
         }
 
         document.addEventListener("keydown", function(event) {
@@ -116,13 +127,17 @@
                 changeChannel(1);
             } else if (keyCode === 40) {
                 handleDownArrow();
+            } else if (keyCode === 38) {
+                handleUpArrow();
             }
         });
 
         document.addEventListener("keyup", function(event) {
             var keyCode = event.keyCode;
             if (keyCode === 40) {
-                stopChangingAudio();
+                cancelDownArrowTimer();
+            } else if (keyCode === 38) {
+                cancelUpArrowTimer();
             }
         });
     </script>
