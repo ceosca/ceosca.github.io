@@ -9,6 +9,8 @@
     <div id="controls">
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
+        <select id="audioTrackSelector" style="display:none;" onchange="changeAudioTrack()">
+        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -67,9 +69,29 @@
         }
 
         function openAudioTrackMenu() {
-            // Abre el menú de pistas de audio
-            playerInstance.setCurrentCaptions(-1);
+            // Mostrar el menú de selección de pistas de audio
+            playerInstance.setCurrentAudioTrack(-1);
         }
+
+        function updateAudioTracksMenu() {
+            // Obtener las pistas de audio disponibles
+            var audioTracks = playerInstance.getAudioTracks();
+
+            // Limpiar el menú desplegable de pistas de audio
+            var selectBox = document.getElementById("audioTrackSelector");
+            selectBox.innerHTML = "";
+
+            // Agregar las opciones al menú desplegable
+            for (var i = 0; i < audioTracks.length; i++) {
+                var option = document.createElement("option");
+                option.text = audioTracks[i].name;
+                option.value = audioTracks[i].id;
+                selectBox.add(option);
+            }
+        }
+
+        // Llamar a la función para actualizar el menú de pistas de audio al cargar el reproductor
+        playerInstance.on('ready', updateAudioTracksMenu);
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
@@ -92,6 +114,12 @@
 
         function ocultarSelector() {
             document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
+        }
+
+        function changeAudioTrack() {
+            var selectBox = document.getElementById("audioTrackSelector");
+            var selectedAudioTrackId = selectBox.value;
+            playerInstance.setCurrentAudioTrack(selectedAudioTrackId);
         }
 
         document.addEventListener("keydown", function(event) {
