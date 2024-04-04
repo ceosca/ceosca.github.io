@@ -1,58 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de vídeo para Android TV</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        #playerContainer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        #controls {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            z-index: 9999;
-            color: #fff;
-        }
-
-        #channelSelector {
-            display: none;
-            width: 200px;
-            height: 40px;
-            font-size: 16px;
-            padding: 5px;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-        }
-
-        #channelSelector:focus {
-            outline: none;
-        }
-    </style>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
-        <select id="channelSelector" onchange="changeChannelManually()">
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
     </div>
-
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
@@ -76,7 +33,7 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1;
+                option.value = index + 1; // Sumar 1 al índice
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
@@ -94,12 +51,6 @@
                 autostart: true,
                 cast: {},
                 controls: false,
-                aspectratio: "16:9",
-                fullscreen: {
-                    enabled: true,
-                    displayclick: "fullscreen",
-                    fallback: true
-                }
             };
 
             if (selectedValue.keyId && selectedValue.key) {
@@ -124,7 +75,7 @@
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
@@ -135,7 +86,7 @@
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1;
+            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -185,7 +136,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
                             channelNumberBuffer = "";
                             cargarStream();
                         }
