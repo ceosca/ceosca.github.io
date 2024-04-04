@@ -254,8 +254,8 @@
     {
         "nombre": "A Tres Series",
         "categoria": "",
-        "url": "http://45.228.232.205:16000/play/a03e/index.m3u8",
-        "keyId": "",
-        "key": ""
+        "url": "https://edge-mix02-mun.cvattv.com.ar/live/c7eds/A3_Series/SA_Live_dash_enc_2A/A3_Series.mpd",
+        "keyId": "5e34e08ae5ae440f01a03e505dd24a57",
+        "key": "ed30cc7f5040a75d73f619320249272b"
     }
 ]
