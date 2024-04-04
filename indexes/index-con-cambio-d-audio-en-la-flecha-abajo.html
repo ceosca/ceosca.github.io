@@ -16,8 +16,8 @@
         var currentChannelIndex = null;
         var channelNumberBuffer = "";
         var timeoutId = null;
-        var downArrowTimer = null;
-        var upArrowTimer = null;
+        var downArrowClicks = 0;
+        var lastArrowKeyCode = null;
 
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
@@ -96,26 +96,6 @@
             document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
         }
 
-        function handleDownArrow() {
-            downArrowTimer = setTimeout(function() {
-                changeAudioTrack(1);
-            }, 1000);
-        }
-
-        function handleUpArrow() {
-            upArrowTimer = setTimeout(function() {
-                changeAudioTrack(-1);
-            }, 1000);
-        }
-
-        function cancelDownArrowTimer() {
-            clearTimeout(downArrowTimer);
-        }
-
-        function cancelUpArrowTimer() {
-            clearTimeout(upArrowTimer);
-        }
-
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
             if (keyCode === 13) { // Si la tecla presionada es Enter
@@ -123,21 +103,34 @@
                 document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
             } else if (keyCode === 37) {
                 changeChannel(-1);
+                lastArrowKeyCode = keyCode;
             } else if (keyCode === 39) {
                 changeChannel(1);
+                lastArrowKeyCode = keyCode;
             } else if (keyCode === 40) {
-                handleDownArrow();
-            } else if (keyCode === 38) {
-                handleUpArrow();
-            }
-        });
-
-        document.addEventListener("keyup", function(event) {
-            var keyCode = event.keyCode;
-            if (keyCode === 40) {
-                cancelDownArrowTimer();
-            } else if (keyCode === 38) {
-                cancelUpArrowTimer();
+                if (lastArrowKeyCode === 40) {
+                    downArrowClicks++;
+                    if (downArrowClicks === 2) {
+                        changeAudioTrack(1);
+                        downArrowClicks = 0; // Resetear contador de clics
+                    }
+                } else {
+                    downArrowClicks = 1; // Iniciar contador de clics
+                }
+                lastArrowKeyCode = keyCode;
+            } else {
+                var pressedKey = parseInt(event.key);
+                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
+                    clearTimeout(timeoutId);
+                    channelNumberBuffer += event.key;
+                    timeoutId = setTimeout(function() {
+                        if (channelNumberBuffer !== "") {
+                            currentChannelIndex = parseInt(channelNumberBuffer);
+                            channelNumberBuffer = "";
+                            cargarStream();
+                        }
+                    }, 1000);
+                }
             }
         });
     </script>
