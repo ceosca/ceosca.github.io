@@ -1,5 +1,12 @@
 [
     {
+        "nombre": "a24",
+        "categoria": "Nacionales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/America24/SA_Live_dash_enc/America24.mpd",
+        "keyId": "3b1b027dd011af20fd9956c16dc084fb",
+        "key": "45f75aacf06593c9b693fe427c67e5b8"
+    },
+    {
         "nombre": "C5N",
         "categoria": "Noticias",
         "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/C5N/SA_Live_dash_enc/C5N.mpd",
