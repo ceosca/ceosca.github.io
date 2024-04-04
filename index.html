@@ -9,12 +9,21 @@
     <div id="controls">
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
+        <select id="languageSelector" style="display:none;" onchange="changeLanguage()">
+        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
+        var idiomas = [
+            { nombre: "Español", codigo: "es" },
+            { nombre: "Inglés", codigo: "en" },
+            // Agrega más idiomas si es necesario
+        ];
         var currentChannelIndex = null;
+        var currentLanguageIndex = 0; // Índice del idioma predeterminado
         var channelNumberBuffer = "";
+        var languageCodeBuffer = "";
         var timeoutId = null;
 
         fetch('https://ceosca.github.io/canales.json')
@@ -35,14 +44,25 @@
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
+
+            // Cargar opciones de idiomas
+            var languageSelector = document.getElementById("languageSelector");
+            idiomas.forEach(function(idioma, index) {
+                var option = document.createElement("option");
+                option.text = idioma.nombre;
+                option.value = index;
+                languageSelector.add(option);
+            });
+            languageSelector.selectedIndex = currentLanguageIndex;
         }
 
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex];
+            var selectedChannel = canales[currentChannelIndex];
+            var selectedLanguage = idiomas[currentLanguageIndex];
             var config = {
                 playlist: [{
                     sources: [{
-                        file: selectedValue.url,
+                        file: selectedChannel.url,
                         type: "mpd"
                     }]
                 }],
@@ -51,11 +71,11 @@
                 controls: false,
             };
 
-            if (selectedValue.keyId && selectedValue.key) {
+            if (selectedChannel.keyId && selectedChannel.key) {
                 config.drm = {
                     clearkey: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
+                        keyId: selectedChannel.keyId,
+                        key: selectedChannel.key
                     }
                 };
             }
@@ -63,7 +83,6 @@
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
-
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
@@ -81,18 +100,28 @@
             currentChannelIndex = parseInt(selectBox.value);
             channelNumberBuffer = "";
             cargarStream();
-            ocultarSelector(); // Ocultar el cuadro combinado después de seleccionar un canal
+            ocultarSelector();
+        }
+
+        function changeLanguage() {
+            var selectBox = document.getElementById("languageSelector");
+            currentLanguageIndex = parseInt(selectBox.value);
+            languageCodeBuffer = "";
+            cargarStream();
+            ocultarSelector();
         }
 
         function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none"; // Ocultar el cuadro combinado
+            document.getElementById("channelSelector").style.display = "none";
+            document.getElementById("languageSelector").style.display = "none"; // Ocultar el selector de idiomas
         }
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
-            if (keyCode === 13) { // Si la tecla presionada es Enter
-                document.getElementById("channelSelector").style.display = "block"; // Mostrar el cuadro combinado
-                document.getElementById("channelSelector").focus(); // Enfocar el cuadro combinado
+            if (keyCode === 13) {
+                document.getElementById("channelSelector").style.display = "block";
+                document.getElementById("languageSelector").style.display = "block"; // Mostrar el selector de idiomas
+                document.getElementById("channelSelector").focus();
             } else if (keyCode === 37) {
                 changeChannel(-1);
             } else if (keyCode === 39) {
