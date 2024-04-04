@@ -7,7 +7,7 @@
 <body>
     <div>
         <select id="streamSelector"></select>
-        <button onclick="cargarStream()">Cargar Audio del Stream de Video</button>
+        <button onclick="cargarStream()">Reproducir</button>
     </div>
     <div id="player">CARGANDO...</div>
     <div id="controls">
@@ -48,10 +48,18 @@
                     }]
                 }],
                 autostart: true,
-                cast: {
-                    audioOnly: true
-                },
-                controls: false
+                cast: {},
+                controls: false,
+                events: {
+                    onPause: function() {
+                        // Pausa el audio cuando el vídeo se pausa
+                        playerInstance.setMute(true);
+                    },
+                    onPlay: function() {
+                        // Restaura el audio cuando el vídeo se reproduce
+                        playerInstance.setMute(false);
+                    }
+                }
             };
             
             if (selectedValue.keyId && selectedValue.key) {
