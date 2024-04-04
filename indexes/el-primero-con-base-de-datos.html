@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reproductor de Audio de Streams de Video</title>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
-    <style>
-        #controls {
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
     <div>
@@ -17,9 +11,6 @@
     </div>
     <div id="player">CARGANDO...</div>
     <div id="controls">
-        <button onclick="playPause()">Play/Pausa</button>
-        <button onclick="changeVolume(-5)">Bajar Volumen</button>
-        <button onclick="changeVolume(5)">Subir Volumen</button>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -51,14 +42,11 @@
             var selectedValue = JSON.parse(selectBox.value);
             var config = {
                 playlist: [{
-                    title: "Audio del Stream Seleccionado",
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
                     }]
                 }],
-                width: 0,
-                height: 0,
                 autostart: true,
                 cast: {
                     audioOnly: true
@@ -78,19 +66,6 @@
             playerInstance = jwplayer("player").setup(config);
         }
 
-        function playPause() {
-            if (playerInstance.getState() === "playing") {
-                playerInstance.pause();
-            } else {
-                playerInstance.play();
-            }
-        }
-
-        function changeVolume(amount) {
-            var currentVolume = playerInstance.getVolume();
-            var newVolume = Math.max(0, Math.min(100, currentVolume + amount));
-            playerInstance.setVolume(newVolume);
-        }
     </script>
 </body>
 </html>

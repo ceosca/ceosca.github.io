@@ -3,50 +3,43 @@
 <head>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
-    <style>
-        body {
-            height: 2000px; /* Agrega suficiente espacio para hacer scroll */
-        }
-    </style>
 </head>
 <body>
-    <div id="playerContainer"></div>
+    <div>
+        <select id="streamSelector"></select>
+        <button onclick="cargarStream()">Cargar Audio del Stream de Video</button>
+    </div>
+    <div id="player">CARGANDO...</div>
     <div id="controls">
-        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
-        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
-        var currentChannelIndex = null;
-        var channelNumberBuffer = "";
-        var timeoutId = null;
-        var downArrowTimer = null;
-        var upArrowTimer = null;
-        var selectorVisible = false;
 
+        // Cargar datos del JSON
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
             .then(data => {
                 canales = data;
                 cargarOpciones();
-                cargarStream();
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
+        // Cargar opciones en el select
         function cargarOpciones() {
-            var selectBox = document.getElementById("channelSelector");
-            canales.forEach(function(canal, index) {
+            var selectBox = document.getElementById("streamSelector");
+            canales.forEach(function(canal) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.value = JSON.stringify(canal);
                 selectBox.add(option);
             });
-            selectBox.selectedIndex = 0;
         }
 
+        // Cargar el stream seleccionado
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex];
+            var selectBox = document.getElementById("streamSelector");
+            var selectedValue = JSON.parse(selectBox.value);
             var config = {
                 playlist: [{
                     sources: [{
@@ -55,10 +48,12 @@
                     }]
                 }],
                 autostart: true,
-                cast: {},
-                controls: false,
+                cast: {
+                    audioOnly: true
+                },
+                controls: false
             };
-
+            
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
@@ -67,78 +62,10 @@
                     }
                 };
             }
-
-            playerInstance = jwplayer("playerContainer").setup(config);
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+            
+            playerInstance = jwplayer("player").setup(config);
         }
 
-        function changeAudioTrack(offset) {
-            var currentAudioTrack = playerInstance.getCurrentAudioTrack();
-            var audioTracks = playerInstance.getAudioTracks();
-            var newTrackIndex = (currentAudioTrack + offset + audioTracks.length) % audioTracks.length;
-            playerInstance.setCurrentAudioTrack(newTrackIndex);
-        }
-
-        function changeChannel(offset) {
-            if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
-                channelNumberBuffer = "";
-                cargarStream();
-            } else {
-                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-                cargarStream();
-            }
-        }
-
-        function changeChannelManually() {
-            var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
-            channelNumberBuffer = "";
-            cargarStream();
-            ocultarSelector(); 
-        }
-
-        function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none"; 
-            selectorVisible = false;
-        }
-
-        function mostrarSelector() {
-            document.getElementById("channelSelector").style.display = "block"; 
-            selectorVisible = true;
-        }
-
-        function handleScroll(event) {
-            var scrollDirection = event.deltaY > 0 ? "down" : "up";
-            if (scrollDirection === "down") {
-                handleLeftArrow(); // Pulsar flecha izquierda al hacer scroll hacia abajo
-            } else {
-                handleRightArrow(); // Pulsar flecha derecha al hacer scroll hacia arriba
-            }
-        }
-
-        function handleRightArrow() {
-            if (!selectorVisible) {
-                mostrarSelector(); // Abrir el selector al hacer scroll hacia arriba
-            }
-        }
-
-        function handleLeftArrow() {
-            ocultarSelector(); // Cerrar el selector al hacer scroll hacia abajo
-        }
-
-        document.addEventListener("wheel", handleScroll);
-
-        document.addEventListener("keydown", function(event) {
-            var keyCode = event.keyCode;
-            if (keyCode === 13) { 
-                if (selectorVisible) {
-                    ocultarSelector();
-                } else {
-                    mostrarSelector();
-                }
-            }
-        });
     </script>
 </body>
 </html>
