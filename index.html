@@ -105,6 +105,7 @@
 
         function handleUpArrow() {
             upArrowTimer = setTimeout(function() {
+                // Cambiar al audio predeterminado
                 playerInstance.setCurrentAudioTrack(defaultAudioTrackIndex);
             }, 1000);
         }
@@ -127,10 +128,10 @@
             } else if (keyCode === 39) {
                 changeChannel(1);
             } else if (keyCode === 40) {
-                cancelUpArrowTimer();
+                cancelUpArrowTimer(); // Cancelar temporizador de flecha arriba si se presiona la flecha abajo
                 handleDownArrow();
             } else if (keyCode === 38) {
-                cancelDownArrowTimer();
+                cancelDownArrowTimer(); // Cancelar temporizador de flecha abajo si se presiona la flecha arriba
                 handleUpArrow();
             }
         });
