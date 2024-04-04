@@ -33,7 +33,7 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.value = index;
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
