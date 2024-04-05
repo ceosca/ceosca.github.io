@@ -51,7 +51,6 @@
                 autostart: true,
                 cast: {},
                 controls: false,
-                visualQuality: "none" // Deshabilitar la pista de video
             };
 
             if (selectedValue.keyId && selectedValue.key) {
@@ -65,14 +64,6 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-
-            // Detectar y reproducir solo la pista de audio
-            playerInstance.on('ready', function() {
-                var audioTracks = playerInstance.getAudioTracks();
-                if (audioTracks.length > 0) {
-                    playerInstance.setCurrentAudioTrack(0); // Establecer la primera pista de audio como la seleccionada
-                }
-            });
         }
 
         function changeAudioTrack(offset) {
@@ -123,6 +114,12 @@
 
         function cancelUpArrowTimer() {
             clearTimeout(upArrowTimer);
+        }
+
+        function filtrarPistaVideo(mpdContent) {
+            // Utilizamos una expresión regular para eliminar todas las líneas relacionadas con AVC1
+            var mpdModificado = mpdContent.replace(/<Representation id="avc1[^>]*>[^<]*<\/Representation>/g, '');
+            return mpdModificado;
         }
 
         document.addEventListener("keydown", function(event) {
