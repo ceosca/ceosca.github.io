@@ -1,6 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.onkeydown = function (e) {
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 67 || e.keyCode === 86)) {
+                return false;
+            }
+        };
+        document.oncontextmenu = function (e) {
+            e.preventDefault();
+        };
+
+        if (self == top) {
+            top.location.href = "https://www.telegratishd.com";
+        }
+    </script>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
@@ -19,54 +36,51 @@
         var downArrowTimer = null;
         var upArrowTimer = null;
 
+        fetch('https://ceosca.github.io/canales.json')
+            .then(response => response.json())
+            .then(data => {
+                canales = data;
+                cargarOpciones();
+                cargarStream();
+            })
+            .catch(error => console.error('Error al cargar el JSON:', error));
+
         function cargarOpciones() {
             var selectBox = document.getElementById("channelSelector");
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1;
+                option.value = index + 1; // Sumar 1 al índice
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
         }
 
-        function filtrarPistaVideo(mpdContent) {
-            var lines = mpdContent.split('\n');
-            var filteredLines = lines.filter(line => !line.includes('avc1'));
-            return filteredLines.join('\n');
-        }
-
         function cargarStream() {
             var selectedValue = canales[currentChannelIndex];
-            fetch(selectedValue.url)
-                .then(response => response.text())
-                .then(mpdContent => {
-                    var mpdFiltrado = filtrarPistaVideo(mpdContent);
-                    var config = {
-                        playlist: [{
-                            sources: [{
-                                file: mpdFiltrado,
-                                type: "mpd"
-                            }]
-                        }],
-                        autostart: true,
-                        cast: {},
-                        controls: false,
-                    };
+            var config = {
+                playlist: [{
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }]
+                }],
+                autostart: true,
+                cast: {},
+                controls: false,
+            };
 
-                    if (selectedValue.keyId && selectedValue.key) {
-                        config.drm = {
-                            clearkey: {
-                                keyId: selectedValue.keyId,
-                                key: selectedValue.key
-                            }
-                        };
+            if (selectedValue.keyId && selectedValue.key) {
+                config.drm = {
+                    clearkey: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
                     }
+                };
+            }
 
-                    playerInstance = jwplayer("playerContainer").setup(config);
-                    document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-                })
-                .catch(error => console.error('Error al cargar el MPD:', error));
+            playerInstance = jwplayer("playerContainer").setup(config);
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
 
         function changeAudioTrack(offset) {
@@ -78,7 +92,7 @@
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
@@ -89,7 +103,7 @@
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1;
+            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -139,7 +153,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
                             channelNumberBuffer = "";
                             cargarStream();
                         }
