@@ -257,5 +257,12 @@
         "url": "https://edge-live17-hr.cvattv.com.ar/live/c7eds/A3_Series/SA_Live_dash_enc_2A/A3_Series.mpd",
         "keyId": "5e34e08ae5ae440f01a03e505dd24a57",
         "key": "ed30cc7f5040a75d73f619320249272b"
+    },
+    {
+        "nombre": "a3 series, españa",
+        "categoria": "",
+        "url": "https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge2/smil:10_HD.smil/manifest.mpd",
+        "keyId": "",
+        "key": ""
     }
 ]
