@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
-    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.0/shaka-player.compiled.js"></script>
 </head>
 <body>
     <div id="playerContainer"></div>
@@ -10,84 +9,66 @@
         <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
         </select>
     </div>
-    <script type='text/javascript'>
-        var playerInstance = null;
-        var canales = [];
+    <script>
+        var player = null;
+        var channels = [];
         var currentChannelIndex = null;
         var channelNumberBuffer = "";
         var timeoutId = null;
         var downArrowTimer = null;
         var upArrowTimer = null;
 
-        function parseM3U(m3uContent) {
-            var lines = m3uContent.split('\n');
-            var channels = [];
-
-            for (var i = 0; i < lines.length; i++) {
-                var line = lines[i].trim();
-                if (line.startsWith('#EXTINF:')) {
-                    var nombre = line.split('#EXTINF:-1,')[1];
-                    var url = lines[i + 1];
-                    channels.push({ nombre: nombre, url: url });
-                }
-            }
-
-            return channels;
-        }
-
-        fetch('http://190.94.186.158:9981/playlist.m3u')
-            .then(response => response.text())
+        fetch('https://ceosca.github.io/canales.json')
+            .then(response => response.json())
             .then(data => {
-                canales = parseM3U(data);
+                channels = data;
                 cargarOpciones();
                 cargarStream();
             })
-            .catch(error => console.error('Error al cargar el archivo M3U:', error));
+            .catch(error => console.error('Error al cargar el JSON:', error));
 
         function cargarOpciones() {
             var selectBox = document.getElementById("channelSelector");
-            canales.forEach(function(canal, index) {
+            channels.forEach(function(channel, index) {
                 var option = document.createElement("option");
-                option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.text = channel.nombre;
+                option.value = index; // Índice directo
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
         }
 
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex];
+            var selectedChannel = channels[currentChannelIndex];
+            var manifestUri = selectedChannel.url;
+
             var config = {
-                playlist: [{
-                    sources: [{
-                        file: selectedValue.url,
-                        type: "hls" // Se asume que la lista M3U contiene enlaces HLS
-                    }]
-                }],
-                autostart: true,
-                cast: {},
-                controls: false,
+                drm: {
+                    servers: { 'com.widevine.alpha': selectedChannel.urlDrm }
+                }
             };
 
-            playerInstance = jwplayer("playerContainer").setup(config);
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-        }
-
-        function changeAudioTrack(offset) {
-            var currentAudioTrack = playerInstance.getCurrentAudioTrack();
-            var audioTracks = playerInstance.getAudioTracks();
-            var newTrackIndex = (currentAudioTrack + offset + audioTracks.length) % audioTracks.length;
-            playerInstance.setCurrentAudioTrack(newTrackIndex);
+            player = new shaka.Player(document.getElementById('playerContainer'));
+            player.load(manifestUri).then(function() {
+                console.log('El vídeo ha sido cargado correctamente!');
+            }).catch(onError);
         }
 
         function changeChannel(offset) {
-            currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-            cargarStream();
+            if (channelNumberBuffer !== "") {
+                currentChannelIndex = parseInt(channelNumberBuffer);
+                channelNumberBuffer = "";
+                cargarStream();
+            } else {
+                currentChannelIndex = (currentChannelIndex + offset + channels.length) % channels.length;
+                cargarStream();
+            }
         }
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
+            currentChannelIndex = parseInt(selectBox.value);
+            channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
         }
@@ -98,13 +79,13 @@
 
         function handleDownArrow() {
             downArrowTimer = setTimeout(function() {
-                changeAudioTrack(1);
+                // Implementa lógica para cambiar audio si es necesario
             }, 1000);
         }
 
         function handleUpArrow() {
             upArrowTimer = setTimeout(function() {
-                changeAudioTrack(-1);
+                // Implementa lógica para cambiar audio si es necesario
             }, 1000);
         }
 
@@ -136,7 +117,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                            currentChannelIndex = parseInt(channelNumberBuffer);
                             channelNumberBuffer = "";
                             cargarStream();
                         }
@@ -146,12 +127,17 @@
         });
 
         document.addEventListener("keyup", function(event) {
-            var keyCode = event.keyCode;            if (keyCode === 40) {
+            var keyCode = event.keyCode;
+            if (keyCode === 40) {
                 cancelDownArrowTimer();
             } else if (keyCode === 38) {
                 cancelUpArrowTimer();
             }
         });
+
+        function onError(event) {
+            console.error('Error al cargar el vídeo:', event);
+        }
     </script>
 </body>
 </html>
