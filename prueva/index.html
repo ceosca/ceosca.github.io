@@ -19,51 +19,54 @@
         var downArrowTimer = null;
         var upArrowTimer = null;
 
-        fetch('https://ceosca.github.io/canales.json')
-            .then(response => response.json())
-            .then(data => {
-                canales = data;
-                cargarOpciones();
-                cargarStream();
-            })
-            .catch(error => console.error('Error al cargar el JSON:', error));
-
         function cargarOpciones() {
             var selectBox = document.getElementById("channelSelector");
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.value = index + 1;
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
         }
 
+        function filtrarPistaVideo(mpdContent) {
+            var lines = mpdContent.split('\n');
+            var filteredLines = lines.filter(line => !line.includes('avc1'));
+            return filteredLines.join('\n');
+        }
+
         function cargarStream() {
             var selectedValue = canales[currentChannelIndex];
-            var config = {
-                playlist: [{
-                    sources: [{
-                        file: selectedValue.url,
-                        type: "mpd"
-                    }]
-                }],
-                autostart: true,
-                cast: {},
-                controls: false,
-            };
+            fetch(selectedValue.url)
+                .then(response => response.text())
+                .then(mpdContent => {
+                    var mpdFiltrado = filtrarPistaVideo(mpdContent);
+                    var config = {
+                        playlist: [{
+                            sources: [{
+                                file: mpdFiltrado,
+                                type: "mpd"
+                            }]
+                        }],
+                        autostart: true,
+                        cast: {},
+                        controls: false,
+                    };
 
-            if (selectedValue.keyId && selectedValue.key) {
-                config.drm = {
-                    clearkey: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
+                    if (selectedValue.keyId && selectedValue.key) {
+                        config.drm = {
+                            clearkey: {
+                                keyId: selectedValue.keyId,
+                                key: selectedValue.key
+                            }
+                        };
                     }
-                };
-            }
 
-            playerInstance = jwplayer("playerContainer").setup(config);
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+                    playerInstance = jwplayer("playerContainer").setup(config);
+                    document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+                })
+                .catch(error => console.error('Error al cargar el MPD:', error));
         }
 
         function changeAudioTrack(offset) {
@@ -75,7 +78,7 @@
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1;
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
@@ -86,7 +89,7 @@
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
+            currentChannelIndex = parseInt(selectBox.value) - 1;
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -116,12 +119,6 @@
             clearTimeout(upArrowTimer);
         }
 
-        function filtrarPistaVideo(mpdContent) {
-            // Utilizamos una expresión regular para eliminar todas las líneas relacionadas con AVC1
-            var mpdModificado = mpdContent.replace(/<Representation id="avc1[^>]*>[^<]*<\/Representation>/g, '');
-            return mpdModificado;
-        }
-
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
             if (keyCode === 13) { 
@@ -142,7 +139,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1;
                             channelNumberBuffer = "";
                             cargarStream();
                         }
