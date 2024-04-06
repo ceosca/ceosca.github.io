@@ -33,7 +33,7 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.value = index + 1; 
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
@@ -46,7 +46,12 @@
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
-                    }]
+                    }],
+                    mute: true, 
+                    visualQuality: {
+                        default: false,
+                        activeQuality: "none"
+                    }
                 }],
                 autostart: true,
                 cast: {},
@@ -64,11 +69,6 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-
-            // Mute video una vez que comience la reproducción
-            playerInstance.on('play', function() {
-                playerInstance.setMute(true);
-            });
         }
 
         function changeAudioTrack(offset) {
@@ -80,7 +80,7 @@
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1; 
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
@@ -91,7 +91,7 @@
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
+            currentChannelIndex = parseInt(selectBox.value) - 1; 
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -141,7 +141,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; 
                             channelNumberBuffer = "";
                             cargarStream();
                         }
