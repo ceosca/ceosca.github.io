@@ -59,12 +59,11 @@
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
 
-            // Bloquear AVC1 después de 5 segundos
-            setTimeout(bloquearAVC1, 5000);
+            // Bloquear AVC1 después de 3 segundos
+            setTimeout(bloquearAVC1, 3000);
         }
 
         function bloquearAVC1() {
-            console.log('Bloqueo de AVC1 activado.');
             bloqueoAVC1 = true;
         }
 
