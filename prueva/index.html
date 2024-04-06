@@ -11,6 +11,7 @@
         var timeoutId = null;
         var downArrowTimer = null;
         var upArrowTimer = null;
+        var bloqueoAVC1 = false;
 
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
@@ -57,6 +58,14 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+
+            // Bloquear AVC1 después de 5 segundos
+            setTimeout(bloquearAVC1, 5000);
+        }
+
+        function bloquearAVC1() {
+            console.log('Bloqueo de AVC1 activado.');
+            bloqueoAVC1 = true;
         }
 
         function changeAudioTrack(offset) {
@@ -111,7 +120,7 @@
 
         window.XMLHttpRequest.prototype.originalOpen = window.XMLHttpRequest.prototype.open;
         window.XMLHttpRequest.prototype.open = function(method, url) {
-            if ((url.includes('.mpd') && url.includes('avc1')) || (url.includes('.mp4') && url.includes('-avc1'))) {
+            if (bloqueoAVC1 && (url.includes('.mpd') && url.includes('avc1'))) {
                 console.log('Solicitud de fragmento AVC1 bloqueada:', url);
                 return;
             }
