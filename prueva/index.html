@@ -62,13 +62,13 @@
                 };
             }
 
-            // Obtener las calidades disponibles y seleccionar la más baja
-            var availableQualities = playerInstance.getQualityLevels();
-            var lowestQuality = availableQualities[availableQualities.length - 1];
-            config.quality = lowestQuality.label;
-
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+
+            // Mute video una vez que comience la reproducción
+            playerInstance.on('play', function() {
+                playerInstance.setMute(true);
+            });
         }
 
         function changeAudioTrack(offset) {
