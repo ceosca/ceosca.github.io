@@ -1,23 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        document.onkeydown = function (e) {
-            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 67 || e.keyCode === 86)) {
-                return false;
-            }
-        };
-        document.oncontextmenu = function (e) {
-            e.preventDefault();
-        };
-
-        if (self == top) {
-            top.location.href = "https://www.telegratishd.com";
-        }
-    </script>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
@@ -50,7 +33,7 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.value = index + 1;
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
@@ -62,7 +45,7 @@
                 playlist: [{
                     sources: [{
                         file: selectedValue.url,
-                        type: "mpd"
+                        type: "audio"
                     }]
                 }],
                 autostart: true,
@@ -92,7 +75,7 @@
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1;
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
@@ -103,7 +86,7 @@
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
+            currentChannelIndex = parseInt(selectBox.value) - 1;
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -153,7 +136,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1;
                             channelNumberBuffer = "";
                             cargarStream();
                         }
