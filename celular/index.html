@@ -5,63 +5,55 @@
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
 <body>
-    <div id="playerContainer"></div>
+    <div>
+        <select id="streamSelector"></select>
+        <button onclick="cargarStream()">Cargar Audio del Stream de Video</button>
+    </div>
+    <div id="player">CARGANDO...</div>
     <div id="controls">
-        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
-        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
-        var currentChannelIndex = null;
-        var channelNumberBuffer = "";
-        var timeoutId = null;
-        var downArrowTimer = null;
-        var upArrowTimer = null;
 
-        // Función para cargar los canales desde la base de datos
-        function cargarCanales() {
-            fetch('https://ceosca.github.io/canales.json')
-                .then(response => response.json())
-                .then(data => {
-                    canales = data;
-                    cargarOpciones();
-                    cargarStream();
-                })
-                .catch(error => console.error('Error al cargar el JSON:', error));
-        }
+        // Cargar datos del JSON
+        fetch('https://ceosca.github.io/canales.json')
+            .then(response => response.json())
+            .then(data => {
+                canales = data;
+                cargarOpciones();
+            })
+            .catch(error => console.error('Error al cargar el JSON:', error));
 
+        // Cargar opciones en el select
         function cargarOpciones() {
-            var selectBox = document.getElementById("channelSelector");
-            selectBox.innerHTML = ""; // Limpiar opciones anteriores
-            canales.forEach(function(canal, index) {
+            var selectBox = document.getElementById("streamSelector");
+            canales.forEach(function(canal) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index; // Utilizar el índice como valor
+                option.value = JSON.stringify(canal);
                 selectBox.add(option);
             });
-            selectBox.selectedIndex = 0;
         }
 
+        // Cargar el stream seleccionado
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex];
-            var audioUrl = obtenerURLAudio(selectedValue.mpd_url);
-            if (!audioUrl) {
-                console.error("No se pudo obtener la URL del audio para el canal seleccionado");
-                return;
-            }
+            var selectBox = document.getElementById("streamSelector");
+            var selectedValue = JSON.parse(selectBox.value);
             var config = {
                 playlist: [{
                     sources: [{
-                        file: audioUrl,
-                        type: "mp4"
+                        file: selectedValue.url,
+                        type: "mpd"
                     }]
                 }],
                 autostart: true,
-                cast: {},
-                controls: false,
+                cast: {
+                    audioOnly: true
+                },
+                controls: false
             };
-
+            
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
@@ -70,41 +62,10 @@
                     }
                 };
             }
-
-            playerInstance = jwplayer("playerContainer").setup(config);
+            
+            playerInstance = jwplayer("player").setup(config);
         }
 
-        function obtenerURLAudio(mpdUrl) {
-            var parser = new DOMParser();
-            var xmlDoc = parser.parseFromString(mpdUrl, "text/xml");
-            var adaptationSets = xmlDoc.getElementsByTagName("AdaptationSet");
-
-            for (var i = 0; i < adaptationSets.length; i++) {
-                var mimeType = adaptationSets[i].getAttribute("mimeType");
-                if (mimeType === "audio/mp4") {
-                    var segmentTemplate = adaptationSets[i].getElementsByTagName("SegmentTemplate")[0];
-                    var initialization = segmentTemplate.getAttribute("initialization");
-                    var baseUrl = mpdUrl.substring(0, mpdUrl.lastIndexOf("/") + 1);
-                    return baseUrl + initialization;
-                }
-            }
-
-            return null;
-        }
-
-        function changeChannelManually() {
-            var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value);
-            cargarStream();
-            ocultarSelector(); 
-        }
-
-        function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none"; 
-        }
-
-        // Cargar los canales al cargar la página
-        cargarCanales();
     </script>
 </body>
 </html>
