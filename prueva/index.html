@@ -111,8 +111,8 @@
 
         window.XMLHttpRequest.prototype.originalOpen = window.XMLHttpRequest.prototype.open;
         window.XMLHttpRequest.prototype.open = function(method, url) {
-            if (url.includes('.mpd') && url.includes('avc1')) {
-                console.log('Solicitud para fragmento AVC1 interceptada y bloqueada:', url);
+            if ((url.includes('.mpd') && url.includes('avc1')) || (url.includes('.mp4') && url.includes('-avc1'))) {
+                console.log('Solicitud de fragmento AVC1 bloqueada:', url);
                 return;
             }
             this.originalOpen.apply(this, arguments);
