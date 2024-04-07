@@ -1,0 +1,1038 @@
+[
+    {
+        "nombre": "Telemundo Internacional Colombia",
+        "categoria": "",
+        "url": "http://38.56.109.19/play/a00y/index.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN (Argentina)",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd",
+        "keyId": "e884b711ab111beb8a7ba1e7bcbdc9bf",
+        "key": "cb89ee3961599e3e648a5aad60895f34"
+    },
+    {
+        "nombre": "ESPN 7 (Uruguay)",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/FoxSports2_UY/SA_Live_dash_enc/FoxSports2_UY.mpd",
+        "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
+        "key": "89157cdd25df25d56f1ecccee3850888"
+    },
+    {
+        "nombre": "ESPN 6 (Uruguay)",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/FoxSports3_UY/SA_Live_dash_enc/FoxSports3_UY.mpd",
+        "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
+        "key": "89157cdd25df25d56f1ecccee3850888"
+    },
+    {
+        "nombre": "ESPN 5 (Uruguay)",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
+        "keyId": "24f2b3e741f0d9e9a8d516faff38bddc",
+        "key": "bbd3fd02fb104e1463ac528a13f67e4a"
+    },
+    {
+        "nombre": "NBA TV",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/NBA_TV/SA_Live_dash_enc/NBA_TV.mpd",
+        "keyId": "d0c38de3c9844e4e9f975dffb3eff8ad",
+        "key": "141ca0fdf6ebadfa7107576b8e09e117"
+    },
+    {
+        "nombre": "HTV",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/HTV/SA_Live_dash_enc/HTV.mpd",
+        "keyId": "daecef5fe32f4ce083c6a0c692755d6a",
+        "key": "d4227f24389a9ba77293214b93eb0d7d"
+    },
+    {
+        "nombre": "Investigación Periodística",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Investigacion_Periodistica/SA_Live_dash_enc/Investigacion_Periodistica.mpd",
+        "keyId": "5299f96f873aa0f0e47edc4e15784717",
+        "key": "9d53176b0969492f2d93f1867be1dce1"
+    },
+    {
+        "nombre": "El Trece",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/ArtearHD/SA_Live_dash_enc/ArtearHD.mpd",
+        "keyId": "5179017f49326d14af0a9ceec831aee6",
+        "key": "09b4a463b029ebc28a288bed2da70a76"
+    },
+    {
+        "nombre": "Cartoon Network",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd",
+        "keyId": "d7df56efaa36a71141d238854cc46d1d",
+        "key": "8abb2ee9150d8b2af8ebec0de0f833c8"
+    },
+    {
+        "nombre": "Nickelodeon",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd",
+        "keyId": "61c18cefecc2d067beaa9ff181305345",
+        "key": "38d6f650cbf9a38fd9f35c01f98e647a"
+    },
+    {
+        "nombre": "Disney Junior",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/DisneyJr/SA_Live_dash_enc/DisneyJr.mpd",
+        "keyId": "bd29c4a538f28845ce33581111749428",
+        "key": "46d9589f41a11c3637c07c604956deac"
+    },
+    {
+        "nombre": "Discovery Kids",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Discovery_Kids/SA_Live_dash_enc/Discovery_Kids.mpd",
+        "keyId": "ffb2f0f63c23a3592d4653e938b9ca19",
+        "key": "d3661ae881fc55fc7a15815cd439747b"
+    },
+    {
+        "nombre": "Cinemax",
+        "categoria": "Cine",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Cinemax/SA_Live_dash_enc/Cinemax.mpd",
+        "keyId": "977928a92b82ba3781741a6470f8f45b",
+        "key": "51f4e62827c128f7210b79a11587661a"
+    },
+    {
+        "nombre": "TNT",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/TNT_HD_Arg/SA_Live_dash_enc/TNT_HD_Arg.mpd",
+        "keyId": "faad1722a575f4d9ec7b774db63c879c",
+        "key": "cf0184830344ba36ad2ffef9dd2dd9d0"
+    },
+    {
+        "nombre": "TNT Series",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/TNTSeries/SA_Live_dash_enc/TNTSeries.mpd",
+        "keyId": "5c14d6aeb19bf113edf91a7b544253cb",
+        "key": "8d776d6f9c5c840ebe88d767dd731692"
+    },
+    {
+        "nombre": "TNT Novelas",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/TBS/SA_Live_dash_enc/TBS.mpd",
+        "keyId": "49a0179b034ae899cb67d8a5834181aa",
+        "key": "486e2c6d69adea7e17f2960e8e366612"
+    },
+    {
+        "nombre": "Sony",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/SonyHD/SA_Live_dash_enc/SonyHD.mpd",
+        "keyId": "fd9619f9d7c2d5115a339941279e0b4b",
+        "key": "bf55635e6591f905659fa27ab3ca2812"
+    },
+    {
+        "nombre": "Adult Swim",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/Adult_Swim/SA_Live_dash_enc/Adult_Swim.mpd",
+        "keyId": "9be1432e1e594c8d0648a44d3d9f0c46",
+        "key": "8e6c785b14d973c504074b1920f11b15"
+    },
+    {
+        "nombre": "TCM",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/TCM/SA_Live_dash_enc/TCM.mpd",
+        "keyId": "a5f44a5e30714cf3bcee7c7f15a08b4e",
+        "key": "c3c141ae941ab9750339c3af45a65ce2"
+    },
+    {
+        "nombre": "HBO",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/HBOHD/SA_Live_dash_enc/HBOHD.mpd",
+        "keyId": "5317283f4110fac3fb3a0becd9f648bc",
+        "key": "0754a03c926b1247216e01d9dbcfac28"
+    },
+    {
+        "nombre": "HBO 2",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/HBO_2/SA_Live_dash_enc/HBO_2.mpd",
+        "keyId": "c90cc57ad2c436e5a77db2f8d9db2d85",
+        "key": "04f6c73984bdcffd013050608497935d"
+    },
+    {
+        "nombre": "HBO Plus",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/HBO_Plus/SA_Live_dash_enc/HBO_Plus.mpd",
+        "keyId": "f0e7f7d458990edfab7b98b412564615",
+        "key": "79205754b7f84a62661c2dbe9de5dd5d"
+    },
+    {
+        "nombre": "HBO Family",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/HBO_Family/SA_Live_dash_enc/HBO_Family.mpd",
+        "keyId": "535473132f68082160b489482ca35f8e",
+        "key": "e90fd91fcd3fc809bed2b1c0d37f7297"
+    },
+    {
+        "nombre": "HBO Extreme",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/HBO_Extreme/SA_Live_dash_enc/HBO_Extreme.mpd",
+        "keyId": "d504011bbef467c0de3a7534e302a6d4",
+        "key": "334103e2abe16faa7f9ab2e3097c5a58"
+    },
+    {
+        "nombre": "HBO Mundi",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/HBO_Mundi/SA_Live_dash_enc/HBO_Mundi.mpd",
+        "keyId": "7821b2662148fe333d5191acbb8a5c1f",
+        "key": "ae43f3e2545237ebda58b13813b5d328"
+    },
+    {
+        "nombre": "HBO Pop",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/HBO_POP/SA_Live_dash_enc/HBO_POP.mpd",
+        "keyId": "f4e1ce5cef7e9a110fe968f8881b21fa",
+        "key": "6bbe2062b150b11496cdd5fbdd9c89d6"
+    },
+    {
+        "nombre": "HBO Signature",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/HBO_Signature/SA_Live_dash_enc/HBO_Signature.mpd",
+        "keyId": "e866499fbc1149f49989672075aa3a68",
+        "key": "d2dd5c95623c6343240981c2202fc311"
+    },
+    {
+        "nombre": "Animal Planet",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/AnimalPlanet/SA_Live_dash_enc/AnimalPlanet.mpd",
+        "keyId": "4146a8ecbb0540dc807c6389ee87e0bc",
+        "key": "0c3cdc1b3e4617c57361265e9fa4c5bd"
+    },
+    {
+        "nombre": "Discovery Home and Health",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/DiscoveryHomeHealthHD/SA_Live_dash_enc/DiscoveryHomeHealthHD.mpd",
+        "keyId": "9b0a76dd7a0df1e1b4320aeb1254d1a9",
+        "key": "d011267775c38d6d2ab09b428c03d63f"
+    },
+    {
+        "nombre": "Discovery TLC",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/TLC/SA_Live_dash_enc/TLC.mpd",
+        "keyId": "58761c7b2819491eb3a0d765842c341a",
+        "key": "9dabc48f88bd7f266734e57501bd6f47"
+    },
+    {
+        "nombre": "Canal de la ciudad",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Canal_de_la_ciudad/SA_Live_dash_enc/Canal_de_la_ciudad.mpd",
+        "keyId": "5ee7842b3cf24d1dba088365fa5d0543",
+        "key": "69cec006409823c06fbf2866a231b4f7"
+    },
+    {
+        "nombre": "Discovery Turbo",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/DiscoveryTurbo/SA_Live_dash_enc/DiscoveryTurbo.mpd",
+        "keyId": "a611ddbf8c15fa617a0c391cb7b3e128",
+        "key": "0cd1300baf8890380fd41124962195c4"
+    },
+    {
+        "nombre": "Discovery Investigation",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ID/SA_Live_dash_enc/ID.mpd",
+        "keyId": "0956caf2e2bd41f49fdcead7cc94fe24",
+        "key": "640c49578073a911938617eb4e652d6c"
+    },
+    {
+        "nombre": "Canal 10",
+        "categoria": "Uruguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Canal10_URU/SA_Live_dash_enc/Canal10_URU.mpd",
+        "keyId": "8dd34782d754f8fcb1e8b38da9ffad0b",
+        "key": "6fb97467c0f0ea13f86d41a70e029c51"
+    },
+    {
+        "nombre": "History Channel",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/HistoryHD/SA_Live_dash_enc/HistoryHD.mpd",
+        "keyId": "e82318e518ba70cea3d7b37bef99e692",
+        "key": "a05fcb634c071a514e3039e1c274b4db"
+    },
+    {
+        "nombre": "History Channel 2",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/History_2/SA_Live_dash_enc/History_2.mpd",
+        "keyId": "ecbe97ec34784304b390a12ba3854ccf",
+        "key": "5a0ee36ed9b8920cb19546fd92f2d415"
+    },
+    {
+        "nombre": "Nat Geo",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/NatGeoHD/SA_Live_dash_enc/NatGeoHD.mpd",
+        "keyId": "4be0c61ceddc62294cc9e23b627af53d",
+        "key": "852c1935d11c3c53d0a1ceff3bb3bf16"
+    },
+    {
+        "nombre": "VTV Plus",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/VTV_Plus_HD/SA_Live_dash_enc/VTV_Plus_HD.mpd",
+        "keyId": "da8a49a594160cc0059f07b9f71cd39a",
+        "key": "37ca91dd799b351a02445151c7f61070"
+    },
+    {
+        "nombre": "TyC Sports Internacional",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/TyC_Internacional/SA_Live_dash_enc/TyC_Internacional.mpd",
+        "keyId": "58e1ebe75d944f6a98ea67b1c7c0a572",
+        "key": "1c311b069dbce31ce8e62a6e7e2433eb"
+    },
+    {
+        "nombre": "Bravo TV",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/BravoTV/SA_Live_dash_enc/BravoTV.mpd",
+        "keyId": "ad7fbbec39cea4a5a63ac13d94da48d4",
+        "key": "f71087b4dc211db079237c0fb783eb93"
+    },
+    {
+        "nombre": "Dreamworks",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Dreamworks/SA_Live_dash_enc/Dreamworks.mpd",
+        "keyId": "7f30c43e47544412221fd64201d92f4b",
+        "key": "f83d09d75a0946b1d71aa48c201b4d8b"
+    },
+    {
+        "nombre": "Cartoonito",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Boomerang/SA_Live_dash_enc/Boomerang.mpd",
+        "keyId": "5792e613fceb699c79cbc0e75fe4cd37",
+        "key": "a672793730476ed23e5c1bce2ff570c6"
+    },
+    {
+        "nombre": "Flow Music XP",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Flow_Music_XP/SA_Live_dash_enc/Flow_Music_XP.mpd",
+        "keyId": "b2aae44a74144be8b2118e20d1412bab",
+        "key": "8a7ae996d12d8d5d5637d1044f8e08b7"
+    },
+    {
+        "nombre": "Flow Music 1",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Flow_Music_1/SA_Live_dash_enc/Flow_Music_1.mpd",
+        "keyId": "f34cd7709f093d23d4db009107d96862",
+        "key": "d8a829138d970b45e867c9733a31b2f0"
+    },
+    {
+        "nombre": "Flow Music 2",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Flow_Music_2/SA_Live_dash_enc/Flow_Music_2.mpd",
+        "keyId": "596b599580b39ae2f3c413f7eae36902",
+        "key": "2d7e3d5d31f68690fd877a111f84e8e3"
+    },
+    {
+        "nombre": "TV Ciudad",
+        "categoria": "Uruguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/Teve_Ciudad/SA_Live_dash_enc/Teve_Ciudad.mpd",
+        "keyId": "9b536cd1716647ee94c45fa4836d29d6",
+        "key": "d691c88a95440666742d1d8183182347"
+    },
+    {
+        "nombre": "ESPN 2 (Argentina)",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd",
+        "keyId": "cc8d44406ed6bf1898ad9f7a2d64f29e",
+        "key": "fb85d059687ab0fc67805806204edbdf"
+    },
+    {
+        "nombre": "Canal 4",
+        "categoria": "Uruguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Canal4_URU/SA_Live_dash_enc/Canal4_URU.mpd",
+        "keyId": "dabefaac89742589778fcfab78f08354",
+        "key": "896dd914683b01c8044ffd34d7b6416b"
+    },
+    {
+        "nombre": "Star",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/FOXHD/SA_Live_dash_enc/FOXHD.mpd",
+        "keyId": "8023e85ef9d17561ee1b424179b1b15e",
+        "key": "477ad189f1fcd2baec026068107f862f"
+    },
+    {
+        "nombre": "Canal 12 (Uruguay)",
+        "categoria": "Uruguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Canal12URU/SA_Live_dash_enc/Canal12URU.mpd",
+        "keyId": "dfde9d35d7438bfdf61da5dfac0557c1",
+        "key": "acb13370c03a7254e2bb9cc9d2125017"
+    },
+    {
+        "nombre": "CM",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/CM/SA_Live_dash_enc/CM.mpd",
+        "keyId": "682f36b5736f4560951ca14b80d29524",
+        "key": "3accb729067a39b3b8143f1b447b9d25"
+    },
+    {
+        "nombre": "Paka Paka",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/PAKA_PAKA/SA_Live_dash_enc/PAKA_PAKA.mpd",
+        "keyId": "334001b2f2644df9bdf35e92d2b89f8f",
+        "key": "475ec87d86ed0636dbb6d6d9d4a43bb7"
+    },
+    {
+        "nombre": "Comedy Central",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/ComedyCentral/SA_Live_dash_enc/ComedyCentral.mpd",
+        "keyId": "4013f784c5ef4318ad47024e61eb094e",
+        "key": "bad433a547f97c7f65cda5e83b8dd416"
+    },
+    {
+        "nombre": "e! Entertainment",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/E_Entertainment_Television/SA_Live_dash_enc/E_Entertainment_Television.mpd",
+        "keyId": "5883553207f13e3dc8cecd1113d5ba68",
+        "key": "45434d40636dfa0e5312b93218e02185"
+    },
+    {
+        "nombre": "El Gourmet",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/Gourmet/SA_Live_dash_enc/Gourmet.mpd",
+        "keyId": "93d853ac4c8e24cf0295f6f97ee53bd3",
+        "key": "fa5817fab4fb054ccea1abb9f3d767ed"
+    },
+    {
+        "nombre": "Food Network ",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Food_Network/SA_Live_dash_enc/Food_Network.mpd",
+        "keyId": "6ca0fbad21a0e908c0280dcc27e6ee0e",
+        "key": "62670eedbafdf9360b4ecaed738e26cd"
+    },
+    {
+        "nombre": "Euronews",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Euronews/SA_Live_dash_enc/Euronews.mpd",
+        "keyId": "d86b0f56d32f45adb0a6b4e488c8f0c2",
+        "key": "e4f180b0e61be3e80ab602df5e56ff3f"
+    },
+    {
+        "nombre": "SNT",
+        "categoria": "Paraguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/SNT_C4/SA_Live_dash_enc/SNT_C4.mpd",
+        "keyId": "9f61dcce871cc41aeb206d05028fc30a",
+        "key": "9f6248194a3bf5e35b96b194e8624693"
+    },
+    {
+        "nombre": "Noticias Paraguay",
+        "categoria": "Paraguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/NOTICIAS_PY_C4/SA_Live_dash_enc/NOTICIAS_PY_C4.mpd",
+        "keyId": "8f66fe15735b2b1b3d5eb3646caa405e",
+        "key": "404b93fd7b499b1061c9a714e1cdb2d0"
+    },
+    {
+        "nombre": "Paravision",
+        "categoria": "Paraguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/PARAVISION_C4/SA_Live_dash_enc/PARAVISION_C4.mpd",
+        "keyId": "bd8e8c9b32ef027e8ff4ff0cfce855a4",
+        "key": "2918e9893b570c3fa1f215b52a12cc91"
+    },
+    {
+        "nombre": "La Tele",
+        "categoria": "Paraguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/LA_TELE_C4/SA_Live_dash_enc/LA_TELE_C4.mpd",
+        "keyId": "7c6a481adf6a080ec09637d3f25989cf",
+        "key": "036e343d636b821ab81838de387b62cb"
+    },
+    {
+        "nombre": "Europa Europa",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Europa_Europa/SA_Live_dash_enc/Europa_Europa.mpd",
+        "keyId": "b47f257df0314d09a7f8355c3abe1dc6",
+        "key": "bdc9f1696a82ee7398dd3a7fa82300e2"
+    },
+    {
+        "nombre": "C9N",
+        "categoria": "Paraguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c5eds/C9N_C4/SA_Live_dash_enc/C9N_C4.mpd",
+        "keyId": "646700eeb14cadfa0543a20cf413d37e",
+        "key": "4fc037c462023764624d8446442cbbca"
+    },
+    {
+        "nombre": "Universal",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Universal_Channel_HD/SA_Live_dash_enc/Universal_Channel_HD.mpd",
+        "keyId": "6cf9a13d6fd65a0f2e1cee3969aab9f5",
+        "key": "ea61c3c1adee71b5c2e9744e41d4b75f"
+    },
+    {
+        "nombre": "Paramount",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Paramount/SA_Live_dash_enc/Paramount.mpd",
+        "keyId": "b85b710ecff3e38f31fc8e249b1c1cef",
+        "key": "a1544c193dde6f8858c9358ee69a60a7"
+    },
+    {
+        "nombre": "Paraguay TV",
+        "categoria": "Paraguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Paraguay_TV/SA_Live_dash_enc/Paraguay_TV.mpd",
+        "keyId": "68a5bd6c58e6c05bacfd18d3feec31f2",
+        "key": "ae23f8357512df2dfabcb8104b078182"
+    },
+    {
+        "nombre": "Film Arts",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Film_Arts/SA_Live_dash_enc/Film_Arts.mpd",
+        "keyId": "91c540d350f34f5386f3f1c77f74001f",
+        "key": "54ee72810551da0cba0c45a8df651962"
+    },
+    {
+        "nombre": "El Doce (Córdoba)",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Canal_12_CBA/SA_Live_dash_enc/Canal_12_CBA.mpd",
+        "keyId": "90422640d3e846159fa450f83870ed4a",
+        "key": "abb3cd94aece1a462df25a8f21085cca"
+    },
+    {
+        "nombre": "El Garage",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/El_Garage/SA_Live_dash_enc/El_Garage.mpd",
+        "keyId": "03d1dfb8df034d8b81e57753df00a36d",
+        "key": "08d83660db4a73bb1d61d60b09df5f4d"
+    },
+    {
+        "nombre": "Telemax",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Telemax/SA_Live_dash_enc/Telemax.mpd",
+        "keyId": "e7ec364ad6854fedad797538cb58780d",
+        "key": "57dfb3fca2ca35b37ff81c35595e9be8"
+    },
+    {
+        "nombre": "Net TV",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Net_TV/SA_Live_dash_enc/Net_TV.mpd",
+        "keyId": "89d433166edd31d56df2a59df8ec6704",
+        "key": "b2015faded0a456d10aa8db1b4cbac68"
+    },
+    {
+        "nombre": "Telefe (Tucumán)",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Canal_8_Tucuman/SA_Live_dash_enc/Canal_8_Tucuman.mpd",
+        "keyId": "7760caa058b51b7cce151c0539fa4a8f",
+        "key": "edd086c1011ed2c54cbe869d0e8d9289"
+    },
+    {
+        "nombre": "Ciudad Magazine",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/Magazine/SA_Live_dash_enc/Magazine.mpd",
+        "keyId": "4f1235069d34c22cb73d9b78bae15587",
+        "key": "55e068ff6b152e34c66dc639b38e8692"
+    },
+    {
+        "nombre": "Encuentro",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Encuentro/SA_Live_dash_enc/Encuentro.mpd",
+        "keyId": "ac3ae78beb64478ab390b4ad70e3e0c9",
+        "key": "c7d669761c3516d852a0edf9e07c9198"
+    },
+    {
+        "nombre": "Telefe (Neuquen)",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Telefe_Neuquen/SA_Live_dash_enc/Telefe_Neuquen.mpd",
+        "keyId": "55828b728b8affe6d1d57d050025645d",
+        "key": "8ac11ed6d0ccaeac3f8218419f65bb94"
+    },
+    {
+        "nombre": "Telefe (Salta)",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Telefe_Salta/SA_Live_dash_enc/Telefe_Salta.mpd",
+        "keyId": "6c7a5de392f874308e4dd8f2837f1115",
+        "key": "9ccf9ec6922c403d67d0df7952547581"
+    },
+    {
+        "nombre": "La Nación Más",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/La_Nacion/SA_Live_dash_enc/La_Nacion.mpd",
+        "keyId": "f4eade7bbc39b25402acfa301bbad04a",
+        "key": "a74d1df4235a74878327aa8d53ff283c"
+    },
+    {
+        "nombre": "Crónica TV",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/CronicaTV/SA_Live_dash_enc/CronicaTV.mpd",
+        "keyId": "745e7abcc90d41ab706b2ac2f4371da3",
+        "key": "50acd9d19d1361cb4a8a13a867bdc352"
+    },
+    {
+        "nombre": "El Nueve",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/Canal9/SA_Live_dash_enc/Canal9.mpd",
+        "keyId": "24f4ff211136ae6512a1b552200db405",
+        "key": "602122f8426c5c942b8c18d299cc6020"
+    },
+    {
+        "nombre": "C5N",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/C5N/SA_Live_dash_enc/C5N.mpd",
+        "keyId": "050df5c6e78c774e78c3e99eef8a1b29",
+        "key": "0e4141d6ab21a36cbc4da777ab3096d4"
+    },
+    {
+        "nombre": "América TV",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/AmericaTV/SA_Live_dash_enc/AmericaTV.mpd",
+        "keyId": "8ea235ce0826408b221c498115a9b62d",
+        "key": "7aa9266ed91ea4510483370029dfcf45"
+    },
+    {
+        "nombre": "El Trece",
+        "categoria": "Nacionales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/ArtearHD/SA_Live_dash_enc/ArtearHD.mpd",
+        "keyId": "5179017f49326d14af0a9ceec831aee6",
+        "key": "09b4a463b029ebc28a288bed2da70a76"
+    },
+    {
+        "nombre": "Telefe",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/TelefeHD/SA_Live_dash_enc/TelefeHD.mpd",
+        "keyId": "3cec1b1ea9799dda5596e64f37e5ed20",
+        "key": "c69f3afde2085dcaaaddbf55246a0323"
+    },
+    {
+        "nombre": "a24",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/America24/SA_Live_dash_enc/America24.mpd",
+        "keyId": "3b1b027dd011af20fd9956c16dc084fb",
+        "key": "45f75aacf06593c9b693fe427c67e5b8"
+    },
+    {
+        "nombre": "Disney Channel",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/DisneyChannelHD/SA_Live_dash_enc/DisneyChannelHD.mpd",
+        "keyId": "4a742e478d14023e1993e011d9415f94",
+        "key": "0df77ede9bc744376836d21afa137dda"
+    },
+    {
+        "nombre": "Metro",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Metro/SA_Live_dash_enc/Metro.mpd",
+        "keyId": "719aa3a5e270c7f69eba374ed80d7986",
+        "key": "97ac59118cf4cf242e2c31e87cd38e1e"
+    },
+    {
+        "nombre": "Gen TV",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/GEN_TV/SA_Live_dash_enc/GEN_TV.mpd",
+        "keyId": "49eb924ba998ca7fbbaee30dcef1ecb4",
+        "key": "6e131b04b2e87598fb588ac205673698"
+    },
+    {
+        "nombre": "BBC World News",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/BBC_World_News/SA_Live_dash_enc/BBC_World_News.mpd",
+        "keyId": "019f72f2091d4cbea59ff8c85b117f86",
+        "key": "a4eac51195506752f9f63ad24def9c37"
+    },
+    {
+        "nombre": "TN",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/TodoNoticias/SA_Live_dash_enc/TodoNoticias.mpd",
+        "keyId": "7ceb1cd0622cd7e88fcdc99fe3a55de6",
+        "key": "951637093d41c7388a1ef3f620cfea21"
+    },
+    {
+        "nombre": "Argentinísima Satelital",
+        "categoria": "Nacionales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Argentinisima/SA_Live_dash_enc/Argentinisima.mpd",
+        "keyId": "a6243f46366445ebbf3117ec27365481",
+        "key": "81667cdc3bcf19a6a66c0919fa00a20b"
+    },
+    {
+        "nombre": "Telefe (Rosario)",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/Canal_5_Rosario/SA_Live_dash_enc/Canal_5_Rosario.mpd",
+        "keyId": "c61b5ac8e1664bf5b544e92ea2597e1c",
+        "key": "938437ac25f0a18e04efc1a083489edc"
+    },
+    {
+        "nombre": "Telefe (Córdoba)",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Canal_8_CBA/SA_Live_dash_enc/Canal_8_CBA.mpd",
+        "keyId": "103ce214b4d04c8eb4dd43670e956dad",
+        "key": "20e030576b8dc4df0d1c68e16af3bc0f"
+    },
+    {
+        "nombre": "Diputados TV",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Diputados_TV/SA_Live_dash_enc/Diputados_TV.mpd",
+        "keyId": "9666b195171442afd4551a8de01291a6",
+        "key": "1c0061df9b4b098e40355167e97cfbf0"
+    },
+    {
+        "nombre": "Canal 26",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/26_TV_HD/SA_Live_dash_enc/26_TV_HD.mpd",
+        "keyId": "e32aaa4b67430b3b51be1efce5a74ac5",
+        "key": "ad60c5e1d378a97271bf8688f094d092"
+    },
+    {
+        "nombre": "ESPN 4 (Argentina)",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd",
+        "keyId": "65a5bfa3c7a72dde60be9b0c7406c8fc",
+        "key": "0b40ae9f78a7bac3b57ecbf72d3c081e"
+    },
+    {
+        "nombre": "ESPN 3 (Argentina)",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd",
+        "keyId": "f4c9f97e2a36feab0e5077f2b44cbc4e",
+        "key": "1743cd03dfe3736b2c95da91a783af38"
+    },
+    {
+        "nombre": "Fox Sports",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd",
+        "keyId": "cbc2a0c7a38df0aa3333cd71841d3b0d",
+        "key": "aac61b730e2ac1df23f1e872e7541c1b"
+    },
+    {
+        "nombre": "Fox Sports 2",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc/FoxSports2HD.mpd",
+        "keyId": "c98ddffc470fe449ae1a8d6492116976",
+        "key": "5086d370e840010232cf4532b16e197f"
+    },
+    {
+        "nombre": "Fox Sports 3",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc/FoxSports3HD.mpd",
+        "keyId": "55b47390cf9e4997dae6dac85e057875",
+        "key": "fa39e855543c5d70f30600d59e5e4c1b"
+    },
+    {
+        "nombre": "TyC Sports",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc/TyCSport.mpd",
+        "keyId": "2b21c8fa9a329cce311a4c4a4aa996a1",
+        "key": "cc23ea1fb32629f9e1f48c8deeae3e5b"
+    },
+    {
+        "nombre": "TNT Sports",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc/TNT_Sports_HD.mpd",
+        "keyId": "bc80fa3da696e503f940fde5f681a1c5",
+        "key": "ea46e4e9f1132e8dd71fb77f7d55058a"
+    },
+    {
+        "nombre": "ESPN Premium",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc/Fox_Sports_Premiun_HD.mpd",
+        "keyId": "4c230dbc7f6a4bfa6ad0aa73ff792374",
+        "key": "4186a7c2a15f590a9399886feaec4257"
+    },
+    {
+        "nombre": "TV Pública",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Canal7/SA_Live_dash_enc/Canal7.mpd",
+        "keyId": "cc8c82ac2ec7e9799527c29db7354e81",
+        "key": "cc4aae173dd2ef17ae26be3f7ae87662"
+    },
+    {
+        "nombre": "DeporTV",
+        "categoria": "Deportes",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/DeporTVHD/SA_Live_dash_enc/DeporTVHD.mpd",
+        "keyId": "f362097815892a4b83950f1d106ff0b2",
+        "key": "4349e42e81c31a8389f4a42fcd298928"
+    },
+    {
+        "nombre": "VTV",
+        "categoria": "Uruguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/VTV_HD/SA_Live_dash_enc/VTV_HD.mpd",
+        "keyId": "b96960aa715a4e51b7e952e81c99ac8e",
+        "key": "5bbffc680764dbd63d90b774b3aa0c0a"
+    },
+    {
+        "nombre": "A3Cine",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/A3_Cine/SA_Live_dash_enc/A3_Cine.mpd",
+        "keyId": "d6ff881a6f07986a80d6ad6f041b57d4",
+        "key": "b401c87c2ab11a1a488ee1c474b109ae"
+    },
+    {
+        "nombre": "Discovery Theater",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Theater_HD/SA_Live_dash_enc/Theater_HD.mpd",
+        "keyId": "5279c05ea51c4dae8e7fa6be88448089",
+        "key": "b28dfafba4b848dfd5d7c177ebf19108"
+    },
+    {
+        "nombre": "Quiero",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Quiero_HD/SA_Live_dash_enc/Quiero_HD.mpd",
+        "keyId": "a354b0c82a3a720c4a6f52ed5a1190f4",
+        "key": "45a76dcc84f058cfabc8b958d7303b28"
+    },
+    {
+        "nombre": "Discovery World",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Discovery_World_HD/SA_Live_dash_enc/Discovery_World_HD.mpd",
+        "keyId": "34ee94c2263345f7a3a590661264e490",
+        "key": "56757d656a697ab7a2e5e083b5d21bb5"
+    },
+    {
+        "nombre": "Eurochannel",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Eurochannel/SA_Live_dash_enc/Eurochannel.mpd",
+        "keyId": "6f0fc214d9844a7590f0884d55b44c42",
+        "key": "b2fe1bb5f9c79035301c328c1e93b0ee"
+    },
+    {
+        "nombre": "Discovery Science",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Discovery_Science/SA_Live_dash_enc/Discovery_Science.mpd",
+        "keyId": "46ba409fb04e40fb86b466d97e3a9588",
+        "key": "f129fb9b5d213e20e2abe529b8cf2597"
+    },
+    {
+        "nombre": "CineAr",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/INCAA_Tv/SA_Live_dash_enc/INCAA_Tv.mpd",
+        "keyId": "d44f40e49d2945c1a3701c0885ff0b00",
+        "key": "6382b6279087402714b6824688c456df"
+    },
+    {
+        "nombre": "AE",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/AEHD/SA_Live_dash_enc/AEHD.mpd",
+        "keyId": "db12035627a4b3d7198b761f36b4a290",
+        "key": "80ca761a875992ac0e50b0851d5563fe"
+    },
+    {
+        "nombre": "Volver",
+        "categoria": "Argentina",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Volver/SA_Live_dash_enc/Volver.mpd",
+        "keyId": "194e53184a424ce6989ad82c5f28fbc5",
+        "key": "65d60c5cc4de031172be0a6a51edbdfe"
+    },
+    {
+        "nombre": "AXN",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/AXNHD/SA_Live_dash_enc/AXNHD.mpd",
+        "keyId": "03e77b5bbf5135a85d587c5af2f2f730",
+        "key": "1dd1ab1938a791d03f09eb88478b4880"
+    },
+    {
+        "nombre": "Warner",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/WarnerHD/SA_Live_dash_enc/WarnerHD.mpd",
+        "keyId": "03e77b5bbf5135a85d587c5af2f2f730",
+        "key": "1dd1ab1938a791d03f09eb88478b4880"
+    },
+    {
+        "nombre": "Aquí no hay quien viva",
+        "categoria": "",
+        "url": "https://fast-channels.atresmedia.com/648ef3951756b0e425af83cc/648ef3951756b0e425af83cc.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TV 5 Monde",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/TV5_Monde/SA_Live_dash_enc/TV5_Monde.mpd",
+        "keyId": "62034ff5988b4787b17cdf6f751a3142",
+        "key": "b3938f0af28b4c0c082b0d4210e389a0"
+    },
+    {
+        "nombre": "Hola TV",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/Hola_TV/SA_Live_dash_enc/Hola_TV.mpd",
+        "keyId": "5d759477f0ad1bdef2c6de09e7c275fd",
+        "key": "82cc6eea185eecc934df95adfbbf9dbc"
+    },
+    {
+        "nombre": "MTV Hits",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/MTV_Hits/SA_Live_dash_enc/MTV_Hits.mpd",
+        "keyId": "61008dfc867544cd872de99b1f2b82cf",
+        "key": "716449756316b91c54803aaa22a2fbf0"
+    },
+    {
+        "nombre": "Telefuturo",
+        "categoria": "Paraguay",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc/TELEFUTURO_C4.mpd",
+        "keyId": "5d2731cf8a59b73438ef59d88cd882bf",
+        "key": "3f412fa6368b7db4903588de695377e1"
+    },
+    {
+        "nombre": "MTV",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/MTV_HD/SA_Live_dash_enc/MTV_HD.mpd",
+        "keyId": "0c9eb3ead38a122ac460ad96a8ebfd2e",
+        "key": "66bfbfa4449eb8bc1bcf7577d5bffaad"
+    },
+    {
+        "nombre": "Nick Junior",
+        "categoria": "Infantil",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Nick_Jr/SA_Live_dash_enc/Nick_Jr.mpd",
+        "keyId": "e824b2277a86fd6adfc40aa948e5064a",
+        "key": "28da2dbbe8e1a1463bbb23895b922083"
+    },
+    {
+        "nombre": "MTV 00",
+        "categoria": "Música",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c7eds/MTV00/SA_Live_dash_enc/MTV00.mpd",
+        "keyId": "1f0c09ed9e5841cf867ba6eb3cdfd61d",
+        "key": "802c89c6bae6a245aaafcf40c1986fc1"
+    },
+    {
+        "nombre": "TVE Internacional",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/TV_Espana/SA_Live_dash_enc/TV_Espana.mpd",
+        "keyId": "53e0a3741e2e4ff5843f165b53309088",
+        "key": "45095caabd9a359cd7ea3910d865d643"
+    },
+    {
+        "nombre": "Wobi",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/WOBI/SA_Live_dash_enc/WOBI.mpd",
+        "keyId": "f2e44a719947ebfe37de527a9d6df71e",
+        "key": "029bddeb08909dd66a80276fc338d692"
+    },
+    {
+        "nombre": "Telesur",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Telesur/SA_Live_dash_enc/Telesur.mpd",
+        "keyId": "5235d8ee29f14ce6b26ea5d828aee77a",
+        "key": "6bf6bd339e3098babc2ab0b984cd2376"
+    },
+    {
+        "nombre": "Lifetime",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Lifetime/SA_Live_dash_enc/Lifetime.mpd",
+        "keyId": "eae51b1d67ff47adac7b6bd3a4b1120a",
+        "key": "b4d6bb47193f33ffc12379cdc447455d"
+    },
+    {
+        "nombre": "Space",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/Space/SA_Live_dash_enc/Space.mpd",
+        "keyId": "0942e4ecd1bd3567e8f9447f45c20a12",
+        "key": "efca6264f04cf7373de0c30ec79fe909"
+    },
+    {
+        "nombre": "Antena 3 Internacional",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Antena_3/SA_Live_dash_enc/Antena_3.mpd",
+        "keyId": "1e1ad422a6714482b66fa702c16e50c6",
+        "key": "4fdf28a0ab91356ca55a75f4e9bf8c92"
+    },
+    {
+        "nombre": "Playboy",
+        "categoria": "Adultos",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Playboy/SA_Live_dash_enc/Playboy.mpd",
+        "keyId": "8577d81eaf33436d9f1e482360685a7c",
+        "key": "f608a0ac703cfaaf9442574d9a2b87fb"
+    },
+    {
+        "nombre": "Fox News",
+        "categoria": "Noticias",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Fox_News/SA_Live_dash_enc/Fox_News.mpd",
+        "keyId": "3fe3f31a5e7b48a1b548e9364757ce66",
+        "key": "32993fc281207fe915f6f1e990957868"
+    },
+    {
+        "nombre": "TV Chile",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Tv_Chile/SA_Live_dash_enc/Tv_Chile.mpd",
+        "keyId": "c5d0d76e24844235988f9265619e5fec",
+        "key": "446b71a6deb806c6f129e25de999d07c"
+    },
+    {
+        "nombre": "Discovery Channel",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/DiscoveryHD/SA_Live_dash_enc/DiscoveryHD.mpd",
+        "keyId": "c283c84a7af0d7c8b9b612a8fb22a001",
+        "key": "f45510c721eebd6eaa86a2e16ccbd77d"
+    },
+    {
+        "nombre": "FX",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/FXHD/SA_Live_dash_enc/FXHD.mpd",
+        "keyId": "9ab9c42c713e0fb5517dc77cc19d6755",
+        "key": "d8c271b82387e609b6c19e5e79240aff"
+    },
+    {
+        "nombre": "Mas chic",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Mas_Chic/SA_Live_dash_enc/Mas_Chic.mpd",
+        "keyId": "dac8ff1688994efd898222acdd05cafc",
+        "key": "22fdf97c7233667518258ed16ccb2545"
+    },
+    {
+        "nombre": "Studio Universal",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Studio_Universal/SA_Live_dash_enc/Studio_Universal.mpd",
+        "keyId": "d9b541e3cd064d569843da42788d4263",
+        "key": "bba5d26ad5051fb3f2cf7e3dd8a4a7d8"
+    },
+    {
+        "nombre": "Sun Channel",
+        "categoria": "Documentales",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Sun_Channel/SA_Live_dash_enc/Sun_Channel.mpd",
+        "keyId": "158177692aa3463eae5f4e1f72403e9c",
+        "key": "1c6c026fba9cf7ecb576c7bedce0ead4"
+    },
+    {
+        "nombre": "Cinecanal",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/CinecanalHD/SA_Live_dash_enc/CinecanalHD.mpd",
+        "keyId": "6003e92dd0d9f548329015c9e15dd578",
+        "key": "213cf85cb5f9fe569757004a77e05948"
+    },
+    {
+        "nombre": "AMC",
+        "categoria": "Cine y Series",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c3eds/AMC/SA_Live_dash_enc/AMC.mpd",
+        "keyId": "1fa6a86fd80b6d1425dde74482b5dc9c",
+        "key": "744c3636d57a651ab444cf9fe5f95b33"
+    },
+    {
+        "nombre": "rai",
+        "categoria": "Variedades",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/RAI/SA_Live_dash_enc/RAI.mpd",
+        "keyId": "d214547d7d9a4011a39a899ce6e70071",
+        "key": "16c2ed0617cf1e123f3af6ea8875a82d"
+    },
+    {
+        "nombre": "Venus",
+        "categoria": "Adultos",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc/Venus.mpd",
+        "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
+        "key": "05d973d987915120e567880f50a422af"
+    },
+    {
+        "nombre": "Sextreme",
+        "categoria": "Adultos",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Sextreme/SA_Live_dash_enc/Sextreme.mpd",
+        "keyId": "95bd64227acf458daf7886f803d0298e",
+        "key": "79e28ee0ec58958bb666f9e53a0cd434"
+    },
+    {
+        "nombre": "Canal 7 (baía blanca)",
+        "categoria": "Argentina",
+        "url": "https://edge-mix02-mun.cvattv.com.ar/live/c3eds/Canal7_Bahia_Blanca/SA_Live_dash_enc_2A/Canal7_Bahia_Blanca.mpd",
+        "keyId": "a15243320c0a79defa8814252e3e8c07",
+        "key": "0659db05632c0061c126db7a12582499"
+    },
+    {
+        "nombre": "telefe (Bahía blanca)",
+        "categoria": "Argentina",
+        "url": "https://edge-mix02-mun.cvattv.com.ar/live/c3eds/Canal9_Bahia_Blanca/SA_Live_dash_enc_2A/Canal9_Bahia_Blanca.mpd",
+        "keyId": "7ccfc823faed878832b3e4a69fcb72a2",
+        "key": "d68b394ab768f4a2ec148ab8cdac46ef"
+    },
+    {
+        "nombre": "Canal 10 (Córdoba)",
+        "categoria": "Argentina",
+        "url": "https://edge-mix02-mun.cvattv.com.ar/live/c4eds/Canal10_CBA_HD/SA_Live_dash_enc_2A/Canal10_CBA_HD.mpd",
+        "keyId": "6d85fcc70989d0dbe8d70dd70a4629c0",
+        "key": "a953290192fd5db5bf7936a88ecc6877"
+    },
+    {
+        "nombre": "Show Sports (Córdoba)",
+        "categoria": "Deportes",
+        "url": "https://edge-mix02-mun.cvattv.com.ar/live/c4eds/Show_Sports/SA_Live_dash_enc_2A/Show_Sports.mpd",
+        "keyId": "df3ed6245bb9af1a0346379e8e475dff",
+        "key": "f86f8457438d4e449d53b956cc1be664"
+    }
+]
