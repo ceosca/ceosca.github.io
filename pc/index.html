@@ -18,10 +18,13 @@
     </div>
     <div>
         <label for="channelSelector">Selecciona un canal:</label>
-        <select id="channelSelector">
+        <select id="channelSelector" onchange="cargarStream()">
         </select>
-        <button onclick="changeChannel(-1)">Canal Anterior</button>
-        <button onclick="changeChannel(1)">Siguiente Canal</button>
+    </div>
+    <div>
+        <label for="audioSelector">Selecciona un audio:</label>
+        <select id="audioSelector" onchange="changeAudio()">
+        </select>
     </div>
     <div id="player">CARGANDO...</div>
     <div id="controls">
@@ -124,6 +127,11 @@
             playerInstance = jwplayer("player").setup(config);
         }
 
+        // Cambiar el audio seleccionado
+        function changeAudio() {
+            cargarStream();
+        }
+
         function playPause() {
             if (playerInstance.getState() === "playing") {
                 playerInstance.pause();
@@ -136,15 +144,6 @@
             var currentVolume = playerInstance.getVolume();
             var newVolume = Math.max(0, Math.min(100, currentVolume + amount));
             playerInstance.setVolume(newVolume);
-        }
-
-        function changeChannel(offset) {
-            var selectBox = document.getElementById("channelSelector");
-            var currentIndex = selectBox.selectedIndex + offset;
-            if (currentIndex >= 0 && currentIndex < selectBox.options.length) {
-                selectBox.selectedIndex = currentIndex;
-                cargarStream();
-            }
         }
     </script>
 </body>
