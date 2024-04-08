@@ -24,6 +24,7 @@
             .then(data => {
                 canales = data;
                 cargarOpciones();
+                currentChannelIndex = 0;
                 cargarStream();
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
@@ -43,7 +44,10 @@
             var selectedValue = canales[currentChannelIndex];
             var config = {
                 playlist: [{
-                    sources: filterSources(selectedValue.sources)
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }]
                 }],
                 autostart: true,
                 cast: {},
@@ -61,12 +65,6 @@
 
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
-        }
-
-        function filterSources(sources) {
-            return sources.filter(function(source) {
-                return source.file.indexOf('-avc1') === -1;
-            });
         }
 
         function changeAudioTrack(offset) {
