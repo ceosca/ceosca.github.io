@@ -12,11 +12,6 @@
 </head>
 <body>
     <div>
-        <label for="categorySelector">Selecciona una categoría:</label>
-        <select id="categorySelector" onchange="updateChannelList()">
-        </select>
-    </div>
-    <div>
         <label for="channelSelector">Selecciona un canal:</label>
         <select id="channelSelector" onchange="cargarStream()">
         </select>
@@ -26,7 +21,7 @@
         <select id="audioSelector" onchange="changeAudio()">
         </select>
     </div>
-    <div id="player">CARGANDO...</div>
+    <div id="playerContainer"></div>
     <div id="controls">
         <button onclick="playPause()">Play/Pausa</button>
         <button onclick="changeVolume(-5)">Bajar Volumen</button>
@@ -35,62 +30,36 @@
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
-        var categorias = [];
+        var currentChannelIndex = null;
+        var channelNumberBuffer = "";
+        var timeoutId = null;
+        var downArrowTimer = null;
+        var upArrowTimer = null;
 
-        fetch('https://ceosca.github.io/pc/canales.json')
+        fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
             .then(data => {
                 canales = data;
-                categorias = obtenerCategoriasOrdenadas();
-                cargarCategorias();
-                updateChannelList();
+                cargarOpciones();
+                cargarStream();
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
-        function cargarCategorias() {
-            var selectBox = document.getElementById("categorySelector");
-            categorias.forEach(function(categoria) {
-                var option = document.createElement("option");
-                option.text = categoria;
-                selectBox.add(option);
-            });
-        }
-
-        function obtenerCategoriasOrdenadas() {
-            var categoriasSet = new Set();
-            canales.forEach(function(canal) {
-                categoriasSet.add(canal.categoria);
-            });
-            return Array.from(categoriasSet).sort();
-        }
-
-        function updateChannelList() {
-            var selectedCategory = document.getElementById("categorySelector").value;
-            var channelSelector = document.getElementById("channelSelector");
-            channelSelector.innerHTML = "";
-            var filteredChannels = canales.filter(function(canal) {
-                return canal.categoria === selectedCategory;
-            });
-            filteredChannels.sort(function(a, b) {
-                return a.nombre.localeCompare(b.nombre);
-            });
-            filteredChannels.forEach(function(canal) {
+        function cargarOpciones() {
+            var selectBox = document.getElementById("channelSelector");
+            canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = JSON.stringify(canal);
-                channelSelector.add(option);
+                option.value = index + 1; // Sumar 1 al índice
+                selectBox.add(option);
             });
-            if (filteredChannels.length > 0) {
-                cargarStream();
-            }
+            selectBox.selectedIndex = 0;
         }
 
         function cargarStream() {
-            var selectBox = document.getElementById("channelSelector");
-            var selectedValue = JSON.parse(selectBox.value);
+            var selectedValue = canales[currentChannelIndex];
             var config = {
                 playlist: [{
-                    title: "Audio del Stream Seleccionado",
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
@@ -98,9 +67,9 @@
                 }],
                 autostart: true,
                 cast: {},
-                controls: false
+                controls: false,
             };
-            
+
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
@@ -109,8 +78,9 @@
                     }
                 };
             }
-            
-            playerInstance = jwplayer("player").setup(config);
+
+            playerInstance = jwplayer("playerContainer").setup(config);
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
 
             var audioSelector = document.getElementById("audioSelector");
             audioSelector.innerHTML = "";
@@ -125,7 +95,8 @@
         }
 
         function changeAudio() {
-            cargarStream();
+            var selectedAudioIndex = document.getElementById("audioSelector").value;
+            playerInstance.setCurrentAudioTrack(parseInt(selectedAudioIndex));
         }
 
         function playPause() {
