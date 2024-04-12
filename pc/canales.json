@@ -1027,5 +1027,12 @@
         "url": "https://edge-mix02-mun.cvattv.com.ar/live/c4eds/Show_Sports/SA_Live_dash_enc_2A/Show_Sports.mpd",
         "keyId": "df3ed6245bb9af1a0346379e8e475dff",
         "key": "f86f8457438d4e449d53b956cc1be664"
+    },
+    {
+        "nombre": "América Sports",
+        "categoria": "Deportes",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/America_Sports/SA_Live_dash_enc_2A/America_Sports.mpd",
+        "keyId": "a0aa01337a2148bda1e21862295ae0370b72a5eb5e9a9a2b6abc",
+        "key": "fee0f87a0527497351fc54ce36ad1de2"
     }
 ]
