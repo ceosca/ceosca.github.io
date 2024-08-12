@@ -7,7 +7,8 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
-        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()"></select>
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
+        </select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -32,7 +33,7 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1;
+                option.value = index + 1; // Sumar 1 al índice
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
@@ -50,12 +51,17 @@
                 autostart: true,
                 cast: {},
                 controls: false,
-                drm: {
-                    widevine: {
-                        licenseUrl: "https://wv-client.cvattv.com.ar?deviceId=NjAxNmY0Y2E4OWI5M2FmMjllZTAyNWY2YmNlNGEyZWQ="
-                    }
-                }
             };
+
+            if (selectedValue.keyId && selectedValue.key) {
+                config.drm = {
+                    clearkey: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
+                    }
+                };
+            }
+
             playerInstance = jwplayer("playerContainer").setup(config);
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
         }
@@ -69,7 +75,7 @@
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
@@ -80,7 +86,7 @@
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1;
+            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -130,7 +136,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
                             channelNumberBuffer = "";
                             cargarStream();
                         }
