@@ -52,7 +52,7 @@
                 controls: false,
                 drm: {
                     widevine: {
-                        licenseUrl: selectedValue.licenseUrl
+                        licenseUrl: "https://wv-client.cvattv.com.ar?deviceId=NjAxNmY0Y2E4OWI5M2FmMjllZTAyNWY2YmNlNGEyZWQ="
                     }
                 }
             };
@@ -83,11 +83,11 @@
             currentChannelIndex = parseInt(selectBox.value) - 1;
             channelNumberBuffer = "";
             cargarStream();
-            ocultarSelector();
+            ocultarSelector(); 
         }
 
         function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none";
+            document.getElementById("channelSelector").style.display = "none"; 
         }
 
         function handleDownArrow() {
@@ -112,9 +112,9 @@
 
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
-            if (keyCode === 13) {
-                document.getElementById("channelSelector").style.display = "block";
-                document.getElementById("channelSelector").focus();
+            if (keyCode === 13) { 
+                document.getElementById("channelSelector").style.display = "block"; 
+                document.getElementById("channelSelector").focus(); 
             } else if (keyCode === 37) {
                 changeChannel(-1);
             } else if (keyCode === 39) {
