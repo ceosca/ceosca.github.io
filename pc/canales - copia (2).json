@@ -2,21 +2,21 @@
     {
         "nombre": "A24",
         "categoria": "Noticias",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/America24/SA_Live_dash_enc_2A/America24.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/America24/SA_Live_dash_enc_2A/America24.mpd",
         "keyId": "3b1b027dd011af20fd9956c16dc084fb",
         "key": "45f75aacf06593c9b693fe427c67e5b8"
     },
     {
         "nombre": "C5N",
         "categoria": "Noticias",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/C5N/SA_Live_dash_enc_2A/C5N.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/C5N/SA_Live_dash_enc_2A/C5N.mpd",
         "keyId": "050df5c6e78c774e78c3e99eef8a1b29",
         "key": "0e4141d6ab21a36cbc4da777ab3096d4"
     },
     {
         "nombre": "Canal 26",
         "categoria": "Noticias",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/26_TV_HD/SA_Live_dash_enc_2A/26_TV_HD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/26_TV_HD/SA_Live_dash_enc_2A/26_TV_HD.mpd",
         "keyId": "e32aaa4b67430b3b51be1efce5a74ac5",
         "key": "ad60c5e1d378a97271bf8688f094d092"
     },
@@ -37,7 +37,7 @@
     {
         "nombre": "IP Noticias",
         "categoria": "Noticias",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Investigacion_Periodistica/SA_Live_dash_enc/Investigacion_Periodistica.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/Investigacion_Periodistica/SA_Live_dash_enc/Investigacion_Periodistica.mpd",
         "keyId": "5299f96f873aa0f0e47edc4e15784717",
         "key": "9d53176b0969492f2d93f1867be1dce1"
     },
@@ -51,7 +51,7 @@
     {
         "nombre": "Telefe Córdoba",
         "categoria": "Córdoba",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Canal_8_CBA/SA_Live_dash_enc/Canal_8_CBA.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Canal_8_CBA/SA_Live_dash_enc/Canal_8_CBA.mpd",
         "keyId": "103ce214b4d04c8eb4dd43670e956dad",
         "key": "20e030576b8dc4df0d1c68e16af3bc0f"
     },
@@ -65,21 +65,21 @@
     {
         "nombre": "Canal 10 Córdoba",
         "categoria": "Córdoba",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal10_CBA_HD/SA_Live_dash_enc_2A/Canal10_CBA_HD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/Canal10_CBA_HD/SA_Live_dash_enc_2A/Canal10_CBA_HD.mpd",
         "keyId": "6d85fcc70989d0dbe8d70dd70a4629c0",
         "key": "a953290192fd5db5bf7936a88ecc6877"
     },
     {
         "nombre": "Telefe",
         "categoria": "Nacionales",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/TelefeHD/SA_Live_dash_enc/TelefeHD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/TelefeHD/SA_Live_dash_enc/TelefeHD.mpd",
         "keyId": "3cec1b1ea9799dda5596e64f37e5ed20",
         "key": "c69f3afde2085dcaaaddbf55246a0323"
     },
     {
         "nombre": "Eltrece",
         "categoria": "Nacionales",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/ArtearHD/SA_Live_dash_enc/ArtearHD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/ArtearHD/SA_Live_dash_enc/ArtearHD.mpd",
         "keyId": "5179017f49326d14af0a9ceec831aee6",
         "key": "09b4a463b029ebc28a288bed2da70a76"
     },
@@ -107,7 +107,7 @@
     {
         "nombre": "TN",
         "categoria": "Noticias",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/TodoNoticias/SA_Live_dash_enc_2A/TodoNoticias.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/TodoNoticias/SA_Live_dash_enc_2A/TodoNoticias.mpd",
         "keyId": "7ceb1cd0622cd7e88fcdc99fe3a55de6",
         "key": "951637093d41c7388a1ef3f620cfea21"
     },
@@ -128,7 +128,7 @@
     {
         "nombre": "Metro",
         "categoria": "Variedades",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Metro/SA_Live_dash_enc/Metro.mpd",
+        "url": "https://edge-live17-hr.cvattv.com.ar/live/c6eds/Metro/SA_Live_dash_enc/Metro.mpd",
         "keyId": "719aa3a5e270c7f69eba374ed80d7986",
         "key": "97ac59118cf4cf242e2c31e87cd38e1e"
     },
@@ -142,7 +142,7 @@
     {
         "nombre": "Canal De La Ciudad",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Canal_de_la_ciudad/SA_Live_dash_enc/Canal_de_la_ciudad.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Canal_de_la_ciudad/SA_Live_dash_enc/Canal_de_la_ciudad.mpd",
         "keyId": "5ee7842b3cf24d1dba088365fa5d0543",
         "key": "69cec006409823c06fbf2866a231b4f7"
     },
@@ -163,7 +163,7 @@
     {
         "nombre": "Chacra TV",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/Chacra_TV/SA_Live_dash_enc/Chacra_TV.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/Chacra_TV/SA_Live_dash_enc/Chacra_TV.mpd",
         "keyId": "b2b0364a95feb428933fd2396e99b187",
         "key": "b301ecdcc386fc4dc59e8ad547bbcd3c"
     },
@@ -184,14 +184,14 @@
     {
         "nombre": "KZO Entertaiment",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/KZO/SA_Live_dash_enc/KZO.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/KZO/SA_Live_dash_enc/KZO.mpd",
         "keyId": "695d07988114f7fec31f8f27a6d67c32",
         "key": "8e4fbb96cff6a31c88f81565b199a13a"
     },
     {
         "nombre": "ESPN",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/ESPN_UY/SA_Live_dash_enc/ESPN_UY.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/ESPN_UY/SA_Live_dash_enc/ESPN_UY.mpd",
         "keyId": "6362e1f36fcb7ee3c47debd9140336ad",
         "key": "9ba1d46c5b9c7a3130a5dabbf7155175"
     },
@@ -205,35 +205,35 @@
     {
         "nombre": "ESPN 4",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd",
         "keyId": "cc8d44406ed6bf1898ad9f7a2d64f29e",
         "key": "fb85d059687ab0fc67805806204edbdf"
     },
     {
         "nombre": "ESPN 5",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
         "keyId": "24f2b3e741f0d9e9a8d516faff38bddc",
         "key": "bbd3fd02fb104e1463ac528a13f67e4a"
     },
     {
         "nombre": "ESPN 6",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/FoxSports3_UY/SA_Live_dash_enc/FoxSports3_UY.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/FoxSports3_UY/SA_Live_dash_enc/FoxSports3_UY.mpd",
         "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
         "key": "89157cdd25df25d56f1ecccee3850888"
     },
     {
         "nombre": "ESPN 7",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/FoxSports2_UY/SA_Live_dash_enc/FoxSports2_UY.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/FoxSports2_UY/SA_Live_dash_enc/FoxSports2_UY.mpd",
         "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
         "key": "89157cdd25df25d56f1ecccee3850888"
     },
     {
         "nombre": "ESPN Premium",
         "categoria": "PACK FÚTBOL",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd",
         "keyId": "4c230dbc7f6a4bfa6ad0aa73ff792374",
         "key": "4186a7c2a15f590a9399886feaec4257"
     },
@@ -249,7 +249,7 @@
     {
         "nombre": "VTV Plus Uruguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/VTV_Plus_HD/SA_Live_dash_enc/VTV_Plus_HD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/VTV_Plus_HD/SA_Live_dash_enc/VTV_Plus_HD.mpd",
         "keyId": "da8a49a594160cc0059f07b9f71cd39a",
         "key": "37ca91dd799b351a02445151c7f61070"
     },
@@ -284,14 +284,14 @@
     {
         "nombre": "TyC Sports",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c5eds/TyCSport/SA_Live_dash_enc/TyCSport.mpd",
+        "url": "https://edge-live11-sl.cvattv.com.ar/live/c5eds/TyCSport/SA_Live_dash_enc/TyCSport.mpd",
         "keyId": "2b21c8fa9a329cce311a4c4a4aa996a1",
         "key": "cc23ea1fb32629f9e1f48c8deeae3e5b"
     },
     {
         "nombre": "TyC Sports Internacional",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/TyC_Internacional/SA_Live_dash_enc/TyC_Internacional.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/TyC_Internacional/SA_Live_dash_enc/TyC_Internacional.mpd",
         "keyId": "58e1ebe75d944f6a98ea67b1c7c0a572",
         "key": "1c311b069dbce31ce8e62a6e7e2433eb"
     },
@@ -305,7 +305,7 @@
     {
         "nombre": "Show Sports Córdoba",
         "categoria": "Córdoba",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Show_Sports/SA_Live_dash_enc_2A/Show_Sports.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/Show_Sports/SA_Live_dash_enc_2A/Show_Sports.mpd",
         "keyId": "df3ed6245bb9af1a0346379e8e475dff",
         "key": "f86f8457438d4e449d53b956cc1be664"
     },
@@ -333,7 +333,7 @@
     {
         "nombre": "PX Sports",
         "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/PX_Sports/SA_Live_dash_enc_2A/PX_Sports.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/PX_Sports/SA_Live_dash_enc_2A/PX_Sports.mpd",
         "keyId": "k5MyHa7xRj/H4uBgKY24Ug",
         "key": "vmvJHheBb2fmJZa+1GPFrQ"
     },
@@ -355,7 +355,7 @@
     {
     "nombre": "Eventos UY",
     "categoria": "Deportes",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/Eventos_HD_Uy/SA_Live_dash_enc_EXTRA/Eventos_HD_Uy.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c7eds/Eventos_HD_Uy/SA_Live_dash_enc_EXTRA/Eventos_HD_Uy.mpd",
     "keyId": "48d0e34c8797c5c2a742d2630a8fb975",
     "key": "fb5d12b9d8febe836e5670abd003ddca"
 },
@@ -441,7 +441,7 @@
     {
     "nombre": "PLIM PLIM TV",
     "categoria": "Infantiles y Familiares",
-    "url": "https://chromecast.cvattv.com.ar/live/c6eds/Plim_Plim/SA_Live_dash_enc/Plim_Plim.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c6eds/Plim_Plim/SA_Live_dash_enc/Plim_Plim.mpd",
     "keyId": "8e88e1572dcd2b31a10026668d628d61",
     "key": "ab95bdc2655aff4f4a8e512fb68c80df"
 },
@@ -462,7 +462,7 @@
     {
     "nombre": "Adult Swim",
     "categoria": "Variedades",
-    "url": "https://chromecast.cvattv.com.ar/live/c3eds/Adult_Swim/SA_Live_dash_enc/Adult_Swim.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c3eds/Adult_Swim/SA_Live_dash_enc/Adult_Swim.mpd",
     "keyId": "9be1432e1e594c8d0648a44d3d9f0c46",
     "key": "8e6c785b14d973c504074b1920f11b15"
 },
@@ -497,7 +497,7 @@
     {
     "nombre": "Atreseries",
     "categoria": "Variedades",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/A3_Series/SA_Live_dash_enc_2A/A3_Series.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c7eds/A3_Series/SA_Live_dash_enc_2A/A3_Series.mpd",
     "keyId": "5e34e08ae5ae440f01a03e505dd24a57",
     "key": "ed30cc7f5040a75d73f619320249272b"
 },
@@ -539,7 +539,7 @@
     {
     "nombre": "DHE",
     "categoria": "Variedades",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/DHE/SA_Live_dash_enc/DHE.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c7eds/DHE/SA_Live_dash_enc/DHE.mpd",
     "keyId": "ff800156f81f70c687eccaadedc2ca15",
     "key": "937ba1301e27008b34d02b9d8a31a0db"
 },
@@ -553,7 +553,7 @@
     {
     "nombre": "Europa Europa",
     "categoria": "Variedades",
-    "url": "https://chromecast.cvattv.com.ar/live/c6eds/Europa_Europa/SA_Live_dash_enc_2A/Europa_Europa.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c6eds/Europa_Europa/SA_Live_dash_enc_2A/Europa_Europa.mpd",
     "keyId": "vcnxaWqC7nOY3Tp/qCMA4g",
     "key": "tH8lffAxTQmn+DVcOr4dxg"
 },
@@ -567,7 +567,7 @@
     {
         "nombre": "Golden",
         "categoria": "Variedades",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Golden/SA_Live_dash_enc/Golden.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Golden/SA_Live_dash_enc/Golden.mpd",
         "keyId": "b7d085dbd4539afcc6a55445efb2b04e",
         "key": "0a55fbe044fed379d1632b589265b571"
     },
@@ -588,7 +588,7 @@
     {
         "nombre": "HBO",
         "categoria": "HBO Pack",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/HBOHD/SA_Live_dash_enc/HBOHD.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/HBOHD/SA_Live_dash_enc/HBOHD.mpd",
         "keyId": "5317283f4110fac3fb3a0becd9f648bc",
         "key": "0754a03c926b1247216e01d9dbcfac28"
     },
@@ -651,7 +651,7 @@
     {
         "nombre": "Pasiones",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Pasiones/SA_Live_dash_enc/Pasiones.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/Pasiones/SA_Live_dash_enc/Pasiones.mpd",
         "keyId": "d41cf825e878f0d8e276218af7f5b7e1",
         "key": "13d1b73ab578ab8623be9347bcf8972a"
     },
@@ -665,7 +665,7 @@
     {
         "nombre": "Sony Movies",
         "categoria": "Variedades",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Sony_Movies/SA_Live_dash_enc/Sony_Movies.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/Sony_Movies/SA_Live_dash_enc/Sony_Movies.mpd",
         "keyId": "88b9c41e72acd5b589bbfb4776969781",
         "key": "43b9403f7a9e28fc2d7cbf10373b85aa"
     },
@@ -728,42 +728,42 @@
     {
         "nombre": "Universal Premiere",
         "categoria": "Universal+ Pack",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Universal_Premiere/SA_Live_dash_enc/Universal_Premiere.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Universal_Premiere/SA_Live_dash_enc/Universal_Premiere.mpd",
         "keyId": "0eb20b51ad13b58ad417f11318e588b3",
         "key": "ad5d29a33d73d21187157802de8e6097"
     },
     {
         "nombre": "Universal Cinema",
         "categoria": "Universal+ Pack",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Universal_Cinema/SA_Live_dash_enc/Universal_Cinema.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Universal_Cinema/SA_Live_dash_enc/Universal_Cinema.mpd",
         "keyId": "f6ae2e17173055e4ca69dc18963406ae",
         "key": "5a955c29eb88a0b4c9a2538cc4b3aea2"
     },
     {
         "nombre": "Universal Comedy",
         "categoria": "Universal+ Pack",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Universal_Comedy/SA_Live_dash_enc/Universal_Comedy.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Universal_Comedy/SA_Live_dash_enc/Universal_Comedy.mpd",
         "keyId": "062c5d25105a3a935b67e36923c73f28",
         "key": "88c2d4cec420f18d2477152c66c7870d"
     },
     {
         "nombre": "Universal Crime",
         "categoria": "Universal+ Pack",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/universal_Crime/SA_Live_dash_enc/universal_Crime.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/universal_Crime/SA_Live_dash_enc/universal_Crime.mpd",
         "keyId": "1efd7edf60e1514f775dd13d046ae708",
         "key": "c2ef1abbd945c62c11b1375eaaa50f0d"
     },
     {
         "nombre": "Universal Reality",
         "categoria": "Universal+ Pack",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Universal_Reality/SA_Live_dash_enc/Universal_Reality.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Universal_Reality/SA_Live_dash_enc/Universal_Reality.mpd",
         "keyId": "cedd9c1a5c2ae43f80ee3197212016d6",
         "key": "bf47a3c39e164a97ea6adc4c8dd57435"
     },
     {
         "nombre": "USA",
         "categoria": "Variedades",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/USA_Network/SA_Live_dash_enc/USA_Network.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/USA_Network/SA_Live_dash_enc/USA_Network.mpd",
         "keyId": "c754b522b3b87dc2ba2da3e35154ec14",
         "key": "141a51e9e83861ae99b4b217431710b3"
     },
@@ -784,7 +784,7 @@
     {
     "nombre": "Allegro",
     "categoria": "",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/AllegroHD/SA_Live_dash_enc/AllegroHD.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c7eds/AllegroHD/SA_Live_dash_enc/AllegroHD.mpd",
     "keyId": "e55e61b81b992d6c21466891d72157e9",
     "key": "566d341bf7209a88976e75c20ad7aca2"
 },
@@ -861,7 +861,7 @@
     {
     "nombre": "Al Jazeera",
     "categoria": "",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/Alljazzera/SA_Live_dash_enc/Alljazzera.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c7eds/Alljazzera/SA_Live_dash_enc/Alljazzera.mpd",
     "keyId": "137a1a70fa118b695118a3aad9485b13",
     "key": "7c35ca36d4452dfa03d88725a0d16105"
 },
@@ -882,7 +882,7 @@
     {
         "nombre": "Arirang",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Arirang/SA_Live_dash_cenc/Arirang.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/Arirang/SA_Live_dash_cenc/Arirang.mpd",
         "keyId": "436d78a75fad9bdcc6d409640c116a62",
         "key": "c77471ac3b694513a9c5ff68b8d4fac5"
     },
@@ -896,42 +896,42 @@
     {
         "nombre": "Bloomberg tv",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/Bloomberg/SA_Live_dash_enc/Bloomberg.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/Bloomberg/SA_Live_dash_enc/Bloomberg.mpd",
         "keyId": "1e50891cdc64452aae20d049727f2f3f",
         "key": "551871ba1dc6a95597ec0cb82eb3b2a4"
     },
     {
         "nombre": "Canal 4 Uruguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal4_URU/SA_Live_dash_enc/Canal4_URU.mpd",
+        "url": "https://edge-live12-sl.cvattv.com.ar/live/c4eds/Canal4_URU/SA_Live_dash_enc/Canal4_URU.mpd",
         "keyId": "dabefaac89742589778fcfab78f08354",
         "key": "896dd914683b01c8044ffd34d7b6416b"
     },
     {
         "nombre": "Canal 5 Uruguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/TV_Nacional_Uy/SA_Live_dash_enc_2A/TV_Nacional_Uy.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/TV_Nacional_Uy/SA_Live_dash_enc_2A/TV_Nacional_Uy.mpd",
         "keyId": "lgOPdqK6M4ZupU60smBXPw",
         "key": "xQUY1/WfTAqpowef4rAU/Q"
     },
     {
         "nombre": "C9N Paraguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c5eds/C9N_C4/SA_Live_dash_enc/C9N_C4.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c5eds/C9N_C4/SA_Live_dash_enc/C9N_C4.mpd",
         "keyId": "646700eeb14cadfa0543a20cf413d37e",
         "key": "4fc037c462023764624d8446442cbbca"
     },
     {
         "nombre": "Canal 10 Uruguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal10_URU/SA_Live_dash_enc/Canal10_URU.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/Canal10_URU/SA_Live_dash_enc/Canal10_URU.mpd",
         "keyId": "b7l0Z8Dw6hP4bUGnDgKcUQ",
         "key": "jdNHgtdU+Pyx6LONqf+tCw"
     },
     {
         "nombre": "Canal 12 Uruguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal12URU/SA_Live_dash_enc/Canal12URU.mpd",
+        "url": "https://edge-live12-sl.cvattv.com.ar/live/c4eds/Canal12URU/SA_Live_dash_enc/Canal12URU.mpd",
         "keyId": "dfde9d35d7438bfdf61da5dfac0557c1",
         "key": "acb13370c03a7254e2bb9cc9d2125017"
     },
@@ -980,14 +980,14 @@
     {
         "nombre": "D News",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/DNews/SA_Live_dash_enc/DNews.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/DNews/SA_Live_dash_enc/DNews.mpd",
         "keyId": "21563d82cfb7fdd18b213f0bd92a274f",
         "key": "5940d8d0b57b9e6533e99cc0e7bf2f8e"
     },
     {
         "nombre": "Deutsche Welle",
         "categoria": "Mundo",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/DW/SA_Live_dash_enc/DW.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/DW/SA_Live_dash_enc/DW.mpd",
         "keyId": "e21fc12c6ee185fbc90a052b05026be9",
         "key": "0f96fd52903707aac0b42853a043ffd0"
     },
@@ -1008,7 +1008,7 @@
     {
         "nombre": "Euronews",
         "categoria": "Mundo",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Euronews/SA_Live_dash_enc/Euronews.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Euronews/SA_Live_dash_enc/Euronews.mpd",
         "keyId": "d86b0f56d32f45adb0a6b4e488c8f0c2",
         "key": "e4f180b0e61be3e80ab602df5e56ff3f"
     },
@@ -1022,14 +1022,14 @@
     {
         "nombre": "France24",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/France_24/SA_Live_dash_enc/France_24.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/France_24/SA_Live_dash_enc/France_24.mpd",
         "keyId": "72187f2651724db18505cdcad435841d",
         "key": "6f41e05476e34edf7bb9dc51f08f95df"
     },
     {
         "nombre": "France24 Español",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/France24_Flow/SA_Live_dash_enc/France24_Flow.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/France24_Flow/SA_Live_dash_enc/France24_Flow.mpd",
         "keyId": "c8a3d29db38c4a9fa9a838c3d4d681db",
         "key": "d3aa374c4c0de33f463b4387a18297a6"
     },
@@ -1050,7 +1050,7 @@
     {
         "nombre": "FOX News",
         "categoria": "Mundo",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Fox_News/SA_Live_dash_enc/Fox_News.mpd",
+        "url": "https://edge-live16-sl.cvattv.com.ar/live/c6eds/Fox_News/SA_Live_dash_enc/Fox_News.mpd",
         "keyId": "3fe3f31a5e7b48a1b548e9364757ce66",
         "key": "32993fc281207fe915f6f1e990957868"
     },
@@ -1064,14 +1064,14 @@
     {
         "nombre": "GenTV Paraguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/GEN_TV/SA_Live_dash_enc/GEN_TV.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/GEN_TV/SA_Live_dash_enc/GEN_TV.mpd",
         "keyId": "49eb924ba998ca7fbbaee30dcef1ecb4",
         "key": "6e131b04b2e87598fb588ac205673698"
     },
     {
         "nombre": "HGTV",
         "categoria": "Religión",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Home_and_Garden/SA_Live_dash_enc/Home_and_Garden.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/Home_and_Garden/SA_Live_dash_enc/Home_and_Garden.mpd",
         "keyId": "43bc6a87ee4f21aa320ba00b980a6fd8",
         "key": "bd55130539a30faa1d90b3142eebe0b2"
     },
@@ -1106,7 +1106,7 @@
     {
         "nombre": "LaTeleParaguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/LA_TELE_C4/SA_Live_dash_enc/LA_TELE_C4.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/LA_TELE_C4/SA_Live_dash_enc/LA_TELE_C4.mpd",
         "keyId": "7c6a481adf6a080ec09637d3f25989cf",
         "key": "036e343d636b821ab81838de387b62cb"
     },
@@ -1134,14 +1134,14 @@
     {
         "nombre": "New Brasil",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Bandeirantes/SA_Live_dash_enc/Bandeirantes.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c7eds/Bandeirantes/SA_Live_dash_enc/Bandeirantes.mpd",
         "keyId": "0b4f56d5c19b45fb3e75a73b6ec06e6c",
         "key": "c464e2b6ded2b52e1e7753b3a859abce"
     },
     {
         "nombre": "NoticiasParaguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/NOTICIAS_PY_C4/SA_Live_dash_enc/NOTICIAS_PY_C4.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/NOTICIAS_PY_C4/SA_Live_dash_enc/NOTICIAS_PY_C4.mpd",
         "keyId": "8f66fe15735b2b1b3d5eb3646caa405e",
         "key": "404b93fd7b499b1061c9a714e1cdb2d0"
     },
@@ -1155,7 +1155,7 @@
     {
         "nombre": "ParavisionParaguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/PARAVISION_C4/SA_Live_dash_enc/PARAVISION_C4.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/PARAVISION_C4/SA_Live_dash_enc/PARAVISION_C4.mpd",
         "keyId": "bd8e8c9b32ef027e8ff4ff0cfce855a4",
         "key": "2918e9893b570c3fa1f215b52a12cc91"
     },
@@ -1169,70 +1169,70 @@
     {
         "nombre": "Santa María",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c3eds/Senal_Maria/SA_Live_dash_enc/Senal_Maria.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c3eds/Senal_Maria/SA_Live_dash_enc/Senal_Maria.mpd",
         "keyId": "d456fba3fccb4c06a0f4776fe412400b",
         "key": "ca5530ffe42a38759d3887c82d6a909a"
     },
     {
         "nombre": "SNTParaguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/SNT_C4/SA_Live_dash_enc/SNT_C4.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/SNT_C4/SA_Live_dash_enc/SNT_C4.mpd",
         "keyId": "9f61dcce871cc41aeb206d05028fc30a",
         "key": "9f6248194a3bf5e35b96b194e8624693"
     },
     {
         "nombre": "Somos Corrientes",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Somos_Corrientes/SA_Live_dash_enc/Somos_Corrientes.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/Somos_Corrientes/SA_Live_dash_enc/Somos_Corrientes.mpd",
         "keyId": "f0179a4ba9f407dfdee057a33f8f220c",
         "key": "e0c3f11cb1d7f8d17b7a1532f29edb0b"
     },
     {
         "nombre": "Somos La Plata",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Somos_La_Plata/SA_Live_dash_enc/Somos_La_Plata.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Somos_La_Plata/SA_Live_dash_enc/Somos_La_Plata.mpd",
         "keyId": "bffd3b447aa44a429a703245836e46fa",
         "key": "13be31c0bcb76b28b1248bf64ab3926e"
     },
     {
         "nombre": "SOMOS MAR DEL PLATA NECOCHEA",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal_Ciudad_MDQ/SA_Live_dash_enc/Canal_Ciudad_MDQ.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/Canal_Ciudad_MDQ/SA_Live_dash_enc/Canal_Ciudad_MDQ.mpd",
         "keyId": "b57763b8d9c205d609ea509432201fac",
         "key": "a476cf79190fe4810efdd81e32317ff3"
     },
     {
         "nombre": "Somos Norte",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Somos_Norte/SA_Live_dash_enc/Somos_Norte.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Somos_Norte/SA_Live_dash_enc/Somos_Norte.mpd",
         "keyId": "ee8a6cc35fdb4ab7adeed9d16593459f",
         "key": "5ca774838d5c887f7a8d7dee64b9a6b0"
     },
     {
         "nombre": "Somos Rafaela",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Somos_Rafaela/SA_Live_dash_enc/Somos_Rafaela.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/Somos_Rafaela/SA_Live_dash_enc/Somos_Rafaela.mpd",
         "keyId": "7071b5b3283cebd376d1ba9c6e53ba6e",
         "key": "87a6c4c8baaefb073270e92f092b4c25"
     },
     {
         "nombre": "Somos Rosario",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c5eds/Somos_Rosario/SA_Live_dash_enc/Somos_Rosario.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c5eds/Somos_Rosario/SA_Live_dash_enc/Somos_Rosario.mpd",
         "keyId": "863ed7f26cf51850b9ed735545c788ce",
         "key": "789edf190d78baefb569e8ca09ac86c2"
     },
     {
         "nombre": "Somos Salta Jujuy",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/Somos_Salta/SA_Live_dash_enc/Somos_Salta.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/Somos_Salta/SA_Live_dash_enc/Somos_Salta.mpd",
         "keyId": "9879546bcfd8a4231ce7502062f424fb",
         "key": "e071693afea3e58f8b28bf5b2311e3fc"
     },
     {
         "nombre": "Somos Santa Fe",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c5eds/Somos_STF/SA_Live_dash_enc/Somos_STF.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c5eds/Somos_STF/SA_Live_dash_enc/Somos_STF.mpd",
         "keyId": "1344e18e45e6e6e5ec0a302d769c8e52",
         "key": "913cfe90bb3af2d402eada6ad50ce22d"
     },
@@ -1246,21 +1246,21 @@
     {
         "nombre": "TelefuturoParaguay",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc/TELEFUTURO_C4.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc/TELEFUTURO_C4.mpd",
         "keyId": "5d2731cf8a59b73438ef59d88cd882bf",
         "key": "3f412fa6368b7db4903588de695377e1"
     },
     {
         "nombre": "Telemax",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Telemax/SA_Live_dash_enc/Telemax.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Telemax/SA_Live_dash_enc/Telemax.mpd",
         "keyId": "e7ec364ad6854fedad797538cb58780d",
         "key": "57dfb3fca2ca35b37ff81c35595e9be8"
     },
     {
         "nombre": "Telesur",
         "categoria": "",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Telesur/SA_Live_dash_enc/Telesur.mpd",
+        "url": "https://cdn.cvattv.com.ar/live/c6eds/Telesur/SA_Live_dash_enc/Telesur.mpd",
         "keyId": "5235d8ee29f14ce6b26ea5d828aee77a",
         "key": "6bf6bd339e3098babc2ab0b984cd2376"
     },
@@ -1281,7 +1281,7 @@
     {
         "nombre": "TV CiudadUruguay",
         "categoria": "",
-        "url": "https://chromecast-sl.cvattv.com.ar/live/c3eds/Teve_Ciudad/SA_Live_dash_enc/Teve_Ciudad.mpd",
+        "url": "https://edge-live17-sl.cvattv.com.ar/live/c3eds/Teve_Ciudad/SA_Live_dash_enc/Teve_Ciudad.mpd",
         "keyId": "9b536cd1716647ee94c45fa4836d29d6",
         "key": "d691c88a95440666742d1d8183182347"
     },
@@ -1302,7 +1302,7 @@
     {
     "nombre": "VTV Uruguay",
     "categoria": "Mundo",
-    "url": "https://chromecast.cvattv.com.ar/live/c3eds/VTV_HD/SA_Live_dash_enc_2A/VTV_HD.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c3eds/VTV_HD/SA_Live_dash_enc_2A/VTV_HD.mpd",
     "keyId": "uWlgqnFaTlG36VLoHJmsjg",
     "key": "W7/8aAdk29Y9kLd0s6oMCg"
 },
@@ -1316,21 +1316,21 @@
     {
     "nombre": "Playboy",
     "categoria": "Adulto",
-    "url": "https://chromecast.cvattv.com.ar/live/c6eds/Playboy/SA_Live_dash_enc/Playboy.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c6eds/Playboy/SA_Live_dash_enc/Playboy.mpd",
     "keyId": "8577d81eaf33436d9f1e482360685a7c",
     "key": "f608a0ac703cfaaf9442574d9a2b87fb"
 },
     {
     "nombre": "Sextreme",
     "categoria": "Adulto",
-    "url": "https://chromecast.cvattv.com.ar/live/c6eds/Sextreme/SA_Live_dash_enc/Sextreme.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c6eds/Sextreme/SA_Live_dash_enc/Sextreme.mpd",
     "keyId": "95bd64227acf458daf7886f803d0298e",
     "key": "79e28ee0ec58958bb666f9e53a0cd434"
 },
     {
     "nombre": "Venus",
     "categoria": "Adulto",
-    "url": "https://chromecast.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc/Venus.mpd",
+    "url": "https://cdn.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc/Venus.mpd",
     "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
     "key": "05d973d987915120e567880f50a422af"
 }
