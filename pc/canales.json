@@ -909,7 +909,6 @@
     "keyId": "1e50891cdc64452aae20d049727f2f3f",
     "key": "551871ba1dc6a95597ec0cb82eb3b2a4"
 },
-
     {
         "nombre": "Canal 4 Uruguay",
         "categoria": "Deportes",
@@ -1029,7 +1028,6 @@
         "keyId": "34ee94c2263345f7a3a590661264e490",
         "key": "56757d656a697ab7a2e5e083b5d21bb5"
     },
-
     {
         "nombre": "D News",
         "categoria": "Mundo",
@@ -1156,7 +1154,6 @@
         "keyId": "0956caf2e2bd41f49fdcead7cc94fe24",
         "key": "640c49578073a911938617eb4e652d6c"
     },
-
     {
         "nombre": "LaTeleParaguay",
         "categoria": "Mundo",
@@ -1283,7 +1280,6 @@
         "keyId": "9879546bcfd8a4231ce7502062f424fb",
         "key": "e071693afea3e58f8b28bf5b2311e3fc"
     },
-
     {
         "nombre": "Somos Santa Fe",
         "categoria": "",
@@ -1370,23 +1366,23 @@
     },
     {
         "nombre": "Playboy",
-        "categoria": "XXX",
+        "categoria": "xxx",
         "url": "https://cdn.cvattv.com.ar/live/c6eds/Playboy/SA_Live_dash_enc/Playboy.mpd",
         "keyId": "8577d81eaf33436d9f1e482360685a7c",
         "key": "f608a0ac703cfaaf9442574d9a2b87fb"
     },
     {
         "nombre": "Sextreme",
-        "categoria": "XXX",
+        "categoria": "xxx",
         "url": "https://cdn.cvattv.com.ar/live/c6eds/Sextreme/SA_Live_dash_enc/Sextreme.mpd",
         "keyId": "95bd64227acf458daf7886f803d0298e",
         "key": "79e28ee0ec58958bb666f9e53a0cd434"
     },
     {
         "nombre": "Venus",
-        "categoria": "XXX",
+        "categoria": "xxx",
         "url": "https://cdn.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc/Venus.mpd",
         "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
         "key": "05d973d987915120e567880f50a422af"
-    },
+    }
 ]
