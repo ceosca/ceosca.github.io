@@ -191,23 +191,23 @@
 {
     "nombre": "ESPN",
     "categoria": "Deportes",
-    "url": "https://chromecast.cvattv.com.ar/live/c4eds/ESPN_UY/SA_Live_dash_enc/ESPN_UY.mpd",
-    "keyId": "6362e1f36fcb7ee3c47debd9140336ad",
-    "key": "9ba1d46c5b9c7a3130a5dabbf7155175"
+    "url": "https://chromecast.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc_2A/ESPN2HD.mpd",
+    "keyId": "e884b711ab111beb8a7ba1e7bcbdc9bf",
+    "key": "cb89ee3961599e3e648a5aad60895f34"
 },
 {
     "nombre": "ESPN 2",
     "categoria": "Deportes",
-    "url": "http://cdn.cvattv.com.ar/live/c4eds/ESPN2_UY/SA_Live_dash_enc/ESPN2_UY.mpd",
-    "keyId": "0d820100144772fed9f38b83650fa7e1",
-    "key": "ded8cc47b29b0eb0b0a87df22e721847"
+    "url": "https://chromecast.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc_2A/ESPN2_Arg.mpd",
+    "keyId": "65a5bfa3c7a72dde60be9b0c7406c8fc",
+    "key": "0b40ae9f78a7bac3b57ecbf72d3c081e"
 },
 {
     "nombre": "ESPN 3",
     "categoria": "Deportes",
-    "url": "https://uix.dexkengineer.store/plusLive/dash_k_pFR7RQ7RrI/203EF6/manifest.mpd",
-    "keyId": "eb04e4ec7049c0712e09c57aea9c1cb7",
-    "key": "404636ec78dfaf363333805c9a2c3f66"
+    "url": "https://chromecast.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc_2A/ESPN3.mpd",
+    "keyId": "f4c9f97e2a36feab0e5077f2b44cbc4e",
+    "key": "1743cd03dfe3736b2c95da91a783af38"
 },
 {
     "nombre": "ESPN 4",
@@ -215,27 +215,6 @@
     "url": "https://chromecast.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd",
     "keyId": "cc8d44406ed6bf1898ad9f7a2d64f29e",
     "key": "fb85d059687ab0fc67805806204edbdf"
-},
-{
-    "nombre": "ESPN 5",
-    "categoria": "Deportes",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
-    "keyId": "24f2b3e741f0d9e9a8d516faff38bddc",
-    "key": "bbd3fd02fb104e1463ac528a13f67e4a"
-},
-{
-    "nombre": "ESPN 6",
-    "categoria": "Deportes",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/FoxSports3_UY/SA_Live_dash_enc/FoxSports3_UY.mpd",
-    "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
-    "key": "89157cdd25df25d56f1ecccee3850888"
-},
-{
-    "nombre": "ESPN 7",
-    "categoria": "Deportes",
-    "url": "https://chromecast.cvattv.com.ar/live/c7eds/FoxSports2_UY/SA_Live_dash_enc/FoxSports2_UY.mpd",
-    "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
-    "key": "89157cdd25df25d56f1ecccee3850888"
 },
 {
     "nombre": "ESPN Premium",
@@ -339,8 +318,8 @@
         "nombre": "PX Sports",
         "categoria": "Deportes",
         "url": "https://chromecast.cvattv.com.ar/live/c7eds/PX_Sports/SA_Live_dash_enc_2A/PX_Sports.mpd",
-        "keyId": "k5MyHa7xRj/H4uBgKY24Ug",
-        "key": "vmvJHheBb2fmJZa+1GPFrQ"
+        "keyId": "9393321daef1463fc7e2e060298db852",
+        "key": "be6bc91e17816f67e62596bed463c5ad"
     },
     {
         "nombre": "Ebentos TyC Sports 2",
@@ -434,13 +413,6 @@
         "key": "ab95bdc2655aff4f4a8e512fb68c80df"
     },
     {
-        "nombre": "Teen Nick",
-        "categoria": "Infantiles y Familiares",
-        "url": "https://latamvosliveclarovideo.akamaized.net/Content/DASH_DASH_FK/Live/Channel(NICK_2_HD)/manifest.mpd",
-        "keyId": "2dbef982f13bea39e39b58cfa8ed78d2",
-        "key": "f650c3f23317074bce3b853660c5556c"
-    },
-    {
         "nombre": "Tooncast",
         "categoria": "Infantiles y Familiares",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Tooncast/SA_Live_dash_enc_2A/Tooncast.mpd",
@@ -504,13 +476,6 @@
         "key": "213cf85cb5f9fe569757004a77e05948"
     },
     {
-        "nombre": "Cine Latino",
-        "categoria": "Cine y Series",
-        "url": "https://latamvosliveclarovideo.akamaized.net/Content/DASH_DASH_FK/Live/Channel(CINELATINO)/manifest.mpd",
-        "keyId": "ebd48bea6741b6b575709d46122d045c",
-        "key": "2c76b5c7d47d63bf0c3d01187af9cb2f"
-    },
-    {
         "nombre": "Cinemax",
         "categoria": "Cine y Series",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Cinemax/SA_Live_dash_enc_2A/Cinemax.mpd",
@@ -542,8 +507,8 @@
         "nombre": "Europa Europa",
         "categoria": "Cine y Series",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Europa_Europa/SA_Live_dash_enc_2A/Europa_Europa.mpd",
-        "keyId": "tH8lffAxTQmn+DVcOr4dxg",
-        "key": "vcnxaWqC7nOY3Tp/qCMA4g"
+        "keyId": "b47f257df0314d09a7f8355c3abe1dc60b72a5eb5e9a9a2b6abc",
+        "key": "bdc9f1696a82ee7398dd3a7fa82300e2"
     },
     {
         "nombre": "FX",
@@ -673,7 +638,7 @@
     },
     {
         "nombre": "Telemundo Internacional",
-        "categoria": "Cine y Series",
+        "categoria": "Mundiales",
         "url": "https://chromecast.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd",
         "keyId": "53d752e4649dadd808d913985f86ee77",
         "key": "d1fd24db1b61d634cabfc44538ce9b0e"
@@ -878,8 +843,8 @@
         "nombre": "Canal 5 Uruguay",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/TV_Nacional_Uy/SA_Live_dash_enc_2A/TV_Nacional_Uy.mpd",
-        "keyId": "lgOPdqK6M4ZupU60smBXPw",
-        "key": "xQUY1/WfTAqpowef4rAU/Q"
+        "keyId": "96038f76a2ba33866ea54eb4b260573f",
+        "key": "c50518d7f59f4c0aa9a3079fe2b014fd"
     },
     {
         "nombre": "C9N Paraguay",
@@ -892,8 +857,8 @@
         "nombre": "Canal 10 Uruguay",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal10_URU/SA_Live_dash_enc/Canal10_URU.mpd",
-        "keyId": "b7l0Z8Dw6hP4bUGnDgKcUQ",
-        "key": "jdNHgtdU+Pyx6LONqf+tCw"
+        "keyId": "6fb97467c0f0ea13f86d41a70e029c51",
+        "key": "8dd34782d754f8fcb1e8b38da9ffad0b"
     },
     {
         "nombre": "Canal 12 Uruguay",
@@ -1051,7 +1016,7 @@
     },
     {
         "nombre": "FOX News",
-        "categoria": "noticias",
+        "categoria": "Noticias",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Fox_News/SA_Live_dash_enc/Fox_News.mpd",
         "keyId": "3fe3f31a5e7b48a1b548e9364757ce66",
         "key": "32993fc281207fe915f6f1e990957868"
@@ -1059,7 +1024,7 @@
     {
         "nombre": "Galicia TV",
         "categoria": "Mundiales",
-        "url": "http://cdn.cvattv.com.ar/live/c6eds/Tv_Galicia/SA_Live_dash_enc/Tv_Galicia.mpd",
+        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Tv_Galicia/SA_Live_dash_enc/Tv_Galicia.mpd",
         "keyId": "23419f2a0a214038a94e24db13ee85a9",
         "key": "4c627ad6b8774e548e28d4aaf82a96a0"
     },
@@ -1305,8 +1270,8 @@
         "nombre": "VTV Uruguay",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/VTV_HD/SA_Live_dash_enc_2A/VTV_HD.mpd",
-        "keyId": "W7/8aAdk29Y9kLd0s6oMCg",
-        "key": "uWlgqnFaTlG36VLoHJmsjg"
+        "keyId": "5bbffc680764dbd63d90b774b3aa0c0a",
+        "key": "b96960aa715a4e51b7e952e81c99ac8e"
     },
     {
         "nombre": "WOBI",
