@@ -89,14 +89,14 @@
                     sources: [{
                         file: selectedValue.url,
                         type: "mpd"
-                    }]
+                    }],
+                    tracks: []  // Esto asegura que solo se utilicen pistas de audio.
                 }],
                 width: 0,
                 height: 0,
                 autostart: true,
-                cast: {
-                    audioOnly: true
-                },
+                audioOnly: true,
+                visualPlaylist: false, // Desactiva cualquier elemento visual relacionado con la lista de reproducción
                 controls: false
             };
             
