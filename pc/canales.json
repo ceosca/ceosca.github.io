@@ -507,8 +507,8 @@
         "nombre": "Europa Europa",
         "categoria": "Cine y Series",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Europa_Europa/SA_Live_dash_enc_2A/Europa_Europa.mpd",
-        "keyId": "b47f257df0314d09a7f8355c3abe1dc60b72a5eb5e9a9a2b6abc",
-        "key": "bdc9f1696a82ee7398dd3a7fa82300e2"
+        "keyId": "bdc9f1696a82ee7398dd3a7fa82300e2",
+        "key": "b47f257df0314d09a7f8355c3abe1dc60b72a5eb5e9a9a2b6abc"
     },
     {
         "nombre": "FX",
@@ -843,8 +843,8 @@
         "nombre": "Canal 5 Uruguay",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/TV_Nacional_Uy/SA_Live_dash_enc_2A/TV_Nacional_Uy.mpd",
-        "keyId": "96038f76a2ba33866ea54eb4b260573f",
-        "key": "c50518d7f59f4c0aa9a3079fe2b014fd"
+        "keyId": "c50518d7f59f4c0aa9a3079fe2b014fd",
+        "key": "96038f76a2ba33866ea54eb4b260573f"
     },
     {
         "nombre": "C9N Paraguay",
@@ -857,8 +857,8 @@
         "nombre": "Canal 10 Uruguay",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal10_URU/SA_Live_dash_enc/Canal10_URU.mpd",
-        "keyId": "6fb97467c0f0ea13f86d41a70e029c51",
-        "key": "8dd34782d754f8fcb1e8b38da9ffad0b"
+        "keyId": "8dd34782d754f8fcb1e8b38da9ffad0b",
+        "key": "6fb97467c0f0ea13f86d41a70e029c51"
     },
     {
         "nombre": "Canal 12 Uruguay",
@@ -1270,8 +1270,8 @@
         "nombre": "VTV Uruguay",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/VTV_HD/SA_Live_dash_enc_2A/VTV_HD.mpd",
-        "keyId": "5bbffc680764dbd63d90b774b3aa0c0a",
-        "key": "b96960aa715a4e51b7e952e81c99ac8e"
+        "keyId": "b96960aa715a4e51b7e952e81c99ac8e",
+        "key": "5bbffc680764dbd63d90b774b3aa0c0a"
     },
     {
         "nombre": "WOBI",
