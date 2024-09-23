@@ -130,14 +130,7 @@
             if (playerInstance) {
                 var currentAudioTrack = playerInstance.getCurrentAudioTrack();
                 var audioTracks = playerInstance.getAudioTracks();
-                var newTrackIndex = currentAudioTrack + offset;
-                
-                if (newTrackIndex < 0) {
-                    newTrackIndex = audioTracks.length - 1;
-                } else if (newTrackIndex >= audioTracks.length) {
-                    newTrackIndex = 0;
-                }
-
+                var newTrackIndex = (currentAudioTrack + offset + audioTracks.length) % audioTracks.length;
                 playerInstance.setCurrentAudioTrack(newTrackIndex);
             }
         }
