@@ -1346,7 +1346,7 @@
 {
     "nombre": "Rede Record Brasil",
     "categoria": "Mundiales",
-    "url": "http://chromecast.cvattv.com.ar/live/c3eds/Rede_Record/SA_Live_dash_enc/Rede_Record.mpd",
+    "url": "https://chromecast.cvattv.com.ar/live/c3eds/Rede_Record/SA_Live_dash_enc/Rede_Record.mpd",
     "keyId": "b0bd8ea11b3f4c219903085ef1d44b0d",
     "key": "9a25709a72c2ca93cb738665736cfa5a"
 },
