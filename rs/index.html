@@ -19,7 +19,7 @@
         var downArrowTimer = null;
         var upArrowTimer = null;
 
-        fetch('https://ceosca.github.io/canales.m3u')
+        fetch('https://ceosca.github.io/rs/canales.m3u')
             .then(response => response.text())
             .then(data => {
                 parseM3U(data);
