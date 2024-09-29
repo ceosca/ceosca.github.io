@@ -13,13 +13,13 @@
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
-        var currentChannelIndex = 0; // Iniciar en el primer canal
+        var currentChannelIndex = null;
         var channelNumberBuffer = "";
         var timeoutId = null;
         var downArrowTimer = null;
         var upArrowTimer = null;
 
-        fetch('https://ceosca.github.io/rs/canales.m3u')
+        fetch('https://ceosca.github.io/canales.m3u')
             .then(response => response.text())
             .then(data => {
                 parseM3U(data);
@@ -31,28 +31,28 @@
         function parseM3U(data) {
             const lines = data.split('\n');
             let currentChannel = {};
-            for (let line of lines) {
-                if (line.startsWith('#EXTINF')) {
-                    const parts = line.split(',');
-                    currentChannel = {
-                        nombre: parts[1].trim(),
-                        keyId: null,
-                        key: null,
-                        url: ''
-                    };
-                } else if (line.startsWith('http')) {
-                    currentChannel.url = line.trim();
-                    canales.push(currentChannel);
-                } else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key')) {
-                    const keyParts = line.split('=');
-                    if (keyParts.length > 1) {
-                        const keyInfo = keyParts[1].split(':');
-                        if (keyInfo.length === 2) {
-                            currentChannel.keyId = keyInfo[0];
-                            currentChannel.key = keyInfo[1];
-                        }
+
+            lines.forEach(line => {
+                line = line.trim();
+                if (line.startsWith('#EXTINF:')) {
+                    if (currentChannel.nombre) {
+                        canales.push(currentChannel); // Almacena el canal actual antes de iniciar uno nuevo
                     }
+                    currentChannel = { nombre: line.split(',')[1].trim() }; // Captura el nombre del canal
+                } else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key=')) {
+                    const keyLine = line.split('=')[1];
+                    const keyParts = keyLine.split(':');
+                    if (keyParts.length === 2) {
+                        currentChannel.keyId = keyParts[0]; // Almacena keyId
+                        currentChannel.key = keyParts[1];     // Almacena key
+                    }
+                } else if (line.startsWith('http')) {
+                    currentChannel.url = line; // Captura la URL del canal
                 }
+            });
+
+            if (currentChannel.nombre) {
+                canales.push(currentChannel); // Agrega el último canal
             }
         }
 
@@ -61,10 +61,10 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index; // Usar el índice directamente
+                option.value = index + 1; // Sumar 1 al índice
                 selectBox.add(option);
             });
-            selectBox.selectedIndex = 0; // Seleccionar el primer canal por defecto
+            selectBox.selectedIndex = 0;
         }
 
         function cargarStream() {
@@ -81,11 +81,11 @@
                 controls: false,
             };
 
+            // Configuración de DRM si hay keyId y key
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
+                        [selectedValue.keyId]: selectedValue.key // Usando keyId como clave para el objeto
                     }
                 };
             }
@@ -102,13 +102,19 @@
         }
 
         function changeChannel(offset) {
-            currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-            cargarStream();
+            if (channelNumberBuffer !== "") {
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                channelNumberBuffer = "";
+                cargarStream();
+            } else {
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
+                cargarStream();
+            }
         }
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value); // Usar el índice directamente
+            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -158,7 +164,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer); // Usar el índice directamente
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
                             channelNumberBuffer = "";
                             cargarStream();
                         }
