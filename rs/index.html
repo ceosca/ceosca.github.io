@@ -1,186 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
-    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <meta charset="UTF-8">
+    <title>Reproductor de Audio de Streams de Video</title>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+    <style>
+        #controls {
+            margin-top: 10px;
+        }
+        .video-js {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <div id="playerContainer"></div>
-    <div id="controls">
-        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
-        </select>
+    <div>
+        <label for="categorySelector">Selecciona una categoría:</label>
+        <select id="categorySelector" onchange="updateChannelList()"></select>
     </div>
+    <div>
+        <label for="channelSelector">Selecciona un canal:</label>
+        <select id="channelSelector" onchange="cargarStream()"></select>
+    </div>
+    <div id="player">
+        <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{}'>
+            <source src="" type="application/dash+xml" id="videoSource">
+            Tu navegador no soporta video.
+        </video>
+    </div>
+    <div id="controls">
+        <button onclick="playPause()">Play/Pausa</button>
+        <button onclick="changeVolume(-5)">Bajar Volumen</button>
+        <button onclick="changeVolume(5)">Subir Volumen</button>
+        <button onclick="changeAudioTrack(-1)">Track Anterior</button>
+        <button onclick="changeAudioTrack(1)">Siguiente Track</button>
+    </div>
+    
+    <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
-        var currentChannelIndex = null;
-        var channelNumberBuffer = "";
-        var timeoutId = null;
-        var downArrowTimer = null;
-        var upArrowTimer = null;
+        var categorias = [];
 
-        fetch('https://ceosca.github.io/rs/canales.m3u')
-            .then(response => response.text())
+        fetch('https://ceosca.github.io/pf/canales.json')
+            .then(response => response.json())
             .then(data => {
-                parseM3U(data);
-                cargarOpciones();
-                cargarStream();
+                canales = data;
+                categorias = obtenerCategoriasOrdenadas();
+                cargarCategorias();
+                updateChannelList();
             })
-            .catch(error => console.error('Error al cargar el M3U:', error));
+            .catch(error => console.error('Error al cargar el JSON:', error));
 
-        function parseM3U(data) {
-            const lines = data.split('\n');
-            let currentChannel = {};
-
-            lines.forEach(line => {
-                line = line.trim();
-                if (line.startsWith('#EXTINF:')) {
-                    if (currentChannel.nombre) {
-                        canales.push(currentChannel); // Almacena el canal actual antes de iniciar uno nuevo
-                    }
-                    currentChannel = { nombre: line.split(',')[1].trim() }; // Captura el nombre del canal
-                } else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key=')) {
-                    const keyLine = line.split('=')[1];
-                    const keyParts = keyLine.split(':');
-                    if (keyParts.length === 2) {
-                        currentChannel.keyId = keyParts[0]; // Almacena keyId
-                        currentChannel.key = keyParts[1];     // Almacena key
-                    }
-                } else if (line.startsWith('http')) {
-                    currentChannel.url = line; // Captura la URL del canal
-                }
-            });
-
-            if (currentChannel.nombre) {
-                canales.push(currentChannel); // Agrega el último canal
-            }
-        }
-
-        function cargarOpciones() {
-            var selectBox = document.getElementById("channelSelector");
-            canales.forEach(function(canal, index) {
+        function cargarCategorias() {
+            var selectBox = document.getElementById("categorySelector");
+            categorias.forEach(function(categoria) {
                 var option = document.createElement("option");
-                option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.text = categoria;
                 selectBox.add(option);
             });
-            selectBox.selectedIndex = 0;
+        }
+
+        function obtenerCategoriasOrdenadas() {
+            var categoriasSet = new Set();
+            canales.forEach(function(canal) {
+                categoriasSet.add(canal.categoria);
+            });
+            return Array.from(categoriasSet).sort();
+        }
+
+        function updateChannelList() {
+            var selectedCategory = document.getElementById("categorySelector").value;
+            var channelSelector = document.getElementById("channelSelector");
+            channelSelector.innerHTML = "";
+            var filteredChannels = canales.filter(function(canal) {
+                return canal.categoria === selectedCategory;
+            });
+            filteredChannels.sort(function(a, b) {
+                return a.nombre.localeCompare(b.nombre);
+            });
+            filteredChannels.forEach(function(canal) {
+                var option = document.createElement("option");
+                option.text = canal.nombre;
+                option.value = JSON.stringify(canal);
+                channelSelector.add(option);
+            });
+            if (filteredChannels.length > 0) {
+                cargarStream();
+            }
         }
 
         function cargarStream() {
-            var selectedValue = canales[currentChannelIndex];
-            var config = {
-                playlist: [{
-                    sources: [{
-                        file: selectedValue.url,
-                        type: "mpd"
-                    }]
-                }],
-                autostart: true,
-                cast: {},
-                controls: false,
-            };
+            var selectBox = document.getElementById("channelSelector");
+            var selectedValue = JSON.parse(selectBox.value);
+            var videoSource = document.getElementById("videoSource");
+            videoSource.src = selectedValue.url;
 
-            // Configuración de DRM si hay keyId y key
+            // Configurar ClearKey DRM si está presente
             if (selectedValue.keyId && selectedValue.key) {
-                config.drm = {
-                    clearkey: {
-                        [selectedValue.keyId]: selectedValue.key // Usando keyId como clave para el objeto
+                var videoElement = document.getElementById("my-video");
+                videoElement.setAttribute('data-setup', JSON.stringify({
+                    'drm': {
+                        'clearKey': {
+                            [selectedValue.keyId]: selectedValue.key
+                        }
                     }
-                };
+                }));
             }
 
-            playerInstance = jwplayer("playerContainer").setup(config);
-            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+            if (playerInstance) {
+                playerInstance.dispose();  // Limpiar el reproductor existente
+            }
+            playerInstance = videojs('my-video');
+            playerInstance.src(videoSource.src);
+            playerInstance.play();
+        }
+
+        function playPause() {
+            if (playerInstance.paused()) {
+                playerInstance.play();
+            } else {
+                playerInstance.pause();
+            }
+        }
+
+        function changeVolume(amount) {
+            var currentVolume = playerInstance.volume();
+            var newVolume = Math.max(0, Math.min(1, currentVolume + amount / 100));
+            playerInstance.volume(newVolume);
         }
 
         function changeAudioTrack(offset) {
-            var currentAudioTrack = playerInstance.getCurrentAudioTrack();
-            var audioTracks = playerInstance.getAudioTracks();
-            var newTrackIndex = (currentAudioTrack + offset + audioTracks.length) % audioTracks.length;
-            playerInstance.setCurrentAudioTrack(newTrackIndex);
+            var audioTracks = playerInstance.audioTracks();
+            var currentTrackIndex = audioTracks.findIndex(track => track.enabled);
+            var newTrackIndex = (currentTrackIndex + offset + audioTracks.length) % audioTracks.length;
+
+            audioTracks.forEach((track, index) => {
+                track.enabled = (index === newTrackIndex);
+            });
         }
-
-        function changeChannel(offset) {
-            if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
-                channelNumberBuffer = "";
-                cargarStream();
-            } else {
-                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
-                cargarStream();
-            }
-        }
-
-        function changeChannelManually() {
-            var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
-            channelNumberBuffer = "";
-            cargarStream();
-            ocultarSelector(); 
-        }
-
-        function ocultarSelector() {
-            document.getElementById("channelSelector").style.display = "none"; 
-        }
-
-        function handleDownArrow() {
-            downArrowTimer = setTimeout(function() {
-                changeAudioTrack(1);
-            }, 1000);
-        }
-
-        function handleUpArrow() {
-            upArrowTimer = setTimeout(function() {
-                changeAudioTrack(-1);
-            }, 1000);
-        }
-
-        function cancelDownArrowTimer() {
-            clearTimeout(downArrowTimer);
-        }
-
-        function cancelUpArrowTimer() {
-            clearTimeout(upArrowTimer);
-        }
-
-        document.addEventListener("keydown", function(event) {
-            var keyCode = event.keyCode;
-            if (keyCode === 13) { 
-                document.getElementById("channelSelector").style.display = "block"; 
-                document.getElementById("channelSelector").focus(); 
-            } else if (keyCode === 37) {
-                changeChannel(-1);
-            } else if (keyCode === 39) {
-                changeChannel(1);
-            } else if (keyCode === 40) {
-                handleDownArrow();
-            } else if (keyCode === 38) {
-                handleUpArrow();
-            } else {
-                var pressedKey = parseInt(event.key);
-                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
-                    clearTimeout(timeoutId);
-                    channelNumberBuffer += event.key;
-                    timeoutId = setTimeout(function() {
-                        if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
-                            channelNumberBuffer = "";
-                            cargarStream();
-                        }
-                    }, 1000);
-                }
-            }
-        });
-
-        document.addEventListener("keyup", function(event) {
-            var keyCode = event.keyCode;
-            if (keyCode === 40) {
-                cancelDownArrowTimer();
-            } else if (keyCode === 38) {
-                cancelUpArrowTimer();
-            }
-        });
     </script>
 </body>
 </html>
