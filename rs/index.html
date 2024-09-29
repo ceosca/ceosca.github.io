@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Reproductor de Audio de Streams de Video</title>
-    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/shaka-player/dist/controls.css" rel="stylesheet">
     <style>
         #controls {
             margin-top: 10px;
         }
-        .video-js {
-            width: 100%;
-            height: auto;
+        #video {
+            width: 640px;
+            height: 360px;
+            background: black;
         }
     </style>
 </head>
@@ -24,25 +25,21 @@
         <select id="channelSelector" onchange="cargarStream()"></select>
     </div>
     <div id="player">
-        <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{}'>
-            <source src="" type="application/dash+xml" id="videoSource">
-            Tu navegador no soporta video.
-        </video>
+        <video id="video" controls></video>
     </div>
     <div id="controls">
         <button onclick="playPause()">Play/Pausa</button>
-        <button onclick="changeVolume(-5)">Bajar Volumen</button>
-        <button onclick="changeVolume(5)">Subir Volumen</button>
-        <button onclick="changeAudioTrack(-1)">Track Anterior</button>
-        <button onclick="changeAudioTrack(1)">Siguiente Track</button>
+        <button onclick="changeVolume(-0.1)">Bajar Volumen</button>
+        <button onclick="changeVolume(0.1)">Subir Volumen</button>
     </div>
     
-    <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player/dist/shaka-player.compiled.js"></script>
     <script type='text/javascript'>
-        var playerInstance = null;
+        var player = new shaka.player.Player();
         var canales = [];
         var categorias = [];
 
+        // Cargar los canales desde el JSON
         fetch('https://ceosca.github.io/pf/canales.json')
             .then(response => response.json())
             .then(data => {
@@ -94,51 +91,39 @@
         function cargarStream() {
             var selectBox = document.getElementById("channelSelector");
             var selectedValue = JSON.parse(selectBox.value);
-            var videoSource = document.getElementById("videoSource");
-            videoSource.src = selectedValue.url;
-
+            var videoElement = document.getElementById("video");
+            
             // Configurar ClearKey DRM si está presente
+            var drmConfiguration = {};
             if (selectedValue.keyId && selectedValue.key) {
-                var videoElement = document.getElementById("my-video");
-                videoElement.setAttribute('data-setup', JSON.stringify({
-                    'drm': {
-                        'clearKey': {
-                            [selectedValue.keyId]: selectedValue.key
-                        }
-                    }
-                }));
+                drmConfiguration['clearKeys'] = {};
+                drmConfiguration.clearKeys[selectedValue.keyId] = selectedValue.key;
             }
 
-            if (playerInstance) {
-                playerInstance.dispose();  // Limpiar el reproductor existente
-            }
-            playerInstance = videojs('my-video');
-            playerInstance.src(videoSource.src);
-            playerInstance.play();
+            // Iniciar el stream
+            player.load(selectedValue.url, 0, drmConfiguration)
+                .then(() => {
+                    console.log('Stream cargado con éxito');
+                    videoElement.play();
+                })
+                .catch(error => {
+                    console.error('Error al cargar el stream:', error);
+                });
         }
 
         function playPause() {
-            if (playerInstance.paused()) {
-                playerInstance.play();
+            var videoElement = document.getElementById("video");
+            if (videoElement.paused) {
+                videoElement.play();
             } else {
-                playerInstance.pause();
+                videoElement.pause();
             }
         }
 
         function changeVolume(amount) {
-            var currentVolume = playerInstance.volume();
-            var newVolume = Math.max(0, Math.min(1, currentVolume + amount / 100));
-            playerInstance.volume(newVolume);
-        }
-
-        function changeAudioTrack(offset) {
-            var audioTracks = playerInstance.audioTracks();
-            var currentTrackIndex = audioTracks.findIndex(track => track.enabled);
-            var newTrackIndex = (currentTrackIndex + offset + audioTracks.length) % audioTracks.length;
-
-            audioTracks.forEach((track, index) => {
-                track.enabled = (index === newTrackIndex);
-            });
+            var videoElement = document.getElementById("video");
+            var newVolume = Math.min(1, Math.max(0, videoElement.volume + amount));
+            videoElement.volume = newVolume;
         }
     </script>
 </body>
