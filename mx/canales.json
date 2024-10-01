@@ -1,0 +1,44 @@
+[
+    {
+        "nombre": "UNIVERSAL CINEMA",
+        "categoria": "Lista 27 solo OTT",
+        "url": "https://dtvott-abc.akamaized.net/dash_live_1253/manifest.mpd",
+        "keyId": "zgp8iD4qVDC7qXo9aODa-A",
+        "key": "4w3UkI5mdjc2nftlgvVNZA"
+    },
+    {
+        "nombre": "Pasiones",
+        "categoria": "CANALES VARIADOS solo OTT",
+        "url": "https://latamvosliveclarovideo.akamaized.net/Content/DASH_DASH_FK/Live/Channel(HISTORY_CHANNEL_HD)/manifest.mpd",
+        "keyId": "2d0afa4581af1d11f96db1412ba8247d",
+        "key": "ddf73aab675225c6edd1d9b2ee5e7bd8"
+    },
+    {
+        "nombre": "julio 24",
+        "categoria": "CANALES VARIADOS solo OTT",
+        "url": "https://live1-ott.izzigo.tv/out/u/dash/FOX-SPORTS-PREMIUM-HD/default.mpd",
+        "keyId": "0fefd5d94a8cb5b40c057ab182f7dc27",
+        "key": "5548c4823ff7f1ea61bafb7cbc19e005"
+    },
+    {
+        "nombre": "DISCOVERY",
+        "categoria": "",
+        "url": "http://45.228.234.77:4430/play/discoverychannel",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "_UNIVERSAL CINEMA",
+        "categoria": "PREMIUM",
+        "url": "http://live2-ott.izzigo.tv/out/u/dash/UNIVERSAL-CINEMA-HD/default.m",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Tl Novelas",
+        "categoria": "CANALES VARIADOS solo OTT",
+        "url": "https://megatelevisiontv.live/wp/wp-content/uploads/2021/09/tlnovelas-e1632249780226.jpg",
+        "keyId": "acfbb4a08226c808dd83b99b1f0b28fb",
+        "key": "25526de5c85f84aff6b0bb300f4b6ec8"
+    }
+]
