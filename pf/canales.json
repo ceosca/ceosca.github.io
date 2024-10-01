@@ -1483,6 +1483,62 @@
         "keyId": "90422640d3e846159fa450f83870ed4a",
         "key": "abb3cd94aece1a462df25a8f21085cca"
     },
+{
+    "nombre": "ESPN Uruguay",
+    "categoria": "Deportes",
+    "url": "https://chromecast.cvattv.com.ar/live/c4eds/ESPN_UY/SA_Live_dash_enc/ESPN_UY.mpd",
+    "keyId": "6362e1f36fcb7ee3c47debd9140336ad",
+    "key": "9ba1d46c5b9c7a3130a5dabbf7155175"
+},
+{
+    "nombre": "ESPN 2 Uruguay",
+    "categoria": "Deportes",
+    "url": "http://cdn.cvattv.com.ar/live/c4eds/ESPN2_UY/SA_Live_dash_enc/ESPN2_UY.mpd",
+    "keyId": "0d820100144772fed9f38b83650fa7e1",
+    "key": "ded8cc47b29b0eb0b0a87df22e721847"
+},
+{
+    "nombre": "ESPN 3 Uruguay",
+    "categoria": "Deportes",
+    "url": "https://chromecast.cvattv.com.ar/live/c7eds/ESPN3_Uy-Py/SA_Live_dash_enc/ESPN3_Uy-Py.mpd",
+    "keyId": "ed53871dc50dcdc59a6271db3c8c51b3",
+    "key": "0c21dc8629e3f2e6fe9efa8b80dc447e"
+},
+{
+    "nombre": "ESPN 4",
+    "categoria": "Deportes",
+    "url": "https://chromecast.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd",
+    "keyId": "cc8d44406ed6bf1898ad9f7a2d64f29e",
+    "key": "fb85d059687ab0fc67805806204edbdf"
+},
+{
+    "nombre": "ESPN 5 Uruguay",
+    "categoria": "Deportes",
+    "url": "https://chromecast.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc/ESPN4.mpd",
+    "keyId": "24f2b3e741f0d9e9a8d516faff38bddc",
+    "key": "bbd3fd02fb104e1463ac528a13f67e4a"
+},
+{
+    "nombre": "ESPN 6 Uruguay",
+    "categoria": "Deportes",
+    "url": "https://chromecast.cvattv.com.ar/live/c7eds/FoxSports3_UY/SA_Live_dash_enc/FoxSports3_UY.mpd",
+    "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
+    "key": "89157cdd25df25d56f1ecccee3850888"
+},
+{
+    "nombre": "ESPN 7 Uruguay",
+    "categoria": "Deportes",
+    "url": "https://chromecast.cvattv.com.ar/live/c7eds/FoxSports2_UY/SA_Live_dash_enc/FoxSports2_UY.mpd",
+    "keyId": "5fc7b662e69c0fbf8d39691166b1c919",
+    "key": "89157cdd25df25d56f1ecccee3850888"
+},
+{
+    "nombre": "Rural Latam",
+    "categoria": "Uruguay" "Paraguay",
+    "url": "https://chromecast.cvattv.com.ar/live/c4eds/Latam_Rural/SA_Live_dash_enc_C/Latam_Rural.mpd",
+    "keyId": "abdfd83824e9ba585f74fb72c647aa4f",
+    "key": "9967e06e39893998d16714988d9d87f1"
+},
     {
         "nombre": "Playboy",
         "categoria": "xxx",
