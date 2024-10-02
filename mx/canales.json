@@ -1,51 +1,23 @@
 [
-    {
-        "nombre": "TV Globo",
-        "categoria": "CANALES VARIADOS solo OTT",
-        "url": "https://live3-ott.izzigo.tv/out/u/dash/TV-GLOBO-SD/default.mpd",
-        "keyId": "29852829d373dfb35df80c5fa1d9bff0",
-        "key": "ceb31ec6a6d90090f490b54f524a27b4"
-    },
-    {
-        "nombre": "Unicable",
-        "categoria": "CANALES VARIADOS solo OTT",
-        "url": "https://live2-ott.izzigo.tv/out/u/dash/UNICABLE-HD/default.mpd",
-        "keyId": "f49c809a99d0454981ae6700d25ba0fb",
-        "key": "1999b5fbfd058bc1a2acf3d3cdb7a78d"
-    },
-    {
-        "nombre": "Las Estrellas",
-        "categoria": "CANALES VARIADOS solo OTT",
-        "url": "https://live1-ott.izzigo.tv/out/u/dash/CANAL-2-HD/default.mpd",
-        "keyId": "18273dd094587276de662812a2994055",
-        "key": "4cccb1a1e21a3dbc42bd4a3989a61de0"
-    },
-    {
-        "nombre": "Tl Novelas",
-        "categoria": "CANALES VARIADOS solo OTT",
-        "url": "https://live5-ott.izzigo.tv/out/u/dash/TLNOVELAS-HD/default.mpd",
-        "keyId": "acfbb4a08226c808dd83b99b1f0b28fb",
-        "key": "25526de5c85f84aff6b0bb300f4b6ec8"
-    },
-    {
-        "nombre": "Tl Novelas",
-        "categoria": "CANALES VARIADOS solo OTT",
-        "url": "https://live2-ott.izzigo.tv/out/u/dash/TLNOVELAS-SD/default.mpd",
-        "keyId": "acfbb4a08226c808dd83b99b1f0b28fb",
-        "key": "25526de5c85f84aff6b0bb300f4b6ec8"
-    },
-    {
-        "nombre": "Azteca 7",
-        "categoria": "CANALES VARIADOS solo OTT",
-        "url": "https://live4-ott.izzigo.tv/out/u/dash/AZTECA-7-HD/default.mpd",
-        "keyId": "ce8f86d2f0d1638574237ada8ac2e82a",
-        "key": "642772ebf1832f1f2fa58cb7e8fcfd05"
-    },
-    {
-        "nombre": "Azteca Uno",
-        "categoria": "CANALES VARIADOS solo OTT",
-        "url": "https://live4-ott.izzigo.tv/out/u/dash/AZTECA-1-HD/default.mpd",
-        "keyId": "1a2d8cc39da6e1ad9df693ec39216ce0",
-        "key": "077bd43518ce71087974bccaba10b8e3"
-    }
+{
+    "nombre": "Fox Sports",
+    "categoria": "Deportes",
+    "url": "https://live1-ott.izzigo.tv/out/u/dash/FOX-SPORTS-HD/default.mpd",
+    "keyId": "9e276bd34034a2c4dcf61d74e1242fbf",
+    "key": "4b466a4affb61d2672a4194b14e10ef2"
+},
+{
+    "nombre": "Fox Sports 3",
+    "categoria": "Deportes",
+    "url": "http://live1-ott.izzigo.tv/out/u/dash/FOX-SPORTS-3-HD/default.mpd",
+    "keyId": "ed8dd7562fd9f9064bed8d52fa42cc11",
+    "key": "d65a22cfe5bfbd33d8d25b183649e44f"
+},
+{
+    "nombre": "TUDN",
+    "categoria": "Deportes",
+    "url": "http://live1-ott.izzigo.tv/out/u/dash/TUDN-HD/default.mpd",
+    "keyId": "2722647f77b44824c432a3c4555830a2",
+    "key": "1734befb82f4b438bd84195f6c212e7b"
+}
 ]
