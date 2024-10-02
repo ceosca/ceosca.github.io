@@ -1534,7 +1534,7 @@
 },
 {
     "nombre": "Rural Latam",
-    "categoria": "Uruguay" "Paraguay",
+    "categoria": "Uruguay",
     "url": "https://chromecast.cvattv.com.ar/live/c4eds/Latam_Rural/SA_Live_dash_enc_C/Latam_Rural.mpd",
     "keyId": "abdfd83824e9ba585f74fb72c647aa4f",
     "key": "9967e06e39893998d16714988d9d87f1"
