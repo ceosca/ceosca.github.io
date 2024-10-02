@@ -337,84 +337,84 @@
     },
     {
         "nombre": "Baby TV",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c7eds/BabyTV/SA_Live_dash_enc_2A/BabyTV.mpd",
         "keyId": "9e09f0a3ecb932582e0f3bc6a6194c8d",
         "key": "6d2363b7ba7680ea3bf6dcbad1efa5bf"
     },
     {
         "nombre": "Cartoon Network",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc_2A/CartoonNetwork.mpd",
         "keyId": "d7df56efaa36a71141d238854cc46d1d",
         "key": "8abb2ee9150d8b2af8ebec0de0f833c8"
     },
     {
         "nombre": "Cartoonito",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c7eds/Boomerang/SA_Live_dash_enc_2A/Boomerang.mpd",
         "keyId": "5792e613fceb699c79cbc0e75fe4cd37",
         "key": "a672793730476ed23e5c1bce2ff570c6"
     },
     {
         "nombre": "Discovery Kids",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Discovery_Kids/SA_Live_dash_enc_2A/Discovery_Kids.mpd",
         "keyId": "ffb2f0f63c23a3592d4653e938b9ca19",
         "key": "d3661ae881fc55fc7a15815cd439747b"
     },
     {
         "nombre": "Disney Channel",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/DisneyChannelHD/SA_Live_dash_enc_2A/DisneyChannelHD.mpd",
         "keyId": "4a742e478d14023e1993e011d9415f94",
         "key": "0df77ede9bc744376836d21afa137dda"
     },
     {
         "nombre": "Disney Junior",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c7eds/DisneyJr/SA_Live_dash_enc_2A/DisneyJr.mpd",
         "keyId": "bd29c4a538f28845ce33581111749428",
         "key": "46d9589f41a11c3637c07c604956deac"
     },
     {
         "nombre": "Dreamworks TV",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c7eds/Dreamworks/SA_Live_dash_enc_2A/Dreamworks.mpd",
         "keyId": "7f30c43e47544412221fd64201d92f4b",
         "key": "f83d09d75a0946b1d71aa48c201b4d8b"
     },
     {
         "nombre": "Nickelodeon",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc_2A/Nickelodeon.mpd",
         "keyId": "61c18cefecc2d067beaa9ff181305345",
         "key": "38d6f650cbf9a38fd9f35c01f98e647a"
     },
     {
         "nombre": "Nick JR.",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Nick_Jr/SA_Live_dash_enc_2A/Nick_Jr.mpd",
         "keyId": "e824b2277a86fd6adfc40aa948e5064a",
         "key": "28da2dbbe8e1a1463bbb23895b922083"
     },
     {
         "nombre": "Paka Paka",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/PAKA_PAKA/SA_Live_dash_enc_2A/PAKA_PAKA.mpd",
         "keyId": "334001b2f2644df9bdf35e92d2b89f8f",
         "key": "475ec87d86ed0636dbb6d6d9d4a43bb7"
     },
     {
         "nombre": "PLIM PLIM TV",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Plim_Plim/SA_Live_dash_enc/Plim_Plim.mpd",
         "keyId": "8e88e1572dcd2b31a10026668d628d61",
         "key": "ab95bdc2655aff4f4a8e512fb68c80df"
     },
     {
         "nombre": "Tooncast",
-        "categoria": "Infantiles y Familiares",
+        "categoria": "Infantiles",
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Tooncast/SA_Live_dash_enc_2A/Tooncast.mpd",
         "keyId": "10638a722eb54c64bfb0e7a77483686a",
         "key": "41a7d3d522e19215b7e8f611b6902d61"
@@ -1538,6 +1538,13 @@
     "url": "https://chromecast.cvattv.com.ar/live/c4eds/Latam_Rural/SA_Live_dash_enc_C/Latam_Rural.mpd",
     "keyId": "abdfd83824e9ba585f74fb72c647aa4f",
     "key": "9967e06e39893998d16714988d9d87f1"
+},
+{
+    "nombre": "KidOO",
+    "categoria": "Infantiles",
+    "url": "http://chromecast.cvattv.com.ar/live/c6eds/Kidoo/SA_Live_dash_enc/Kidoo.mpd",
+    "keyId": "dcd89337a501ab929c01a039774089dc",
+    "key": "e96cc7be9139a8d581b3f5eebebfc10d"
 },
     {
         "nombre": "Playboy",
