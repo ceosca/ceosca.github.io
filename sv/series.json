@@ -1,0 +1,29 @@
+{
+  "series": [
+    {
+      "title": "La Patrona",
+      "genre": "Drama",
+      "year": 2013,
+      "cast": ["Aracely Arámbula", "Jorge Luis Pila", "Christian Bach"],
+      "origin": "Estados Unidos",
+      "githubLink": "https://raw.githubusercontent.com/ivanack123/la-patrona/main/",
+      "seasons": [
+        { "name": "Temporada 1", "chapters": 127 }
+      ],
+      "synopsis": "Gabriela Suárez es la única mujer que trabaja en la mina..."
+    },
+    {
+      "title": "La Doña",
+      "genre": "Drama",
+      "year": 2016,
+      "cast": ["Aracely Arámbula", "David Chocarro", "Danna Paola"],
+      "origin": "Estados Unidos",
+      "githubLink": "https://raw.githubusercontent.com/ivanack123/la-donya/main/",
+      "seasons": [
+        { "name": "Temporada 1", "chapters": 120 },
+        { "name": "Temporada 2", "chapters": 80 }
+      ],
+      "synopsis": "La Doña, basada en Doña Bárbara, obra literaria de Rómulo Gallegos..."
+    }
+  ]
+}
