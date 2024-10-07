@@ -22,7 +22,7 @@
 
 <script>
 // Cargar datos desde un archivo JSON externo
-fetch('series.json')
+fetch('/sv/series.json')
   .then(response => response.json())
   .then(data => {
     const seriesData = data.series;
