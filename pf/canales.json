@@ -1546,6 +1546,13 @@
     "keyId": "dcd89337a501ab929c01a039774089dc",
     "key": "e96cc7be9139a8d581b3f5eebebfc10d"
 },
+{
+    "nombre": "Telemundo Internacional MX",
+    "categoria": "Mundiales",
+    "url": "https://dish.akamaized.net/Content/DASH/Live/channel(telemundohd)/variant.mpd",
+    "keyId": "37c93f4babaaabc0da1d8b24828c3ff7",
+    "key": "88e2ac75ce14cd5fbfb79083f37107dd"
+},
     {
         "nombre": "Playboy",
         "categoria": "xxx",
