@@ -90,16 +90,16 @@
                         file: selectedValue.url,
                         type: "mpd"
                     }],
-                    tracks: []
+                    tracks: []  // Esto asegura que solo se utilicen pistas de audio.
                 }],
                 width: 0,
                 height: 0,
                 autostart: true,
                 audioOnly: true,
-                visualPlaylist: false,
+                visualPlaylist: false, // Desactiva cualquier elemento visual relacionado con la lista de reproducción
                 controls: false
             };
-            
+
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
@@ -110,9 +110,11 @@
             }
 
             if (selectedValue.userAgent) {
-                config.httpUserAgent = selectedValue.userAgent;
+                config.httpHeaders = {
+                    "User-Agent": selectedValue.userAgent
+                };
             }
-
+            
             playerInstance = jwplayer("player").setup(config);
         }
 
