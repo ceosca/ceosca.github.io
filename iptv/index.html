@@ -1,1 +1,78 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>IPTV Player</title><link type="text/css" rel="stylesheet" href="https://ceosca.github.io/iptv/player.min.css" media="all"><link rel="icon" type="image/png" href="/play-on.png"></head><body><div id="playlist"></div><div id="player"></div><script src="https://ceosca.github.io/iptv/jwplayer.js"></script><script src="https://ceosca.github.io/iptv/player.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Player</title>
+    <link rel="stylesheet" href="player.min.css">
+    <link rel="icon" href="/play-on.png">
+</head>
+<body>
+    <div id="player"></div>
+    <div id="playlist"></div>
+
+    <!-- JWPlayer Script -->
+    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
+    <script type='text/javascript'>
+        jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+    </script>
+
+    <!-- Player configuration -->
+    <script src="https://ceosca.github.io/iptv/player.js"></script>
+    <script>
+        const m3uUrl = "https://ceosca.github.io/iptv/l.m3u"; // URL de la lista M3U
+
+        // Cargar el archivo M3U al iniciar la página
+        document.addEventListener("DOMContentLoaded", () => {
+            loadM3U(m3uUrl);
+        });
+
+        // Función para cargar y configurar el reproductor con la lista M3U
+        async function loadM3U(url) {
+            try {
+                const response = await fetch(url);
+                const m3uContent = await response.text();
+                const playlist = parseM3U(m3uContent);
+                if (playlist.length > 0) {
+                    setupPlayer(playlist[0].url); // Cargar el primer canal de la lista
+                } else {
+                    console.error('No se encontraron streams en el archivo M3U');
+                }
+            } catch (error) {
+                console.error("Error al cargar el archivo M3U:", error);
+            }
+        }
+
+        // Función para parsear el contenido M3U
+        function parseM3U(content) {
+            const lines = content.split('\n');
+            const playlist = [];
+            let currentChannel = null;
+
+            lines.forEach(line => {
+                if (line.startsWith('#EXTINF')) {
+                    const info = line.split(',')[1].trim();
+                    currentChannel = { name: info };
+                } else if (line.startsWith('http') && currentChannel) {
+                    currentChannel.url = line.trim();
+                    playlist.push(currentChannel);
+                    currentChannel = null;
+                }
+            });
+
+            return playlist;
+        }
+
+        // Configurar JWPlayer con el stream URL
+        function setupPlayer(streamUrl) {
+            jwplayer("player").setup({
+                file: streamUrl,
+                width: "100%",
+                height: "100%",
+                autostart: true,
+                controls: true
+            });
+        }
+    </script>
+</body>
+</html>
