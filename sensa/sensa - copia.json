@@ -12,35 +12,40 @@
     "categoria": "",
     "url": "http://csc-nod-edge01.sensa.com.ar/live/eds/AyE/live_dash_cld/AyE.mpd",
     "keyId": "736bef197ba5c73203add79c8e8d279a",
-    "key": "7f037dc5835305f22a7206d79d4d5db2"
+    "key": "7f037dc5835305f22a7206d79d4d5db2",
+"userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 WebAppManager"
 },
 {
     "nombre": "TRUTV",
     "categoria": "",
     "url": "http://csc-nod-edge01.sensa.com.ar/live/eds/TRUTV/live_dash_cld/TRUTV.mpd",
     "keyId": "476ae5b67b7ad297ac643386d2daa229",
-    "key": "0ef75009de12efe833dafa97aa30272c"
+    "key": "0ef75009de12efe833dafa97aa30272c",
+"userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 WebAppManager"
 },
 {
     "nombre": "AMC",
     "categoria": "",
     "url": "http://csc-nod-edge01.sensa.com.ar/live/eds/AMC/live_dash_cld/AMC.mpd",
     "keyId": "68fc78cb6fe580c35d269da87a471eb0",
-    "key": "2bd623220a247d95d6900cea612769df"
+    "key": "2bd623220a247d95d6900cea612769df",
+"userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 WebAppManager"
 },
 {
     "nombre": "America",
     "categoria": "",
     "url": "http://csc-nod-edge01.sensa.com.ar/live/eds/America/live_dash_cld/America.mpd",
     "keyId": "b5651806b42f087c58332b052de727c5",
-    "key": "11901b35cc3e5aa73619f64d02c38a0f"
+    "key": "11901b35cc3e5aa73619f64d02c38a0f",
+"userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 WebAppManager"
 },
 {
     "nombre": "AmericaSports",
     "categoria": "",
     "url": "http://csc-nod-edge01.sensa.com.ar/live/eds/AmericaSports/live_dash_cld/AmericaSports.mpd",
     "keyId": "f9a70c294ea75346b991a61c55ff1d8f",
-    "key": "7012eb6cd752998ee5cfbe68517491f5"
+    "key": "7012eb6cd752998ee5cfbe68517491f5",
+"userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 WebAppManager"
 },
 {
     "nombre": "AnimalPlanet",
