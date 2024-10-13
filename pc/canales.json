@@ -639,7 +639,7 @@
     {
         "nombre": "Telemundo Internacional",
         "categoria": "Mundiales",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_2A/Telemundo_HD.mpd",
+        "url": "https://edge-live16-hr.cvattv.com.ar/live/c7eds/Telemundo_HD/SA_Live_dash_enc_C/Telemundo_HD-mp4a_145200_spa=20001-scale=48000-p=305360305551511-init.mp4",
         "keyId": "53d752e4649dadd808d913985f86ee77",
         "key": "d1fd24db1b61d634cabfc44538ce9b0e"
     },
