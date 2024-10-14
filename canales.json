@@ -343,20 +343,6 @@
         "key": "f86f8457438d4e449d53b956cc1be664"
     },
     {
-        "nombre": "América Sports",
-        "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/America_Sports/SA_Live_dash_enc_2A/America_Sports.mpd",
-        "keyId": "a0aa01337a2148bda1e21862295ae037",
-        "key": "fee0f87a0527497351fc54ce36ad1de2"
-    },
-    {
-        "nombre": "PX Sports",
-        "categoria": "Deportes",
-        "url": "https://chromecast.cvattv.com.ar/live/c7eds/PX_Sports/SA_Live_dash_enc_2A/PX_Sports.mpd",
-        "keyId": "9393321daef1463fc7e2e060298db852",
-        "key": "be6bc91e17816f67e62596bed463c5ad"
-    },
-    {
         "nombre": "ESPN",
         "categoria": "Deportes",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc_2A/ESPN2HD.mpd",
@@ -460,6 +446,20 @@
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Golf_Channel/SA_Live_dash_enc_2A/Golf_Channel.mpd",
         "keyId": "38d6226b7cd2cfa86b4b9cdaa455e7d7",
         "key": "24f0ef2bf787647cc02df870417eed2b"
+    },
+    {
+        "nombre": "América Sports",
+        "categoria": "Deportes",
+        "url": "https://chromecast.cvattv.com.ar/live/c6eds/America_Sports/SA_Live_dash_enc_2A/America_Sports.mpd",
+        "keyId": "a0aa01337a2148bda1e21862295ae037",
+        "key": "fee0f87a0527497351fc54ce36ad1de2"
+    },
+    {
+        "nombre": "PX Sports",
+        "categoria": "Deportes",
+        "url": "https://chromecast.cvattv.com.ar/live/c7eds/PX_Sports/SA_Live_dash_enc_2A/PX_Sports.mpd",
+        "keyId": "9393321daef1463fc7e2e060298db852",
+        "key": "be6bc91e17816f67e62596bed463c5ad"
     },
     {
         "nombre": "VTV Plus Uruguay",
