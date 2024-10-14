@@ -1323,27 +1323,6 @@
         "key": "3f412fa6368b7db4903588de695377e1"
     },
     {
-        "nombre": "Playboy",
-        "categoria": "xxx",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Playboy/SA_Live_dash_enc/Playboy.mpd",
-        "keyId": "8577d81eaf33436d9f1e482360685a7c",
-        "key": "f608a0ac703cfaaf9442574d9a2b87fb"
-    },
-    {
-        "nombre": "Sextreme",
-        "categoria": "xxx",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Sextreme/SA_Live_dash_enc/Sextreme.mpd",
-        "keyId": "95bd64227acf458daf7886f803d0298e",
-        "key": "79e28ee0ec58958bb666f9e53a0cd434"
-    },
-    {
-        "nombre": "Venus",
-        "categoria": "xxx",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc/Venus.mpd",
-        "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
-        "key": "05d973d987915120e567880f50a422af"
-    },
-    {
         "nombre": "Allegro",
         "categoria": "Música",
         "url": "https://chromecast.cvattv.com.ar/live/c7eds/AllegroHD/SA_Live_dash_enc/AllegroHD.mpd",
@@ -1426,5 +1405,26 @@
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Vorterix/SA_Live_dash_enc_2A/Vorterix.mpd",
         "keyId": "eabe2c22350c26c7f0ad84b34932f08d",
         "key": "39fa06836ec0f81d8dd9b6e01a3070e3"
+    },
+    {
+        "nombre": "Playboy",
+        "categoria": "xxx",
+        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Playboy/SA_Live_dash_enc/Playboy.mpd",
+        "keyId": "8577d81eaf33436d9f1e482360685a7c",
+        "key": "f608a0ac703cfaaf9442574d9a2b87fb"
+    },
+    {
+        "nombre": "Sextreme",
+        "categoria": "xxx",
+        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Sextreme/SA_Live_dash_enc/Sextreme.mpd",
+        "keyId": "95bd64227acf458daf7886f803d0298e",
+        "key": "79e28ee0ec58958bb666f9e53a0cd434"
+    },
+    {
+        "nombre": "Venus",
+        "categoria": "xxx",
+        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc/Venus.mpd",
+        "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
+        "key": "05d973d987915120e567880f50a422af"
     }
 ]
