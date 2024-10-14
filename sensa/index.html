@@ -88,30 +88,26 @@
                     title: "Audio del Stream Seleccionado",
                     sources: [{
                         file: selectedValue.url,
-                        type: "mpd"
+                        type: "mpd",
+                        withCredentials: false,
+                        httpUserAgent: "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 WebAppManager"
                     }],
-                    tracks: []  // Esto asegura que solo se utilicen pistas de audio.
+                    tracks: []
                 }],
                 width: 0,
                 height: 0,
                 autostart: true,
                 audioOnly: true,
-                visualPlaylist: false, // Desactiva cualquier elemento visual relacionado con la lista de reproducción
+                visualPlaylist: false,
                 controls: false
             };
-
+            
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
                         keyId: selectedValue.keyId,
                         key: selectedValue.key
                     }
-                };
-            }
-
-            if (selectedValue.userAgent) {
-                config.httpHeaders = {
-                    "User-Agent": selectedValue.userAgent
                 };
             }
             
