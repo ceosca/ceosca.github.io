@@ -7,8 +7,7 @@
 <body>
     <div id="playerContainer"></div>
     <div id="controls">
-        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()">
-        </select>
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()"></select>
     </div>
     <script type='text/javascript'>
         var playerInstance = null;
@@ -33,7 +32,7 @@
             canales.forEach(function(canal, index) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = index + 1; // Sumar 1 al índice
+                option.value = index + 1;
                 selectBox.add(option);
             });
             selectBox.selectedIndex = 0;
@@ -43,22 +42,15 @@
             var selectedValue = canales[currentChannelIndex];
             var config = {
                 playlist: [{
-                    sources: [{
-                        file: selectedValue.url,
-                        type: "mpd"
-                    }]
+                    sources: [{ file: selectedValue.url, type: "mpd" }]
                 }],
                 autostart: true,
-                cast: {},
-                controls: false,
+                controls: false
             };
 
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
-                    clearkey: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
-                    }
+                    clearkey: { keyId: selectedValue.keyId, key: selectedValue.key }
                 };
             }
 
@@ -75,7 +67,7 @@
 
         function changeChannel(offset) {
             if (channelNumberBuffer !== "") {
-                currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1;
                 channelNumberBuffer = "";
                 cargarStream();
             } else {
@@ -86,7 +78,7 @@
 
         function changeChannelManually() {
             var selectBox = document.getElementById("channelSelector");
-            currentChannelIndex = parseInt(selectBox.value) - 1; // Restar 1 para igualar al índice del array
+            currentChannelIndex = parseInt(selectBox.value) - 1;
             channelNumberBuffer = "";
             cargarStream();
             ocultarSelector(); 
@@ -136,7 +128,7 @@
                     channelNumberBuffer += event.key;
                     timeoutId = setTimeout(function() {
                         if (channelNumberBuffer !== "") {
-                            currentChannelIndex = parseInt(channelNumberBuffer) - 1; // Restar 1 para igualar al índice del array
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1;
                             channelNumberBuffer = "";
                             cargarStream();
                         }
