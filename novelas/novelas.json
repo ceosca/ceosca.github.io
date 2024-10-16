@@ -1,35 +1,34 @@
 {
   "novelas": [
     {
-      "titulo": "La Patrona",
-      "genero": "Drama",
-      "anio": 2013,
-      "reparto": ["Aracely Arámbula", "Jorge Luis Pila", "Christian Bach", "Erika de la Rosa"],
-      "pais_origen": "Estados Unidos",
-      "temporadas": [
+      "title": "La Patrona",
+      "genre": "Drama",
+      "year": 2013,
+      "cast": "Aracely Arámbula, Jorge Luis Pila, Christian Bach, Erika de la Rosa, Alexandra de la Mora, Gonzalo García Vivanco, Christian de la Campa, Aldo Gallardo, Kenia Gazcón, Carlos Torres Torrija",
+      "country": "Estados Unidos",
+      "synopsis": "Gabriela Suárez es la única mujer que trabaja en la mina de oro que le da vida y nombre al pueblo de San Pedro del Oro. Ella deberá enfrentar a la poderosa Antonia Guerra y a todos aquellos que buscan destruir su vida y sus seres queridos.",
+      "seasons": [
         {
-          "nombre": "Temporada 1",
-          "capitulos": 127,
-          "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-patrona/main/"
+          "name": "Temporada 1",
+          "chapters": 127
         }
       ]
     },
     {
-      "titulo": "La querida del Centauro",
-      "genero": "Drama; Thriller",
-      "anio": 2016,
-      "reparto": ["Humberto Zurita", "Ludwika Paleta", "Michel Brown", "Pablo Abitia"],
-      "pais_origen": "Estados Unidos",
-      "temporadas": [
+      "title": "La querida del Centauro",
+      "genre": "Drama; Thriller",
+      "year": 2016,
+      "cast": "Humberto Zurita, Ludwika Paleta, Michel Brown, Pablo Abitia, Arantza Ruiz, Ricardo Polanco, Jaime del Águila, Irene Azuela, Andrés Montiel, Alexandra de la Mora",
+      "country": "Estados Unidos",
+      "synopsis": "Yolanda, una reclusa que se convierte en la amante de uno de los narcotraficantes más poderosos de México, deberá luchar para escapar de la pesadilla en la que se ha convertido su vida.",
+      "seasons": [
         {
-          "nombre": "Temporada 1",
-          "capitulos": 51,
-          "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-querida-del-centauro/main/temporada-1/"
+          "name": "Temporada 1",
+          "chapters": 51
         },
         {
-          "nombre": "Temporada 2",
-          "capitulos": 90,
-          "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-querida-del-centauro/main/temporada-2/"
+          "name": "Temporada 2",
+          "chapters": 90
         }
       ]
     }
