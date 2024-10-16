@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,13 @@
 </head>
 <body>
 <h1 id="novela-titulo"></h1>
-<p id="novela-detalles"></p>
+<div>
+  <p id="novela-genero"></p>
+  <p id="novela-anio"></p>
+  <p id="novela-pais"></p>
+  <p id="novela-reparto"></p>
+  <p id="novela-sinopsis"></p>
+</div>
 <hr>
 
 <div>
@@ -55,7 +61,7 @@
     novelaList.innerHTML = "";
     novelasData.forEach((novela, index) => {
       const option = document.createElement("option");
-      option.text = novela.title;
+      option.text = novela.titulo;
       option.value = index;
       novelaList.add(option);
     });
@@ -67,13 +73,17 @@
 
   function cargarTemporadas() {
     const novelaSeleccionada = novelasData[novelaList.value];
-    document.getElementById("novela-titulo").textContent = novelaSeleccionada.title;
-    document.getElementById("novela-detalles").textContent = `Género: ${novelaSeleccionada.genre}, Año: ${novelaSeleccionada.year}, Reparto: ${novelaSeleccionada.cast}, País: ${novelaSeleccionada.country}, Sinopsis: ${novelaSeleccionada.synopsis}`;
+    document.getElementById("novela-titulo").textContent = novelaSeleccionada.titulo;
+    document.getElementById("novela-genero").textContent = `Género: ${novelaSeleccionada.genero}`;
+    document.getElementById("novela-anio").textContent = `Año: ${novelaSeleccionada.anio}`;
+    document.getElementById("novela-pais").textContent = `País de origen: ${novelaSeleccionada.pais_origen}`;
+    document.getElementById("novela-reparto").textContent = `Reparto: ${novelaSeleccionada.reparto.join(', ')}`;
+    document.getElementById("novela-sinopsis").textContent = `Sinopsis: ${novelaSeleccionada.sinopsis}`;
 
     seasonList.innerHTML = "";
-    novelaSeleccionada.seasons.forEach((temporada, index) => {
+    novelaSeleccionada.temporadas.forEach((temporada, index) => {
       const option = document.createElement("option");
-      option.text = temporada.name;
+      option.text = temporada.nombre;
       option.value = index;
       seasonList.add(option);
     });
@@ -84,10 +94,10 @@
 
   function cargarCapitulos() {
     const novelaSeleccionada = novelasData[novelaList.value];
-    const temporadaSeleccionada = novelaSeleccionada.seasons[seasonList.value];
+    const temporadaSeleccionada = novelaSeleccionada.temporadas[seasonList.value];
 
     chapterList.innerHTML = "";
-    for (let i = 1; i <= temporadaSeleccionada.chapters; i++) {
+    for (let i = 1; i <= temporadaSeleccionada.capitulos; i++) {
       const option = document.createElement("option");
       option.text = `Capítulo ${i}`;
       option.value = i;
@@ -99,8 +109,10 @@
   }
 
   function setChapter() {
+    const novelaSeleccionada = novelasData[novelaList.value];
+    const temporadaSeleccionada = novelaSeleccionada.temporadas[seasonList.value];
     const capituloSeleccionado = chapterList.value;
-    audio.src = `/ruta/del/audio/capitulo_${capituloSeleccionado}.m4a`; // Cambia la ruta según sea necesario
+    audio.src = `${temporadaSeleccionada.enlace_base}${capituloSeleccionado}.m4a`;
     audio.load();
   }
 
