@@ -24,9 +24,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 92,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/100-dias-para-enamorarnos/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 92,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/100-dias-para-enamorarnos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/100-dias-para-enamorarnos/main/temporada-2"
                 }
             ]
         },
@@ -58,9 +63,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 142,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/a-que-no-me-dejas/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 142,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/a-que-no-me-dejas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/a-que-no-me-dejas/main/temporada-2"
                 }
             ]
         },
@@ -81,7 +91,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 125,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/a-todo-dar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/a-todo-dar/main/"
                 }
             ]
         },
@@ -117,7 +127,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 162,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/abismo-de-pasion/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/abismo-de-pasion/main/"
                 }
             ]
         },
@@ -153,7 +163,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 135,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/abrazame-muy-fuerte/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/abrazame-muy-fuerte/main/"
                 }
             ]
         },
@@ -179,7 +189,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 187,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/acorralada/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/acorralada/main/"
                 }
             ]
         },
@@ -200,7 +210,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 102,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/adrenalina/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/adrenalina/main/"
                 }
             ]
         },
@@ -221,7 +231,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 300,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/agujetas-de-color-de-rosa/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/agujetas-de-color-de-rosa/main/"
                 }
             ]
         },
@@ -247,7 +257,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 175,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/al-diablo-con-los-guapos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/al-diablo-con-los-guapos/main/"
                 }
             ]
         },
@@ -273,7 +283,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 78,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/al-otro-lado-del-muro/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/al-otro-lado-del-muro/main/"
                 }
             ]
         },
@@ -308,7 +318,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 90,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alborada/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alborada/main/"
                 }
             ]
         },
@@ -358,7 +368,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 135,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alegrijes-y-rebujos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alegrijes-y-rebujos/main/"
                 }
             ]
         },
@@ -394,7 +404,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 116,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alguien-te-mira/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alguien-te-mira/main/"
                 }
             ]
         },
@@ -420,7 +430,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 130,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alguna-vez-tendremos-alas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/alguna-vez-tendremos-alas/main/"
                 }
             ]
         },
@@ -441,7 +451,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 97,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amame/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amame/main/"
                 }
             ]
         },
@@ -462,7 +472,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 170,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amanda/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amanda/main/"
                 }
             ]
         },
@@ -508,7 +518,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 126,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-a-morir/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-a-morir/main/"
                 }
             ]
         },
@@ -531,7 +541,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 87,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-a-muerte/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-a-muerte/main/"
                 }
             ]
         },
@@ -552,7 +562,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 156,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-profundo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-profundo/main/"
                 }
             ]
         },
@@ -577,7 +587,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 125,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-sin-limites/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amar-sin-limites/main/"
                 }
             ]
         },
@@ -603,7 +613,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 119,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amarte-asi/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amarte-asi/main/"
                 }
             ]
         },
@@ -626,7 +636,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amarte-es-mi-pecado/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amarte-es-mi-pecado/main/"
                 }
             ]
         },
@@ -662,7 +672,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 185,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amigas-y-rivales/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amigas-y-rivales/main/"
                 }
             ]
         },
@@ -698,7 +708,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 121,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amo-despertar-contigo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amo-despertar-contigo/main/"
                 }
             ]
         },
@@ -719,7 +729,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 102,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-a-domicilio/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-a-domicilio/main/"
                 }
             ]
         },
@@ -745,7 +755,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 161,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-bravio/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-bravio/main/"
                 }
             ]
         },
@@ -772,7 +782,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-cautivo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-cautivo/main/"
                 }
             ]
         },
@@ -793,7 +803,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 107,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-dividido/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-dividido/main/"
                 }
             ]
         },
@@ -818,7 +828,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-real/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-real/main/"
                 }
             ]
         },
@@ -839,7 +849,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 150,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-secreto/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amor-secreto/main/"
                 }
             ]
         },
@@ -860,7 +870,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 207,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amorcito-corazon/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amorcito-corazon/main/"
                 }
             ]
         },
@@ -881,7 +891,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 127,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amores-con-trampa/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amores-con-trampa/main/"
                 }
             ]
         },
@@ -907,7 +917,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 123,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amores-de-mercado/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amores-de-mercado/main/"
                 }
             ]
         },
@@ -933,7 +943,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 183,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amores-verdaderos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amores-verdaderos/main/"
                 }
             ]
         },
@@ -969,7 +979,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 115,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amy-la-ni-a-de-la-mochila-azul/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/amy-la-ni-a-de-la-mochila-azul/main/"
                 }
             ]
         },
@@ -991,7 +1001,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 217,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/angel-rebelde/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/angel-rebelde/main/"
                 }
             ]
         },
@@ -1012,7 +1022,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 78,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/angela-1998/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/angela-1998/main/"
                 }
             ]
         },
@@ -1033,7 +1043,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 130,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/apuesta-por-un-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/apuesta-por-un-amor/main/"
                 }
             ]
         },
@@ -1053,7 +1063,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 8,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/armas-de-mujer/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/armas-de-mujer/main/"
                 }
             ]
         },
@@ -1089,7 +1099,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 262,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/atrebete-a-so-ar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/atrebete-a-so-ar/main/"
                 }
             ]
         },
@@ -1125,7 +1135,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 135,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/aurora/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/aurora/main/"
                 }
             ]
         },
@@ -1146,7 +1156,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 105,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/aventuras-en-el-tiempo-2001/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/aventuras-en-el-tiempo-2001/main/"
                 }
             ]
         },
@@ -1172,7 +1182,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 51,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/bajo-el-alma/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/bajo-el-alma/main/"
                 }
             ]
         },
@@ -1198,7 +1208,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 122,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/bajo-el-mismo-cielo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/bajo-el-mismo-cielo/main/"
                 }
             ]
         },
@@ -1239,7 +1249,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/bajo-la-misma-piel/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/bajo-la-misma-piel/main/"
                 }
             ]
         },
@@ -1274,7 +1284,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 70,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/Bella-Calamidades/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/Bella-Calamidades/main/"
                 }
             ]
         },
@@ -1362,7 +1372,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 123,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/betty-en-ni/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/betty-en-ni/main/"
                 }
             ]
         },
@@ -1383,7 +1393,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 103,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/borron/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/borron/main/"
                 }
             ]
         },
@@ -1409,7 +1419,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 84,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/buscando-a-frida/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/buscando-a-frida/main/"
                 }
             ]
         },
@@ -1430,7 +1440,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 85,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cabo-2022/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cabo-2022/main/"
                 }
             ]
         },
@@ -1451,7 +1461,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 110,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cachito-de-cielo-2012/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cachito-de-cielo-2012/main/"
                 }
             ]
         },
@@ -1474,7 +1484,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cadenas-de-amargura/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cadenas-de-amargura/main/"
                 }
             ]
         },
@@ -1500,7 +1510,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 103,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/caer-en-tentacion/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/caer-en-tentacion/main/"
                 }
             ]
         },
@@ -1521,7 +1531,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 135,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/camaleones-2012/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/camaleones-2012/main/"
                 }
             ]
         },
@@ -1544,7 +1554,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 92,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ca-averal-de-pasiones/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ca-averal-de-pasiones/main/"
                 }
             ]
         },
@@ -1565,7 +1575,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 186,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/caribe/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/caribe/main/"
                 }
             ]
         },
@@ -1587,7 +1597,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 175,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/carita-de-angel/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/carita-de-angel/main/"
                 }
             ]
         },
@@ -1613,7 +1623,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 179,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/carrusel/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/carrusel/main/"
                 }
             ]
         },
@@ -1640,7 +1650,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/celia/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/celia/main/"
                 }
             ]
         },
@@ -1663,7 +1673,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 107,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/chipe-libre/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/chipe-libre/main/"
                 }
             ]
         },
@@ -1689,7 +1699,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 125,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/chispita/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/chispita/main/"
                 }
             ]
         },
@@ -1715,7 +1725,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 165,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cielo-rojo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cielo-rojo/main/"
                 }
             ]
         },
@@ -1741,7 +1751,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 84,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/comando-elite/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/comando-elite/main/"
                 }
             ]
         },
@@ -1762,7 +1772,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 85,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/como-tu-no-hay-2/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/como-tu-no-hay-2/main/"
                 }
             ]
         },
@@ -1783,7 +1793,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 132,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/complices-al-rescate-2002/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/complices-al-rescate-2002/main/"
                 }
             ]
         },
@@ -1804,7 +1814,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 130,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/contra-viento-y-marea/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/contra-viento-y-marea/main/"
                 }
             ]
         },
@@ -1825,7 +1835,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 111,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-apasionado/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-apasionado/main/"
                 }
             ]
         },
@@ -1849,7 +1859,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 139,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/coraz-n-esmeralda/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/coraz-n-esmeralda/main/"
                 }
             ]
         },
@@ -1870,7 +1880,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-guerrero/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-guerrero/main/"
                 }
             ]
         },
@@ -1891,7 +1901,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-salvaje-1993/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-salvaje-1993/main/"
                 }
             ]
         },
@@ -1917,7 +1927,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 135,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-salvaje-2009/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-salvaje-2009/main/"
                 }
             ]
         },
@@ -1953,7 +1963,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 206,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-valiente/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corazon-valiente/main/"
                 }
             ]
         },
@@ -1974,7 +1984,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 112,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corona-de-lagrimas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/corona-de-lagrimas/main/"
                 }
             ]
         },
@@ -2010,7 +2020,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 8,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cromosoma-21/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cromosoma-21/main/"
                 }
             ]
         },
@@ -2031,7 +2041,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 182,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuando-me-enamoro/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuando-me-enamoro/main/"
                 }
             ]
         },
@@ -2057,7 +2067,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 238,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuando-seas-mia/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuando-seas-mia/main/"
                 }
             ]
         },
@@ -2078,7 +2088,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 194,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuidado-con-el-angel/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuidado-con-el-angel/main/"
                 }
             ]
         },
@@ -2099,7 +2109,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 85,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuna-de-lobos-1986/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuna-de-lobos-1986/main/"
                 }
             ]
         },
@@ -2125,7 +2135,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 25,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuna-de-lobos-2019/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/cuna-de-lobos-2019/main/"
                 }
             ]
         },
@@ -2148,7 +2158,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 81,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/dama-y-hobrero/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/dama-y-hobrero/main/"
                 }
             ]
         },
@@ -2179,7 +2189,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 150,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/dame-chocolate/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/dame-chocolate/main/"
                 }
             ]
         },
@@ -2205,7 +2215,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/de-pocas-pocas-pulgas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/de-pocas-pocas-pulgas/main/"
                 }
             ]
         },
@@ -2232,7 +2242,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 187,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/de-que-te-quiero-te-quiero/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/de-que-te-quiero-te-quiero/main/"
                 }
             ]
         },
@@ -2253,7 +2263,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 170,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/destilando-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/destilando-amor/main/"
                 }
             ]
         },
@@ -2274,7 +2284,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/diseniando-tu-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/diseniando-tu-amor/main/"
                 }
             ]
         },
@@ -2295,7 +2305,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 107,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/donde-esta-elisa/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/donde-esta-elisa/main/"
                 }
             ]
         },
@@ -2325,7 +2335,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 190,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/donya-barbara/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/donya-barbara/main/"
                 }
             ]
         },
@@ -2350,7 +2360,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 71,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/duenyos-del-paraiso/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/duenyos-del-paraiso/main/"
                 }
             ]
         },
@@ -2371,7 +2381,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 90,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-abuelo-y-yo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-abuelo-y-yo/main/"
                 }
             ]
         },
@@ -2394,7 +2404,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-amor-invencible/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-amor-invencible/main/"
                 }
             ]
         },
@@ -2415,7 +2425,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 98,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-bienamado/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-bienamado/main/"
                 }
             ]
         },
@@ -2452,7 +2462,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 82,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-bronx/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-bronx/main/"
                 }
             ]
         },
@@ -2476,9 +2486,19 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 226,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-capo/main/temporada-1"
+                },
+                {
+                    "nombre": "Temporada 2",
+                    "capitulos": 226,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-capo/main/temporada-2"
+                },
+                {
                     "nombre": "Temporada 3",
                     "capitulos": 226,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-capo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-capo/main/temporada-3"
                 }
             ]
         },
@@ -2504,7 +2524,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 50,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-cartel-2/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-cartel-2/main/"
                 }
             ]
         },
@@ -2529,7 +2549,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 57,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-cartel/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-cartel/main/"
                 }
             ]
         },
@@ -2550,7 +2570,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 84,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-chema/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-chema/main/"
                 }
             ]
         },
@@ -2577,7 +2597,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 183,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-clon/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-clon/main/"
                 }
             ]
         },
@@ -2598,7 +2618,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 122,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-color-de-la-pasion-directo-al-corazon/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-color-de-la-pasion-directo-al-corazon/main/"
                 }
             ]
         },
@@ -2619,7 +2639,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 157,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-cuerpo-del-deseo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-cuerpo-del-deseo/main/"
                 }
             ]
         },
@@ -2642,7 +2662,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-derecho-de-nacer/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-derecho-de-nacer/main/"
                 }
             ]
         },
@@ -2682,7 +2702,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-derecho-de-nacer/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-derecho-de-nacer/main/"
                 }
             ]
         },
@@ -2703,7 +2723,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-diario-de-daniela/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-diario-de-daniela/main/"
                 }
             ]
         },
@@ -2724,7 +2744,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 196,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-extranio-retorno-de-diana-salazar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-extranio-retorno-de-diana-salazar/main/"
                 }
             ]
         },
@@ -2749,7 +2769,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 117,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-fantasma-de-elena/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-fantasma-de-elena/main/"
                 }
             ]
         },
@@ -2775,7 +2795,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 90,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123el-final-del-paraiso/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123el-final-del-paraiso/main/"
                 }
             ]
         },
@@ -2796,7 +2816,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 81,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-hotel-de-los-secretos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-hotel-de-los-secretos/main/"
                 }
             ]
         },
@@ -2819,7 +2839,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 165,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-juego-de-la-vida/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-juego-de-la-vida/main/"
                 }
             ]
         },
@@ -2842,7 +2862,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-manantial/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-manantial/main/"
                 }
             ]
         },
@@ -2863,7 +2883,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 123,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-pecado-de-oyuki/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-pecado-de-oyuki/main/"
                 }
             ]
         },
@@ -2887,7 +2907,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 190,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-premio-mayor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-premio-mayor/main/"
                 }
             ]
         },
@@ -2908,7 +2928,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 155,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-privilegio-de-amar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-privilegio-de-amar/main/"
                 }
             ]
         },
@@ -2942,7 +2962,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 115,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-rostro-de-la-venganza/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-rostro-de-la-venganza/main/"
                 }
             ]
         },
@@ -2976,9 +2996,44 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 701,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-1"
+                },
+                {
+                    "nombre": "Temporada 2",
+                    "capitulos": 701,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-2"
+                },
+                {
+                    "nombre": "Temporada 3",
+                    "capitulos": 701,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-3"
+                },
+                {
+                    "nombre": "Temporada 4",
+                    "capitulos": 701,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-4"
+                },
+                {
+                    "nombre": "Temporada 5",
+                    "capitulos": 701,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-5"
+                },
+                {
+                    "nombre": "Temporada 6",
+                    "capitulos": 701,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-6"
+                },
+                {
+                    "nombre": "Temporada 7",
+                    "capitulos": 701,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-7"
+                },
+                {
                     "nombre": "Temporada 8",
                     "capitulos": 701,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-senyor-de-los-cielos/main/temporada-8"
                 }
             ]
         },
@@ -2999,7 +3054,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-sexo-debil/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-sexo-debil/main/"
                 }
             ]
         },
@@ -3025,7 +3080,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 101,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-talisman/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-talisman/main/"
                 }
             ]
         },
@@ -3045,9 +3100,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 30,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el--ltimo-rey/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 30,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el--ltimo-rey/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el--ltimo-rey/main/temporada-2"
                 }
             ]
         },
@@ -3070,7 +3130,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 90,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-vuelo-de-la-victoria/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/el-vuelo-de-la-victoria/main/"
                 }
             ]
         },
@@ -3096,7 +3156,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 122,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/zorro-la-espada-y-la-rosa/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/zorro-la-espada-y-la-rosa/main/"
                 }
             ]
         },
@@ -3122,7 +3182,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 60,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ellas-aman-ellos-mienten/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ellas-aman-ellos-mienten/main/"
                 }
             ]
         },
@@ -3143,7 +3203,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 170,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/en-nombre-del-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/en-nombre-del-amor/main/"
                 }
             ]
         },
@@ -3166,7 +3226,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 154,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/en-otra-piel/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/en-otra-piel/main/"
                 }
             ]
         },
@@ -3187,7 +3247,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 70,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/en-tierras-salvajes/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/en-tierras-salvajes/main/"
                 }
             ]
         },
@@ -3208,7 +3268,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 105,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enamorandome-de-ramon/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enamorandome-de-ramon/main/"
                 }
             ]
         },
@@ -3231,9 +3291,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 113,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enemigo-intimo/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 113,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enemigo-intimo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enemigo-intimo/main/temporada-2"
                 }
             ]
         },
@@ -3296,9 +3361,24 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 393,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enfermeras/main/temporada-1"
+                },
+                {
+                    "nombre": "Temporada 2",
+                    "capitulos": 393,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enfermeras/main/temporada-2"
+                },
+                {
+                    "nombre": "Temporada 3",
+                    "capitulos": 393,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enfermeras/main/temporada-3"
+                },
+                {
                     "nombre": "Temporada 4",
                     "capitulos": 393,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enfermeras/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/enfermeras/main/temporada-4"
                 }
             ]
         },
@@ -3324,7 +3404,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 33,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/escalona/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/escalona/main/"
                 }
             ]
         },
@@ -3345,7 +3425,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 137,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/esmeralda/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/esmeralda/main/"
                 }
             ]
         },
@@ -3365,7 +3445,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 118,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/eva-la-trailera/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/eva-la-trailera/main/"
                 }
             ]
         },
@@ -3388,9 +3468,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 171,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/falsa-identidad/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 171,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/falsa-identidad/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/falsa-identidad/main/temporada-2"
                 }
             ]
         },
@@ -3411,7 +3496,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 124,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/farsantes/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/farsantes/main/"
                 }
             ]
         },
@@ -3446,7 +3531,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 150,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/flor-salvaje/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/flor-salvaje/main/"
                 }
             ]
         },
@@ -3469,7 +3554,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 85,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/fuego-ardiente/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/fuego-ardiente/main/"
                 }
             ]
         },
@@ -3490,7 +3575,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 200,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/fuego-en-la-sangre/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/fuego-en-la-sangre/main/"
                 }
             ]
         },
@@ -3516,7 +3601,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 252,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/gata-salvaje/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/gata-salvaje/main/"
                 }
             ]
         },
@@ -3537,7 +3622,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 13,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/gritos-de-muerte-y-libertad/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/gritos-de-muerte-y-libertad/main/"
                 }
             ]
         },
@@ -3559,7 +3644,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 76,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/guerra-de-idolos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/guerra-de-idolos/main/"
                 }
             ]
         },
@@ -3580,7 +3665,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 227,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/hasta-que-el-dinero-nos-separe/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/hasta-que-el-dinero-nos-separe/main/"
                 }
             ]
         },
@@ -3601,7 +3686,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 130,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/heridas-de-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/heridas-de-amor/main/"
                 }
             ]
         },
@@ -3620,7 +3705,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 94,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/hermanitas-calle/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/hermanitas-calle/main/"
                 }
             ]
         },
@@ -3643,7 +3728,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 82,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/hijas-de-la-luna/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/hijas-de-la-luna/main/"
                 }
             ]
         },
@@ -3664,7 +3749,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 92,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/imperio-de-mentiras/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/imperio-de-mentiras/main/"
                 }
             ]
         },
@@ -3675,13 +3760,7 @@
             "reparto": [],
             "pais_origen": "",
             "sinopsis": "",
-            "temporadas": [
-                {
-                    "nombre": "Temporada 0",
-                    "capitulos": 0,
-                    "enlace_base": ""
-                }
-            ]
+            "temporadas": []
         },
         {
             "titulo": "Infiltrados",
@@ -3705,7 +3784,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 37,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/infiltrados/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/infiltrados/main/"
                 }
             ]
         },
@@ -3726,7 +3805,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 142,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/isla-paraiso/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/isla-paraiso/main/"
                 }
             ]
         },
@@ -3748,7 +3827,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 75,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/jose-jose/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/jose-jose/main/"
                 }
             ]
         },
@@ -3769,7 +3848,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 153,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/juana-la-virgen/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/juana-la-virgen/main/"
                 }
             ]
         },
@@ -3794,7 +3873,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 0,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/juego-de-mentiras/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/juego-de-mentiras/main/"
                 }
             ]
         },
@@ -3814,7 +3893,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 164,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/kaina/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/kaina/main/"
                 }
             ]
         },
@@ -3836,7 +3915,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 126,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-bella-ceci-y-el-imprudente/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-bella-ceci-y-el-imprudente/main/"
                 }
             ]
         },
@@ -3858,7 +3937,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 165,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-casa-de-al-lado/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-casa-de-al-lado/main/"
                 }
             ]
         },
@@ -3887,7 +3966,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-cq/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-cq/main/"
                 }
             ]
         },
@@ -3908,7 +3987,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 90,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-desalmada/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-desalmada/main/"
                 }
             ]
         },
@@ -3929,7 +4008,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 74,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-dinastia/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-dinastia/main/"
                 }
             ]
         },
@@ -3950,7 +4029,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 31,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-diosa-coronada/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-diosa-coronada/main/"
                 }
             ]
         },
@@ -3984,9 +4063,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 195,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-donya/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 195,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-donya/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-donya/main/temporada-2"
                 }
             ]
         },
@@ -4007,7 +4091,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-duenia/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-duenia/main/"
                 }
             ]
         },
@@ -4059,7 +4143,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 62,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-esclava-blanca/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-esclava-blanca/main/"
                 }
             ]
         },
@@ -4085,7 +4169,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 65,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-fan/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-fan/main/"
                 }
             ]
         },
@@ -4111,7 +4195,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-fiscal-de-hierro/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-fiscal-de-hierro/main/"
                 }
             ]
         },
@@ -4132,7 +4216,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 102,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-fuerza-del-destino/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-fuerza-del-destino/main/"
                 }
             ]
         },
@@ -4153,7 +4237,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 121,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-gata/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-gata/main/"
                 }
             ]
         },
@@ -4176,7 +4260,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-herencia-un-legado-de-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-herencia-un-legado-de-amor/main/"
                 }
             ]
         },
@@ -4212,7 +4296,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-impostora/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-impostora/main/"
                 }
             ]
         },
@@ -4245,9 +4329,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 271,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-ley-del-corazón/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 271,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-ley-del-corazón/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-ley-del-corazón/main/temporada-2"
                 }
             ]
         },
@@ -4273,7 +4362,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 50,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-madrastra-2022/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-madrastra-2022/main/"
                 }
             ]
         },
@@ -4315,7 +4404,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-madrastra/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-madrastra/main/"
                 }
             ]
         },
@@ -4336,7 +4425,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 117,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-mal-querida/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-mal-querida/main/"
                 }
             ]
         },
@@ -4362,7 +4451,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 123,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-marca-del-deseo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-marca-del-deseo/main/"
                 }
             ]
         },
@@ -4388,7 +4477,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-mentira/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-mentira/main/"
                 }
             ]
         },
@@ -4414,7 +4503,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 165,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-mujer-de-judas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-mujer-de-judas/main/"
                 }
             ]
         },
@@ -4434,7 +4523,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 81,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-nieta-elegida/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-nieta-elegida/main/"
                 }
             ]
         },
@@ -4470,7 +4559,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 129,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-otra-cara-del-alma/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-otra-cara-del-alma/main/"
                 }
             ]
         },
@@ -4496,7 +4585,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 127,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-patrona/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-patrona/main/"
                 }
             ]
         },
@@ -4529,9 +4618,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 162,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-piloto/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 162,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-piloto/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-piloto/main/temporada-2"
                 }
             ]
         },
@@ -4567,7 +4661,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 98,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-pola/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-pola/main/"
                 }
             ]
         },
@@ -4591,9 +4685,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 141,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-querida-del-centauro/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 141,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-querida-del-centauro/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-querida-del-centauro/main/temporada-2"
                 }
             ]
         },
@@ -4614,7 +4713,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 128,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-quiero-a-morir/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-quiero-a-morir/main/"
                 }
             ]
         },
@@ -4642,7 +4741,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 6,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-rebelion/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-rebelion/main/"
                 }
             ]
         },
@@ -4677,7 +4776,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 62,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-ronca-de-oro/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-ronca-de-oro/main/"
                 }
             ]
         },
@@ -4698,7 +4797,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 138,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-sombra-del-pasado/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-sombra-del-pasado/main/"
                 }
             ]
         },
@@ -4721,7 +4820,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 103,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-suerte-de-loli/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-suerte-de-loli/main/"
                 }
             ]
         },
@@ -4742,7 +4841,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 122,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-tempestad/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-tempestad/main/"
                 }
             ]
         },
@@ -4773,7 +4872,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 216,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-tormenta/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-tormenta/main/"
                 }
             ]
         },
@@ -4800,7 +4899,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 107,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-traicion/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-traicion/main/"
                 }
             ]
         },
@@ -4836,7 +4935,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 102,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-usurpadora-1998/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-usurpadora-1998/main/"
                 }
             ]
         },
@@ -4862,7 +4961,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 19,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-usurpadora-2019/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-usurpadora-2019/main/"
                 }
             ]
         },
@@ -4886,7 +4985,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 177,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-vecina/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-vecina/main/"
                 }
             ]
         },
@@ -4906,7 +5005,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 158,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-viuda-de-blanco/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/la-viuda-de-blanco/main/"
                 }
             ]
         },
@@ -4926,7 +5025,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 8,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-bravas-fc/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-bravas-fc/main/"
                 }
             ]
         },
@@ -4950,9 +5049,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 118,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-munyecas-de-la-mafia/main//temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 118,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-munyecas-de-la-mafia/main/"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-munyecas-de-la-mafia/main//temporada-2"
                 }
             ]
         },
@@ -4984,7 +5088,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 7,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-pelotaris-1926/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-pelotaris-1926/main/"
                 }
             ]
         },
@@ -5005,7 +5109,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 140,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-tontas-no-van-al-cielo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/las-tontas-no-van-al-cielo/main/"
                 }
             ]
         },
@@ -5031,7 +5135,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/leandro-diaz/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/leandro-diaz/main/"
                 }
             ]
         },
@@ -5052,7 +5156,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/lo-imperdonable/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/lo-imperdonable/main/"
                 }
             ]
         },
@@ -5073,7 +5177,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 70,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-elegidos-una-familia-poderosa/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-elegidos-una-familia-poderosa/main/"
                 }
             ]
         },
@@ -5098,7 +5202,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 8,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-enviados/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-enviados/main/"
                 }
             ]
         },
@@ -5144,7 +5248,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 128,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-herederos-del-monte/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-herederos-del-monte/main/"
                 }
             ]
         },
@@ -5170,7 +5274,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 119,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-miserables/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-miserables/main/"
                 }
             ]
         },
@@ -5197,7 +5301,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 237,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-reyes/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/los-reyes/main/"
                 }
             ]
         },
@@ -5223,7 +5327,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 141,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/madre-luna/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/madre-luna/main/"
                 }
             ]
         },
@@ -5269,7 +5373,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/malverde-el-santo-patrón/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/malverde-el-santo-patrón/main/"
                 }
             ]
         },
@@ -5295,7 +5399,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 160,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ma-ana-es-para-siempre/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ma-ana-es-para-siempre/main/"
                 }
             ]
         },
@@ -5318,7 +5422,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 164,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mar-de-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mar-de-amor/main/"
                 }
             ]
         },
@@ -5339,7 +5443,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 63,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/maria-isabel/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/maria-isabel/main/"
                 }
             ]
         },
@@ -5375,7 +5479,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 185,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/maria-la-del-barrio/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/maria-la-del-barrio/main/"
                 }
             ]
         },
@@ -5430,7 +5534,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 60,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/maria-magdalena/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/maria-magdalena/main/"
                 }
             ]
         },
@@ -5466,7 +5570,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 125,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/marido-en-alquiler/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/marido-en-alquiler/main/"
                 }
             ]
         },
@@ -5503,7 +5607,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 149,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/marimar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/marimar/main/"
                 }
             ]
         },
@@ -5534,7 +5638,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 91,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mariposa-de-barrio/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mariposa-de-barrio/main/"
                 }
             ]
         },
@@ -5557,7 +5661,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 182,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mas-sabe-el-diablo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mas-sabe-el-diablo/main/"
                 }
             ]
         },
@@ -5581,7 +5685,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 62,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/me-declaro-culpable/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/me-declaro-culpable/main/"
                 }
             ]
         },
@@ -5602,7 +5706,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 87,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/medicos-linea-de-vida/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/medicos-linea-de-vida/main/"
                 }
             ]
         },
@@ -5625,7 +5729,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 125,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/merlina-mujer-divina/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/merlina-mujer-divina/main/"
                 }
             ]
         },
@@ -5646,7 +5750,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 177,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-corazon-es-tuyo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-corazon-es-tuyo/main/"
                 }
             ]
         },
@@ -5672,7 +5776,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 94,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-familia-perfecta/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-familia-perfecta/main/"
                 }
             ]
         },
@@ -5693,7 +5797,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-fortuna-es-amarte/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-fortuna-es-amarte/main/"
                 }
             ]
         },
@@ -5714,7 +5818,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 178,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-gorda-bella/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-gorda-bella/main/"
                 }
             ]
         },
@@ -5735,7 +5839,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-marido-tiene-familia/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mi-marido-tiene-familia/main/"
                 }
             ]
         },
@@ -5776,7 +5880,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 239,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mirada-de-mujer-el-regreso/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mirada-de-mujer-el-regreso/main/"
                 }
             ]
         },
@@ -5816,7 +5920,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 121,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mirada-de-mujer/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mirada-de-mujer/main/"
                 }
             ]
         },
@@ -5842,7 +5946,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 125,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mision-sos-aventura-y-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/mision-sos-aventura-y-amor/main/"
                 }
             ]
         },
@@ -5881,7 +5985,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 6,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/montecristo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/montecristo/main/"
                 }
             ]
         },
@@ -5902,7 +6006,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 124,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/muchacha-italiana/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/muchacha-italiana/main/"
                 }
             ]
         },
@@ -5938,7 +6042,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 200,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/muchachitas-1991/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/muchachitas-1991/main/"
                 }
             ]
         },
@@ -5974,7 +6078,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 184,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/natalia-del-mar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/natalia-del-mar/main/"
                 }
             ]
         },
@@ -6034,7 +6138,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 158,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/nuevo-rico-nuevo-pobre/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/nuevo-rico-nuevo-pobre/main/"
                 }
             ]
         },
@@ -6060,7 +6164,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 60,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/operacion-pacifico/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/operacion-pacifico/main/"
                 }
             ]
         },
@@ -6081,7 +6185,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 135,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pa-quererte/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pa-quererte/main/"
                 }
             ]
         },
@@ -6107,7 +6211,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 74,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pablo-escobar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pablo-escobar/main/"
                 }
             ]
         },
@@ -6128,7 +6232,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/papa-a-toda-madre/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/papa-a-toda-madre/main/"
                 }
             ]
         },
@@ -6149,7 +6253,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 123,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/papi-riqui/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/papi-riqui/main/"
                 }
             ]
         },
@@ -6170,7 +6274,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 93,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/para-verte-mejor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/para-verte-mejor/main/"
                 }
             ]
         },
@@ -6206,7 +6310,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 146,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/para-volver-a-amar/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/para-volver-a-amar/main/"
                 }
             ]
         },
@@ -6228,7 +6332,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/parientes-a-la-fuerza/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/parientes-a-la-fuerza/main/"
                 }
             ]
         },
@@ -6265,9 +6369,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 270,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pasion-de-gavilanes/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 270,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pasion-de-gavilanes/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pasion-de-gavilanes/main/temporada-2"
                 }
             ]
         },
@@ -6290,7 +6399,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 107,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pasion-prohibida/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pasion-prohibida/main/"
                 }
             ]
         },
@@ -6311,7 +6420,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 137,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pasion-y-poder/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pasion-y-poder/main/"
                 }
             ]
         },
@@ -6343,7 +6452,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 167,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pecados-ajenos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pecados-ajenos/main/"
                 }
             ]
         },
@@ -6372,7 +6481,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 315,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pedro-el-escamoso/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/pedro-el-escamoso/main/"
                 }
             ]
         },
@@ -6398,7 +6507,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 129,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/perro-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/perro-amor/main/"
                 }
             ]
         },
@@ -6419,7 +6528,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 182,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/porque-el-amor-manda/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/porque-el-amor-manda/main/"
                 }
             ]
         },
@@ -6441,7 +6550,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 114,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/preciosas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/preciosas/main/"
                 }
             ]
         },
@@ -6467,7 +6576,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 64,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/preso-nro-1/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/preso-nro-1/main/"
                 }
             ]
         },
@@ -6488,7 +6597,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 100,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/primera-dama/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/primera-dama/main/"
                 }
             ]
         },
@@ -6517,9 +6626,14 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 26,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/profugos/main/temporada-1"
+                },
+                {
                     "nombre": "Temporada 2",
                     "capitulos": 26,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/profugos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/profugos/main/temporada-2"
                 }
             ]
         },
@@ -6542,7 +6656,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 13,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/promesas-de-campanya/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/promesas-de-campanya/main/"
                 }
             ]
         },
@@ -6563,7 +6677,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 21,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/que-madre-tan-padre/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/que-madre-tan-padre/main/"
                 }
             ]
         },
@@ -6585,7 +6699,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/quien-es-quien/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/quien-es-quien/main/"
                 }
             ]
         },
@@ -6608,7 +6722,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 69,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ramona/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/ramona/main/"
                 }
             ]
         },
@@ -6629,7 +6743,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 140,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/reina-de-corazones/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/reina-de-corazones/main/"
                 }
             ]
         },
@@ -6655,7 +6769,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 108,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/relaciones-peligrosas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/relaciones-peligrosas/main/"
                 }
             ]
         },
@@ -6678,7 +6792,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 129,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosa-diamante/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosa-diamante/main/"
                 }
             ]
         },
@@ -6699,7 +6813,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosalinda/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosalinda/main/"
                 }
             ]
         },
@@ -6735,7 +6849,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 60,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario-tijeras2/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario-tijeras2/main/"
                 }
             ]
         },
@@ -6756,9 +6870,19 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 197,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario-tijeras/main/temporada-1"
+                },
+                {
+                    "nombre": "Temporada 2",
+                    "capitulos": 197,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario-tijeras/main/temporada-2"
+                },
+                {
                     "nombre": "Temporada 3",
                     "capitulos": 197,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario-tijeras/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario-tijeras/main/temporada-3"
                 }
             ]
         },
@@ -6795,7 +6919,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 107,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rosario/main/"
                 }
             ]
         },
@@ -6821,7 +6945,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 26,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rub--2019/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rub--2019/main/"
                 }
             ]
         },
@@ -6857,7 +6981,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 115,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rubi/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/rubi/main/"
                 }
             ]
         },
@@ -6898,7 +7022,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 101,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sacrificio-de-mujer/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sacrificio-de-mujer/main/"
                 }
             ]
         },
@@ -6919,7 +7043,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 150,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/salome/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/salome/main/"
                 }
             ]
         },
@@ -6939,7 +7063,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 136,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/santa-diabla/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/santa-diabla/main/"
                 }
             ]
         },
@@ -6976,9 +7100,29 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 395,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/senyora-acero/main/temporada-1"
+                },
+                {
+                    "nombre": "Temporada 2",
+                    "capitulos": 395,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/senyora-acero/main/temporada-2"
+                },
+                {
+                    "nombre": "Temporada 3",
+                    "capitulos": 395,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/senyora-acero/main/temporada-3"
+                },
+                {
+                    "nombre": "Temporada 4",
+                    "capitulos": 395,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/senyora-acero/main/temporada-4"
+                },
+                {
                     "nombre": "Temporada 5",
                     "capitulos": 395,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/senyora-acero/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/senyora-acero/main/temporada-5"
                 }
             ]
         },
@@ -7014,7 +7158,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 121,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/silvana-sin-lana/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/silvana-sin-lana/main/"
                 }
             ]
         },
@@ -7035,7 +7179,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 127,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/simplemente-maria/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/simplemente-maria/main/"
                 }
             ]
         },
@@ -7061,7 +7205,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 0,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sin-senos-no-hay-paraiso/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sin-senos-no-hay-paraiso/main/"
                 }
             ]
         },
@@ -7092,9 +7236,19 @@
             "sinopsis": "",
             "temporadas": [
                 {
+                    "nombre": "Temporada 1",
+                    "capitulos": 240,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sin-senos-si-hay-paraiso/main/temporada-1"
+                },
+                {
+                    "nombre": "Temporada 2",
+                    "capitulos": 240,
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sin-senos-si-hay-paraiso/main/temporada-2"
+                },
+                {
                     "nombre": "Temporada 3",
                     "capitulos": 240,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sin-senos-si-hay-paraiso/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sin-senos-si-hay-paraiso/main/temporada-3"
                 }
             ]
         },
@@ -7123,7 +7277,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 87,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/soltero-con-hijas/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/soltero-con-hijas/main/"
                 }
             ]
         },
@@ -7159,7 +7313,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 174,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/soniadoras/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/soniadoras/main/"
                 }
             ]
         },
@@ -7184,7 +7338,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 102,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sonyar-no-cuesta-nada/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sonyar-no-cuesta-nada/main/"
                 }
             ]
         },
@@ -7205,7 +7359,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 90,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sortilegio/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/sortilegio/main/"
                 }
             ]
         },
@@ -7231,7 +7385,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 142,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/soy-tu-due-a/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/soy-tu-due-a/main/"
                 }
             ]
         },
@@ -7266,7 +7420,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tanto-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tanto-amor/main/"
                 }
             ]
         },
@@ -7298,7 +7452,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 105,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tarde-lo-conoci/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tarde-lo-conoci/main/"
                 }
             ]
         },
@@ -7319,7 +7473,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 107,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/te-la-dedico/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/te-la-dedico/main/"
                 }
             ]
         },
@@ -7345,7 +7499,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 98,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/te-sigo-amando/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/te-sigo-amando/main/"
                 }
             ]
         },
@@ -7366,7 +7520,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 110,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/teresa-1989/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/teresa-1989/main/"
                 }
             ]
         },
@@ -7387,7 +7541,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 152,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/teresa/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/teresa/main/"
                 }
             ]
         },
@@ -7413,7 +7567,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 169,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tierra-de-pasiones/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tierra-de-pasiones/main/"
                 }
             ]
         },
@@ -7439,7 +7593,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 159,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tierra-de-reyes/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tierra-de-reyes/main/"
                 }
             ]
         },
@@ -7460,7 +7614,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 130,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/torrente/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/torrente/main/"
                 }
             ]
         },
@@ -7481,7 +7635,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tres-caines/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/tres-caines/main/"
                 }
             ]
         },
@@ -7517,7 +7671,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 172,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/triunfo-de-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/triunfo-de-amor/main/"
                 }
             ]
         },
@@ -7539,7 +7693,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 120,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/un-esposo-para-estela/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/un-esposo-para-estela/main/"
                 }
             ]
         },
@@ -7560,7 +7714,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 220,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/un-gancho-al-corazon/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/un-gancho-al-corazon/main/"
                 }
             ]
         },
@@ -7596,7 +7750,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 167,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/una-maid-en-manhattan/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/una-maid-en-manhattan/main/"
                 }
             ]
         },
@@ -7618,7 +7772,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 144,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/valgame-dios/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/valgame-dios/main/"
                 }
             ]
         },
@@ -7645,7 +7799,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 190,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vecinosco/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vecinosco/main/"
                 }
             ]
         },
@@ -7671,7 +7825,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 95,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-el-desamor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-el-desamor/main/"
                 }
             ]
         },
@@ -7697,7 +7851,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 47,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-el-miedo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-el-miedo/main/"
                 }
             ]
         },
@@ -7723,7 +7877,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 84,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-el-pasado/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-el-pasado/main/"
                 }
             ]
         },
@@ -7749,7 +7903,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 80,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-la-ausencia/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vencer-la-ausencia/main/"
                 }
             ]
         },
@@ -7769,7 +7923,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 171,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/victoria/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/victoria/main/"
                 }
             ]
         },
@@ -7789,7 +7943,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 153,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/victorinos/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/victorinos/main/"
                 }
             ]
         },
@@ -7810,7 +7964,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 141,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vino-el-amor/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vino-el-amor/main/"
                 }
             ]
         },
@@ -7852,7 +8006,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 155,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vivan-los-ninios/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vivan-los-ninios/main/"
                 }
             ]
         },
@@ -7878,7 +8032,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 150,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vivir-a-destiempo/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/vivir-a-destiempo/main/"
                 }
             ]
         },
@@ -7897,7 +8051,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 6,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/volver-a-caer/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/volver-a-caer/main/"
                 }
             ]
         },
@@ -7922,7 +8076,7 @@
                 {
                     "nombre": "Temporada 1",
                     "capitulos": 60,
-                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/zumba-despierta-tu-pasion/main/;"
+                    "enlace_base": "https://raw.githubusercontent.com/ivanack123/zumba-despierta-tu-pasion/main/"
                 }
             ]
         }

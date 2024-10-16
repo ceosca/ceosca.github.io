@@ -47,21 +47,13 @@ def procesar_html(archivo_html):
             print(f"Advertencia: '{episodios_str}' no es un número válido para episodios en {archivo_html}.")
             episodios = 0
 
-        # Extraer la sinopsis entre <h1>Sinopsis</h1> y <hr>
+        # Validar que se encuentra la sinopsis
         sinopsis_h1 = soup.find('h1', string='Sinopsis')
         if sinopsis_h1 is None:
             print(f"Advertencia: No se encontró la sinopsis en {archivo_html}.")
-            sinopsis = ""  # Sinopsis en blanco
-        else:
-            # Obtener el texto de la sinopsis
             sinopsis = ""
-            siguiente_elemento = sinopsis_h1.find_next()
-            while siguiente_elemento and siguiente_elemento.name != 'hr':
-                if siguiente_elemento.name == 'p':  # Solo obtener texto de párrafos
-                    sinopsis += siguiente_elemento.text.strip() + " "
-                siguiente_elemento = siguiente_elemento.find_next()
-
-            sinopsis = sinopsis.strip()  # Limpiar espacios en blanco
+        else:
+            sinopsis = sinopsis_h1.find_next('p').text.strip()
 
         # Extraer el enlace base si existe en el script
         enlace_base = ""
@@ -72,20 +64,11 @@ def procesar_html(archivo_html):
                 enlace_base = root_link_line[0].split('=')[1].strip().replace('"', '')
 
         # Construir la estructura de temporadas
-        temporadas_info = []
-        if temporadas > 1:
-            for i in range(1, temporadas + 1):
-                temporadas_info.append({
-                    "nombre": f"Temporada {i}",
-                    "capitulos": episodios,
-                    "enlace_base": f"{enlace_base}/temporada-{i}"  # Enlace correcto sin punto y coma
-                })
-        elif temporadas == 1:
-            temporadas_info.append({
-                "nombre": "Temporada 1",
-                "capitulos": episodios,
-                "enlace_base": enlace_base  # Solo /main/
-            })
+        temporadas_info = [{
+            "nombre": f"Temporada {temporadas}",
+            "capitulos": episodios,
+            "enlace_base": enlace_base
+        }]
 
         # Crear el diccionario con la información de la novela
         novela_info = {
@@ -94,7 +77,7 @@ def procesar_html(archivo_html):
             "anio": int(anio) if anio.isdigit() else 0,
             "reparto": reparto,
             "pais_origen": pais_origen,
-            "sinopsis": sinopsis,  # Limpiar espacios en blanco
+            "sinopsis": sinopsis,
             "temporadas": temporadas_info
         }
         return novela_info
