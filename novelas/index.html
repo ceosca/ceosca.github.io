@@ -50,7 +50,7 @@
   let novelasData = [];
 
   // Cargar el archivo JSON con las novelas
-  fetch('/novelas/novelas.json')
+  fetch('https://ceosca.github.io/novelas/novelas.json')
     .then(response => response.json())
     .then(data => {
       novelasData = data.novelas;
