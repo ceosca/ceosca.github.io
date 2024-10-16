@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Chipe libre</title>
+</head>
+<body>
+<h1>Chipe libre</h1>
+Género: Comedia
+<br>
+Año: 2014
+<br>
+Reparto: Fernanda Urrejola, Nicolás Poblete, Mario Horton, Juanita Ringeling, Loreto Aravena, Pablo Macaya, Carolina Varleta
+<br>
+País de origen: Chile
+<br>
+Temporadas: 1
+<br>
+Episodios: 107
+<hr>
+<h1>Sinopsis</h1>
+Julieta Ruiz (Fernanda Urrejola) es una psicóloga especializada en terapia de parejas y Gonzalo Hernández (Nicolás Poblete) un diseñador gráfico, al cual no le gusta su trabajo y sueña con poder dedicarse a la música. Ambos se enamoraron desde el primer minuto, pero para Julieta la rutina y las mismas cosas que un día la enamoraron, hoy la hacen cuestionar su matrimonio. Es por ello que decidirán darse un tiempo para seguir sus vidas por separado, es decir, se darán "Chipe Libre".
+Cuando comience el “Chipe Libre”, Julieta conocerá a Franco Zanetti (Mario Horton), aunque desconociendo que se trata de la pareja de su paciente Isabel (Javiera Díaz de Valdés). Franco es un hombre atractivo, misterioso e introvertido abogado de divorcios. De pocas palabras y con dificultades para expresar sus sentimientos, tiene suerte con las mujeres, pero nunca se ha enamorado.
+En tanto, Gonzalo se reencontrará con Sofía Villarroel (Juanita Ringeling), la Rucia, con quien pololeó cuando ambos estaban en la universidad y de quien estuvo enamorado hasta que conoció a Julieta. De profesión actriz, Sofía es una mujer relajada, nómade, alegre e intensa, pero evita conectarse con sus emociones. Le cuesta encontrar trabajo para establecerse. Otra de las mujeres que aprovechará el “Chipe Libre” será Bernardita Patiño (Carolina Varleta), una chica oriunda de Osorno que como cree en el amor con una persona para toda la vida, al conocer a Gonzalo, cree que es su hombre. De esta forma se obsesionará con él y aprovechará la instancia para acercarse.
+Por otro lado Catalina Pardo (Loreto Aravena) es una psicóloga infantil y la mejor amiga de Julieta. Tras varias relaciones largas, conoció a Cristóbal Ramos (Pablo Macaya), y pese a las advertencias de todos, Catalina no pudo resistirse a sus encantos. Es ingenua, optimista y tiene un humor poco comprendido. Está muy enamorada y teme al abandono, por eso come cuando está ansiosa. Para Cristóbal, Catalina es la mujer ideal, sin embargo no puede serle fiel. Lleva una vida cómoda, disfruta de las fiestas y de las mujeres. Dentro de sus aventuras conocerá a Bárbara Andrade (Elvira Cristi), una incisiva periodista. Al comienzo será rival de Cristóbal, pero después se convertirán en amantes.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/chipe-libre/main/";
+
+  const chapterValues = Array.from({ length: 107}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

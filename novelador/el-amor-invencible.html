@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>El amor invencible</title>
+</head>
+<body>
+<h1>El amor invencible</h1>
+Género: Drama
+<br>
+Año: 2023
+<br>
+Reparto: Angelique Boyer, Isabella Tena, Danilo Carrera, Marlene Favela, Ana Tena, Daniel Elbittar, Guillermo García Cantú
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 80
+<hr>
+<h1>Sinopsis</h1>
+Hace quince años, en un pequeño pueblo de la costa del Pacífico mexicano, una joven pescadora llamada Marena Ramos (Dalexa Meneses) sufre un percance a manos de Gael Torrenegro (Daney Mendoza), heredero de una de las cervecerías más importantes de México. Temiendo la ira de su padre, Ramsés Torrenegro (Guillermo García Cantú), Gael paga la rehabilitación de Marena con un terapeuta local llamado Adrián Hernández (Mikel Mateos), en la cual, se produce una intensa atracción entre Marena y Gael y al mismo tiempo Adrián se enamora de Marena.
+Un triángulo sincero se desarrolla rápidamente entre ellos, pero Marena solo se mantiene en contacto con Gael y finalmente queda embarazada de mellizos. Gael le exige un aborto a Marena, después de que su padre se enterara de su relación con la joven, sin embargo, Marena decide continuar con su embarazo y recibe un apoyo incalculable de Consuelo Domínguez (Arcelia Ramírez), una médica local. Marena y Adrián se topan con una red de tráfico de mujeres orquestada por Ramsés Torrenegro y Marena lo denuncia ante las autoridades, con el efecto devastador de que toda su familia muere y ella queda gravemente herida. Gael se une y le ruega a su padre que salve a los niños, por lo que Ramsés decide tomar a la bebé y prenderle fuego en el hospital para silenciar a los testigos. Adrián salva al niño y cuando vuelve a buscar a Marena, cree que está muerta.
+Quince años después, Marena ha forjado una identidad completamente nueva: Leona Bravo (Angelique Boyer), en su corazón y mente, busca justicia para que todos los que causaron su tragedia paguen. Sin embargo, Adrián Hernández también se cambia la identidad y ahora se llama David Alejo (Danilo Carrera), un terapeuta del centro de rehabilitación infantil que también quiere vengarse del núcleo de la familia Torrenegro por asesinar al amor de su vida.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/el-amor-invencible/main/";
+
+  const chapterValues = Array.from({ length: 80}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

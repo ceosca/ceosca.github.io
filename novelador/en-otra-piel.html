@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>En otra piel</title>
+</head>
+<body>
+<h1>En otra piel</h1>
+Género: Drama
+<br>
+Año: 2014
+<br>
+Reparto: María Elisa Camargo, Jorge Luis Pila, Rossana Fernández-Maldonado, Rossana San Juan, David Chocarro, Vanessa Villela, Laura Flores
+<br>
+País de origen: Estados Unidos
+<br>
+Temporadas: 1
+<br>
+Episodios: 154
+<hr>
+<h1>Sinopsis</h1>
+La historia de dos mujeres diferentes, la pianista internacional Mónica Serrano, proveniente de una familia millonaria; y una chica soñadora que trabaja en un bar para pagar su universidad, Adriana Aguilar. Ellas se conocieron en medio de un pequeño accidente, donde sus almas quedaron unidas para siempre a través de un amuleto mágico que poseía Adriana. Lamentablemente en este encuentro, el asombroso objeto se perdió. Mónica empieza a tener visiones de la vida de Adriana, quien ama a Diego Ochoa, pero es abusada por Carlos Recalde. Mónica tiene dos hijas, Emiliana y Camila, y está enamorada de Gerardo Fonsi, un crápula que lo único que quiere es su fortuna. Todo se desmorona cuando su malvada sobrina Elena le inyecta un veneno y Mónica cae muerta. Al mismo tiempo, Carlos asesina al hermano de Adriana, y luego intenta matarla a ella. Su alma sale de su cuerpo, y el alma de Mónica se mete al cuerpo de Adriana, conservando sus recuerdos.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/en-otra-piel/main/";
+
+  const chapterValues = Array.from({ length: 154}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Bajo la misma piel</title>
+</head>
+<body>
+<h1>Bajo la misma piel</h1>
+Género: Drama
+<br>
+Año: 2003
+<br>
+Reparto: Kate del Castillo,Juan Soler,Diana Bracho,Alejandro Tommasi,Alejandro Camacho,Susana Zabaleta,Manuel Ojeda,Azela Robinson,Pedro Armendáriz Jr.,Laisha Wilkins,Marga López,Lupita Lara,Mariana Karr,Ernesto D'Alessio,Alejandro Aragón,Dacia Arcaráz,Lorenzo de Rodas,Alfonso Iturralde,Manuel Landeta,Víctor Noriega,Juan Verduzco,Adriana Roel,Claudio Báez,David Ostrosky,Sharis Cid
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 95
+<hr>
+<h1>Sinopsis</h1>
+Las protagonistas de esta telenovela son las hermanas Sara y Regina Ortiz Escalante; Miranda Murillo Ortiz, hija de Sara y Esther Escalante, la madre de Sara y Regina. Cuatro mujeres que viven la vida de diferentes maneras.
+Sara (Diana Bracho) está casada desde hace más de veinticinco años con Bruno Murillo (Alejandro Camacho) y tiene tres hijos (Paula (Laisha Wilkins), hija del primer matrimonio de Sara, y los mellizos Andrés (Ernesto D'Alessio) y Miranda), pero su matrimonio está en crisis; pues Bruno (Alejandro Camacho), dueño de una importante compañía editorial, es un hombre déspota e infiel que siempre ha tratado a su esposa como a un objeto. Sin embargo, todos desconocen que el verdadero amor de Sara fue Joaquín Vidaurri (Pedro Armendáriz Jr.), un escritor que vive en el extranjero.
+Regina (Azela Robinson) es una mujer independiente que trabaja en una agencia de publicidad, que sufre al enamorarse de Eugenio (Alejandro Tomassi) esposo de su amiga Norma. Vive temporalmente en casa de Sara con la familia de ella y la madre de ambas.
+Esther (Marga López) es la madre de Sara y Regina, está enferma de cáncer y en fase terminal; sin embargo, es una mujer luchadora y optimista que no ha perdido las ganas de vivir.
+Miranda (Kate del Castillo) es una mujer moderna, segura de sí misma, que sale con Patricio Leyva (Sergio Catalán), un joven ambicioso que decide aprovechar su relación con ella para ascender en la sociedad. Sin embargo, su relación laboral con Alejandro en la compañía editorial provocará un triángulo amoroso entre los dos hombres y ella.
+Las cuatro mujeres tendrán que luchar contra las dificultades que les presente la vida: el cáncer de Esther, el regreso de Joaquín Viadurri, que está dispuesto a rescatar a Sara de su desgraciado matrimonio; el triángulo amoroso de Miranda y el amor de Regina por un hombre prohibido.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/bajo-la-misma-piel/main/";
+
+  const chapterValues = Array.from({ length: 95}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

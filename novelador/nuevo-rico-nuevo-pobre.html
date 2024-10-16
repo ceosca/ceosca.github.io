@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuevo rico, nuevo pobre</title>
+</head>
+<body>
+<h1>Nuevo rico, nuevo pobre</h1>
+Género: Comedia; Drama
+<br>
+Año: 2007
+<br>
+Reparto: Carolina Acevedo,Martín Karpan,Diana Neira,John Álex Toro,Andrea Nocetti,Andres Toro,María Cecilia Botero,Hugo Gómez,Mauricio Vélez,Sain Castro
+<br>
+País de origen: Colombia
+<br>
+Temporadas: 1
+<br>
+Episodios: 158
+<hr>
+<h1>Sinopsis</h1>
+Andrés Ferreira es el dueño de la empresa Mundo Express. Brayan Galindo es un trabajador perezoso de una farmacia y vive en una pensión. Drásticamente, sus vidas cambian cuando descubren que fueron cambiados en el hospital al nacer. Así, Andrés deja de ser rico y ahora tiene que vivir en la pensión lleno de incomodidades, mientras que Brayan es el dueño de Mundo Express. Mientras todo esto ocurre, Mateo López Ferreira, primo de Andrés (o más bien de Brayan), tiene un plan con la prometida de Andrés, Fernanda San Miguel, de arruinar a los Ferreira; intentando conquistar al nuevo rico.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/nuevo-rico-nuevo-pobre/main/";
+
+  const chapterValues = Array.from({ length: 158}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

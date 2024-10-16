@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Amy, la niña de la mochila azul</title>
+</head>
+<body>
+<h1>Amy, la niña de la mochila azul</h1>
+Género: Infantil
+<br>
+Año: 2004
+<br>
+Reparto: Danna Paola,Joseph Sasson,Eduardo Capetillo,Nora Salinas,Tatiana,Pedro Armendáriz Jr.,Alejandro Tommasi,Lorena Herrera,Alejandra Meyer,Harry Geithner,Alejandra Procuna,Carlos Speitzer,Álex Perea,Geraldine Alejandra,Nicole Durazo,Luciano Corigliano,Alejandro Speitzer,Christopher Von Uckermann,Grisel Margarita,Sharis Cid
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 115
+<hr>
+<h1>Sinopsis</h1>
+A su paso, los huracanes destrozan ciudades enteras. La furia de sus vientos es capaz de levantar casas enteras y hacerlas volar como si fueran avioncitos de papel. Pero tan impresionante como su furia es la calma y el silencio que queda después de un huracán. Al final, todo pareciera quedar inmóvil y el tiempo pareciera detenerse. Fue en medio de esta extraña calma, que el capitán Matías y su esposa Perla encontraron a una preciosa bebita flotando en medio del mar. Aunque Perla y Matías eran una pareja feliz, aquella bebita agregó un nuevo sentido a sus vidas, así que la bautizaron con el nombre de Amy. Los tres hacían la familia perfecta; sin embargo, un buen día, estando en alta-mar abordo de uno de los más grandes y majestuosos barcos de Matías, los tres fueron sorprendidos por una terrible tormenta. Perla resbaló de cubierta y cayó al mar; al darse cuenta que moriría, le pidió a Matías que siempre cuidara de su bebita. Así fue como Amy y Matías quedaron completamente solos. Desde entonces, Matías jamás volvió a ser el mismo, aquel gran pescador, el más valiente de “Puerto Esperanza” le tomó un tremendo temor al mar; un miedo tan terrible que jamás volvió a salir de pesca. Poco a poco, Matías lo fue perdiendo todo y ahora apenas si tiene dinero para comer, para pagar la colegiatura de Amy y las cuotas del muelle; por eso, Claudio, el terrible y ambicioso líder de los pescadores, le quiere quitar lo único que le queda: el viejo ‘’Bucanero’’. “El Bucanero” es un destartalado barco camaronero que desde aquel accidente está anclado al muelle de pescadores y que a los ojos de muchos no es más que un montón de fierros flotantes. Sin embargo, por increíble que parezca, allí muy a su manera han aprendido a ser felices Amy y el capitán Matías. Con el tiempo, Amy se ha convertido en una hermosa niña de ocho años que quiere ser Capitán como su padre. Para poder ayudar a Matías, Amy saca conchas del mar, con las que hace collares que luego vende en las calles del pueblo. Quienes no la conocen, pueden confundirse y pensar que Amy es un niño, pues es traviesa, atrevida y se viste como marinerito. Algunas personas se compadecen de ella, pero otras la señalan porque no tiene una familia común y no vive en una casa “normal”. Para Amy, lo único importante es que ella y su papá se adoran. Lo que Amy ignora es que su verdadero padre es Octavio Betancourt, un noble millonario que ha llegado al puerto con la esperanza de encontrar a su hijo perdido. Octavio está enfermo de cáncer y tiene los días contados, razón por la que le urge encontrar al hijo que perdió hace nueve años tras aquel huracán, y así poderle heredar toda su fortuna. En su desesperación, Octavio se disfraza de payaso con la esperanza de encontrar lo que él cree es un hijo varón y así conoce a Amy y se vuelve su amigo entrañable sin imaginar que en realidad se trata de su hija.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/amy-la-ni-a-de-la-mochila-azul/main/";
+
+  const chapterValues = Array.from({ length: 115}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

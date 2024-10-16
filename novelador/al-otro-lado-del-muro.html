@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Al otro lado del muro</title>
+</head>
+<body>
+<h1>Al otro lado del muro</h1>
+Género: Drama
+<br>
+Año: 2018
+<br>
+Reparto: Marjorie de Sousa, Litzy, Guillermo Iván, Uriel del Toro, Gabriel Porras, Gabriela Vergara, Daniela Bascopé, Khotan Fernández, Omar Germenos, Adriana Barraza
+<br>
+País de origen: Estados unidos
+<br>
+Temporadas: 1
+<br>
+Episodios: 78
+<hr>
+<h1>Sinopsis</h1>
+Sofía Villavicencio (Marjorie de Sousa) es la flamante esposa del gobernador del Estado, Ernesto Martínez (Gabriel Porras). El día de la investidura, una mujer desesperada se acerca a Ernesto y le pide delante de toda la prensa que le ayude a encontrar a su hija secuestrada, acusando a uno de sus asesores, Juan Estévez (Omar Germenos), de estar detrás de su desaparición. Este suceso es el primero que hace sospechar a Sofía de la verdadera identidad de su marido. Poco a poco, Sofía irá descubriendo junto con la ayuda de Joel Benítez (Guillermo Iván), un miembro encubierto de la Interpol, que los empleados de su marido y en especial Paula Duarte (Gabriela Vergara) -amante y cómplice de Ernesto- están detrás de una red de tráfico de menores, con la que Ernesto se ha aprovechado para financiar su campaña que lo ha llevado hasta el poder de su gobernatura.
+Tras escapar de una persecución a manos de sus enemigos, Sofía cruza la frontera con su hija Alondra (Regina Orquín) hasta Los Ángeles, huyendo de Ernesto y desde donde hará todo lo posible para acabar con la red de tráfico de menores en la que su marido está implicado, pero ahora sin el apoyo de Joel, ya que él cree que Sofía mató a su hermana.
+Por otra parte, Eliza es pastelera de profesión y ama de casa. Decide establecerse en el extranjero junto a sus hijos y su esposo Max (Khotan Fernández), ignorando que este lleva una doble vida. Antes de cruzar la frontera, Sofía le da un CD a Eliza, el cual contiene las pruebas suficientes para hundir a Ernesto. Desde este punto y para siempre, Eliza y Sofía unen sus vidas para poderse ayudar mutuamente, aunque «cada quien tiene su historia Al otro lado del muro».
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/al-otro-lado-del-muro/main/";
+
+  const chapterValues = Array.from({ length: 78}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

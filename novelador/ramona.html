@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ramona</title>
+</head>
+<body>
+<h1>Ramona</h1>
+Género: Drama
+<br>
+Año: 2000
+<br>
+Reparto: Kate del Castillo, Helena Rojo, Eduardo Palomo, René Strickler, Sergio Sendel, Isela Vega, Ricardo Blume
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 69
+<hr>
+<h1>Sinopsis</h1>
+Después de la guerra de 1847 entre México y Estados Unidos, California pasó a formar parte de la Unión Americana. Veinte años después, aún se libraban sangrientas batallas entre los antiguos pobladores y los nuevos inmigrantes: mexicanos, indios yahís y americanos, quien luchaban por la posesión de esas tierras. La familia Moreno Gonzaga, la protagonista de esta historia, fue una de aquellas que decidieron quedarse en California para proteger y defender lo que consideraban suyo.
+Ramona Moreno Gonzaga, la hija menor de la viuda Doña Ramona Gonzaga, era muy pequeña cuando su madre la envió a un convento. Ella nunca comprendió por qué su madre tomó esa decisión, puesto que ella nunca tuvo vocación religiosa. Tampoco entendió por qué su madre nunca fue a visitarla al convento ni permitió que lo hiciera su hermano adoptivo, Felipe. Ramona, al cumplir la mayoría de edad, al fin es libre de irse, debido a que, en aquella época tumultuosa, todos los conventos se estaban cerrando. Ramona está feliz y ansiosa por volver a su amado hogar y ver de nuevo a todas las personas que quiere: su hermano, su nana Martha, y también añora volver a ver a su madre.
+Muchas cosas han cambiado en California desde que Ramona partiera a su encierro. Un hombre sin escrúpulos, llamado Jack Green, se ha autoproclamado el sheriff de la comarca. Ramona, casi al llegar a la hacienda de la cual permaneció alejada por tanto tiempo contra su voluntad, por accidente se cruza en el camino con el indio yahí Alejandro de Asís. Fue un encuentro fugaz, pero que dejó marcados para siempre a los dos individuos: los ojos de él, al mirarla, atravesaron su corazón como una flecha.
+Ramona y Alejandro se enamoran, pero lo tienen todo en contra: tanto la familia de Ramona como la tribu de Alejandro se opondrán a la relación; además, deberán enfrentar toda clase de prejuicios. Aun así, ambos luchan por estar juntos, pese a las intrigas de Jack Green quien, abusando de su poder, cometerá actos terribles en contra de la tribu de Alejandro. A esto se suma la presencia de Felipe, quien ha pasado de mirarla con ojos de hermano a mirarla con ojos de amante, y de Manuela, la hija de Matea, la bruja del pueblo yahí, quien está obsesionada con Alejandro.
+Tiempos difíciles y tormentosos se acercan cada vez más. Terribles sucesos están por venir y amenazan con destruir la relación de Ramona y Alejandro. Pero aquella pasión prohibida que comparten ambos, tan intensa y ardiente como las mismas batallas que se avecinan, luchará por mantenerse encendida, así tenga que hacerle frente a cualquier adversidad.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/ramona/main/";
+
+  const chapterValues = Array.from({ length: 69}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

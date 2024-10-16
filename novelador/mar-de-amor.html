@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mar de amor</title>
+</head>
+<body>
+<h1>Mar de amor</h1>
+Género: Drama
+<br>
+Año: 2009
+<br>
+Reparto: Zuria Vega, Mario Cimarro, Omar Ayala, Mariana Seoane, Ninel Conde, Manuel Landeta, Marcelo Córdoba
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 164
+<hr>
+<h1>Sinopsis</h1>
+"Mar de amor" es una nueva versión de la telenovela venezolana "María del Mar", realizada en 1978. Para Estrella Marina (Zuria Vega), la vida es como el mar, llena de peligros y maldad, pero también es luchar y salir adelante, por eso, sus sueños y el amor por los suyos la mantienen fuerte ante cualquier marea que quiera derrumbarla. Lejos de su padre, esta humilde pescadora ha sufrido por el trastorno que padece la loca Casilda (Erika Buenfil), su madre, quien quedó en este estado tras ser violada por Guillermo (Juan Ferrara), un adinerado hombre que vive atormentado por su pecado. Desde ese momento, la loca Casilda vaga entre los pueblos sin rumbo alguno. Sin embargo, a falta de sus padres, Estrella recibió el abrigo de sus humildes padrinos, quienes la han criado desde pequeña.
+En su afición por estudiar, aprendió a leer, y mediante los libros, conoció el amor, un amor mágico que Víctor Manuel Galíndez (Mario Cimarro) le ha ido transmitiendo mediante sus obras…
+El famoso escritor vive desde hace años viajando por diferentes rumbos, escribiendo a la vez sus múltiples aventuras como marinero…Pero un día, el destino y la fatalidad se cruzan en su camino, al conocer a una extraña mujer que le roba el corazón desde el primer momento, una relación tormentosa que desata una increíble pasión entre Víctor Manuel y Coral (Ninel Conde), de quien no sabe nada más que eso, su nombre. Sin embargo, esta relación termina cuando el marinero se entera de que la extraña mujer murió en un trágico accidente.
+Devastado y sintiéndose culpable por la muerte de Coral, Víctor Manuel regresa a Playa Escondida, el pueblo en donde creció. Hundido en el alcohol, intenta olvidar sus penas pero nunca imaginó que entre tanta oscuridad, encontraría una estrella que le devolvería el brillo a su vida.
+Estrella Marina reconoce al autor que le hizo vivir el amor en sus sueños. Muy emocionada, decide ayudar al marinero, quien en un comienzo, no acepta que Estrella entre en su corazón, pero con la ternura de la humilde pescadora, Víctor Manuel queda rendido de amor por ella…
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/mar-de-amor/main/";
+
+  const chapterValues = Array.from({ length: 164}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

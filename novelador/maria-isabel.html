@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>María Isabel</title>
+</head>
+<body>
+<h1>María Isabel</h1>
+Género: Drama
+<br>
+Año: 1997
+<br>
+Reparto: Adela Noriega, Fernando Carrillo, Lilia Aragón, José Carlos Ruiz, Mónica Miguel
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 63
+<hr>
+<h1>Sinopsis</h1>
+María Isabel es una bella e inocente indígena que vive en un pueblo del estado de Nayarit a lado de su tata Pedro y Chona su madrastra quien siempre la ha odiado y maltratado. Cuando era niña María Isabel jugaba con Graciela, la hija de Félix Pereyra, un poderoso hacendado de la región, Graciela es enviada a un internado en la Ciudad de México y le regala a María Isabel la muñeca con la que jugaban y a la que nombraron como Rosa Isela.
+María Isabel convertida en toda una mujer espera paciente la llegada de su amiga a quien quiso como una hermana, como muestra de ese cariño María Isabel guarda la muñeca que le dio años atrás. La belleza de María Isabel despierta las pasiones de muchos hombres en el pueblo entre ellos Nicolás un indígena que quiere hacerla suya a como dé lugar y además a Don Félix quien al verla bañarse en el río se enamora de ella. A pesar de todo María Isabel encuentra el amor en Andrés quien la quiere honestamente. Con la aprobación de Pedro, María Isabel empieza a trabajar en la casa de Don Félix.
+Graciela regresa al pueblo y se reencuentra con María Isabel convirtiéndose nuevamente en cómplices de todos sus sentimientos y acciones. Don Félix quiere casar a su hija con Antonio, el hijo de su mejor amigo para beneficio de ambos. Graciela se enamora perdidamente de Leobardo un ingeniero de la capital que construye una carretera en los alrededores de la hacienda de Don Félix provocando que éste enfurezca y le declare la guerra. Chona lanza un chisme acerca de la pureza de María Isabel provocando que Pedro la corra y que Andrés no quiera saber nada de ella, por lo que María Isabel se refugia en su amiga Graciela quien se entrega a Leobardo y queda embarazada. Félix se entera de la relación del ingeniero y su hija por lo que le dice a Manuela, nana malvada de Graciela, quien odia a María Isabel y ama a don Félix en secreto para que le pague a Nicolas para matar a Leobardo.
+Luego de la muerte de Leobardo, Graciela se entera que está embarazada y decide huir a Jalisco con María Isabel y así lo hacen. Pero al darse cuenta que Manuela la habían visto deciden huir a la capital ya que además les quedaba muy poco dinero, lamentablemente Graciela muere luego del parto, pero antes pide a María Isabel bautize a su hija como Rosa Isela el nombre de la muñeca con que jugaban y además que huya a México con la niña. María Isabel obedece a Graciela y antes de que le den sepultura huye a México donde consigue varios trabajos en la capital pero el destino hace que por diversas circunstancias no logre quedarse más de una semana en alguno de ellos, cuando menos se lo espera consigue trabajo como empleada de Ricardo Mendiola, un millonario que queda solo con su hija, pues su esposa Elisa perdió la vida por un impacto de bala en un robo que sufrió al salir de un banco con joyas muy valiosas. Su tía Rosaura, una mujer que también atormentó a Elisa diciéndole que nunca podrá tener hijos ya que le habían sacado la matriz, llega a entrometerse en la vida de su sobrino y se la pasa burlándose del origen de María Isabel.
+Ricardo se enamora de María Isabel y cuando ésta le corresponde ambos se casan y empiezan una vida juntos, aunque pareciera que la vida ahora le sonríe a la bella indígena ahora se topan con ella las burlas y las críticas de la gente de sociedad hacia su origen humilde.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/maria-isabel/main/";
+
+  const chapterValues = Array.from({ length: 63}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

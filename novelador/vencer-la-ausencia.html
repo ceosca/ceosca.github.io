@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Vencer la ausencia</title>
+</head>
+<body>
+<h1>Vencer la ausencia</h1>
+Género: Drama
+<br>
+Año: 2022
+<br>
+Reparto: Ariadne Diaz,Mayrin Villanueva,David Zepeda,Nailea Norvind,Adriana Llabres,Jesús Ochoa,Alexis Ayala,Marcos Montero,Alejandra Barros,Fernanda Urdapilleta.
+<br>
+País de origen:  México
+<br>
+Temporadas: 1
+<br>
+Episodios: 80
+<hr>
+<h1>Sinopsis</h1>
+«Vencer la ausencia» relata la vida de tres entrañables mejores amigas y la hija de su difunta amiga, quienes viven en la misma unidad habitacional y comparten la experiencia de vivir la ausencia y perdida de sus seres queridos, relacionados en un mismo accidente de tránsito. Julia (Ariadne Díaz), Esther (Mayrín Villanueva), Celeste (Alejandra Barros) y Margarita (Mariana Garza) son cuatro amigas que se conocen desde tiempo atrás y viven en la misma unidad. A pesar de sus similitudes y diferencias, para salir adelante las cuatro comparten el mismo objetivo, poner un pequeño negocio a través de una Food truck. Cuando todo estaba saliendo a la perfección para las cuatro amigas y su búsqueda por el emprendimiento, un evento fortuito cambiará sus vidas para toda la vida, la food truck que habían comprado en Texas para su negocio, se accidenta aparatosamente. En ese mismo accidente, Esther enfrenta la lamentable perdida de Iván (Andrés Vázquez), su único hijo; Julia con la misteriosa desaparición de Misael (Marcos Montero), quién supuestamente iba conduciendo el camión de regreso rumbo a la Ciudad de México; y Margarita, por las graves lesiones provocadas por el accidente, muere dejando huérfana a María del Rayo (María Perroni Garza), su única hija adolescente de 14 años de edad. Por otro lado, Celeste, quién estaba a punto de realizar su sueño de convertirse en madre por primera vez, le diagnostican esclerosis lateral amiotrófica, una enfermedad degenerativa que le hará truncar su sueño de ser madre. De igual forma, la tragedia coloca al grupo de amigas en una situación de vulnerabilidad económico-emocional, cuando tienen por un plazo de tiempo para cubrir la deuda con su acreedora, que resulta ser la persona que menos piensan, pues Flavia (Nailea Norvind), una ex-amiga del grupo, fue la que le prestó el dinero a Margarita para poder comprar el camión y quién aprovecha la vulnerabilidad del grupo para poder quebrantar la amistad de las cuatro mujeres. Durante su proceso de duelo tras la pérdida de su hijo, Esther conocerá a Jerónimo (David Zepeda), un hombre recién llegado de Estados Unidos que en su camino a la capital ayudó en avisar a Esther sobre el accidente y la seguirá ayudando a sobrellevar su dolor. Julia buscará bajo las piedras y moverá cielo, mar y tierra para dar con el paradero de Misael, y contará con el apoyo de Ángel Funes (Danilo Carrera) quién también busca a Misael para saber que pasó con el dinero que iba a recoger en Estados Unidos. Y además, en lo que va asimilando su enfermedad y darse cuenta de que no podrá embarazarse, Celeste ira descubriendo con el paso del tiempo que Braulio (Alexis Ayala), su esposo, no es el hombre perfecto como ella creía saber.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/vencer-la-ausencia/main/";
+
+  const chapterValues = Array.from({ length: 80}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

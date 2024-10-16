@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Amorcito corazón</title>
+</head>
+<body>
+<h1>Amorcito corazón</h1>
+Género: Comedia; Drama
+<br>
+Año: 2011
+<br>
+Reparto: Daniel Arenas, África Zavala, Elizabeth Alvarez, Diego Olivera, Fabiola Campomanes
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 207
+<hr>
+<h1>Sinopsis</h1>
+Este melodrama narra la historia de Isabel, una arquitecta que tiene marcado su destino amoroso por el suceso que aconteció en su fiesta cuando cumplió 18 años, en el que, a escondidas de su padre, el estricto y moral don Leopoldo, decide hacer el amor con su novio Rubén en algún rincón apartado; sin embargo, contaron con una mala suerte y éste fue embestido por un toro desgraciándolo de por vida.
+Con el suceso, casi una tragedia, sale una verdad a relucir, debido a que la madre de Rubén, enloquecida por lo que le sucedió a su hijo, revela que Leopoldo es amante de Guillermina y maldice a Isabel diciéndole que por lo que le pasó a su hijo nunca sabrá lo que es el amor de un hombre. Maldición que la acompañará de por vida, hasta que se cruza en su camino Fernando, un joven y próspero empresario dueño de una constructora y hermano de su amiga Lucía; con él, el amor volverá a tocar su corazón, y a pesar de temer por la maldición que pesa en su vida se rehusará a aceptar esta nueva oportunidad, pero, ¿será tan fuerte para no caer en las redes del amor?
+Por otro lado, está Zoe, en apariencia felizmente casada con Álvaro, es la esposa y ama de casa perfecta, descubre a su marido en la regadera de su propio hogar con un amante del sexo masculino. La primera reacción de Zoe ante tamaña noticia es tirarse de un puente, pero es salvada por Cecilio, quien al enseñarle que la vida vale la pena vivirla, se queda profundamente enamorado de ella. A partir de este momento, Zoe, en venganza o por necesidad de valorar su ser femenino ultrajado, se decide a seducir a cuanto hombre se le ponga enfrente.
+Y finalmente, está Lucía, una novicia de corazón, recién llegada del último retiro que le permitirá lograr los votos y consagrarse a Dios, conoce el amor terrenal cuando se topa con Willy, quien lucha con todas sus fuerzas para que ella reconozca a la mujer que lleva dentro, asunto que se complica aún más de lo que ya es, cuando ella descubre que Willy se gana la vida con un oficio bastante impuro: el de gigoló.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/amorcito-corazon/main/";
+
+  const chapterValues = Array.from({ length: 207}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

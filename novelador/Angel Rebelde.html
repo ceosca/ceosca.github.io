@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ángel rebelde</title>
+</head>
+<body>
+<h1>Ángel rebelde</h1>
+Género: Drama
+<br>
+Año: 2003
+<br>
+Reparto: Grettell Valdez, Víctor Noriega, Maritza Rodríguez, Ariel López Padilla, Lisette Morelos, Alba Roversi.
+<br>
+País de origen: Venezuela
+<br>
+Temporadas: 1
+<br>
+Episodios: 217
+<hr>
+<h1>Sinopsis</h1>
+Lucía Andueza debió nacer en cuna de oro, pero las circunstancias la han hecho pobre y necesitada incluso del padre que cree muerto. Antes de su nacimiento, Alejandro Valderrama, su padre, mató a un hombre que intentaba violar a su novia, Elena Andueza. Fue encarcelado, y su perversa suegra Doña Paz, madre de Elena, se aprovechó para apoderarse de sus negocios. Alejandro lleva veinte años preso, sin noticias de Elena quien huye del hogar materno con su hija Lucía para salvarla de la maldad de su madre.
+A sus veinte años, Lucía es el sostén de su familia, compuesta por su madre y sus hermanos adoptivos Rafa y Cheíto, y a quienes mantiene con su trabajo de chofer de autobús. La belleza de Lucía atrae los ojos de muchos hombres desde Juan Cuchillo, el matón del barrio, hasta el Dr. Claudio Salazar, un hombre tan atormentado por la muerte de su esposa que ha cerrado su corazón aun para su hija. Otro pretendiente de Lucía es Alejo Espejo, un cincuentón casado y dueño de un vivero. Pero Lucía se enamorará de Raúl, el sobrino de Alejo, quien desde que murieran sus padres, trabaja para su tío sin importarle que lo explote. Raúl no podrá corresponder al amor de Lucía, ya que al conseguir trabajo como chofer de la poderosa familia Andueza, su vida cambiará.
+En La Mansión Andueza, Raúl entrará en contacto con la ambiciosa Paz, con Natacha, su nieta mayor, una importante ejecutiva que por amor al trabajo ha descuidado a su familia. Pero quien cautiva al inocente Raúl es la bella Cristal, la más guapa de las nietas de Doña Paz. Cristal separará a Raúl de Lucía que, después de todo, es la legítima heredera de la fortuna que disfrutan sus usurpadoras primas.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/angel-rebelde/main/";
+
+  const chapterValues = Array.from({ length: 217}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

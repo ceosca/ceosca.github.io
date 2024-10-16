@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>A que no me dejas</title>
+</head>
+<body>
+<h1>A que no me dejas</h1>
+Género: Drama
+<br>
+Año: 2015
+<br>
+Reparto: Camila Sodi,Osvaldo Benavides,Leticia Calderón,Arturo Peniche,Alfonso Dosal,Alfredo Adame,Laura Carmine,Diego Escalona Zaragoza,Alejandra Barros,Gabriela Zamora,Moisés Arizmendi,Florencia de Saracho,Socorro Bonilla,Cecilia Gabriela,Lisset,Eva Cedeño,Salvador Zerboni,Erika Buenfil
+<br>
+País de origen: México
+<br>
+Temporadas: 2
+<br>
+Episodios: 142
+<hr>
+<h1>Sinopsis</h1>
+Una historia desgarradora donde el poder, la envidia, el egoísmo y el deseo de posesión marcan de manera trágica el amor profundo entre Paulina y Adrián , quienes a pesar de ello, logran perpetuar su amor a través de su hija Valentina y de su adorado Mauricio.
+Este melodrama está dividido en dos etapas, en cada una de ellas se cuentan los obstáculos para que el amor, primero de Paulina y Adrián y más tarde de Valentina y Mauricio, triunfe.
+La historia inicia con Paulina y Adrián declarándose su amor y dispuestos a ir en contra de sus familias con tal de ser felices. Paulina es hija de Gonzalo Murat, un rico empresario hotelero que no acepta su noviazgo por considerar que Adrián no está a la altura social que ellos tienen. No obstante, Paulina está realmente enamorada y esto no le importa.
+<hr>
+<div>
+  <label for="season-list" accesskey="t">Selecciona la temporada:</label>
+  <select id="season-list" aria-label="Lista de temporadas" accesskey="t"></select>
+
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir" accesskey="k">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder" accesskey="j">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar" accesskey="l">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen" accesskey="u">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen" accesskey="o">Bajar volumen</button>
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const seasonList = document.getElementById("season-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/a-que-no-me-dejas/main/";
+
+  const seasons = [
+    { name: "Temporada 1", chapters: 71},
+    { name: "Temporada 2", chapters: 71},
+
+    // Agrega las temporadas y la cantidad de capítulos correspondientes
+  ];
+
+  function setChapter() {
+    const currentChapter = chapterList.value;
+    const currentSeasonIndex = seasonList.selectedIndex;
+    const currentSeason = seasons[currentSeasonIndex].name;
+    audio.src = `${rootLink}${currentSeason.toLowerCase().replace(" ", "-")}/${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      const currentChapter = parseInt(chapterList.value) + 1;
+      const currentSeasonIndex = seasonList.selectedIndex;
+      let currentSeason = seasons[currentSeasonIndex].name;
+      if (currentChapter > seasons[currentSeasonIndex].chapters) {
+        currentSeasonIndex++;
+        currentSeason = seasons[currentSeasonIndex].name;
+        chapterList.selectedIndex = 0;
+      }
+      seasonList.selectedIndex = currentSeasonIndex;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let i = 0; i < seasons.length; i++) {
+    const option = document.createElement("option");
+    option.text = seasons[i].name;
+    seasonList.add(option);
+    if (i === 0) {
+      option.selected = true;
+    }
+  }
+
+  const currentSeasonIndex = seasonList.selectedIndex;
+  const currentSeasonChapters = seasons[currentSeasonIndex].chapters;
+  for (let chapter = 1; chapter <= currentSeasonChapters; chapter++) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+    if (chapter === 1) {
+      option.selected = true;
+    }
+  }
+
+  seasonList.addEventListener("change", () => {
+    chapterList.options.length = 0;
+    const currentSeasonIndex = seasonList.selectedIndex;
+    const currentSeasonChapters = seasons[currentSeasonIndex].chapters;
+    for (let chapter = 1; chapter <= currentSeasonChapters; chapter++) {
+      const option = document.createElement("option");
+      option.text = `Capítulo ${chapter}`;
+      option.value = chapter;
+      chapterList.add(option);
+      if (chapter === 1) {
+        option.selected = true;
+      }
+    }
+    setChapter();
+  });
+
+  chapterList.addEventListener("change", setChapter);
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("timeupdate", setSpeakText);
+  audio.addEventListener("ended", checkAutoplay);
+  document.addEventListener("keydown", handleMediaKeys);
+  
+  setChapter(); // reproducción automática del capítulo seleccionado
+</script>
+</body>
+</html>

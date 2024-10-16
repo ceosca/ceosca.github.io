@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Amigas y rivales</title>
+</head>
+<body>
+<h1>Amigas y rivales</h1>
+Género: Drama
+<br>
+Año: 2001
+<br>
+Reparto: Michelle Vieth,Angélica Vale,Ludwika Paleta,Adamari López,Arath de la Torre,Rodrigo Vidal,Johnny Lozada,Gabriel Soto,Eric del Castillo,Joana Benedek,Manuela Imaz,Susana González,Ernesto Laguardia,Chela Castro,Rafael Inclán,Eugenio Cobo,Irina Areu,Alicia Farh,Marisol Mijares,Sergio de Fassio
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 185
+<hr>
+<h1>Sinopsis</h1>
+La historia gira alrededor de cuatro bellas jóvenes de 21 años que provienen de estratos sociales diferentes. La primera de ellas, Laura, es una chica de clase media, seria, sensible y estudiosa, que puede estudiar informática en una universidad privada porque ganó una beca. Ahí conoce a Jimena de la O, hija de un empresario millonario. Al principio, habrá muchos roces entre las dos, pero poco a poco se formará entre ellas un fuerte lazo de amistad.
+Jimena es la típica niña rica, disipada e irresponsable, para quien la promiscuidad el alcohol y las drogas marcan su vida desde que murió su mamá. Ofelia es la mejor amiga de Jimena. Como ella, es rica y lleva un estilo de vida de diversión y frívolos placeres. Sin embargo, la tragedia marcará su destino y le abrirá los ojos a una dura realidad: el Sida. La cuarta protagonista es una muchacha de extracción humilde llamada Nayeli, quien trabaja como sirvienta en casa de Jimena. El sueño de Nayeli es convertirse en estrella de Hollywood, como su ídolo, Salma Hayek. Este sueño la llevará a entrar en Estados Unidos ilegalmente y vivir experiencias muy amargas.
+Otro personaje central es Roberto, el hermano mayor de Jimena, quien estudia la carrera de derecho. Nayeli va a la universidad a pedirle ayuda a Roberto para irse a Hollywood y ahí conoce a Laura. De inmediato simpatizan y se hacen amigas, pero su amistad entra en crisis cuando ambas se descubren atraídas por Roberto.
+Sin embargo, los sentimientos de Laura se verán divididos entre Roberto y el padre de éste, don Roberto de la O, quien ha contratado a Laura para que le enseñe a usar las nuevas computadoras de su empresa. Su personalidad firme y decidida atrae a la muchacha, quien inconscientemente lo compara con su propio padre, un hombre débil y sin carácter.
+Roxana, (Carolina) la segunda esposa de don Roberto, y mejor amiga de angela es una mujer sumamente bella, que tras la máscara de la esposa ideal esconde un alma criminal y sin escrúpulos. Roxana desea apasionadamente al hijo de su marido, y estará dispuesta a utilizar cualquier medio para hacerlo su amante incluso a matar a los que le estorban.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/amigas-y-rivales/main/";
+
+  const chapterValues = Array.from({ length: 185}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

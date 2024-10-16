@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>La esclava blanca</title>
+</head>
+<body>
+<h1>La esclava blanca</h1>
+Género: Drama
+<br>
+Año: 2016
+<br>
+Reparto: Nerea Camacho,Orian Suarez,Miguel de Miguel,Modesto Lacen,Norma Martínez,Ricardo Vesga,Viña Machado,Andrés Suárez,Natasha Klauss,Miroslava Morales,Ana Mosquera,Mauro Donetti,Luciano D'Alessandro,Paola Moreno,Carrell Lasso,Cristina García,Andrés Parra,Leonardo Acosta,José Julián Gaviria,Karoll Marquez,Gianina Arana,Bárbara Perea,Leo Sosa,Roberto Cano,Arnold Cantillo,Sara Deray,Humberto Dorado,Carlos Duplat,Juan Pablo Franco,Karina Guerra,Andrea Gómez,Sara Pinzón,David Polanco,María Salgado,Alejandra Taborda,Margoth Velásquez
+<br>
+País de origen: Colombia
+<br>
+Temporadas: 1
+<br>
+Episodios: 62
+<hr>
+<h1>Sinopsis</h1>
+Victoria Quintero era una recién nacida cuando la codicia de un asesino acabó con sus padres. Su destino era morir, pero unas manos negras la salvaron del fuego y la llevaron a un palenque en lo profundo de la selva, donde creció como una cimarrona más, rodeada de otro padre y otros hermanos de piel oscura. En ese palenque recibió de Tomás y Lorenza la herencia espiritual de África, despertó al amor con el pequeño Miguel, fue libre y feliz.
+Pero era una blanca entre esclavos negros fugitivos y fue arrancada de la selva, siendo aún casi una niña, separada de los suyos y enviada a un convento de clausura en España, donde la domaron como a una pequeña salvaje, obligándola a rezarle a un Dios que no conocía y a hablar como una dama española.
+Después de muchos esfuerzos por escapar, Victoria logrará volver a Santa Marta suplantando a una gran marquesa comprometida en matrimonio con un próspero hacendado esclavista llamado Nicolás Parreño, quien oculta el secreto de haber asesinado a los padres de Victoria. Nadie sospechará que el único propósito de la elegante noble es liberar a su familia negra de las cadenas y vengar la muerte de sus verdaderos padres. Victoria y Miguel, nuevamente juntos, lucharán contra todos los peligros por liberar a los esclavos de la región, desenmascarar al malvado Nicolás y poder vivir su amor sin cadenas.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/la-esclava-blanca/main/";
+
+  const chapterValues = Array.from({ length: 62}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

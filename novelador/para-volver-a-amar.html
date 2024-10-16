@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para volver a amar</title>
+</head>
+<body>
+<h1>Para volver a amar</h1>
+Género: Drama
+<br>
+Año: 2010
+<br>
+Reparto: Rebecca Jones,Alejandro Camacho,Juan Carlos Barreto,Alejandra Barros,Jesús Ochoa,René Strickler,Zaide Silvia Gutiérrez,Nailea Norvind,África Zavala,Mark Tacher,Magda Guzman,Edgar Vivar,Sophie Alexander-Katz,Eduardo España,Danny Perea,Alex Sirvent,Juan Ríos,Alberto Estrella,Mario Loría,Alfonso Dosal
+<br>
+País de origen: México
+<br>
+Temporadas: 1
+<br>
+Episodios: 146
+<hr>
+<h1>Sinopsis</h1>
+Seis parejas atraviesan por una crisis matrimonial, pues enfrentan los problemas de la convivencia diaria.
+El único matrimonio feliz, parece ser el de Antonia, casada con Patricio y madre de Pao, joven que sufre un grave accidente. Antonia abandona su puesto en la empresa de Braulio, iniciando su propio negocio de bienes raíces, lugar que pronto empieza a ser el refugio de un grupo de mujeres con diversas problemáticas, quienes desean construir una vida mejor.
+Rosaura le pide empleo a Antonia cuando se da cuenta que su jefe piensa sustituirla por alguien más eficiente. Su vida está al servicio de su familia; por ello, posterga sus deseos y su cuidado personal; al tiempo que su marido la abandona para irse con una chica 20 años más joven.
+Renato, el estilista y amigo personal de Antonia, le recomienda como vendedora a Bárbara, quien vive un infierno junto a su manipuladora suegra y Jaime, su violento marido, hombre celoso, obsesivo y alcohólico, que utiliza el maltrato físico como única vía para controlarla e impedir que lo abandone.
+En la estética de Renato, Yorley ha empezado a trabajar medio turno haciendo la limpieza. Es ahí donde Antonia la contrata para trabajar también medio turno como empleada doméstica. Su esposo, rechaza cuanto empleo encuentra, porque no está dispuesto a aceptar algo que según él, no esté a su altura. Decepcionada, Yorley se emociona con Leonardo Torres.
+Maite, una clienta que Antonia tenía cuando trabajaba para Braulio, compite con su esposo Jorge por la posición laboral y el dinero; por eso, cuando a él lo ascienden y a ella la despiden de la empresa en la que ambos trabajan, la envidia empieza a carcomerla. Su ambición la lleva a pedirle trabajo a Antonia; pero el divorcio no se hace esperar.
+Con el apoyo de ellas, Antonia reconstruye una vieja casona, sede de las nuevas oficinas de de su inmobiliaria.
+Valeria, es incapaz de abrir la boca para acusar a su marido de las hipocresías que tiene con Antonia, pues ella en realidad es una reina encerrada en una jaula de oro. Braulio aprovechó que la madre de Valeria era prostituta para comprarla con el pretexto de darle una vida mejor. Pero en realidad, es como una muñeca que sufre el maltrato psicológico de su marido y su hijo Sebastián.
+Bárbara, Rosaura, Yorley, Maite y Valeria encuentran refugio a sus penas con Renato el noble estilista y amigo, pero quien verdaderamente es la salvadora de estas mujeres y el ejemplo a seguir es Antonia, quien parece poseerlo todo, incluyendo un matrimonio ideal que repentinamente comienza a tambalearse, cuando enferma de cáncer de seno y hace hasta lo imposible por ocultárselo a su familia para evitar su sufrimiento.
+Seis mujeres que se casaron pensando que sería para siempre, creyendo en el sueño de un matrimonio feliz y un día, se dan cuenta que no viven como quieren. Seis mujeres que juntas aprenderán que la felicidad no es algo inalcanzable, es algo que cada una debe atreverse a buscar.
+<hr>
+<div>
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen">Bajar volumen</button>
+
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/para-volver-a-amar/main/";
+
+  const chapterValues = Array.from({ length: 146}, (_, i) => i + 1);
+  let currentChapter = 1;
+
+  function setChapter() {
+    currentChapter = chapterList.value;
+    audio.src = `${rootLink}${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      currentChapter = parseInt(chapterList.value) + 1;
+      currentChapter = currentChapter > chapterList.options.length ? 1 : currentChapter;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let chapter of chapterValues) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+  }
+
+  chapterList.addEventListener("change", setChapter);
+  setChapter();
+
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("ended", checkAutoplay);
+  audio.addEventListener("timeupdate", setSpeakText);
+
+  document.addEventListener("keydown", function(event) {
+    const keyMap = {
+      KeyK: playPause,
+      KeyJ: () => skip("backward"),
+      KeyL: () => skip("forward"),
+      KeyO: () => audio.volume -= 0.1,
+      KeyM: () => audio.muted = !audio.muted,
+      KeyU: () => audio.volume += 0.1
+    };
+    const keyFunction = keyMap[event.code];
+    if (keyFunction) {
+      event.preventDefault();
+      keyFunction();
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Enfermeras</title>
+</head>
+<body>
+<h1>Enfermeras</h1>
+Género: Drama
+<br>
+Año: 2019
+<br>
+Reparto: Diana Hoyos, Sebastián Carvajal, Viña Machado, Julián Trujillo, Luciano D' Alessandro, Lucho Velasco, Nina Caicedo, Federico Rivera, María Manuela Gómez, Cristian Camilo Rojas, Andrés Suárez Montoya, María Isabel Henao, Paula Barreto, Tatiana Ariza, Andrea Rey, Alejandra Correa, Viviana Posada, Carolina Gómez, Mariana Gómez, Susana Rojas, Pedro Palacio, Sergio Jaimes Herrera, Vince Balanta, Ricardo Vélez, Nayra Castillo, Andrea Martínez, Miguel González, Pedro Calvo, Juan Fernando Sánchez, Iván Darío Prada, Marcela Posada, Martha Liliana Ruiz, Hernando David Arias, Hugo Gómez, María Cecilia Botero, Mónica Gómez, Tuto Patiño, Danny Julián Chacón, Luis Fernando Salas, Mario Espitia, Jessica Mariana Cruz, Diego Garzón, Bárbara Perea, Carlos Kajú, Andrés Durán, Karoll Márquez , Óscar Salazar, Alexandra Serrano, Tiberio Cruz
+<br>
+País de origen: Colombia
+<br>
+Temporadas: 4
+<br>
+Episodios: 393
+<hr>
+<h1>Sinopsis</h1>
+María Clara González trabaja como jefe de enfermeras en uno de los hospitales más reconocidos de la ciudad: el Santa Rosa de Bogotá. La vida parece sonreírle de no ser por la monotonía en la que ha caído su matrimonio con Román, con el que tiene dos hijos. El día de su aniversario, María Clara toma la decisión de reconquistar a su esposo y reserva una habitación de hotel para pasar la noche con él. No obstante, Román sufre un infarto en el lugar y es trasladado de emergencia para que reciba ayuda médica. María Clara pasa la noche a su lado. Al día siguiente, llega una mujer de nombre Paula acompañada de su pequeño hijo, y le dice a la enfermera que se trata del primogénito de Román. A partir de allí, María Clara se va desilusionando cada vez más de su marido, al punto de planear su divorcio.
+Por otra parte, al hospital llega un joven residente de medicina interna, el Dr. Carlos Pérez, quien de inmediato tiene una conexión especial con María Clara, convirtiéndose más adelante en más que una amistad. Sin embargo, su relación se verá empañada por múltiples obstáculos, cuando Maritza y Valeriano, esposa y padre de Carlos, respectivamente, se enteren de lo que sucede entre ellos. Además, la enemistad de María Clara con la jefa Gloria, la oposición de sus hijos respecto a su nuevo amor, los negocios turbulentos que ocurren dentro del hospital por cuenta de Manuel Castro, director científico del mismo, y la aparición de una nueva persona en la vida del Dr. Pérez, harán que sus vidas tomen rumbos distintos.
+<hr>
+<div>
+  <label for="season-list" accesskey="t">Selecciona la temporada:</label>
+  <select id="season-list" aria-label="Lista de temporadas" accesskey="t"></select>
+
+  <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
+  <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
+
+  <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir" accesskey="k">Reproducir</button>
+
+  <p id="speak-text" onclick="speak(this.textContent);" accesskey="i"></p>
+  <div id="alert" aria-live="assertive"></div>
+
+  <button id="backward" title="Retroceder 10 segundos (Alt+J)" aria-label="Retroceder" accesskey="j">Retroceder</button>
+  <button id="forward" title="Avanzar 10 segundos (Alt+L)" aria-label="Avanzar" accesskey="l">Avanzar</button>
+
+  <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen" accesskey="u">Subir volumen</button>
+  <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen" accesskey="o">Bajar volumen</button>
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
+</div>
+
+<audio id="repro" src="" type="audio/mpeg"></audio>
+
+<script>
+  const audio = document.getElementById("repro");
+  const chapterList = document.getElementById("chapter-list");
+  const seasonList = document.getElementById("season-list");
+  const playPauseButton = document.getElementById("play-pause");
+  const backwardButton = document.getElementById("backward");
+  const forwardButton = document.getElementById("forward");
+  const volumeUpButton = document.getElementById("volume-up");
+  const volumeDownButton = document.getElementById("volume-down");
+  const rootLink = "https://raw.githubusercontent.com/ivanack123/enfermeras/main/";
+
+  const seasons = [
+    { name: "Temporada 1", chapters: 128},
+    { name: "Temporada 2", chapters: 102},
+    { name: "Temporada 3", chapters: 87},
+    { name: "Temporada 4", chapters: 76},
+
+    // Agrega las temporadas y la cantidad de capítulos correspondientes
+  ];
+
+  function setChapter() {
+    const currentChapter = chapterList.value;
+    const currentSeasonIndex = seasonList.selectedIndex;
+    const currentSeason = seasons[currentSeasonIndex].name;
+    audio.src = `${rootLink}${currentSeason.toLowerCase().replace(" ", "-")}/${currentChapter}.m4a`;
+    audio.load();
+    audio.play();
+  }
+
+  function updatePlayPauseButton(title, ariaLabel) {
+    playPauseButton.setAttribute("title", `${title} (Alt+K)`);
+    playPauseButton.setAttribute("aria-label", ariaLabel);
+    playPauseButton.textContent = title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      updatePlayPauseButton("Pausar", "Pausar");
+    } else {
+      audio.pause();
+      updatePlayPauseButton("Reproducir", "Reproducir");
+    }
+  }
+
+  function skip(direction) {
+    audio.currentTime += (direction === "forward" ? 10 : -10);
+    audio.currentTime = Math.min(Math.max(audio.currentTime, 0), audio.duration);
+  }
+
+  function handleMediaKeys(event) {
+    const mediaKeysMap = {
+      "MediaPlayPause": playPause,
+      "MediaTrackPrevious": () => skip("backward"),
+      "MediaTrackNext": () => skip("forward"),
+      "VolumeUp": () => audio.volume += 0.1,
+      "VolumeDown": () => audio.volume -= 0.1,
+      "VolumeMute": () => audio.muted = !audio.muted
+    };
+    const mediaKeyFunction = mediaKeysMap[event.code];
+    if (mediaKeyFunction) {
+      event.preventDefault();
+      mediaKeyFunction();
+    }
+  }
+
+  function checkAutoplay() {
+    if (autoplay.checked) {
+      const currentChapter = parseInt(chapterList.value) + 1;
+      const currentSeasonIndex = seasonList.selectedIndex;
+      let currentSeason = seasons[currentSeasonIndex].name;
+      if (currentChapter > seasons[currentSeasonIndex].chapters) {
+        currentSeasonIndex++;
+        currentSeason = seasons[currentSeasonIndex].name;
+        chapterList.selectedIndex = 0;
+      }
+      seasonList.selectedIndex = currentSeasonIndex;
+      chapterList.value = currentChapter;
+      setChapter();
+    }
+  }
+
+  function setSpeakText() {
+    const speakText = document.getElementById("speak-text");
+    const currentTime = formatTime(audio.currentTime);
+    const duration = formatTime(audio.duration);
+    speakText.textContent = `${currentTime} de ${duration}`;
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+
+  for (let i = 0; i < seasons.length; i++) {
+    const option = document.createElement("option");
+    option.text = seasons[i].name;
+    seasonList.add(option);
+    if (i === 0) {
+      option.selected = true;
+    }
+  }
+
+  const currentSeasonIndex = seasonList.selectedIndex;
+  const currentSeasonChapters = seasons[currentSeasonIndex].chapters;
+  for (let chapter = 1; chapter <= currentSeasonChapters; chapter++) {
+    const option = document.createElement("option");
+    option.text = `Capítulo ${chapter}`;
+    option.value = chapter;
+    chapterList.add(option);
+    if (chapter === 1) {
+      option.selected = true;
+    }
+  }
+
+  seasonList.addEventListener("change", () => {
+    chapterList.options.length = 0;
+    const currentSeasonIndex = seasonList.selectedIndex;
+    const currentSeasonChapters = seasons[currentSeasonIndex].chapters;
+    for (let chapter = 1; chapter <= currentSeasonChapters; chapter++) {
+      const option = document.createElement("option");
+      option.text = `Capítulo ${chapter}`;
+      option.value = chapter;
+      chapterList.add(option);
+      if (chapter === 1) {
+        option.selected = true;
+      }
+    }
+    setChapter();
+  });
+
+  chapterList.addEventListener("change", setChapter);
+  playPauseButton.addEventListener("click", playPause);
+  backwardButton.addEventListener("click", () => skip("backward"));
+  forwardButton.addEventListener("click", () => skip("forward"));
+  volumeUpButton.addEventListener("click", () => audio.volume += 0.1);
+  volumeDownButton.addEventListener("click", () => audio.volume -= 0.1);
+  audio.addEventListener("timeupdate", setSpeakText);
+  audio.addEventListener("ended", checkAutoplay);
+  document.addEventListener("keydown", handleMediaKeys);
+  
+  setChapter(); // reproducción automática del capítulo seleccionado
+</script>
+</body>
+</html>
