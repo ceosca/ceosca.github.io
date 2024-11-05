@@ -1197,11 +1197,11 @@
         "key": "d1fd24db1b61d634cabfc44538ce9b0e"
     },
     {
-        "nombre": "Telemundo Internacional MX",
-        "categoria": "Mundiales",
-        "url": "https://dish.akamaized.net/Content/DASH/Live/channel(telemundohd)/variant.mpd",
-        "keyId": "37c93f4babaaabc0da1d8b24828c3ff7",
-        "key": "88e2ac75ce14cd5fbfb79083f37107dd"
+        "nombre": "TELEMUNDO Internacional mx",
+        "categoria": "ENTRETENIMIENTO",
+        "url": "https://live-atv-cdn.izzigo.tv:443/3/out/u/dash/TELEMUNDO-HD/default.mpd",
+        "keyId": "87234ef8a0328b000941fd18bd75d78e",
+        "key": "2bbbeb8783509a4e77e3b79cd7b1869f"
     },
     {
         "nombre": "TV Chile",
