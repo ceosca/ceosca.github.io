@@ -1,49 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de Audio de Streams de Video</title>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
+
         #tabs {
             display: flex;
-            margin-bottom: 20px;
-        }
-        .tab {
-            padding: 10px 20px;
-            margin-right: 5px;
-            background-color: #f1f1f1;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .tab.active {
+            justify-content: space-around;
+            align-items: center;
             background-color: #007bff;
-            color: #fff;
-            border-color: #0056b3;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: #0056b3;
+            font-weight: bold;
+        }
+
         #channelContainer {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
             gap: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
         }
+
         .channel-button {
-            padding: 10px;
-            background-color: #f8f9fa;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 20px;
+            font-size: 16px;
             text-align: center;
+            border: 2px solid #ccc;
+            background-color: #f8f9fa;
+            border-radius: 8px;
             cursor: pointer;
         }
+
         .channel-button:hover {
             background-color: #007bff;
             color: white;
+            border-color: #0056b3;
         }
+
         #player {
-            margin-top: 20px;
+            position: sticky;
+            bottom: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -111,7 +139,7 @@
                 button.className = "channel-button";
                 button.textContent = canal.nombre;
                 button.setAttribute("role", "button");
-                button.setAttribute("aria-label", canal.nombre); // Solo el nombre
+                button.setAttribute("aria-label", canal.nombre);
                 button.onclick = function() {
                     cargarStream(canal);
                 };
