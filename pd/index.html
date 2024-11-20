@@ -63,8 +63,7 @@
                 categorias = obtenerCategoriasOrdenadas();
                 cargarTabs();
                 mostrarCanales(categorias[0]);
-            })
-            .catch(error => console.error('Error al cargar el JSON:', error));
+            });
 
         function obtenerCategoriasOrdenadas() {
             var categoriasSet = new Set();
@@ -111,7 +110,8 @@
                 var button = document.createElement("button");
                 button.className = "channel-button";
                 button.textContent = canal.nombre;
-                button.setAttribute("role", "gridcell");
+                button.setAttribute("role", "button");
+                button.setAttribute("aria-label", "Canal " + canal.nombre);
                 button.onclick = function() {
                     cargarStream(canal);
                 };
