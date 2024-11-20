@@ -111,7 +111,7 @@
                 button.className = "channel-button";
                 button.textContent = canal.nombre;
                 button.setAttribute("role", "button");
-                button.setAttribute("aria-label", "Canal " + canal.nombre);
+                button.setAttribute("aria-label", canal.nombre); // Solo el nombre
                 button.onclick = function() {
                     cargarStream(canal);
                 };
