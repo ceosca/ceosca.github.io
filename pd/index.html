@@ -84,7 +84,7 @@
                 tab.setAttribute("aria-selected", index === 0 ? "true" : "false");
                 tab.setAttribute("tabindex", index === 0 ? "0" : "-1");
                 tab.onclick = function() {
-                    document.querySelectorAll(".tab").forEach((t, i) => {
+                    document.querySelectorAll(".tab").forEach((t) => {
                         t.classList.remove("active");
                         t.setAttribute("aria-selected", "false");
                         t.setAttribute("tabindex", "-1");
