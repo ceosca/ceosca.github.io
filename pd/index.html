@@ -48,15 +48,14 @@
     </style>
 </head>
 <body>
-    <div id="tabs"></div>
-    <div id="channelContainer"></div>
-    <div id="player">CARGANDO...</div>
+    <div id="tabs" role="tablist"></div>
+    <div id="channelContainer" role="grid"></div>
+    <div id="player" aria-live="polite" aria-label="Reproductor de audio">CARGANDO...</div>
     <script type='text/javascript'>
         var playerInstance = null;
         var canales = [];
         var categorias = [];
 
-        // Cargar datos desde JSON remoto
         fetch('https://ceosca.github.io/pd/canales.json')
             .then(response => response.json())
             .then(data => {
@@ -67,7 +66,6 @@
             })
             .catch(error => console.error('Error al cargar el JSON:', error));
 
-        // Ordenar y obtener categorías únicas
         function obtenerCategoriasOrdenadas() {
             var categoriasSet = new Set();
             canales.forEach(function(canal) {
@@ -76,26 +74,33 @@
             return Array.from(categoriasSet).sort();
         }
 
-        // Crear pestañas para categorías
         function cargarTabs() {
             var tabsContainer = document.getElementById("tabs");
             categorias.forEach(function(categoria, index) {
-                var tab = document.createElement("div");
+                var tab = document.createElement("button");
                 tab.className = "tab" + (index === 0 ? " active" : "");
                 tab.textContent = categoria;
+                tab.setAttribute("role", "tab");
+                tab.setAttribute("aria-selected", index === 0 ? "true" : "false");
+                tab.setAttribute("tabindex", index === 0 ? "0" : "-1");
                 tab.onclick = function() {
-                    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+                    document.querySelectorAll(".tab").forEach((t, i) => {
+                        t.classList.remove("active");
+                        t.setAttribute("aria-selected", "false");
+                        t.setAttribute("tabindex", "-1");
+                    });
                     tab.classList.add("active");
+                    tab.setAttribute("aria-selected", "true");
+                    tab.setAttribute("tabindex", "0");
                     mostrarCanales(categoria);
                 };
                 tabsContainer.appendChild(tab);
             });
         }
 
-        // Mostrar botones de canales según la categoría seleccionada
         function mostrarCanales(categoria) {
             var container = document.getElementById("channelContainer");
-            container.innerHTML = ""; // Limpiar contenido previo
+            container.innerHTML = "";
             var filteredChannels = canales.filter(function(canal) {
                 return canal.categoria === categoria;
             });
@@ -103,9 +108,10 @@
                 return a.nombre.localeCompare(b.nombre);
             });
             filteredChannels.forEach(function(canal) {
-                var button = document.createElement("div");
+                var button = document.createElement("button");
                 button.className = "channel-button";
                 button.textContent = canal.nombre;
+                button.setAttribute("role", "gridcell");
                 button.onclick = function() {
                     cargarStream(canal);
                 };
@@ -113,8 +119,8 @@
             });
         }
 
-        // Configurar y cargar stream
-        function cargarStream(canal) {var config = {
+        function cargarStream(canal) {
+            var config = {
                 playlist: [{
                     title: "Audio del Stream Seleccionado",
                     sources: [{
