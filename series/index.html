@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor de Series</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    select, button {
+      margin: 5px 0;
+      padding: 8px;
+      font-size: 1rem;
+    }
+    .hidden {
+      display: none;
+    }
+    .controls {
+      margin-top: 20px;
+    }
+    #chapter-info {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Reproductor de Series</h1>
+
+  <!-- Selección de país -->
+  <div>
+    <label for="pais">Seleccione un país:</label>
+    <select id="pais" onchange="filterSeriesByCountry()">
+      <option value="">Seleccione un país</option>
+    </select>
+  </div>
+
+  <!-- Selección de serie -->
+  <div id="series-container" class="hidden">
+    <label for="serie">Seleccione una serie:</label>
+    <select id="serie" onchange="updateSerieInfo(); loadLanguages();">
+      <option value="">Seleccione una serie</option>
+    </select>
+  </div>
+
+  <!-- Información de la serie -->
+  <div id="serie-info"></div>
+
+  <!-- Selección de idioma -->
+  <div id="languages-container" class="hidden">
+    <label for="language">Seleccione un idioma:</label>
+    <select id="language" onchange="loadChapters()">
+      <!-- Opciones cargadas dinámicamente -->
+    </select>
+  </div>
+
+  <!-- Selección de capítulos -->
+  <div>
+    <label for="capitulo">Seleccione un capítulo:</label>
+    <select id="capitulo" onchange="updateChapterInfo();">
+      <!-- Opciones cargadas dinámicamente -->
+    </select>
+  </div>
+
+  <!-- Controles de reproducción -->
+  <div class="controls">
+    <button id="play-pause-button" onclick="togglePlayPause()">Reproducir</button>
+    <button onclick="backward()">⏪ -15s</button>
+    <button onclick="forward()">⏩ +15s</button>
+    <button onclick="decreaseVolume()">🔉 Bajar volumen</button>
+    <button onclick="increaseVolume()">🔊 Subir volumen</button>
+  </div>
+
+  <!-- Información del capítulo -->
+  <div id="chapter-info"></div>
+
+  <!-- Reproductor de audio -->
+  <audio id="audio-player" controls class="hidden"></audio>
+
+  <!-- Carga de JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
