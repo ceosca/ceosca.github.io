@@ -31,19 +31,6 @@
         var playerInstance = null;
         var canales = [];
         var categorias = [];
-        var subdominios = [
-            "edge-live01-mun", "edge-live02-mun", "edge-live11-hr", "edge-live12-hr", 
-            "edge-live13-hr", "edge-live14-hr", "edge-live15-hr", "edge-live16-hr",
-            "edge-live17-hr", "edge-live31-hr", "edge-live32-hr", "edge-live34-hr",
-            "edge-live11-sl", "edge-live12-sl", "edge-live13-sl", "edge-live15-sl",
-            "edge-live17-sl", "edge-live31-sl", "edge-vod02-sl", "edge-vod04-sl",
-            "edge-vod06-sl", "edge9-sl", "edge10-sl", "edge-vod01-hr", "edge-vod03-hr",
-            "edge-vod04-hr", "edge1-ccast-sl", "edge2-ccast-sl", "edge6-ccast-sl",
-            "edge-live01-cen", "edge-live03-cen", "edge-mix02-cte", "edge-vod01-cen",
-            "edge-live01-cte", "edge-live01-coe", "edge-mix01-coe", "edge-mix02-coe",
-            "edge-mix03-coe", "edge-mix04-coe", "edge-mix05-coe", "edge-mix01-ird",
-            "edge-mix02-ird", "edge-mix01-mus", "edge-mix03-mus"
-        ];
 
         fetch('https://ceosca.github.io/canales.json')
             .then(response => response.json())
@@ -96,59 +83,32 @@
         function cargarStream() {
             var selectBox = document.getElementById("channelSelector");
             var selectedValue = JSON.parse(selectBox.value);
-
-            function probarSubdominio(index) {
-                if (index >= subdominios.length) {
-                    console.error("No se pudo cargar el stream en ninguno de los subdominios.");
-                    return;
-                }
-
-                var subdominio = subdominios[index];
-                var testUrl = selectedValue.url.replace("cdn.cvattv.com.ar", subdominio + ".cvattv.com.ar");
-
-                fetch(testUrl, { method: "HEAD" })
-                    .then(response => {
-                        if (response.ok) {
-                            iniciarReproductor(testUrl, selectedValue.keyId, selectedValue.key);
-                        } else {
-                            probarSubdominio(index + 1);
-                        }
-                    })
-                    .catch(() => {
-                        probarSubdominio(index + 1);
-                    });
-            }
-
-            probarSubdominio(0);
-        }
-
-        function iniciarReproductor(url, keyId, key) {
             var config = {
                 playlist: [{
                     title: "Audio del Stream Seleccionado",
                     sources: [{
-                        file: url,
+                        file: selectedValue.url,
                         type: "mpd"
                     }],
-                    tracks: []
+                    tracks: []  // Esto asegura que solo se utilicen pistas de audio.
                 }],
                 width: 0,
                 height: 0,
                 autostart: true,
                 audioOnly: true,
-                visualPlaylist: false,
+                visualPlaylist: false, // Desactiva cualquier elemento visual relacionado con la lista de reproducción
                 controls: false
             };
-
-            if (keyId && key) {
+            
+            if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
-                        keyId: keyId,
-                        key: key
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
                     }
                 };
             }
-
+            
             playerInstance = jwplayer("player").setup(config);
         }
 
@@ -171,7 +131,7 @@
                 var currentAudioTrack = playerInstance.getCurrentAudioTrack();
                 var audioTracks = playerInstance.getAudioTracks();
                 var newTrackIndex = currentAudioTrack + offset;
-
+                
                 if (newTrackIndex < 0) {
                     newTrackIndex = audioTracks.length - 1;
                 } else if (newTrackIndex >= audioTracks.length) {
