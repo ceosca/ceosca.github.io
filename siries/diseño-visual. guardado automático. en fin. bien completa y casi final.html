@@ -5,59 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Series de TV</title>
   <style>
+    /* Estilos generales para mejorar la legibilidad */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #333;
+      /* Aumentar el tamaño de fuente base */
+      font-size: 1.2em; /* Equivalente a 19.2px, ajustable */
+      line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+      color: #333; /* Color de texto más legible */
     }
 
     h2 {
-      font-size: 1.8em;
+      font-size: 1.8em; /* Aumentar el tamaño del encabezado */
       margin-bottom: 0.5em;
     }
 
+    /* Contenedor principal */
     .container {
-      width: 95%;
-      margin: 10px auto;
+      width: 95%; /* Ancho completo en móviles */
+      margin: 10px auto; /* Reducir margen superior e inferior */
       background-color: #fff;
-      padding: 15px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      padding: 15px; /* Reducir padding */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     }
 
+    /* Lista de series */
     .series-list {
       list-style-type: none;
       padding: 0;
     }
 
     .series-list li {
-      margin-bottom: 10px;
+      margin-bottom: 10px; /* Aumentar el espacio entre elementos de la lista */
     }
 
     .series-list button {
-      padding: 15px 20px;
+      padding: 15px 20px; /* Aumentar el padding del botón */
       background-color: #4CAF50;
       color: white;
       border: none;
       cursor: pointer;
       width: 100%;
       text-align: left;
-      border-radius: 8px;
-      font-size: 1.1em;
-      display: block;
-      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 8px; /* Bordes redondeados */
+      font-size: 1.1em; /* Aumentar el tamaño de la fuente del botón */
+      display: block; /* Asegura que el botón ocupe todo el ancho disponible */
+      transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transición suave para el hover/focus */
     }
 
     .series-list button:hover,
     .series-list button:focus {
       background-color: #3e8e41;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sutil sombra al enfocar */
+      outline: none; /* Quitar el outline predeterminado del navegador */
     }
 
+    /* Estilos para el modal */
     .modal {
       display: none;
       position: fixed;
@@ -67,7 +72,7 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgba(0,0,0,0.7); /* Fondo semi-transparente */
     }
 
     .modal-content {
@@ -75,10 +80,9 @@
       margin: 15% auto;
       padding: 20px;
       border: 1px solid #888;
-      width: 90%;
+      width: 90%; /* Ancho más amplio en móviles */
       position: relative;
       border-radius: 10px;
-      padding-top: 60px;
     }
 
     .close {
@@ -86,10 +90,10 @@
       top: 10px;
       right: 20px;
       color: #aaa;
-      font-size: 2em;
+      font-size: 2em; /* Aumentar tamaño del botón de cierre */
       font-weight: bold;
       cursor: pointer;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease; /* Transición de color para el hover */
     }
 
     .close:hover,
@@ -97,30 +101,33 @@
       color: black;
       text-decoration: none;
       cursor: pointer;
-      outline: none;
+      outline: none; /* Quitar el outline predeterminado */
     }
 
+    /* Estilos para la información de la serie en el modal */
     #serie-info div {
-      margin-bottom: 0.7em;
-      font-size: 1.1em;
+      margin-bottom: 0.7em; /* Aumentar el espacio entre los detalles de la serie */
+      font-size: 1.1em; /* Aumentar el tamaño de fuente */
     }
 
+    /* Estilos para los botones del reproductor */
     #serieModal button {
-      padding: 12px 18px;
-      font-size: 1em;
-      margin-bottom: 0.5em;
+      padding: 12px 18px; /* Aumentar el padding */
+      font-size: 1em; /* Aumentar el tamaño de fuente */
+      margin-bottom: 0.5em; /* Espacio inferior */
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
     }
 
     #serieModal button:hover,
     #serieModal button:focus {
-      background-color: #ddd;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      outline: none;
+      background-color: #ddd; /* Color de fondo más claro */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sutil sombra al enfocar */
+      outline: none; /* Quitar el outline predeterminado */
     }
 
+    /* Estilos para el selector de idioma y capítulos */
     .languages-container,
     .episodes-container {
       margin-top: 1em;
@@ -141,13 +148,14 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       margin-bottom: 1em;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+      appearance: none; /* Quitar estilos predeterminados del sistema operativo */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E"); /* Icono de flecha desplegable */
       background-repeat: no-repeat;
       background-position: right 10px top 50%;
       background-size: 1.5em;
     }
 
+    /* Estilos para los contenedores de idioma y episodios */
     .languages-container,
     .episodes-container {
       margin-top: 1em;
@@ -170,66 +178,41 @@
       margin-bottom: 1em;
     }
 
+    /* Ocultar elementos */
     .hidden {
       display: none !important;
     }
 
+    /* Media query para pantallas más pequeñas */
     @media (max-width: 600px) {
       body {
-        font-size: 1.1em;
+        font-size: 1.1em; /* Tamaño de fuente ligeramente menor en pantallas pequeñas */
       }
 
       h2 {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Tamaño de encabezado adaptado */
       }
 
       .container {
-        padding: 10px;
+        padding: 10px; /* Reducir el relleno en pantallas pequeñas */
       }
 
       .series-list button {
-        padding: 12px 15px;
-        font-size: 1em;
+        padding: 12px 15px; /* Reducir el relleno del botón */
+        font-size: 1em; /* Tamaño de fuente reducido */
       }
 
       .modal-content {
-        margin: 20% auto;
+        margin: 20% auto; /* Aumentar el margen superior e inferior en pantallas pequeñas */
       }
     }
 
+    /* Estilos de enfoque mejorados */
     *:focus {
-      outline: 3px solid #007bff;
-      outline-offset: 2px;
+      outline: 3px solid #007bff; /* Un contorno azul claro */
+      outline-offset: 2px; /* Espacio entre el borde del elemento y el contorno */
     }
 
-    .fixed-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fefefe;
-      padding: 10px 20px;
-      z-index: 2;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .fixed-header .close {
-      font-size: 1.5em;
-      padding: 8px 15px;
-      border-radius: 5px;
-      background-color: #dc3545;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      position: static;
-    }
-
-    .fixed-header .close:hover {
-      background-color: #c82333;
-    }
   </style>
 </head>
 <body>
@@ -244,9 +227,7 @@
       <div id="serieModal" class="modal">
 
         <div class="modal-content">
-          <div class="fixed-header">
-            <button class="close" id="closeModal">Regresar a explorar</button>
-          </div>
+          <button class="close" id="closeModal">Regresar a explorar</button>
 
           <div id="serie-info"></div>
 
@@ -355,7 +336,7 @@
               const button = document.createElement('button');
               button.textContent = serie.nombre;
               button.addEventListener('click', () => openSerieModal(serie));
-              button.setAttribute('tabindex', '0');
+              button.setAttribute('tabindex', '0'); // Hacer el botón enfocable con el teclado
               listItem.appendChild(button);
               seriesList.appendChild(listItem);
             });
@@ -381,8 +362,8 @@
         const progreso = JSON.parse(progresoGuardado);
         currentChapterIndex = progreso.capituloIndex;
         audioPlayer.currentTime = progreso.tiempo;
-        document.getElementById('capitulo').value = currentChapterIndex;
-        updateChapterInfo();
+        document.getElementById('capitulo').value = currentChapterIndex; // Sincronizar el select
+        updateChapterInfo(); // Actualizar la información del capítulo
         return true;
       }
       return false;
@@ -397,13 +378,15 @@
 
       loadSerieInfo(serie);
       loadLanguages(serie);
-      loadChapters(serie);
+      loadChapters(serie); // Pasar 'serie' a loadChapters
       const progresoRestaurado = restaurarProgreso(serie.nombre);
 
 
       if (!progresoRestaurado) {
-
+          playChapter();
+          resetPlaybackTime();
       }
+
 
       mainContainer.classList.add('hidden');
       modal.style.display = "block";
@@ -455,6 +438,7 @@
         chaptersSelect.appendChild(option);
       });
 
+        // Establecer el capítulo actual en el desplegable
         document.getElementById('capitulo').value = currentChapterIndex;
 
         updateChapterInfo();
@@ -479,14 +463,12 @@
     function playChapter() {
         const chapterSelect = document.getElementById('capitulo');
         currentChapterIndex = parseInt(chapterSelect.value);
-        if (chapters[currentChapterIndex]) {
+        if (chapters[currentChapterIndex]) { // Asegúrate de que el capítulo existe
             audioPlayer.currentTime = chapters[currentChapterIndex].inicio / 1000;
             audioPlayer.play();
-            isPlaying = true;
-            document.getElementById('play-pause-button').textContent = 'Pausar';
+            isPlaying = true;  // Asegurar que isPlaying esté en true
+            document.getElementById('play-pause-button').textContent = 'Pausar';  // Actualizar el texto del botón
             updateChapterInfo();
-        } else {
-            console.warn("Por favor, seleccione un capítulo antes de reproducir.");
         }
     }
 
@@ -615,11 +597,13 @@
 
     window.onload = loadCountriesAndSeries;
 
+    // Autoguardado cada 5 segundos
     setInterval(function() {
-      if (modal.style.display === "block") {
+      if (modal.style.display === "block") { // Solo guardar si el modal está abierto
         guardarProgreso(modal.currentSerie.nombre);
+        console.log("Autoguardado realizado."); // Puedes quitar este mensaje
       }
-    }, 5000);
+    }, 5000); // 5000 milisegundos = 5 segundos
 
   </script>
 </body>
