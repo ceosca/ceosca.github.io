@@ -5,84 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Series de TV</title>
   <style>
-    /* Estilos generales para mejorar la legibilidad */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      /* Aumentar el tamaño de fuente base */
-      font-size: 1.2em; /* Equivalente a 19.2px, ajustable */
-      line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
-      color: #333; /* Color de texto más legible */
-    }
-
-    h2 {
-      font-size: 1.8em; /* Aumentar el tamaño del encabezado */
-      margin-bottom: 0.5em;
-    }
-
-    /* Contenedor principal */
-    .container {
-      width: 95%; /* Ancho completo en móviles */
-      margin: 10px auto; /* Reducir margen superior e inferior */
-      background-color: #fff;
-      padding: 15px; /* Reducir padding */
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    }
-
-    /* Lista de series */
-    .series-list {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .series-list li {
-      margin-bottom: 10px; /* Aumentar el espacio entre elementos de la lista */
-    }
-
-    .series-list button {
-      padding: 15px 20px; /* Aumentar el padding del botón */
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border-radius: 8px; /* Bordes redondeados */
-      font-size: 1.1em; /* Aumentar el tamaño de la fuente del botón */
-      display: block; /* Asegura que el botón ocupe todo el ancho disponible */
-      transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transición suave para el hover/focus */
-    }
-
-    .series-list button:hover,
-    .series-list button:focus {
-      background-color: #3e8e41;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sutil sombra al enfocar */
-      outline: none; /* Quitar el outline predeterminado del navegador */
-    }
-
-    /* Estilos para el modal */
+    /* Estilos básicos para la ventana modal */
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
       left: 0;
       top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.7); /* Fondo semi-transparente */
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
 
     .modal-content {
       background-color: #fefefe;
-      margin: 15% auto;
+      margin: 15% auto; /* 15% from the top and centered */
       padding: 20px;
       border: 1px solid #888;
-      width: 90%; /* Ancho más amplio en móviles */
-      position: relative;
-      border-radius: 10px;
+      width: 80%; /* Could be more or less, depending on screen size */
+      position: relative; /* Para posicionar el botón de cierre */
     }
 
     .close {
@@ -90,10 +33,9 @@
       top: 10px;
       right: 20px;
       color: #aaa;
-      font-size: 2em; /* Aumentar tamaño del botón de cierre */
+      font-size: 28px;
       font-weight: bold;
       cursor: pointer;
-      transition: color 0.2s ease; /* Transición de color para el hover */
     }
 
     .close:hover,
@@ -101,116 +43,75 @@
       color: black;
       text-decoration: none;
       cursor: pointer;
-      outline: none; /* Quitar el outline predeterminado */
     }
 
-    /* Estilos para la información de la serie en el modal */
-    #serie-info div {
-      margin-bottom: 0.7em; /* Aumentar el espacio entre los detalles de la serie */
-      font-size: 1.1em; /* Aumentar el tamaño de fuente */
+    /* Estilos para la lista de series como botones */
+    .series-list {
+      list-style-type: none;
+      padding: 0;
     }
 
-    /* Estilos para los botones del reproductor */
-    #serieModal button {
-      padding: 12px 18px; /* Aumentar el padding */
-      font-size: 1em; /* Aumentar el tamaño de fuente */
-      margin-bottom: 0.5em; /* Espacio inferior */
-      border-radius: 5px;
+    .series-list li {
+      margin-bottom: 5px;
+    }
+
+    .series-list button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
       cursor: pointer;
-      transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
+      width: 100%; /* Para que ocupen todo el ancho disponible */
+      text-align: left; /* Alinea el texto a la izquierda */
+      border-radius: 5px; /* Bordes redondeados */
     }
 
-    #serieModal button:hover,
-    #serieModal button:focus {
-      background-color: #ddd; /* Color de fondo más claro */
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sutil sombra al enfocar */
-      outline: none; /* Quitar el outline predeterminado */
+    .series-list button:hover {
+      background-color: #3e8e41;
     }
 
-    /* Estilos para el selector de idioma y capítulos */
-    .languages-container,
-    .episodes-container {
-      margin-top: 1em;
-    }
-
-    .languages-container label,
-    .episodes-container label {
-      display: block;
-      margin-bottom: 0.5em;
-      font-size: 1.1em;
-    }
-
-    .languages-container select,
-    .episodes-container select {
-      width: 100%;
+    /* Estilos para los encabezados fijos (países) */
+    .country-header {
+      position: sticky; /* Fija el encabezado al hacer scroll */
+      top: 0; /* Lo pega a la parte superior */
+      background-color: #f0f0f0; /* Color de fondo para que se vea */
       padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 1em;
-      appearance: none; /* Quitar estilos predeterminados del sistema operativo */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E"); /* Icono de flecha desplegable */
-      background-repeat: no-repeat;
-      background-position: right 10px top 50%;
-      background-size: 1.5em;
+      z-index: 2; /* Asegura que esté por encima del contenido */
+      text-align: center; /* Centra el texto */
+      font-weight: bold; /* Hace el texto más resaltado */
+      border-bottom: 1px solid #ccc; /* Agrega una línea inferior para separarlo del contenido */
     }
 
-    /* Estilos para los contenedores de idioma y episodios */
-    .languages-container,
-    .episodes-container {
-      margin-top: 1em;
+    /* Estilos adicionales para mejorar la apariencia */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
     }
 
-    .languages-container label,
-    .episodes-container label {
-      display: block;
-      margin-bottom: 0.5em;
-      font-size: 1.1em;
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .languages-container select,
-    .episodes-container select {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 1em;
+    /* Ajustes para pantallas más pequeñas */
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+      }
+      .modal-content {
+        width: 95%;
+        margin: 20% auto;
+      }
     }
 
-    /* Ocultar elementos */
+    /* Estilo para ocultar el contenedor principal */
     .hidden {
       display: none !important;
-    }
-
-    /* Media query para pantallas más pequeñas */
-    @media (max-width: 600px) {
-      body {
-        font-size: 1.1em; /* Tamaño de fuente ligeramente menor en pantallas pequeñas */
-      }
-
-      h2 {
-        font-size: 1.5em; /* Tamaño de encabezado adaptado */
-      }
-
-      .container {
-        padding: 10px; /* Reducir el relleno en pantallas pequeñas */
-      }
-
-      .series-list button {
-        padding: 12px 15px; /* Reducir el relleno del botón */
-        font-size: 1em; /* Tamaño de fuente reducido */
-      }
-
-      .modal-content {
-        margin: 20% auto; /* Aumentar el margen superior e inferior en pantallas pequeñas */
-      }
-    }
-
-    /* Estilos de enfoque mejorados */
-    *:focus {
-      outline: 3px solid #007bff; /* Un contorno azul claro */
-      outline-offset: 2px; /* Espacio entre el borde del elemento y el contorno */
     }
 
   </style>
@@ -224,10 +125,12 @@
 
   </div>
 
+      <!-- The Modal -->
       <div id="serieModal" class="modal">
 
+        <!-- Modal content -->
         <div class="modal-content">
-          <button class="close" id="closeModal">Regresar a explorar</button>
+          <span class="close" id="closeModal">×</span>
 
           <div id="serie-info"></div>
 
@@ -275,34 +178,43 @@
     let currentEnlaces = [];
     let currentChapterIndex = 0;
     let audioPlayer = document.getElementById('audio-player');
-    let allSeriesData = [];
+    let allSeriesData = []; // Almacena todos los datos de series
     const mainContainer = document.getElementById('main-container');
-    const modal = document.getElementById("serieModal");
-    const span = document.getElementById("closeModal");
 
+    // Get the modal
+    var modal = document.getElementById("serieModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementById("closeModal");
+
+    // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
-      guardarProgreso(modal.currentSerie.nombre);
       modal.style.display = "none";
+      // Detener la reproducción de audio al cerrar el modal
       audioPlayer.pause();
-      audioPlayer.src = '';
-      audioPlayer.load();
+      audioPlayer.src = ''; // Restablecer la fuente de audio
+      audioPlayer.load(); // Recargar el reproductor (opcional)
+
+      // Mostrar el contenedor principal
       mainContainer.classList.remove('hidden');
-      clearInterval(timeInfoInterval);
+      clearInterval(timeInfoInterval); // Detiene el intervalo de tiempo
       isPlaying = false;
       document.getElementById('play-pause-button').textContent = 'Reproducir';
     }
 
+    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
       if (event.target == modal) {
-        guardarProgreso(modal.currentSerie.nombre);
         modal.style.display = "none";
-        audioPlayer.pause();
-        audioPlayer.src = '';
-        audioPlayer.load();
-        mainContainer.classList.remove('hidden');
-        clearInterval(timeInfoInterval);
-        isPlaying = false;
-        document.getElementById('play-pause-button').textContent = 'Reproducir';
+         // Detener la reproducción de audio al cerrar el modal
+         audioPlayer.pause();
+         audioPlayer.src = ''; // Restablecer la fuente de audio
+         audioPlayer.load(); // Recargar el reproductor (opcional)
+         // Mostrar el contenedor principal
+         mainContainer.classList.remove('hidden');
+         clearInterval(timeInfoInterval); // Detiene el intervalo de tiempo
+         isPlaying = false;
+         document.getElementById('play-pause-button').textContent = 'Reproducir';
       }
     }
 
@@ -311,7 +223,7 @@
       fetch(seriesDataUrl)
         .then(response => response.json())
         .then(data => {
-          allSeriesData = data.series;
+          allSeriesData = data.series; // Guarda todos los datos
           const countriesContainer = document.getElementById('countries-container');
           let countries = [];
           data.series.forEach(serie => {
@@ -322,10 +234,13 @@
           countries.sort();
 
           countries.forEach(country => {
-            const countryHeader = document.createElement('h2');
+            // Encabezado del país
+            const countryHeader = document.createElement('div');
+            countryHeader.classList.add('country-header');
             countryHeader.textContent = country;
             countriesContainer.appendChild(countryHeader);
 
+            // Lista de series del país
             const seriesList = document.createElement('ul');
             seriesList.classList.add('series-list');
 
@@ -335,8 +250,8 @@
               const listItem = document.createElement('li');
               const button = document.createElement('button');
               button.textContent = serie.nombre;
-              button.addEventListener('click', () => openSerieModal(serie));
-              button.setAttribute('tabindex', '0'); // Hacer el botón enfocable con el teclado
+              button.addEventListener('click', () => openSerieModal(serie)); // Abre el modal al hacer clic
+
               listItem.appendChild(button);
               seriesList.appendChild(listItem);
             });
@@ -347,48 +262,22 @@
         .catch(error => console.error('Error al cargar los datos de las series:', error));
     }
 
-    function guardarProgreso(serieNombre) {
-      const tiempoReproduccion = audioPlayer.currentTime;
-      const progreso = {
-        capituloIndex: currentChapterIndex,
-        tiempo: tiempoReproduccion
-      };
-      localStorage.setItem(serieNombre, JSON.stringify(progreso));
-    }
-
-    function restaurarProgreso(serieNombre) {
-      const progresoGuardado = localStorage.getItem(serieNombre);
-      if (progresoGuardado) {
-        const progreso = JSON.parse(progresoGuardado);
-        currentChapterIndex = progreso.capituloIndex;
-        audioPlayer.currentTime = progreso.tiempo;
-        document.getElementById('capitulo').value = currentChapterIndex; // Sincronizar el select
-        updateChapterInfo(); // Actualizar la información del capítulo
-        return true;
-      }
-      return false;
-    }
-
-
     function openSerieModal(serie) {
+      // Reiniciar variables
       isPlaying = false;
       currentLanguageIndex = 0;
       currentChapterIndex = 0;
       chapters = [];
 
+      // Cargar la información de la serie en el modal
       loadSerieInfo(serie);
       loadLanguages(serie);
-      loadChapters(serie); // Pasar 'serie' a loadChapters
-      const progresoRestaurado = restaurarProgreso(serie.nombre);
+      loadChapters(); // Carga los capitulos al abrir el modal
 
-
-      if (!progresoRestaurado) {
-          playChapter();
-          resetPlaybackTime();
-      }
-
-
+      // Ocultar el contenedor principal
       mainContainer.classList.add('hidden');
+
+      // Mostrar el modal
       modal.style.display = "block";
     }
 
@@ -403,6 +292,7 @@
         <div><strong>Episodios:</strong> ${serie.cantidad_episodios}</div>
         ${serie.sinopsis ? `<div><strong>Sinopsis:</strong> ${serie.sinopsis}</div>` : ''}
       `;
+      // Guardar la información de la serie actual en un atributo del modal
       modal.currentSerie = serie;
     }
 
@@ -424,12 +314,15 @@
       languagesContainer.style.display = 'block';
     }
 
-    function loadChapters(serie) {
+    function loadChapters() {
+      // Obtener la información de la serie actual del modal
+      const serie = modal.currentSerie;
       const languageSelect = document.getElementById('language');
       const selectedLanguageIndex = languageSelect.value;
       const chaptersSelect = document.getElementById('capitulo');
       chaptersSelect.innerHTML = '';
       chapters = serie.capitulos;
+      currentChapterIndex = 0;
 
       chapters.forEach((capitulo, index) => {
         const option = document.createElement('option');
@@ -438,20 +331,18 @@
         chaptersSelect.appendChild(option);
       });
 
-        // Establecer el capítulo actual en el desplegable
-        document.getElementById('capitulo').value = currentChapterIndex;
+      updateChapterInfo();
 
-        updateChapterInfo();
+      const currentTime = audioPlayer.currentTime;
+      //audioPlayer.src = currentEnlaces[currentLanguageIndex];
+      audioPlayer.src = serie.enlaces[currentLanguageIndex].enlace;
+      audioPlayer.load();
+      audioPlayer.currentTime = 0;
+      if (isPlaying) audioPlayer.play();
 
-        const currentTime = audioPlayer.currentTime;
-        audioPlayer.src = serie.enlaces[currentLanguageIndex].enlace;
-        audioPlayer.load();
-        audioPlayer.currentTime = 0;
-        if (isPlaying) audioPlayer.play();
-
-        clearInterval(timeInfoInterval);
-        updatePlaybackTimeInfo();
-        timeInfoInterval = setInterval(updatePlaybackTimeInfo, 1000);
+      clearInterval(timeInfoInterval);
+      updatePlaybackTimeInfo();
+      timeInfoInterval = setInterval(updatePlaybackTimeInfo, 1000);
     }
 
     function resetPlaybackTime() {
@@ -461,17 +352,12 @@
 
 
     function playChapter() {
-        const chapterSelect = document.getElementById('capitulo');
-        currentChapterIndex = parseInt(chapterSelect.value);
-        if (chapters[currentChapterIndex]) { // Asegúrate de que el capítulo existe
-            audioPlayer.currentTime = chapters[currentChapterIndex].inicio / 1000;
-            audioPlayer.play();
-            isPlaying = true;  // Asegurar que isPlaying esté en true
-            document.getElementById('play-pause-button').textContent = 'Pausar';  // Actualizar el texto del botón
-            updateChapterInfo();
-        }
+      const chapterSelect = document.getElementById('capitulo');
+      currentChapterIndex = parseInt(chapterSelect.value);
+      audioPlayer.currentTime = chapters[currentChapterIndex].inicio / 1000;
+      audioPlayer.play();
+      updateChapterInfo();
     }
-
 
     function updateChapterInfo() {
       const chapterInfo = document.getElementById('chapter-info');
@@ -569,7 +455,7 @@
 
       const currentTime = audioPlayer.currentTime;
 
-      loadChapters(modal.currentSerie);
+      loadChapters();
 
       audioPlayer.currentTime = currentTime;
     }
@@ -582,29 +468,7 @@
       audioPlayer.volume = Math.max(0, audioPlayer.volume - 0.05);
     }
 
-    document.getElementById('capitulo').addEventListener('change', function() {
-      guardarProgreso(modal.currentSerie.nombre);
-    });
-
-    audioPlayer.addEventListener('pause', function() {
-      guardarProgreso(modal.currentSerie.nombre);
-    });
-
-    audioPlayer.addEventListener('play', function() {
-      isPlaying = true;
-      document.getElementById('play-pause-button').textContent = 'Pausar';
-    });
-
     window.onload = loadCountriesAndSeries;
-
-    // Autoguardado cada 5 segundos
-    setInterval(function() {
-      if (modal.style.display === "block") { // Solo guardar si el modal está abierto
-        guardarProgreso(modal.currentSerie.nombre);
-        console.log("Autoguardado realizado."); // Puedes quitar este mensaje
-      }
-    }, 5000); // 5000 milisegundos = 5 segundos
-
   </script>
 </body>
 </html>

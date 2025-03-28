@@ -5,64 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Series de TV</title>
   <style>
-    /* Estilos generales para mejorar la legibilidad */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      /* Aumentar el tamaño de fuente base */
-      font-size: 1.2em; /* Equivalente a 19.2px, ajustable */
-      line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
-      color: #333; /* Color de texto más legible */
-    }
-
-    h2 {
-      font-size: 1.8em; /* Aumentar el tamaño del encabezado */
-      margin-bottom: 0.5em;
-    }
-
-    /* Contenedor principal */
-    .container {
-      width: 95%; /* Ancho completo en móviles */
-      margin: 10px auto; /* Reducir margen superior e inferior */
-      background-color: #fff;
-      padding: 15px; /* Reducir padding */
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    }
-
-    /* Lista de series */
-    .series-list {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .series-list li {
-      margin-bottom: 10px; /* Aumentar el espacio entre elementos de la lista */
-    }
-
-    .series-list button {
-      padding: 15px 20px; /* Aumentar el padding del botón */
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border-radius: 8px; /* Bordes redondeados */
-      font-size: 1.1em; /* Aumentar el tamaño de la fuente del botón */
-      display: block; /* Asegura que el botón ocupe todo el ancho disponible */
-      transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transición suave para el hover/focus */
-    }
-
-    .series-list button:hover,
-    .series-list button:focus {
-      background-color: #3e8e41;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sutil sombra al enfocar */
-      outline: none; /* Quitar el outline predeterminado del navegador */
-    }
-
-    /* Estilos para el modal */
     .modal {
       display: none;
       position: fixed;
@@ -72,7 +14,8 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.7); /* Fondo semi-transparente */
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
     }
 
     .modal-content {
@@ -80,9 +23,8 @@
       margin: 15% auto;
       padding: 20px;
       border: 1px solid #888;
-      width: 90%; /* Ancho más amplio en móviles */
+      width: 80%;
       position: relative;
-      border-radius: 10px;
     }
 
     .close {
@@ -90,10 +32,9 @@
       top: 10px;
       right: 20px;
       color: #aaa;
-      font-size: 2em; /* Aumentar tamaño del botón de cierre */
+      font-size: 28px;
       font-weight: bold;
       cursor: pointer;
-      transition: color 0.2s ease; /* Transición de color para el hover */
     }
 
     .close:hover,
@@ -101,116 +42,70 @@
       color: black;
       text-decoration: none;
       cursor: pointer;
-      outline: none; /* Quitar el outline predeterminado */
     }
 
-    /* Estilos para la información de la serie en el modal */
-    #serie-info div {
-      margin-bottom: 0.7em; /* Aumentar el espacio entre los detalles de la serie */
-      font-size: 1.1em; /* Aumentar el tamaño de fuente */
+    .series-list {
+      list-style-type: none;
+      padding: 0;
     }
 
-    /* Estilos para los botones del reproductor */
-    #serieModal button {
-      padding: 12px 18px; /* Aumentar el padding */
-      font-size: 1em; /* Aumentar el tamaño de fuente */
-      margin-bottom: 0.5em; /* Espacio inferior */
-      border-radius: 5px;
+    .series-list li {
+      margin-bottom: 5px;
+    }
+
+    .series-list button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
       cursor: pointer;
-      transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
-    }
-
-    #serieModal button:hover,
-    #serieModal button:focus {
-      background-color: #ddd; /* Color de fondo más claro */
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sutil sombra al enfocar */
-      outline: none; /* Quitar el outline predeterminado */
-    }
-
-    /* Estilos para el selector de idioma y capítulos */
-    .languages-container,
-    .episodes-container {
-      margin-top: 1em;
-    }
-
-    .languages-container label,
-    .episodes-container label {
-      display: block;
-      margin-bottom: 0.5em;
-      font-size: 1.1em;
-    }
-
-    .languages-container select,
-    .episodes-container select {
       width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
+      text-align: left;
       border-radius: 5px;
-      margin-bottom: 1em;
-      appearance: none; /* Quitar estilos predeterminados del sistema operativo */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E"); /* Icono de flecha desplegable */
-      background-repeat: no-repeat;
-      background-position: right 10px top 50%;
-      background-size: 1.5em;
     }
 
-    /* Estilos para los contenedores de idioma y episodios */
-    .languages-container,
-    .episodes-container {
-      margin-top: 1em;
+    .series-list button:hover {
+      background-color: #3e8e41;
     }
 
-    .languages-container label,
-    .episodes-container label {
-      display: block;
-      margin-bottom: 0.5em;
-      font-size: 1.1em;
-    }
-
-    .languages-container select,
-    .episodes-container select {
-      width: 100%;
+    .country-header {
+      position: sticky;
+      top: 0;
+      background-color: #f0f0f0;
       padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 1em;
+      z-index: 2;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
     }
 
-    /* Ocultar elementos */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+      }
+      .modal-content {
+        width: 95%;
+        margin: 20% auto;
+      }
+    }
+
     .hidden {
       display: none !important;
-    }
-
-    /* Media query para pantallas más pequeñas */
-    @media (max-width: 600px) {
-      body {
-        font-size: 1.1em; /* Tamaño de fuente ligeramente menor en pantallas pequeñas */
-      }
-
-      h2 {
-        font-size: 1.5em; /* Tamaño de encabezado adaptado */
-      }
-
-      .container {
-        padding: 10px; /* Reducir el relleno en pantallas pequeñas */
-      }
-
-      .series-list button {
-        padding: 12px 15px; /* Reducir el relleno del botón */
-        font-size: 1em; /* Tamaño de fuente reducido */
-      }
-
-      .modal-content {
-        margin: 20% auto; /* Aumentar el margen superior e inferior en pantallas pequeñas */
-      }
-    }
-
-    /* Estilos de enfoque mejorados */
-    *:focus {
-      outline: 3px solid #007bff; /* Un contorno azul claro */
-      outline-offset: 2px; /* Espacio entre el borde del elemento y el contorno */
     }
 
   </style>
@@ -277,11 +172,11 @@
     let audioPlayer = document.getElementById('audio-player');
     let allSeriesData = [];
     const mainContainer = document.getElementById('main-container');
-    const modal = document.getElementById("serieModal");
-    const span = document.getElementById("closeModal");
+
+    var modal = document.getElementById("serieModal");
+    var span = document.getElementById("closeModal");
 
     span.onclick = function() {
-      guardarProgreso(modal.currentSerie.nombre);
       modal.style.display = "none";
       audioPlayer.pause();
       audioPlayer.src = '';
@@ -294,7 +189,6 @@
 
     window.onclick = function(event) {
       if (event.target == modal) {
-        guardarProgreso(modal.currentSerie.nombre);
         modal.style.display = "none";
         audioPlayer.pause();
         audioPlayer.src = '';
@@ -322,6 +216,7 @@
           countries.sort();
 
           countries.forEach(country => {
+            // Ahora es un encabezado h2
             const countryHeader = document.createElement('h2');
             countryHeader.textContent = country;
             countriesContainer.appendChild(countryHeader);
@@ -336,7 +231,7 @@
               const button = document.createElement('button');
               button.textContent = serie.nombre;
               button.addEventListener('click', () => openSerieModal(serie));
-              button.setAttribute('tabindex', '0'); // Hacer el botón enfocable con el teclado
+
               listItem.appendChild(button);
               seriesList.appendChild(listItem);
             });
@@ -347,29 +242,6 @@
         .catch(error => console.error('Error al cargar los datos de las series:', error));
     }
 
-    function guardarProgreso(serieNombre) {
-      const tiempoReproduccion = audioPlayer.currentTime;
-      const progreso = {
-        capituloIndex: currentChapterIndex,
-        tiempo: tiempoReproduccion
-      };
-      localStorage.setItem(serieNombre, JSON.stringify(progreso));
-    }
-
-    function restaurarProgreso(serieNombre) {
-      const progresoGuardado = localStorage.getItem(serieNombre);
-      if (progresoGuardado) {
-        const progreso = JSON.parse(progresoGuardado);
-        currentChapterIndex = progreso.capituloIndex;
-        audioPlayer.currentTime = progreso.tiempo;
-        document.getElementById('capitulo').value = currentChapterIndex; // Sincronizar el select
-        updateChapterInfo(); // Actualizar la información del capítulo
-        return true;
-      }
-      return false;
-    }
-
-
     function openSerieModal(serie) {
       isPlaying = false;
       currentLanguageIndex = 0;
@@ -378,15 +250,7 @@
 
       loadSerieInfo(serie);
       loadLanguages(serie);
-      loadChapters(serie); // Pasar 'serie' a loadChapters
-      const progresoRestaurado = restaurarProgreso(serie.nombre);
-
-
-      if (!progresoRestaurado) {
-          playChapter();
-          resetPlaybackTime();
-      }
-
+      loadChapters();
 
       mainContainer.classList.add('hidden');
       modal.style.display = "block";
@@ -424,12 +288,14 @@
       languagesContainer.style.display = 'block';
     }
 
-    function loadChapters(serie) {
+    function loadChapters() {
+      const serie = modal.currentSerie;
       const languageSelect = document.getElementById('language');
       const selectedLanguageIndex = languageSelect.value;
       const chaptersSelect = document.getElementById('capitulo');
       chaptersSelect.innerHTML = '';
       chapters = serie.capitulos;
+      currentChapterIndex = 0;
 
       chapters.forEach((capitulo, index) => {
         const option = document.createElement('option');
@@ -438,20 +304,17 @@
         chaptersSelect.appendChild(option);
       });
 
-        // Establecer el capítulo actual en el desplegable
-        document.getElementById('capitulo').value = currentChapterIndex;
+      updateChapterInfo();
 
-        updateChapterInfo();
+      const currentTime = audioPlayer.currentTime;
+      audioPlayer.src = serie.enlaces[currentLanguageIndex].enlace;
+      audioPlayer.load();
+      audioPlayer.currentTime = 0;
+      if (isPlaying) audioPlayer.play();
 
-        const currentTime = audioPlayer.currentTime;
-        audioPlayer.src = serie.enlaces[currentLanguageIndex].enlace;
-        audioPlayer.load();
-        audioPlayer.currentTime = 0;
-        if (isPlaying) audioPlayer.play();
-
-        clearInterval(timeInfoInterval);
-        updatePlaybackTimeInfo();
-        timeInfoInterval = setInterval(updatePlaybackTimeInfo, 1000);
+      clearInterval(timeInfoInterval);
+      updatePlaybackTimeInfo();
+      timeInfoInterval = setInterval(updatePlaybackTimeInfo, 1000);
     }
 
     function resetPlaybackTime() {
@@ -461,17 +324,12 @@
 
 
     function playChapter() {
-        const chapterSelect = document.getElementById('capitulo');
-        currentChapterIndex = parseInt(chapterSelect.value);
-        if (chapters[currentChapterIndex]) { // Asegúrate de que el capítulo existe
-            audioPlayer.currentTime = chapters[currentChapterIndex].inicio / 1000;
-            audioPlayer.play();
-            isPlaying = true;  // Asegurar que isPlaying esté en true
-            document.getElementById('play-pause-button').textContent = 'Pausar';  // Actualizar el texto del botón
-            updateChapterInfo();
-        }
+      const chapterSelect = document.getElementById('capitulo');
+      currentChapterIndex = parseInt(chapterSelect.value);
+      audioPlayer.currentTime = chapters[currentChapterIndex].inicio / 1000;
+      audioPlayer.play();
+      updateChapterInfo();
     }
-
 
     function updateChapterInfo() {
       const chapterInfo = document.getElementById('chapter-info');
@@ -569,7 +427,7 @@
 
       const currentTime = audioPlayer.currentTime;
 
-      loadChapters(modal.currentSerie);
+      loadChapters();
 
       audioPlayer.currentTime = currentTime;
     }
@@ -582,29 +440,7 @@
       audioPlayer.volume = Math.max(0, audioPlayer.volume - 0.05);
     }
 
-    document.getElementById('capitulo').addEventListener('change', function() {
-      guardarProgreso(modal.currentSerie.nombre);
-    });
-
-    audioPlayer.addEventListener('pause', function() {
-      guardarProgreso(modal.currentSerie.nombre);
-    });
-
-    audioPlayer.addEventListener('play', function() {
-      isPlaying = true;
-      document.getElementById('play-pause-button').textContent = 'Pausar';
-    });
-
     window.onload = loadCountriesAndSeries;
-
-    // Autoguardado cada 5 segundos
-    setInterval(function() {
-      if (modal.style.display === "block") { // Solo guardar si el modal está abierto
-        guardarProgreso(modal.currentSerie.nombre);
-        console.log("Autoguardado realizado."); // Puedes quitar este mensaje
-      }
-    }, 5000); // 5000 milisegundos = 5 segundos
-
   </script>
 </body>
 </html>
