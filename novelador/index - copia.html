@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Novelas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    input, button {
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+    }
+    .novela-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .novela-card h2 {
+      margin: 0;
+    }
+    .novela-card button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Novelas</h1>
+  
+  <div>
+    <h2>Agregar Nueva Novela</h2>
+    <input type="text" id="titulo" placeholder="Título de la novela">
+    <input type="text" id="genero" placeholder="Género">
+    <input type="text" id="anio" placeholder="Año de estreno">
+    <input type="text" id="reparto" placeholder="Reparto (separado por comas)">
+    <input type="text" id="pais_origen" placeholder="País de origen">
+    <textarea id="sinopsis" placeholder="Sinopsis"></textarea>
+    <input type="number" id="num_temporadas" placeholder="Número de temporadas">
+    <button onclick="agregarNovela()">Agregar Novela</button>
+  </div>
+
+  <h2>Lista de Novelas</h2>
+  <div id="novelas-list"></div>
+
+  <button onclick="exportarJSON()">Exportar JSON</button>
+
+  <script>
+    let novelas = [];
+
+    // Función para agregar una nueva novela
+    function agregarNovela() {
+      const titulo = document.getElementById('titulo').value;
+      const genero = document.getElementById('genero').value;
+      const anio = document.getElementById('anio').value;
+      const reparto = document.getElementById('reparto').value.split(',');
+      const paisOrigen = document.getElementById('pais_origen').value;
+      const sinopsis = document.getElementById('sinopsis').value;
+      const numTemporadas = parseInt(document.getElementById('num_temporadas').value, 10);
+      const temporadas = Array.from({ length: numTemporadas }, (_, i) => ({ nombre: `Temporada ${i + 1}`, capitulos: "", enlace_base: "" }));
+
+      const nuevaNovela = { titulo, genero, anio, reparto, paisOrigen, sinopsis, temporadas };
+      novelas.push(nuevaNovela);
+
+      // Limpiar los campos después de agregar la novela
+      document.getElementById('titulo').value = '';
+      document.getElementById('genero').value = '';
+      document.getElementById('anio').value = '';
+      document.getElementById('reparto').value = '';
+      document.getElementById('pais_origen').value = '';
+      document.getElementById('sinopsis').value = '';
+      document.getElementById('num_temporadas').value = '';
+
+      mostrarNovelas();
+    }
+
+    // Función para mostrar las novelas
+    function mostrarNovelas() {
+      const listDiv = document.getElementById('novelas-list');
+      listDiv.innerHTML = '';
+
+      novelas.forEach((novela, index) => {
+        const card = document.createElement('div');
+        card.className = 'novela-card';
+
+        card.innerHTML = `
+          <h2>${novela.titulo} (${novela.anio})</h2>
+          <p><strong>Género:</strong> ${novela.genero}</p>
+          <p><strong>Reparto:</strong> ${novela.reparto.join(', ')}</p>
+          <p><strong>País de Origen:</strong> ${novela.paisOrigen}</p>
+          <p><strong>Sinopsis:</strong> ${novela.sinopsis}</p>
+          <h3>Temporadas:</h3>
+          ${novela.temporadas.map(temp => `
+            <p><strong>${temp.nombre}:</strong> ${temp.capitulos} capítulos - <a href="${temp.enlace_base}" target="_blank">Enlace</a></p>
+          `).join('')}
+          <button onclick="eliminarNovela(${index})">Eliminar</button>
+        `;
+
+        listDiv.appendChild(card);
+      });
+    }
+
+    // Función para eliminar una novela
+    function eliminarNovela(index) {
+      novelas.splice(index, 1);
+      mostrarNovelas();
+    }
+
+    // Función para exportar el JSON
+    function exportarJSON() {
+      const json = JSON.stringify({ novelas }, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'novelas.json';
+      a.click();
+    }
+  </script>
+</body>
+</html>

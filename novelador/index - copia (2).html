@@ -42,10 +42,8 @@
 <body>
   <h1>Gestión de Novelas</h1>
   
-  <button onclick="cargarJSON()">Cargar Novelas</button>
-  
   <div>
-    <h2>Agregar/Editar Novela</h2>
+    <h2>Agregar Nueva Novela</h2>
     <input type="text" id="titulo" placeholder="Título de la novela">
     <input type="text" id="genero" placeholder="Género">
     <input type="text" id="anio" placeholder="Año de estreno">
@@ -56,7 +54,7 @@
     
     <div id="temporadas-container"></div>
     
-    <button onclick="agregarOEditarNovela()">Guardar Novela</button>
+    <button onclick="agregarNovela()">Agregar Novela</button>
   </div>
 
   <h2>Lista de Novelas</h2>
@@ -66,7 +64,6 @@
 
   <script>
     let novelas = [];
-    let novelaEditando = null; // Variable para almacenar la novela que estamos editando
 
     // Función para mostrar campos de temporadas según el número seleccionado
     function mostrarCamposTemporadas() {
@@ -86,8 +83,8 @@
       }
     }
 
-    // Función para agregar o editar una novela
-    function agregarOEditarNovela() {
+    // Función para agregar una nueva novela
+    function agregarNovela() {
       const titulo = document.getElementById('titulo').value;
       const genero = document.getElementById('genero').value;
       const anio = document.getElementById('anio').value;
@@ -108,17 +105,9 @@
       }
 
       const nuevaNovela = { titulo, genero, anio, reparto, paisOrigen, sinopsis, temporadas };
+      novelas.push(nuevaNovela);
 
-      if (novelaEditando !== null) {
-        // Si estamos editando una novela, la actualizamos
-        novelas[novelaEditando] = nuevaNovela;
-        novelaEditando = null; // Limpiar la variable de novela editando
-      } else {
-        // Si no estamos editando, agregamos una nueva novela
-        novelas.push(nuevaNovela);
-      }
-
-      // Limpiar los campos después de agregar o editar la novela
+      // Limpiar los campos después de agregar la novela
       document.getElementById('titulo').value = '';
       document.getElementById('genero').value = '';
       document.getElementById('anio').value = '';
@@ -150,33 +139,10 @@
           ${novela.temporadas.map(temp => `
             <p><strong>${temp.nombre}:</strong> ${temp.capitulos} capítulos - <a href="${temp.enlace_base}" target="_blank">Enlace</a></p>
           `).join('')}
-          <button onclick="editarNovela(${index})">Editar</button>
           <button onclick="eliminarNovela(${index})">Eliminar</button>
         `;
 
         listDiv.appendChild(card);
-      });
-    }
-
-    // Función para editar una novela
-    function editarNovela(index) {
-      novelaEditando = index;
-      const novela = novelas[index];
-
-      // Rellenar los campos con los datos de la novela seleccionada
-      document.getElementById('titulo').value = novela.titulo;
-      document.getElementById('genero').value = novela.genero;
-      document.getElementById('anio').value = novela.anio;
-      document.getElementById('reparto').value = novela.reparto.join(', ');
-      document.getElementById('pais_origen').value = novela.paisOrigen;
-      document.getElementById('sinopsis').value = novela.sinopsis;
-      document.getElementById('num_temporadas').value = novela.temporadas.length;
-      mostrarCamposTemporadas();
-
-      // Rellenar los campos de las temporadas
-      novela.temporadas.forEach((temp, i) => {
-        document.getElementById(`capitulos-${i}`).value = temp.capitulos;
-        document.getElementById(`enlace-${i}`).value = temp.enlace_base;
       });
     }
 
@@ -195,34 +161,6 @@
       a.href = url;
       a.download = 'novelas.json';
       a.click();
-    }
-
-    // Función para cargar un archivo JSON
-    function cargarJSON() {
-      const input = document.createElement('input');
-      input.type = 'file';
-      input.accept = '.json';
-      input.onchange = function(event) {
-        const file = event.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function(e) {
-            try {
-              const data = JSON.parse(e.target.result);
-              if (data.novelas) {
-                novelas = data.novelas;
-                mostrarNovelas();
-              } else {
-                alert('El archivo no contiene datos válidos de novelas.');
-              }
-            } catch (error) {
-              alert('Error al leer el archivo JSON.');
-            }
-          };
-          reader.readAsText(file);
-        }
-      };
-      input.click();
     }
   </script>
 </body>
