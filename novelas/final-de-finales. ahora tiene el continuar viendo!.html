@@ -197,9 +197,7 @@
 
         const tituloNovela = novelaSeleccionada.titulo;
 
-        // Limpiar la lista de capítulos antes de agregar nuevos
         chapterList.innerHTML = "";
-
         for (let i = 1; i <= temporadaSeleccionada.capitulos; i++) {
             const option = document.createElement("option");
             option.text = `Capítulo ${i}`;
