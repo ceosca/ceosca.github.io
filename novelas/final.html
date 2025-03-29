@@ -47,8 +47,6 @@
 <audio id="repro" src="" type="audio/mpeg"></audio>
 <p id="progress-text">Progreso: 0:00 / 0:00</p>
 
-<button id="eliminar-progresos">Eliminar Progresos Guardados de Novelas</button>
-
 <script>
   const audio = document.getElementById("repro");
   const novelaList = document.getElementById("novela-list");
@@ -62,7 +60,6 @@
   const volumeDownButton = document.getElementById("volume-down");
   const autoplayCheckbox = document.getElementById("autoplay");
   const progressText = document.getElementById("progress-text");
-  const eliminarProgresosButton = document.getElementById("eliminar-progresos");
 
   let novelasData = [];
   let paises = [];
@@ -127,15 +124,7 @@
       option.value = index;
       seasonList.add(option);
     });
-
-    const progreso = obtenerProgreso();
-    //si hay algun progreso guardado, seleccionamos la temporada
-    if (progreso) {
-      const temporadaGuardada = Object.keys(progreso)[0];
-      seasonList.value = temporadaGuardada;
-    } else {
-      seasonList.selectedIndex = 0;
-    }
+    seasonList.selectedIndex = 0;
     cargarCapitulos();
   }
 
@@ -156,9 +145,8 @@
     }
 
     const progreso = obtenerProgreso();
-    // verifica si hay un progreso guardado y si existe para la temporada actual
     if (progreso && progreso[seasonList.value]) {
-      chapterList.value = progreso[seasonList.value].capitulo;
+        chapterList.value = progreso[seasonList.value].capitulo;
     } else {
       chapterList.selectedIndex = 0;
     }
@@ -247,25 +235,6 @@
     progressText.textContent = `Progreso: ${currentTimeFormatted} / ${durationFormatted}`;
   }
 
-  function eliminarProgresos() {
-    const confirmacion = confirm("Todos los progresos de las novelas que tengas en curso se eliminarán. Esta opción ya no podrá deshacerse. ¿Quieres continuar?");
-
-    if (confirmacion) {
-      // Eliminar todos los elementos del localStorage que parecen ser progresos de novelas
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        // Un criterio simple: si la clave tiene el formato de un título de novela, eliminarla.
-        // Este criterio puede necesitar ajustes dependiendo de cómo nombres tus claves.
-        if (key) {
-          localStorage.removeItem(key);
-        }
-      }
-      alert("Todos los progresos de novelas han sido eliminados.");
-      // Recargar la página para que se reflejen los cambios
-      location.reload();
-    }
-  }
-
   // Event listeners for player buttons
   playPauseButton.addEventListener("click", playPause);
 
@@ -302,8 +271,6 @@
 
   // Save progress every 5 seconds
   setInterval(guardarProgreso, 5000);
-
-  eliminarProgresosButton.addEventListener("click", eliminarProgresos);
 </script>
 </body>
 </html>
