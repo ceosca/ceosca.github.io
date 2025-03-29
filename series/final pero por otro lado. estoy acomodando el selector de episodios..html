@@ -78,8 +78,8 @@
       width: 90%;
       position: relative;
       border-radius: 10px;
-      padding-top: 60px;
-      padding-bottom: 70px;
+      padding-top: 60px; /* Espacio para el header fijo */
+      padding-bottom: 70px; /* Espacio para el reproductor fijo */
     }
 
     .close {
@@ -202,6 +202,7 @@
       background-color: #c82333;
     }
 
+    /* Estilos para el reproductor fijo */
     .fixed-player {
       position: fixed;
       bottom: 0;
@@ -213,8 +214,8 @@
       z-index: 2;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
       display: flex;
-      justify-content: space-around;
-      align-items: center;
+      justify-content: space-around; /* Distribute buttons evenly */
+      align-items: center; /* Vertically center the buttons */
     }
 
     .fixed-player button {
@@ -237,16 +238,17 @@
       color: #333;
     }
 
+    /* Estilos para la lista de episodios y el botón */
     #episodes-section {
-      position: relative;
+      position: relative; /* Para posicionar el botón absolutamente */
       margin-top: 1em;
-      display: flex;
-      align-items: center;
+      display: flex; /* Usamos flexbox para el botón y el select */
+      align-items: center; /* Alineamos verticalmente el botón y el select */
     }
 
     #episodes-button {
       position: absolute;
-      left: 0;
+      left: 0; /* Pegado al borde izquierdo */
       top: 0;
       padding: 8px 12px;
       background-color: #007bff;
@@ -254,12 +256,12 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      z-index: 3;
+      z-index: 3; /* Asegura que el botón esté por encima del select */
     }
 
     #episodes-content {
-      width: 100%;
-      padding-left: 100px;
+      width: 100%; /* El contenedor ocupa todo el ancho disponible */
+      padding-left: 100px; /* Espacio para el botón */
     }
 
     #episodes-content label {
@@ -269,7 +271,7 @@
     }
 
     #episodes-content select {
-      width: calc(100% - 10px);
+      width: calc(100% - 10px); /* El select ocupa casi todo el ancho restante */
       padding: 10px;
       font-size: 1em;
       border: 1px solid #ccc;
@@ -315,6 +317,7 @@
           </audio>
         </div>
 
+        <!-- Reproductor fijo en la parte inferior -->
         <div class="fixed-player">
           <button onclick="togglePlayPause()" id="play-pause-button">Reproducir</button>
           <button onclick="backward()">Retroceder</button>
