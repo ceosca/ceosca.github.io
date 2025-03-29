@@ -18,11 +18,6 @@
 <div>
     <h2>Selecciona una novela...</h2>
 
-    <label for="continuar-viendo-list" accesskey="r">Continuar Viendo:</label>
-    <select id="continuar-viendo-list" aria-label="Continuar Viendo" accesskey="r">
-        <option value="">Selecciona una novela...</option>
-    </select>
-
     <label for="pais-list" accesskey="p">Selecciona el país:</label>
     <select id="pais-list" aria-label="Lista de países" accesskey="p"></select>
 
@@ -68,7 +63,6 @@
     const autoplayCheckbox = document.getElementById("autoplay");
     const progressText = document.getElementById("progress-text");
     const eliminarProgresosButton = document.getElementById("eliminar-progresos");
-    const continuarViendoList = document.getElementById("continuar-viendo-list");
 
     let novelasData = [];
     let paises = [];
@@ -83,7 +77,6 @@
         .then(data => {
             novelasData = data.novelas;
             cargarPaises();
-            cargarContinuarViendo(); // Cargamos la lista de "Continuar Viendo" después de cargar los datos.
         });
 
     function cargarPaises() {
@@ -122,35 +115,6 @@
         const claveProgreso = generarClaveProgreso(tituloNovela);
         const progresoGuardado = localStorage.getItem(claveProgreso);
         return progresoGuardado ? JSON.parse(progresoGuardado) : null;
-    }
-
-    function cargarContinuarViendo() {
-        continuarViendoList.innerHTML = '<option value="">Selecciona una novela...</option>';
-        let progresos = [];
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key && key.startsWith("progreso_")) {
-                const progreso = JSON.parse(localStorage.getItem(key));
-                if (progreso.tiempo >= 300) { // Filtro de 5 minutos (300 segundos)
-                    progresos.push(progreso);
-                }
-            }
-        }
-
-        progresos.sort((a, b) => {
-            const keyA = generarClaveProgreso(a.titulo);
-            const keyB = generarClaveProgreso(b.titulo);
-            const timeA = localStorage.getItem(keyA + '_timestamp') || 0;
-            const timeB = localStorage.getItem(keyB + '_timestamp') || 0;
-            return timeB - timeA;
-        });
-
-        progresos.forEach(progreso => {
-            const option = document.createElement("option");
-            option.text = `${progreso.titulo} - Temp: ${parseInt(progreso.temporada) + 1}, Cap: ${progreso.capitulo}, Tiempo: ${formatTime(progreso.tiempo)}`;
-            option.value = progreso.titulo;
-            continuarViendoList.add(option);
-        });
     }
 
     function cargarTemporadas() {
@@ -282,10 +246,6 @@
         };
 
         localStorage.setItem(claveProgreso, JSON.stringify(progreso));
-
-        localStorage.setItem(claveProgreso + '_timestamp', Date.now());
-
-        cargarContinuarViendo();
     }
 
     function formatTime(time) {
@@ -308,46 +268,12 @@
                 const key = localStorage.key(i);
                 if (key && key.startsWith("progreso_")) {
                     localStorage.removeItem(key);
-                    localStorage.removeItem(key + '_timestamp'); // Elimina el timestamp
                 }
             }
             alert("Todos los progresos de novelas han sido eliminados.");
-            cargarContinuarViendo(); // Recargamos la lista.
             location.reload();
         }
     }
-
-    function cargarNovelaDesdeContinuarViendo(tituloNovela) {
-        const novelaEncontrada = novelasData.find(novela => novela.titulo === tituloNovela);
-
-        if (novelaEncontrada) {
-            paisList.value = novelaEncontrada.pais_origen;
-            cargarNovelas();
-
-            // Espera a que se carguen las novelas antes de seleccionar la correcta
-            setTimeout(() => {
-                const indexNovela = novelasData.filter(novela => novela.pais_origen === novelaEncontrada.pais_origen).findIndex(novela => novela.titulo === tituloNovela);
-                novelaList.value = indexNovela;
-                cargarTemporadas();
-
-                const progreso = obtenerProgreso(tituloNovela);
-
-                if (progreso) {
-                    setTimeout(() => {
-                        seasonList.value = progreso.temporada;
-                        cargarCapitulos();
-
-                        setTimeout(() => {
-                            chapterList.value = progreso.capitulo;
-                            setChapter();
-                            audio.currentTime = progreso.tiempo; // Restablece el tiempo
-                        }, 50); // Pequeño retraso para asegurar la correcta selección
-                    }, 50);
-                }
-            }, 50);
-        }
-    }
-
 
     // Event listeners for player buttons
     playPauseButton.addEventListener("click", playPause);
@@ -387,13 +313,6 @@
     setInterval(guardarProgreso, 5000);
 
     eliminarProgresosButton.addEventListener("click", eliminarProgresos);
-
-    continuarViendoList.addEventListener('change', function() {
-        const tituloSeleccionado = this.value;
-        if (tituloSeleccionado) {
-            cargarNovelaDesdeContinuarViendo(tituloSeleccionado);
-        }
-    });
 </script>
 </body>
 </html>
