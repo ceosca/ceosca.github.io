@@ -77,13 +77,12 @@
     let paisSeleccionado;
     let duration = 0;
 
-    // Cargar el archivo JSON con las novelas
     fetch('https://ceosca.github.io/novelas/novelas.json')
         .then(response => response.json())
         .then(data => {
             novelasData = data.novelas;
             cargarPaises();
-            cargarContinuarViendo(); // Cargamos la lista de "Continuar Viendo" después de cargar los datos.
+            cargarContinuarViendo();
         });
 
     function cargarPaises() {
@@ -114,7 +113,7 @@
         cargarTemporadas();
     }
 
-    function generarClaveProgreso(tituloNovela) { // Clave solo con el título
+    function generarClaveProgreso(tituloNovela) {
         return `progreso_${tituloNovela}`;
     }
 
@@ -131,7 +130,7 @@
             const key = localStorage.key(i);
             if (key && key.startsWith("progreso_")) {
                 const progreso = JSON.parse(localStorage.getItem(key));
-                if (progreso.tiempo >= 300) { // Filtro de 5 minutos (300 segundos)
+                if (progreso.tiempo >= 300) {
                     progresos.push(progreso);
                 }
             }
@@ -159,9 +158,9 @@
         const novelaIndex = novelaList.value;
         novelaSeleccionada = novelasFiltradas[novelaIndex];
 
-        const tituloNovela = novelaSeleccionada.titulo; // Obtén el título aquí
+        const tituloNovela = novelaSeleccionada.titulo;
 
-        document.getElementById("novela-titulo").textContent = tituloNovela; // Usa el título obtenido
+        document.getElementById("novela-titulo").textContent = tituloNovela;
         document.getElementById("novela-genero").textContent = `Género: ${novelaSeleccionada.genero}`;
         document.getElementById("novela-anio").textContent = `Año: ${novelaSeleccionada.anio}`;
         document.getElementById("novela-pais").textContent = `País de origen: ${novelaSeleccionada.pais_origen}`;
@@ -176,7 +175,7 @@
             seasonList.add(option);
         });
 
-        const progreso = obtenerProgreso(tituloNovela); // Usa el título obtenido
+        const progreso = obtenerProgreso(tituloNovela);
 
         if (progreso && progreso.temporada) {
             seasonList.value = progreso.temporada;
@@ -197,7 +196,6 @@
 
         const tituloNovela = novelaSeleccionada.titulo;
 
-        // Limpiar la lista de capítulos antes de agregar nuevos
         chapterList.innerHTML = "";
 
         for (let i = 1; i <= temporadaSeleccionada.capitulos; i++) {
@@ -209,8 +207,12 @@
 
         const progreso = obtenerProgreso(tituloNovela);
 
-        if (progreso && progreso.capitulo) {
-            chapterList.value = progreso.capitulo;
+        if (progreso && progreso.capitulo && progreso.temporada === seasonList.value) {
+            if (progreso.capitulo >= 1 && progreso.capitulo <= temporadaSeleccionada.capitulos) {
+                chapterList.value = progreso.capitulo;
+            } else {
+                chapterList.selectedIndex = 0;
+            }
         } else {
             chapterList.selectedIndex = 0;
         }
@@ -310,11 +312,11 @@
                 const key = localStorage.key(i);
                 if (key && key.startsWith("progreso_")) {
                     localStorage.removeItem(key);
-                    localStorage.removeItem(key + '_timestamp'); // Elimina el timestamp
+                    localStorage.removeItem(key + '_timestamp');
                 }
             }
             alert("Todos los progresos de novelas han sido eliminados.");
-            cargarContinuarViendo(); // Recargamos la lista.
+            cargarContinuarViendo();
             location.reload();
         }
     }
@@ -326,7 +328,6 @@
             paisList.value = novelaEncontrada.pais_origen;
             cargarNovelas();
 
-            // Espera a que se carguen las novelas antes de seleccionar la correcta
             setTimeout(() => {
                 const indexNovela = novelasData.filter(novela => novela.pais_origen === novelaEncontrada.pais_origen).findIndex(novela => novela.titulo === tituloNovela);
                 novelaList.value = indexNovela;
@@ -342,8 +343,8 @@
                         setTimeout(() => {
                             chapterList.value = progreso.capitulo;
                             setChapter();
-                            audio.currentTime = progreso.tiempo; // Restablece el tiempo
-                        }, 50); // Pequeño retraso para asegurar la correcta selección
+                            audio.currentTime = progreso.tiempo;
+                        }, 50);
                     }, 50);
                 }
             }, 50);
@@ -351,7 +352,6 @@
     }
 
 
-    // Event listeners for player buttons
     playPauseButton.addEventListener("click", playPause);
 
     backwardButton.addEventListener("click", () => {
@@ -385,7 +385,6 @@
 
     audio.addEventListener('timeupdate', updateProgressText);
 
-    // Save progress every 5 seconds
     setInterval(guardarProgreso, 5000);
 
     eliminarProgresosButton.addEventListener("click", eliminarProgresos);
