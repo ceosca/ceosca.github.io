@@ -78,8 +78,7 @@
       width: 90%;
       position: relative;
       border-radius: 10px;
-      padding-top: 60px; /* Espacio para el header fijo */
-      padding-bottom: 70px; /* Espacio para el reproductor fijo */
+      padding-top: 60px;
     }
 
     .close {
@@ -201,42 +200,6 @@
     .fixed-header .close:hover {
       background-color: #c82333;
     }
-
-    /* Estilos para el reproductor fijo */
-    .fixed-player {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f0f0f0;
-      padding: 10px;
-      text-align: center;
-      z-index: 2;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      justify-content: space-around; /* Distribute buttons evenly */
-      align-items: center; /* Vertically center the buttons */
-    }
-
-    .fixed-player button {
-      padding: 8px 12px;
-      font-size: 0.9em;
-      border: none;
-      background-color: #555;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .fixed-player button:hover {
-      background-color: #777;
-    }
-
-    .fixed-player #time-info{
-      font-size: 0.8em;
-      color: #333;
-    }
   </style>
 </head>
 <body>
@@ -257,6 +220,18 @@
 
           <div id="serie-info"></div>
 
+          <div>
+            <h3>Reproductor</h3>
+            <button onclick="togglePlayPause()" id="play-pause-button">Reproducir</button>
+            <div id="time-info"></div>
+            <div id="chapter-info"></div>
+            <button onclick="backward()">Retroceder</button>
+            <button onclick="forward()">Avanzar</button>
+            <button onclick="increaseVolume()">Subir Volumen</button>
+            <button onclick="decreaseVolume()">Bajar Volumen</button>
+            <button onclick="nextChapter()">Siguiente Episodio</button>
+            <button onclick="previousChapter()">Episodio Anterior</button>
+          </div>
 
           <button onclick="toggleEpisodes()" id="episodes-button">Mostrar lista de episodios</button>
           <div class="episodes-container" id="episodes-container" style="display:none;">
@@ -271,19 +246,6 @@
           <audio id="audio-player">
             Tu navegador no soporta la reproducción de audio.
           </audio>
-        </div>
-
-        <!-- Reproductor fijo en la parte inferior -->
-        <div class="fixed-player">
-          <button onclick="previousChapter()">Episodio Anterior</button>
-          <button onclick="backward()">Retroceder</button>
-          <button onclick="togglePlayPause()" id="play-pause-button">Reproducir</button>
-          <button onclick="forward()">Avanzar</button>
-          <button onclick="nextChapter()">Siguiente Episodio</button>
-          <button onclick="increaseVolume()">Subir Volumen</button>
-          <button onclick="decreaseVolume()">Bajar Volumen</button>
-          <div id="time-info"></div>
-          <div id="chapter-info"></div>
         </div>
 
       </div>
