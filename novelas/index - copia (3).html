@@ -41,11 +41,10 @@
 
   <button id="volume-up" title="Subir volumen (Alt+U)" aria-label="Subir volumen" accesskey="u">Subir volumen</button>
   <button id="volume-down" title="Bajar volumen (Alt+O)" aria-label="Bajar volumen" accesskey="o">Bajar volumen</button>
-  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked> Autoplay
+  <input type="checkbox" id="autoplay" aria-label="Reproducir automáticamente el siguiente capítulo" accesskey="s" checked>
 </div>
 
 <audio id="repro" src="" type="audio/mpeg"></audio>
-<p id="progress-text">Progreso: 0:00 / 0:00</p>
 
 <script>
   const audio = document.getElementById("repro");
@@ -54,19 +53,13 @@
   const seasonList = document.getElementById("season-list");
   const playPauseButton = document.getElementById("play-pause");
   const paisList = document.getElementById("pais-list");
-  const backwardButton = document.getElementById("backward");
-  const forwardButton = document.getElementById("forward");
-  const volumeUpButton = document.getElementById("volume-up");
-  const volumeDownButton = document.getElementById("volume-down");
-  const autoplayCheckbox = document.getElementById("autoplay");
-  const progressText = document.getElementById("progress-text");
 
   let novelasData = [];
   let paises = [];
-  let novelaSeleccionada;
-  let temporadaSeleccionada;
+  let novelaSeleccionada; // Store the selected novela
+  let temporadaSeleccionada; // Store the selected temporada
   let paisSeleccionado;
-  let duration = 0;
+
 
   // Cargar el archivo JSON con las novelas
   fetch('https://ceosca.github.io/novelas/novelas.json')
@@ -77,29 +70,38 @@
     });
 
   function cargarPaises() {
+    // Obtener todos los países únicos de las novelas
     paises = [...new Set(novelasData.map(novela => novela.pais_origen))];
+
+    // Limpiar y llenar la lista de países
     paisList.innerHTML = "";
-    paises.forEach((pais) => {
+    paises.forEach((pais, index) => {
       const option = document.createElement("option");
       option.text = pais;
-      option.value = pais;
+      option.value = pais;  // Usamos el nombre del país como valor
       paisList.add(option);
     });
+
+    // Cargar las novelas del primer país por defecto
     paisList.selectedIndex = 0;
     paisSeleccionado = paisList.value;
     cargarNovelas();
   }
 
+
   function cargarNovelas() {
     paisSeleccionado = paisList.value;
     const novelasFiltradas = novelasData.filter(novela => novela.pais_origen === paisSeleccionado);
+
     novelaList.innerHTML = "";
     novelasFiltradas.forEach((novela, index) => {
       const option = document.createElement("option");
       option.text = novela.titulo;
-      option.value = index;
+      option.value = index; // Usar el índice dentro del array filtrado
       novelaList.add(option);
     });
+
+    // Cargar la primera novela del país por defecto
     novelaList.selectedIndex = 0;
     cargarTemporadas();
   }
@@ -124,6 +126,7 @@
       option.value = index;
       seasonList.add(option);
     });
+
     seasonList.selectedIndex = 0;
     cargarCapitulos();
   }
@@ -144,13 +147,8 @@
       chapterList.add(option);
     }
 
-    const progreso = obtenerProgreso();
-    if (progreso && progreso[seasonList.value]) {
-        chapterList.value = progreso[seasonList.value].capitulo;
-    } else {
-      chapterList.selectedIndex = 0;
-    }
-
+    chapterList.selectedIndex = 0;
+    restaurarProgreso(); // Restore progress when chapter list changes
     setChapter();
   }
 
@@ -163,26 +161,15 @@
     temporadaSeleccionada = novelaSeleccionada.temporadas[temporadaIndex];
     const capituloSeleccionado = chapterList.value;
     audio.src = `${temporadaSeleccionada.enlace_base}${capituloSeleccionado}.m4a`;
-
-    audio.onloadedmetadata = function() {
-      duration = audio.duration;
-      updateProgressText();
-    };
-
     audio.load();
+
     const progreso = obtenerProgreso();
-
-    if(progreso && progreso[seasonList.value] && progreso[seasonList.value].capitulo == capituloSeleccionado){
-        audio.currentTime = progreso[seasonList.value].tiempo;
-    } else {
-      audio.currentTime = 0;
+    if(progreso && progreso.capitulo == capituloSeleccionado){
+        audio.currentTime = progreso.tiempo;
     }
 
-    if (autoplayCheckbox.checked) {
-      audio.play();
-      updatePlayPauseButton("Pausar", "Pausar");
-    }
   }
+
 
   function updatePlayPauseButton(title, ariaLabel) {
     playPauseButton.setAttribute("title", `${title} (Alt+K)`);
@@ -200,65 +187,35 @@
     }
   }
 
-  function obtenerProgreso() {
+  function obtenerProgreso(){
     const novelaTitulo = document.getElementById("novela-titulo").textContent;
     const progresoGuardado = localStorage.getItem(novelaTitulo);
-    return progresoGuardado ? JSON.parse(progresoGuardado) : {};
+    return progresoGuardado ? JSON.parse(progresoGuardado) : null;
   }
 
   function guardarProgreso() {
-    const novelaTitulo = document.getElementById("novela-titulo").textContent;
-    const temporada = seasonList.value;
-    const capitulo = chapterList.value;
-    const tiempo = audio.currentTime;
+      const novelaTitulo = document.getElementById("novela-titulo").textContent;
+      const capitulo = chapterList.value;
+      const tiempo = audio.currentTime;
 
-    let progreso = obtenerProgreso();
-    if (!progreso) progreso = {};
+      const progreso = {
+        capitulo: capitulo,
+        tiempo: tiempo
+      };
 
-    progreso[temporada] = {
-      capitulo: capitulo,
-      tiempo: tiempo
-    };
-
-    localStorage.setItem(novelaTitulo, JSON.stringify(progreso));
+      localStorage.setItem(novelaTitulo, JSON.stringify(progreso));
   }
 
-  function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  function restaurarProgreso() {
+    const progreso = obtenerProgreso();
+      if(progreso){
+          chapterList.value = progreso.capitulo;
+      }
   }
 
-  function updateProgressText() {
-    const currentTimeFormatted = formatTime(audio.currentTime);
-    const durationFormatted = formatTime(duration);
-    progressText.textContent = `Progreso: ${currentTimeFormatted} / ${durationFormatted}`;
-  }
-
-  // Event listeners for player buttons
   playPauseButton.addEventListener("click", playPause);
-
-  backwardButton.addEventListener("click", () => {
-    audio.currentTime -= 10;
-  });
-
-  forwardButton.addEventListener("click", () => {
-    audio.currentTime += 10;
-  });
-
-  volumeUpButton.addEventListener("click", () => {
-    audio.volume = Math.min(1, audio.volume + 0.1);
-  });
-
-  volumeDownButton.addEventListener("click", () => {
-    audio.volume = Math.max(0, audio.volume - 0.1);
-  });
-
-  chapterList.addEventListener("change", () => {
-    setChapter(); // Play automatically when chapter changes
-  });
+  chapterList.addEventListener("change", setChapter);
   seasonList.addEventListener("change", cargarCapitulos);
-
   novelaList.addEventListener("change", cargarTemporadas);
   paisList.addEventListener("change", cargarNovelas);
 
@@ -266,8 +223,6 @@
   audio.addEventListener('play', function() {
       updatePlayPauseButton("Pausar", "Pausar");
   });
-
-  audio.addEventListener('timeupdate', updateProgressText);
 
   // Save progress every 5 seconds
   setInterval(guardarProgreso, 5000);
