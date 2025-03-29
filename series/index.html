@@ -10,7 +10,7 @@
     body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      box-sizing: border-box
     }
 
     :root {
@@ -19,9 +19,9 @@
       --text-color: #333;
       --bg-color: #f4f4f4;
       --white: #fff;
-      --shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      --shadow: 0 0 5px rgba(0, 0, 0, .1);
       --focus-outline: 3px solid #007bff;
-      --focus-outline-offset: 2px;
+      --focus-outline-offset: 2px
     }
 
     body {
@@ -29,12 +29,12 @@
       background-color: var(--bg-color);
       font-size: 1.2em;
       line-height: 1.6;
-      color: var(--text-color);
+      color: var(--text-color)
     }
 
     h2 {
       font-size: 1.8em;
-      margin-bottom: 0.5em;
+      margin-bottom: .5em
     }
 
     .container {
@@ -42,7 +42,7 @@
       margin: 10px auto;
       background-color: var(--white);
       padding: 15px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow)
     }
 
     .button {
@@ -50,37 +50,37 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
-      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+      transition: background-color .2s ease, box-shadow .2s ease;
       font-size: 1em;
       background-color: var(--primary-color);
-      color: var(--white);
+      color: var(--white)
     }
 
     .button:hover,
     .button:focus {
       box-shadow: var(--shadow);
-      outline: none;
+      outline: none
     }
 
     .button-primary:hover,
     .button-primary:focus {
-      background-color: var(--primary-color-dark);
+      background-color: var(--primary-color-dark)
     }
 
     .series-list {
       list-style-type: none;
-      padding: 0;
+      padding: 0
     }
 
     .series-list li {
-      margin-bottom: 10px;
+      margin-bottom: 10px
     }
 
     .series-list button {
       width: 100%;
       text-align: left;
       font-size: 1.1em;
-      display: block;
+      display: block
     }
 
     .modal {
@@ -92,7 +92,7 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, .7)
     }
 
     .modal-content {
@@ -104,7 +104,7 @@
       position: relative;
       border-radius: 10px;
       padding-top: 60px;
-      padding-bottom: 70px;
+      padding-bottom: 70px
     }
 
     .fixed-header {
@@ -115,9 +115,9 @@
       background-color: var(--white);
       padding: 10px 20px;
       z-index: 2;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-end
     }
 
     .fixed-player {
@@ -129,40 +129,40 @@
       padding: 10px;
       text-align: center;
       z-index: 2;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, .2);
       display: flex;
       justify-content: space-around;
-      align-items: center;
+      align-items: center
     }
 
     .fixed-player button {
       background-color: #555;
       color: var(--white);
-      transition: background-color 0.3s;
-      font-size: 0.9em;
-      padding: 8px 12px;
+      transition: background-color .3s;
+      font-size: .9em;
+      padding: 8px 12px
     }
 
     .fixed-player button:hover {
-      background-color: #777;
+      background-color: #777
     }
 
     .fixed-player #time-info,
     .fixed-player #chapter-info {
-      font-size: 0.8em;
-      color: var(--text-color);
+      font-size: .8em;
+      color: var(--text-color)
     }
 
     .languages-container,
     .episodes-container {
-      margin-top: 1em;
+      margin-top: 1em
     }
 
     .languages-container label,
     .episodes-container label {
       display: block;
-      margin-bottom: 0.5em;
-      font-size: 1.1em;
+      margin-bottom: .5em;
+      font-size: 1.1em
     }
 
     .languages-container select,
@@ -177,14 +177,14 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 10px top 50%;
-      background-size: 1.5em;
+      background-size: 1.5em
     }
 
     #episodes-section {
       position: relative;
       margin-top: 1em;
       display: flex;
-      align-items: center;
+      align-items: center
     }
 
     #episodes-button {
@@ -197,18 +197,18 @@
       color: var(--white);
       border: none;
       border-radius: 5px;
-      cursor: pointer;
+      cursor: pointer
     }
 
     #episodes-content {
       width: 100%;
-      padding-left: 100px;
+      padding-left: 100px
     }
 
     #episodes-content label {
       display: block;
-      margin-bottom: 0.5em;
-      font-size: 1.1em;
+      margin-bottom: .5em;
+      font-size: 1.1em
     }
 
     #episodes-content select {
@@ -217,57 +217,57 @@
       font-size: 1em;
       border: 1px solid #ccc;
       border-radius: 5px;
-      margin-bottom: 1em;
+      margin-bottom: 1em
     }
 
     .hidden {
-      display: none !important;
+      display: none !important
     }
 
     *:focus {
       outline: var(--focus-outline);
-      outline-offset: var(--focus-outline-offset);
+      outline-offset: var(--focus-outline-offset)
     }
 
-    @media (max-width: 600px) {
+    @media (max-width:600px) {
       body {
-        font-size: 1.1em;
+        font-size: 1.1em
       }
 
       h2 {
-        font-size: 1.5em;
+        font-size: 1.5em
       }
 
       .container {
-        padding: 10px;
+        padding: 10px
       }
 
       .series-list button {
         padding: 12px 15px;
-        font-size: 1em;
+        font-size: 1em
       }
 
       .modal-content {
-        margin: 20% auto;
+        margin: 20% auto
       }
     }
 
     #continue-watching {
-      margin-bottom: 20px;
+      margin-bottom: 20px
     }
 
     #continue-watching h2 {
       font-size: 1.5em;
-      margin-bottom: 10px;
+      margin-bottom: 10px
     }
 
     #continue-watching ul {
       list-style: none;
-      padding: 0;
+      padding: 0
     }
 
     #continue-watching li {
-      margin-bottom: 5px;
+      margin-bottom: 5px
     }
   </style>
 </head>
@@ -287,16 +287,13 @@
       </div>
     </main>
   </div>
-
   <div id="serieModal" class="modal" aria-hidden="true">
     <div class="modal-content" tabindex="-1">
       <header class="fixed-header">
         <button class="close button button-primary" id="closeModal">Regresar a explorar</button>
       </header>
-
       <main>
         <div id="serie-info"></div>
-
         <section id="episodes-section">
           <button id="episodes-button" class="button">Episodios</button>
           <div class="episodes-container hidden" id="episodes-container">
@@ -308,20 +305,16 @@
             </div>
           </div>
         </section>
-
         <section class="languages-container hidden" id="languages-container">
           <label for="language">Idioma:</label>
-          <select id="language">
-          </select>
+          <select id="language"></select>
         </section>
       </main>
-
       <audio id="audio-player">
         Audio no soportado.
       </audio>
-
+        <h2>Reproductor</h2>
       <footer class="fixed-player">
-<h2>Reproductor</h2>
         <button id="play-pause-button" class="button">Reproducir</button>
         <button id="forward-button" class="button">Avanzar</button>
         <button id="backward-button" class="button">Retroceder</button>
@@ -334,120 +327,83 @@
       </footer>
     </div>
   </div>
-
   <script>
-    const SD = 'https://ceosca.github.io/series/series.json';
-    const A = document.getElementById('audio-player');
-    const MC = document.getElementById('main-container');
-    const M = document.getElementById("serieModal");
-    const CBC = document.getElementById("closeModal");
-    const PB = document.getElementById('play-pause-button');
-    const CS = document.getElementById('capitulo');
-    const EC = document.getElementById('episodes-container');
-    const EB = document.getElementById('episodes-button');
-    const LC = document.getElementById('languages-container');
-    const LS = document.getElementById('language');
-    const CI = document.getElementById('chapter-info');
-    const TI = document.getElementById('time-info');
-    const CWL = document.getElementById('cw-list');
-    let TII, IP = false,
+    const SD = 'https://ceosca.github.io/series/series.json',
+      A = document.getElementById('audio-player'),
+      MC = document.getElementById('main-container'),
+      M = document.getElementById("serieModal"),
+      CBC = document.getElementById("closeModal"),
+      PB = document.getElementById('play-pause-button'),
+      CS = document.getElementById('capitulo'),
+      EC = document.getElementById('episodes-container'),
+      EB = document.getElementById('episodes-button'),
+      LC = document.getElementById('languages-container'),
+      LS = document.getElementById('language'),
+      CI = document.getElementById('chapter-info'),
+      TI = document.getElementById('time-info'),
+      CWL = document.getElementById('cw-list');
+    let TII, IP = !1,
       CSD = [],
       CLI = 0,
       CCI = 0,
       S;
-    const V = (el, btn, s, h) => {
-        el.classList.contains('hidden') ? (el.classList.remove('hidden'), btn.textContent = h) :
-          (el.classList.add('hidden'), btn.textContent = s)
-      },
-      FT = (t) => {
+    const V = (el, btn, s, h) => (el.classList.contains('hidden') ? (el.classList.remove('hidden'), btn.textContent = h) : (el.classList.add('hidden'), btn.textContent = s)),
+      FT = t => {
         const m = Math.floor(t / 60),
           s = Math.floor(t % 60);
         return `${PZ(m)}:${PZ(s)}`
       },
-      PZ = (n) => (n < 10 ? '0' : '') + n,
-      GP = (n) => {
+      PZ = n => (n < 10 ? '0' : '') + n,
+      GP = n => {
         const t = A.currentTime,
           p = {
             capituloIndex: CCI,
             tiempo: t
           };
-        localStorage.setItem(n, JSON.stringify(p));
-        UCW()
+        localStorage.setItem(n, JSON.stringify(p)), UCW()
       },
-      RP = (n) => {
-        const g = localStorage.getItem(n);
-        if (g) {
-          const p = JSON.parse(g);
-          CCI = p.capituloIndex;
-          A.currentTime = p.tiempo;
-          CS.value = CCI;
-          UC();
-          return true
+      RP = n => {
+        const t = localStorage.getItem(n);
+        if (t) {
+          const e = JSON.parse(t);
+          return CCI = e.capituloIndex, A.currentTime = e.tiempo, CS.value = CCI, UC(), !0
         }
-        return false
+        return !1
       },
       C = () => {
-        S && GP(S.nombre);
-        M.style.display = "none";
-        A.pause();
-        A.src = '';
-        MC.classList.remove('hidden');
-        clearInterval(TII);
-        IP = false;
-        PB.textContent = 'Reproducir'
+        S && GP(S.nombre), M.style.display = "none", A.pause(), A.src = '', MC.classList.remove('hidden'), clearInterval(TII), IP = !1, PB.textContent = 'Reproducir'
       },
-      O = (s) => {
-        S = s;
-        IP = false;
-        CLI = 0;
-        CCI = 0;
-        CSD = [];
-        LI(s);
-        LL(s);
-        LCF(s);
-        RP(s.nombre);
-        MC.classList.add('hidden');
-        M.style.display = "block";
-        document.querySelector('#serieModal .modal-content').focus()
+      O = s => {
+        S = s, IP = !1, CLI = 0, CCI = 0, CSD = [], LI(s), LL(s), LCF(s), RP(s.nombre), MC.classList.add('hidden'), M.style.display = "block", document.querySelector('#serieModal .modal-content').focus()
       },
       FD = async () => {
         try {
-          const r = await fetch(SD);
-          if (!r.ok) throw new Error(`Error! Status: ${r.status}`);
-          const d = await r.json();
-          return d.series
-        } catch (e) {
-          console.error('Error:', e);
-          return []
+          const t = await fetch(SD);
+          if (!t.ok) throw new Error(`Error! Status: ${t.status}`);
+          const e = await t.json();
+          return e.series
+        } catch (t) {
+          return console.error('Error:', t), []
         }
       },
-      RCAS = (s) => {
-        const CC = document.getElementById('countries-container');
-        CC.innerHTML = "";
-        const C = [...new Set(s.map(s => s.pais_origen))].sort();
-        C.forEach(c => {
-          const CH = document.createElement('h2');
-          CH.textContent = c;
-          CC.appendChild(CH);
-          const SL = document.createElement('ul');
-          SL.classList.add('series-list');
-          s.filter(s => s.pais_origen === c).sort((a, b) => a.nombre.localeCompare(b.nombre)).forEach(s => {
-            const LI = document.createElement('li');
-            const B = document.createElement('button');
-            B.textContent = s.nombre;
-            B.addEventListener('click', () => O(s));
-            B.setAttribute('tabindex', '0');
-            B.classList.add('button');
-            LI.appendChild(B);
-            SL.appendChild(LI)
-          });
-          CC.appendChild(SL)
-        });
-        UCW()
+      RCAS = s => {
+        const t = document.getElementById('countries-container');
+        t.innerHTML = "";
+        const e = [...new Set(s.map(s => s.pais_origen))].sort();
+        e.forEach(e => {
+          const n = document.createElement('h2');
+          n.textContent = e, t.appendChild(n);
+          const i = document.createElement('ul');
+          i.classList.add('series-list'), s.filter(s => s.pais_origen === e).sort((t, e) => t.nombre.localeCompare(e.nombre)).forEach(s => {
+            const e = document.createElement('li'),
+              n = document.createElement('button');
+            n.textContent = s.nombre, n.addEventListener('click', () => O(s)), n.setAttribute('tabindex', '0'), n.classList.add('button'), e.appendChild(n), i.appendChild(e)
+          }), t.appendChild(i)
+        }), UCW()
       },
-      LI = (s) => {
-        const SI = document.getElementById('serie-info');
-        SI.innerHTML = `
+      LI = s => {
+        const t = document.getElementById('serie-info');
+        S = s, t.innerHTML = `
         <h2>${s.nombre}</h2>
         <div><strong>Género:</strong> ${s.genero}</div>
         <div><strong>Año:</strong> ${s.anio}</div>
@@ -455,56 +411,37 @@
         <div><strong>País:</strong> ${s.pais_origen}</div>
         <div><strong>Episodios:</strong> ${s.cantidad_episodios}</div>
         ${s.sinopsis ? `<div><strong>Sinopsis:</strong> ${s.sinopsis}</div>` : ''}
-    `;
-        S = s
+    `
       },
-      LL = (s) => {
+      LL = s => {
         LS.innerHTML = '';
-        s.enlaces.forEach((l, i) => {
-          const o = document.createElement('option');
-          o.value = i;
-          o.textContent = l.idioma;
-          LS.appendChild(o)
-        });
-        LC.classList.remove('hidden')
+        s.enlaces.forEach((t, e) => {
+          const n = document.createElement('option');
+          n.value = e, n.textContent = t.idioma, LS.appendChild(n)
+        }), LC.classList.remove('hidden')
       },
-      LCF = (s) => {
-        const i = LS.value;
-        CS.innerHTML = '';
-        CSD = s.capitulos;
-        CSD.forEach((c, i) => {
-          const o = document.createElement('option');
-          o.value = i;
-          o.textContent = c.titulo;
-          CS.appendChild(o)
-        });
-        CS.value = CCI;
-        UC();
-        A.src = s.enlaces[CLI].enlace;
-        A.load();
-        A.currentTime = 0;
-        IP && A.play();
-        clearInterval(TII);
-        UT();
-        TII = setInterval(UT, 1000)
+      LCF = s => {
+        const t = LS.value;
+        CS.innerHTML = '', CSD = s.capitulos, CSD.forEach((t, e) => {
+          const n = document.createElement('option');
+          n.value = e, n.textContent = t.titulo, CS.appendChild(n)
+        }), CS.value = CCI, UC(), A.src = s.enlaces[CLI].enlace, A.load(), A.currentTime = 0, IP && A.play(), clearInterval(TII), UT(), TII = setInterval(UT, 1e3)
       },
       UC = () => {
         CI.textContent = `Reproduciendo: ${CSD[CCI].titulo}`
       },
       UT = () => {
-        const ct = A.currentTime,
-          ci = GCI(ct),
-          c = CSD[ci],
-          cst = c.inicio / 1000,
-          cet = c.fin / 1000;
-        const ctf = FT(ct - cst),
-          df = FT(cet - cst);
-        CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : CSD[CCI].titulo;
-        TI.textContent = `Duración del capítulo: ${ctf} / ${df}`
+        const t = A.currentTime,
+          e = GCI(t),
+          n = CSD[e],
+          i = n.inicio / 1e3,
+          o = n.fin / 1e3,
+          r = FT(t - i),
+          c = FT(o - i);
+        CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : CSD[CCI].titulo, TI.textContent = `Duración del capítulo: ${r} / ${c}`
       },
       TP = () => {
-        IP ? (A.pause(), IP = false, PB.textContent = 'Reproducir') :
-          (A.play(), IP = true, PB.textContent = 'Pausar')
+        IP ? (A.pause(), IP = !1, PB.textContent = 'Reproducir') : (A.play(), IP = !0, PB.textContent = 'Pausar')
       },
       F = () => {
         A.currentTime += 15
@@ -517,123 +454,82 @@
       },
       PC = () => {
         CCI = parseInt(CS.value);
-        if (CSD[CCI]) {
-          A.currentTime = CSD[CCI].inicio / 1000;
-          A.play();
-          IP = true;
-          PB.textContent = 'Pausar';
-          UC()
-        } else console.warn("Capitulo?")
+        CSD[CCI] ? (A.currentTime = CSD[CCI].inicio / 1e3, A.play(), IP = !0, PB.textContent = 'Pausar', UC()) : console.warn("Capitulo?")
       },
-      GCI = (ct) => {
-        let i = 0;
-        CSD.forEach((c, idx) => {
-          if (ct >= c.inicio / 1000 && ct <= c.fin / 1000) i = idx
-        });
-        return i
+      GCI = t => {
+        let e = 0;
+        return CSD.forEach((n, i) => {
+          t >= n.inicio / 1e3 && t <= n.fin / 1e3 && (e = i)
+        }), e
       },
       PP = () => {
-        let idx = CCI;
-        if (idx > 0) {
-          idx--;
-          CS.value = idx;
-          PC()
-        }
+        let t = CCI;
+        t > 0 && (t--, CS.value = t, PC())
       },
       NP = () => {
-        let idx = CCI;
-        if (idx < CSD.length - 1) {
-          idx++;
-          CS.value = idx;
-          PC()
-        }
+        let t = CCI;
+        t < CSD.length - 1 && (t++, CS.value = t, PC())
       },
       CL = () => {
-        CLI = parseInt(LS.value);
-        LCF(S)
+        CLI = parseInt(LS.value), LCF(S)
       },
       IV = () => {
-        A.volume = Math.min(1, A.volume + 0.05)
+        A.volume = Math.min(1, A.volume + .05)
       },
       DV = () => {
-        A.volume = Math.max(0, A.volume - 0.05)
+        A.volume = Math.max(0, A.volume - .05)
       },
       UCW = () => {
         CWL.innerHTML = '';
-        let series = [];
-        for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(i);
-          if (key !== 'loglevel:webpack-dev-server') try {
-            const g = localStorage.getItem(key);
-            const p = JSON.parse(g);
-            if (p.tiempo > 600) series.push({
-              nombre: key,
-              capituloIndex: p.capituloIndex,
-              tiempo: p.tiempo
+        let t = [];
+        for (let e = 0; e < localStorage.length; e++) {
+          const n = localStorage.key(e);
+          if ('loglevel:webpack-dev-server' !== n) try {
+            const e = localStorage.getItem(n),
+              i = JSON.parse(e);
+            i.tiempo > 600 && t.push({
+              nombre: n,
+              capituloIndex: i.capituloIndex,
+              tiempo: i.tiempo
             })
-          } catch (e) {
-            console.error(`Error processing ${key}:`, e)
+          } catch (t) {
+            console.error(`Error processing ${n}:`, t)
           }
         }
-        FD().then(seriesData => {
-          series.forEach(s => {
-            const serieData = seriesData.find(sd => sd.nombre === s.nombre);
-            if (serieData) {
-              const capitulo = serieData.capitulos[s.capituloIndex];
-              const capituloInicio = capitulo.inicio / 1000;
-              const capituloFin = capitulo.fin / 1000;
-              const duracionTotal = capituloFin - capituloInicio;
-              const tiempoRestante = duracionTotal - (s.tiempo - capituloInicio);
-              const LI = document.createElement('li');
-              const B = document.createElement('button');
-              B.textContent = `Reproducir ${s.nombre}, ${capitulo.titulo}, actual ${FT(s.tiempo - capituloInicio)}, restante ${FT(tiempoRestante)}.`;
-              B.addEventListener('click', () => {
-                FD().then(seriesData => {
-                  const serie = seriesData.find(sd => sd.nombre === s.nombre);
-                  if (serie) {
-                    O(serie);
-                    S = serie;
-                    RP(s.nombre)
-                  }
+        FD().then(e => {
+          t.forEach(t => {
+            const n = e.find(e => e.nombre === t.nombre);
+            if (n) {
+              const i = n.capitulos[t.capituloIndex],
+                o = i.inicio / 1e3,
+                r = i.fin / 1e3,
+                c = r - o,
+                l = c - (t.tiempo - o),
+                d = document.createElement('li'),
+                u = document.createElement('button');
+              u.textContent = `Reproducir ${t.nombre}, ${i.titulo}, actual ${FT(t.tiempo-o)}, restante ${FT(l)}.`, u.addEventListener('click', () => {
+                FD().then(e => {
+                  const n = e.find(e => e.nombre === t.nombre);
+                  n && (O(n), S = n, RP(t.nombre))
                 })
-              });
-              B.classList.add('button');
-              LI.appendChild(B);
-              CWL.appendChild(LI)
+              }), u.classList.add('button'), d.appendChild(u), CWL.appendChild(d)
             }
           })
         })
       };
-    CBC.addEventListener('click', C);
-    window.addEventListener('click', e => {
-      if (e.target === M) C()
-    });
-    CS.addEventListener('change', () => {
-      S.nombre && GP(S.nombre);
-      PC()
-    });
-    A.addEventListener('pause', () => {
+    CBC.addEventListener('click', C), window.addEventListener('click', t => {
+      t.target === M && C()
+    }), CS.addEventListener('change', () => {
+      S.nombre && GP(S.nombre), PC()
+    }), A.addEventListener('pause', () => {
       S.nombre && GP(S.nombre)
-    });
-    A.addEventListener('play', () => {
-      IP = true;
-      PB.textContent = 'Pausar'
-    });
-    EB.addEventListener('click', TE);
-    LS.addEventListener('change', CL);
-    PB.addEventListener('click', TP);
-    document.getElementById('forward-button').addEventListener('click', F);
-    document.getElementById('backward-button').addEventListener('click', B);
-    document.getElementById('previous-chapter-button').addEventListener('click', PP);
-    document.getElementById('next-chapter-button').addEventListener('click', NP);
-    document.getElementById('increase-volume-button').addEventListener('click', IV);
-    document.getElementById('decrease-volume-button').addEventListener('click', DV);
-    window.onload = () => {
+    }), A.addEventListener('play', () => {
+      IP = !0, PB.textContent = 'Pausar'
+    }), EB.addEventListener('click', TE), LS.addEventListener('change', CL), PB.addEventListener('click', TP), document.getElementById('forward-button').addEventListener('click', F), document.getElementById('backward-button').addEventListener('click', B), document.getElementById('previous-chapter-button').addEventListener('click', PP), document.getElementById('next-chapter-button').addEventListener('click', NP), document.getElementById('increase-volume-button').addEventListener('click', IV), document.getElementById('decrease-volume-button').addEventListener('click', DV), window.onload = () => {
       FD().then(s => RCAS(s))
-    };
-    setInterval(() => {
-      M.style.display === "block" && S && GP(S.nombre)
-    }, 5000);
+    }, setInterval(() => {
+      "block" === M.style.display && S && GP(S.nombre)
+    }, 5e3);
   </script>
 </body>
 
