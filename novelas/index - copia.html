@@ -17,10 +17,6 @@
 
 <div>
 <h2>Selecciona una novela...</h2>
-
-  <label for="pais-list" accesskey="p">Selecciona el país:</label>
-  <select id="pais-list" aria-label="Lista de países" accesskey="p"></select>
-
   <label for="novela-list" accesskey="n">Selecciona la novela:</label>
   <select id="novela-list" aria-label="Lista de novelas" accesskey="n"></select>
 
@@ -29,7 +25,6 @@
 
   <label for="chapter-list" accesskey="c">Selecciona el capítulo a reproducir:</label>
   <select id="chapter-list" aria-label="Lista de capítulos" accesskey="c"></select>
-
 <h3>Reproductor...</h3>
   <button id="play-pause" title="Reproducir (Alt+K)" aria-label="Reproducir" accesskey="k">Reproducir</button>
 
@@ -52,60 +47,33 @@
   const chapterList = document.getElementById("chapter-list");
   const seasonList = document.getElementById("season-list");
   const playPauseButton = document.getElementById("play-pause");
-  const paisList = document.getElementById("pais-list");
 
   let novelasData = [];
-  let paises = [];
 
   // Cargar el archivo JSON con las novelas
   fetch('https://ceosca.github.io/novelas/novelas.json')
     .then(response => response.json())
     .then(data => {
       novelasData = data.novelas;
-      cargarPaises();
+      cargarNovelas();
     });
-
-  function cargarPaises() {
-    // Obtener todos los países únicos de las novelas
-    paises = [...new Set(novelasData.map(novela => novela.pais_origen))];
-
-    // Limpiar y llenar la lista de países
-    paisList.innerHTML = "";
-    paises.forEach((pais, index) => {
-      const option = document.createElement("option");
-      option.text = pais;
-      option.value = pais;  // Usamos el nombre del país como valor
-      paisList.add(option);
-    });
-
-    // Cargar las novelas del primer país por defecto
-    paisList.selectedIndex = 0;
-    cargarNovelas();
-  }
-
 
   function cargarNovelas() {
-    const paisSeleccionado = paisList.value;
-    const novelasFiltradas = novelasData.filter(novela => novela.pais_origen === paisSeleccionado);
-
     novelaList.innerHTML = "";
-    novelasFiltradas.forEach((novela, index) => {
+    novelasData.forEach((novela, index) => {
       const option = document.createElement("option");
       option.text = novela.titulo;
-      option.value = index; // Usar el índice dentro del array filtrado
+      option.value = index;
       novelaList.add(option);
     });
 
-    // Cargar la primera novela del país por defecto
+    // Cargar la primera novela por defecto
     novelaList.selectedIndex = 0;
     cargarTemporadas();
   }
 
   function cargarTemporadas() {
-    const paisSeleccionado = paisList.value;
-    const novelasFiltradas = novelasData.filter(novela => novela.pais_origen === paisSeleccionado);
-    const novelaSeleccionada = novelasFiltradas[novelaList.value];
-
+    const novelaSeleccionada = novelasData[novelaList.value];
     document.getElementById("novela-titulo").textContent = novelaSeleccionada.titulo;
     document.getElementById("novela-genero").textContent = `Género: ${novelaSeleccionada.genero}`;
     document.getElementById("novela-anio").textContent = `Año: ${novelaSeleccionada.anio}`;
@@ -126,9 +94,7 @@
   }
 
   function cargarCapitulos() {
-    const paisSeleccionado = paisList.value;
-    const novelasFiltradas = novelasData.filter(novela => novela.pais_origen === paisSeleccionado);
-    const novelaSeleccionada = novelasFiltradas[novelaList.value];
+    const novelaSeleccionada = novelasData[novelaList.value];
     const temporadaSeleccionada = novelaSeleccionada.temporadas[seasonList.value];
 
     chapterList.innerHTML = "";
@@ -144,9 +110,7 @@
   }
 
   function setChapter() {
-    const paisSeleccionado = paisList.value;
-    const novelasFiltradas = novelasData.filter(novela => novela.pais_origen === paisSeleccionado);
-    const novelaSeleccionada = novelasFiltradas[novelaList.value];
+    const novelaSeleccionada = novelasData[novelaList.value];
     const temporadaSeleccionada = novelaSeleccionada.temporadas[seasonList.value];
     const capituloSeleccionado = chapterList.value;
     audio.src = `${temporadaSeleccionada.enlace_base}${capituloSeleccionado}.m4a`;
@@ -173,7 +137,6 @@
   chapterList.addEventListener("change", setChapter);
   seasonList.addEventListener("change", cargarCapitulos);
   novelaList.addEventListener("change", cargarTemporadas);
-  paisList.addEventListener("change", cargarNovelas);
 </script>
 </body>
 </html>
