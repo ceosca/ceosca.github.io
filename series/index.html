@@ -1,1 +1,820 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Series</title><style>html,body{margin:0;padding:0;box-sizing:border-box}:root{--primary-color:#4CAF50;--primary-color-dark:#3e8e41;--text-color:#333;--bg-color:#f4f4f4;--white:#fff;--shadow:0 0 5px rgba(0,0,0,.1);--focus-outline:3px solid #007bff;--focus-outline-offset:2px}body{font-family:Arial,sans-serif;background-color:var(--bg-color);font-size:1.2em;line-height:1.6;color:var(--text-color)}h2{font-size:1.8em;margin-bottom:.5em}.container{width:95%;margin:10px auto;background-color:var(--white);padding:15px;box-shadow:var(--shadow)}.button{padding:8px 12px;border:none;cursor:pointer;border-radius:5px;transition:background-color .2s ease,box-shadow .2s ease;font-size:.9em;background-color:var(--primary-color);color:var(--white)}.button:hover,.button:focus{box-shadow:var(--shadow);outline:none}.button-primary:hover,.button-primary:focus{background-color:var(--primary-color-dark)}.series-list{list-style-type:none;padding:0}.series-list li{margin-bottom:10px}.series-list button{width:100%;text-align:left;font-size:1.1em;display:block;padding:12px 15px}.modal{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.7)}.modal-content{background-color:var(--white);margin:15% auto;padding:20px;border:1px solid #888;width:90%;position:relative;border-radius:10px;padding-top:60px;padding-bottom:90px}.fixed-header{position:fixed;top:0;left:0;width:100%;background-color:var(--white);padding:10px 20px;z-index:2;box-shadow:0 2px 5px rgba(0,0,0,.2);display:flex;justify-content:flex-end}.fixed-player{position:fixed;bottom:0;left:0;width:100%;background-color:#f0f0f0;padding:10px;text-align:center;z-index:2;box-shadow:0 -2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px}.fixed-player .player-controls,.fixed-player .player-options{display:flex;align-items:center;gap:5px;flex-wrap:nowrap}.fixed-player button{background-color:#555;color:var(--white);transition:background-color .3s;white-space:nowrap}.fixed-player button:hover{background-color:#777}.fixed-player #time-info,.fixed-player #chapter-info{font-size:.8em;color:var(--text-color);margin:0 5px;white-space:nowrap}.episodes-section,.languages-section,.speed-section{position:relative}.episodes-container,.languages-container,.speed-container{display:none;position:absolute;bottom:calc(100% + 5px);right:0;background-color:var(--white);border:1px solid #ccc;padding:10px;z-index:10;box-shadow:var(--shadow);border-radius:5px;min-width:180px}.episodes-container label,.languages-container label,.speed-container label{display:block;margin-bottom:.5em;font-size:1em;color:var(--text-color)}.episodes-container select,.languages-container select,.speed-container select{width:100%;padding:8px;font-size:.9em;border:1px solid #ccc;border-radius:5px;margin-bottom:5px}.languages-container select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px top 50%;background-size:1.5em}.hidden{display:none!important}*:focus{outline:var(--focus-outline);outline-offset:var(--focus-outline-offset)}@media (max-width:750px){.fixed-player{justify-content:center}.fixed-player .player-controls,.fixed-player .player-options{flex-basis:100%;justify-content:center;margin-top:5px}.episodes-container,.languages-container,.speed-container{min-width:150px}}#continue-watching{margin-bottom:20px}#continue-watching h2{font-size:1.5em;margin-bottom:10px}#continue-watching ul{list-style:none;padding:0}#continue-watching li{margin-bottom:5px}</style></head><body><div class="container" id="main-container"><header><h2>Series de TV</h2><button id="google-sign-in" class="button">Iniciar sesión con Google</button><button id="sign-out" class="button hidden">Cerrar sesión</button></header><main><div id="continue-watching"><h2>Continuar escuchando</h2><ul id="cw-list"></ul></div><div id="countries-container"></div></main></div><div id="serieModal" class="modal" aria-hidden="true"><div class="modal-content" tabindex="-1"><header class="fixed-header"><button class="close button button-primary" id="closeModal">Regresar a explorar</button></header><main><div id="serie-info"></div></main><audio id="audio-player">Audio no soportado.</audio><h2>Reproductor</h2><footer class="fixed-player"><div class="player-controls"><button id="play-pause-button" class="button">Reproducir</button><button id="backward-button" class="button">Retroceder</button><button id="forward-button" class="button">Avanzar</button><button id="decrease-volume-button" class="button">Bajar volumen</button><button id="increase-volume-button" class="button">Subir volumen</button><div id="time-info">--:-- / --:--</div><div id="chapter-info"></div></div><div class="player-options"><button id="previous-chapter-button" class="button">Episodio anterior</button><button id="next-chapter-button" class="button">Siguiente episodio</button><section class="episodes-section"><button id="episodes-button" class="button">Episodios</button><div class="episodes-container" id="episodes-container"><label for="capitulo">Capítulo:</label><select id="capitulo"><option value="">Seleccionar</option></select></div></section><section class="languages-section hidden"><button id="languages-button" class="button">Cambiar Pista de Audio</button><div class="languages-container" id="languages-container"><label for="language">Idioma:</label><select id="language"></select></div></section><section class="speed-section"><button id="speed-button" class="button">Velocidad</button><div class="speed-container" id="speed-container"><label for="speed">Velocidad:</label><select id="speed"><option value="0.5">0.5x</option><option value="0.75">0.75x</option><option value="1" selected>1x (Normal)</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option></select></div></section></div></footer></div></div><script type="module">import {initializeApp} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";import {getFirestore,collection,doc,setDoc,getDoc,query,where,getDocs,serverTimestamp} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";import {getAuth,signInWithPopup,GoogleAuthProvider,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";const firebaseConfig={apiKey:"AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0",authDomain:"pfdsuaaug.firebaseapp.com",projectId:"pfdsuaaug",storageBucket:"pfdsuaaug.firebasestorage.app",messagingSenderId:"701797222900",appId:"1:701797222900:web:01836d45db1b35be2bd1a1"};const app=initializeApp(firebaseConfig),db=getFirestore(app),auth=getAuth(app),googleProvider=new GoogleAuthProvider();const GSIB=document.getElementById('google-sign-in'),SOB=document.getElementById('sign-out');const SIWG=async()=>{try{await signInWithPopup(auth,googleProvider)}catch{}},SOG=async()=>{try{await signOut(auth)}catch{}};onAuthStateChanged(auth,u=>{GSIB.classList.toggle('hidden',!!u);SOB.classList.toggle('hidden',!u);UCW()});GSIB.addEventListener('click',SIWG);SOB.addEventListener('click',SOG);const SD='https://ceosca.github.io/series/series.json',A=document.getElementById('audio-player'),MC=document.getElementById('main-container'),M=document.getElementById("serieModal"),CBC=document.getElementById("closeModal"),PB=document.getElementById('play-pause-button'),CS=document.getElementById('capitulo'),EC=document.getElementById('episodes-container'),EB=document.getElementById('episodes-button'),LC=document.getElementById('languages-container'),LS=document.getElementById('language'),LB=document.getElementById('languages-button'),LSect=document.querySelector('.languages-section'),CI=document.getElementById('chapter-info'),TI=document.getElementById('time-info'),CWL=document.getElementById('cw-list'),SB=document.getElementById('speed-button'),SC=document.getElementById('speed-container'),SS=document.getElementById('speed');let TII,IP=!1,CSD=[],CLI=0,CCI=0,S;const V=(el,btn,s,h)=>{const iH=el.style.display==='none'||el.classList.contains('hidden');el.style.display=iH?'block':'none';el.classList[iH?'remove':'add']('hidden');btn&&(btn.textContent=iH?h:s)},FT=t=>{t=Math.max(0,t);const m=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(m)}:${PZ(s)}`},PZ=n=>(n<10?'0':'')+n;const GP=async()=>{if(!S?.nombre)return;const t=A.currentTime;if(isNaN(t))return;try{const u=auth.currentUser;if(!u)return;const p={sN:S.nombre,cI:CCI,t:t,lI:CLI,sp:A.playbackRate,uId:u.uid,lU:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${S.nombre}`),p,{merge:!0});u&&UCW()}catch{}};const RP=async n=>{try{const u=auth.currentUser;if(!u)return!1;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${n}`));if(!dS.exists())return!1;const d=dS.data();let r=!1;d.cI!=null&&(CCI=d.cI);if(d.lI!=null&&d.lI!==CLI)CLI=d.lI,LS.value=CLI,r=!0;if(d.sp!=null&&d.sp!==A.playbackRate)SS.value=d.sp,A.playbackRate=d.sp;const sT=d.t||0;CS.value=CCI;if(r){await LCF(S);A.addEventListener('canplay',()=>{A.currentTime=sT;IP&&A.play()},{once:!0})}else{A.currentTime=sT;IP&&A.play()}UC();return!0}catch{return!1}};const C=()=>{S&&GP();M.style.display="none";A.pause();A.src='';MC.classList.remove('hidden');clearInterval(TII);IP=!1;PB.textContent='Reproducir';TI.textContent='--:-- / --:--';CI.textContent='';[EC,LC,SC].forEach(e=>{e.style.display='none';e.classList.add('hidden')});EB.textContent='Episodios';LB.textContent='Cambiar Pista de Audio';SB.textContent='Velocidad'};const O=async s=>{S=s;IP=!1;CLI=0;CCI=0;CSD=[];LI(s);LL(s);LSect.classList.toggle('hidden',!(S.enlaces?.length>1));await LCF(S);await RP(s.nombre);MC.classList.add('hidden');M.style.display="block";document.querySelector('#serieModal .modal-content')?.focus();[EC,LC,SC].forEach(e=>{e.style.display='none';e.classList.add('hidden')});EB.textContent='Episodios';LB.textContent='Cambiar Pista de Audio';SB.textContent='Velocidad';A.playbackRate=parseFloat(SS.value)||1};const FD=async()=>{try{const r=await fetch(SD);return r.ok?(await r.json()).series:[]}catch{return[]}};const RCAS=s=>{const t=document.getElementById('countries-container');t.innerHTML="";const p=[...new Set(s.map(s=>s.pais_origen))].sort();p.forEach(p=>{const h=document.createElement('h2');h.textContent=p;t.appendChild(h);const u=document.createElement('ul');u.className='series-list';s.filter(i=>i.pais_origen===p).sort((a,b)=>a.nombre.localeCompare(b.nombre)).forEach(i=>{const l=document.createElement('li'),b=document.createElement('button');b.textContent=i.nombre;b.onclick=()=>O(i);b.tabIndex=0;b.className='button';l.appendChild(b);u.appendChild(l)});t.appendChild(u)});UCW()};const LI=s=>{document.getElementById('serie-info').innerHTML=`<h2>${s.nombre}</h2><div><strong>G:</strong> ${s.genero}</div><div><strong>Año:</strong> ${s.anio}</div><div><strong>Rep:</strong> ${s.reparto.join(", ")}</div><div><strong>País:</strong> ${s.pais_origen}</div><div><strong>Eps:</strong> ${s.cantidad_episodios}</div>${s.sinopsis?`<div><strong>Sinop:</strong> ${s.sinopsis}</div>`:''}`};const LL=s=>{LS.innerHTML='';s.enlaces?.forEach((l,i)=>{const o=document.createElement('option');o.value=i;o.textContent=l.idioma;LS.appendChild(o)});LSect.classList.toggle('hidden',!(s.enlaces?.length>1))};const LCF=async s=>{CLI=parseInt(LS.value)||0;CS.innerHTML='';CSD=s.capitulos||[];CSD.forEach((c,i)=>{const o=document.createElement('option');o.value=i;o.textContent=c.titulo;CS.appendChild(o)});CS.value=CCI;UC();const url=s.enlaces?.[CLI]?.enlace;if(url){if(A.currentSrc!==url)A.src=url,A.load()}else A.src='';clearInterval(TII);UT();TII=setInterval(UT,1000)};const UC=()=>{CI.textContent=CSD?.[CCI]?`Ep: ${CSD[CCI].titulo}`:''};const GCI=t=>{let e=CCI;if(!CSD?.length)return e;const tS=t;for(let i=0;i<CSD.length;i++){const c=CSD[i];if(c?.inicio!=null&&c?.fin!=null){const iS=c.inicio/1000,fS=c.fin/1000;if(tS>=iS&&tS<fS){e=i;break}}}return e};const UT=()=>{if(!A||!CSD?.length){TI.textContent='--:-- / --:--';return}const t=A.currentTime,cIdx=GCI(t);if(cIdx!==CCI)CCI=cIdx,CS.value=CCI,UC(),GP();const n=CSD[CCI];let dTS="--:--",dDS="--:--";if(n?.inicio!=null&&n?.fin!=null){const iS=n.inicio/1000,fS=n.fin/1000;if(t>=iS&&t<=fS)dTS=FT(t-iS),dDS=FT(fS-iS);else if(t<iS)dTS=FT(0),dDS=FT(fS-iS)}TI.textContent=`${dTS} / ${dDS}`};const TP=()=>{if(IP){A.pause();IP=!1;PB.textContent='Reproducir';GP()}else{if(!A.src||A.src===window.location.href){S&&CSD.length>0&&PC();return}A.play().then(()=>{IP=!0;PB.textContent='Pausar'}).catch(()=>{IP=!1;PB.textContent='Reproducir'})}};const F=()=>{A.currentTime+=15},B=()=>{A.currentTime-=15};const TE=()=>{V(EC,EB,'Episodios','Ocultar Epis.')},TL=()=>{V(LC,LB,'Cambiar Pista de Audio','Ocultar Pistas')},TSp=()=>{V(SC,SB,'Velocidad','Ocultar Vel.')};const PC=()=>{let sI=parseInt(CS.value);if(isNaN(sI)||!CSD?.[sI])return;CCI=sI;const chap=CSD[CCI];if(chap?.inicio!=null){A.currentTime=chap.inicio/1000;IP=!0;A.play().then(()=>{PB.textContent='Pausar';UC()}).catch(()=>{IP=!1;PB.textContent='Reproducir'});UC();GP()}else UC()};const PP=()=>{if(CCI>0)CS.value=--CCI,PC()},NP=()=>{if(CSD&&CCI<CSD.length-1)CS.value=++CCI,PC()};const CL=async()=>{const prevT=A.currentTime,prevCCI=CCI;CLI=parseInt(LS.value);if(isNaN(CLI))return;await LCF(S);A.addEventListener('canplay',()=>{const chap=CSD[prevCCI];A.currentTime=chap?.inicio!=null?chap.inicio/1000+(prevT-(chap.inicio/1000)):prevT;IP&&A.play()},{once:!0})};const ChSp=()=>{const r=parseFloat(SS.value);if(!isNaN(r))A.playbackRate=r;GP()};const IV=()=>{A.volume=Math.min(1,A.volume+.1)},DV=()=>{A.volume=Math.max(0,A.volume-.1)};const UCW=async()=>{CWL.innerHTML='';try{const u=auth.currentUser;if(!u)return;const q=query(collection(db,"progresoSeries"),where("uId","==",u.uid),where("t",">",10));const qS=await getDocs(q),c=[];qS.forEach(d=>c.push(d.data()));const s=await FD();for(const t of c){const sr=s.find(e=>e.nombre===t.sN);if(sr?.capitulos?.[t.cI]){const cap=sr.capitulos[t.cI];let remT="??:??";if(cap.fin!=null){const finS=cap.fin/1000;if(t.t<finS)remT=FT(finS-t.t)}if(remT!=="00:00"&&remT!=="??:??"){const li=document.createElement('li'),b=document.createElement('button');b.textContent=`▶ ${sr.nombre}, ${cap.titulo} (${remT})`;b.onclick=()=>O(sr);b.className='button';li.appendChild(b);CWL.appendChild(li)}}}}catch{}};CBC.addEventListener('click',C);window.addEventListener('click',t=>{const tgt=t.target;tgt===M&&C();const cP=(el,btn,txt)=>{if(!el.contains(tgt)&&!btn.contains(tgt)&&!el.classList.contains('hidden'))el.style.display='none',el.classList.add('hidden'),btn.textContent=txt};cP(EC,EB,'Episodios');cP(LC,LB,'Cambiar Pista de Audio');cP(SC,SB,'Velocidad');});CS.addEventListener('change',PC);A.addEventListener('pause',()=>{IP=!1;PB.textContent='Reproducir';GP()});A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar'});A.addEventListener('ended',()=>{IP=!1;PB.textContent='Reproducir';GP()});EB.addEventListener('click',TE);LB.addEventListener('click',TL);SB.addEventListener('click',TSp);LS.addEventListener('change',CL);SS.addEventListener('change',ChSp);PB.addEventListener('click',TP);document.getElementById('forward-button').addEventListener('click',F);document.getElementById('backward-button').addEventListener('click',B);document.getElementById('previous-chapter-button').addEventListener('click',PP);document.getElementById('next-chapter-button').addEventListener('click',NP);document.getElementById('increase-volume-button').addEventListener('click',IV);document.getElementById('decrease-volume-button').addEventListener('click',DV);window.onload=async()=>{RCAS(await FD())};setInterval(()=>{M.style.display==="block"&&S&&IP&&GP()},15000);</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series</title>
+    <style>
+        html,body{margin:0;padding:0;box-sizing:border-box}:root{--primary-color:#4CAF50;--primary-color-dark:#3e8e41;--text-color:#333;--bg-color:#f4f4f4;--white:#fff;--shadow:0 0 5px rgba(0,0,0,.1);--focus-outline:3px solid #007bff;--focus-outline-offset:2px}body{font-family:Arial,sans-serif;background-color:var(--bg-color);font-size:1.2em;line-height:1.6;color:var(--text-color)}h2{font-size:1.8em;margin-bottom:.5em}.container{width:95%;margin:10px auto;background-color:var(--white);padding:15px;box-shadow:var(--shadow)}.button{padding:8px 12px;border:none;cursor:pointer;border-radius:5px;transition:background-color .2s ease,box-shadow .2s ease;font-size:.9em;background-color:var(--primary-color);color:var(--white)}.button:hover,.button:focus{box-shadow:var(--shadow);outline:none}.button-primary:hover,.button-primary:focus{background-color:var(--primary-color-dark)}.series-list{list-style-type:none;padding:0}.series-list li{margin-bottom:10px}.series-list button{width:100%;text-align:left;font-size:1.1em;display:block;padding:12px 15px}.modal{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.7)}.modal-content{background-color:var(--white);margin:15% auto;padding:20px;border:1px solid #888;width:90%;position:relative;border-radius:10px;padding-top:60px;padding-bottom:90px}.fixed-header{position:fixed;top:0;left:0;width:100%;background-color:var(--white);padding:10px 20px;z-index:2;box-shadow:0 2px 5px rgba(0,0,0,.2);display:flex;justify-content:flex-end}.fixed-player{position:fixed;bottom:0;left:0;width:100%;background-color:#f0f0f0;padding:10px;text-align:center;z-index:2;box-shadow:0 -2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px}.fixed-player .player-controls,.fixed-player .player-options{display:flex;align-items:center;gap:5px;flex-wrap:nowrap}.fixed-player button{background-color:#555;color:var(--white);transition:background-color .3s;white-space:nowrap}.fixed-player button:hover{background-color:#777}.fixed-player #time-info,.fixed-player #chapter-info{font-size:.8em;color:var(--text-color);margin:0 5px;white-space:nowrap}.episodes-section,.languages-section,.speed-section{position:relative}.episodes-container,.languages-container,.speed-container{display:none;position:absolute;bottom:calc(100% + 5px);right:0;background-color:var(--white);border:1px solid #ccc;padding:10px;z-index:10;box-shadow:var(--shadow);border-radius:5px;min-width:180px}.episodes-container label,.languages-container label,.speed-container label{display:block;margin-bottom:.5em;font-size:1em;color:var(--text-color)}.episodes-container select,.languages-container select,.speed-container select{width:100%;padding:8px;font-size:.9em;border:1px solid #ccc;border-radius:5px;margin-bottom:5px}.languages-container select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px top 50%;background-size:1.5em}.hidden{display:none!important}*:focus{outline:var(--focus-outline);outline-offset:var(--focus-outline-offset)}@media (max-width:850px){.fixed-player{justify-content:center}.fixed-player .player-controls,.fixed-player .player-options{flex-basis:100%;justify-content:center;margin-top:5px}.episodes-container,.languages-container,.speed-container{min-width:150px}}#continue-watching{margin-bottom:20px}#continue-watching h2{font-size:1.5em;margin-bottom:10px}#continue-watching ul{list-style:none;padding:0}#continue-watching li{margin-bottom:5px}#episodes-section,#languages-section{margin:0;padding:0;display:block;position:static}
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <header>
+            <h2>Series de TV</h2>
+            <button id="google-sign-in" class="button">Iniciar sesión con Google</button>
+            <button id="sign-out" class="button hidden">Cerrar sesión</button>
+        </header>
+        <main>
+            <div id="continue-watching">
+                <h2>Continuar escuchando</h2>
+                <ul id="cw-list"></ul>
+            </div>
+            <div id="countries-container"></div>
+        </main>
+    </div>
+
+    <div id="serieModal" class="modal" aria-hidden="true">
+        <div class="modal-content" tabindex="-1">
+            <header class="fixed-header">
+                <button class="close button button-primary" id="closeModal">Regresar a explorar</button>
+            </header>
+            <main>
+                <div id="serie-info"></div>
+            </main>
+            <audio id="audio-player" preload="metadata">Audio no soportado.</audio>
+            <h2>Reproductor</h2>
+            <footer class="fixed-player">
+                <div class="player-controls">
+                    <button id="play-pause-button" class="button" aria-label="Reproducir">Reproducir</button>
+                    <button id="backward-button" class="button" aria-label="Retroceder 15 segundos">Retroceder</button>
+                    <button id="forward-button" class="button" aria-label="Avanzar 15 segundos">Avanzar</button>
+                    <button id="decrease-volume-button" class="button" aria-label="Bajar volumen">Bajar volumen</button>
+                    <button id="increase-volume-button" class="button" aria-label="Subir volumen">Subir volumen</button>
+                    <div id="time-info" aria-live="off">--:-- / --:--</div>
+                    <!-- Modificación: Eliminado aria-live="polite" -->
+                    <div id="chapter-info"></div>
+                </div>
+                <div class="player-options">
+                    <button id="previous-chapter-button" class="button" aria-label="Ir al episodio anterior">Episodio anterior</button>
+                    <button id="next-chapter-button" class="button" aria-label="Ir al siguiente episodio">Siguiente episodio</button>
+                    <section class="episodes-section">
+                        <button id="episodes-button" class="button" aria-label="Episodios">Episodios</button>
+                        <div class="episodes-container hidden" id="episodes-container">
+                            <label for="capitulo">Capítulo:</label>
+                            <select id="capitulo" aria-label="Seleccionar capítulo">
+                                <option value="">Seleccionar</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="languages-section hidden">
+                        <button id="languages-button" class="button" aria-label="Cambiar Pista de Audio">Cambiar Pista de Audio</button>
+                        <div class="languages-container hidden" id="languages-container">
+                            <label for="language">Idioma:</label>
+                            <select id="language" aria-label="Seleccionar idioma"></select>
+                        </div>
+                    </section>
+                    <section class="speed-section">
+                        <button id="speed-button" class="button" aria-label="Velocidad">Velocidad</button>
+                        <div class="speed-container hidden" id="speed-container">
+                            <label for="speed">Velocidad:</label>
+                            <select id="speed" aria-label="Seleccionar velocidad de reproducción">
+                                <option value="0.5">0.5x</option>
+                                <option value="0.75">0.75x</option>
+                                <option value="1" selected>1x (Normal)</option>
+                                <option value="1.25">1.25x</option>
+                                <option value="1.5">1.5x</option>
+                            </select>
+                        </div>
+                    </section>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0",
+            authDomain: "pfdsuaaug.firebaseapp.com",
+            projectId: "pfdsuaaug",
+            storageBucket: "pfdsuaaug.firebasestorage.app",
+            messagingSenderId: "701797222900",
+            appId: "1:701797222900:web:01836d45db1b35be2bd1a1"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        const googleProvider = new GoogleAuthProvider();
+
+        const GSIB = document.getElementById('google-sign-in');
+        const SOB = document.getElementById('sign-out');
+
+        const SIWG = async () => {
+            try { await signInWithPopup(auth, googleProvider); }
+            catch (error) { console.error("Error Sign In:", error); }
+        };
+        const SOG = async () => {
+            try { await signOut(auth); }
+            catch (error) { console.error("Error Sign Out:", error); }
+        };
+
+        onAuthStateChanged(auth, user => {
+            GSIB.classList.toggle('hidden', !!user);
+            SOB.classList.toggle('hidden', !user);
+            UCW(); // Actualizar "Continuar Viendo" al cambiar estado de auth
+        });
+
+        GSIB.addEventListener('click', SIWG);
+        SOB.addEventListener('click', SOG);
+
+        const SD = 'https://ceosca.github.io/series/series.json';
+        const A = document.getElementById('audio-player');
+        const MC = document.getElementById('main-container');
+        const M = document.getElementById("serieModal");
+        const CBC = document.getElementById("closeModal");
+        const PB = document.getElementById('play-pause-button');
+        const CS = document.getElementById('capitulo');
+        const EC = document.getElementById('episodes-container');
+        const EB = document.getElementById('episodes-button');
+        const LC = document.getElementById('languages-container');
+        const LS = document.getElementById('language');
+        const LB = document.getElementById('languages-button');
+        const LSect = document.querySelector('.languages-section');
+        const CI = document.getElementById('chapter-info');
+        const TI = document.getElementById('time-info');
+        const CWL = document.getElementById('cw-list');
+        const SB = document.getElementById('speed-button');
+        const SC = document.getElementById('speed-container');
+        const SS = document.getElementById('speed');
+
+        let TII; // Interval timer ID
+        let IP = false; // Is Playing?
+        let CSD = []; // Current Serie Data (chapters)
+        let CLI = 0; // Current Language Index
+        let CCI = 0; // Current Chapter Index
+        let S; // Current Serie Object
+
+        const LBL_EPISODES = 'Episodios';
+        const LBL_LANG = 'Idioma'; // Cambiado para reflejar mejor el botón
+        const LBL_SPEED = 'Velocidad';
+        const LBL_HIDE = 'Ocultar'; // Texto genérico para ocultar popups
+
+        const ARIA_EPISODES = 'Mostrar lista de episodios';
+        const ARIA_LANG = 'Mostrar selección de idioma';
+        const ARIA_SPEED = 'Mostrar selección de velocidad';
+        const ARIA_HIDE_EPISODES = 'Ocultar lista de episodios';
+        const ARIA_HIDE_LANG = 'Ocultar selección de idioma';
+        const ARIA_HIDE_SPEED = 'Ocultar selección de velocidad';
+
+        // Toggle Visibility function
+        const V = (el, btn, lblShow, lblHide, ariaShow, ariaHide) => {
+            const isHidden = el.style.display === 'none' || el.classList.contains('hidden');
+            el.style.display = isHidden ? 'block' : 'none';
+            el.classList.toggle('hidden', !isHidden);
+            if (btn) {
+                btn.textContent = isHidden ? lblHide : lblShow;
+                btn.setAttribute('aria-label', isHidden ? ariaHide : ariaShow);
+            }
+        };
+
+        const FT = t => { // Format Time
+            t = Math.max(0, t || 0); // Ensure t is a non-negative number
+            const m = Math.floor(t / 60);
+            const s = Math.floor(t % 60);
+            return `${PZ(m)}:${PZ(s)}`;
+        };
+        const PZ = n => (n < 10 ? '0' : '') + n; // Pad Zero
+
+        // --- Firebase Progress Functions (REVISED) ---
+
+        const GP = async () => { // Guardar Progreso
+            if (!S?.nombre || !auth.currentUser) return; // Need serie and user
+            const currentTime = A.currentTime;
+            if (isNaN(currentTime)) return; // Don't save if time is invalid
+
+            try {
+                const user = auth.currentUser;
+                const progreso = {
+                    sN: S.nombre,
+                    cI: CCI,
+                    t: currentTime,
+                    lI: CLI,
+                    sp: A.playbackRate,
+                    uId: user.uid,
+                    lU: serverTimestamp() // Firestore server timestamp
+                };
+                // console.log("Intentando guardar:", progreso);
+                await setDoc(doc(db, "progresoSeries", `${user.uid}_${S.nombre}`), progreso, { merge: true });
+                // console.log("Progreso guardado:", S.nombre, CCI, currentTime);
+                // No llamar a UCW aquí para evitar bucles si se llama desde intervalo
+            } catch (error) {
+                console.error("Error al guardar progreso:", error);
+            }
+        };
+
+        const RP = async (serieName) => { // Restaurar Progreso
+             if (!auth.currentUser || !S) return false; // Need user and loaded Serie object (S)
+
+            try {
+                const user = auth.currentUser;
+                const docRef = doc(db, "progresoSeries", `${user.uid}_${serieName}`);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    console.log("Progreso encontrado:", data);
+
+                    // Restore state variables FIRST
+                    CCI = data.cI ?? 0;
+                    CLI = data.lI ?? 0;
+                    const playbackSpeed = data.sp ?? 1;
+                    const seekTime = data.t ?? 0;
+
+                    // Update UI elements reflecting the state
+                    CS.value = CCI; // Set chapter dropdown
+                    LS.value = CLI; // Set language dropdown
+                    SS.value = playbackSpeed; // Set speed dropdown
+                    A.playbackRate = playbackSpeed; // Set audio playback rate
+
+                    console.log(`Progreso restaurado: Cap=${CCI}, Lang=${CLI}, Speed=${playbackSpeed}, Time=${seekTime}`);
+                    UC(); // Update chapter info display immediately
+
+                    // Return the time to seek to, let the caller handle seeking
+                    return seekTime;
+
+                } else {
+                    console.log("No se encontró progreso para:", serieName);
+                    // Reset state if no progress found (optional, good practice)
+                    CCI = 0;
+                    CLI = 0;
+                    A.playbackRate = 1;
+                    SS.value = 1;
+                    CS.value = CCI;
+                    LS.value = CLI;
+                    UC();
+                    return 0; // Seek to beginning
+                }
+            } catch (error) {
+                console.error("Error al restaurar progreso:", error);
+                return 0; // Seek to beginning on error
+            }
+        };
+
+        // --- Modal and Player Control Functions ---
+
+        const C = () => { // Close Modal
+            if (S) GP(); // Save progress on close
+            M.style.display = "none";
+            A.pause();
+            A.src = ''; // Clear audio source
+            MC.classList.remove('hidden'); // Show main container
+            clearInterval(TII); // Stop timer
+            IP = false;
+            PB.textContent = 'Reproducir';
+            PB.setAttribute('aria-label', 'Reproducir');
+            TI.textContent = '--:-- / --:--';
+            CI.textContent = '';
+            // Reset popup visibility and labels
+            [EC, LC, SC].forEach(el => { el.style.display = 'none'; el.classList.add('hidden'); });
+            EB.textContent = LBL_EPISODES; EB.setAttribute('aria-label', ARIA_EPISODES);
+            LB.textContent = LBL_LANG; LB.setAttribute('aria-label', ARIA_LANG);
+            SB.textContent = LBL_SPEED; SB.setAttribute('aria-label', ARIA_SPEED);
+            S = null; // Clear current serie
+            CSD = []; // Clear chapter data
+        };
+
+        const O = async (serie) => { // Open Serie Modal
+            S = serie; // Set current serie globally
+            IP = false; // Reset play state
+            CLI = 0; // Reset language index
+            CCI = 0; // Reset chapter index
+            CSD = []; // Clear previous chapter data
+
+            LI(S); // Load Serie Info display
+            LL(S); // Load Language options
+            LChapters(S); // Load Chapter options (doesn't set src yet)
+
+             // Restore progress *before* loading audio source
+            const seekTime = await RP(S.nombre); // RP sets CLI, CCI, speed, dropdowns
+
+            // Determine the audio URL based on potentially restored CLI
+            const audioUrl = S.enlaces?.[CLI]?.enlace;
+
+            // Set the audio source and handle seeking
+            if (audioUrl) {
+                if (A.currentSrc !== audioUrl) {
+                    console.log("Cambiando fuente a:", audioUrl, "y buscando a", seekTime);
+                    A.src = audioUrl;
+                    A.load();
+                    // Wait for 'canplay' before seeking if source changed
+                    A.addEventListener('canplay', () => {
+                        console.log("Audio listo (canplay), buscando a:", seekTime);
+                        A.currentTime = seekTime;
+                        // Attempt Autoplay only after audio is ready and seeked
+                        tryAutoplay();
+                    }, { once: true });
+                } else {
+                     console.log("Misma fuente, buscando a:", seekTime);
+                    // Source is the same, seek directly
+                    A.currentTime = seekTime;
+                     tryAutoplay(); // Attempt autoplay
+                }
+            } else {
+                console.warn("No se encontró URL de audio para el idioma", CLI);
+                A.src = ''; // Clear src if no valid URL
+                TI.textContent = '--:-- / --:--'; // Reset time display
+                CI.textContent = ''; // Reset chapter display
+            }
+
+            // Set initial UI state for the player
+            A.playbackRate = parseFloat(SS.value) || 1; // Ensure rate matches dropdown
+            UC(); // Update chapter display based on restored CCI
+            clearInterval(TII); // Clear any previous timer
+            UT(); // Update time display immediately
+            TII = setInterval(UT, 1000); // Start update timer
+
+            // Show modal and hide main content
+            MC.classList.add('hidden');
+            M.style.display = "block";
+            document.querySelector('#serieModal .modal-content')?.focus(); // Focus modal for accessibility
+
+            // Reset popups visibility and button labels
+            [EC, LC, SC].forEach(el => { el.style.display = 'none'; el.classList.add('hidden'); });
+            EB.textContent = LBL_EPISODES; EB.setAttribute('aria-label', ARIA_EPISODES);
+            LB.textContent = LBL_LANG; LB.setAttribute('aria-label', ARIA_LANG);
+            SB.textContent = LBL_SPEED; SB.setAttribute('aria-label', ARIA_SPEED);
+
+             // Initial button state based on IP (which should be false initially)
+            PB.textContent = IP ? 'Pausar' : 'Reproducir';
+            PB.setAttribute('aria-label', IP ? 'Pausar' : 'Reproducir');
+        };
+
+        // Helper for Autoplay attempt
+        const tryAutoplay = async () => {
+             if (!IP) { // Only try if not already playing (e.g., restored state wasn't playing)
+                try {
+                    await A.play();
+                    IP = true;
+                    PB.textContent = 'Pausar';
+                    PB.setAttribute('aria-label', 'Pausar');
+                    console.log("Autoplay iniciado");
+                } catch (err) {
+                    IP = false;
+                    PB.textContent = 'Reproducir';
+                    PB.setAttribute('aria-label', 'Reproducir');
+                    console.log("Autoplay bloqueado o fallido:", err);
+                }
+            }
+        };
+
+
+        const FD = async () => { // Fetch Data (Series)
+            try {
+                const r = await fetch(SD);
+                return r.ok ? (await r.json()).series : [];
+            } catch (error) {
+                console.error("Error fetching series data:", error);
+                return [];
+            }
+        };
+
+        const RCAS = (series) => { // Render Countries and Series
+            const container = document.getElementById('countries-container');
+            container.innerHTML = "";
+            const countries = [...new Set(series.map(s => s.pais_origen))].sort();
+            countries.forEach(country => {
+                const h2 = document.createElement('h2');
+                h2.textContent = country;
+                container.appendChild(h2);
+                const ul = document.createElement('ul');
+                ul.className = 'series-list';
+                series.filter(item => item.pais_origen === country)
+                    .sort((a, b) => a.nombre.localeCompare(b.nombre))
+                    .forEach(item => {
+                        const li = document.createElement('li');
+                        const btn = document.createElement('button');
+                        btn.textContent = item.nombre;
+                        btn.onclick = () => O(item); // Pass the whole series object
+                        btn.tabIndex = 0;
+                        btn.className = 'button';
+                        li.appendChild(btn);
+                        ul.appendChild(li);
+                    });
+                container.appendChild(ul);
+            });
+             // Call UCW after rendering initial list, in case user is already logged in
+            UCW();
+        };
+
+        const LI = (serie) => { // Load Info (Serie Details)
+            document.getElementById('serie-info').innerHTML = `
+                <h2>${serie.nombre}</h2>
+                <div><strong>Género:</strong> ${serie.genero}</div>
+                <div><strong>Año:</strong> ${serie.anio}</div>
+                <div><strong>Reparto:</strong> ${serie.reparto.join(", ")}</div>
+                <div><strong>País:</strong> ${serie.pais_origen}</div>
+                <div><strong>Episodios:</strong> ${serie.cantidad_episodios}</div>
+                ${serie.sinopsis ? `<div><strong>Sinopsis:</strong> ${serie.sinopsis}</div>` : ''}
+            `;
+        };
+
+        const LL = (serie) => { // Load Languages
+            LS.innerHTML = ''; // Clear previous options
+            serie.enlaces?.forEach((link, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = link.idioma;
+                LS.appendChild(option);
+            });
+            // Show/hide language section based on number of languages
+            LSect.classList.toggle('hidden', !(serie.enlaces?.length > 1));
+            LS.value = CLI; // Ensure dropdown reflects current language index
+        };
+
+        const LChapters = (serie) => { // Load Chapters into dropdown
+            CSD = serie.capitulos || []; // Store chapter data globally for this serie
+            CS.innerHTML = '<option value="">Seleccionar</option>'; // Reset dropdown
+            CSD.forEach((chapter, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = chapter.titulo;
+                CS.appendChild(option);
+            });
+            CS.value = CCI; // Ensure dropdown reflects current chapter index
+        };
+
+        const UC = () => { // Update Chapter Info Display
+            CI.textContent = CSD?.[CCI] ? `Ep: ${CSD[CCI].titulo}` : '';
+        };
+
+        const GCI = (currentTime) => { // Get Current Chapter Index based on time
+            let currentIdx = CCI; // Default to current index
+            if (!CSD?.length) return currentIdx;
+
+            for (let i = 0; i < CSD.length; i++) {
+                const chap = CSD[i];
+                if (chap?.inicio != null && chap?.fin != null) {
+                    const startSeconds = chap.inicio / 1000;
+                    const endSeconds = chap.fin / 1000;
+                    // Check if time falls within this chapter's boundaries
+                    if (currentTime >= startSeconds && currentTime < endSeconds) {
+                        currentIdx = i;
+                        break; // Found the chapter, exit loop
+                    }
+                }
+            }
+             // If time is before the first chapter's start, keep index 0
+             if (CSD[0]?.inicio != null && currentTime < (CSD[0].inicio / 1000)) {
+                 currentIdx = 0;
+             }
+             // If time is after the last chapter's end, keep the last index
+             else if (CSD.length > 0 && CSD[CSD.length - 1]?.fin != null && currentTime >= (CSD[CSD.length - 1].fin / 1000)) {
+                currentIdx = CSD.length - 1;
+             }
+
+            return currentIdx;
+        };
+
+        const UT = () => { // Update Time Display and check chapter change
+            if (!A || !S || !CSD?.length) { // Ensure audio and serie data are loaded
+                TI.textContent = '--:-- / --:--';
+                return;
+            }
+
+            const currentTime = A.currentTime;
+            const calculatedIndex = GCI(currentTime);
+
+            // Update chapter if it changed automatically during playback
+            if (calculatedIndex !== CCI && IP) {
+                 console.log(`Chapter changed automatically from ${CCI} to ${calculatedIndex}`);
+                CCI = calculatedIndex;
+                CS.value = CCI; // Update dropdown to reflect change
+                UC(); // Update chapter title display
+                GP(); // Save progress because chapter changed
+            }
+
+            // Update time display relative to the current chapter (CCI)
+            const currentChapter = CSD[CCI];
+            let displayTime = "--:--";
+            let displayDuration = "--:--";
+
+            if (currentChapter?.inicio != null && currentChapter?.fin != null) {
+                const startSeconds = currentChapter.inicio / 1000;
+                const endSeconds = currentChapter.fin / 1000;
+                const chapterDuration = endSeconds - startSeconds;
+
+                if (currentTime >= startSeconds && currentTime <= endSeconds) {
+                    // Time is within the current chapter
+                    displayTime = FT(currentTime - startSeconds);
+                    displayDuration = FT(chapterDuration);
+                } else if (currentTime < startSeconds) {
+                     // Time is before the current chapter (e.g., gap between chapters)
+                    displayTime = FT(0); // Show 00:00
+                    displayDuration = FT(chapterDuration);
+                } else {
+                    // Time is after the current chapter (e.g., playback continued past end)
+                     displayTime = FT(chapterDuration); // Show full duration elapsed
+                     displayDuration = FT(chapterDuration);
+                }
+            }
+
+            TI.textContent = `${displayTime} / ${displayDuration}`;
+        };
+
+        const TP = () => { // Toggle Play/Pause
+            if (IP) {
+                A.pause();
+                // IP state and button text/aria are handled by the 'pause' event listener
+            } else {
+                 // If src is not set or invalid, try loading first chapter
+                if (!A.src || A.src === window.location.href) {
+                     if (S && CSD.length > 0) {
+                         console.log("No source, starting from first chapter.");
+                         PC(0); // Start from chapter 0 if no source
+                         return;
+                     } else {
+                         console.warn("Cannot play: No serie or chapters loaded.");
+                         return;
+                     }
+                }
+                 // Attempt to play
+                A.play().catch(error => {
+                    console.error("Play failed:", error);
+                    IP = false; // Ensure state is correct on failure
+                    PB.textContent = 'Reproducir';
+                    PB.setAttribute('aria-label', 'Reproducir');
+                });
+                 // IP state and button text/aria are handled by the 'play' event listener
+            }
+        };
+
+        const F = () => { A.currentTime += 15; }; // Forward
+        const B = () => { A.currentTime -= 15; }; // Backward
+
+        const TE = () => V(EC, EB, LBL_EPISODES, LBL_HIDE, ARIA_EPISODES, ARIA_HIDE_EPISODES); // Toggle Episodes
+        const TL = () => V(LC, LB, LBL_LANG, LBL_HIDE, ARIA_LANG, ARIA_HIDE_LANG);       // Toggle Languages
+        const TSp = () => V(SC, SB, LBL_SPEED, LBL_HIDE, ARIA_SPEED, ARIA_HIDE_SPEED);    // Toggle Speed
+
+        const PC = (chapterIndex = -1) => { // Play Chapter (from dropdown or specific index)
+            let targetIndex = (chapterIndex >= 0) ? chapterIndex : parseInt(CS.value);
+
+            if (isNaN(targetIndex) || !CSD?.[targetIndex]) {
+                console.warn("Índice de capítulo inválido:", targetIndex);
+                return;
+            }
+
+            CCI = targetIndex;
+            CS.value = CCI; // Ensure dropdown matches index
+            const chapter = CSD[CCI];
+
+            if (chapter?.inicio != null) {
+                const seekTime = chapter.inicio / 1000;
+                console.log(`Cambiando a capítulo ${CCI}: ${chapter.titulo}, buscando a ${seekTime}`);
+                A.currentTime = seekTime;
+                UC(); // Update display immediately
+
+                // Attempt to play after changing chapter manually
+                if (!IP) { // Only call play if currently paused
+                    A.play().catch(error => {
+                        console.error("Play failed after chapter change:", error);
+                        IP = false;
+                        PB.textContent = 'Reproducir';
+                        PB.setAttribute('aria-label', 'Reproducir');
+                    });
+                     // 'play' event will handle IP=true and button state
+                }
+                GP(); // Save progress after successful chapter change and seek
+            } else {
+                console.warn("Capítulo seleccionado no tiene tiempo de inicio.");
+                UC(); // Update display even if seek fails
+            }
+            // Close the episode selector popup if it's open
+            if (!EC.classList.contains('hidden')) {
+                 V(EC, EB, LBL_EPISODES, LBL_HIDE, ARIA_EPISODES, ARIA_HIDE_EPISODES);
+            }
+        };
+
+
+        const PP = () => { // Previous Chapter
+            if (CCI > 0) {
+                PC(CCI - 1); // Play previous index
+            }
+        };
+        const NP = () => { // Next Chapter
+            if (CSD && CCI < CSD.length - 1) {
+                PC(CCI + 1); // Play next index
+            }
+        };
+
+        const CL = async () => { // Change Language
+            const newLanguageIndex = parseInt(LS.value);
+            if (isNaN(newLanguageIndex) || newLanguageIndex === CLI || !S?.enlaces) return;
+
+            const previousTime = A.currentTime; // Store current time before changing source
+            const wasPlaying = IP; // Store play state
+
+            CLI = newLanguageIndex; // Update global language index
+            console.log("Cambiando a idioma índice:", CLI);
+
+            const audioUrl = S.enlaces[CLI]?.enlace;
+
+            if (audioUrl) {
+                 if (A.currentSrc !== audioUrl) {
+                    console.log("Cambiando fuente a:", audioUrl);
+                    A.src = audioUrl;
+                    A.load();
+                    A.addEventListener('canplay', () => {
+                         console.log("Audio listo (canplay), buscando a:", previousTime);
+                        A.currentTime = previousTime; // Seek to old time position
+                        if (wasPlaying) {
+                             A.play().catch(e => console.error("Error reanudando play tras cambio idioma:", e));
+                        }
+                        GP(); // Save progress after language change is applied
+                    }, { once: true });
+                } else {
+                    // Same source URL? Should not happen if index changes, but just in case
+                    console.log("Misma fuente tras cambio de idioma? Raro.");
+                     A.currentTime = previousTime; // Seek anyway
+                     if (wasPlaying) A.play().catch(e => console.error("Error reanudando play:", e));
+                     GP();
+                }
+
+            } else {
+                console.error("No se encontró URL para el idioma seleccionado:", CLI);
+                A.src = ''; // Clear source if invalid
+            }
+             // Close the language selector popup if it's open
+             if (!LC.classList.contains('hidden')) {
+                V(LC, LB, LBL_LANG, LBL_HIDE, ARIA_LANG, ARIA_HIDE_LANG);
+            }
+        };
+
+
+        const ChSp = () => { // Change Speed
+            const rate = parseFloat(SS.value);
+            if (!isNaN(rate)) {
+                A.playbackRate = rate;
+                console.log("Velocidad cambiada a:", rate);
+                GP(); // Save progress after speed change
+            }
+             // Close the speed selector popup if it's open
+            if (!SC.classList.contains('hidden')) {
+                 V(SC, SB, LBL_SPEED, LBL_HIDE, ARIA_SPEED, ARIA_HIDE_SPEED);
+            }
+        };
+
+        const IV = () => { A.volume = Math.min(1, A.volume + 0.1); }; // Increase Volume
+        const DV = () => { A.volume = Math.max(0, A.volume - 0.1); }; // Decrease Volume
+
+        const UCW = async () => { // Update Continue Watching
+            CWL.innerHTML = ''; // Clear list first
+            if (!auth.currentUser) {
+                 document.getElementById('continue-watching').classList.add('hidden');
+                return; // Need user to show history
+            }
+             document.getElementById('continue-watching').classList.remove('hidden');
+
+
+            try {
+                const user = auth.currentUser;
+                // Query Firestore for progress documents for this user where time > 10 seconds
+                const q = query(collection(db, "progresoSeries"),
+                                where("uId", "==", user.uid),
+                                where("t", ">", 10)); // Only show if watched more than 10s
+
+                const querySnapshot = await getDocs(q);
+                const progressItems = [];
+                querySnapshot.forEach(doc => progressItems.push(doc.data()));
+
+                // Sort by last updated time, newest first
+                progressItems.sort((a, b) => b.lU?.toMillis() - a.lU?.toMillis());
+
+                const allSeries = await FD(); // Get all series data once
+
+                for (const progress of progressItems) {
+                    const serieData = allSeries.find(s => s.nombre === progress.sN);
+
+                    if (serieData?.capitulos?.[progress.cI]) {
+                        const chapter = serieData.capitulos[progress.cI];
+                        let remainingTimeStr = "??:??";
+
+                        if (chapter.fin != null) {
+                            const endSeconds = chapter.fin / 1000;
+                            const watchedTime = progress.t || 0;
+                            // Only show if there's significant time remaining
+                            if (watchedTime < endSeconds - 5) { // Don't show if less than 5s left
+                                remainingTimeStr = FT(endSeconds - watchedTime);
+
+                                const li = document.createElement('li');
+                                const btn = document.createElement('button');
+                                btn.textContent = `Continuar ${serieData.nombre}, ${chapter.titulo} (Restante ${remainingTimeStr})`;
+                                btn.onclick = () => O(serieData); // Open this serie when clicked
+                                btn.className = 'button';
+                                li.appendChild(btn);
+                                CWL.appendChild(li);
+                            }
+                        }
+                    }
+                }
+                 // Hide the section if the list is empty after filtering
+                if (CWL.children.length === 0) {
+                   document.getElementById('continue-watching').classList.add('hidden');
+                }
+
+            } catch (error) {
+                console.error("Error al actualizar 'Continuar Viendo':", error);
+                 document.getElementById('continue-watching').classList.add('hidden');
+            }
+        };
+
+        // --- Event Listeners ---
+
+        CBC.addEventListener('click', C); // Close button in modal header
+
+        // Close popups if clicked outside
+        window.addEventListener('click', (event) => {
+            const target = event.target;
+
+            // Close modal if clicked on the background overlay
+            if (target === M) {
+                C();
+                return; // Stop further checks if modal is closed
+            }
+
+            // Helper to close popups
+            const closePopupIfOutside = (popupEl, buttonEl, labelShow, ariaShow) => {
+                if (!popupEl.contains(target) && !buttonEl.contains(target) && !popupEl.classList.contains('hidden')) {
+                    V(popupEl, buttonEl, labelShow, LBL_HIDE, ariaShow, ''); // Use V to correctly update state
+                }
+            };
+
+            // Check each popup only if the modal is open
+             if (M.style.display === "block") {
+                closePopupIfOutside(EC, EB, LBL_EPISODES, ARIA_EPISODES);
+                closePopupIfOutside(LC, LB, LBL_LANG, ARIA_LANG);
+                closePopupIfOutside(SC, SB, LBL_SPEED, ARIA_SPEED);
+             }
+        });
+
+        CS.addEventListener('change', PC); // Chapter dropdown change
+
+        // Audio element events
+        A.addEventListener('pause', () => {
+            IP = false;
+            PB.textContent = 'Reproducir';
+            PB.setAttribute('aria-label', 'Reproducir');
+            GP(); // Save progress on pause
+             clearInterval(TII); // Stop interval timer on pause
+        });
+
+        A.addEventListener('play', () => {
+            IP = true;
+            PB.textContent = 'Pausar';
+            PB.setAttribute('aria-label', 'Pausar');
+             clearInterval(TII); // Clear existing timer just in case
+             TII = setInterval(UT, 1000); // Start interval timer on play
+        });
+
+        A.addEventListener('ended', () => {
+            IP = false;
+            PB.textContent = 'Reproducir';
+            PB.setAttribute('aria-label', 'Reproducir');
+            GP(); // Save progress at end
+             clearInterval(TII); // Stop interval timer on end
+            // Optionally move to next chapter if available?
+             // NP(); // Uncomment this line to automatically play next chapter
+        });
+
+        A.addEventListener('timeupdate', UT); // Update time display frequently (alternative to interval)
+        // Note: Using 'timeupdate' might be slightly more efficient than setInterval,
+        // but setInterval(UT, 1000) is generally reliable enough. Let's keep setInterval for now.
+
+        // Button clicks for popups
+        EB.addEventListener('click', TE);
+        LB.addEventListener('click', TL);
+        SB.addEventListener('click', TSp);
+
+        // Change listeners for selects inside popups
+        LS.addEventListener('change', CL); // Language select change
+        SS.addEventListener('change', ChSp); // Speed select change
+
+        // Player control buttons
+        PB.addEventListener('click', TP); // Play/Pause button
+        document.getElementById('forward-button').addEventListener('click', F);
+        document.getElementById('backward-button').addEventListener('click', B);
+        document.getElementById('previous-chapter-button').addEventListener('click', PP);
+        document.getElementById('next-chapter-button').addEventListener('click', NP);
+        document.getElementById('increase-volume-button').addEventListener('click', IV);
+        document.getElementById('decrease-volume-button').addEventListener('click', DV);
+
+        // --- Initial Load ---
+        window.onload = async () => {
+            RCAS(await FD()); // Fetch series and render the initial list
+        };
+
+        // Periodic save interval (only saves if playing in the modal)
+        setInterval(() => {
+            if (M.style.display === "block" && S && IP) {
+                 // console.log("Guardado periódico por intervalo");
+                GP();
+            }
+        }, 15000); // Save every 15 seconds while playing
+
+    </script>
+</body>
+</html>
