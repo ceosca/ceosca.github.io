@@ -1,820 +1,1027 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Series</title>
-    <style>
-        html,body{margin:0;padding:0;box-sizing:border-box}:root{--primary-color:#4CAF50;--primary-color-dark:#3e8e41;--text-color:#333;--bg-color:#f4f4f4;--white:#fff;--shadow:0 0 5px rgba(0,0,0,.1);--focus-outline:3px solid #007bff;--focus-outline-offset:2px}body{font-family:Arial,sans-serif;background-color:var(--bg-color);font-size:1.2em;line-height:1.6;color:var(--text-color)}h2{font-size:1.8em;margin-bottom:.5em}.container{width:95%;margin:10px auto;background-color:var(--white);padding:15px;box-shadow:var(--shadow)}.button{padding:8px 12px;border:none;cursor:pointer;border-radius:5px;transition:background-color .2s ease,box-shadow .2s ease;font-size:.9em;background-color:var(--primary-color);color:var(--white)}.button:hover,.button:focus{box-shadow:var(--shadow);outline:none}.button-primary:hover,.button-primary:focus{background-color:var(--primary-color-dark)}.series-list{list-style-type:none;padding:0}.series-list li{margin-bottom:10px}.series-list button{width:100%;text-align:left;font-size:1.1em;display:block;padding:12px 15px}.modal{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.7)}.modal-content{background-color:var(--white);margin:15% auto;padding:20px;border:1px solid #888;width:90%;position:relative;border-radius:10px;padding-top:60px;padding-bottom:90px}.fixed-header{position:fixed;top:0;left:0;width:100%;background-color:var(--white);padding:10px 20px;z-index:2;box-shadow:0 2px 5px rgba(0,0,0,.2);display:flex;justify-content:flex-end}.fixed-player{position:fixed;bottom:0;left:0;width:100%;background-color:#f0f0f0;padding:10px;text-align:center;z-index:2;box-shadow:0 -2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px}.fixed-player .player-controls,.fixed-player .player-options{display:flex;align-items:center;gap:5px;flex-wrap:nowrap}.fixed-player button{background-color:#555;color:var(--white);transition:background-color .3s;white-space:nowrap}.fixed-player button:hover{background-color:#777}.fixed-player #time-info,.fixed-player #chapter-info{font-size:.8em;color:var(--text-color);margin:0 5px;white-space:nowrap}.episodes-section,.languages-section,.speed-section{position:relative}.episodes-container,.languages-container,.speed-container{display:none;position:absolute;bottom:calc(100% + 5px);right:0;background-color:var(--white);border:1px solid #ccc;padding:10px;z-index:10;box-shadow:var(--shadow);border-radius:5px;min-width:180px}.episodes-container label,.languages-container label,.speed-container label{display:block;margin-bottom:.5em;font-size:1em;color:var(--text-color)}.episodes-container select,.languages-container select,.speed-container select{width:100%;padding:8px;font-size:.9em;border:1px solid #ccc;border-radius:5px;margin-bottom:5px}.languages-container select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px top 50%;background-size:1.5em}.hidden{display:none!important}*:focus{outline:var(--focus-outline);outline-offset:var(--focus-outline-offset)}@media (max-width:850px){.fixed-player{justify-content:center}.fixed-player .player-controls,.fixed-player .player-options{flex-basis:100%;justify-content:center;margin-top:5px}.episodes-container,.languages-container,.speed-container{min-width:150px}}#continue-watching{margin-bottom:20px}#continue-watching h2{font-size:1.5em;margin-bottom:10px}#continue-watching ul{list-style:none;padding:0}#continue-watching li{margin-bottom:5px}#episodes-section,#languages-section{margin:0;padding:0;display:block;position:static}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* Dejar espacio para el reproductor fijo */
+      padding-bottom: 150px; /* Ajusta este valor según la altura final del reproductor */
+    }
+
+    :root {
+      --primary-color: #4CAF50;
+      --primary-color-dark: #3e8e41;
+      --text-color: #333;
+      --bg-color: #f4f4f4;
+      --white: #fff;
+      --shadow: 0 0 5px rgba(0, 0, 0, .1);
+      --focus-outline: 3px solid #007bff;
+      --focus-outline-offset: 2px;
+      --danger-color: #dc3545;
+      --danger-color-dark: #c82333;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: var(--text-color)
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: .5em
+    }
+
+    .container {
+      width: 95%;
+      margin: 10px auto;
+      background-color: var(--white);
+      padding: 15px;
+      box-shadow: var(--shadow)
+    }
+
+    .button {
+      padding: 10px 15px; /* Ligeramente más pequeño para el reproductor */
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color .2s ease, box-shadow .2s ease;
+      font-size: 0.9em; /* Más pequeño para el reproductor */
+      background-color: var(--primary-color);
+      color: var(--white);
+      margin: 3px; /* Espacio entre botones */
+    }
+    .button-large { /* Estilo para botones fuera del reproductor */
+       padding: 12px 18px;
+       font-size: 1em;
+    }
+
+    .button:hover,
+    .button:focus {
+      box-shadow: var(--shadow);
+      outline: none
+    }
+
+    .button-primary:hover,
+    .button-primary:focus {
+      background-color: var(--primary-color-dark)
+    }
+
+    .button-danger {
+        background-color: var(--danger-color);
+    }
+    .button-danger:hover,
+    .button-danger:focus {
+        background-color: var(--danger-color-dark);
+    }
+
+
+    .series-list {
+      list-style-type: none;
+      padding: 0
+    }
+
+    .series-list li {
+      margin-bottom: 10px
+    }
+
+    /* Botones de series en lista principal */
+    .series-list button.button-series {
+      width: 100%;
+      text-align: left;
+      font-size: 1.1em;
+      display: block;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, .7)
+    }
+
+    .modal-content {
+      background-color: var(--white);
+      margin: 5% auto 170px auto; /* Margen inferior mayor para no solapar con reproductor */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 800px; /* Ancho máximo para el modal */
+      position: relative;
+      border-radius: 10px;
+      padding-top: 60px;
+      padding-bottom: 20px; /* Menos padding inferior, el reproductor está fuera */
+    }
+
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--white);
+      padding: 10px 20px;
+      z-index: 1001; /* Encima del modal */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+      display: flex;
+      justify-content: flex-end
+    }
+
+    .fixed-player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f0f0f0;
+      padding: 10px;
+      z-index: 1000; /* Encima del contenido principal */
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, .2);
+      display: flex;
+      flex-wrap: wrap; /* Permitir que los elementos pasen a la siguiente línea */
+      justify-content: center; /* Centrar los elementos */
+      align-items: center;
+      gap: 5px; /* Espacio entre elementos */
+    }
+
+    /* Estilos específicos para elementos dentro del fixed-player */
+    .fixed-player .button {
+      background-color: #555;
+      color: var(--white);
+      transition: background-color .3s;
+    }
+
+    .fixed-player .button:hover {
+      background-color: #777
+    }
+
+    .fixed-player #time-info,
+    .fixed-player #chapter-info {
+      font-size: .8em;
+      color: var(--text-color);
+      width: 100%; /* Ocupar todo el ancho en una nueva línea si es necesario */
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Contenedores de selectores movidos al reproductor */
+    .fixed-player .languages-container,
+    .fixed-player .episodes-container {
+       margin: 5px; /* Pequeño margen */
+       display: flex; /* Para alinear label y select si es necesario */
+       align-items: center;
+    }
+
+    .fixed-player .languages-container label,
+    .fixed-player .episodes-container label {
+      /* Ocultar labels en el reproductor por espacio */
+       display: none;
+       /* Si quieres mostrarlos, ajusta el estilo: */
+       /* margin-right: 5px; */
+       /* font-size: 0.8em; */
+    }
+
+    .fixed-player .languages-container select,
+    .fixed-player .episodes-container select {
+      padding: 8px; /* Más compacto */
+      font-size: 0.9em; /* Más compacto */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      /* appearance: none; */ /* Puedes quitar la apariencia nativa si prefieres */
+       background-image: none; /* Quitar flecha si se quita appearance */
+      max-width: 150px; /* Limitar ancho */
+    }
+
+    /* Quitar el botón "Episodios" separado y su contenedor extra */
+    #episodes-section {
+      /* Ya no es necesario como contenedor separado */
+       display: contents; /* O quitarlo del HTML si no tiene más propósito */
+    }
+     /* Ocultar el botón original de episodios si ya no se usa */
+    #episodes-button {
+        display: none;
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    *:focus {
+      outline: var(--focus-outline);
+      outline-offset: var(--focus-outline-offset)
+    }
+
+    @media (max-width:600px) {
+      body {
+        font-size: 1.1em;
+         padding-bottom: 180px; /* Más espacio para el reproductor en móviles */
+      }
+
+      h2 {
+        font-size: 1.5em
+      }
+
+      .container {
+        padding: 10px
+      }
+
+       .series-list button.button-series {
+        padding: 12px 15px;
+        font-size: 1em;
+      }
+
+      .modal-content {
+        margin: 5% auto 200px auto; /* Más margen inferior en móvil */
+        width: 95%;
+      }
+       .fixed-player .button {
+           font-size: 0.8em;
+           padding: 8px 10px;
+       }
+        .fixed-player select {
+           font-size: 0.8em;
+           padding: 6px;
+       }
+    }
+
+    #continue-watching {
+      margin-bottom: 20px
+    }
+
+    #continue-watching h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px
+    }
+
+    #continue-watching ul {
+      list-style: none;
+      padding: 0
+    }
+
+    #continue-watching li {
+      margin-bottom: 10px; /* Más espacio entre elementos */
+      display: flex; /* Usar flexbox para alinear botones */
+      justify-content: space-between; /* Espacio entre botón de continuar y eliminar */
+      align-items: center;
+      gap: 10px; /* Espacio entre botones */
+      padding: 5px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+    }
+    #continue-watching li button {
+        margin: 0; /* Quitar margen por defecto del botón si lo tiene */
+    }
+     #continue-watching li .continue-button {
+        flex-grow: 1; /* El botón de continuar ocupa el espacio restante */
+        text-align: left;
+     }
+
+
+  </style>
 </head>
+
 <body>
-    <div class="container" id="main-container">
-        <header>
-            <h2>Series de TV</h2>
-            <button id="google-sign-in" class="button">Iniciar sesión con Google</button>
-            <button id="sign-out" class="button hidden">Cerrar sesión</button>
-        </header>
-        <main>
-            <div id="continue-watching">
-                <h2>Continuar escuchando</h2>
-                <ul id="cw-list"></ul>
-            </div>
-            <div id="countries-container"></div>
-        </main>
-    </div>
+  <div class="container" id="main-container">
+    <header>
+      <h2>Series de TV</h2>
+      <!-- Mantén los botones grandes aquí -->
+      <button id="google-sign-in" class="button button-large">Iniciar sesión con Google</button>
+      <button id="sign-out" class="button button-large hidden">Cerrar sesión</button>
+    </header>
+    <main>
+      <div id="continue-watching">
+        <h2>Continuar escuchando</h2>
+        <ul id="cw-list">
+          <!-- Los elementos se cargarán aquí -->
+        </ul>
+      </div>
+      <div id="countries-container">
+        <!-- Las listas de series por país se cargarán aquí -->
+      </div>
+    </main>
+  </div>
 
-    <div id="serieModal" class="modal" aria-hidden="true">
-        <div class="modal-content" tabindex="-1">
-            <header class="fixed-header">
-                <button class="close button button-primary" id="closeModal">Regresar a explorar</button>
-            </header>
-            <main>
-                <div id="serie-info"></div>
-            </main>
-            <audio id="audio-player" preload="metadata">Audio no soportado.</audio>
-            <h2>Reproductor</h2>
-            <footer class="fixed-player">
-                <div class="player-controls">
-                    <button id="play-pause-button" class="button" aria-label="Reproducir">Reproducir</button>
-                    <button id="backward-button" class="button" aria-label="Retroceder 15 segundos">Retroceder</button>
-                    <button id="forward-button" class="button" aria-label="Avanzar 15 segundos">Avanzar</button>
-                    <button id="decrease-volume-button" class="button" aria-label="Bajar volumen">Bajar volumen</button>
-                    <button id="increase-volume-button" class="button" aria-label="Subir volumen">Subir volumen</button>
-                    <div id="time-info" aria-live="off">--:-- / --:--</div>
-                    <!-- Modificación: Eliminado aria-live="polite" -->
-                    <div id="chapter-info"></div>
-                </div>
-                <div class="player-options">
-                    <button id="previous-chapter-button" class="button" aria-label="Ir al episodio anterior">Episodio anterior</button>
-                    <button id="next-chapter-button" class="button" aria-label="Ir al siguiente episodio">Siguiente episodio</button>
-                    <section class="episodes-section">
-                        <button id="episodes-button" class="button" aria-label="Episodios">Episodios</button>
-                        <div class="episodes-container hidden" id="episodes-container">
-                            <label for="capitulo">Capítulo:</label>
-                            <select id="capitulo" aria-label="Seleccionar capítulo">
-                                <option value="">Seleccionar</option>
-                            </select>
-                        </div>
-                    </section>
-                    <section class="languages-section hidden">
-                        <button id="languages-button" class="button" aria-label="Cambiar Pista de Audio">Cambiar Pista de Audio</button>
-                        <div class="languages-container hidden" id="languages-container">
-                            <label for="language">Idioma:</label>
-                            <select id="language" aria-label="Seleccionar idioma"></select>
-                        </div>
-                    </section>
-                    <section class="speed-section">
-                        <button id="speed-button" class="button" aria-label="Velocidad">Velocidad</button>
-                        <div class="speed-container hidden" id="speed-container">
-                            <label for="speed">Velocidad:</label>
-                            <select id="speed" aria-label="Seleccionar velocidad de reproducción">
-                                <option value="0.5">0.5x</option>
-                                <option value="0.75">0.75x</option>
-                                <option value="1" selected>1x (Normal)</option>
-                                <option value="1.25">1.25x</option>
-                                <option value="1.5">1.5x</option>
-                            </select>
-                        </div>
-                    </section>
-                </div>
-            </footer>
+  <!-- Modal para la Serie -->
+  <div id="serieModal" class="modal" aria-hidden="true">
+    <div class="modal-content" tabindex="-1">
+      <header class="fixed-header">
+        <!-- Botón grande aquí -->
+        <button class="close button button-large button-primary" id="closeModal">Regresar a explorar</button>
+      </header>
+      <main>
+        <div id="serie-info">
+          <!-- Info de la serie se carga aquí -->
         </div>
-    </div>
+        <!-- Los selectores se han movido al footer fijo -->
+      </main>
+      <!-- El reproductor de audio permanece oculto visualmente hasta que se necesita -->
+      <audio id="audio-player" style="display: none;">
+        Audio no soportado.
+      </audio>
+    </div> <!-- Fin de modal-content -->
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-        import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+      <!-- Reproductor Fijo en el Footer -->
+      <footer class="fixed-player">
+        <!-- Controles de reproducción -->
+        <button id="play-pause-button" class="button">Reproducir</button>
+        <button id="backward-button" class="button">-15s</button>
+        <button id="forward-button" class="button">+15s</button>
+        <button id="previous-chapter-button" class="button">Ant.</button>
+        <button id="next-chapter-button" class="button">Sig.</button>
+        <button id="decrease-volume-button" class="button">Vol-</button>
+        <button id="increase-volume-button" class="button">Vol+</button>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0",
-            authDomain: "pfdsuaaug.firebaseapp.com",
-            projectId: "pfdsuaaug",
-            storageBucket: "pfdsuaaug.firebasestorage.app",
-            messagingSenderId: "701797222900",
-            appId: "1:701797222900:web:01836d45db1b35be2bd1a1"
+        <!-- Selector de Episodios (movido aquí) -->
+         <div class="episodes-container" id="episodes-container">
+             <!-- <label for="capitulo">Capítulo:</label> --> <!-- Label oculto por defecto -->
+             <select id="capitulo" title="Seleccionar Episodio">
+                <option value="">Episodio</option>
+             </select>
+         </div>
+
+        <!-- Selector de Idioma (movido aquí y condicional) -->
+        <div class="languages-container hidden" id="languages-container">
+             <!-- <label for="language">Idioma:</label> --> <!-- Label oculto por defecto -->
+             <select id="language" title="Seleccionar Idioma"></select>
+        </div>
+
+        <!-- Información de tiempo y capítulo -->
+        <div id="chapter-info"></div>
+        <div id="time-info"></div>
+      </footer>
+  </div> <!-- Fin de serieModal -->
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+    import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp, deleteDoc } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js"; // Añadir deleteDoc
+    import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+    const firebaseConfig = {
+       apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0", // Reemplaza con tu API Key si es necesario
+       authDomain: "pfdsuaaug.firebaseapp.com",
+       projectId: "pfdsuaaug",
+       storageBucket: "pfdsuaaug.firebasestorage.app",
+       messagingSenderId: "701797222900",
+       appId: "1:701797222900:web:01836d45db1b35be2bd1a1"
+     };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+
+    const googleSignInButton = document.getElementById('google-sign-in');
+    const signOutButton = document.getElementById('sign-out');
+
+    const signInWithGoogle = async () => {
+      try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const user = result.user;
+        console.log("Usuario conectado con Google:", user.uid, user.displayName, user.email);
+      } catch (error) {
+        console.error("Error al iniciar sesión con Google:", error);
+      }
+    };
+
+    const signOutGoogle = async () => {
+      try {
+        await signOut(auth);
+        console.log("Usuario desconectado.");
+        // Limpiar lista de continuar viendo al cerrar sesión si es necesario
+        // CWL.innerHTML = '';
+      } catch (error) {
+        console.error("Error al cerrar sesión:", error);
+      }
+    };
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("Usuario conectado:", user.uid);
+        googleSignInButton.classList.add('hidden');
+        signOutButton.classList.remove('hidden');
+        UCW(); // Actualizar Continuar Viendo cuando el usuario se conecta
+      } else {
+        console.log("Usuario desconectado");
+        googleSignInButton.classList.remove('hidden');
+        signOutButton.classList.add('hidden');
+        CWL.innerHTML = ''; // Limpiar lista si el usuario se desconecta
+      }
+    });
+
+    googleSignInButton.addEventListener('click', signInWithGoogle);
+    signOutButton.addEventListener('click', signOutGoogle);
+
+    const SD = 'https://ceosca.github.io/series/series.json',
+      A = document.getElementById('audio-player'),
+      MC = document.getElementById('main-container'),
+      M = document.getElementById("serieModal"),
+      CBC = document.getElementById("closeModal"),
+      PB = document.getElementById('play-pause-button'),
+      CS = document.getElementById('capitulo'),
+      EC = document.getElementById('episodes-container'), // Ya no se usa para mostrar/ocultar
+      // EB = document.getElementById('episodes-button'), // Botón eliminado/oculto
+      LC = document.getElementById('languages-container'), // Contenedor de idioma
+      LS = document.getElementById('language'), // Selector de idioma
+      CI = document.getElementById('chapter-info'),
+      TI = document.getElementById('time-info'),
+      CWL = document.getElementById('cw-list');
+
+    let TII, IP = !1, // IsPlaying
+      CSD = [], // Current Series Data (capítulos)
+      CLI = 0, // Current Language Index
+      CCI = 0, // Current Chapter Index
+      S; // Current Series object
+
+    // Función para formatear tiempo (sin cambios)
+    const FT = t => {
+      const m = Math.floor(t / 60),
+        s = Math.floor(t % 60);
+      return `${PZ(m)}:${PZ(s)}`
+    };
+    const PZ = n => (n < 10 ? '0' : '') + n;
+
+    // Guardar Progreso (sin cambios funcionales, pero verifica usuario)
+    const GP = async (serieNombre) => {
+      if (!S || !auth.currentUser) return; // No guardar si no hay serie o usuario
+      const t = A.currentTime;
+      if (t <= 10) return; // No guardar si está muy al principio
+
+      try {
+        const user = auth.currentUser; // Ya verificado arriba
+        const progreso = {
+          serieNombre: S.nombre,
+          capituloIndex: CCI,
+          tiempo: t,
+          userId: user.uid,
+          ultimaActualizacion: serverTimestamp()
         };
+        const docRef = doc(db, "progresoSeries", `${user.uid}_${S.nombre}`);
+        await setDoc(docRef, progreso);
+        // console.log("Progreso guardado en Firebase:", progreso);
+        // No es necesario llamar UCW aquí, se llama periódicamente o al cargar/cambiar estado auth
+      } catch (e) {
+        console.error("Error al guardar el progreso en Firebase:", e);
+      }
+    };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-        const googleProvider = new GoogleAuthProvider();
+    // Recuperar Progreso (sin cambios funcionales)
+    const RP = async (serieNombre) => {
+      if (!auth.currentUser) return false; // No recuperar si no hay usuario
+      try {
+        const user = auth.currentUser;
+        const docRef = doc(db, "progresoSeries", `${user.uid}_${serieNombre}`);
+        const docSnap = await getDoc(docRef);
 
-        const GSIB = document.getElementById('google-sign-in');
-        const SOB = document.getElementById('sign-out');
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          CCI = data.capituloIndex;
+          A.currentTime = data.tiempo;
+          if (CS.options.length > CCI) { // Asegurar que el índice existe en el select
+             CS.value = CCI;
+          } else {
+             console.warn(`Índice de capítulo ${CCI} no encontrado en las opciones.`);
+             CCI = 0; // Resetear a 0 si no se encuentra
+             CS.value = CCI;
+          }
+          UC(); // Actualizar info de capítulo
+          console.log(`Progreso recuperado para ${serieNombre}: Capítulo ${CCI}, Tiempo ${data.tiempo}`);
+          return true;
+        } else {
+          console.log(`No se encontró progreso guardado para ${serieNombre}.`);
+          CCI = 0; // Empezar desde el principio si no hay progreso
+          A.currentTime = 0;
+          CS.value = CCI;
+          UC();
+          return false;
+        }
+      } catch (e) {
+        console.error("Error al cargar el progreso de Firebase:", e);
+        CCI = 0; // Resetear en caso de error
+        A.currentTime = 0;
+        CS.value = CCI;
+        UC();
+        return false;
+      }
+    };
 
-        const SIWG = async () => {
-            try { await signInWithPopup(auth, googleProvider); }
-            catch (error) { console.error("Error Sign In:", error); }
-        };
-        const SOG = async () => {
-            try { await signOut(auth); }
-            catch (error) { console.error("Error Sign Out:", error); }
-        };
+    // Cerrar Modal (sin cambios)
+    const C = () => {
+      if (S) GP(S.nombre); // Guardar progreso al cerrar
+      M.style.display = "none";
+      A.pause();
+      A.src = '';
+      MC.classList.remove('hidden');
+      clearInterval(TII);
+      IP = !1;
+      PB.textContent = 'Reproducir';
+      S = null; // Limpiar serie actual
+    };
 
-        onAuthStateChanged(auth, user => {
-            GSIB.classList.toggle('hidden', !!user);
-            SOB.classList.toggle('hidden', !user);
-            UCW(); // Actualizar "Continuar Viendo" al cambiar estado de auth
+    // Abrir Modal y Cargar Serie (MODIFICADO para autoplay)
+    const O = async (s) => { // Hacerla async para esperar RP
+      S = s;
+      IP = !1; // Resetear estado de reproducción
+      CLI = 0; // Resetear índice de idioma
+      CCI = 0; // Resetear índice de capítulo
+      CSD = []; // Limpiar datos de capítulos anteriores
+
+      LI(s); // Cargar info básica
+      LL(s); // Cargar idiomas (y mostrar/ocultar selector)
+      // LCF debe ser llamado DESPUÉS de recuperar progreso
+      // si existe, para no sobreescribir el tiempo.
+
+      MC.classList.add('hidden');
+      M.style.display = "block";
+      document.querySelector('#serieModal .modal-content').focus();
+
+      // Primero intenta recuperar el progreso
+      const progressLoaded = await RP(s.nombre);
+
+      // Luego carga los capítulos y el audio fuente correcto
+      LCF(s, !progressLoaded); // Pasar flag para indicar si debe empezar de 0
+
+      // Iniciar reproducción AUTOMÁTICAMENTE
+      TP(); // Llama a toggle play, que iniciará la reproducción si está pausado
+    };
+
+    // Fetch Data (sin cambios)
+    const FD = async () => {
+      try {
+        const t = await fetch(SD);
+        if (!t.ok) throw new Error(`Error! Status: ${t.status}`);
+        const e = await t.json();
+        return e.series
+      } catch (t) {
+        return console.error('Error fetching series data:', t), []
+      }
+    };
+
+    // Renderizar Catálogo (añadida clase a botones de series)
+    const RCAS = s => {
+      const t = document.getElementById('countries-container');
+      t.innerHTML = "";
+      const e = [...new Set(s.map(s => s.pais_origen))].sort();
+      e.forEach(e => {
+        const n = document.createElement('h2');
+        n.textContent = e;
+        t.appendChild(n);
+        const i = document.createElement('ul');
+        i.classList.add('series-list');
+        s.filter(s => s.pais_origen === e).sort((t, e) => t.nombre.localeCompare(e.nombre)).forEach(serieData => { // Renombrar s a serieData
+          const li = document.createElement('li'); // Renombrar e a li
+          const button = document.createElement('button'); // Renombrar n a button
+          button.textContent = serieData.nombre;
+          button.addEventListener('click', () => O(serieData));
+          button.setAttribute('tabindex', '0');
+          // Añadir clases de botón generales y específicas de la lista
+          button.classList.add('button', 'button-large', 'button-series');
+          li.appendChild(button);
+          i.appendChild(li);
+        });
+        t.appendChild(i);
+      });
+      UCW(); // Actualizar continuar viendo después de cargar catálogo
+    };
+
+    // Cargar Info de Serie (sin cambios)
+    const LI = s => {
+      const t = document.getElementById('serie-info');
+      S = s; // Asegurar que S está actualizada
+      t.innerHTML = `
+        <h2>${s.nombre}</h2>
+        <div><strong>Género:</strong> ${s.genero}</div>
+        <div><strong>Año:</strong> ${s.anio}</div>
+        <div><strong>Reparto:</strong> ${s.reparto.join(", ")}</div>
+        <div><strong>País:</strong> ${s.pais_origen}</div>
+        <div><strong>Episodios:</strong> ${s.cantidad_episodios}</div>
+        ${s.sinopsis ? `<div><strong>Sinopsis:</strong> ${s.sinopsis}</div>` : ''}
+    `;
+    };
+
+    // Cargar Idiomas (MODIFICADO para visibilidad condicional)
+    const LL = s => {
+      LS.innerHTML = ''; // Limpiar opciones anteriores
+      if (s.enlaces && s.enlaces.length > 1) {
+        s.enlaces.forEach((t, e) => {
+          const n = document.createElement('option');
+          n.value = e;
+          n.textContent = t.idioma;
+          LS.appendChild(n);
+        });
+        LS.value = CLI; // Seleccionar idioma actual (normalmente 0 al inicio)
+        LC.classList.remove('hidden'); // Mostrar contenedor de idioma
+      } else {
+        LC.classList.add('hidden'); // Ocultar si solo hay un idioma o ninguno
+        if (s.enlaces && s.enlaces.length === 1) {
+           CLI = 0; // Asegurarse que el índice es 0 si solo hay uno
+        }
+      }
+    };
+
+    // Cargar Capítulos y Fuente de Audio (MODIFICADO para manejar tiempo inicial)
+    const LCF = (s, startFromBeginning = false) => {
+        if (!s || !s.enlaces || !s.enlaces[CLI]) {
+            console.error("Datos de serie o enlace de idioma no válidos.");
+            A.src = '';
+            return;
+        }
+
+        const currentLanguageLink = s.enlaces[CLI].enlace;
+        if (!currentLanguageLink) {
+            console.error(`Enlace no encontrado para el idioma índice ${CLI}`);
+            A.src = '';
+            return;
+        }
+
+        CS.innerHTML = ''; // Limpiar opciones de capítulos
+        CSD = s.capitulos || []; // Usar capítulos de la serie o array vacío
+
+        if (CSD.length === 0) {
+            console.warn("La serie no tiene capítulos definidos.");
+            // Podrías poner una opción por defecto o manejar este caso
+            const option = document.createElement('option');
+            option.value = "";
+            option.textContent = "No hay capítulos";
+            CS.appendChild(option);
+            CI.textContent = "No hay capítulos disponibles";
+            A.src = ''; // No hay audio si no hay capítulos
+            return; // Salir si no hay capítulos
+        }
+
+
+        CSD.forEach((t, e) => {
+            const n = document.createElement('option');
+            n.value = e;
+            n.textContent = t.titulo;
+            CS.appendChild(n);
         });
 
-        GSIB.addEventListener('click', SIWG);
-        SOB.addEventListener('click', SOG);
+        // Asegurarse de que CCI es válido
+        if (CCI >= CSD.length || CCI < 0) {
+            console.warn(`Índice de capítulo inválido ${CCI}, reseteando a 0.`);
+            CCI = 0;
+        }
+         CS.value = CCI; // Establecer el valor del select al capítulo actual
 
-        const SD = 'https://ceosca.github.io/series/series.json';
-        const A = document.getElementById('audio-player');
-        const MC = document.getElementById('main-container');
-        const M = document.getElementById("serieModal");
-        const CBC = document.getElementById("closeModal");
-        const PB = document.getElementById('play-pause-button');
-        const CS = document.getElementById('capitulo');
-        const EC = document.getElementById('episodes-container');
-        const EB = document.getElementById('episodes-button');
-        const LC = document.getElementById('languages-container');
-        const LS = document.getElementById('language');
-        const LB = document.getElementById('languages-button');
-        const LSect = document.querySelector('.languages-section');
-        const CI = document.getElementById('chapter-info');
-        const TI = document.getElementById('time-info');
-        const CWL = document.getElementById('cw-list');
-        const SB = document.getElementById('speed-button');
-        const SC = document.getElementById('speed-container');
-        const SS = document.getElementById('speed');
+        UC(); // Actualizar info del capítulo mostrada
 
-        let TII; // Interval timer ID
-        let IP = false; // Is Playing?
-        let CSD = []; // Current Serie Data (chapters)
-        let CLI = 0; // Current Language Index
-        let CCI = 0; // Current Chapter Index
-        let S; // Current Serie Object
+        // Establecer fuente de audio y tiempo
+        if (A.src !== currentLanguageLink) {
+             console.log(`Cambiando fuente de audio a: ${currentLanguageLink}`);
+             A.src = currentLanguageLink;
+             A.load(); // Cargar el nuevo audio
+        }
 
-        const LBL_EPISODES = 'Episodios';
-        const LBL_LANG = 'Idioma'; // Cambiado para reflejar mejor el botón
-        const LBL_SPEED = 'Velocidad';
-        const LBL_HIDE = 'Ocultar'; // Texto genérico para ocultar popups
 
-        const ARIA_EPISODES = 'Mostrar lista de episodios';
-        const ARIA_LANG = 'Mostrar selección de idioma';
-        const ARIA_SPEED = 'Mostrar selección de velocidad';
-        const ARIA_HIDE_EPISODES = 'Ocultar lista de episodios';
-        const ARIA_HIDE_LANG = 'Ocultar selección de idioma';
-        const ARIA_HIDE_SPEED = 'Ocultar selección de velocidad';
+        // Solo reiniciar tiempo si no se cargó progreso o se indicó explícitamente
+        if (startFromBeginning) {
+             A.currentTime = CSD[CCI] ? (CSD[CCI].inicio / 1000) : 0;
+        } else {
+            // El tiempo ya fue establecido por RP, no lo tocamos aquí
+            // Pero si por alguna razón el tiempo es 0, iniciar en el inicio del cap
+             if (A.currentTime === 0 && CSD[CCI]) {
+                 A.currentTime = CSD[CCI].inicio / 1000;
+             }
+        }
 
-        // Toggle Visibility function
-        const V = (el, btn, lblShow, lblHide, ariaShow, ariaHide) => {
-            const isHidden = el.style.display === 'none' || el.classList.contains('hidden');
-            el.style.display = isHidden ? 'block' : 'none';
-            el.classList.toggle('hidden', !isHidden);
-            if (btn) {
-                btn.textContent = isHidden ? lblHide : lblShow;
-                btn.setAttribute('aria-label', isHidden ? ariaHide : ariaShow);
+
+        // Actualizar intervalo de tiempo
+        clearInterval(TII);
+        UT(); // Llamada inicial para mostrar tiempo
+        TII = setInterval(UT, 1000);
+    };
+
+
+    // Actualizar Info Capítulo (sin cambios)
+    const UC = () => {
+      if (CSD && CSD[CCI]) {
+        CI.textContent = `Cap: ${CSD[CCI].titulo}`;
+      } else {
+        CI.textContent = "Capítulo no disponible";
+      }
+    };
+
+    // Actualizar Tiempo (manejando caso sin CSD)
+    const UT = () => {
+        if (!S || !CSD || CSD.length === 0) {
+            TI.textContent = "Duración: --:-- / --:--";
+            return;
+        }
+        const currentTime = A.currentTime;
+        // No necesitamos GCI aquí, ya tenemos CCI
+        const currentChapter = CSD[CCI];
+
+        if (!currentChapter) {
+             TI.textContent = "Duración: --:-- / --:--";
+             return; // Salir si no hay datos del capítulo actual
+        }
+
+        const chapterStart = currentChapter.inicio / 1000;
+        const chapterEnd = currentChapter.fin / 1000;
+
+        // Asegurar que el tiempo mostrado es relativo al capítulo actual
+        const timeInChapter = Math.max(0, currentTime - chapterStart);
+        const chapterDuration = Math.max(0, chapterEnd - chapterStart);
+
+
+        const formattedTimeInChapter = FT(timeInChapter);
+        const formattedChapterDuration = FT(chapterDuration);
+
+        // Actualizar también la info del capítulo por si acaso
+        // CI.textContent = IP ? `Reproduciendo: ${currentChapter.titulo}` : currentChapter.titulo;
+        UC(); // Usar UC para mantener consistencia en el nombre del capítulo
+        TI.textContent = ` ${formattedTimeInChapter} / ${formattedChapterDuration}`;
+
+         // Avance automático al siguiente capítulo si termina el actual
+         if (currentTime >= chapterEnd - 0.5 && CCI < CSD.length - 1) { // 0.5s de margen
+             console.log("Fin de capítulo detectado, pasando al siguiente.");
+             NP(); // Llama a la función para ir al siguiente capítulo
+         }
+    };
+
+    // Toggle Play/Pause (sin cambios)
+    const TP = () => {
+      if (!A.src) { // No hacer nada si no hay fuente de audio
+         console.warn("No hay fuente de audio para reproducir.");
+         return;
+      }
+      if (IP) {
+        A.pause();
+        IP = !1;
+        PB.textContent = 'Reproducir';
+        GP(S.nombre); // Guardar progreso al pausar manualmente
+      } else {
+        A.play().then(() => {
+          IP = !0;
+          PB.textContent = 'Pausar';
+        }).catch(error => {
+          console.error("Error al intentar reproducir:", error);
+          IP = !1; // Asegurar que el estado es correcto
+          PB.textContent = 'Reproducir';
+          // Podrías mostrar un mensaje al usuario aquí
+        });
+      }
+    };
+
+    // Avanzar / Retroceder (sin cambios)
+    const F = () => { A.currentTime += 15 };
+    const B = () => { A.currentTime -= 15 };
+
+    // NO NECESARIO: Toggle Episodios (Botón eliminado)
+    // const TE = () => { V(EC, EB, 'Episodios', 'Ocultar') }; // Ya no se usa
+
+    // Play Chapter (Seleccionado desde el dropdown)
+    const PC = () => {
+      const selectedIndex = parseInt(CS.value);
+      if (isNaN(selectedIndex) || !CSD || selectedIndex < 0 || selectedIndex >= CSD.length) {
+          console.warn("Índice de capítulo seleccionado inválido:", CS.value);
+          return;
+      }
+      CCI = selectedIndex;
+      const chapterData = CSD[CCI];
+      if (chapterData) {
+          const startTime = chapterData.inicio / 1000;
+          console.log(`Cambiando a capítulo ${CCI}: ${chapterData.titulo}, iniciando en ${startTime}s`);
+          A.currentTime = startTime;
+           // Si no estaba reproduciendo, inicia la reproducción
+           if (!IP) {
+              TP();
+           } else {
+              // Si ya estaba reproduciendo, asegúrate de que siga así
+              A.play().catch(e => console.error("Error al reanudar play tras cambio de cap:", e));
+           }
+          UC(); // Actualizar UI
+          GP(S.nombre); // Guardar progreso al cambiar manualmente
+      } else {
+          console.warn("Datos del capítulo no encontrados para el índice:", CCI);
+      }
+    };
+
+
+    // NO NECESARIO: Get Current Index (Obsoleto, usamos CCI)
+    // const GCI = t => { ... };
+
+    // Capítulo Anterior/Siguiente (sin cambios funcionales)
+    const PP = () => {
+      let t = CCI;
+      if (t > 0) {
+        t--;
+        CS.value = t;
+        PC(); // Llama a la función que maneja el cambio
+      }
+    };
+    const NP = () => {
+      let t = CCI;
+      if (CSD && t < CSD.length - 1) {
+        t++;
+        CS.value = t;
+        PC(); // Llama a la función que maneja el cambio
+      }
+    };
+
+    // Cambiar Idioma
+    const CL = () => {
+      const selectedLanguageIndex = parseInt(LS.value);
+       if (isNaN(selectedLanguageIndex)) return; // Salir si no es un número válido
+
+      const previousTime = A.currentTime; // Guardar tiempo actual
+      const wasPlaying = IP; // Guardar estado de reproducción
+
+      CLI = selectedLanguageIndex;
+      console.log(`Cambiando a idioma índice: ${CLI}`);
+       // Llamar a LCF para recargar capítulos y fuente de audio
+       // Pasar 'false' para no reiniciar el tiempo desde el principio del capítulo
+      LCF(S, false);
+
+       // Intentar restaurar el tiempo después de que el audio cargue
+       // Usar 'loadedmetadata' puede ser más fiable
+       A.addEventListener('loadedmetadata', function restoreTime() {
+           A.currentTime = previousTime;
+            // Si estaba reproduciendo, intentar continuar
+            if(wasPlaying) {
+                A.play().catch(e => console.error("Error al reanudar play tras cambio de idioma:", e));
             }
-        };
-
-        const FT = t => { // Format Time
-            t = Math.max(0, t || 0); // Ensure t is a non-negative number
-            const m = Math.floor(t / 60);
-            const s = Math.floor(t % 60);
-            return `${PZ(m)}:${PZ(s)}`;
-        };
-        const PZ = n => (n < 10 ? '0' : '') + n; // Pad Zero
-
-        // --- Firebase Progress Functions (REVISED) ---
-
-        const GP = async () => { // Guardar Progreso
-            if (!S?.nombre || !auth.currentUser) return; // Need serie and user
-            const currentTime = A.currentTime;
-            if (isNaN(currentTime)) return; // Don't save if time is invalid
-
-            try {
-                const user = auth.currentUser;
-                const progreso = {
-                    sN: S.nombre,
-                    cI: CCI,
-                    t: currentTime,
-                    lI: CLI,
-                    sp: A.playbackRate,
-                    uId: user.uid,
-                    lU: serverTimestamp() // Firestore server timestamp
-                };
-                // console.log("Intentando guardar:", progreso);
-                await setDoc(doc(db, "progresoSeries", `${user.uid}_${S.nombre}`), progreso, { merge: true });
-                // console.log("Progreso guardado:", S.nombre, CCI, currentTime);
-                // No llamar a UCW aquí para evitar bucles si se llama desde intervalo
-            } catch (error) {
-                console.error("Error al guardar progreso:", error);
-            }
-        };
-
-        const RP = async (serieName) => { // Restaurar Progreso
-             if (!auth.currentUser || !S) return false; // Need user and loaded Serie object (S)
-
-            try {
-                const user = auth.currentUser;
-                const docRef = doc(db, "progresoSeries", `${user.uid}_${serieName}`);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    const data = docSnap.data();
-                    console.log("Progreso encontrado:", data);
-
-                    // Restore state variables FIRST
-                    CCI = data.cI ?? 0;
-                    CLI = data.lI ?? 0;
-                    const playbackSpeed = data.sp ?? 1;
-                    const seekTime = data.t ?? 0;
-
-                    // Update UI elements reflecting the state
-                    CS.value = CCI; // Set chapter dropdown
-                    LS.value = CLI; // Set language dropdown
-                    SS.value = playbackSpeed; // Set speed dropdown
-                    A.playbackRate = playbackSpeed; // Set audio playback rate
-
-                    console.log(`Progreso restaurado: Cap=${CCI}, Lang=${CLI}, Speed=${playbackSpeed}, Time=${seekTime}`);
-                    UC(); // Update chapter info display immediately
-
-                    // Return the time to seek to, let the caller handle seeking
-                    return seekTime;
-
-                } else {
-                    console.log("No se encontró progreso para:", serieName);
-                    // Reset state if no progress found (optional, good practice)
-                    CCI = 0;
-                    CLI = 0;
-                    A.playbackRate = 1;
-                    SS.value = 1;
-                    CS.value = CCI;
-                    LS.value = CLI;
-                    UC();
-                    return 0; // Seek to beginning
-                }
-            } catch (error) {
-                console.error("Error al restaurar progreso:", error);
-                return 0; // Seek to beginning on error
-            }
-        };
-
-        // --- Modal and Player Control Functions ---
-
-        const C = () => { // Close Modal
-            if (S) GP(); // Save progress on close
-            M.style.display = "none";
-            A.pause();
-            A.src = ''; // Clear audio source
-            MC.classList.remove('hidden'); // Show main container
-            clearInterval(TII); // Stop timer
-            IP = false;
-            PB.textContent = 'Reproducir';
-            PB.setAttribute('aria-label', 'Reproducir');
-            TI.textContent = '--:-- / --:--';
-            CI.textContent = '';
-            // Reset popup visibility and labels
-            [EC, LC, SC].forEach(el => { el.style.display = 'none'; el.classList.add('hidden'); });
-            EB.textContent = LBL_EPISODES; EB.setAttribute('aria-label', ARIA_EPISODES);
-            LB.textContent = LBL_LANG; LB.setAttribute('aria-label', ARIA_LANG);
-            SB.textContent = LBL_SPEED; SB.setAttribute('aria-label', ARIA_SPEED);
-            S = null; // Clear current serie
-            CSD = []; // Clear chapter data
-        };
-
-        const O = async (serie) => { // Open Serie Modal
-            S = serie; // Set current serie globally
-            IP = false; // Reset play state
-            CLI = 0; // Reset language index
-            CCI = 0; // Reset chapter index
-            CSD = []; // Clear previous chapter data
-
-            LI(S); // Load Serie Info display
-            LL(S); // Load Language options
-            LChapters(S); // Load Chapter options (doesn't set src yet)
-
-             // Restore progress *before* loading audio source
-            const seekTime = await RP(S.nombre); // RP sets CLI, CCI, speed, dropdowns
-
-            // Determine the audio URL based on potentially restored CLI
-            const audioUrl = S.enlaces?.[CLI]?.enlace;
-
-            // Set the audio source and handle seeking
-            if (audioUrl) {
-                if (A.currentSrc !== audioUrl) {
-                    console.log("Cambiando fuente a:", audioUrl, "y buscando a", seekTime);
-                    A.src = audioUrl;
-                    A.load();
-                    // Wait for 'canplay' before seeking if source changed
-                    A.addEventListener('canplay', () => {
-                        console.log("Audio listo (canplay), buscando a:", seekTime);
-                        A.currentTime = seekTime;
-                        // Attempt Autoplay only after audio is ready and seeked
-                        tryAutoplay();
-                    }, { once: true });
-                } else {
-                     console.log("Misma fuente, buscando a:", seekTime);
-                    // Source is the same, seek directly
-                    A.currentTime = seekTime;
-                     tryAutoplay(); // Attempt autoplay
-                }
-            } else {
-                console.warn("No se encontró URL de audio para el idioma", CLI);
-                A.src = ''; // Clear src if no valid URL
-                TI.textContent = '--:-- / --:--'; // Reset time display
-                CI.textContent = ''; // Reset chapter display
-            }
-
-            // Set initial UI state for the player
-            A.playbackRate = parseFloat(SS.value) || 1; // Ensure rate matches dropdown
-            UC(); // Update chapter display based on restored CCI
-            clearInterval(TII); // Clear any previous timer
-            UT(); // Update time display immediately
-            TII = setInterval(UT, 1000); // Start update timer
-
-            // Show modal and hide main content
-            MC.classList.add('hidden');
-            M.style.display = "block";
-            document.querySelector('#serieModal .modal-content')?.focus(); // Focus modal for accessibility
-
-            // Reset popups visibility and button labels
-            [EC, LC, SC].forEach(el => { el.style.display = 'none'; el.classList.add('hidden'); });
-            EB.textContent = LBL_EPISODES; EB.setAttribute('aria-label', ARIA_EPISODES);
-            LB.textContent = LBL_LANG; LB.setAttribute('aria-label', ARIA_LANG);
-            SB.textContent = LBL_SPEED; SB.setAttribute('aria-label', ARIA_SPEED);
-
-             // Initial button state based on IP (which should be false initially)
-            PB.textContent = IP ? 'Pausar' : 'Reproducir';
-            PB.setAttribute('aria-label', IP ? 'Pausar' : 'Reproducir');
-        };
-
-        // Helper for Autoplay attempt
-        const tryAutoplay = async () => {
-             if (!IP) { // Only try if not already playing (e.g., restored state wasn't playing)
-                try {
-                    await A.play();
-                    IP = true;
-                    PB.textContent = 'Pausar';
-                    PB.setAttribute('aria-label', 'Pausar');
-                    console.log("Autoplay iniciado");
-                } catch (err) {
-                    IP = false;
-                    PB.textContent = 'Reproducir';
-                    PB.setAttribute('aria-label', 'Reproducir');
-                    console.log("Autoplay bloqueado o fallido:", err);
-                }
-            }
-        };
+           A.removeEventListener('loadedmetadata', restoreTime); // Limpiar listener
+       }, { once: true });
 
 
-        const FD = async () => { // Fetch Data (Series)
-            try {
-                const r = await fetch(SD);
-                return r.ok ? (await r.json()).series : [];
-            } catch (error) {
-                console.error("Error fetching series data:", error);
-                return [];
-            }
-        };
+      GP(S.nombre); // Guardar progreso (aunque el tiempo puede no ser exacto hasta que cargue)
+    };
 
-        const RCAS = (series) => { // Render Countries and Series
-            const container = document.getElementById('countries-container');
-            container.innerHTML = "";
-            const countries = [...new Set(series.map(s => s.pais_origen))].sort();
-            countries.forEach(country => {
-                const h2 = document.createElement('h2');
-                h2.textContent = country;
-                container.appendChild(h2);
-                const ul = document.createElement('ul');
-                ul.className = 'series-list';
-                series.filter(item => item.pais_origen === country)
-                    .sort((a, b) => a.nombre.localeCompare(b.nombre))
-                    .forEach(item => {
-                        const li = document.createElement('li');
-                        const btn = document.createElement('button');
-                        btn.textContent = item.nombre;
-                        btn.onclick = () => O(item); // Pass the whole series object
-                        btn.tabIndex = 0;
-                        btn.className = 'button';
-                        li.appendChild(btn);
-                        ul.appendChild(li);
-                    });
-                container.appendChild(ul);
+    // Volumen (sin cambios)
+    const IV = () => { A.volume = Math.min(1, A.volume + .05) };
+    const DV = () => { A.volume = Math.max(0, A.volume - .05) };
+
+    // Actualizar Continuar Viendo (MODIFICADO para añadir botón de eliminar)
+    const UCW = async () => {
+      CWL.innerHTML = ''; // Limpiar lista actual
+      if (!auth.currentUser) {
+          console.log("Usuario no conectado, no se muestra 'Continuar Viendo'.");
+          document.getElementById('continue-watching').classList.add('hidden'); // Ocultar sección
+          return; // Salir si no hay usuario
+      }
+      document.getElementById('continue-watching').classList.remove('hidden'); // Mostrar sección
+
+      try {
+        const user = auth.currentUser;
+        // Consultar progreso ordenado por última actualización descendente
+        const q = query(collection(db, "progresoSeries"),
+          where("userId", "==", user.uid)
+          // where("tiempo", ">", 10) // Opcional: solo mostrar si se ha visto un mínimo
+          // orderBy("ultimaActualizacion", "desc") // Necesitarás índice compuesto en Firestore
+          );
+
+        const querySnapshot = await getDocs(q);
+        const continuados = [];
+        querySnapshot.forEach((doc) => {
+           // Añadir id del documento para poder borrarlo
+           continuados.push({ id: doc.id, ...doc.data() });
+        });
+
+        // Ordenar por fecha en el cliente si no se usa orderBy en la query
+        continuados.sort((a, b) => (b.ultimaActualizacion?.toDate() || 0) - (a.ultimaActualizacion?.toDate() || 0));
+
+
+        if (continuados.length === 0) {
+             document.getElementById('continue-watching').classList.add('hidden'); // Ocultar si no hay nada
+             return;
+        }
+
+
+        const series = await FD(); // Obtener la lista completa de series para detalles
+
+        for (const progreso of continuados) {
+          const serie = series.find(e => e.nombre === progreso.serieNombre);
+          if (serie && serie.capitulos && serie.capitulos[progreso.capituloIndex]) {
+            const capitulo = serie.capitulos[progreso.capituloIndex];
+             const fin = capitulo.fin / 1000; // Fin en segundos
+            const tiempoActual = progreso.tiempo;
+             // Calcular tiempo restante solo si el tiempo actual es menor que el fin
+             const tiempoRestanteSeg = Math.max(0, fin - tiempoActual);
+             const duracionRestante = FT(tiempoRestanteSeg);
+
+
+            const li = document.createElement('li');
+
+            // Botón para continuar viendo
+            const continueButton = document.createElement('button');
+             continueButton.textContent = `${serie.nombre} - ${capitulo.titulo} (Resta: ${duracionRestante})`;
+             continueButton.title = `Continuar viendo ${serie.nombre} desde ${FT(tiempoActual)}`;
+            continueButton.classList.add('button', 'continue-button'); // Clases para estilo
+            continueButton.addEventListener('click', () => {
+               // Abrir la serie, RP se encargará de restaurar el progreso
+               O(serie);
             });
-             // Call UCW after rendering initial list, in case user is already logged in
-            UCW();
-        };
 
-        const LI = (serie) => { // Load Info (Serie Details)
-            document.getElementById('serie-info').innerHTML = `
-                <h2>${serie.nombre}</h2>
-                <div><strong>Género:</strong> ${serie.genero}</div>
-                <div><strong>Año:</strong> ${serie.anio}</div>
-                <div><strong>Reparto:</strong> ${serie.reparto.join(", ")}</div>
-                <div><strong>País:</strong> ${serie.pais_origen}</div>
-                <div><strong>Episodios:</strong> ${serie.cantidad_episodios}</div>
-                ${serie.sinopsis ? `<div><strong>Sinopsis:</strong> ${serie.sinopsis}</div>` : ''}
-            `;
-        };
-
-        const LL = (serie) => { // Load Languages
-            LS.innerHTML = ''; // Clear previous options
-            serie.enlaces?.forEach((link, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = link.idioma;
-                LS.appendChild(option);
-            });
-            // Show/hide language section based on number of languages
-            LSect.classList.toggle('hidden', !(serie.enlaces?.length > 1));
-            LS.value = CLI; // Ensure dropdown reflects current language index
-        };
-
-        const LChapters = (serie) => { // Load Chapters into dropdown
-            CSD = serie.capitulos || []; // Store chapter data globally for this serie
-            CS.innerHTML = '<option value="">Seleccionar</option>'; // Reset dropdown
-            CSD.forEach((chapter, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = chapter.titulo;
-                CS.appendChild(option);
-            });
-            CS.value = CCI; // Ensure dropdown reflects current chapter index
-        };
-
-        const UC = () => { // Update Chapter Info Display
-            CI.textContent = CSD?.[CCI] ? `Ep: ${CSD[CCI].titulo}` : '';
-        };
-
-        const GCI = (currentTime) => { // Get Current Chapter Index based on time
-            let currentIdx = CCI; // Default to current index
-            if (!CSD?.length) return currentIdx;
-
-            for (let i = 0; i < CSD.length; i++) {
-                const chap = CSD[i];
-                if (chap?.inicio != null && chap?.fin != null) {
-                    const startSeconds = chap.inicio / 1000;
-                    const endSeconds = chap.fin / 1000;
-                    // Check if time falls within this chapter's boundaries
-                    if (currentTime >= startSeconds && currentTime < endSeconds) {
-                        currentIdx = i;
-                        break; // Found the chapter, exit loop
+            // Botón para eliminar
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.title = `Eliminar ${serie.nombre} de Continuar Viendo`;
+            deleteButton.classList.add('button', 'button-danger'); // Clase para estilo rojo
+            deleteButton.addEventListener('click', async (e) => {
+               e.stopPropagation(); // Evitar que el click active el botón de continuar
+               if (confirm(`¿Seguro que quieres eliminar el progreso de "${serie.nombre}"?`)) {
+                 try {
+                   const docRef = doc(db, "progresoSeries", progreso.id); // Usar el ID del documento guardado
+                   await deleteDoc(docRef);
+                   console.log(`Progreso para ${serie.nombre} eliminado.`);
+                   li.remove(); // Eliminar el elemento de la lista en la UI
+                    // Opcional: Ocultar la sección si ya no quedan elementos
+                    if (CWL.children.length === 0) {
+                       document.getElementById('continue-watching').classList.add('hidden');
                     }
-                }
-            }
-             // If time is before the first chapter's start, keep index 0
-             if (CSD[0]?.inicio != null && currentTime < (CSD[0].inicio / 1000)) {
-                 currentIdx = 0;
-             }
-             // If time is after the last chapter's end, keep the last index
-             else if (CSD.length > 0 && CSD[CSD.length - 1]?.fin != null && currentTime >= (CSD[CSD.length - 1].fin / 1000)) {
-                currentIdx = CSD.length - 1;
-             }
+                 } catch (error) {
+                   console.error("Error al eliminar el progreso:", error);
+                   alert("No se pudo eliminar el progreso. Inténtalo de nuevo.");
+                 }
+               }
+            });
 
-            return currentIdx;
-        };
+            li.appendChild(continueButton);
+            li.appendChild(deleteButton);
+            CWL.appendChild(li);
+          } else {
+             console.warn(`No se encontró la serie o capítulo para el progreso: ${progreso.serieNombre}, CapIndex: ${progreso.capituloIndex}`);
+             // Podrías querer eliminar este registro huérfano de Firestore aquí
+          }
+        }
+      } catch (error) {
+        console.error("Error al actualizar Continuar Viendo:", error);
+        document.getElementById('continue-watching').classList.add('hidden'); // Ocultar en caso de error
+      }
+    };
 
-        const UT = () => { // Update Time Display and check chapter change
-            if (!A || !S || !CSD?.length) { // Ensure audio and serie data are loaded
-                TI.textContent = '--:-- / --:--';
-                return;
-            }
+    // --- Event Listeners ---
+    CBC.addEventListener('click', C);
+    window.addEventListener('click', t => {
+      // Cerrar modal si se hace clic fuera del contenido del modal
+      if (t.target === M) {
+        C();
+      }
+    });
 
-            const currentTime = A.currentTime;
-            const calculatedIndex = GCI(currentTime);
+    CS.addEventListener('change', PC); // Cambiar capítulo desde el select
+    LS.addEventListener('change', CL); // Cambiar idioma desde el select
 
-            // Update chapter if it changed automatically during playback
-            if (calculatedIndex !== CCI && IP) {
-                 console.log(`Chapter changed automatically from ${CCI} to ${calculatedIndex}`);
-                CCI = calculatedIndex;
-                CS.value = CCI; // Update dropdown to reflect change
-                UC(); // Update chapter title display
-                GP(); // Save progress because chapter changed
-            }
-
-            // Update time display relative to the current chapter (CCI)
-            const currentChapter = CSD[CCI];
-            let displayTime = "--:--";
-            let displayDuration = "--:--";
-
-            if (currentChapter?.inicio != null && currentChapter?.fin != null) {
-                const startSeconds = currentChapter.inicio / 1000;
-                const endSeconds = currentChapter.fin / 1000;
-                const chapterDuration = endSeconds - startSeconds;
-
-                if (currentTime >= startSeconds && currentTime <= endSeconds) {
-                    // Time is within the current chapter
-                    displayTime = FT(currentTime - startSeconds);
-                    displayDuration = FT(chapterDuration);
-                } else if (currentTime < startSeconds) {
-                     // Time is before the current chapter (e.g., gap between chapters)
-                    displayTime = FT(0); // Show 00:00
-                    displayDuration = FT(chapterDuration);
-                } else {
-                    // Time is after the current chapter (e.g., playback continued past end)
-                     displayTime = FT(chapterDuration); // Show full duration elapsed
-                     displayDuration = FT(chapterDuration);
-                }
-            }
-
-            TI.textContent = `${displayTime} / ${displayDuration}`;
-        };
-
-        const TP = () => { // Toggle Play/Pause
-            if (IP) {
-                A.pause();
-                // IP state and button text/aria are handled by the 'pause' event listener
-            } else {
-                 // If src is not set or invalid, try loading first chapter
-                if (!A.src || A.src === window.location.href) {
-                     if (S && CSD.length > 0) {
-                         console.log("No source, starting from first chapter.");
-                         PC(0); // Start from chapter 0 if no source
-                         return;
-                     } else {
-                         console.warn("Cannot play: No serie or chapters loaded.");
-                         return;
-                     }
-                }
-                 // Attempt to play
-                A.play().catch(error => {
-                    console.error("Play failed:", error);
-                    IP = false; // Ensure state is correct on failure
-                    PB.textContent = 'Reproducir';
-                    PB.setAttribute('aria-label', 'Reproducir');
-                });
-                 // IP state and button text/aria are handled by the 'play' event listener
-            }
-        };
-
-        const F = () => { A.currentTime += 15; }; // Forward
-        const B = () => { A.currentTime -= 15; }; // Backward
-
-        const TE = () => V(EC, EB, LBL_EPISODES, LBL_HIDE, ARIA_EPISODES, ARIA_HIDE_EPISODES); // Toggle Episodes
-        const TL = () => V(LC, LB, LBL_LANG, LBL_HIDE, ARIA_LANG, ARIA_HIDE_LANG);       // Toggle Languages
-        const TSp = () => V(SC, SB, LBL_SPEED, LBL_HIDE, ARIA_SPEED, ARIA_HIDE_SPEED);    // Toggle Speed
-
-        const PC = (chapterIndex = -1) => { // Play Chapter (from dropdown or specific index)
-            let targetIndex = (chapterIndex >= 0) ? chapterIndex : parseInt(CS.value);
-
-            if (isNaN(targetIndex) || !CSD?.[targetIndex]) {
-                console.warn("Índice de capítulo inválido:", targetIndex);
-                return;
-            }
-
-            CCI = targetIndex;
-            CS.value = CCI; // Ensure dropdown matches index
-            const chapter = CSD[CCI];
-
-            if (chapter?.inicio != null) {
-                const seekTime = chapter.inicio / 1000;
-                console.log(`Cambiando a capítulo ${CCI}: ${chapter.titulo}, buscando a ${seekTime}`);
-                A.currentTime = seekTime;
-                UC(); // Update display immediately
-
-                // Attempt to play after changing chapter manually
-                if (!IP) { // Only call play if currently paused
-                    A.play().catch(error => {
-                        console.error("Play failed after chapter change:", error);
-                        IP = false;
-                        PB.textContent = 'Reproducir';
-                        PB.setAttribute('aria-label', 'Reproducir');
-                    });
-                     // 'play' event will handle IP=true and button state
-                }
-                GP(); // Save progress after successful chapter change and seek
-            } else {
-                console.warn("Capítulo seleccionado no tiene tiempo de inicio.");
-                UC(); // Update display even if seek fails
-            }
-            // Close the episode selector popup if it's open
-            if (!EC.classList.contains('hidden')) {
-                 V(EC, EB, LBL_EPISODES, LBL_HIDE, ARIA_EPISODES, ARIA_HIDE_EPISODES);
-            }
-        };
+    // Pausar guarda progreso
+    A.addEventListener('pause', () => {
+        IP = !1; // Asegurarse que el estado es correcto
+        PB.textContent = 'Reproducir';
+        if (S && A.currentTime > 0 && A.duration > 0 && A.currentTime < A.duration -1) { // Guardar solo si no es el puro final
+             GP(S.nombre);
+        }
+    });
+    // Play actualiza estado
+    A.addEventListener('play', () => {
+      IP = !0;
+      PB.textContent = 'Pausar';
+    });
+    // Fin del audio podría guardar progreso o no, dependiendo de la lógica deseada
+    A.addEventListener('ended', () => {
+       console.log("Audio finalizado.");
+       IP = !1;
+       PB.textContent = 'Reproducir';
+        // Podrías decidir si marcar el capítulo como visto o simplemente guardar la posición final
+       if (S) GP(S.nombre);
+       // NO pasar automáticamente al siguiente aquí si ya lo hace UT
+    });
 
 
-        const PP = () => { // Previous Chapter
-            if (CCI > 0) {
-                PC(CCI - 1); // Play previous index
-            }
-        };
-        const NP = () => { // Next Chapter
-            if (CSD && CCI < CSD.length - 1) {
-                PC(CCI + 1); // Play next index
-            }
-        };
+    // Botones del reproductor
+    PB.addEventListener('click', TP);
+    document.getElementById('forward-button').addEventListener('click', F);
+    document.getElementById('backward-button').addEventListener('click', B);
+    document.getElementById('previous-chapter-button').addEventListener('click', PP);
+    document.getElementById('next-chapter-button').addEventListener('click', NP);
+    document.getElementById('increase-volume-button').addEventListener('click', IV);
+    document.getElementById('decrease-volume-button').addEventListener('click', DV);
 
-        const CL = async () => { // Change Language
-            const newLanguageIndex = parseInt(LS.value);
-            if (isNaN(newLanguageIndex) || newLanguageIndex === CLI || !S?.enlaces) return;
+    // Carga inicial
+    window.onload = async () => {
+       const seriesData = await FD();
+       RCAS(seriesData);
+       // UCW se llama ahora dentro de onAuthStateChanged y RCAS
+    };
 
-            const previousTime = A.currentTime; // Store current time before changing source
-            const wasPlaying = IP; // Store play state
-
-            CLI = newLanguageIndex; // Update global language index
-            console.log("Cambiando a idioma índice:", CLI);
-
-            const audioUrl = S.enlaces[CLI]?.enlace;
-
-            if (audioUrl) {
-                 if (A.currentSrc !== audioUrl) {
-                    console.log("Cambiando fuente a:", audioUrl);
-                    A.src = audioUrl;
-                    A.load();
-                    A.addEventListener('canplay', () => {
-                         console.log("Audio listo (canplay), buscando a:", previousTime);
-                        A.currentTime = previousTime; // Seek to old time position
-                        if (wasPlaying) {
-                             A.play().catch(e => console.error("Error reanudando play tras cambio idioma:", e));
-                        }
-                        GP(); // Save progress after language change is applied
-                    }, { once: true });
-                } else {
-                    // Same source URL? Should not happen if index changes, but just in case
-                    console.log("Misma fuente tras cambio de idioma? Raro.");
-                     A.currentTime = previousTime; // Seek anyway
-                     if (wasPlaying) A.play().catch(e => console.error("Error reanudando play:", e));
-                     GP();
-                }
-
-            } else {
-                console.error("No se encontró URL para el idioma seleccionado:", CLI);
-                A.src = ''; // Clear source if invalid
-            }
-             // Close the language selector popup if it's open
-             if (!LC.classList.contains('hidden')) {
-                V(LC, LB, LBL_LANG, LBL_HIDE, ARIA_LANG, ARIA_HIDE_LANG);
-            }
-        };
-
-
-        const ChSp = () => { // Change Speed
-            const rate = parseFloat(SS.value);
-            if (!isNaN(rate)) {
-                A.playbackRate = rate;
-                console.log("Velocidad cambiada a:", rate);
-                GP(); // Save progress after speed change
-            }
-             // Close the speed selector popup if it's open
-            if (!SC.classList.contains('hidden')) {
-                 V(SC, SB, LBL_SPEED, LBL_HIDE, ARIA_SPEED, ARIA_HIDE_SPEED);
-            }
-        };
-
-        const IV = () => { A.volume = Math.min(1, A.volume + 0.1); }; // Increase Volume
-        const DV = () => { A.volume = Math.max(0, A.volume - 0.1); }; // Decrease Volume
-
-        const UCW = async () => { // Update Continue Watching
-            CWL.innerHTML = ''; // Clear list first
-            if (!auth.currentUser) {
-                 document.getElementById('continue-watching').classList.add('hidden');
-                return; // Need user to show history
-            }
-             document.getElementById('continue-watching').classList.remove('hidden');
-
-
-            try {
-                const user = auth.currentUser;
-                // Query Firestore for progress documents for this user where time > 10 seconds
-                const q = query(collection(db, "progresoSeries"),
-                                where("uId", "==", user.uid),
-                                where("t", ">", 10)); // Only show if watched more than 10s
-
-                const querySnapshot = await getDocs(q);
-                const progressItems = [];
-                querySnapshot.forEach(doc => progressItems.push(doc.data()));
-
-                // Sort by last updated time, newest first
-                progressItems.sort((a, b) => b.lU?.toMillis() - a.lU?.toMillis());
-
-                const allSeries = await FD(); // Get all series data once
-
-                for (const progress of progressItems) {
-                    const serieData = allSeries.find(s => s.nombre === progress.sN);
-
-                    if (serieData?.capitulos?.[progress.cI]) {
-                        const chapter = serieData.capitulos[progress.cI];
-                        let remainingTimeStr = "??:??";
-
-                        if (chapter.fin != null) {
-                            const endSeconds = chapter.fin / 1000;
-                            const watchedTime = progress.t || 0;
-                            // Only show if there's significant time remaining
-                            if (watchedTime < endSeconds - 5) { // Don't show if less than 5s left
-                                remainingTimeStr = FT(endSeconds - watchedTime);
-
-                                const li = document.createElement('li');
-                                const btn = document.createElement('button');
-                                btn.textContent = `Continuar ${serieData.nombre}, ${chapter.titulo} (Restante ${remainingTimeStr})`;
-                                btn.onclick = () => O(serieData); // Open this serie when clicked
-                                btn.className = 'button';
-                                li.appendChild(btn);
-                                CWL.appendChild(li);
-                            }
-                        }
-                    }
-                }
-                 // Hide the section if the list is empty after filtering
-                if (CWL.children.length === 0) {
-                   document.getElementById('continue-watching').classList.add('hidden');
-                }
-
-            } catch (error) {
-                console.error("Error al actualizar 'Continuar Viendo':", error);
-                 document.getElementById('continue-watching').classList.add('hidden');
-            }
-        };
-
-        // --- Event Listeners ---
-
-        CBC.addEventListener('click', C); // Close button in modal header
-
-        // Close popups if clicked outside
-        window.addEventListener('click', (event) => {
-            const target = event.target;
-
-            // Close modal if clicked on the background overlay
-            if (target === M) {
-                C();
-                return; // Stop further checks if modal is closed
-            }
-
-            // Helper to close popups
-            const closePopupIfOutside = (popupEl, buttonEl, labelShow, ariaShow) => {
-                if (!popupEl.contains(target) && !buttonEl.contains(target) && !popupEl.classList.contains('hidden')) {
-                    V(popupEl, buttonEl, labelShow, LBL_HIDE, ariaShow, ''); // Use V to correctly update state
-                }
-            };
-
-            // Check each popup only if the modal is open
-             if (M.style.display === "block") {
-                closePopupIfOutside(EC, EB, LBL_EPISODES, ARIA_EPISODES);
-                closePopupIfOutside(LC, LB, LBL_LANG, ARIA_LANG);
-                closePopupIfOutside(SC, SB, LBL_SPEED, ARIA_SPEED);
-             }
-        });
-
-        CS.addEventListener('change', PC); // Chapter dropdown change
-
-        // Audio element events
-        A.addEventListener('pause', () => {
-            IP = false;
-            PB.textContent = 'Reproducir';
-            PB.setAttribute('aria-label', 'Reproducir');
-            GP(); // Save progress on pause
-             clearInterval(TII); // Stop interval timer on pause
-        });
-
-        A.addEventListener('play', () => {
-            IP = true;
-            PB.textContent = 'Pausar';
-            PB.setAttribute('aria-label', 'Pausar');
-             clearInterval(TII); // Clear existing timer just in case
-             TII = setInterval(UT, 1000); // Start interval timer on play
-        });
-
-        A.addEventListener('ended', () => {
-            IP = false;
-            PB.textContent = 'Reproducir';
-            PB.setAttribute('aria-label', 'Reproducir');
-            GP(); // Save progress at end
-             clearInterval(TII); // Stop interval timer on end
-            // Optionally move to next chapter if available?
-             // NP(); // Uncomment this line to automatically play next chapter
-        });
-
-        A.addEventListener('timeupdate', UT); // Update time display frequently (alternative to interval)
-        // Note: Using 'timeupdate' might be slightly more efficient than setInterval,
-        // but setInterval(UT, 1000) is generally reliable enough. Let's keep setInterval for now.
-
-        // Button clicks for popups
-        EB.addEventListener('click', TE);
-        LB.addEventListener('click', TL);
-        SB.addEventListener('click', TSp);
-
-        // Change listeners for selects inside popups
-        LS.addEventListener('change', CL); // Language select change
-        SS.addEventListener('change', ChSp); // Speed select change
-
-        // Player control buttons
-        PB.addEventListener('click', TP); // Play/Pause button
-        document.getElementById('forward-button').addEventListener('click', F);
-        document.getElementById('backward-button').addEventListener('click', B);
-        document.getElementById('previous-chapter-button').addEventListener('click', PP);
-        document.getElementById('next-chapter-button').addEventListener('click', NP);
-        document.getElementById('increase-volume-button').addEventListener('click', IV);
-        document.getElementById('decrease-volume-button').addEventListener('click', DV);
-
-        // --- Initial Load ---
-        window.onload = async () => {
-            RCAS(await FD()); // Fetch series and render the initial list
-        };
-
-        // Periodic save interval (only saves if playing in the modal)
-        setInterval(() => {
-            if (M.style.display === "block" && S && IP) {
-                 // console.log("Guardado periódico por intervalo");
-                GP();
-            }
-        }, 15000); // Save every 15 seconds while playing
-
-    </script>
+    // Guardado periódico de progreso (cada 15 segundos mientras se reproduce)
+    setInterval(() => {
+      if (M.style.display === "block" && S && IP) { // Solo si el modal está visible, hay serie y está reproduciendo
+        GP(S.nombre);
+      }
+    }, 15000); // 15 segundos
+  </script>
 </body>
+
 </html>
