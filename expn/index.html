@@ -304,7 +304,7 @@ Use code with caution.
         novelaSeleccionada.temporadas.forEach((temporada, index) => {
             const option = document.createElement("option");
             option.text = temporada.nombre;
-            option.value = index;
+            option.value = index.toString();
             seasonList.add(option);
         });
         seasonList.selectedIndex = 0;
@@ -326,7 +326,7 @@ Use code with caution.
         for (let i = 1; i <= temporadaSeleccionada.capitulos; i++) {
             const option = document.createElement("option");
             option.text = `Capítulo ${i}`;
-            option.value = i;
+            option.value = i.toString();
             chapterList.add(option);
         }
 
@@ -463,7 +463,7 @@ async function cargarNovelaDesdeContinuarViendo(tituloNovela) {
             // Use setTimeout to ensure the DOM is updated before proceeding
             setTimeout(() => {
                 const indexNovela = novelasData.filter(novela => novela.pais_origen === novelaEncontrada.pais_origen).findIndex(novela => novela.titulo === tituloNovela);
-                novelaList.value = indexNovela;
+                novelaList.value = indexNovela.toString();
                 cargarTemporadas();
 
                 // Use setTimeout to ensure the DOM is updated before proceeding
