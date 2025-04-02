@@ -259,8 +259,10 @@ Use code with caution.
             progresos.sort((a, b) => b.timestamp - a.timestamp);
 
             progresos.forEach(progreso => {
+                const temporada = parseInt(progreso.temporada, 10);
+                const capitulo = parseInt(progreso.capitulo, 10);
                 const option = document.createElement("option");
-                option.text = `${progreso.tituloNovela} - Temp: ${parseInt(progreso.temporada) + 1}, Cap: ${progreso.capitulo}, Tiempo: ${formatTime(progreso.tiempo)}`;
+                option.text = `${progreso.tituloNovela} - Temp: ${temporada + 1}, Cap: ${capitulo}, Tiempo: ${formatTime(progreso.tiempo)}`;
                 option.value = progreso.tituloNovela;
                 continuarViendoList.add(option);
             });
@@ -364,6 +366,7 @@ Use code with caution.
         audio.load();
 
         obtenerProgreso(tituloNovela).then(progreso => {
+          console.log("Progreso recuperado:", progreso);
             if (progreso && progreso.tiempo && progreso.temporada === seasonList.value && progreso.capitulo === chapterList.value) {
                 audio.currentTime = progreso.tiempo;
             } else {
@@ -463,14 +466,14 @@ async function cargarNovelaDesdeContinuarViendo(tituloNovela) {
             // Use setTimeout to ensure the DOM is updated before proceeding
             setTimeout(() => {
                 const indexNovela = novelasData.filter(novela => novela.pais_origen === novelaEncontrada.pais_origen).findIndex(novela => novela.titulo === tituloNovela);
-                novelaList.value = indexNovela.toString();
+                novelaList.value = indexNovela;
                 cargarTemporadas();
 
                 // Use setTimeout to ensure the DOM is updated before proceeding
                 obtenerProgreso(tituloNovela).then(progreso => {
                     if (progreso) {
                         setTimeout(() => {
-                            seasonList.value = progreso.temporada;
+                         seasonList.value = progreso.temporada;
                             cargarCapitulos();
 
                             setTimeout(() => {
