@@ -372,6 +372,12 @@ Use code with caution.
             } else {
                 audio.currentTime = 0;
             }
+
+             // Play the audio if autoplay is enabled
+            if (autoplayCheckbox.checked) {
+                audio.play();
+                updatePlayPauseButton("Pausar", "Pausar");
+            }
         });
     }
     function updatePlayPauseButton(title, ariaLabel) {
@@ -480,6 +486,11 @@ async function cargarNovelaDesdeContinuarViendo(tituloNovela) {
                                 chapterList.value = progreso.capitulo;
                                 setChapter();
                                 audio.currentTime = progreso.tiempo;
+                                 // Play the audio if autoplay is enabled
+                                if (autoplayCheckbox.checked) {
+                                    audio.play();
+                                    updatePlayPauseButton("Pausar", "Pausar");
+                                }
                             }, 50);
                         }, 50);
                     }
@@ -527,6 +538,38 @@ async function cargarNovelaDesdeContinuarViendo(tituloNovela) {
         const tituloSeleccionado = this.value;
         if (tituloSeleccionado) {
             cargarNovelaDesdeContinuarViendo(tituloSeleccionado);
+        }
+    });
+   audio.addEventListener('ended', () => {
+        if (autoplayCheckbox.checked) {
+            // Get the current chapter and season.
+            const currentChapter = parseInt(chapterList.value, 10);
+            const currentSeason = parseInt(seasonList.value, 10);
+
+            // Get the total number of chapters in the current season.
+            const totalChapters = temporadaSeleccionada.capitulos;
+
+            // If we're not at the end of the season, play the next chapter.
+            if (currentChapter < totalChapters) {
+                chapterList.value = (currentChapter + 1).toString();
+                setChapter();
+            } else {
+                // If we are at the end of the season, check if there's a next season.
+                const totalSeasons = novelaSeleccionada.temporadas.length;
+
+                if (currentSeason < totalSeasons - 1) {
+                    // Move to the next season and play the first chapter.
+                    seasonList.value = (currentSeason + 1).toString();
+                    cargarCapitulos();
+                    setTimeout(() => {
+                        chapterList.value = '1';
+                        setChapter();
+                    }, 50);  // Short delay to ensure the DOM updates.
+                } else {
+                    // We're at the end of the series.
+                    alert("Has llegado al final de la novela.");
+                }
+            }
         }
     });
 </script>

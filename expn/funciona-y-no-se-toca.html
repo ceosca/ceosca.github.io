@@ -52,8 +52,8 @@ Use code with caution.
 <audio id="repro" src="" type="audio/mpeg"></audio>
 <p id="progress-text">Progreso: 0:00 / 0:00</p>
 <button id="eliminar-progresos">Eliminar Progresos Guardados de Novelas</button>
-<button id="google-sign-in">Iniciar sesión con Google</button>
-<button id="sign-out" class="hidden">Cerrar sesión</button>
+<button id="sign-in-out-button">Iniciar sesión con Google</button>
+
 
 <script type="module">
     // Import the functions you need from the SDKs you need
@@ -78,8 +78,8 @@ Use code with caution.
     const googleProvider = new GoogleAuthProvider();
 
     //Botones para iniciar y cerrar sesion
-    const googleSignInButton = document.getElementById('google-sign-in');
-    const signOutButton = document.getElementById('sign-out');
+    const signInButton = document.getElementById('sign-in-out-button');
+
 
     let uid; // Store the user ID
 
@@ -109,21 +109,24 @@ Use code with caution.
     if (user) {
         console.log("Usuario conectado:", user.uid);
         uid = user.uid;
-        googleSignInButton.classList.add('hidden');
-        signOutButton.classList.remove('hidden');
+        signInButton.textContent = "Cerrar sesión";
         cargarContinuarViendo();
     } else {
         console.log("Usuario desconectado");
         uid = null;
-        googleSignInButton.classList.remove('hidden');
-        signOutButton.classList.add('hidden');
+        signInButton.textContent = "Iniciar sesión con Google";
         continuarViendoList.innerHTML = '<option value="">Selecciona una novela...</option>'; // Clear the list
     }
     });
 
     //eventos para los botones de inicio y cierre de sesión
-    googleSignInButton.addEventListener('click', signInWithGoogle);
-    signOutButton.addEventListener('click', signOutGoogle);
+    signInButton.addEventListener('click', () => {
+        if (auth.currentUser) {
+            signOutGoogle();
+        } else {
+            signInWithGoogle();
+        }
+    });
 
     const audio = document.getElementById("repro");
     const novelaList = document.getElementById("novela-list");
@@ -139,6 +142,12 @@ Use code with caution.
     const progressText = document.getElementById("progress-text");
     const eliminarProgresosButton = document.getElementById("eliminar-progresos");
     const continuarViendoList = document.getElementById("continuar-viendo-list");
+    const novelaTituloElement = document.getElementById("novela-titulo");
+    const novelaGeneroElement = document.getElementById("novela-genero");
+    const novelaAnioElement = document.getElementById("novela-anio");
+    const novelaPaisElement = document.getElementById("novela-pais");
+    const novelaRepartoElement = document.getElementById("novela-reparto");
+    const novelaSinopsisElement = document.getElementById("novela-sinopsis");
 
     let novelasData = [];
     let paises = [];
@@ -157,6 +166,10 @@ Use code with caution.
     function cargarPaises() {
         paises = [...new Set(novelasData.map(novela => novela.pais_origen))];
         paisList.innerHTML = "";
+        const defaultOption = document.createElement("option");
+        defaultOption.text = "Selecciona un país...";
+        defaultOption.value = "";
+        paisList.add(defaultOption);
         paises.forEach((pais) => {
             const option = document.createElement("option");
             option.text = pais;
@@ -164,14 +177,30 @@ Use code with caution.
             paisList.add(option);
         });
         paisList.selectedIndex = 0;
-        paisSeleccionado = paisList.value;
-        cargarNovelas();
+        paisList.addEventListener('change', cargarNovelas);
+        limpiarSinopsis();
     }
 
     function cargarNovelas() {
         paisSeleccionado = paisList.value;
+
+        if (!paisSeleccionado) {
+            novelaList.innerHTML = "";
+            const defaultOption = document.createElement("option");
+            defaultOption.text = "Selecciona un país primero...";
+            defaultOption.value = "";
+            novelaList.add(defaultOption);
+            novelaList.selectedIndex = 0;
+            limpiarSinopsis();
+            return;
+        }
+
         const novelasFiltradas = novelasData.filter(novela => novela.pais_origen === paisSeleccionado);
         novelaList.innerHTML = "";
+        const defaultOption = document.createElement("option");
+            defaultOption.text = "Selecciona una novela...";
+            defaultOption.value = "";
+            novelaList.add(defaultOption);
         novelasFiltradas.forEach((novela, index) => {
             const option = document.createElement("option");
             option.text = novela.titulo;
@@ -179,7 +208,8 @@ Use code with caution.
             novelaList.add(option);
         });
         novelaList.selectedIndex = 0;
-        cargarTemporadas();
+        novelaList.addEventListener('change', cargarTemporadas);
+        limpiarSinopsis();
     }
 
     function generarClaveProgreso(tituloNovela) {
@@ -229,8 +259,10 @@ Use code with caution.
             progresos.sort((a, b) => b.timestamp - a.timestamp);
 
             progresos.forEach(progreso => {
+                const temporada = parseInt(progreso.temporada, 10);
+                const capitulo = parseInt(progreso.capitulo, 10);
                 const option = document.createElement("option");
-                option.text = `${progreso.tituloNovela} - Temp: ${parseInt(progreso.temporada) + 1}, Cap: ${progreso.capitulo}, Tiempo: ${formatTime(progreso.tiempo)}`;
+                option.text = `${progreso.tituloNovela} - Temp: ${temporada + 1}, Cap: ${capitulo}, Tiempo: ${formatTime(progreso.tiempo)}`;
                 option.value = progreso.tituloNovela;
                 continuarViendoList.add(option);
             });
@@ -239,10 +271,26 @@ Use code with caution.
             console.error("Error fetching 'Continuar Viendo' data:", error);
         }
     }
+    function limpiarSinopsis() {
+        novelaTituloElement.textContent = "";
+        novelaGeneroElement.textContent = "";
+        novelaAnioElement.textContent = "";
+        novelaPaisElement.textContent = "";
+        novelaRepartoElement.textContent = "";
+        novelaSinopsisElement.textContent = "";
+    }
     function cargarTemporadas() {
         paisSeleccionado = paisList.value;
+        if (!paisSeleccionado) {
+            return;
+        }
         const novelasFiltradas = novelasData.filter(novela => novela.pais_origen === paisSeleccionado);
         const novelaIndex = novelaList.value;
+
+        if (!novelaIndex) {
+            return;
+        }
+
         novelaSeleccionada = novelasFiltradas[novelaIndex];
 
         const tituloNovela = novelaSeleccionada.titulo;
@@ -258,18 +306,11 @@ Use code with caution.
         novelaSeleccionada.temporadas.forEach((temporada, index) => {
             const option = document.createElement("option");
             option.text = temporada.nombre;
-            option.value = index;
+            option.value = index.toString();
             seasonList.add(option);
         });
-
-        obtenerProgreso(tituloNovela).then(progreso => {
-            if (progreso && progreso.temporada) {
-                seasonList.value = progreso.temporada;
-            } else {
-                seasonList.selectedIndex = 0;
-            }
-            cargarCapitulos();
-        });
+        seasonList.selectedIndex = 0;
+        cargarCapitulos();
     }
 
     function cargarCapitulos() {
@@ -287,7 +328,7 @@ Use code with caution.
         for (let i = 1; i <= temporadaSeleccionada.capitulos; i++) {
             const option = document.createElement("option");
             option.text = `Capítulo ${i}`;
-            option.value = i;
+            option.value = i.toString();
             chapterList.add(option);
         }
 
@@ -325,15 +366,11 @@ Use code with caution.
         audio.load();
 
         obtenerProgreso(tituloNovela).then(progreso => {
+          console.log("Progreso recuperado:", progreso);
             if (progreso && progreso.tiempo && progreso.temporada === seasonList.value && progreso.capitulo === chapterList.value) {
                 audio.currentTime = progreso.tiempo;
             } else {
                 audio.currentTime = 0;
-            }
-
-            if (autoplayCheckbox.checked) {
-                audio.play();
-                updatePlayPauseButton("Pausar", "Pausar");
             }
         });
     }
@@ -436,7 +473,7 @@ async function cargarNovelaDesdeContinuarViendo(tituloNovela) {
                 obtenerProgreso(tituloNovela).then(progreso => {
                     if (progreso) {
                         setTimeout(() => {
-                            seasonList.value = progreso.temporada;
+                         seasonList.value = progreso.temporada;
                             cargarCapitulos();
 
                             setTimeout(() => {
@@ -474,8 +511,6 @@ async function cargarNovelaDesdeContinuarViendo(tituloNovela) {
     });
     seasonList.addEventListener("change", cargarCapitulos);
 
-    novelaList.addEventListener("change", cargarTemporadas);
-    paisList.addEventListener("change", cargarNovelas);
 
     audio.addEventListener('pause', guardarProgreso);
     audio.addEventListener('play', function() {
