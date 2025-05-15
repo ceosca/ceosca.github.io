@@ -10282,7 +10282,7 @@
             ]
         },
         {
-            "nombre": "Alta mar, Temporada 1",
+            "nombre": "Alta mar, temporada 1",
             "genero": "Drama",
             "anio": 2019,
             "reparto": [
@@ -21738,6 +21738,2556 @@
                     "inicio": 81654356,
                     "fin": 83922943,
                     "titulo": "Capítulo 39: Llegó la hora"
+                }
+            ]
+        },
+        {
+            "nombre": "El eternauta",
+            "genero": "Ciencia ficción",
+            "anio": 2025,
+            "reparto": [
+                "Ricardo Darín",
+                "Carla Peterson",
+                "César Troncoso",
+                "Andrea Pietra",
+                "Ariel Staltari",
+                "Marcelo Subiotto",
+                "Claudio Martínez Bel",
+                "Oriana Cárdenas",
+                "Mora Fisz",
+                "Jorge Sesán",
+                ""
+            ],
+            "pais_origen": "Argentina",
+            "cantidad_episodios": 6,
+            "sinopsis": "Una noche de verano en Buenos Aires, una misteriosa nevada mortal acaba con la mayor parte de la población y deja aisladas a miles de personas.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-eternauta.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2730624,
+                    "titulo": "Capítulo 1: Noche de truco"
+                },
+                {
+                    "inicio": 2730624,
+                    "fin": 5379541,
+                    "titulo": "Capítulo 2: Salgan al sol"
+                },
+                {
+                    "inicio": 5379541,
+                    "fin": 8968149,
+                    "titulo": "Capítulo 3: El magnetismo"
+                },
+                {
+                    "inicio": 8968149,
+                    "fin": 12349439,
+                    "titulo": "Capítulo 4: Credo"
+                },
+                {
+                    "inicio": 12349439,
+                    "fin": 15327785,
+                    "titulo": "Capítulo 5: Paisaje"
+                },
+                {
+                    "inicio": 15327785,
+                    "fin": 19429587,
+                    "titulo": "Capítulo 6: Jugo de tomate frío"
+                }
+            ]
+        },
+        {
+            "nombre": "El jardinero",
+            "genero": "Thriller; Drama",
+            "anio": 2025,
+            "reparto": [
+                "Álvaro Rico",
+                "Cecilia Suárez",
+                "Catalina Sopelana",
+                "Emma Suárez",
+                "María Vázquez"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 6,
+            "sinopsis": "Narra la historia de Elmer y de su controladora madre, La China Jurado, gestora de un vivero que hace de tapadera de un próspero negocio clandestino de asesinatos por encargo. Para Elmer, matar es la cosa más fácil del mundo, pues un accidente le privó de sentimientos. Sin embargo, cuando planea el asesinato de la encantadora Violeta, una maestra de guardería, se enamora de ella. Ahora, Elmer debe aprender a amar mientras su madre hace todo lo posible para acabar con la vida de Violeta.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-jardinero.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2878634,
+                    "titulo": "Capítulo 1: Paisaje atlántico"
+                },
+                {
+                    "inicio": 2878634,
+                    "fin": 5578922,
+                    "titulo": "Capítulo 2: Germinación de las semillas"
+                },
+                {
+                    "inicio": 5578922,
+                    "fin": 8272042,
+                    "titulo": "Capítulo 3: Sustrato orgánico"
+                },
+                {
+                    "inicio": 8272042,
+                    "fin": 11103743,
+                    "titulo": "Capítulo 4: Control de plagas"
+                },
+                {
+                    "inicio": 11103743,
+                    "fin": 13986303,
+                    "titulo": "Capítulo 5: Isla de descomposición"
+                },
+                {
+                    "inicio": 13986303,
+                    "fin": 16774356,
+                    "titulo": "Capítulo 6: Calendario de podas"
+                }
+            ]
+        },
+        {
+            "nombre": "El Club",
+            "genero": "Drama",
+            "anio": 2019,
+            "reparto": [
+                "Alejandro Speitzer",
+                "Minnie West",
+                "Arcelia Ramírez",
+                "Juan Ríos",
+                "Omar Germenos",
+                "Aurora Gil",
+                "Axel Arenas",
+                "Martin Saracho",
+                "Maria Fernanda Tovar",
+                "Jorge Caballero",
+                "Alejandro Caso",
+                "Martha Julia",
+                "Ana Ciocchetti",
+                ""
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 25,
+            "sinopsis": "En México, un grupo de chicos ricos y rebeldes se mete en el negocio narco, pero lo que parece un subidón celestial pronto se convierte en una caída dantesca.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-club.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2001067,
+                    "titulo": "Capítulo 1: MDMA y malas ideas"
+                },
+                {
+                    "inicio": 2001067,
+                    "fin": 4058795,
+                    "titulo": "Capítulo 2: Misión complicada"
+                },
+                {
+                    "inicio": 4058795,
+                    "fin": 6136534,
+                    "titulo": "Capítulo 3: MAM Hadas"
+                },
+                {
+                    "inicio": 6136534,
+                    "fin": 8191275,
+                    "titulo": "Capítulo 4: Monkey Business"
+                },
+                {
+                    "inicio": 8191275,
+                    "fin": 9725611,
+                    "titulo": "Capítulo 5: Mera coincidencia"
+                },
+                {
+                    "inicio": 9725611,
+                    "fin": 11926187,
+                    "titulo": "Capítulo 6: Meditación y me-la-pelas"
+                },
+                {
+                    "inicio": 11926187,
+                    "fin": 13990486,
+                    "titulo": "Capítulo 7: Malparido"
+                },
+                {
+                    "inicio": 13990486,
+                    "fin": 16065281,
+                    "titulo": "Capítulo 8: Mentiras, mierda y cámaras de seguridad"
+                },
+                {
+                    "inicio": 16065281,
+                    "fin": 17901441,
+                    "titulo": "Capítulo 9: Miedos, Matías, manjares"
+                },
+                {
+                    "inicio": 17901441,
+                    "fin": 20043393,
+                    "titulo": "Capítulo 10: Marcha nupcial y fúnebre"
+                },
+                {
+                    "inicio": 20043393,
+                    "fin": 22078465,
+                    "titulo": "Capítulo 11: Mamá, soy Jonás. Ya no haré travesuras"
+                },
+                {
+                    "inicio": 22078465,
+                    "fin": 24307798,
+                    "titulo": "Capítulo 12: Mira cómo beben"
+                },
+                {
+                    "inicio": 24307798,
+                    "fin": 26312278,
+                    "titulo": "Capítulo 13: Mar adentro, ¿la vida es más sabrosa?"
+                },
+                {
+                    "inicio": 26312278,
+                    "fin": 28326059,
+                    "titulo": "Capítulo 14: Margarita, qué lástima"
+                },
+                {
+                    "inicio": 28326059,
+                    "fin": 30282795,
+                    "titulo": "Capítulo 15: Mientras Sofía no está"
+                },
+                {
+                    "inicio": 30282795,
+                    "fin": 32490240,
+                    "titulo": "Capítulo 16: Missing My Milliones"
+                },
+                {
+                    "inicio": 32490240,
+                    "fin": 34564565,
+                    "titulo": "Capítulo 17: Mercancía defectuosa"
+                },
+                {
+                    "inicio": 34564565,
+                    "fin": 36522282,
+                    "titulo": "Capítulo 18: Miss Errores"
+                },
+                {
+                    "inicio": 36522282,
+                    "fin": 38491135,
+                    "titulo": "Capítulo 19: Mentiras piadosas"
+                },
+                {
+                    "inicio": 38491135,
+                    "fin": 40480938,
+                    "titulo": "Capítulo 20: Me muero de ganas"
+                },
+                {
+                    "inicio": 40480938,
+                    "fin": 42683007,
+                    "titulo": "Capítulo 21: Mala mente"
+                },
+                {
+                    "inicio": 42683007,
+                    "fin": 44686250,
+                    "titulo": "Capítulo 22: Mami, tumba la casa"
+                },
+                {
+                    "inicio": 44686250,
+                    "fin": 46696575,
+                    "titulo": "Capítulo 23: Monstruosamente, Pablo"
+                },
+                {
+                    "inicio": 46696575,
+                    "fin": 48426751,
+                    "titulo": "Capítulo 24: Miss u, Burbujitas"
+                },
+                {
+                    "inicio": 48426751,
+                    "fin": 50225919,
+                    "titulo": "Capítulo 25: Muchas gracias, siguiente"
+                }
+            ]
+        },
+        {
+            "nombre": "El chapo, temporada 1",
+            "genero": "Drama",
+            "anio": 2017,
+            "reparto": [
+                "Marco de la O",
+                "Alejandro Aguilar",
+                "Humberto Busto",
+                "Juan Carlos Olivas",
+                "Tete Espinoza",
+                "Rodrigo Abed",
+                "Luis Rábago",
+                "Cristina Michaus",
+                "Valentina Acosta",
+                "Juliette Pardau",
+                "Mauricio Mejía",
+                "Luis Fernando Peña",
+                "Dolores Heredia"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 9,
+            "sinopsis": "Inspirada en hechos reales, la historia de Joaquín 'El Chapo' Guzmán, un chico mexicano de humildes comienzos que se convirtió en el narcotraficante más buscado del mundo, liderando una organización que aportaba más de 8 mil millones de dólares al año. Desde la captura de Guzmán, los hispanos han sido intrigados por la historia de la subida y caída de El Chapo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-chapo-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3313749,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3313749,
+                    "fin": 6175061,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6175061,
+                    "fin": 9172480,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 9172480,
+                    "fin": 11637376,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 11637376,
+                    "fin": 14338517,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 14338517,
+                    "fin": 16913536,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 16913536,
+                    "fin": 19412480,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 19412480,
+                    "fin": 22135637,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 22135637,
+                    "fin": 25399338,
+                    "titulo": "Capítulo 9: Episodio 9"
+                }
+            ]
+        },
+        {
+            "nombre": "El recluso",
+            "genero": "Thriller; Drama",
+            "anio": 2018,
+            "reparto": [
+                "Ignacio Serricchio",
+                "Ana Claudia Talancón",
+                "Flavio Medina",
+                "Luis Felipe Tovar",
+                "David Chocarro",
+                "Mariana Seoane",
+                "Rodrigo Oviedo",
+                "Ramón Medina",
+                "Isabella Castillo",
+                "Gustavo Sánchez Parra",
+                "Diego Calva",
+                "Kristyan Ferrer",
+                "Armando Espitia",
+                ""
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 13,
+            "sinopsis": "La serie gira en torno a Lázaro Mendoza (Ignacio Serricchio) un ex marine que ingresa en una prisión de máxima seguridad en la frontera entre México y Estados Unidos para investigar el secuestro de Linda Morris (Isabella Castillo)​, la hija de un prominente juez estadounidense. Adaptación de la serie de televisión argentina 'El marginal'.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-recluso.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2690901,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2690901,
+                    "fin": 5437866,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5437866,
+                    "fin": 8110762,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8110762,
+                    "fin": 10849749,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 10849749,
+                    "fin": 13536682,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 13536682,
+                    "fin": 16233599,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 16233599,
+                    "fin": 19000618,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 19000618,
+                    "fin": 21747583,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 21747583,
+                    "fin": 24430506,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 24430506,
+                    "fin": 27087402,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 27087402,
+                    "fin": 29788330,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 29788330,
+                    "fin": 32581375,
+                    "titulo": "Capítulo 12: Episodio 12"
+                },
+                {
+                    "inicio": 32581375,
+                    "fin": 35360383,
+                    "titulo": "Capítulo 13: Episodio 13"
+                }
+            ]
+        },
+        {
+            "nombre": "El chapo, temporada 2",
+            "genero": "Drama",
+            "anio": 2017,
+            "reparto": [
+                "Marco De la O",
+                "Humberto Busto",
+                "Alejandro Aguilar",
+                "Rodrigo Abed"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 12,
+            "sinopsis": "El Chapo escapa de la cárcel y consigue que el Gobierno lo respalde como jefe de una \"federación de carteles\", pero no todos se suman y comienza la guerra.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-chapo-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3151573,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3151573,
+                    "fin": 5734613,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5734613,
+                    "fin": 8395733,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8395733,
+                    "fin": 10908672,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 10908672,
+                    "fin": 13515733,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 13515733,
+                    "fin": 15970645,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 15970645,
+                    "fin": 18543658,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 18543658,
+                    "fin": 21204778,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 21204778,
+                    "fin": 23881898,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 23881898,
+                    "fin": 26366805,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 26366805,
+                    "fin": 29262122,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 29262122,
+                    "fin": 32547797,
+                    "titulo": "Capítulo 12: Episodio 12"
+                }
+            ]
+        },
+        {
+            "nombre": "El Rey: Vicente Fernández",
+            "genero": "Drama",
+            "anio": 2022,
+            "reparto": [
+                "Jaime Camil",
+                "Marcela Guirado",
+                "Sebastian Dante",
+                "Erick Chapa",
+                "Kaled Acab",
+                "Sofía Garza",
+                "Sara Manni",
+                "Sebastián García",
+                "América Valdés",
+                "Martín Peralta",
+                "Sergio Gutierrez",
+                "Francisco Calvillo",
+                "Max Valentine",
+                ""
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 36,
+            "sinopsis": "Desde sus orígenes humildes hasta su salto a la fama, la vida personal y profesional del icono de las rancheras Vicente Fernández es narrada a lo largo de 70 años.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-rey.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3172224,
+                    "titulo": "Capítulo 1: El inicio"
+                },
+                {
+                    "inicio": 3172224,
+                    "fin": 5873664,
+                    "titulo": "Capítulo 2: El nuevo camino"
+                },
+                {
+                    "inicio": 5873664,
+                    "fin": 8594645,
+                    "titulo": "Capítulo 3: Un comienzo y... ¿un adiós?"
+                },
+                {
+                    "inicio": 8594645,
+                    "fin": 11213482,
+                    "titulo": "Capítulo 4: El nuevo mundo"
+                },
+                {
+                    "inicio": 11213482,
+                    "fin": 13931946,
+                    "titulo": "Capítulo 5: Primero la familia"
+                },
+                {
+                    "inicio": 13931946,
+                    "fin": 16586709,
+                    "titulo": "Capítulo 6: La muerte"
+                },
+                {
+                    "inicio": 16586709,
+                    "fin": 19348394,
+                    "titulo": "Capítulo 7: No está muerto quien pelea"
+                },
+                {
+                    "inicio": 19348394,
+                    "fin": 22069119,
+                    "titulo": "Capítulo 8: El show debe continuar"
+                },
+                {
+                    "inicio": 22069119,
+                    "fin": 24753791,
+                    "titulo": "Capítulo 9: A las carreras"
+                },
+                {
+                    "inicio": 24753791,
+                    "fin": 27467519,
+                    "titulo": "Capítulo 10: Tu abandono"
+                },
+                {
+                    "inicio": 27467519,
+                    "fin": 30181759,
+                    "titulo": "Capítulo 11: Adiós"
+                },
+                {
+                    "inicio": 30181759,
+                    "fin": 32947242,
+                    "titulo": "Capítulo 12: Secretos"
+                },
+                {
+                    "inicio": 32947242,
+                    "fin": 35602005,
+                    "titulo": "Capítulo 13: Enemigos"
+                },
+                {
+                    "inicio": 35602005,
+                    "fin": 38314282,
+                    "titulo": "Capítulo 14: El Rey sin palacio"
+                },
+                {
+                    "inicio": 38314282,
+                    "fin": 40990975,
+                    "titulo": "Capítulo 15: Levantarse y pelear"
+                },
+                {
+                    "inicio": 40990975,
+                    "fin": 43675860,
+                    "titulo": "Capítulo 16: Camino inseguro"
+                },
+                {
+                    "inicio": 43675860,
+                    "fin": 46330793,
+                    "titulo": "Capítulo 17: Cuestión de tiempo"
+                },
+                {
+                    "inicio": 46330793,
+                    "fin": 49037054,
+                    "titulo": "Capítulo 18: Luces, cámara"
+                },
+                {
+                    "inicio": 49037054,
+                    "fin": 51733715,
+                    "titulo": "Capítulo 19: Las llaves de mi alma"
+                },
+                {
+                    "inicio": 51733715,
+                    "fin": 54445992,
+                    "titulo": "Capítulo 20: Mujeres tan divinas"
+                },
+                {
+                    "inicio": 54445992,
+                    "fin": 57162152,
+                    "titulo": "Capítulo 21: Y volver, volver, volver"
+                },
+                {
+                    "inicio": 57162152,
+                    "fin": 59873704,
+                    "titulo": "Capítulo 22: El todo por el todo (Parte 1)"
+                },
+                {
+                    "inicio": 59873704,
+                    "fin": 62562643,
+                    "titulo": "Capítulo 23: El todo por el todo (Parte 2)"
+                },
+                {
+                    "inicio": 62562643,
+                    "fin": 65279102,
+                    "titulo": "Capítulo 24: El Rey"
+                },
+                {
+                    "inicio": 65279102,
+                    "fin": 68048382,
+                    "titulo": "Capítulo 25: Estrellado"
+                },
+                {
+                    "inicio": 68048382,
+                    "fin": 70760190,
+                    "titulo": "Capítulo 26: La pelea"
+                },
+                {
+                    "inicio": 70760190,
+                    "fin": 73445203,
+                    "titulo": "Capítulo 27: Por tu amor que tanto quiero"
+                },
+                {
+                    "inicio": 73445203,
+                    "fin": 76146131,
+                    "titulo": "Capítulo 28: La mujer de mi vida"
+                },
+                {
+                    "inicio": 76146131,
+                    "fin": 78841470,
+                    "titulo": "Capítulo 29: La ley del monte"
+                },
+                {
+                    "inicio": 78841470,
+                    "fin": 81517694,
+                    "titulo": "Capítulo 30: No me sé rajar"
+                },
+                {
+                    "inicio": 81517694,
+                    "fin": 84233683,
+                    "titulo": "Capítulo 31: La caída"
+                },
+                {
+                    "inicio": 84233683,
+                    "fin": 86941523,
+                    "titulo": "Capítulo 32: La derrota"
+                },
+                {
+                    "inicio": 86941523,
+                    "fin": 89637630,
+                    "titulo": "Capítulo 33: Te perdí"
+                },
+                {
+                    "inicio": 89637630,
+                    "fin": 92399187,
+                    "titulo": "Capítulo 34: Por tu maldito amor"
+                },
+                {
+                    "inicio": 92399187,
+                    "fin": 95231912,
+                    "titulo": "Capítulo 35: ¿De qué manera?"
+                },
+                {
+                    "inicio": 95231912,
+                    "fin": 98150355,
+                    "titulo": "Capítulo 36: El principio y el fin"
+                }
+            ]
+        },
+        {
+            "nombre": "El secreto de la familia Greco",
+            "genero": "Thriller; Drama",
+            "anio": 2022,
+            "reparto": [
+                "Fernando Colunga",
+                "Lisa Owen",
+                "Manuel Masalva",
+                "Luis Machín",
+                "Rafael Ferro",
+                "Alejandro de Hoyos",
+                "Samantha Siqueiros",
+                "Antonio de la Vega",
+                "Roberta Damián",
+                "Paula Reca",
+                "Delfina Chaves",
+                "Iván Espeche",
+                "Carola Reyna",
+                "Juan Sorini",
+                "Celina Font",
+                ""
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 9,
+            "sinopsis": "Una familia aparentemente perfecta secuestra en secreto a personas adineradas para pedir rescate y así mantener su alto nivel de vida.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-secreto-de-la-familia-greco.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2548821,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2548821,
+                    "fin": 5343872,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5343872,
+                    "fin": 8178944,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8178944,
+                    "fin": 10907947,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 10907947,
+                    "fin": 13594880,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 13594880,
+                    "fin": 16335872,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 16335872,
+                    "fin": 18886656,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 18886656,
+                    "fin": 21471488,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 21471488,
+                    "fin": 25531776,
+                    "titulo": "Capítulo 9: Episodio 9"
+                }
+            ]
+        },
+        {
+            "nombre": "El chapo, temporada 3",
+            "genero": "Drama",
+            "anio": 2018,
+            "reparto": [
+                "Marco De la O",
+                "Humberto Busto",
+                "Diego Vasquez",
+                "Laura Osma"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 13,
+            "sinopsis": "El Chapo quiere expandir su imperio en todo el mundo y se acerca a una actriz famosa a quien intenta vender su historia de vida hollywoodesca.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-chapo-3.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2476928,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2476928,
+                    "fin": 4917803,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 4917803,
+                    "fin": 7452758,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 7452758,
+                    "fin": 9813547,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 9813547,
+                    "fin": 12254422,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 12254422,
+                    "fin": 14759382,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 14759382,
+                    "fin": 17364438,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 17364438,
+                    "fin": 19819350,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 19819350,
+                    "fin": 22262230,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 22262230,
+                    "fin": 24883286,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 24883286,
+                    "fin": 27566422,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 27566422,
+                    "fin": 30007297,
+                    "titulo": "Capítulo 12: Episodio 12"
+                },
+                {
+                    "inicio": 30007297,
+                    "fin": 32816556,
+                    "titulo": "Capítulo 13: Episodio 13"
+                }
+            ]
+        },
+        {
+            "nombre": "El secreto del río",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [
+                "Diego Calva",
+                "Trinidad Evia",
+                "Frida Sofía Cruz Salinas",
+                "Mauro Guzmán",
+                "Mercedes Hernández",
+                "Yoshira Escárrega",
+                "Lisa Rivas",
+                "Jorge A. Jimenez",
+                "Humberto Busto",
+                "Jero Medina",
+                "Tete Espinoza",
+                "Fernando Cuautle",
+                "Ernesto Coronel",
+                ""
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "Un niño llega a un pequeño pueblo en México sin saber que ahí surgirá una amistad inesperada y un oscuro secreto que sellará su vínculo para siempre.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-secreto-del-r%C3%ADo.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2734421,
+                    "titulo": "Capítulo 1: El secreto"
+                },
+                {
+                    "inicio": 2734421,
+                    "fin": 4737877,
+                    "titulo": "Capítulo 2: No se lo digas a nadie"
+                },
+                {
+                    "inicio": 4737877,
+                    "fin": 7369856,
+                    "titulo": "Capítulo 3: A veces las mentiras son buenas"
+                },
+                {
+                    "inicio": 7369856,
+                    "fin": 9534336,
+                    "titulo": "Capítulo 4: Para siempre juntos"
+                },
+                {
+                    "inicio": 9534336,
+                    "fin": 11974144,
+                    "titulo": "Capítulo 5: Sicarú"
+                },
+                {
+                    "inicio": 11974144,
+                    "fin": 14580907,
+                    "titulo": "Capítulo 6: La encrucijada"
+                },
+                {
+                    "inicio": 14580907,
+                    "fin": 17134251,
+                    "titulo": "Capítulo 7: El reencuentro"
+                },
+                {
+                    "inicio": 17134251,
+                    "fin": 19967744,
+                    "titulo": "Capítulo 8: Mil amores"
+                }
+            ]
+        },
+        {
+            "nombre": "El dragón: el regreso de un guerrero, temporada 1",
+            "genero": "Drama; Thriller",
+            "anio": 2019,
+            "reparto": [
+                "Sebastián Rulli",
+                "Renata Notni",
+                "Irina Baeva",
+                "Sofía Castro",
+                "Cynthia Klitbo",
+                "Juan Pablo Gil",
+                "Roberto Mateos",
+                "Manuel Balbi",
+                "Cassandra Sanchez Navarro",
+                "Daniel Elbittar",
+                "Denia Agalianou",
+                "Fernando Gaviria",
+                "Orlando Moguel",
+                "Alejandro Naranjo",
+                "Carmen Muga"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 38,
+            "sinopsis": "Para relevar a su abuelo como jefe de un cartel, un financista regresa a su México natal, donde debe enfrentarse a dos rivales para hacerse del control de la organización.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-dragon-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3361493,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3361493,
+                    "fin": 6686976,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6686976,
+                    "fin": 9694123,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 9694123,
+                    "fin": 12693248,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 12693248,
+                    "fin": 15656363,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 15656363,
+                    "fin": 18335190,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 18335190,
+                    "fin": 21003990,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 21003990,
+                    "fin": 23688833,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 23688833,
+                    "fin": 26359638,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 26359638,
+                    "fin": 29046486,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 29046486,
+                    "fin": 31737345,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 31737345,
+                    "fin": 34378113,
+                    "titulo": "Capítulo 12: Episodio 12"
+                },
+                {
+                    "inicio": 34378113,
+                    "fin": 37068972,
+                    "titulo": "Capítulo 13: Episodio 13"
+                },
+                {
+                    "inicio": 37068972,
+                    "fin": 39763799,
+                    "titulo": "Capítulo 14: Episodio 14"
+                },
+                {
+                    "inicio": 39763799,
+                    "fin": 42446636,
+                    "titulo": "Capítulo 15: Episodio 15"
+                },
+                {
+                    "inicio": 42446636,
+                    "fin": 45125463,
+                    "titulo": "Capítulo 16: Episodio 16"
+                },
+                {
+                    "inicio": 45125463,
+                    "fin": 47820290,
+                    "titulo": "Capítulo 17: Episodio 17"
+                },
+                {
+                    "inicio": 47820290,
+                    "fin": 50513111,
+                    "titulo": "Capítulo 18: Episodio 18"
+                },
+                {
+                    "inicio": 50513111,
+                    "fin": 53161900,
+                    "titulo": "Capítulo 19: Episodio 19"
+                },
+                {
+                    "inicio": 53161900,
+                    "fin": 55852759,
+                    "titulo": "Capítulo 20: Episodio 20"
+                },
+                {
+                    "inicio": 55852759,
+                    "fin": 58525570,
+                    "titulo": "Capítulo 21: Episodio 21"
+                },
+                {
+                    "inicio": 58525570,
+                    "fin": 61204397,
+                    "titulo": "Capítulo 22: Episodio 22"
+                },
+                {
+                    "inicio": 61204397,
+                    "fin": 63861208,
+                    "titulo": "Capítulo 23: Episodio 23"
+                },
+                {
+                    "inicio": 63861208,
+                    "fin": 66546051,
+                    "titulo": "Capítulo 24: Episodio 24"
+                },
+                {
+                    "inicio": 66546051,
+                    "fin": 69238872,
+                    "titulo": "Capítulo 25: Episodio 25"
+                },
+                {
+                    "inicio": 69238872,
+                    "fin": 71925720,
+                    "titulo": "Capítulo 26: Episodio 26"
+                },
+                {
+                    "inicio": 71925720,
+                    "fin": 74614573,
+                    "titulo": "Capítulo 27: Episodio 27"
+                },
+                {
+                    "inicio": 74614573,
+                    "fin": 77265368,
+                    "titulo": "Capítulo 28: Episodio 28"
+                },
+                {
+                    "inicio": 77265368,
+                    "fin": 79894147,
+                    "titulo": "Capítulo 29: Episodio 29"
+                },
+                {
+                    "inicio": 79894147,
+                    "fin": 82590979,
+                    "titulo": "Capítulo 30: Episodio 30"
+                },
+                {
+                    "inicio": 82590979,
+                    "fin": 85273816,
+                    "titulo": "Capítulo 31: Episodio 31"
+                },
+                {
+                    "inicio": 85273816,
+                    "fin": 87966637,
+                    "titulo": "Capítulo 32: Episodio 32"
+                },
+                {
+                    "inicio": 87966637,
+                    "fin": 90661464,
+                    "titulo": "Capítulo 33: Episodio 33"
+                },
+                {
+                    "inicio": 90661464,
+                    "fin": 93352323,
+                    "titulo": "Capítulo 34: Episodio 34"
+                },
+                {
+                    "inicio": 93352323,
+                    "fin": 96029144,
+                    "titulo": "Capítulo 35: Episodio 35"
+                },
+                {
+                    "inicio": 96029144,
+                    "fin": 98720003,
+                    "titulo": "Capítulo 36: Episodio 36"
+                },
+                {
+                    "inicio": 98720003,
+                    "fin": 101404846,
+                    "titulo": "Capítulo 37: Episodio 37"
+                },
+                {
+                    "inicio": 101404846,
+                    "fin": 104099673,
+                    "titulo": "Capítulo 38: Episodio 38"
+                }
+            ]
+        },
+        {
+            "nombre": "Historia de un crimen: Colmenares",
+            "genero": "Drama",
+            "anio": 2019,
+            "reparto": [
+                "Camila Jurado",
+                "Fabiana Medina",
+                "Laura Osma",
+                "Julian Velazquez",
+                "Carlos Vergara",
+                "Ernesto Benjumea",
+                "Enrique Carriazo",
+                "Julián Román",
+                "Juan Pablo Urrego",
+                "Amparo Conde",
+                "Fabio Rubiano",
+                "Sebastian Osorio",
+                "Alejandro Gutierrez"
+            ],
+            "pais_origen": "Colombia",
+            "cantidad_episodios": 8,
+            "sinopsis": "El estudiante universitario Luis Andrés Colmenares apareció muerto después de una fiesta de Halloween. ¿Fue un accidente o un asesinato?",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/historia-de-un-crimen-colmenares.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2826709,
+                    "titulo": "Capítulo 1: La noche oscura de Halloween"
+                },
+                {
+                    "inicio": 2826709,
+                    "fin": 5478784,
+                    "titulo": "Capítulo 2: Una madre busca justicia"
+                },
+                {
+                    "inicio": 5478784,
+                    "fin": 7905323,
+                    "titulo": "Capítulo 3: Los cuerpos hablan"
+                },
+                {
+                    "inicio": 7905323,
+                    "fin": 10415531,
+                    "titulo": "Capítulo 4: El dolor, la justicia y el ideal"
+                },
+                {
+                    "inicio": 10415531,
+                    "fin": 13072299,
+                    "titulo": "Capítulo 5: Un rumor en los cerros"
+                },
+                {
+                    "inicio": 13072299,
+                    "fin": 15370667,
+                    "titulo": "Capítulo 6: Aparece un testigo"
+                },
+                {
+                    "inicio": 15370667,
+                    "fin": 18157568,
+                    "titulo": "Capítulo 7: Un hueco en la historia"
+                },
+                {
+                    "inicio": 18157568,
+                    "fin": 21089195,
+                    "titulo": "Capítulo 8: El juicio final"
+                }
+            ]
+        },
+        {
+            "nombre": "El dragón: el regreso de un guerrero, temporada 2",
+            "genero": "Drama; Thriller",
+            "anio": 2020,
+            "reparto": [
+                "Sebastián Rulli",
+                "Renata Notni",
+                "Sofía Castro",
+                "Roberto Mateos"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 44,
+            "sinopsis": "Héctor sigue una pista sobre el asesinato de su hermana. Miguel planea introducir una nueva droga, y Valentín usa a Chisca para robar el prototipo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-dragon-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2684800,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2684800,
+                    "fin": 5377621,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5377621,
+                    "fin": 8068437,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8068437,
+                    "fin": 10755242,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 10755242,
+                    "fin": 13446058,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 13446058,
+                    "fin": 16136874,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 16136874,
+                    "fin": 18831701,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 18831701,
+                    "fin": 21524522,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 21524522,
+                    "fin": 24217343,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 24217343,
+                    "fin": 26910164,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 26910164,
+                    "fin": 29598975,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 29598975,
+                    "fin": 32287786,
+                    "titulo": "Capítulo 12: Episodio 12"
+                },
+                {
+                    "inicio": 32287786,
+                    "fin": 34980607,
+                    "titulo": "Capítulo 13: Episodio 13"
+                },
+                {
+                    "inicio": 34980607,
+                    "fin": 37673428,
+                    "titulo": "Capítulo 14: Episodio 14"
+                },
+                {
+                    "inicio": 37673428,
+                    "fin": 40364244,
+                    "titulo": "Capítulo 15: Episodio 15"
+                },
+                {
+                    "inicio": 40364244,
+                    "fin": 43057065,
+                    "titulo": "Capítulo 16: Episodio 16"
+                },
+                {
+                    "inicio": 43057065,
+                    "fin": 45749886,
+                    "titulo": "Capítulo 17: Episodio 17"
+                },
+                {
+                    "inicio": 45749886,
+                    "fin": 48438697,
+                    "titulo": "Capítulo 18: Episodio 18"
+                },
+                {
+                    "inicio": 48438697,
+                    "fin": 51129513,
+                    "titulo": "Capítulo 19: Episodio 19"
+                },
+                {
+                    "inicio": 51129513,
+                    "fin": 53818324,
+                    "titulo": "Capítulo 20: Episodio 20"
+                },
+                {
+                    "inicio": 53818324,
+                    "fin": 56511145,
+                    "titulo": "Capítulo 21: Episodio 21"
+                },
+                {
+                    "inicio": 56511145,
+                    "fin": 59201961,
+                    "titulo": "Capítulo 22: Episodio 22"
+                },
+                {
+                    "inicio": 59201961,
+                    "fin": 61870761,
+                    "titulo": "Capítulo 23: Episodio 23"
+                },
+                {
+                    "inicio": 61870761,
+                    "fin": 64521556,
+                    "titulo": "Capítulo 24: Episodio 24"
+                },
+                {
+                    "inicio": 64521556,
+                    "fin": 67182335,
+                    "titulo": "Capítulo 25: Episodio 25"
+                },
+                {
+                    "inicio": 67182335,
+                    "fin": 69877162,
+                    "titulo": "Capítulo 26: Episodio 26"
+                },
+                {
+                    "inicio": 69877162,
+                    "fin": 72571989,
+                    "titulo": "Capítulo 27: Episodio 27"
+                },
+                {
+                    "inicio": 72571989,
+                    "fin": 75264810,
+                    "titulo": "Capítulo 28: Episodio 28"
+                },
+                {
+                    "inicio": 75264810,
+                    "fin": 77963647,
+                    "titulo": "Capítulo 29: Episodio 29"
+                },
+                {
+                    "inicio": 77963647,
+                    "fin": 80652458,
+                    "titulo": "Capítulo 30: Episodio 30"
+                },
+                {
+                    "inicio": 80652458,
+                    "fin": 83329279,
+                    "titulo": "Capítulo 31: Episodio 31"
+                },
+                {
+                    "inicio": 83329279,
+                    "fin": 86022100,
+                    "titulo": "Capítulo 32: Episodio 32"
+                },
+                {
+                    "inicio": 86022100,
+                    "fin": 88702889,
+                    "titulo": "Capítulo 33: Episodio 33"
+                },
+                {
+                    "inicio": 88702889,
+                    "fin": 91391700,
+                    "titulo": "Capítulo 34: Episodio 34"
+                },
+                {
+                    "inicio": 91391700,
+                    "fin": 94086527,
+                    "titulo": "Capítulo 35: Episodio 35"
+                },
+                {
+                    "inicio": 94086527,
+                    "fin": 96779348,
+                    "titulo": "Capítulo 36: Episodio 36"
+                },
+                {
+                    "inicio": 96779348,
+                    "fin": 99472169,
+                    "titulo": "Capítulo 37: Episodio 37"
+                },
+                {
+                    "inicio": 99472169,
+                    "fin": 102164990,
+                    "titulo": "Capítulo 38: Episodio 38"
+                },
+                {
+                    "inicio": 102164990,
+                    "fin": 104861822,
+                    "titulo": "Capítulo 39: Episodio 39"
+                },
+                {
+                    "inicio": 104861822,
+                    "fin": 107548627,
+                    "titulo": "Capítulo 40: Episodio 40"
+                },
+                {
+                    "inicio": 107548627,
+                    "fin": 110241448,
+                    "titulo": "Capítulo 41: Episodio 41"
+                },
+                {
+                    "inicio": 110241448,
+                    "fin": 112928253,
+                    "titulo": "Capítulo 42: Episodio 42"
+                },
+                {
+                    "inicio": 112928253,
+                    "fin": 115561000,
+                    "titulo": "Capítulo 43: Episodio 43"
+                },
+                {
+                    "inicio": 115561000,
+                    "fin": 118878461,
+                    "titulo": "Capítulo 44: Episodio 44"
+                }
+            ]
+        },
+        {
+            "nombre": "Historia de un crimen: Colosio",
+            "genero": "Drama",
+            "anio": 2019,
+            "reparto": [
+                "Jorge A. Jimenez",
+                "Ilse Salas",
+                "Alberto Guerra",
+                "Gustavo Sánchez Parra",
+                "Jorge Antonio Guerrero",
+                "Martín Altomaro",
+                "Lisa Owen",
+                "Ari Brickman",
+                "Hernan Del Riego",
+                "Héctor Holten",
+                "Pedro de Tavira",
+                "Enrique Arreola",
+                ""
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "Después de 25 años, revive la investigación controversial que marcó la crónica de México, el asesinato del candidato a la presidencia Luis Donaldo Colosio.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/historia-de-un-crimen-colosio.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2906027,
+                    "titulo": "Capítulo 1: El candidato"
+                },
+                {
+                    "inicio": 2906027,
+                    "fin": 5381504,
+                    "titulo": "Capítulo 2: ¿Quién fue"
+                },
+                {
+                    "inicio": 5381504,
+                    "fin": 8091264,
+                    "titulo": "Capítulo 3: El fiscal"
+                },
+                {
+                    "inicio": 8091264,
+                    "fin": 10482048,
+                    "titulo": "Capítulo 4: Bala perdida"
+                },
+                {
+                    "inicio": 10482048,
+                    "fin": 13213867,
+                    "titulo": "Capítulo 5: El reloj"
+                },
+                {
+                    "inicio": 13213867,
+                    "fin": 15557462,
+                    "titulo": "Capítulo 6: Yo lo maté"
+                },
+                {
+                    "inicio": 15557462,
+                    "fin": 18185814,
+                    "titulo": "Capítulo 7: Bienvenida a Lomas Taurinas"
+                },
+                {
+                    "inicio": 18185814,
+                    "fin": 20086358,
+                    "titulo": "Capítulo 8: Perdón y olvido"
+                }
+            ]
+        },
+        {
+            "nombre": "El niñero, temporada 1",
+            "genero": "Comedia",
+            "anio": 2023,
+            "reparto": [
+                "Sandra Echeverría",
+                "Iván Amozurrutia",
+                "Anthony Giulietti",
+                "Diana Bovio",
+                "Sofia Diaz"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 10,
+            "sinopsis": "Una ejecutiva contrata a un ranchero para que cuide de sus hijos. Lo que no se imagina es que él hará que se cuestione su opinión sobre los roles de género y el amor.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-ni%C3%B1ero.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2479744,
+                    "titulo": "Capítulo 1: Sí se puede cambiar al mundo"
+                },
+                {
+                    "inicio": 2479744,
+                    "fin": 4511915,
+                    "titulo": "Capítulo 2: El ratón de los dientes"
+                },
+                {
+                    "inicio": 4511915,
+                    "fin": 6568747,
+                    "titulo": "Capítulo 3: El valor de un like"
+                },
+                {
+                    "inicio": 6568747,
+                    "fin": 8744448,
+                    "titulo": "Capítulo 4: Gallos de pelea"
+                },
+                {
+                    "inicio": 8744448,
+                    "fin": 10743595,
+                    "titulo": "Capítulo 5: Lobos, oveja, cerdos y magos"
+                },
+                {
+                    "inicio": 10743595,
+                    "fin": 12596822,
+                    "titulo": "Capítulo 6: Triunfos robados"
+                },
+                {
+                    "inicio": 12596822,
+                    "fin": 14692822,
+                    "titulo": "Capítulo 7: Manita de puerco"
+                },
+                {
+                    "inicio": 14692822,
+                    "fin": 16766977,
+                    "titulo": "Capítulo 8: Cuando te toca, aunque te quites"
+                },
+                {
+                    "inicio": 16766977,
+                    "fin": 18572076,
+                    "titulo": "Capítulo 9: Se le juntó el ganado"
+                },
+                {
+                    "inicio": 18572076,
+                    "fin": 20678401,
+                    "titulo": "Capítulo 10: Cambiar el mundo"
+                }
+            ]
+        },
+        {
+            "nombre": "Historia de un crimen: La búsqueda",
+            "genero": "Drama",
+            "anio": 2020,
+            "reparto": [
+                "Darío Yazbek Bernal",
+                "Diana Bovio",
+                "Regina Blandón",
+                "Alejandro Calva",
+                "Adrián Ladrón",
+                "Verónica Bravo",
+                "Antonio Arochi",
+                "Mario Alberto Monroy",
+                "Ernesto Laguardia",
+                "Vianey Rodríguez",
+                "Adriana Llabres",
+                "Daniel Haddad",
+                "Fernando Bonilla"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 6,
+            "sinopsis": "Una niña desaparece de su casa en un desarrollo urbano acaudalado de CDMX, pero su búsqueda se ve complicada por intereses personales.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/historia-de-un-crimen-la-busqueda.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2668373,
+                    "titulo": "Capítulo 1: Fue Harry Potter"
+                },
+                {
+                    "inicio": 2668373,
+                    "fin": 5172522,
+                    "titulo": "Capítulo 2: I gotta feeling"
+                },
+                {
+                    "inicio": 5172522,
+                    "fin": 7455786,
+                    "titulo": "Capítulo 3: Clímax"
+                },
+                {
+                    "inicio": 7455786,
+                    "fin": 10052522,
+                    "titulo": "Capítulo 4: El show debe continuar"
+                },
+                {
+                    "inicio": 10052522,
+                    "fin": 12361002,
+                    "titulo": "Capítulo 5: Luz, cama, acción"
+                },
+                {
+                    "inicio": 12361002,
+                    "fin": 14920021,
+                    "titulo": "Capítulo 6: Entierro"
+                }
+            ]
+        },
+        {
+            "nombre": "El niñero, temporada 2",
+            "genero": "Comedia",
+            "anio": 2024,
+            "reparto": [
+                "Sandra Echeverría",
+                "Iván Amozurrutia",
+                "Anthony Giuletti",
+                "Cassandra Iturralde",
+                "Diana Bovio",
+                "Moisés Arizmendi",
+                "Eugenio Montessoro",
+                "Marabina Jaimes"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "Los caminos de Gabriel y Jimena vuelven a cruzarse, con más pasión e intriga de lo que podrían imaginar. ¿Le darán otra oportunidad al amor o lo perderán todo?",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/el-ni%C3%B1ero-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2228309,
+                    "titulo": "Capítulo 1: Rehilete"
+                },
+                {
+                    "inicio": 2228309,
+                    "fin": 4351957,
+                    "titulo": "Capítulo 2: Perderse para encontrarse"
+                },
+                {
+                    "inicio": 4351957,
+                    "fin": 6444800,
+                    "titulo": "Capítulo 3: Donde hubo fuego, tormenta queda"
+                },
+                {
+                    "inicio": 6444800,
+                    "fin": 8371541,
+                    "titulo": "Capítulo 4: Lluvia de estrellas"
+                },
+                {
+                    "inicio": 8371541,
+                    "fin": 10259669,
+                    "titulo": "Capítulo 5: No me gustan las sorpresas"
+                },
+                {
+                    "inicio": 10259669,
+                    "fin": 12198570,
+                    "titulo": "Capítulo 6: Esqueletos en el closet"
+                },
+                {
+                    "inicio": 12198570,
+                    "fin": 14307029,
+                    "titulo": "Capítulo 7: Metamorfosis"
+                },
+                {
+                    "inicio": 14307029,
+                    "fin": 16220501,
+                    "titulo": "Capítulo 8: Arañas en el balcón"
+                }
+            ]
+        },
+        {
+            "nombre": "Juana Inés",
+            "genero": "Drama",
+            "anio": 2016,
+            "reparto": [
+                "Arcelia Ramírez",
+                "Hernan Del Riego",
+                "Lisa Owen",
+                "Arantza Ruiz",
+                "Margarita Sanz",
+                "Yolanda Corrales",
+                "Mauricio Isaac",
+                "Anilú Pardo",
+                "Úrsula Pruneda",
+                "Emilio Echevarría",
+                "Mar Carrera",
+                "Carlos Valencia",
+                "Orlando Moguel",
+                "Pedro de Tavira"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 7,
+            "sinopsis": "Muchos son los misterios que rodean la figura de Sor Juana Inés de la Cruz: su relación incierta con la jerarquía de la iglesia, la naturaleza de sus afectos, así como la razón detrás de su silencio repentino. Ella es la inspiración para esta serie de ficción, que no desatiende las diferentes aproximaciones e interpretaciones de su vida y trabajo. Imagina a la mujer que, a pesar de las convenciones sociales de su tiempo, busca desesperadamente un lugar favorable para su desarrollo intelectual.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/juana-ines.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3056640,
+                    "titulo": "Capítulo 1: Miradme al menos"
+                },
+                {
+                    "inicio": 3056640,
+                    "fin": 6062592,
+                    "titulo": "Capítulo 2: Para el alma no hay encierro"
+                },
+                {
+                    "inicio": 6062592,
+                    "fin": 9065472,
+                    "titulo": "Capítulo 3: Lágrimas negras de mi pluma"
+                },
+                {
+                    "inicio": 9065472,
+                    "fin": 12154709,
+                    "titulo": "Capítulo 4: Este amoroso tormento"
+                },
+                {
+                    "inicio": 12154709,
+                    "fin": 15192234,
+                    "titulo": "Capítulo 5: Divina Lysi"
+                },
+                {
+                    "inicio": 15192234,
+                    "fin": 18256383,
+                    "titulo": "Capítulo 6: Detened la mano"
+                },
+                {
+                    "inicio": 18256383,
+                    "fin": 21348863,
+                    "titulo": "Capítulo 7: La vida con que muero"
+                }
+            ]
+        },
+        {
+            "nombre": "Guerra de vecinos, temporada 1",
+            "genero": "Comedia",
+            "anio": 2021,
+            "reparto": [
+                "Vanessa Bauche",
+                "Ana Layevska",
+                "Loreto Peralta",
+                "Elyfer Torres",
+                "Mark Tacher",
+                "Pascacio López",
+                "Marco León Pol",
+                "Isabella Patron",
+                "Christian Vazquez",
+                "Sara Isabel Quintero",
+                "Armando Said",
+                "Cecilia de los Santos"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "Cuando dos familias totalmente opuestas acaban siendo vecinas en un barrio rico, las matriarcas deciden declararse la guerra... con consecuencias inesperadas.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/guerra-de-vecinos-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1928107,
+                    "titulo": "Capítulo 1: Los ricos también lloran"
+                },
+                {
+                    "inicio": 1928107,
+                    "fin": 3710080,
+                    "titulo": "Capítulo 2: Axi-NacaR"
+                },
+                {
+                    "inicio": 3710080,
+                    "fin": 5666219,
+                    "titulo": "Capítulo 3: Muchach-app"
+                },
+                {
+                    "inicio": 5666219,
+                    "fin": 7574315,
+                    "titulo": "Capítulo 4: El Clásico de Cachirules"
+                },
+                {
+                    "inicio": 7574315,
+                    "fin": 9354283,
+                    "titulo": "Capítulo 5: ¡Aquí no pasó nada!"
+                },
+                {
+                    "inicio": 9354283,
+                    "fin": 11252352,
+                    "titulo": "Capítulo 6: La guerra fría"
+                },
+                {
+                    "inicio": 11252352,
+                    "fin": 13200469,
+                    "titulo": "Capítulo 7: Rappi-dín"
+                },
+                {
+                    "inicio": 13200469,
+                    "fin": 15150592,
+                    "titulo": "Capítulo 8: Bellas señoras"
+                }
+            ]
+        },
+        {
+            "nombre": "Jugar con fuego",
+            "genero": "Thriller; Drama",
+            "anio": 2019,
+            "reparto": [
+                "Jason Day",
+                "Margarita Rosa de Francisco",
+                "Carlos Ponce",
+                "Laura Perico",
+                "Alejandro Aguilar",
+                "Gaby Espino",
+                "Tony Plana",
+                "Leticia Huijara",
+                "Luis Alberti",
+                "Ricardo Vesga",
+                "Germán Quintero",
+                "Yuri Vargas",
+                "Lidia Cardona"
+            ],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "La serie gira en torno a Fabrizio (Jason Day), un atractivo hombre que llega a la vida de tres mujeres; Camila (Gaby Espino) y Martina (Margarita Rosa de Francisco), ambas casadas y buenas amigas y Andrea (Laura Perico), hija de Martina. La llegada de él, hará que comiencen los conflictos entre las familias de ellas y las tres se enamoran del mismo hombre.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/jugar-con-fuego.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2564736,
+                    "titulo": "Capítulo 1: Fabrizio juega con fuego"
+                },
+                {
+                    "inicio": 2564736,
+                    "fin": 5137493,
+                    "titulo": "Capítulo 2: El terror de Camila"
+                },
+                {
+                    "inicio": 5137493,
+                    "fin": 7808341,
+                    "titulo": "Capítulo 3: Fabrizio el insaciable"
+                },
+                {
+                    "inicio": 7808341,
+                    "fin": 10403114,
+                    "titulo": "Capítulo 4: Fabrizio tienta al diablo"
+                },
+                {
+                    "inicio": 10403114,
+                    "fin": 13005909,
+                    "titulo": "Capítulo 5: Jorge sabe que lo traicionan"
+                },
+                {
+                    "inicio": 13005909,
+                    "fin": 15626709,
+                    "titulo": "Capítulo 6: El plan macabro de Jorge"
+                },
+                {
+                    "inicio": 15626709,
+                    "fin": 18211498,
+                    "titulo": "Capítulo 7: Desatan la ira contra Fabrizio"
+                },
+                {
+                    "inicio": 18211498,
+                    "fin": 20756223,
+                    "titulo": "Capítulo 8: A la caza de Fabrizio"
+                },
+                {
+                    "inicio": 20756223,
+                    "fin": 23359018,
+                    "titulo": "Capítulo 9: Dolorosa realidad"
+                },
+                {
+                    "inicio": 23359018,
+                    "fin": 26013866,
+                    "titulo": "Capítulo 10: Tragedia en el Eje Cafetero"
+                }
+            ]
+        },
+        {
+            "nombre": "Guerra de vecinos, temporada 2",
+            "genero": "Comedia",
+            "anio": 2022,
+            "reparto": [
+                "Vanessa Bauche",
+                "Ana Layevska",
+                "Elyfer Torres",
+                "Christian Vázquez"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "Tras la inesperada muerte de Genaro y Leonor, los López dejan la privada y se mudan a su viejo barrio Del Niño Jesús, creyendo que lejos de Silvia y todos los que la rodean, podrán recuperar la felicidad que tanto anhelan. Con lo que no contaban es que, por culpa de un fraude millonario que ha dejado a los Espinoza de los Montero en la ruina, sus archienemigos terminarían siendo, de nuevo, ¡sus vecinos! ",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/guerra-de-vecinos-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2050219,
+                    "titulo": "Capítulo 1: El funeral"
+                },
+                {
+                    "inicio": 2050219,
+                    "fin": 4154496,
+                    "titulo": "Capítulo 2: Bienvenidos al sonidero"
+                },
+                {
+                    "inicio": 4154496,
+                    "fin": 6036565,
+                    "titulo": "Capítulo 3: La comunidad del anillo"
+                },
+                {
+                    "inicio": 6036565,
+                    "fin": 7994709,
+                    "titulo": "Capítulo 4: Señales"
+                },
+                {
+                    "inicio": 7994709,
+                    "fin": 9986858,
+                    "titulo": "Capítulo 5: Buen fin Thanksgiving"
+                },
+                {
+                    "inicio": 9986858,
+                    "fin": 12103125,
+                    "titulo": "Capítulo 6: Mr. Barrio"
+                },
+                {
+                    "inicio": 12103125,
+                    "fin": 13989162,
+                    "titulo": "Capítulo 7: Amores de tres"
+                },
+                {
+                    "inicio": 13989162,
+                    "fin": 16103466,
+                    "titulo": "Capítulo 8: Coalición LopeZpinosa"
+                }
+            ]
+        },
+        {
+            "nombre": "La flor más bella",
+            "genero": "Comedia",
+            "anio": 2022,
+            "reparto": [
+                "Esmeralda Soto",
+                "Isabel Yudice",
+                "Alicia Vélez",
+                "Michelle Olvera",
+                "Luis Fernando Peña",
+                "Germán Bracco",
+                "Tadeo Tovar",
+                "Ishbel Bautista",
+                "Angelica Rogel",
+                "Michelle Rodríguez",
+                "Ivanna García",
+                "Gael García Bernal",
+                "Martha Claudia Moreno",
+                "Luisa Huertas"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 10,
+            "sinopsis": "Curvilínea, con un pelazo y segura de sí misma, Mich sabe muy bien que es fabulosa. Ahora, solo debe lograr que todos en su escuela lo vean también...",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-flor-m%C3%A1s-bella.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1938133,
+                    "titulo": "Capítulo 1: La fuente"
+                },
+                {
+                    "inicio": 1938133,
+                    "fin": 3634048,
+                    "titulo": "Capítulo 2: Nací lista"
+                },
+                {
+                    "inicio": 3634048,
+                    "fin": 5428053,
+                    "titulo": "Capítulo 3: La nueva"
+                },
+                {
+                    "inicio": 5428053,
+                    "fin": 7168000,
+                    "titulo": "Capítulo 4: Una protagonista como yo"
+                },
+                {
+                    "inicio": 7168000,
+                    "fin": 9038080,
+                    "titulo": "Capítulo 5: Amiga, date cuenta"
+                },
+                {
+                    "inicio": 9038080,
+                    "fin": 10910165,
+                    "titulo": "Capítulo 6: Código P"
+                },
+                {
+                    "inicio": 10910165,
+                    "fin": 12818304,
+                    "titulo": "Capítulo 7: Hipocondría"
+                },
+                {
+                    "inicio": 12818304,
+                    "fin": 14920619,
+                    "titulo": "Capítulo 8: Al fin del mundo"
+                },
+                {
+                    "inicio": 14920619,
+                    "fin": 16956886,
+                    "titulo": "Capítulo 9: La primera vez"
+                },
+                {
+                    "inicio": 16956886,
+                    "fin": 19311446,
+                    "titulo": "Capítulo 10: Octágono amoroso"
+                }
+            ]
+        },
+        {
+            "nombre": "Ingobernable, temporada 1",
+            "genero": "Drama",
+            "anio": 2017,
+            "reparto": [
+                "Kate del Castillo",
+                "Alberto Guerra",
+                "Erik Hayser",
+                "Eréndira Ibarra",
+                "Álvaro Guerrero",
+                "Alicia Jaziz",
+                "Luis Roberto Guzmán",
+                "Alessio Valentini",
+                "Maxi Iglesias",
+                "Marina de Tavira",
+                "Marco Antonio Treviño",
+                "María del Carmen Farías",
+                "Aida López",
+                "Harold Torres"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 15,
+            "sinopsis": "Emilia Urquiza (Kate del Castillo) es la esposa del presidente de México Diego Nava (Erik Hayser). La primera dama es una mujer de fuerte personalidad, de convicción e ideas claras que la hacen capaz de cualquier cosa, incluso de hacer tambalear los cimientos de Palacio Nacional. Emilia cuenta con grandes planes para mejorar las condiciones de su país a través del compromiso de luchar por la paz. A medida que comienza a perder la fe en su marido, el presidente, se encuentra en un cruce donde tendrá que encontrar una manera de lidiar con un gran reto y descubrir la verdad.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/ingobernable-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2356565,
+                    "titulo": "Capítulo 1: Momento de decisión"
+                },
+                {
+                    "inicio": 2356565,
+                    "fin": 4799189,
+                    "titulo": "Capítulo 2: La huida"
+                },
+                {
+                    "inicio": 4799189,
+                    "fin": 7247829,
+                    "titulo": "Capítulo 3: Las deudas se pagan"
+                },
+                {
+                    "inicio": 7247829,
+                    "fin": 9492266,
+                    "titulo": "Capítulo 4: El pacto"
+                },
+                {
+                    "inicio": 9492266,
+                    "fin": 11470421,
+                    "titulo": "Capítulo 5: La otra verdad"
+                },
+                {
+                    "inicio": 11470421,
+                    "fin": 13502634,
+                    "titulo": "Capítulo 6: Causa de muerte"
+                },
+                {
+                    "inicio": 13502634,
+                    "fin": 16523861,
+                    "titulo": "Capítulo 7: Bautismo de fuego"
+                },
+                {
+                    "inicio": 16523861,
+                    "fin": 18758272,
+                    "titulo": "Capítulo 8: Descenso al infierno"
+                },
+                {
+                    "inicio": 18758272,
+                    "fin": 20828544,
+                    "titulo": "Capítulo 9: El juramento"
+                },
+                {
+                    "inicio": 20828544,
+                    "fin": 22884779,
+                    "titulo": "Capítulo 10: Memoria viva"
+                },
+                {
+                    "inicio": 22884779,
+                    "fin": 24907008,
+                    "titulo": "Capítulo 11: El Grito"
+                },
+                {
+                    "inicio": 24907008,
+                    "fin": 27033344,
+                    "titulo": "Capítulo 12: Las reglas del juego"
+                },
+                {
+                    "inicio": 27033344,
+                    "fin": 28963456,
+                    "titulo": "Capítulo 13: El rostro del asesino"
+                },
+                {
+                    "inicio": 28963456,
+                    "fin": 31063765,
+                    "titulo": "Capítulo 14: La muerte pide permiso"
+                },
+                {
+                    "inicio": 31063765,
+                    "fin": 33376256,
+                    "titulo": "Capítulo 15: El interés de la justicia"
+                }
+            ]
+        },
+        {
+            "nombre": "Las hermanas Guerra",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [
+                "Las hermanas Guerra",
+                "Claudia Álvarez",
+                "Ana Valeria Becerril",
+                "Christian Tappán",
+                "Erick Elias",
+                "Sabrina Seara",
+                "Bernardo Flores",
+                "Julio Casado",
+                "Alejandra Ambrosi",
+                "Regina Pavón",
+                "Tatiana del Real",
+                "Sebastian Dante",
+                "Mario Zaragoza",
+                "Eduardo Humaran"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 20,
+            "sinopsis": "La negativa de una mujer a unirse al oscuro plan de su hermana genera traiciones cuando intenta reconciliarse en la cárcel con su hija, a la que perdió tiempo atrás.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/las-hermanas-guerra.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2503808,
+                    "titulo": "Capítulo 1: Madre e hija"
+                },
+                {
+                    "inicio": 2503808,
+                    "fin": 4849451,
+                    "titulo": "Capítulo 2: Vidas robadas"
+                },
+                {
+                    "inicio": 4849451,
+                    "fin": 7461547,
+                    "titulo": "Capítulo 3: La boca del lobo"
+                },
+                {
+                    "inicio": 7461547,
+                    "fin": 9743872,
+                    "titulo": "Capítulo 4: Derrumbe"
+                },
+                {
+                    "inicio": 9743872,
+                    "fin": 11975680,
+                    "titulo": "Capítulo 5: No soy la de antes"
+                },
+                {
+                    "inicio": 11975680,
+                    "fin": 14128085,
+                    "titulo": "Capítulo 6: Perdóname, Perla"
+                },
+                {
+                    "inicio": 14128085,
+                    "fin": 16384853,
+                    "titulo": "Capítulo 7: Primer día del resto de la vida"
+                },
+                {
+                    "inicio": 16384853,
+                    "fin": 18722474,
+                    "titulo": "Capítulo 8: Nuestra guerra"
+                },
+                {
+                    "inicio": 18722474,
+                    "fin": 21257173,
+                    "titulo": "Capítulo 9: No aclares que oscureces"
+                },
+                {
+                    "inicio": 21257173,
+                    "fin": 23716736,
+                    "titulo": "Capítulo 10: Vientre estéril"
+                },
+                {
+                    "inicio": 23716736,
+                    "fin": 26225579,
+                    "titulo": "Capítulo 11: Precio por una cabeza"
+                },
+                {
+                    "inicio": 26225579,
+                    "fin": 28284203,
+                    "titulo": "Capítulo 12: El poco tiempo que me queda"
+                },
+                {
+                    "inicio": 28284203,
+                    "fin": 30478208,
+                    "titulo": "Capítulo 13: Ya no te queda nadie"
+                },
+                {
+                    "inicio": 30478208,
+                    "fin": 32661419,
+                    "titulo": "Capítulo 14: Así fueron las cosas"
+                },
+                {
+                    "inicio": 32661419,
+                    "fin": 34863531,
+                    "titulo": "Capítulo 15: No hay deuda que no se pague"
+                },
+                {
+                    "inicio": 34863531,
+                    "fin": 37004544,
+                    "titulo": "Capítulo 16: Ábrete sésamo"
+                },
+                {
+                    "inicio": 37004544,
+                    "fin": 39119019,
+                    "titulo": "Capítulo 17: Soy la nueva jefa"
+                },
+                {
+                    "inicio": 39119019,
+                    "fin": 41354326,
+                    "titulo": "Capítulo 18: El comienzo del fin"
+                },
+                {
+                    "inicio": 41354326,
+                    "fin": 43398273,
+                    "titulo": "Capítulo 19: La panza del dragón"
+                },
+                {
+                    "inicio": 43398273,
+                    "fin": 45415724,
+                    "titulo": "Capítulo 20: Punto final"
+                }
+            ]
+        },
+        {
+            "nombre": "Ingobernable, temporada 2",
+            "genero": "Drama",
+            "anio": 2018,
+            "reparto": [
+                "Kate del Castillo",
+                "Eréndira Ibarra",
+                "Alberto Guerra",
+                "Erik Hayser",
+                "Luis Ernesto Franco",
+                "Álvaro Guerrero"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 12,
+            "sinopsis": "De primera dama a líder revolucionaria: Emilia se enfrenta a una emperatriz del narcotráfico para reunir a su familia y poner fin a la corrupción en su país.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/ingobernable-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2632832,
+                    "titulo": "Capítulo 1: La justicia como espectáculo"
+                },
+                {
+                    "inicio": 2632832,
+                    "fin": 5600000,
+                    "titulo": "Capítulo 2: Romper cadenas"
+                },
+                {
+                    "inicio": 5600000,
+                    "fin": 8282880,
+                    "titulo": "Capítulo 3: El peso de la herencia"
+                },
+                {
+                    "inicio": 8282880,
+                    "fin": 10811605,
+                    "titulo": "Capítulo 4: Desde las cenizas"
+                },
+                {
+                    "inicio": 10811605,
+                    "fin": 13250218,
+                    "titulo": "Capítulo 5: Encuentro con el pasado"
+                },
+                {
+                    "inicio": 13250218,
+                    "fin": 15989162,
+                    "titulo": "Capítulo 6: Guerreras"
+                },
+                {
+                    "inicio": 15989162,
+                    "fin": 18343722,
+                    "titulo": "Capítulo 7: Paisaje después de la batalla"
+                },
+                {
+                    "inicio": 18343722,
+                    "fin": 20768341,
+                    "titulo": "Capítulo 8: Entre dos mundos"
+                },
+                {
+                    "inicio": 20768341,
+                    "fin": 23060821,
+                    "titulo": "Capítulo 9: Decisiones"
+                },
+                {
+                    "inicio": 23060821,
+                    "fin": 25257216,
+                    "titulo": "Capítulo 10: Resistencia"
+                },
+                {
+                    "inicio": 25257216,
+                    "fin": 27597739,
+                    "titulo": "Capítulo 11: Metamorfosis"
+                },
+                {
+                    "inicio": 27597739,
+                    "fin": 29563904,
+                    "titulo": "Capítulo 12: Toma de posesión"
+                }
+            ]
+        },
+        {
+            "nombre": "Las leyendas",
+            "genero": "Animación",
+            "anio": 2017,
+            "reparto": [
+                "Animación"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 13,
+            "sinopsis": "Las fuerzas del mal amenazan su hogar, pero este adolescente con el don de hablar con fantasmas les hará frente, leyenda tras leyenda.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/las-leyendas.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1538901,
+                    "titulo": "Capítulo 1: La profecía"
+                },
+                {
+                    "inicio": 1538901,
+                    "fin": 3093760,
+                    "titulo": "Capítulo 2: El Demonio de Jersey"
+                },
+                {
+                    "inicio": 3093760,
+                    "fin": 4650624,
+                    "titulo": "Capítulo 3: El Mart"
+                },
+                {
+                    "inicio": 4650624,
+                    "fin": 6211499,
+                    "titulo": "Capítulo 4: El fantasma de Medusa"
+                },
+                {
+                    "inicio": 6211499,
+                    "fin": 7768363,
+                    "titulo": "Capítulo 5: El Vodnik"
+                },
+                {
+                    "inicio": 7768363,
+                    "fin": 9327232,
+                    "titulo": "Capítulo 6: Fenrir"
+                },
+                {
+                    "inicio": 9327232,
+                    "fin": 10880085,
+                    "titulo": "Capítulo 7: El Hada de los Dientes"
+                },
+                {
+                    "inicio": 10880085,
+                    "fin": 12434944,
+                    "titulo": "Capítulo 8: Kaiju"
+                },
+                {
+                    "inicio": 12434944,
+                    "fin": 13999787,
+                    "titulo": "Capítulo 9: Nu Gui"
+                },
+                {
+                    "inicio": 13999787,
+                    "fin": 15554646,
+                    "titulo": "Capítulo 10: Señor Madera"
+                },
+                {
+                    "inicio": 15554646,
+                    "fin": 17109505,
+                    "titulo": "Capítulo 11: El Chilán"
+                },
+                {
+                    "inicio": 17109505,
+                    "fin": 18668374,
+                    "titulo": "Capítulo 12: El Gólem"
+                },
+                {
+                    "inicio": 18668374,
+                    "fin": 20233217,
+                    "titulo": "Capítulo 13: La serpiente y el huevo"
                 }
             ]
         }
