@@ -238,6 +238,32 @@
     #continue-watching li button {
       margin-right: 5px
     }
+
+    /* Nuevos estilos */
+    #seasons-container {
+      margin-top: 1em;
+      width: 100%
+    }
+
+    #seasons-container label {
+      display: block;
+      margin-bottom: .5em;
+      font-size: 1.1em
+    }
+
+    #seasons-container select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1em;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px top 50%;
+      background-size: 1.5em
+    }
   </style>
 </head>
 
@@ -265,6 +291,11 @@
       </header>
       <main>
         <div id="serie-info"></div>
+        <!-- Selector de temporadas -->
+        <section class="seasons-container" id="seasons-container">
+          <label for="temporada">Temporada:</label>
+          <select id="temporada"></select>
+        </section>
       </main>
       <audio id="audio-player">
         Audio no soportado.
@@ -360,13 +391,17 @@
       LS = document.getElementById('language'),
       CI = document.getElementById('chapter-info'),
       TI = document.getElementById('time-info'),
-      CWL = document.getElementById('cw-list');
+      CWL = document.getElementById('cw-list'),
+      TSC = document.getElementById('temporada'); // Selector de temporadas
     let TII, IP = !1,
       CSD = [],
       CLI = 0,
       CCI = 0,
       CP = 0,
-      S;
+      S,
+      ALL_SERIES; // Almacena todas las series cargadas
+    let CURRENT_SEASON_INDEX = 0; // Indice de la temporada actual
+
     const V = (el, btn, s, h) => (el.classList.contains('hidden') ? (el.classList.remove('hidden'), btn.textContent = h) : (el.classList.add('hidden'), btn.textContent = s)),
       FT = t => {
         const m = Math.floor(t / 60),
@@ -426,10 +461,27 @@
       C = () => {
         S && GP(S.nombre), M.style.display = "none", A.pause(), A.src = '', MC.classList.remove('hidden'), clearInterval(TII), IP = !1, PB.textContent = 'Reproducir', CP = A.currentTime
       },
-      O = s => {
-        S = s, IP = !1, CLI = 0, CCI = 0, CSD = [], LI(s), LL(s), LCF(s), RP(s.nombre).then(() => {
+      // O(serie, seasonIndex)
+      O = (serieName, seasonIndex = 0) => {
+        const series = ALL_SERIES.filter(s => getSerieBaseName(s.nombre) === serieName);
+        CURRENT_SEASON_INDEX = seasonIndex;
+        S = series[seasonIndex];
+
+        IP = !1;
+        CLI = 0;
+        CCI = 0;
+        CSD = [];
+
+        LI(S);
+        LL(S);
+        LCF(S);
+        RP(S.nombre).then(() => {
           A.play();
-        }), MC.classList.add('hidden'), M.style.display = "block", document.querySelector('#serieModal .modal-content').focus()
+        });
+
+        MC.classList.add('hidden');
+        M.style.display = "block";
+        document.querySelector('#serieModal .modal-content').focus();
       },
       FD = async () => {
         try {
@@ -441,20 +493,127 @@
           return console.error('Error:', t), []
         }
       },
-      RCAS = s => {
+      getSerieBaseName = (serieName) => {
+        // Elimina ", Temporada X" del nombre de la serie
+        return serieName.replace(/, Temporada \d+$/, '');
+      },
+      groupSeries = (series) => {
+        const grouped = {};
+        series.forEach(serie => {
+          const baseName = getSerieBaseName(serie.nombre);
+          if (!grouped[baseName]) {
+            grouped[baseName] = [];
+          }
+          grouped[baseName].push(serie);
+        });
+        return grouped;
+      },
+      RCAS = series => {
+        ALL_SERIES = series; // Guarda todas las series
+        const groupedSeries = groupSeries(series);
         const t = document.getElementById('countries-container');
         t.innerHTML = "";
-        const e = [...new Set(s.map(s => s.pais_origen))].sort();
-        e.forEach(e => {
-          const n = document.createElement('h2');
-          n.textContent = e, t.appendChild(n);
-          const i = document.createElement('ul');
-          i.classList.add('series-list'), s.filter(s => s.pais_origen === e).sort((t, e) => t.nombre.localeCompare(e.nombre)).forEach(s => {
-            const e = document.createElement('li'),
-              n = document.createElement('button');
-            n.textContent = s.nombre, n.addEventListener('click', () => O(s)), n.setAttribute('tabindex', '0'), n.classList.add('button'), e.appendChild(n), i.appendChild(e)
-          }), t.appendChild(i)
-        }), UCW()
+
+        //Obtén todos los países de origen únicos
+        const countries = [...new Set(series.map(s => s.pais_origen))].sort();
+
+        countries.forEach(country => {
+          const countryHeader = document.createElement('h2');
+          countryHeader.textContent = country;
+          t.appendChild(countryHeader);
+
+          const seriesList = document.createElement('ul');
+          seriesList.classList.add('series-list');
+
+          //Filtra las series por país
+          const countrySeries = series.filter(s => s.pais_origen === country);
+
+          //Crea una lista de nombres de series base únicos
+          const uniqueBaseNames = [...new Set(countrySeries.map(s => getSerieBaseName(s.nombre)))].sort();
+
+          uniqueBaseNames.forEach(baseName => {
+            const listItem = document.createElement('li');
+            const button = document.createElement('button');
+            button.textContent = baseName;
+            button.addEventListener('click', () => {
+              //O(nombreSerieBase)
+              showSeasonSelector(baseName);
+            });
+            button.setAttribute('tabindex', '0');
+            button.classList.add('button');
+            listItem.appendChild(button);
+            seriesList.appendChild(listItem);
+          });
+          t.appendChild(seriesList);
+        });
+        UCW();
+      },
+      showSeasonSelector = (serieBaseName) => {
+        const series = ALL_SERIES.filter(s => getSerieBaseName(s.nombre) === serieBaseName);
+        if (series.length > 1) {
+          // Si hay varias temporadas, muestra el selector
+          createSeasonSelector(serieBaseName, series);
+        } else {
+          // Si solo hay una temporada, abre directamente el modal
+          O(serieBaseName, 0);
+        }
+      },
+      createSeasonSelector = (serieBaseName, series) => {
+        // Limpia el selector de temporadas
+        TSC.innerHTML = '';
+
+        //Obtén el div con ID countries-container
+        const countriesContainer = document.getElementById('countries-container');
+
+        //Crea el cuadro modal
+        const seasonSelectModal = document.createElement('div');
+        seasonSelectModal.classList.add('modal');
+        seasonSelectModal.style.display = 'block';
+        seasonSelectModal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+
+        const modalContent = document.createElement('div');
+        modalContent.classList.add('modal-content');
+        modalContent.style.width = '50%';
+        modalContent.style.margin = '10% auto';
+
+        const header = document.createElement('h2');
+        header.textContent = `Selecciona la temporada de ${serieBaseName}`;
+        modalContent.appendChild(header);
+
+        const seasonList = document.createElement('ul');
+        seasonList.style.listStyleType = 'none';
+        seasonList.style.padding = '0';
+
+        series.forEach((serie, index) => {
+          const listItem = document.createElement('li');
+          listItem.style.marginBottom = '10px';
+
+          const button = document.createElement('button');
+          button.textContent = `Temporada ${index + 1}`;
+          button.classList.add('button');
+          button.style.width = '100%';
+          button.style.textAlign = 'left';
+          button.addEventListener('click', () => {
+            O(serieBaseName, index); // Llama a la función O con el índice de la temporada
+            seasonSelectModal.style.display = 'none'; // Oculta el modal después de seleccionar la temporada
+          });
+          listItem.appendChild(button);
+          seasonList.appendChild(listItem);
+        });
+
+        modalContent.appendChild(seasonList);
+
+        const closeButton = document.createElement('button');
+        closeButton.textContent = 'Cerrar';
+        closeButton.classList.add('button', 'button-primary');
+        closeButton.addEventListener('click', () => {
+          seasonSelectModal.style.display = 'none';
+        });
+        modalContent.appendChild(closeButton);
+
+        seasonSelectModal.appendChild(modalContent);
+
+        countriesContainer.appendChild(seasonSelectModal);
       },
       LI = s => {
         const t = document.getElementById('serie-info');
