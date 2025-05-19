@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Novelas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    input, button, textarea {
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+    }
+    .novela-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .novela-card h2 {
+      margin: 0;
+    }
+    .novela-card button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+    }
+    .temporada-container {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Novelas</h1>
+  
+  <button onclick="cargarJSON()">Cargar Novelas</button>
+  
+  <div>
+    <h2>Agregar/Editar Novela</h2>
+    <input type="text" id="titulo" placeholder="Título de la novela">
+    <input type="text" id="genero" placeholder="Género">
+    <input type="text" id="anio" placeholder="Año de estreno">
+    <input type="text" id="reparto" placeholder="Reparto (separado por comas)">
+    <input type="text" id="pais_origen" placeholder="País de origen">
+    <textarea id="sinopsis" placeholder="Sinopsis"></textarea>
+    <input type="number" id="num_temporadas" placeholder="Número de temporadas" onchange="mostrarCamposTemporadas()">
+    
+    <div id="temporadas-container"></div>
+    
+    <button onclick="agregarOEditarNovela()">Guardar Novela</button>
+  </div>
+
+  <h2>Lista de Novelas</h2>
+  <div id="novelas-list"></div>
+
+  <button onclick="exportarJSON()">Exportar JSON</button>
+
+  <script>
+    let novelas = [];
+    let novelaEditando = null; // Variable para almacenar la novela que estamos editando
+
+    // Función para mostrar campos de temporadas según el número seleccionado
+    function mostrarCamposTemporadas() {
+      const numTemporadas = document.getElementById('num_temporadas').value;
+      const container = document.getElementById('temporadas-container');
+      container.innerHTML = ''; // Limpiar el contenedor de temporadas
+
+      for (let i = 0; i < numTemporadas; i++) {
+        const temporadaDiv = document.createElement('div');
+        temporadaDiv.className = 'temporada-container';
+        temporadaDiv.innerHTML = `
+          <h3>Temporada ${i + 1}</h3>
+          <input type="number" id="capitulos-${i}" placeholder="Número de capítulos">
+          <input type="text" id="enlace-${i}" placeholder="Enlace base">
+        `;
+        container.appendChild(temporadaDiv);
+      }
+    }
+
+    // Función para agregar o editar una novela
+    function agregarOEditarNovela() {
+      const titulo = document.getElementById('titulo').value;
+      const genero = document.getElementById('genero').value;
+      const anio = document.getElementById('anio').value;
+      const reparto = document.getElementById('reparto').value.split(',');
+      const paisOrigen = document.getElementById('pais_origen').value;
+      const sinopsis = document.getElementById('sinopsis').value;
+      const numTemporadas = parseInt(document.getElementById('num_temporadas').value, 10);
+
+      const temporadas = [];
+      for (let i = 0; i < numTemporadas; i++) {
+        const capitulos = document.getElementById(`capitulos-${i}`).value;
+        const enlace = document.getElementById(`enlace-${i}`).value;
+        temporadas.push({ 
+          nombre: `Temporada ${i + 1}`,
+          capitulos: capitulos,
+          enlace_base: enlace
+        });
+      }
+
+      const nuevaNovela = { titulo, genero, anio, reparto, paisOrigen, sinopsis, temporadas };
+
+      if (novelaEditando !== null) {
+        // Si estamos editando una novela, la actualizamos
+        novelas[novelaEditando] = nuevaNovela;
+        novelaEditando = null; // Limpiar la variable de novela editando
+      } else {
+        // Si no estamos editando, agregamos una nueva novela
+        novelas.push(nuevaNovela);
+      }
+
+      // Limpiar los campos después de agregar o editar la novela
+      document.getElementById('titulo').value = '';
+      document.getElementById('genero').value = '';
+      document.getElementById('anio').value = '';
+      document.getElementById('reparto').value = '';
+      document.getElementById('pais_origen').value = '';
+      document.getElementById('sinopsis').value = '';
+      document.getElementById('num_temporadas').value = '';
+      document.getElementById('temporadas-container').innerHTML = '';
+
+      mostrarNovelas();
+    }
+
+    // Función para mostrar las novelas
+    function mostrarNovelas() {
+      const listDiv = document.getElementById('novelas-list');
+      listDiv.innerHTML = '';
+
+      novelas.forEach((novela, index) => {
+        const card = document.createElement('div');
+        card.className = 'novela-card';
+
+        card.innerHTML = `
+          <h2>${novela.titulo} (${novela.anio})</h2>
+          <p><strong>Género:</strong> ${novela.genero}</p>
+          <p><strong>Reparto:</strong> ${novela.reparto.join(', ')}</p>
+          <p><strong>País de Origen:</strong> ${novela.paisOrigen}</p>
+          <p><strong>Sinopsis:</strong> ${novela.sinopsis}</p>
+          <h3>Temporadas:</h3>
+          ${novela.temporadas.map(temp => `
+            <p><strong>${temp.nombre}:</strong> ${temp.capitulos} capítulos - <a href="${temp.enlace_base}" target="_blank">Enlace</a></p>
+          `).join('')}
+          <button onclick="editarNovela(${index})">Editar</button>
+          <button onclick="eliminarNovela(${index})">Eliminar</button>
+        `;
+
+        listDiv.appendChild(card);
+      });
+    }
+
+    // Función para editar una novela
+    function editarNovela(index) {
+      novelaEditando = index;
+      const novela = novelas[index];
+
+      // Rellenar los campos con los datos de la novela seleccionada
+      document.getElementById('titulo').value = novela.titulo;
+      document.getElementById('genero').value = novela.genero;
+      document.getElementById('anio').value = novela.anio;
+      document.getElementById('reparto').value = novela.reparto.join(', ');
+      document.getElementById('pais_origen').value = novela.paisOrigen;
+      document.getElementById('sinopsis').value = novela.sinopsis;
+      document.getElementById('num_temporadas').value = novela.temporadas.length;
+      mostrarCamposTemporadas();
+
+      // Rellenar los campos de las temporadas
+      novela.temporadas.forEach((temp, i) => {
+        document.getElementById(`capitulos-${i}`).value = temp.capitulos;
+        document.getElementById(`enlace-${i}`).value = temp.enlace_base;
+      });
+    }
+
+    // Función para eliminar una novela
+    function eliminarNovela(index) {
+      novelas.splice(index, 1);
+      mostrarNovelas();
+    }
+
+    // Función para exportar el JSON
+    function exportarJSON() {
+      const json = JSON.stringify({ novelas }, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'novelas.json';
+      a.click();
+    }
+
+    // Función para cargar un archivo JSON
+    function cargarJSON() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      input.onchange = function(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            try {
+              const data = JSON.parse(e.target.result);
+              if (data.novelas) {
+                novelas = data.novelas;
+                mostrarNovelas();
+              } else {
+                alert('El archivo no contiene datos válidos de novelas.');
+              }
+            } catch (error) {
+              alert('Error al leer el archivo JSON.');
+            }
+          };
+          reader.readAsText(file);
+        }
+      };
+      input.click();
+    }
+  </script>
+</body>
+</html>
