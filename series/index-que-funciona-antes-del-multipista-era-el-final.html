@@ -238,30 +238,6 @@
     #continue-watching li button {
       margin-right: 5px
     }
-
-    .temporada-select {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 1em;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 10px top 50%;
-      background-size: 1.5em
-    }
-
-    .temporadas-container {
-      margin-bottom: 1em
-    }
-
-    .temporadas-container label {
-      display: block;
-      margin-bottom: .5em;
-      font-size: 1.1em
-    }
   </style>
 </head>
 
@@ -289,10 +265,6 @@
       </header>
       <main>
         <div id="serie-info"></div>
-        <section class="temporadas-container hidden" id="temporadas-container">
-          <label for="temporada">Temporada:</label>
-          <select id="temporada" class="temporada-select"></select>
-        </section>
       </main>
       <audio id="audio-player">
         Audio no soportado.
@@ -388,16 +360,13 @@
       LS = document.getElementById('language'),
       CI = document.getElementById('chapter-info'),
       TI = document.getElementById('time-info'),
-      CWL = document.getElementById('cw-list'),
-      TS = document.getElementById('temporada');
+      CWL = document.getElementById('cw-list');
     let TII, IP = !1,
       CSD = [],
       CLI = 0,
       CCI = 0,
       CP = 0,
       S;
-    let temporadas = [];
-    let temporadaSeleccionada = null;
     const V = (el, btn, s, h) => (el.classList.contains('hidden') ? (el.classList.remove('hidden'), btn.textContent = h) : (el.classList.add('hidden'), btn.textContent = s)),
       FT = t => {
         const m = Math.floor(t / 60),
@@ -411,6 +380,7 @@
         try {
           const user = auth.currentUser;
           if (!user) throw new Error("No hay usuario conectado.");
+
           const progreso = {
             serieNombre: S.nombre,
             capituloIndex: CCI,
@@ -431,8 +401,10 @@
         try {
           const user = auth.currentUser;
           if (!user) throw new Error("No hay usuario conectado.");
+
           const docRef = doc(db, "progresoSeries", `${user.uid}_${n}`);
           const docSnap = await getDoc(docRef);
+
           if (docSnap.exists()) {
             const data = docSnap.data();
             CCI = data.capituloIndex;
@@ -452,23 +424,12 @@
         }
       },
       C = () => {
-        S && GP(S.nombre), M.style.display = "none", A.pause(), A.src = '', MC.classList.remove('hidden'), clearInterval(TII), IP = !1, PB.textContent = 'Reproducir', CP = A.currentTime, temporadaSeleccionada = null
+        S && GP(S.nombre), M.style.display = "none", A.pause(), A.src = '', MC.classList.remove('hidden'), clearInterval(TII), IP = !1, PB.textContent = 'Reproducir', CP = A.currentTime
       },
-      O = (s) => {
-        S = s;
-        IP = !1;
-        CLI = 0;
-        CCI = 0;
-        CSD = [];
-        LI(s);
-        LL(s);
-        LCF(s);
-        RP(s.nombre).then(() => {
+      O = s => {
+        S = s, IP = !1, CLI = 0, CCI = 0, CSD = [], LI(s), LL(s), LCF(s), RP(s.nombre).then(() => {
           A.play();
-        });
-        MC.classList.add('hidden');
-        M.style.display = "block";
-        document.querySelector('#serieModal .modal-content').focus();
+        }), MC.classList.add('hidden'), M.style.display = "block", document.querySelector('#serieModal .modal-content').focus()
       },
       FD = async () => {
         try {
@@ -483,71 +444,17 @@
       RCAS = s => {
         const t = document.getElementById('countries-container');
         t.innerHTML = "";
-        const seriesAgrupadas = {};
-        s.forEach(serie => {
-          const nombreBase = serie.nombre.split(', temporada')[0].trim();
-          if (!seriesAgrupadas[nombreBase]) {
-            seriesAgrupadas[nombreBase] = [];
-          }
-          seriesAgrupadas[nombreBase].push(serie);
-        });
         const e = [...new Set(s.map(s => s.pais_origen))].sort();
-        e.forEach(pais => {
+        e.forEach(e => {
           const n = document.createElement('h2');
-          n.textContent = pais;
-          t.appendChild(n);
+          n.textContent = e, t.appendChild(n);
           const i = document.createElement('ul');
-          i.classList.add('series-list');
-          Object.keys(seriesAgrupadas).sort().forEach(nombreBase => {
-            const seriesDeEsteNombre = seriesAgrupadas[nombreBase].filter(serie => serie.pais_origen === pais);
-            if (seriesDeEsteNombre.length > 0) {
-              const e = document.createElement('li');
-              const n = document.createElement('button');
-              n.textContent = nombreBase;
-              n.addEventListener('click', () => {
-                const seriesOrdenadas = [...seriesDeEsteNombre].sort((a, b) => {
-                  const temporadaA = parseInt(a.nombre.split(', temporada ')[1]);
-                  const temporadaB = parseInt(b.nombre.split(', temporada ')[1]);
-                  return temporadaA - temporadaB;
-                });
-                const primeraTemporada = seriesOrdenadas[0];
-                O(primeraTemporada);
-                if (seriesOrdenadas.length > 1) {
-                  LT(seriesOrdenadas);
-                } else {
-                  document.getElementById('temporadas-container').classList.add('hidden');
-                }
-              });
-              n.setAttribute('tabindex', '0');
-              n.classList.add('button');
-              e.appendChild(n);
-              i.appendChild(e);
-            }
-          });
-          t.appendChild(i);
-        });
-        UCW()
-      },
-      LT = series => {
-        TS.innerHTML = '';
-        document.getElementById('temporadas-container').classList.remove('hidden');
-        series.sort((a, b) => {
-          const temporadaA = parseInt(a.nombre.split(', temporada ')[1]);
-          const temporadaB = parseInt(b.nombre.split(', temporada ')[1]);
-          return temporadaA - temporadaB;
-        }).forEach(serie => {
-          const temporada = serie.nombre.split(', temporada ')[1];
-          const option = document.createElement('option');
-          option.value = serie.nombre;
-          option.textContent = `Temporada ${temporada}`;
-          TS.appendChild(option);
-        });
-        TS.addEventListener('change', (event) => {
-          const serieSeleccionada = series.find(serie => serie.nombre === event.target.value);
-          if (serieSeleccionada) {
-            O(serieSeleccionada);
-          }
-        });
+          i.classList.add('series-list'), s.filter(s => s.pais_origen === e).sort((t, e) => t.nombre.localeCompare(e.nombre)).forEach(s => {
+            const e = document.createElement('li'),
+              n = document.createElement('button');
+            n.textContent = s.nombre, n.addEventListener('click', () => O(s)), n.setAttribute('tabindex', '0'), n.classList.add('button'), e.appendChild(n), i.appendChild(e)
+          }), t.appendChild(i)
+        }), UCW()
       },
       LI = s => {
         const t = document.getElementById('serie-info');
@@ -642,6 +549,7 @@
         try {
           const user = auth.currentUser;
           if (!user) throw new Error("No hay usuario conectado.");
+
           const docRef = doc(db, "progresoSeries", `${user.uid}_${serieNombre}`);
           await deleteDoc(docRef);
           console.log("Serie eliminada de Continuar Viendo:", serieNombre);
@@ -652,12 +560,15 @@
       },
       UCW = async () => {
         CWL.innerHTML = '';
+
         try {
           const user = auth.currentUser;
           if (!user) throw new Error("No hay usuario conectado.");
+
           const q = query(collection(db, "progresoSeries"),
             where("userId", "==", user.uid),
             where("tiempo", ">", 600));
+
           const querySnapshot = await getDocs(q);
           const continuados = [];
           querySnapshot.forEach((doc) => {
@@ -666,7 +577,9 @@
               id: doc.id
             });
           });
+
           const series = await FD();
+
           for (const t of continuados) {
             const serie = series.find(e => e.nombre === t.serieNombre);
             if (serie) {
@@ -674,6 +587,7 @@
               const inicio = capitulo.inicio / 1000;
               const fin = capitulo.fin / 1000;
               const duracionRestante = FT(fin - t.tiempo);
+
               const li = document.createElement('li');
               const button = document.createElement('button');
               button.textContent = `Continuar ${serie.nombre}, ${capitulo.titulo}, Restante ${duracionRestante}`;
@@ -684,11 +598,13 @@
               });
               button.classList.add('button');
               li.appendChild(button);
+
               const deleteButton = document.createElement('button');
               deleteButton.textContent = 'Eliminar';
               deleteButton.classList.add('button');
               deleteButton.addEventListener('click', () => DCW(t.serieNombre));
               li.appendChild(deleteButton);
+
               CWL.appendChild(li);
             }
           }

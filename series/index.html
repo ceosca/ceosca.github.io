@@ -2,630 +2,805 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Series</title>
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series</title>
+    <style>
+        /* Estilos CSS (copiados de tu código) */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
 
-    :root {
-      --primary-color: #4CAF50;
-      --primary-color-dark: #3e8e41;
-      --text-color: #333;
-      --bg-color: #f4f4f4;
-      --white: #fff;
-      --shadow: 0 0 5px rgba(0, 0, 0, .1);
-      --focus-outline: 3px solid #007bff;
-      --focus-outline-offset: 2px
-    }
+        :root {
+            --pc: #4CAF50;
+            --pcd: #3e8e41;
+            --tc: #333;
+            --bc: #f4f4f4;
+            --w: #fff;
+            --s: 0 0 5px rgba(0, 0, 0, .1);
+            --fo: 3px solid #007bff;
+            --foo: 2px
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-color);
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: var(--text-color)
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bc);
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: var(--tc)
+        }
 
-    h2 {
-      font-size: 1.8em;
-      margin-bottom: .5em
-    }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: .5em
+        }
 
-    .container {
-      width: 95%;
-      margin: 10px auto;
-      background-color: var(--white);
-      padding: 15px;
-      box-shadow: var(--shadow)
-    }
+        .c {
+            width: 95%;
+            margin: 10px auto;
+            background-color: var(--w);
+            padding: 15px;
+            box-shadow: var(--s)
+        }
 
-    .button {
-      padding: 12px 18px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color .2s ease, box-shadow .2s ease;
-      font-size: 1em;
-      background-color: var(--primary-color);
-      color: var(--white)
-    }
+        .b {
+            padding: 12px 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color .2s ease, box-shadow .2s ease;
+            font-size: 1em;
+            background-color: var(--pc);
+            color: var(--w)
+        }
 
-    .button:hover,
-    .button:focus {
-      box-shadow: var(--shadow);
-      outline: none
-    }
+        .b:hover,
+        .b:focus {
+            box-shadow: var(--s);
+            outline: none
+        }
 
-    .button-primary:hover,
-    .button-primary:focus {
-      background-color: var(--primary-color-dark)
-    }
+        .bp:hover,
+        .bp:focus {
+            background-color: var(--pcd)
+        }
 
-    .series-list {
-      list-style-type: none;
-      padding: 0
-    }
+        .sl {
+            list-style-type: none;
+            padding: 0
+        }
 
-    .series-list li {
-      margin-bottom: 10px
-    }
+        .sl li {
+            margin-bottom: 10px
+        }
 
-    .series-list button {
-      width: 100%;
-      text-align: left;
-      font-size: 1.1em;
-      display: block
-    }
+        .sl button {
+            width: 100%;
+            text-align: left;
+            font-size: 1.1em;
+            display: block
+        }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, .7)
-    }
+        .m {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, .7)
+        }
 
-    .modal-content {
-      background-color: var(--white);
-      margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 90%;
-      position: relative;
-      border-radius: 10px;
-      padding-top: 60px;
-      padding-bottom: 70px
-    }
+        .mc {
+            background-color: var(--w);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            position: relative;
+            border-radius: 10px;
+            padding-top: 60px;
+            padding-bottom: 70px
+        }
 
-    .fixed-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: var(--white);
-      padding: 10px 20px;
-      z-index: 2;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-      display: flex;
-      justify-content: flex-end
-    }
+        .fh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--w);
+            padding: 10px 20px;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+            display: flex;
+            justify-content: flex-end
+        }
 
-    .fixed-player {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f0f0f0;
-      padding: 10px;
-      text-align: center;
-      z-index: 2;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, .2);
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap
-    }
+        .fp {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            z-index: 2;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, .2);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap
+        }
 
-    .fixed-player button {
-      background-color: #555;
-      color: var(--white);
-      transition: background-color .3s;
-      font-size: .9em;
-      padding: 8px 12px;
-      margin-bottom: 5px
-    }
+        .fp button {
+            background-color: #555;
+            color: var(--w);
+            transition: background-color .3s;
+            font-size: .9em;
+            padding: 8px 12px;
+            margin-bottom: 5px
+        }
 
-    .fixed-player button:hover {
-      background-color: #777
-    }
+        .fp button:hover {
+            background-color: #777
+        }
 
-    .fixed-player #time-info,
-    .fixed-player #chapter-info {
-      font-size: .8em;
-      color: var(--text-color);
-      width: 100%;
-      text-align: center
-    }
+        .fp #ti,
+        .fp #ci {
+            font-size: .8em;
+            color: var(--tc);
+            width: 100%;
+            text-align: center
+        }
 
-    .languages-container,
-    .episodes-container {
-      margin-top: 1em;
-      width: 100%
-    }
+        .lc,
+        .ec {
+            margin-top: 1em;
+            width: 100%
+        }
 
-    .languages-container label,
-    .episodes-container label {
-      display: block;
-      margin-bottom: .5em;
-      font-size: 1.1em
-    }
+        .lc label,
+        .ec label {
+            display: block;
+            margin-bottom: .5em;
+            font-size: 1.1em
+        }
 
-    .languages-container select,
-    .episodes-container select {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 1em;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 10px top 50%;
-      background-size: 1.5em
-    }
+        .lc select,
+        .ec select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1em;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 1.5em
+        }
 
-    .hidden {
-      display: none !important
-    }
+        .h {
+            display: none !important
+        }
 
-    *:focus {
-      outline: var(--focus-outline);
-      outline-offset: var(--focus-outline-offset)
-    }
+        *:focus {
+            outline: var(--fo);
+            outline-offset: var(--foo)
+        }
 
-    @media (max-width:600px) {
-      body {
-        font-size: 1.1em
-      }
+        @media (max-width:600px) {
 
-      h2 {
-        font-size: 1.5em
-      }
+            body {
+                font-size: 1.1em
+            }
 
-      .container {
-        padding: 10px
-      }
+            h2 {
+                font-size: 1.5em
+            }
 
-      .series-list button {
-        padding: 12px 15px;
-        font-size: 1em
-      }
+            .c {
+                padding: 10px
+            }
 
-      .modal-content {
-        margin: 20% auto
-      }
-    }
+            .sl button {
+                padding: 12px 15px;
+                font-size: 1em
+            }
 
-    #continue-watching {
-      margin-bottom: 20px
-    }
+            .mc {
+                margin: 20% auto
+            }
+        }
 
-    #continue-watching h2 {
-      font-size: 1.5em;
-      margin-bottom: 10px
-    }
+        #cw {
+            margin-bottom: 20px
+        }
 
-    #continue-watching ul {
-      list-style: none;
-      padding: 0
-    }
+        #cw h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px
+        }
 
-    #continue-watching li {
-      margin-bottom: 5px
-    }
+        #cw ul {
+            list-style: none;
+            padding: 0
+        }
 
-    #continue-watching li button {
-      margin-right: 5px
-    }
-  </style>
+        #cw li {
+            margin-bottom: 5px
+        }
+
+        #cw li button {
+            margin-right: 5px
+        }
+
+        .ts {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1em;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 1.5em
+        }
+
+        .tc {
+            margin-bottom: 1em
+        }
+
+        .tc label {
+            display: block;
+            margin-bottom: .5em;
+            font-size: 1.1em
+        }
+
+        /* Estilos adicionales para el encabezado */
+        #selector-series {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #selector-series h2 {
+            margin-bottom: 10px;
+        }
+
+        #selector-series ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #selector-series li {
+            margin: 0 10px;
+        }
+
+        #selector-series a {
+            text-decoration: none;
+            color: var(--pc);
+            font-weight: bold;
+            padding: 8px 12px;
+            border: 2px solid var(--pc);
+            border-radius: 5px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            display: block;
+        }
+
+        #selector-series a:hover {
+            background-color: var(--pc);
+            color: var(--w);
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container" id="main-container">
-    <header>
-      <h2>Series de TV</h2>
-      <button id="google-sign-in" class="button">Iniciar sesión con Google</button>
-      <button id="sign-out" class="button hidden">Cerrar sesión</button>
-    </header>
-    <main>
-      <div id="continue-watching">
-        <h2>Continuar escuchando</h2>
-        <ul id="cw-list">
-        </ul>
-      </div>
-      <div id="countries-container">
-      </div>
-    </main>
-  </div>
-  <div id="serieModal" class="modal" aria-hidden="true">
-    <div class="modal-content" tabindex="-1">
-      <header class="fixed-header">
-        <button class="close button button-primary" id="closeModal">Regresar a explorar</button>
-      </header>
-      <main>
-        <div id="serie-info"></div>
-      </main>
-      <audio id="audio-player">
-        Audio no soportado.
-      </audio>
-      <h2>Reproductor</h2>
-      <footer class="fixed-player">
-        <div id="chapter-info"></div>
-        <div id="time-info"></div>
-        <button id="play-pause-button" class="button">Reproducir</button>
-        <button id="forward-button" class="button">Avanzar</button>
-        <button id="backward-button" class="button">Retroceder</button>
-        <button id="next-chapter-button" class="button">Siguiente episodio</button>
-        <button id="previous-chapter-button" class="button">Episodio anterior</button>
-        <button id="increase-volume-button" class="button">Subir volumen</button>
-        <button id="decrease-volume-button" class="button">Bajar volumen</button>
-        <section class="episodes-container" id="episodes-container">
-          <label for="capitulo">Capítulo:</label>
-          <select id="capitulo"></select>
-        </section>
-        <section class="languages-container hidden" id="languages-container">
-          <label for="language">Idioma:</label>
-          <select id="language"></select>
-        </section>
-      </footer>
+    <div class="c">
+        <!-- Encabezado con enlaces dinámicos -->
+        <div id="selector-series">
+            <h2>¿Qué quieres ver?</h2>
+            <ul>
+                <li><a href="#" id="en-espanol">Series en español original</a></li>
+                <li><a href="#" id="con-doblaje">Series con doblaje</a></li>
+            </ul>
+        </div>
+
+        <div id="mc">
+            <header>
+                <h2>Series de TV</h2>
+                <button id="gsi" class="b">Iniciar sesión con Google</button>
+                <button id="so" class="b h">Cerrar sesión</button>
+            </header>
+            <main>
+                <div id="cw">
+                    <h2>Continuar escuchando</h2>
+                    <ul id="cwl"></ul>
+                </div>
+                <div id="coc"></div>
+            </main>
+        </div>
     </div>
-  </div>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-    import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp, deleteDoc } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
-    import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0",
-      authDomain: "pfdsuaaug.firebaseapp.com",
-      projectId: "pfdsuaaug",
-      storageBucket: "pfdsuaaug.firebasestorage.app",
-      messagingSenderId: "701797222900",
-      appId: "1:701797222900:web:01836d45db1b35be2bd1a1"
-    };
+    <div id="sM" class="m" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="mc" tabindex="-1">
+            <header class="fh">
+                <h2 id="modal-title">Detalles de la Serie</h2>
+                <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
+            </header>
+            <main>
+                <div id="si" aria-live="polite"></div>
+                <section class="tc h" id="tasc">
+                    <label for="t">Temporada:</label>
+                    <select id="t" class="ts"></select>
+                </section>
+            </main>
+            <audio id="ap">Audio no soportado.</audio>
+            <h2>Reproductor</h2>
+            <footer class="fp">
+                <div id="ci"></div>
+                <div id="ti"></div>
+                <button id="ppb" class="b" aria-label="Reproducir/Pausar">Reproducir</button>
+                <button id="fb" class="b" aria-label="Avanzar 15 segundos">Avanzar</button>
+                <button id="bb" class="b" aria-label="Retroceder 15 segundos">Retroceder</button>
+                <button id="ncb" class="b" aria-label="Siguiente episodio">Siguiente episodio</button>
+                <button id="pcb" class="b" aria-label="Episodio anterior">Episodio anterior</button>
+                <button id="ivb" class="b" aria-label="Subir volumen">Subir volumen</button>
+                <button id="dvb" class="b" aria-label="Bajar volumen">Bajar volumen</button>
+                <section class="ec" id="easc">
+                    <label for="c">Capítulo:</label>
+                    <select id="c"></select>
+                </section>
+                <section class="lc h" id="lasc">
+                    <label for="l">Idioma:</label>
+                    <select id="l"></select>
+                </section>
+            </footer>
+        </div>
+    </div>
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp, deleteDoc } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-    const googleSignInButton = document.getElementById('google-sign-in');
-    const signOutButton = document.getElementById('sign-out');
+        const fC = { apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0", authDomain: "pfdsuaaug.firebaseapp.com", projectId: "pfdsuaaug", storageBucket: "pfdsuaaug.firebasestorage.app", messagingSenderId: "701797222900", appId: "1:701797222900:web:01836d45db1b35be2bd1a1" },
+            app = initializeApp(fC),
+            db = getFirestore(app),
+            auth = getAuth(app),
+            gP = new GoogleAuthProvider,
+            gSI = document.getElementById('gsi'),
+            sO = document.getElementById('so'),
+            sWGi = async () => {
+                try {
+                    const r = await signInWithPopup(auth, gP),
+                        u = r.user;
+                    console.log("Usuario conectado con Google:", u.uid, u.displayName, u.email)
+                } catch (e) {
+                    console.error("Error al iniciar sesión con Google:", e)
+                }
+            },
+            sOG = async () => {
+                try {
+                    await signOut(auth);
+                    console.log("Usuario desconectado.")
+                } catch (e) {
+                    console.error("Error al cerrar sesión:", e)
+                }
+            };
+        onAuthStateChanged(auth, u => {
+            u ? (console.log("Usuario conectado:", u.uid), gSI.classList.add('h'), sO.classList.remove('h'), UCW()) : (console.log("Usuario desconectado"), gSI.classList.remove('h'), sO.classList.add('h'), UCW())
+        }), gSI.addEventListener('click', sWGi), sO.addEventListener('click', sOG);
 
-    const signInWithGoogle = async () => {
-      try {
-        const result = await signInWithPopup(auth, googleProvider);
-        const user = result.user;
-        console.log("Usuario conectado con Google:", user.uid, user.displayName, user.email);
-      } catch (error) {
-        console.error("Error al iniciar sesión con Google:", error);
-      }
-    };
+        const SDP1 = 'https://ceosca.github.io/',
+            SDP2 = 'series/series.json',
+            SDP3 = 'series/doblaje.json',
+            // SD = SDP1 + SDP2, //  Original URL de la base de datos en español original
+            A = document.getElementById('ap'),
+            MC = document.getElementById('mc'),
+            M = document.getElementById("sM"),
+            CBC = document.getElementById("cb"),
+            PB = document.getElementById('ppb'),
+            CS = document.getElementById('c'),
+            LC = document.getElementById('lasc'),
+            LS = document.getElementById('l'),
+            CI = document.getElementById('ci'),
+            TI = document.getElementById('ti'),
+            CWL = document.getElementById('cwl'),
+            TS = document.getElementById('t'),
+            EN_ESPANOL_LINK = document.getElementById('en-espanol'),
+            CON_DOBLAJE_LINK = document.getElementById('con-doblaje');
 
-    const signOutGoogle = async () => {
-      try {
-        await signOut(auth);
-        console.log("Usuario desconectado.");
-      } catch (error) {
-        console.error("Error al cerrar sesión:", error);
-      }
-    };
+        let TII,
+            IP = !1,
+            CSD = [],
+            CLI = 0,
+            CCI = 0,
+            CP = 0,
+            S,
+            SD = SDP1 + SDP2; // Definiendo SD aqui para que sea globalmente accesible.
 
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log("Usuario conectado:", user.uid);
-        googleSignInButton.classList.add('hidden');
-        signOutButton.classList.remove('hidden');
-        UCW();
-      } else {
-        console.log("Usuario desconectado");
-        googleSignInButton.classList.remove('hidden');
-        signOutButton.classList.add('hidden');
-        UCW();
-      }
-    });
+        const V = (el, btn, s, h) => (el.classList.contains('h') ? (el.classList.remove('h'), btn.textContent = h) : (el.classList.add('h'), btn.textContent = s)),
+            FT = t => {
+                const m = Math.floor(t / 60),
+                    s = Math.floor(t % 60);
+                return `${PZ(m)}:${PZ(s)}`
+            },
+            PZ = n => (n < 10 ? '0' : '') + n,
+            GP = async n => {
+                if (!S) return;
+                const t = A.currentTime;
+                try {
+                    const u = auth.currentUser;
+                    if (!u) throw new Error("No hay usuario conectado.");
+                    const p = { serieNombre: S.nombre, capituloIndex: CCI, tiempo: t, idiomaIndex: CLI, userId: u.uid, ultimaActualizacion: serverTimestamp() };
+                    await setDoc(doc(db, "progresoSeries", `${u.uid}_${S.nombre}`), p);
+                    console.log("Progreso guardado en Firebase:", p);
+                    UCW()
+                } catch (e) {
+                    console.error("Error al guardar el progreso en Firebase:", e)
+                }
+            },
+            RP = async n => {
+                try {
+                    const u = auth.currentUser;
+                    if (!u) throw new Error("No hay usuario conectado.");
+                    const dS = await getDoc(doc(db, "progresoSeries", `${u.uid}_${n}`));
+                    if (dS.exists()) {
+                        const d = dS.data();
+                        CCI = d.capituloIndex;
+                        A.currentTime = d.tiempo;
+                        CLI = d.idiomaIndex || 0;
+                        CS.value = CCI;
+                        LS.value = CLI;
+                        UC();
+                        return !0
+                    } else {
+                        console.log("No se encontró el documento en Firebase.");
+                        return !1
+                    }
+                } catch (e) {
+                    console.error("Error al cargar el progreso de Firebase:", e);
+                    return !1
+                }
+            },
+            C = () => {
+                S && GP(S.nombre), M.style.display = "none", M.setAttribute("aria-hidden", "true"), A.pause(), A.src = '', MC.classList.remove('h'), clearInterval(TII), IP = !1, PB.textContent = 'Reproducir', CP = A.currentTime, disableFocusTrap(M);
+            },
+            O = s => {
+                S = s;
+                IP = !1;
+                CLI = 0;
+                CCI = 0;
+                CSD = [];
+                LI(s);
+                LL(s);
+                LCF(s);
+                RP(s.nombre).then(() => {
+                    A.play()
+                });
+                MC.classList.add('h');
+                M.style.display = "block";
+                M.setAttribute("aria-hidden", "false");
+                document.querySelector('#sM .mc').focus();
 
-    googleSignInButton.addEventListener('click', signInWithGoogle);
-    signOutButton.addEventListener('click', signOutGoogle);
+                enableFocusTrap(M);
+            },
+            FD = async () => {
+                try {
+                    const t = await fetch(SD);
+                    if (!t.ok) throw new Error(`Error! Status: ${t.status}`);
+                    const e = await t.json();
+                    return e.series
+                } catch (t) {
+                    return console.error('Error:', t), []
+                }
+            },
+            RCAS = s => {
+                const t = document.getElementById('coc');
+                t.innerHTML = "";
+                const sA = {};
+                s.forEach(s => {
+                    const nB = s.nombre.split(', temporada')[0].trim();
+                    sA[nB] || (sA[nB] = []);
+                    sA[nB].push(s)
+                });
+                const e = [...new Set(s.map(s => s.pais_origen))].sort();
+                e.forEach(p => {
+                    const n = document.createElement('h2');
+                    n.textContent = p;
+                    t.appendChild(n);
+                    const i = document.createElement('ul');
+                    i.classList.add('sl');
+                    Object.keys(sA).sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' })).forEach(nB => {
+                        const sD = sA[nB].filter(s => s.pais_origen === p);
+                        if (sD.length > 0) {
+                            const e = document.createElement('li'),
+                                n = document.createElement('button');
+                            n.textContent = nB;
+                            n.addEventListener('click', () => {
+                                const sO = [...sD].sort((a, b) => {
+                                        const tA = parseInt(a.nombre.split(', temporada ')[1]),
+                                            tB = parseInt(b.nombre.split(', temporada ')[1]);
+                                        return tA - tB
+                                    }),
+                                    pT = sO[0];
+                                O(pT);
+                                sO.length > 1 ? LT(sO) : document.getElementById('tasc').classList.add('h')
+                            });
+                            n.setAttribute('tabindex', '0');
+                            n.classList.add('b');
+                            e.appendChild(n);
+                            i.appendChild(e)
+                        }
+                    });
+                    t.appendChild(i)
+                });
+                UCW()
+            },
+            LT = s => {
+                TS.innerHTML = '';
+                document.getElementById('tasc').classList.remove('h');
+                s.sort((a, b) => {
+                    const tA = parseInt(a.nombre.split(', temporada ')[1]),
+                        tB = parseInt(b.nombre.split(', temporada ')[1]);
+                    return tA - tB
+                }).forEach(s => {
+                    const t = s.nombre.split(', temporada ')[1],
+                        o = document.createElement('option');
+                    o.value = s.nombre;
+                    o.textContent = `Temporada ${t}`;
+                    TS.appendChild(o)
+                });
+                TS.addEventListener('change', e => {
+                    const sS = s.find(s => s.nombre === e.target.value);
+                    sS && O(sS)
+                })
+            },
+            LI = s => {
+                const t = document.getElementById('si');
+                S = s, t.innerHTML = `<h2>${s.nombre}</h2><div><strong>Género:</strong> ${s.genero}</div><div><strong>Año:</strong> ${s.anio}</div><div><strong>Reparto:</strong> ${s.reparto.join(", ")}</div><div><strong>País:</strong> ${s.pais_origen}</div><div><strong>Episodios:</strong> ${s.cantidad_episodios}</div>${s.sinopsis ? `<div><strong>Sinopsis:</strong> ${s.sinopsis}</div>` : ''}`
+            },
+            LL = s => {
+                LS.innerHTML = '';
+                s.enlaces.length > 1 ? (s.enlaces.forEach((t, e) => {
+                    const n = document.createElement('option');
+                    n.value = e, n.textContent = t.idioma, LS.appendChild(n)
+                }), LC.classList.remove('h')) : LC.classList.add('h')
+            },
+            LCF = s => {
+                CS.innerHTML = '';
+                CSD = s.capitulos;
+                CSD.forEach((t, e) => {
+                    const n = document.createElement('option');
+                    n.value = e, n.textContent = t.titulo, CS.appendChild(n)
+                });
+                CS.value = CCI;
+                UC();
+                A.src = s.enlaces[CLI].enlace;
+                A.load();
+                A.currentTime = CP;
+                IP && A.play();
+                clearInterval(TII);
+                UT();
+                TII = setInterval(UT, 1e3)
+            },
+            UC = () => {
+                CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`
+            },
+            UT = () => {
+                const t = A.currentTime,
+                    e = GCI(t),
+                    n = CSD[e],
+                    i = n.inicio / 1e3,
+                    o = n.fin / 1e3,
+                    r = FT(t - i),
+                    c = FT(o - i);
+                CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`, TI.textContent = `${r} / ${c}`
+            },
+            TP = () => {
+                IP ? (A.pause(), IP = !1, PB.textContent = 'Reproducir', PB.setAttribute('aria-label', 'Reproducir')) : (A.play(), IP = !0, PB.textContent = 'Pausar', PB.setAttribute('aria-label', 'Pausar'))
+            },
+            F = () => {
+                A.currentTime += 15
+            },
+            B = () => {
+                A.currentTime -= 15
+            },
+            PC = () => {
+                CCI = parseInt(CS.value);
+                CSD[CCI] ? (A.currentTime = CSD[CCI].inicio / 1e3, A.play(), IP = !0, PB.textContent = 'Pausar', PB.setAttribute('aria-label', 'Pausar'), UC()) : console.warn("Capitulo?")
+            },
+            GCI = t => {
+                let e = 0;
+                return CSD.forEach((n, i) => {
+                    t >= n.inicio / 1e3 && t <= n.fin / 1e3 && (e = i)
+                }), e
+            },
+            PP = () => {
+                let t = CCI;
+                t > 0 && (t--, CS.value = t, PC())
+            },
+            NP = () => {
+                let t = CCI;
+                t < CSD.length - 1 && (t++, CS.value = t, PC())
+            },
+            CL = () => {
+                CP = A.currentTime;
+                CLI = parseInt(LS.value), LCF(S)
+            },
+            IV = () => {
+                A.volume = Math.min(1, A.volume + .05)
+            },
+            DV = () => {
+                A.volume = Math.max(0, A.volume - .05)
+            },
+            DCW = async s => {
+                try {
+                    const u = auth.currentUser;
+                    if (!u) throw new Error("No hay usuario conectado.");
+                    await deleteDoc(doc(db, "progresoSeries", `${u.uid}_${s}`));
+                    console.log("Serie eliminada de Continuar Viendo:", s);
+                    UCW()
+                } catch (e) {
+                    console.error("Error al eliminar la serie de Continuar Viendo:", e)
+                }
+            },
+            UCW = async () => {
+                CWL.innerHTML = '';
+                try {
+                    const u = auth.currentUser;
+                    if (!u) throw new Error("No hay usuario conectado.");
+                    const q = query(collection(db, "progresoSeries"), where("userId", "==", u.uid), where("tiempo", ">", 600)),
+                        qS = await getDocs(q),
+                        c = [];
+                    qS.forEach(d => {
+                        c.push({ ...d.data(), id: d.id })
+                    });
+                    const s = await FD();
+                    for (const t of c) {
+                        const ser = s.find(e => e.nombre === t.serieNombre);
+                        if (ser) {
+                            const cap = ser.capitulos[t.capituloIndex],
+                                ini = cap.inicio / 1e3,
+                                fin = cap.fin / 1e3,
+                                durR = FT(fin - t.tiempo),
+                                li = document.createElement('li'),
+                                btn = document.createElement('button');
+                            btn.textContent = `${ser.nombre}, ${cap.titulo}, ${durR}`;
+                            btn.addEventListener('click', () => {
+                                O(ser);
+                                S = ser;
+                                RP(ser.nombre)
+                            });
+                            btn.classList.add('b');
+                            li.appendChild(btn);
+                            const delB = document.createElement('button');
+                            delB.textContent = 'Eliminar';
+                            delB.classList.add('b');
+                            delB.addEventListener('click', () => DCW(t.serieNombre));
+                            li.appendChild(delB);
+                            CWL.appendChild(li)
+                        }
+                    }
+                } catch (e) {
+                    console.error("Error al actualizar Continuar Viendo:", e)
+                }
+            };
 
-    const SD = 'https://ceosca.github.io/series/series.json',
-      A = document.getElementById('audio-player'),
-      MC = document.getElementById('main-container'),
-      M = document.getElementById("serieModal"),
-      CBC = document.getElementById("closeModal"),
-      PB = document.getElementById('play-pause-button'),
-      CS = document.getElementById('capitulo'),
-      LC = document.getElementById('languages-container'),
-      LS = document.getElementById('language'),
-      CI = document.getElementById('chapter-info'),
-      TI = document.getElementById('time-info'),
-      CWL = document.getElementById('cw-list');
-    let TII, IP = !1,
-      CSD = [],
-      CLI = 0,
-      CCI = 0,
-      CP = 0,
-      S;
-    const V = (el, btn, s, h) => (el.classList.contains('hidden') ? (el.classList.remove('hidden'), btn.textContent = h) : (el.classList.add('hidden'), btn.textContent = s)),
-      FT = t => {
-        const m = Math.floor(t / 60),
-          s = Math.floor(t % 60);
-        return `${PZ(m)}:${PZ(s)}`
-      },
-      PZ = n => (n < 10 ? '0' : '') + n,
-      GP = async (n) => {
-        if (!S) return;
-        const t = A.currentTime;
-        try {
-          const user = auth.currentUser;
-          if (!user) throw new Error("No hay usuario conectado.");
-
-          const progreso = {
-            serieNombre: S.nombre,
-            capituloIndex: CCI,
-            tiempo: t,
-            idiomaIndex: CLI,
-            userId: user.uid,
-            ultimaActualizacion: serverTimestamp()
-          };
-          const docRef = doc(db, "progresoSeries", `${user.uid}_${S.nombre}`);
-          await setDoc(docRef, progreso);
-          console.log("Progreso guardado en Firebase:", progreso);
-          UCW();
-        } catch (e) {
-          console.error("Error al guardar el progreso en Firebase:", e);
-        }
-      },
-      RP = async (n) => {
-        try {
-          const user = auth.currentUser;
-          if (!user) throw new Error("No hay usuario conectado.");
-
-          const docRef = doc(db, "progresoSeries", `${user.uid}_${n}`);
-          const docSnap = await getDoc(docRef);
-
-          if (docSnap.exists()) {
-            const data = docSnap.data();
-            CCI = data.capituloIndex;
-            A.currentTime = data.tiempo;
-            CLI = data.idiomaIndex || 0;
-            CS.value = CCI;
-            LS.value = CLI;
-            UC();
-            return true;
-          } else {
-            console.log("No se encontró el documento en Firebase.");
-            return false;
-          }
-        } catch (e) {
-          console.error("Error al cargar el progreso de Firebase:", e);
-          return false;
-        }
-      },
-      C = () => {
-        S && GP(S.nombre), M.style.display = "none", A.pause(), A.src = '', MC.classList.remove('hidden'), clearInterval(TII), IP = !1, PB.textContent = 'Reproducir', CP = A.currentTime
-      },
-      O = s => {
-        S = s, IP = !1, CLI = 0, CCI = 0, CSD = [], LI(s), LL(s), LCF(s), RP(s.nombre).then(() => {
-          A.play();
-        }), MC.classList.add('hidden'), M.style.display = "block", document.querySelector('#serieModal .modal-content').focus()
-      },
-      FD = async () => {
-        try {
-          const t = await fetch(SD);
-          if (!t.ok) throw new Error(`Error! Status: ${t.status}`);
-          const e = await t.json();
-          return e.series
-        } catch (t) {
-          return console.error('Error:', t), []
-        }
-      },
-      RCAS = s => {
-        const t = document.getElementById('countries-container');
-        t.innerHTML = "";
-        const e = [...new Set(s.map(s => s.pais_origen))].sort();
-        e.forEach(e => {
-          const n = document.createElement('h2');
-          n.textContent = e, t.appendChild(n);
-          const i = document.createElement('ul');
-          i.classList.add('series-list'), s.filter(s => s.pais_origen === e).sort((t, e) => t.nombre.localeCompare(e.nombre)).forEach(s => {
-            const e = document.createElement('li'),
-              n = document.createElement('button');
-            n.textContent = s.nombre, n.addEventListener('click', () => O(s)), n.setAttribute('tabindex', '0'), n.classList.add('button'), e.appendChild(n), i.appendChild(e)
-          }), t.appendChild(i)
-        }), UCW()
-      },
-      LI = s => {
-        const t = document.getElementById('serie-info');
-        S = s, t.innerHTML = `
-        <h2>${s.nombre}</h2>
-        <div><strong>Género:</strong> ${s.genero}</div>
-        <div><strong>Año:</strong> ${s.anio}</div>
-        <div><strong>Reparto:</strong> ${s.reparto.join(", ")}</div>
-        <div><strong>País:</strong> ${s.pais_origen}</div>
-        <div><strong>Episodios:</strong> ${s.cantidad_episodios}</div>
-        ${s.sinopsis ? `<div><strong>Sinopsis:</strong> ${s.sinopsis}</div>` : ''}
-    `
-      },
-      LL = s => {
-        LS.innerHTML = '';
-        if (s.enlaces.length > 1) {
-          s.enlaces.forEach((t, e) => {
-            const n = document.createElement('option');
-            n.value = e, n.textContent = t.idioma, LS.appendChild(n)
-          }), LC.classList.remove('hidden')
-        } else {
-          LC.classList.add('hidden')
-        }
-      },
-      LCF = s => {
-        CS.innerHTML = '', CSD = s.capitulos;
-        CSD.forEach((t, e) => {
-          const n = document.createElement('option');
-          n.value = e, n.textContent = t.titulo, CS.appendChild(n)
+        CBC.addEventListener('click', C);
+        window.addEventListener('click', t => {
+            t.target === M && C()
         });
-        CS.value = CCI;
-        UC();
-        A.src = s.enlaces[CLI].enlace;
-        A.load();
-        A.currentTime = CP;
-        IP && A.play();
-        clearInterval(TII);
-        UT();
-        TII = setInterval(UT, 1e3)
-      },
-      UC = () => {
-        CI.textContent = `Reproduciendo: ${CSD[CCI].titulo}`
-      },
-      UT = () => {
-        const t = A.currentTime,
-          e = GCI(t),
-          n = CSD[e],
-          i = n.inicio / 1e3,
-          o = n.fin / 1e3,
-          r = FT(t - i),
-          c = FT(o - i);
-        CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : CSD[CCI].titulo, TI.textContent = `Duración del capítulo: ${r} / ${c}`
-      },
-      TP = () => {
-        IP ? (A.pause(), IP = !1, PB.textContent = 'Reproducir') : (A.play(), IP = !0, PB.textContent = 'Pausar')
-      },
-      F = () => {
-        A.currentTime += 15
-      },
-      B = () => {
-        A.currentTime -= 15
-      },
-      PC = () => {
-        CCI = parseInt(CS.value);
-        CSD[CCI] ? (A.currentTime = CSD[CCI].inicio / 1e3, A.play(), IP = !0, PB.textContent = 'Pausar', UC()) : console.warn("Capitulo?")
-      },
-      GCI = t => {
-        let e = 0;
-        return CSD.forEach((n, i) => {
-          t >= n.inicio / 1e3 && t <= n.fin / 1e3 && (e = i)
-        }), e
-      },
-      PP = () => {
-        let t = CCI;
-        t > 0 && (t--, CS.value = t, PC())
-      },
-      NP = () => {
-        let t = CCI;
-        t < CSD.length - 1 && (t++, CS.value = t, PC())
-      },
-      CL = () => {
-        CP = A.currentTime;
-        CLI = parseInt(LS.value), LCF(S)
-      },
-      IV = () => {
-        A.volume = Math.min(1, A.volume + .05)
-      },
-      DV = () => {
-        A.volume = Math.max(0, A.volume - .05)
-      },
-      DCW = async (serieNombre) => {
-        try {
-          const user = auth.currentUser;
-          if (!user) throw new Error("No hay usuario conectado.");
+        CS.addEventListener('change', () => {
+            S && GP(S.nombre), PC()
+        });
+        A.addEventListener('pause', () => {
+            S && GP(S.nombre)
+        });
+        A.addEventListener('play', () => {
+            IP = !0, PB.textContent = 'Pausar', PB.setAttribute('aria-label', 'Pausar')
+        });
+        LS.addEventListener('change', CL);
+        PB.addEventListener('click', TP);
+        document.getElementById('fb').addEventListener('click', F);
+        document.getElementById('bb').addEventListener('click', B);
+        document.getElementById('pcb').addEventListener('click', PP);
+        document.getElementById('ncb').addEventListener('click', NP);
+        document.getElementById('ivb').addEventListener('click', IV);
+        document.getElementById('dvb').addEventListener('click', DV);
+        
+        const cargarSeries = () => {
+            FD().then(s => RCAS(s));
+        };
 
-          const docRef = doc(db, "progresoSeries", `${user.uid}_${serieNombre}`);
-          await deleteDoc(docRef);
-          console.log("Serie eliminada de Continuar Viendo:", serieNombre);
-          UCW();
-        } catch (error) {
-          console.error("Error al eliminar la serie de Continuar Viendo:", error);
+        EN_ESPANOL_LINK.addEventListener('click', (e) => {
+            e.preventDefault();
+            SD = SDP1 + SDP2; // URL de series en español original
+            cargarSeries();
+        });
+
+        CON_DOBLAJE_LINK.addEventListener('click', (e) => {
+            e.preventDefault();
+            SD = SDP1 + SDP3; // URL de series con doblaje
+            cargarSeries();
+        });
+
+        window.onload = () => {
+            cargarSeries();
+        };
+
+        setInterval(() => {
+            M.style.display === "block" && S && GP(S.nombre)
+        }, 5e3);
+
+        //------------------- Focus Trap -----------------------
+        function createFocusTrap(element) {
+            let focusableElements = element.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])');
+            let firstFocusableElement = focusableElements[0];
+            let lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+            const keydownHandler = (e) => {
+                const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+                if (!isTabPressed) {
+                    return;
+                }
+
+                if (e.shiftKey) {
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            };
+
+            element.addEventListener('keydown', keydownHandler);
+
+            return {
+                destroy: () => {
+                    element.removeEventListener('keydown', keydownHandler);
+                },
+                update: () => {
+                    focusableElements = element.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])');
+                    firstFocusableElement = focusableElements[0];
+                    lastFocusableElement = focusableElements[focusableElements.length - 1];
+                }
+            };
         }
-      },
-      UCW = async () => {
-        CWL.innerHTML = '';
 
-        try {
-          const user = auth.currentUser;
-          if (!user) throw new Error("No hay usuario conectado.");
+        let currentFocusTrap = null;
 
-          const q = query(collection(db, "progresoSeries"),
-            where("userId", "==", user.uid),
-            where("tiempo", ">", 600));
-
-          const querySnapshot = await getDocs(q);
-          const continuados = [];
-          querySnapshot.forEach((doc) => {
-            continuados.push({
-              ...doc.data(),
-              id: doc.id
-            });
-          });
-
-          const series = await FD();
-
-          for (const t of continuados) {
-            const serie = series.find(e => e.nombre === t.serieNombre);
-            if (serie) {
-              const capitulo = serie.capitulos[t.capituloIndex];
-              const inicio = capitulo.inicio / 1000;
-              const fin = capitulo.fin / 1000;
-              const duracionRestante = FT(fin - t.tiempo);
-
-              const li = document.createElement('li');
-              const button = document.createElement('button');
-              button.textContent = `Continuar ${serie.nombre}, ${capitulo.titulo}, Restante ${duracionRestante}`;
-              button.addEventListener('click', () => {
-                O(serie);
-                S = serie;
-                RP(serie.nombre);
-              });
-              button.classList.add('button');
-              li.appendChild(button);
-
-              const deleteButton = document.createElement('button');
-              deleteButton.textContent = 'Eliminar';
-              deleteButton.classList.add('button');
-              deleteButton.addEventListener('click', () => DCW(t.serieNombre));
-              li.appendChild(deleteButton);
-
-              CWL.appendChild(li);
+        function enableFocusTrap(element) {
+            if (currentFocusTrap) {
+                currentFocusTrap.destroy();
             }
-          }
-        } catch (error) {
-          console.error("Error al actualizar Continuar Viendo:", error);
+            currentFocusTrap = createFocusTrap(element);
         }
-      };
-    CBC.addEventListener('click', C), window.addEventListener('click', t => {
-      t.target === M && C()
-    }), CS.addEventListener('change', () => {
-      S.nombre && GP(S.nombre), PC()
-    }), A.addEventListener('pause', () => {
-      S.nombre && GP(S.nombre)
-    }), A.addEventListener('play', () => {
-      IP = !0, PB.textContent = 'Pausar'
-    }), LS.addEventListener('change', CL), PB.addEventListener('click', TP), document.getElementById('forward-button').addEventListener('click', F), document.getElementById('backward-button').addEventListener('click', B), document.getElementById('previous-chapter-button').addEventListener('click', PP), document.getElementById('next-chapter-button').addEventListener('click', NP), document.getElementById('increase-volume-button').addEventListener('click', IV), document.getElementById('decrease-volume-button').addEventListener('click', DV), window.onload = () => {
-      FD().then(s => RCAS(s))
-    }, setInterval(() => {
-      "block" === M.style.display && S && GP(S.nombre)
-    }, 5e3);
-  </script>
+
+        function disableFocusTrap(element) {
+            if (currentFocusTrap) {
+                currentFocusTrap.destroy();
+                currentFocusTrap = null;
+            }
+        }
+
+        //------------------- END Focus Trap -----------------------
+    </script>
 </body>
 
 </html>
