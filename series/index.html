@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series</title>
     <style>
-        /* Estilos CSS (copiados de tu código) */
+        /* Estilos CSS */
         html,
         body {
             margin: 0;
@@ -361,7 +361,7 @@
                     <select id="c"></select>
                 </section>
                 <section class="lc h" id="lasc">
-                    <label for="l">Idioma:</label>
+                    <label for="l">Pista de audio:</label>
                     <select id="l"></select>
                 </section>
             </footer>
@@ -380,7 +380,36 @@
             gP = new GoogleAuthProvider,
             gSI = document.getElementById('gsi'),
             sO = document.getElementById('so'),
-            sWGi = async () => {
+            EN_ESPANOL_LINK = document.getElementById('en-espanol'),
+            CON_DOBLAJE_LINK = document.getElementById('con-doblaje'),
+            SDP1 = 'https://ceosca.github.io/',
+            SDP2 = 'series/series.json',
+            SDP3 = 'series/doblaje.json',
+            A = document.getElementById('ap'),
+            MC = document.getElementById('mc'),
+            M = document.getElementById("sM"),
+            CBC = document.getElementById("cb"),
+            PB = document.getElementById('ppb'),
+            CS = document.getElementById('c'),
+            LC = document.getElementById('lasc'),
+            LS = document.getElementById('l'),
+            CI = document.getElementById('ci'),
+            TI = document.getElementById('ti'),
+            CWL = document.getElementById('cwl'),
+            TS = document.getElementById('t'),
+            SELECTOR_SERIES = document.getElementById('selector-series');
+
+        let TII,
+            IP = !1,
+            CSD = [],
+            CLI = 0,
+            CCI = 0,
+            CP = 0,
+            S,
+            SD = SDP1 + SDP2;
+
+        // Funciones de autenticación
+        const sWGi = async () => {
                 try {
                     const r = await signInWithPopup(auth, gP),
                         u = r.user;
@@ -397,40 +426,17 @@
                     console.error("Error al cerrar sesión:", e)
                 }
             };
+
+        // Observador de estado de autenticación
         onAuthStateChanged(auth, u => {
             u ? (console.log("Usuario conectado:", u.uid), gSI.classList.add('h'), sO.classList.remove('h'), UCW()) : (console.log("Usuario desconectado"), gSI.classList.remove('h'), sO.classList.add('h'), UCW())
-        }), gSI.addEventListener('click', sWGi), sO.addEventListener('click', sOG);
+        });
 
-        const SDP1 = 'https://ceosca.github.io/',
-            SDP2 = 'series/series.json',
-            SDP3 = 'series/doblaje.json',
-            // SD = SDP1 + SDP2, //  Original URL de la base de datos en español original
-            A = document.getElementById('ap'),
-            MC = document.getElementById('mc'),
-            M = document.getElementById("sM"),
-            CBC = document.getElementById("cb"),
-            PB = document.getElementById('ppb'),
-            CS = document.getElementById('c'),
-            LC = document.getElementById('lasc'),
-            LS = document.getElementById('l'),
-            CI = document.getElementById('ci'),
-            TI = document.getElementById('ti'),
-            CWL = document.getElementById('cwl'),
-            TS = document.getElementById('t'),
-            EN_ESPANOL_LINK = document.getElementById('en-espanol'),
-            CON_DOBLAJE_LINK = document.getElementById('con-doblaje');
+        gSI.addEventListener('click', sWGi);
+        sO.addEventListener('click', sOG);
 
-        let TII,
-            IP = !1,
-            CSD = [],
-            CLI = 0,
-            CCI = 0,
-            CP = 0,
-            S,
-            SD = SDP1 + SDP2; // Definiendo SD aqui para que sea globalmente accesible.
-
-        const V = (el, btn, s, h) => (el.classList.contains('h') ? (el.classList.remove('h'), btn.textContent = h) : (el.classList.add('h'), btn.textContent = s)),
-            FT = t => {
+        // Funciones auxiliares
+        const FT = t => {
                 const m = Math.floor(t / 60),
                     s = Math.floor(t % 60);
                 return `${PZ(m)}:${PZ(s)}`
@@ -474,7 +480,18 @@
                 }
             },
             C = () => {
-                S && GP(S.nombre), M.style.display = "none", M.setAttribute("aria-hidden", "true"), A.pause(), A.src = '', MC.classList.remove('h'), clearInterval(TII), IP = !1, PB.textContent = 'Reproducir', CP = A.currentTime, disableFocusTrap(M);
+                S && GP(S.nombre);
+                M.style.display = "none";
+                M.setAttribute("aria-hidden", "true");
+                A.pause();
+                A.src = '';
+                MC.classList.remove('h');
+                clearInterval(TII);
+                IP = !1;
+                PB.textContent = 'Reproducir';
+                CP = A.currentTime;
+                disableFocusTrap(M);
+                SELECTOR_SERIES.style.display = "block";
             },
             O = s => {
                 S = s;
@@ -492,8 +509,8 @@
                 M.style.display = "block";
                 M.setAttribute("aria-hidden", "false");
                 document.querySelector('#sM .mc').focus();
-
                 enableFocusTrap(M);
+                SELECTOR_SERIES.style.display = "none";
             },
             FD = async () => {
                 try {
@@ -568,7 +585,14 @@
             },
             LI = s => {
                 const t = document.getElementById('si');
-                S = s, t.innerHTML = `<h2>${s.nombre}</h2><div><strong>Género:</strong> ${s.genero}</div><div><strong>Año:</strong> ${s.anio}</div><div><strong>Reparto:</strong> ${s.reparto.join(", ")}</div><div><strong>País:</strong> ${s.pais_origen}</div><div><strong>Episodios:</strong> ${s.cantidad_episodios}</div>${s.sinopsis ? `<div><strong>Sinopsis:</strong> ${s.sinopsis}</div>` : ''}`
+                let repartoHTML = '';
+
+                if (SD === SDP1 + SDP2) {
+                    repartoHTML = `<div><strong>Reparto:</strong> ${s.reparto.join(", ")}</div>`;
+                }
+
+                S = s;
+                t.innerHTML = `<h2>${s.nombre}</h2><div><strong>Género:</strong> ${s.genero}</div><div><strong>Año:</strong> ${s.anio}</div>${repartoHTML}<div><strong>País:</strong> ${s.pais_origen}</div><div><strong>Episodios:</strong> ${s.cantidad_episodios}</div>${s.sinopsis ? `<div><strong>Sinopsis:</strong> ${s.sinopsis}</div>` : ''}`
             },
             LL = s => {
                 LS.innerHTML = '';
@@ -697,6 +721,7 @@
                 }
             };
 
+        // Event Listeners
         CBC.addEventListener('click', C);
         window.addEventListener('click', t => {
             t.target === M && C()
@@ -718,22 +743,21 @@
         document.getElementById('ncb').addEventListener('click', NP);
         document.getElementById('ivb').addEventListener('click', IV);
         document.getElementById('dvb').addEventListener('click', DV);
-        
+        EN_ESPANOL_LINK.addEventListener('click', (e) => {
+            e.preventDefault();
+            SD = SDP1 + SDP2;
+            cargarSeries();
+        });
+        CON_DOBLAJE_LINK.addEventListener('click', (e) => {
+            e.preventDefault();
+            SD = SDP1 + SDP3;
+            cargarSeries();
+        });
+
+        // Cargar series
         const cargarSeries = () => {
             FD().then(s => RCAS(s));
         };
-
-        EN_ESPANOL_LINK.addEventListener('click', (e) => {
-            e.preventDefault();
-            SD = SDP1 + SDP2; // URL de series en español original
-            cargarSeries();
-        });
-
-        CON_DOBLAJE_LINK.addEventListener('click', (e) => {
-            e.preventDefault();
-            SD = SDP1 + SDP3; // URL de series con doblaje
-            cargarSeries();
-        });
 
         window.onload = () => {
             cargarSeries();
@@ -743,7 +767,7 @@
             M.style.display === "block" && S && GP(S.nombre)
         }, 5e3);
 
-        //------------------- Focus Trap -----------------------
+        // Focus Trap
         function createFocusTrap(element) {
             let focusableElements = element.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])');
             let firstFocusableElement = focusableElements[0];
@@ -798,8 +822,6 @@
                 currentFocusTrap = null;
             }
         }
-
-        //------------------- END Focus Trap -----------------------
     </script>
 </body>
 
