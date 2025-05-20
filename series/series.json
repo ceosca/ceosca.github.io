@@ -2941,7 +2941,7 @@
             ]
         },
         {
-            "nombre": "Cchichipatos, temporada 1",
+            "nombre": "Chichipatos, temporada 1",
             "genero": "Comedia",
             "anio": 2020,
             "reparto": [
@@ -2955,13 +2955,13 @@
             ],
             "pais_origen": "Colombia",
             "cantidad_episodios": 7,
+            "sinopsis": "A un mago de fiestas infantiles todo le sale mal, hasta que un día logra hacer algo extraordinario: desaparecer un hombre. El único problema es que no sabe cómo traerlo de vuelta ni sabe que es uno de los hombres más buscados por la policía.",
             "enlaces": [
                 {
                     "idioma": "Español Latino",
                     "enlace": "https://ia800804.us.archive.org/34/items/sernefua/chichipatos-1.m4a"
                 }
             ],
-            "sinopsis": "A un mago de fiestas infantiles todo le sale mal, hasta que un día logra hacer algo extraordinario: desaparecer un hombre. El único problema es que no sabe cómo traerlo de vuelta ni sabe que es uno de los hombres más buscados por la policía.",
             "capitulos": [
                 {
                     "inicio": 0,
@@ -23570,7 +23570,7 @@
                 "Yuri Vargas",
                 "Lidia Cardona"
             ],
-            "pais_origen": "Estados Unidos",
+            "pais_origen": "México",
             "cantidad_episodios": 10,
             "sinopsis": "La serie gira en torno a Fabrizio (Jason Day), un atractivo hombre que llega a la vida de tres mujeres; Camila (Gaby Espino) y Martina (Margarita Rosa de Francisco), ambas casadas y buenas amigas y Andrea (Laura Perico), hija de Martina. La llegada de él, hará que comiencen los conflictos entre las familias de ellas y las tres se enamoran del mismo hombre.",
             "enlaces": [
@@ -24951,6 +24951,822 @@
                     "inicio": 51905706,
                     "fin": 54602538,
                     "titulo": "Capítulo 24: Episodio 24"
+                }
+            ]
+        },
+        {
+            "nombre": "Maya y los tres",
+            "genero": "Animación; Acción",
+            "anio": 2021,
+            "reparto": [
+                "Zoe Saldana",
+                "Diego Luna",
+                "Gael García Bernal",
+                "Allen Maldonado",
+                "Stephanie Beatriz",
+                "Gabriel Iglesias",
+                "Alfred Molina",
+                "Sandra Equihua",
+                "Jorge R. Gutiérrez",
+                "Danny Trejo",
+                "Rosie Pérez"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 9,
+            "sinopsis": "En un universo mítico, donde la magia es real y cuatro reinos gobiernan las tierras, vive una princesa guerrera valiente y rebelde llamada Maya, que está a punto de emprender la emocionante misión de cumplir una antigua profecía. ¿Podrá vencer a los dioses y salvar a la humanidad?",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/maya-y-los-tres.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2013397,
+                    "titulo": "Capítulo 1: Capítulo 1: Quinceañera"
+                },
+                {
+                    "inicio": 2013397,
+                    "fin": 4350762,
+                    "titulo": "Capítulo 2: Capítulo 2: La profecía"
+                },
+                {
+                    "inicio": 4350762,
+                    "fin": 6526122,
+                    "titulo": "Capítulo 3: Capítulo 3: El gallo"
+                },
+                {
+                    "inicio": 6526122,
+                    "fin": 8667519,
+                    "titulo": "Capítulo 4: Capítulo 4: La calavera"
+                },
+                {
+                    "inicio": 8667519,
+                    "fin": 10758911,
+                    "titulo": "Capítulo 5: Capítulo 5: El puma"
+                },
+                {
+                    "inicio": 10758911,
+                    "fin": 12746282,
+                    "titulo": "Capítulo 6: Capítulo 6: Maya y los tres"
+                },
+                {
+                    "inicio": 12746282,
+                    "fin": 14947669,
+                    "titulo": "Capítulo 7: Capítulo 7: La puerta divina"
+                },
+                {
+                    "inicio": 14947669,
+                    "fin": 16513066,
+                    "titulo": "Capítulo 8: Capítulo 8: El murciélago y el búho"
+                },
+                {
+                    "inicio": 16513066,
+                    "fin": 19158442,
+                    "titulo": "Capítulo 9: Capítulo 9: El sol y la luna"
+                }
+            ]
+        },
+        {
+            "nombre": "Nicky Jam: El ganador",
+            "genero": "Drama",
+            "anio": 2018,
+            "reparto": [
+                "Nicky Jam",
+                "Darkiel",
+                "Avery Rodríguez",
+                "Diego Cadavid",
+                "Osvaldo Friger",
+                "José Arroyo",
+                "Héctor Noel Pérez",
+                "Maria Coral Otero Soto",
+                "Elyfer Torres",
+                "Angel Romero Alamo",
+                "Luis Sebastián Borges",
+                "Alexandra Madera"
+            ],
+            "pais_origen": "Colombia",
+            "cantidad_episodios": 13,
+            "sinopsis": "Nicky Jam, estrella de reguetón, comparte su lucha para dejar las drogas y su camino al éxito internacional en esta dramatización de su vida.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/nicky-jam-el-ganador.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3058133,
+                    "titulo": "Capítulo 1: Los Cangris"
+                },
+                {
+                    "inicio": 3058133,
+                    "fin": 5680298,
+                    "titulo": "Capítulo 2: Escape a Nueva Yol"
+                },
+                {
+                    "inicio": 5680298,
+                    "fin": 8323071,
+                    "titulo": "Capítulo 3: Con el micrófono y la forty"
+                },
+                {
+                    "inicio": 8323071,
+                    "fin": 11163178,
+                    "titulo": "Capítulo 4: En la cama"
+                },
+                {
+                    "inicio": 11163178,
+                    "fin": 13942826,
+                    "titulo": "Capítulo 5: El infiltrado"
+                },
+                {
+                    "inicio": 13942826,
+                    "fin": 16406655,
+                    "titulo": "Capítulo 6: Vida escante"
+                },
+                {
+                    "inicio": 16406655,
+                    "fin": 19133183,
+                    "titulo": "Capítulo 7: El origen"
+                },
+                {
+                    "inicio": 19133183,
+                    "fin": 21948202,
+                    "titulo": "Capítulo 8: El futuro es paisa"
+                },
+                {
+                    "inicio": 21948202,
+                    "fin": 24578773,
+                    "titulo": "Capítulo 9: Medellín"
+                },
+                {
+                    "inicio": 24578773,
+                    "fin": 27310122,
+                    "titulo": "Capítulo 10: Cold Turkey"
+                },
+                {
+                    "inicio": 27310122,
+                    "fin": 29975253,
+                    "titulo": "Capítulo 11: Ave fénix"
+                },
+                {
+                    "inicio": 29975253,
+                    "fin": 32579754,
+                    "titulo": "Capítulo 12: Un pastel"
+                },
+                {
+                    "inicio": 32579754,
+                    "fin": 35063722,
+                    "titulo": "Capítulo 13: Dímelo, papi, llegamos al Choli"
+                }
+            ]
+        },
+        {
+            "nombre": "No te puedes esconder",
+            "genero": "Acción; Thriller",
+            "anio": 2019,
+            "reparto": [
+                "Blanca Soto",
+                "Eduardo Noriega",
+                "Maribel Verdú",
+                "Samantha Siqueiros",
+                "Iván Sánchez",
+                "Bárbara Goenaga",
+                "Jorge Bosch",
+                "Juan Caballero",
+                "Jordi Planas",
+                "Pere Ponce",
+                "Peter Vives",
+                "Patricia Guirado",
+                "Florín Opritescu",
+                "Halley Kim",
+                "Adrián Ladrón"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 10,
+            "sinopsis": "Una enfermera huye de México con su hija, dejando atrás a su marido y el narcotráfico. Aunque adoptan nuevas identidades, el peligro sigue acechándolas en Madrid",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/no-te-puedes-esconder.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2760917,
+                    "titulo": "Capítulo 1: La fuga"
+                },
+                {
+                    "inicio": 2760917,
+                    "fin": 5599914,
+                    "titulo": "Capítulo 2: La pista"
+                },
+                {
+                    "inicio": 5599914,
+                    "fin": 8238719,
+                    "titulo": "Capítulo 3: El tatuaje"
+                },
+                {
+                    "inicio": 8238719,
+                    "fin": 11089706,
+                    "titulo": "Capítulo 4: Evidencias del crimen"
+                },
+                {
+                    "inicio": 11089706,
+                    "fin": 13690453,
+                    "titulo": "Capítulo 5: En peligro"
+                },
+                {
+                    "inicio": 13690453,
+                    "fin": 16211114,
+                    "titulo": "Capítulo 6: La verdad"
+                },
+                {
+                    "inicio": 16211114,
+                    "fin": 18817877,
+                    "titulo": "Capítulo 7: Un nuevo sospechoso"
+                },
+                {
+                    "inicio": 18817877,
+                    "fin": 21454677,
+                    "titulo": "Capítulo 8: Destino final"
+                },
+                {
+                    "inicio": 21454677,
+                    "fin": 24127488,
+                    "titulo": "Capítulo 9: Intuición"
+                },
+                {
+                    "inicio": 24127488,
+                    "fin": 27434923,
+                    "titulo": "Capítulo 10: Cara a cara"
+                }
+            ]
+        },
+        {
+            "nombre": "Pacto de silencio",
+            "genero": "Thriller; Drama",
+            "anio": 2023,
+            "reparto": [
+                "Marimar Vega",
+                "Adriana Louvier",
+                "Kika Edgar",
+                "Litzy",
+                "Camila Valero",
+                "Ricardo Abarca",
+                "Chantal Andere",
+                "Antonio de la Vega",
+                "José Manuel Rincón",
+                "Martín Barba",
+                "Rodolfo Salas",
+                "Sophie Gómez",
+                "Erick Chapa"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 18,
+            "sinopsis": "Una famosa influencer se mete de lleno en las vidas de cuatro mujeres para descubrir la verdad sobre sus orígenes... y cobrarse su venganza",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/pacto-de-silencio.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2507008,
+                    "titulo": "Capítulo 1: Todas o ninguna"
+                },
+                {
+                    "inicio": 2507008,
+                    "fin": 5014528,
+                    "titulo": "Capítulo 2: La feria"
+                },
+                {
+                    "inicio": 5014528,
+                    "fin": 7266901,
+                    "titulo": "Capítulo 3: El hater"
+                },
+                {
+                    "inicio": 7266901,
+                    "fin": 9893802,
+                    "titulo": "Capítulo 4: Traiciones"
+                },
+                {
+                    "inicio": 9893802,
+                    "fin": 12061226,
+                    "titulo": "Capítulo 5: Acosada"
+                },
+                {
+                    "inicio": 12061226,
+                    "fin": 14462591,
+                    "titulo": "Capítulo 6: Primera Dama"
+                },
+                {
+                    "inicio": 14462591,
+                    "fin": 16846164,
+                    "titulo": "Capítulo 7: Odio mortal"
+                },
+                {
+                    "inicio": 16846164,
+                    "fin": 19339689,
+                    "titulo": "Capítulo 8: El hermano"
+                },
+                {
+                    "inicio": 19339689,
+                    "fin": 21651241,
+                    "titulo": "Capítulo 9: Golpe bajo"
+                },
+                {
+                    "inicio": 21651241,
+                    "fin": 24098686,
+                    "titulo": "Capítulo 10: Verdades"
+                },
+                {
+                    "inicio": 24098686,
+                    "fin": 26293630,
+                    "titulo": "Capítulo 11: La mente maestra"
+                },
+                {
+                    "inicio": 26293630,
+                    "fin": 28774099,
+                    "titulo": "Capítulo 12: Estocadas"
+                },
+                {
+                    "inicio": 28774099,
+                    "fin": 31286184,
+                    "titulo": "Capítulo 13: Confesión"
+                },
+                {
+                    "inicio": 31286184,
+                    "fin": 33861544,
+                    "titulo": "Capítulo 14: Del amor al odio"
+                },
+                {
+                    "inicio": 33861544,
+                    "fin": 36242003,
+                    "titulo": "Capítulo 15: Lucía vive"
+                },
+                {
+                    "inicio": 36242003,
+                    "fin": 38548691,
+                    "titulo": "Capítulo 16: Un nuevo amor"
+                },
+                {
+                    "inicio": 38548691,
+                    "fin": 40694099,
+                    "titulo": "Capítulo 17: Dolorosa victoria"
+                },
+                {
+                    "inicio": 40694099,
+                    "fin": 43303294,
+                    "titulo": "Capítulo 18: Yo soy tu madre"
+                }
+            ]
+        },
+        {
+            "nombre": "Somos",
+            "genero": "Drama",
+            "anio": 2021,
+            "reparto": [
+                "Mercedes Hernández",
+                "Jesús Sida",
+                "Jero Medina",
+                "Armando Silva",
+                "Jimena Pagaza",
+                "Antonio Lopez Torres",
+                "Everardo Arzate",
+                "Arelí González",
+                "Jesús Herrera",
+                "Ulises Soto",
+                "Iliana Donatlán",
+                "Fernando Larrañaga",
+                "Mario Alberto Quiñones"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 6,
+            "sinopsis": "La vida de los habitantes del pueblo de Allende, Coahuila, queda a merced de un poderoso cartel, y la tragedia no tarda en llegar. Inspirada en hechos reales a partir del reportaje “Anatomía de una masacre: Cómo EEUU desencadenó una masacre en México\", de la periodista Ginger Thompson.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/somos.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3096448,
+                    "titulo": "Capítulo 1: La manada floja"
+                },
+                {
+                    "inicio": 3096448,
+                    "fin": 5666603,
+                    "titulo": "Capítulo 2: Una boca llena de moscas"
+                },
+                {
+                    "inicio": 5666603,
+                    "fin": 8326272,
+                    "titulo": "Capítulo 3: Dile a la luna que venga"
+                },
+                {
+                    "inicio": 8326272,
+                    "fin": 11016107,
+                    "titulo": "Capítulo 4: Paseando con lobos"
+                },
+                {
+                    "inicio": 11016107,
+                    "fin": 14298582,
+                    "titulo": "Capítulo 5: La noche nos pertenece"
+                },
+                {
+                    "inicio": 14298582,
+                    "fin": 18682070,
+                    "titulo": "Capítulo 6: Somos"
+                }
+            ]
+        },
+        {
+            "nombre": "Tijuana",
+            "genero": "Drama",
+            "anio": 2019,
+            "reparto": [
+                "Damián Alcázar",
+                "Tamara Vallarta",
+                "Rolf Petersen",
+                "Claudette Maillé",
+                "Tete Espinoza",
+                "Iván Aragón",
+                "Rodrigo Abed",
+                "Martha Claudia Moreno",
+                "Edén Villavicencio",
+                "Carlos Corona",
+                "Roberto Sosa",
+                "Anabel Ferreira",
+                "Abril Schreiber"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 11,
+            "sinopsis": "Los intrépidos periodistas del diario Frente Tijuana arriesgan sus vidas para descubrir la verdad sobre el asesinato a sangre fría de un político importante",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/tijuana.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2390613,
+                    "titulo": "Capítulo 1: El Candidato"
+                },
+                {
+                    "inicio": 2390613,
+                    "fin": 4851285,
+                    "titulo": "Capítulo 2: El funeral"
+                },
+                {
+                    "inicio": 4851285,
+                    "fin": 7053738,
+                    "titulo": "Capítulo 3: Pecadores y piadosos"
+                },
+                {
+                    "inicio": 7053738,
+                    "fin": 9700607,
+                    "titulo": "Capítulo 4: Las Mueller Ribs"
+                },
+                {
+                    "inicio": 9700607,
+                    "fin": 12257407,
+                    "titulo": "Capítulo 5: No imprimir es no existir"
+                },
+                {
+                    "inicio": 12257407,
+                    "fin": 14934314,
+                    "titulo": "Capítulo 6: Hay personas con las que no se debe jugar"
+                },
+                {
+                    "inicio": 14934314,
+                    "fin": 17376981,
+                    "titulo": "Capítulo 7: El día después"
+                },
+                {
+                    "inicio": 17376981,
+                    "fin": 19923754,
+                    "titulo": "Capítulo 8: No nos callarán"
+                },
+                {
+                    "inicio": 19923754,
+                    "fin": 22472533,
+                    "titulo": "Capítulo 9: El camino del periodista"
+                },
+                {
+                    "inicio": 22472533,
+                    "fin": 24923221,
+                    "titulo": "Capítulo 10: La foto"
+                },
+                {
+                    "inicio": 24923221,
+                    "fin": 27009536,
+                    "titulo": "Capítulo 11: La única constante es el cambio"
+                }
+            ]
+        },
+        {
+            "nombre": "Todo va a estar bien",
+            "genero": "Drama; Comedia",
+            "anio": 2021,
+            "reparto": [
+                "Flavio Medina",
+                "Lucía Uribe",
+                "Isabella Vázquez",
+                "Pierre Louis",
+                "Mercedes Hernández",
+                "Úrsula Pruneda",
+                "Antonio Zúñiga",
+                "Silverio Palacios",
+                "Andrea Maurer",
+                "Martín Altomaro",
+                "Mónica Bejarano",
+                "Carmen Beato",
+                "Hernan Del Riego"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "Julia y Ruy viven bajo el mismo techo, pero ya no funcionan como pareja. Ahora, se esfuerzan por llevar la fiesta en paz por el bien de su hija Andrea.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/todo-va-a-estar-bien.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2090240,
+                    "titulo": "Capítulo 1: Ortiburcio"
+                },
+                {
+                    "inicio": 2090240,
+                    "fin": 3677995,
+                    "titulo": "Capítulo 2: La odio"
+                },
+                {
+                    "inicio": 3677995,
+                    "fin": 5678166,
+                    "titulo": "Capítulo 3: Gallo negro"
+                },
+                {
+                    "inicio": 5678166,
+                    "fin": 7225899,
+                    "titulo": "Capítulo 4: Yo también"
+                },
+                {
+                    "inicio": 7225899,
+                    "fin": 9165995,
+                    "titulo": "Capítulo 5: Salazar"
+                },
+                {
+                    "inicio": 9165995,
+                    "fin": 10813824,
+                    "titulo": "Capítulo 6: Femenino/Masculino"
+                },
+                {
+                    "inicio": 10813824,
+                    "fin": 12551723,
+                    "titulo": "Capítulo 7: La noche"
+                },
+                {
+                    "inicio": 12551723,
+                    "fin": 14179542,
+                    "titulo": "Capítulo 8: Todo va a estar bien"
+                }
+            ]
+        },
+        {
+            "nombre": "Tríada",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [
+                "Maite Perroni",
+                "David Chocarro",
+                "Ana Layevska",
+                "Flavio Medina",
+                "Ofelia Medina",
+                "Hector Kotsifakis",
+                "Nuria Bages",
+                "Claudia Lobo",
+                "Aldo Gallardo",
+                "Rosario Zúñiga",
+                "Juan Carlos Remolina"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "La vida de una investigadora forense dará un brusco giro cuando descubre una mujer asesinada que es exactamente igual que ella. Cuando la verdad tiene muchos ángulos, nada es lo que parece, y para descubrirla, tenemos que conocer sus tres caras.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/triada.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2613205,
+                    "titulo": "Capítulo 1: 33 x 3"
+                },
+                {
+                    "inicio": 2613205,
+                    "fin": 5062229,
+                    "titulo": "Capítulo 2: Cóctel molotov"
+                },
+                {
+                    "inicio": 5062229,
+                    "fin": 7353088,
+                    "titulo": "Capítulo 3: Olimpia Mens' Club"
+                },
+                {
+                    "inicio": 7353088,
+                    "fin": 10018347,
+                    "titulo": "Capítulo 4: ¿Me estoy volviendo loca?"
+                },
+                {
+                    "inicio": 10018347,
+                    "fin": 12949846,
+                    "titulo": "Capítulo 5: Agua y aceite"
+                },
+                {
+                    "inicio": 12949846,
+                    "fin": 15521025,
+                    "titulo": "Capítulo 6: El experimento"
+                },
+                {
+                    "inicio": 15521025,
+                    "fin": 17994070,
+                    "titulo": "Capítulo 7: La mano que mece la cuna"
+                },
+                {
+                    "inicio": 17994070,
+                    "fin": 20547201,
+                    "titulo": "Capítulo 8: Volviendo al origen"
+                }
+            ]
+        },
+        {
+            "nombre": "Yankee",
+            "genero": "Drama",
+            "anio": 2019,
+            "reparto": [
+                "Pablo Lyle",
+                "Ana Layevska",
+                "Pamela Almanza",
+                "Sebastián Ferrat",
+                "Julio Casado",
+                "Gabriela Zamora",
+                "Jana Raluy",
+                "Benny Emmanuel",
+                "Aldo Verastegui",
+                "Louis David Horné",
+                "Carlos Meza Suarez",
+                "Daniel Martínez",
+                "Javier Díaz Dueñas"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 25,
+            "sinopsis": "Huyendo de la policía, un hombre de Arizona cruza a México y se involucra profundamente en el tráfico de drogas, con la ayuda de la tecnología moderna.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/yankee.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2649301,
+                    "titulo": "Capítulo 1: El vuelo de Esquila"
+                },
+                {
+                    "inicio": 2649301,
+                    "fin": 5014741,
+                    "titulo": "Capítulo 2: Aberraciones"
+                },
+                {
+                    "inicio": 5014741,
+                    "fin": 7253802,
+                    "titulo": "Capítulo 3: Belice"
+                },
+                {
+                    "inicio": 7253802,
+                    "fin": 9501695,
+                    "titulo": "Capítulo 4: La hora mágica"
+                },
+                {
+                    "inicio": 9501695,
+                    "fin": 11683327,
+                    "titulo": "Capítulo 5: Las águilas"
+                },
+                {
+                    "inicio": 11683327,
+                    "fin": 13872895,
+                    "titulo": "Capítulo 6: 110.6666700"
+                },
+                {
+                    "inicio": 13872895,
+                    "fin": 16206250,
+                    "titulo": "Capítulo 7: Penélope en Puerto Peñasco"
+                },
+                {
+                    "inicio": 16206250,
+                    "fin": 18658218,
+                    "titulo": "Capítulo 8: Cowboy de mediodía"
+                },
+                {
+                    "inicio": 18658218,
+                    "fin": 20820906,
+                    "titulo": "Capítulo 9: Operación Serpiente"
+                },
+                {
+                    "inicio": 20820906,
+                    "fin": 23033215,
+                    "titulo": "Capítulo 10: Pájaros nalgones"
+                },
+                {
+                    "inicio": 23033215,
+                    "fin": 25350271,
+                    "titulo": "Capítulo 11: Mr. Lucky"
+                },
+                {
+                    "inicio": 25350271,
+                    "fin": 27664810,
+                    "titulo": "Capítulo 12: Pichones"
+                },
+                {
+                    "inicio": 27664810,
+                    "fin": 30074282,
+                    "titulo": "Capítulo 13: Reencuentro y traición"
+                },
+                {
+                    "inicio": 30074282,
+                    "fin": 32256042,
+                    "titulo": "Capítulo 14: Pasados de lanza"
+                },
+                {
+                    "inicio": 32256042,
+                    "fin": 34659370,
+                    "titulo": "Capítulo 15: Daños colaterales"
+                },
+                {
+                    "inicio": 34659370,
+                    "fin": 36889855,
+                    "titulo": "Capítulo 16: Un policía honesto"
+                },
+                {
+                    "inicio": 36889855,
+                    "fin": 39173204,
+                    "titulo": "Capítulo 17: Caballos principiantes"
+                },
+                {
+                    "inicio": 39173204,
+                    "fin": 41391743,
+                    "titulo": "Capítulo 18: Todos los días hay guerra"
+                },
+                {
+                    "inicio": 41391743,
+                    "fin": 43734868,
+                    "titulo": "Capítulo 19: Águilas y serpientes"
+                },
+                {
+                    "inicio": 43734868,
+                    "fin": 45934377,
+                    "titulo": "Capítulo 20: Gloricuelas locales"
+                },
+                {
+                    "inicio": 45934377,
+                    "fin": 48344916,
+                    "titulo": "Capítulo 21: El mar es un desierto"
+                },
+                {
+                    "inicio": 48344916,
+                    "fin": 50530943,
+                    "titulo": "Capítulo 22: Pax Romana"
+                },
+                {
+                    "inicio": 50530943,
+                    "fin": 52806783,
+                    "titulo": "Capítulo 23: Resurrección"
+                },
+                {
+                    "inicio": 52806783,
+                    "fin": 55067818,
+                    "titulo": "Capítulo 24: Kibbitz"
+                },
+                {
+                    "inicio": 55067818,
+                    "fin": 57714474,
+                    "titulo": "Capítulo 25: La felicidad es una rebeldía"
                 }
             ]
         }
