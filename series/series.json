@@ -15944,47 +15944,77 @@
                 {
                     "inicio": 0,
                     "fin": 4810368,
-                    "titulo": "Capítulo 1: Episodio 1"
+                    "titulo": "Capítulo 1: Efectuar lo acordado"
                 },
                 {
                     "inicio": 4810368,
                     "fin": 8812032,
-                    "titulo": "Capítulo 2: Episodio 2"
+                    "titulo": "Capítulo 2: Imprudencias letales"
                 },
                 {
                     "inicio": 8812032,
                     "fin": 12607317,
-                    "titulo": "Capítulo 3: Episodio 3"
+                    "titulo": "Capítulo 3: Errar al disparar"
                 },
                 {
                     "inicio": 12607317,
                     "fin": 16450730,
-                    "titulo": "Capítulo 4: Episodio 4"
+                    "titulo": "Capítulo 4: Caballo de Troya"
                 },
                 {
                     "inicio": 16450730,
                     "fin": 20588501,
-                    "titulo": "Capítulo 5: Episodio 5"
+                    "titulo": "Capítulo 5: El día de la marmota"
                 },
                 {
                     "inicio": 20588501,
                     "fin": 25040512,
-                    "titulo": "Capítulo 6: Episodio 6"
+                    "titulo": "Capítulo 6: La cálida guerra fría"
                 },
                 {
                     "inicio": 25040512,
                     "fin": 29055701,
-                    "titulo": "Capítulo 7: Episodio 7"
+                    "titulo": "Capítulo 7: Refrigerada inestabilidad"
                 },
                 {
                     "inicio": 29055701,
                     "fin": 33143893,
-                    "titulo": "Capítulo 8: Episodio 8"
+                    "titulo": "Capítulo 8: Tú lo has buscado"
                 },
                 {
                     "inicio": 33143893,
                     "fin": 37442560,
-                    "titulo": "Capítulo 9: Episodio 9"
+                    "titulo": "Capítulo 9: El que la sigue la consigue"
+                },
+                {
+                    "inicio": 37442560,
+                    "fin": 41246165,
+                    "titulo": "Capítulo 10: Se acabaron las máscaras"
+                },
+                {
+                    "inicio": 41246165,
+                    "fin": 44996010,
+                    "titulo": "Capítulo 11: La cabeza del plan"
+                },
+                {
+                    "inicio": 44996010,
+                    "fin": 48832341,
+                    "titulo": "Capítulo 12: Cuestión de eficacia"
+                },
+                {
+                    "inicio": 48832341,
+                    "fin": 53070080,
+                    "titulo": "Capítulo 13: ¿Qué hemos hecho?"
+                },
+                {
+                    "inicio": 53070080,
+                    "fin": 56920107,
+                    "titulo": "Capítulo 14: A contrarreloj"
+                },
+                {
+                    "inicio": 56920107,
+                    "fin": 61051307,
+                    "titulo": "Capítulo 15: Bella ciao"
                 }
             ]
         },
@@ -16024,271 +16054,133 @@
             "capitulos": [
                 {
                     "inicio": 0,
-                    "fin": 3803605,
-                    "titulo": "Capítulo 1: Episode 10"
-                },
-                {
-                    "inicio": 3803605,
-                    "fin": 7553450,
-                    "titulo": "Capítulo 2: Episode 11"
-                },
-                {
-                    "inicio": 7553450,
-                    "fin": 11389781,
-                    "titulo": "Capítulo 3: Episode 12"
-                },
-                {
-                    "inicio": 11389781,
-                    "fin": 15627520,
-                    "titulo": "Capítulo 4: Episode 13"
-                },
-                {
-                    "inicio": 15627520,
-                    "fin": 19477547,
-                    "titulo": "Capítulo 5: Episodio 5"
-                },
-                {
-                    "inicio": 19477547,
-                    "fin": 23608747,
-                    "titulo": "Capítulo 6: Episode 15"
-                }
-            ]
-        },
-        {
-            "nombre": "La casa de papel, temporada 3",
-            "genero": "Thriller",
-            "anio": 2019,
-            "reparto": [
-                "Úrsula Corberó",
-                "Álvaro Morte",
-                "Itziar Ituño",
-                "Pedro Alonso",
-                "Alba Flores",
-                "Miguel Herrán",
-                "Jaime Lorente",
-                "Esther Acebo",
-                "Enrique Arce",
-                "Darko Perić",
-                "Hovik Keuchkerian",
-                "Luka Peros",
-                "Rodrigo de la Serna",
-                "Najwa Nimri",
-                "Fernando Cayo",
-                "Fernando Soto",
-                "José Manuel Poga"
-            ],
-            "pais_origen": "España",
-            "cantidad_episodios": 8,
-            "sinopsis": "El atraco llevado a cabo por los protagonistas, en la tercera temporada vemos sus nuevas vidas tras uno de los mayores golpes de la historia. \nEl Profesor, Denver, Tokio, Río, Nairobi, Helsinki, la inspectora Murillo y Mónica Gaztambide están en distintas partes del mundo y parecen vivir el momento de sus vidas, aunque todo cambiará cuando soldados de diversas fuerzas intentan capturarlos, poniendo la supervivencia de la pandilla en una fina línea.",
-            "enlaces": [
-                {
-                    "idioma": "Español España",
-                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-casa-de-papel-3.m4a"
-                }
-            ],
-            "capitulos": [
-                {
-                    "inicio": 0,
-                    "fin": 3058816,
+                    "fin": 2972459,
                     "titulo": "Capítulo 1: Hemos vuelto"
                 },
                 {
-                    "inicio": 3058816,
-                    "fin": 5601621,
+                    "inicio": 2972459,
+                    "fin": 5420118,
                     "titulo": "Capítulo 2: Aikido"
                 },
                 {
-                    "inicio": 5601621,
-                    "fin": 8590421,
+                    "inicio": 5420118,
+                    "fin": 8316118,
                     "titulo": "Capítulo 3: 48 metros bajo el suelo"
                 },
                 {
-                    "inicio": 8590421,
-                    "fin": 11231189,
+                    "inicio": 8316118,
+                    "fin": 10864470,
                     "titulo": "Capítulo 4: La hora del delfín"
                 },
                 {
-                    "inicio": 11231189,
-                    "fin": 14249984,
+                    "inicio": 10864470,
+                    "fin": 13789142,
                     "titulo": "Capítulo 5: Bum, bum, ciao"
                 },
                 {
-                    "inicio": 14249984,
-                    "fin": 17118507,
+                    "inicio": 13789142,
+                    "fin": 16574806,
                     "titulo": "Capítulo 6: Todo pareció insignificante"
                 },
                 {
-                    "inicio": 17118507,
-                    "fin": 19849259,
+                    "inicio": 16574806,
+                    "fin": 19213014,
                     "titulo": "Capítulo 7: Pequeñas vacaciones"
                 },
                 {
-                    "inicio": 19849259,
-                    "fin": 23431766,
+                    "inicio": 19213014,
+                    "fin": 22717825,
                     "titulo": "Capítulo 8: La deriva"
-                }
-            ]
-        },
-        {
-            "nombre": "La casa de papel, temporada 4",
-            "genero": "Thriller",
-            "anio": 2020,
-            "reparto": [
-                "Úrsula Corberó",
-                "Álvaro Morte",
-                "Itziar Ituño",
-                "Pedro Alonso",
-                "Alba Flores",
-                "Miguel Herrán",
-                "Jaime Lorente",
-                "Esther Acebo",
-                "Enrique Arce",
-                "Darko Perić",
-                "Hovik Keuchkerian",
-                "Luka Peros",
-                "Rodrigo de la Serna",
-                "Najwa Nimri",
-                "Fernando Cayo",
-                "Fernando Soto",
-                "José Manuel Poga",
-                "Belén Cuesta"
-            ],
-            "pais_origen": "España",
-            "cantidad_episodios": 8,
-            "sinopsis": "La banda tiene que enfrentarse al hecho de que Nairobi recibiese un disparo, cayendo así en la trampa de la Inspectora Sierra. Todo irá a peor cuando Palermo ayuda al guarda de seguridad Gandia a escapar, el mismo que tiene algo claro: acabar con todos ellos.\nEl Profesor lo está pasando mal por la supuesta muerte de Lisboa, pero intentará con todas sus fuerzas sacar a la banda del Banco de España. Por otro lado, poco a poco se desvela el pasado de Berlín con Palermo y los planes para atacar uno de los edificios más importantes del país.\nEl Profesor descubre que Lisboa no está muerta y con la ayuda de la banda consigue meterla de nuevo en el Banco de España. Pero lo peor está por llegar. La banda no está preparada para afrontar la muerte de uno de sus miembros.",
-            "enlaces": [
-                {
-                    "idioma": "Español España",
-                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-casa-de-papel-4.m4a"
-                }
-            ],
-            "capitulos": [
-                {
-                    "inicio": 0,
-                    "fin": 3236736,
-                    "titulo": "Capítulo 1: Game Over"
                 },
                 {
-                    "inicio": 3236736,
-                    "fin": 5971499,
-                    "titulo": "Capítulo 2: La boda de Berlín"
+                    "inicio": 22717825,
+                    "fin": 25864193,
+                    "titulo": "Capítulo 9: Game Over"
                 },
                 {
-                    "inicio": 5971499,
-                    "fin": 8570283,
-                    "titulo": "Capítulo 3: Lección de anatomía"
+                    "inicio": 25864193,
+                    "fin": 28510166,
+                    "titulo": "Capítulo 10: La boda de Berlín"
                 },
                 {
-                    "inicio": 8570283,
-                    "fin": 11835094,
-                    "titulo": "Capítulo 4: Suspiros de España"
+                    "inicio": 28510166,
+                    "fin": 31018539,
+                    "titulo": "Capítulo 11: Lección de anatomía"
                 },
                 {
-                    "inicio": 11835094,
-                    "fin": 14459862,
-                    "titulo": "Capítulo 5: 5 minutos antes"
+                    "inicio": 31018539,
+                    "fin": 34190422,
+                    "titulo": "Capítulo 12: Suspiros de España"
                 },
                 {
-                    "inicio": 14459862,
-                    "fin": 17276630,
-                    "titulo": "Capítulo 6: KO técnico"
+                    "inicio": 34190422,
+                    "fin": 36726273,
+                    "titulo": "Capítulo 13: 5 minutos antes"
                 },
                 {
-                    "inicio": 17276630,
-                    "fin": 20473387,
-                    "titulo": "Capítulo 7: Tumbar la carpa"
+                    "inicio": 36726273,
+                    "fin": 39451308,
+                    "titulo": "Capítulo 14: KO técnico"
                 },
                 {
-                    "inicio": 20473387,
-                    "fin": 24152192,
-                    "titulo": "Capítulo 8: Plan París"
-                }
-            ]
-        },
-        {
-            "nombre": "La casa de papel, temporada 5",
-            "genero": "Thriller",
-            "anio": 2021,
-            "reparto": [
-                "Úrsula Corberó",
-                "Álvaro Morte",
-                "Itziar Ituño",
-                "Pedro Alonso",
-                "Alba Flores",
-                "Miguel Herrán",
-                "Jaime Lorente",
-                "Esther Acebo",
-                "Enrique Arce",
-                "Darko Perić",
-                "Hovik Keuchkerian",
-                "Luka Peros",
-                "Rodrigo de la Serna",
-                "Najwa Nimri",
-                "Fernando Cayo",
-                "Fernando Soto",
-                "José Manuel Poga",
-                "Belén Cuesta",
-                "Ramón Agirre"
-            ],
-            "pais_origen": "España",
-            "cantidad_episodios": 10,
-            "sinopsis": "Después de que Lisboa entrase en el Banco de España, la banda vuelve a estar reunida otra vez. Pero no todo van a ser buenas noticias. Sierra encuentra al Profesor tras descurbir su escondite secreto a base de pedir un par de favores, ¿Podría Sierra unirse a la banda?\nLos protagonistas se ponen manos a la obra para conseguir sacar todo el oro que hay en el Banco de España. Por otro lado, Palermo, siempre fiel al plan, termina de pensar cual va a ser el siguiente movimiento de la banda. Y Gandía, que se ha visto obligado a ayudar para que Lisboa vuelva, ¿se recuperará de la paliza que le dio Bogotá?",
-            "enlaces": [
-                {
-                    "idioma": "Español España",
-                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-casa-de-papel-5.m4a"
-                }
-            ],
-            "capitulos": [
-                {
-                    "inicio": 0,
-                    "fin": 2964736,
-                    "titulo": "Capítulo 1: El final del camino"
+                    "inicio": 39451308,
+                    "fin": 42554711,
+                    "titulo": "Capítulo 15: Tumbar la carpa"
                 },
                 {
-                    "inicio": 2964736,
-                    "fin": 6097493,
-                    "titulo": "Capítulo 2: ¿Crees en la reencarnación"
+                    "inicio": 42554711,
+                    "fin": 46133335,
+                    "titulo": "Capítulo 16: Plan París"
                 },
                 {
-                    "inicio": 6097493,
-                    "fin": 9070293,
-                    "titulo": "Capítulo 3: El espectáculo de la vida"
+                    "inicio": 46133335,
+                    "fin": 48971692,
+                    "titulo": "Capítulo 17: El final del camino"
                 },
                 {
-                    "inicio": 9070293,
-                    "fin": 12165034,
-                    "titulo": "Capítulo 4: Tu sitio en el cielo"
+                    "inicio": 48971692,
+                    "fin": 51978241,
+                    "titulo": "Capítulo 18: ¿Crees en la reencarnación"
                 },
                 {
-                    "inicio": 12165034,
-                    "fin": 15491839,
-                    "titulo": "Capítulo 5: Vivir muchas vidas"
+                    "inicio": 51978241,
+                    "fin": 54814294,
+                    "titulo": "Capítulo 19: El espectáculo de la vida"
                 },
                 {
-                    "inicio": 15491839,
-                    "fin": 18732628,
-                    "titulo": "Capítulo 6: Válvulas de escape"
+                    "inicio": 54814294,
+                    "fin": 57781675,
+                    "titulo": "Capítulo 20: Tu sitio en el cielo"
                 },
                 {
-                    "inicio": 18732628,
-                    "fin": 21981396,
-                    "titulo": "Capítulo 7: Ciencia ilusionada"
+                    "inicio": 57781675,
+                    "fin": 60985728,
+                    "titulo": "Capítulo 21: Vivir muchas vidas"
                 },
                 {
-                    "inicio": 21981396,
-                    "fin": 24980180,
-                    "titulo": "Capítulo 8: La teoría de la elegancia"
+                    "inicio": 60985728,
+                    "fin": 64106581,
+                    "titulo": "Capítulo 22: Válvulas de escape"
                 },
                 {
-                    "inicio": 24980180,
-                    "fin": 28112980,
-                    "titulo": "Capítulo 9: Lo que se habla en la cama"
+                    "inicio": 64106581,
+                    "fin": 67238016,
+                    "titulo": "Capítulo 23: Ciencia ilusionada"
                 },
                 {
-                    "inicio": 28112980,
-                    "fin": 32687785,
-                    "titulo": "Capítulo 10: Una tradición familiar"
+                    "inicio": 67238016,
+                    "fin": 70118016,
+                    "titulo": "Capítulo 24: La teoría de la elegancia"
+                },
+                {
+                    "inicio": 70118016,
+                    "fin": 73132715,
+                    "titulo": "Capítulo 25: Lo que se habla en la cama"
+                },
+                {
+                    "inicio": 73132715,
+                    "fin": 77586688,
+                    "titulo": "Capítulo 26: Una tradición familiar"
                 }
             ]
         },
@@ -24288,6 +24180,777 @@
                     "inicio": 18668374,
                     "fin": 20233217,
                     "titulo": "Capítulo 13: La serpiente y el huevo"
+                }
+            ]
+        },
+        {
+            "nombre": "Legado",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "José Coronado",
+                "Belén Cuesta",
+                "Diego Martín",
+                "Natalia Huarte",
+                "María Morera",
+                "Susi Sánchez",
+                "Mireia Portas",
+                "Gustavo Salmerón",
+                "Nico Romero",
+                "Iván Pellicer",
+                "Salva Reina",
+                "Lucas Nabor,"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 8,
+            "sinopsis": "Federico Seligman se retira de sus empresas de comunicación para recuperarse de una enfermedad que le tiene dos años al margen. A su vuelta descubrirá que sus hijos se han convertido en unos desconocidos y están llevando los negocios por un rumbo que él detesta. Federico hará todo lo inimaginable para que sus hijos no destrocen su legado.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/legado.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2556160,
+                    "titulo": "Capítulo 1: Return"
+                },
+                {
+                    "inicio": 2556160,
+                    "fin": 5482197,
+                    "titulo": "Capítulo 2: Punish"
+                },
+                {
+                    "inicio": 5482197,
+                    "fin": 8424021,
+                    "titulo": "Capítulo 3: Negotiate"
+                },
+                {
+                    "inicio": 8424021,
+                    "fin": 11597141,
+                    "titulo": "Capítulo 4: Farewell"
+                },
+                {
+                    "inicio": 11597141,
+                    "fin": 14813141,
+                    "titulo": "Capítulo 5: Publish"
+                },
+                {
+                    "inicio": 14813141,
+                    "fin": 17983914,
+                    "titulo": "Capítulo 6: Forgive"
+                },
+                {
+                    "inicio": 17983914,
+                    "fin": 21104127,
+                    "titulo": "Capítulo 7: Fight"
+                },
+                {
+                    "inicio": 21104127,
+                    "fin": 24039465,
+                    "titulo": "Capítulo 8: Decide"
+                }
+            ]
+        },
+        {
+            "nombre": "Serpientes y escaleras",
+            "genero": "Comedia; drama",
+            "anio": 2025,
+            "reparto": [
+                "Cecilia Suárez",
+                "Juan Pablo Medina",
+                "Martiño Rivas",
+                "Marimar Vega",
+                "Benny Emmanuel",
+                "Loreto Peralta",
+                "Michelle Rodríguez",
+                "Alfredo Gatica",
+                "Germán Bracco",
+                "Gerardo Trejoluna",
+                "Luis Felipe Tovar",
+                "Margarita Gralia",
+                "Anthony Giulietti",
+                "Berenica Mastretta"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 8,
+            "sinopsis": "La maestra de un colegio de renombre se ve envuelta en una disputa entre dos alumnos. Lo que parece un incidente más cambiará la vida entera de la protagonista en una historia sobre la ambición, el poder y la gloria.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/serpientes-y-escaleras.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2730197,
+                    "titulo": "Capítulo 1: Ética y moral"
+                },
+                {
+                    "inicio": 2730197,
+                    "fin": 4744405,
+                    "titulo": "Capítulo 2: Alianza y venganza"
+                },
+                {
+                    "inicio": 4744405,
+                    "fin": 6921087,
+                    "titulo": "Capítulo 3: Acción y pasión"
+                },
+                {
+                    "inicio": 6921087,
+                    "fin": 9246975,
+                    "titulo": "Capítulo 4: Anti y tristeza"
+                },
+                {
+                    "inicio": 9246975,
+                    "fin": 11572521,
+                    "titulo": "Capítulo 5: Familia y tradición"
+                },
+                {
+                    "inicio": 11572521,
+                    "fin": 13704105,
+                    "titulo": "Capítulo 6: Fracaso y victoria"
+                },
+                {
+                    "inicio": 13704105,
+                    "fin": 15809107,
+                    "titulo": "Capítulo 7: Secreto y discreción"
+                },
+                {
+                    "inicio": 15809107,
+                    "fin": 18187133,
+                    "titulo": "Capítulo 8: Cielo e infierno"
+                }
+            ]
+        },
+        {
+            "nombre": "Yo no soy Mendoza",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Vadhir Derbez",
+                "Laura Londoño",
+                "Lucho Velasco",
+                "Elyfer Torres",
+                "Patricio Gallardo",
+                "Humberto Zurita",
+                "Gina Morett",
+                "Alejandra Ley",
+                "Maria Fernanda García",
+                "Alexia Alexander",
+                "Enrique Montaño",
+                "Pablo Azar",
+                "Erika de la Rosa",
+                "Manuel Calderón",
+                "Jerry Velázquez",
+                "Marcelo Barcelo"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 40,
+            "sinopsis": "Julián García, un humilde cobrador de deudas, se ve obligado a asumir la identidad de Esteban Mendoza, el misterioso presidente de un importante casino en quiebra ubicado en la Ciudad de México, y así casarse con su prometida Laura. Pero una vez que logra evitar la ruina financiera y el riesgo de muerte a manos de los mafiosos con los que Mendoza terminó endeudado, el verdadero Mendoza regresa para reclamar lo que es suyo, y Julián se da cuenta de que la verdadera batalla no es por el dinero o el poder sino por el amor de Laura.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/yo-no-soy-mendoza.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2670464,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2670464,
+                    "fin": 5444181,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5444181,
+                    "fin": 8191743,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8191743,
+                    "fin": 11001855,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 11001855,
+                    "fin": 13604180,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 13604180,
+                    "fin": 16371454,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 16371454,
+                    "fin": 19027795,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 19027795,
+                    "fin": 21814739,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 21814739,
+                    "fin": 24464595,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 24464595,
+                    "fin": 27075027,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 27075027,
+                    "fin": 29673256,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 29673256,
+                    "fin": 32448936,
+                    "titulo": "Capítulo 12: Episodio 12"
+                },
+                {
+                    "inicio": 32448936,
+                    "fin": 35135698,
+                    "titulo": "Capítulo 13: Episodio 13"
+                },
+                {
+                    "inicio": 35135698,
+                    "fin": 37744295,
+                    "titulo": "Capítulo 14: Episodio 14"
+                },
+                {
+                    "inicio": 37744295,
+                    "fin": 40430161,
+                    "titulo": "Capítulo 15: Episodio 15"
+                },
+                {
+                    "inicio": 40430161,
+                    "fin": 43077841,
+                    "titulo": "Capítulo 16: Episodio 16"
+                },
+                {
+                    "inicio": 43077841,
+                    "fin": 45615057,
+                    "titulo": "Capítulo 17: Episodio 17"
+                },
+                {
+                    "inicio": 45615057,
+                    "fin": 48294737,
+                    "titulo": "Capítulo 18: Episodio 18"
+                },
+                {
+                    "inicio": 48294737,
+                    "fin": 50950011,
+                    "titulo": "Capítulo 19: Episodio 19"
+                },
+                {
+                    "inicio": 50950011,
+                    "fin": 53569104,
+                    "titulo": "Capítulo 20: Episodio 20"
+                },
+                {
+                    "inicio": 53569104,
+                    "fin": 56243962,
+                    "titulo": "Capítulo 21: Episodio 21"
+                },
+                {
+                    "inicio": 56243962,
+                    "fin": 58895012,
+                    "titulo": "Capítulo 22: Episodio 22"
+                },
+                {
+                    "inicio": 58895012,
+                    "fin": 61574564,
+                    "titulo": "Capítulo 23: Episodio 23"
+                },
+                {
+                    "inicio": 61574564,
+                    "fin": 64195961,
+                    "titulo": "Capítulo 24: Episodio 24"
+                },
+                {
+                    "inicio": 64195961,
+                    "fin": 66847438,
+                    "titulo": "Capítulo 25: Episodio 25"
+                },
+                {
+                    "inicio": 66847438,
+                    "fin": 69512696,
+                    "titulo": "Capítulo 26: Episodio 26"
+                },
+                {
+                    "inicio": 69512696,
+                    "fin": 72171128,
+                    "titulo": "Capítulo 27: Episodio 27"
+                },
+                {
+                    "inicio": 72171128,
+                    "fin": 74863096,
+                    "titulo": "Capítulo 28: Episodio 28"
+                },
+                {
+                    "inicio": 74863096,
+                    "fin": 77543458,
+                    "titulo": "Capítulo 29: Episodio 29"
+                },
+                {
+                    "inicio": 77543458,
+                    "fin": 80186444,
+                    "titulo": "Capítulo 30: Episodio 30"
+                },
+                {
+                    "inicio": 80186444,
+                    "fin": 82865270,
+                    "titulo": "Capítulo 31: Episodio 31"
+                },
+                {
+                    "inicio": 82865270,
+                    "fin": 85539062,
+                    "titulo": "Capítulo 32: Episodio 32"
+                },
+                {
+                    "inicio": 85539062,
+                    "fin": 88234742,
+                    "titulo": "Capítulo 33: Episodio 33"
+                },
+                {
+                    "inicio": 88234742,
+                    "fin": 90976715,
+                    "titulo": "Capítulo 34: Episodio 34"
+                },
+                {
+                    "inicio": 90976715,
+                    "fin": 93655371,
+                    "titulo": "Capítulo 35: Episodio 35"
+                },
+                {
+                    "inicio": 93655371,
+                    "fin": 96380704,
+                    "titulo": "Capítulo 36: Episodio 36"
+                },
+                {
+                    "inicio": 96380704,
+                    "fin": 99094389,
+                    "titulo": "Capítulo 37: Episodio 37"
+                },
+                {
+                    "inicio": 99094389,
+                    "fin": 101845791,
+                    "titulo": "Capítulo 38: Episodio 38"
+                },
+                {
+                    "inicio": 101845791,
+                    "fin": 104698868,
+                    "titulo": "Capítulo 39: Episodio 39"
+                },
+                {
+                    "inicio": 104698868,
+                    "fin": 107527241,
+                    "titulo": "Capítulo 40: Episodio 40"
+                }
+            ]
+        },
+        {
+            "nombre": "Las viudas de los jueves",
+            "genero": "Thriller; Drama",
+            "anio": 2023,
+            "reparto": [
+                "Cassandra Ciangherotti",
+                "Omar Chaparro",
+                "Irene Azuela",
+                "Juan Pablo Medina",
+                "Zuria Vega",
+                "Pablo Cruz",
+                "Alfonso Bassave",
+                "Gerardo Trejoluna",
+                "Claudette Maillé",
+                "Mayra Hermosillo",
+                "Sofía Sisniega",
+                "John Paul Wendt",
+                "Luis Gnecco",
+                "Yamile Pando"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 6,
+            "sinopsis": "Teresa encuentra a su marido y a sus dos mejores amigos muertos en la comunidad donde viven. Cuando la verdad salga a la luz, también lo harán sus turbios secretos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/las-viudas-de-los-jueves.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2791893,
+                    "titulo": "Capítulo 1: Tienen que saber la verdad"
+                },
+                {
+                    "inicio": 2791893,
+                    "fin": 5604224,
+                    "titulo": "Capítulo 2: Familia Scaglia"
+                },
+                {
+                    "inicio": 5604224,
+                    "fin": 8428117,
+                    "titulo": "Capítulo 3: Familia Andrade"
+                },
+                {
+                    "inicio": 8428117,
+                    "fin": 10921045,
+                    "titulo": "Capítulo 4: Familia De la Luna"
+                },
+                {
+                    "inicio": 10921045,
+                    "fin": 13447381,
+                    "titulo": "Capítulo 5: Familia Maldonado"
+                },
+                {
+                    "inicio": 13447381,
+                    "fin": 16110165,
+                    "titulo": "Capítulo 6: Familia Guevara"
+                }
+            ]
+        },
+        {
+            "nombre": "La venganza de las Juanas",
+            "genero": "Drama",
+            "anio": 2021,
+            "reparto": [
+                "Zuria Vega",
+                "Oka Giner",
+                "Juanita Arias",
+                "Renata Notni",
+                "Sofía Engberg",
+                "Pablo Astiazarán",
+                "Carlos Athié",
+                "Federico Espejo",
+                "Carlos Ponce",
+                "Iván Amozurrutia",
+                "Jorge Antonio Guerrero",
+                "Fernando Becerril",
+                "Verónica Merchant"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 18,
+            "sinopsis": "Cinco mujeres que no se conocen entre sí, pero todas con la misma marca de nacimiento y mismo nombre, descubren que comparten los mismos genes de su padre, del que desconocen su identidad.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-venganza-de-las-juanas.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2312661,
+                    "titulo": "Capítulo 1: Réplicas"
+                },
+                {
+                    "inicio": 2312661,
+                    "fin": 4333013,
+                    "titulo": "Capítulo 2: 98 %"
+                },
+                {
+                    "inicio": 4333013,
+                    "fin": 6651648,
+                    "titulo": "Capítulo 3: Los secretos no mueren"
+                },
+                {
+                    "inicio": 6651648,
+                    "fin": 8960299,
+                    "titulo": "Capítulo 4: Plan B"
+                },
+                {
+                    "inicio": 8960299,
+                    "fin": 10970667,
+                    "titulo": "Capítulo 5: Treinta días"
+                },
+                {
+                    "inicio": 10970667,
+                    "fin": 13253291,
+                    "titulo": "Capítulo 6: Federico"
+                },
+                {
+                    "inicio": 13253291,
+                    "fin": 15287680,
+                    "titulo": "Capítulo 7: Pesadillas"
+                },
+                {
+                    "inicio": 15287680,
+                    "fin": 17554304,
+                    "titulo": "Capítulo 8: Un tipo perfecto"
+                },
+                {
+                    "inicio": 17554304,
+                    "fin": 20125227,
+                    "titulo": "Capítulo 9: Otra hija"
+                },
+                {
+                    "inicio": 20125227,
+                    "fin": 23050496,
+                    "titulo": "Capítulo 10: Demasiado tarde"
+                },
+                {
+                    "inicio": 23050496,
+                    "fin": 25273045,
+                    "titulo": "Capítulo 11: El regalo"
+                },
+                {
+                    "inicio": 25273045,
+                    "fin": 27543637,
+                    "titulo": "Capítulo 12: Hermanos y nada más que eso"
+                },
+                {
+                    "inicio": 27543637,
+                    "fin": 29798229,
+                    "titulo": "Capítulo 13: Sutilezas"
+                },
+                {
+                    "inicio": 29798229,
+                    "fin": 32174933,
+                    "titulo": "Capítulo 14: Un tipo peligroso"
+                },
+                {
+                    "inicio": 32174933,
+                    "fin": 34609706,
+                    "titulo": "Capítulo 15: Demasiado tarde"
+                },
+                {
+                    "inicio": 34609706,
+                    "fin": 37136554,
+                    "titulo": "Capítulo 16: El paquete"
+                },
+                {
+                    "inicio": 37136554,
+                    "fin": 39265023,
+                    "titulo": "Capítulo 17: La fogata"
+                },
+                {
+                    "inicio": 39265023,
+                    "fin": 41843924,
+                    "titulo": "Capítulo 18: Las Juanas"
+                }
+            ]
+        },
+        {
+            "nombre": "Los Reyes de Oriente",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [
+                "Joshua Okamoto",
+                "Ingrid Águila",
+                "Elías Toscano",
+                "Gabriela Ruíz",
+                "Kat Rigoni",
+                "María Rojo",
+                "Roberto Sosa",
+                "Manuel Villegas",
+                "Mauricio Pimentel",
+                "Rodrigo Ostap",
+                "Evangelina Martínez",
+                "Mariana Gajá",
+                "Diana Avellaneda"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 6,
+            "sinopsis": "Un trío muy unido reina en un bullicioso barrio de la Ciudad de México, hasta que una repentina tragedia rompe sus coronas y convierte a dos de ellos en rivales.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/Los%20Reyes%20de%20oriente.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2227925,
+                    "titulo": "Capítulo 1: El secreto"
+                },
+                {
+                    "inicio": 2227925,
+                    "fin": 4715690,
+                    "titulo": "Capítulo 2: Caída libre"
+                },
+                {
+                    "inicio": 4715690,
+                    "fin": 6998186,
+                    "titulo": "Capítulo 3: Triángulo amoroso"
+                },
+                {
+                    "inicio": 6998186,
+                    "fin": 9104597,
+                    "titulo": "Capítulo 4: Caín y Abel"
+                },
+                {
+                    "inicio": 9104597,
+                    "fin": 11414400,
+                    "titulo": "Capítulo 5: Revelaciones"
+                },
+                {
+                    "inicio": 11414400,
+                    "fin": 13757696,
+                    "titulo": "Capítulo 6: Fuimos reyes"
+                }
+            ]
+        },
+        {
+            "nombre": "Madre de alquiler",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [
+                "Shaní Lozano",
+                "Luis Ernesto Franco",
+                "Leticia Calderón",
+                "Vanesa Restrepo",
+                "Marcela Guirado",
+                "Camila Selser",
+                "Cecilia Toussaint",
+                "Alejandro de la Madrid",
+                "Omar Germenos",
+                "Fernanda Borches",
+                "Minnie West",
+                "Emmanuel Orenday",
+                "Manuel Balbi"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 24,
+            "sinopsis": "Cuando una mujer de origen modesto se ve obligada a actuar como madre subrogada, se involucra con una poderosa familia que protegerá su propia reputación a toda costa.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/madre-de-alquiler.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2442667,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2442667,
+                    "fin": 5121536,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5121536,
+                    "fin": 7420032,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 7420032,
+                    "fin": 9854677,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 9854677,
+                    "fin": 12099114,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 12099114,
+                    "fin": 14435669,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 14435669,
+                    "fin": 16796245,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 16796245,
+                    "fin": 19272917,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 19272917,
+                    "fin": 21539413,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 21539413,
+                    "fin": 23851946,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 23851946,
+                    "fin": 26074367,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 26074367,
+                    "fin": 28418943,
+                    "titulo": "Capítulo 12: Episodio 12"
+                },
+                {
+                    "inicio": 28418943,
+                    "fin": 30529279,
+                    "titulo": "Capítulo 13: Episodio 13"
+                },
+                {
+                    "inicio": 30529279,
+                    "fin": 32653610,
+                    "titulo": "Capítulo 14: Episodio 14"
+                },
+                {
+                    "inicio": 32653610,
+                    "fin": 34765951,
+                    "titulo": "Capítulo 15: Episodio 15"
+                },
+                {
+                    "inicio": 34765951,
+                    "fin": 36866260,
+                    "titulo": "Capítulo 16: Episodio 16"
+                },
+                {
+                    "inicio": 36866260,
+                    "fin": 38875561,
+                    "titulo": "Capítulo 17: Episodio 17"
+                },
+                {
+                    "inicio": 38875561,
+                    "fin": 40988713,
+                    "titulo": "Capítulo 18: Episodio 18"
+                },
+                {
+                    "inicio": 40988713,
+                    "fin": 43125076,
+                    "titulo": "Capítulo 19: Episodio 19"
+                },
+                {
+                    "inicio": 43125076,
+                    "fin": 45289471,
+                    "titulo": "Capítulo 20: Episodio 20"
+                },
+                {
+                    "inicio": 45289471,
+                    "fin": 47427839,
+                    "titulo": "Capítulo 21: Episodio 21"
+                },
+                {
+                    "inicio": 47427839,
+                    "fin": 49633919,
+                    "titulo": "Capítulo 22: Episodio 22"
+                },
+                {
+                    "inicio": 49633919,
+                    "fin": 51905706,
+                    "titulo": "Capítulo 23: Episodio 23"
+                },
+                {
+                    "inicio": 51905706,
+                    "fin": 54602538,
+                    "titulo": "Capítulo 24: Episodio 24"
                 }
             ]
         }
