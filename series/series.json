@@ -1,6 +1,280 @@
 {
     "series": [
         {
+            "nombre": "La casa de papel, temporada 1",
+            "genero": "Thriller",
+            "anio": 2017,
+            "reparto": [
+                "Úrsula Corberó",
+                "Itziar Ituño",
+                "Álvaro Morte",
+                "Paco Tous",
+                "Pedro Alonso",
+                "Alba Flores",
+                "Miguel Herrán",
+                "Jaime Lorente",
+                "Esther Acebo",
+                "Enrique Arce",
+                "María Pedraza",
+                "Darko Peric",
+                "Kiti Mánver"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 15,
+            "sinopsis": "Un misterioso personaje, que se hace llamar El Profesor, planea el mayor de los atracos jamás contado. Para llevar a cabo el ambicioso plan recluta a una banda formada por personas con ciertas cualidades y algo en común: no tienen nada que perder. El objetivo es atracar la Fábrica de la Moneda y Timbre con la intención de quedarse encerrados dentro con una misión muy concreta: no robar dinero, sino crearlo. Tras cinco meses de reclusión memorizando cada paso, cada detalle, cada probabilidad, por fin llega el día: les esperan once días de encierro en la Fábrica de Moneda, rodeados de los cuerpos de élite de la policía y con 67 rehenes en su poder para saber si saldrán vencedores de su apuesta.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-casa-de-papel-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 4810368,
+                    "titulo": "Capítulo 1: Efectuar lo acordado"
+                },
+                {
+                    "inicio": 4810368,
+                    "fin": 8812032,
+                    "titulo": "Capítulo 2: Imprudencias letales"
+                },
+                {
+                    "inicio": 8812032,
+                    "fin": 12607317,
+                    "titulo": "Capítulo 3: Errar al disparar"
+                },
+                {
+                    "inicio": 12607317,
+                    "fin": 16450730,
+                    "titulo": "Capítulo 4: Caballo de Troya"
+                },
+                {
+                    "inicio": 16450730,
+                    "fin": 20588501,
+                    "titulo": "Capítulo 5: El día de la marmota"
+                },
+                {
+                    "inicio": 20588501,
+                    "fin": 25040512,
+                    "titulo": "Capítulo 6: La cálida guerra fría"
+                },
+                {
+                    "inicio": 25040512,
+                    "fin": 29055701,
+                    "titulo": "Capítulo 7: Refrigerada inestabilidad"
+                },
+                {
+                    "inicio": 29055701,
+                    "fin": 33143893,
+                    "titulo": "Capítulo 8: Tú lo has buscado"
+                },
+                {
+                    "inicio": 33143893,
+                    "fin": 37442560,
+                    "titulo": "Capítulo 9: El que la sigue la consigue"
+                },
+                {
+                    "inicio": 37442560,
+                    "fin": 41246165,
+                    "titulo": "Capítulo 10: Se acabaron las máscaras"
+                },
+                {
+                    "inicio": 41246165,
+                    "fin": 44996010,
+                    "titulo": "Capítulo 11: La cabeza del plan"
+                },
+                {
+                    "inicio": 44996010,
+                    "fin": 48832341,
+                    "titulo": "Capítulo 12: Cuestión de eficacia"
+                },
+                {
+                    "inicio": 48832341,
+                    "fin": 53070080,
+                    "titulo": "Capítulo 13: ¿Qué hemos hecho?"
+                },
+                {
+                    "inicio": 53070080,
+                    "fin": 56920107,
+                    "titulo": "Capítulo 14: A contrarreloj"
+                },
+                {
+                    "inicio": 56920107,
+                    "fin": 61051307,
+                    "titulo": "Capítulo 15: Bella ciao"
+                }
+            ]
+        },
+        {
+            "nombre": "La casa de papel, temporada 2",
+            "genero": "Thriller",
+            "anio": 2019,
+            "reparto": [
+                "Úrsula Corberó",
+                "Álvaro Morte",
+                "Itziar Ituño",
+                "Pedro Alonso",
+                "Alba Flores",
+                "Miguel Herrán",
+                "Jaime Lorente",
+                "Esther Acebo",
+                "Enrique Arce",
+                "Darko Perić",
+                "Hovik Keuchkerian",
+                "Luka Peros",
+                "Rodrigo de la Serna",
+                "Najwa Nimri",
+                "Fernando Cayo",
+                "Fernando Soto",
+                "José Manuel Poga",
+                "",
+                "Belén Cuesta",
+                ""
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 26,
+            "sinopsis": "Después de conseguir huir con los mil millones de euros de la FNMT, El Profesor recibe una llamada: uno de los miembros de la banda ha sido capturado. La única manera de rescatarlo, y de proteger el paradero secreto de los demás, es volver a reunirlos a todos para llevar a cabo un nuevo atraco, el atraco más grande jamás pensado'.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-casa-de-papel-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2972459,
+                    "titulo": "Capítulo 1: Hemos vuelto"
+                },
+                {
+                    "inicio": 2972459,
+                    "fin": 5420118,
+                    "titulo": "Capítulo 2: Aikido"
+                },
+                {
+                    "inicio": 5420118,
+                    "fin": 8316118,
+                    "titulo": "Capítulo 3: 48 metros bajo el suelo"
+                },
+                {
+                    "inicio": 8316118,
+                    "fin": 10864470,
+                    "titulo": "Capítulo 4: La hora del delfín"
+                },
+                {
+                    "inicio": 10864470,
+                    "fin": 13789142,
+                    "titulo": "Capítulo 5: Bum, bum, ciao"
+                },
+                {
+                    "inicio": 13789142,
+                    "fin": 16574806,
+                    "titulo": "Capítulo 6: Todo pareció insignificante"
+                },
+                {
+                    "inicio": 16574806,
+                    "fin": 19213014,
+                    "titulo": "Capítulo 7: Pequeñas vacaciones"
+                },
+                {
+                    "inicio": 19213014,
+                    "fin": 22717825,
+                    "titulo": "Capítulo 8: La deriva"
+                },
+                {
+                    "inicio": 22717825,
+                    "fin": 25864193,
+                    "titulo": "Capítulo 9: Game Over"
+                },
+                {
+                    "inicio": 25864193,
+                    "fin": 28510166,
+                    "titulo": "Capítulo 10: La boda de Berlín"
+                },
+                {
+                    "inicio": 28510166,
+                    "fin": 31018539,
+                    "titulo": "Capítulo 11: Lección de anatomía"
+                },
+                {
+                    "inicio": 31018539,
+                    "fin": 34190422,
+                    "titulo": "Capítulo 12: Suspiros de España"
+                },
+                {
+                    "inicio": 34190422,
+                    "fin": 36726273,
+                    "titulo": "Capítulo 13: 5 minutos antes"
+                },
+                {
+                    "inicio": 36726273,
+                    "fin": 39451308,
+                    "titulo": "Capítulo 14: KO técnico"
+                },
+                {
+                    "inicio": 39451308,
+                    "fin": 42554711,
+                    "titulo": "Capítulo 15: Tumbar la carpa"
+                },
+                {
+                    "inicio": 42554711,
+                    "fin": 46133335,
+                    "titulo": "Capítulo 16: Plan París"
+                },
+                {
+                    "inicio": 46133335,
+                    "fin": 48971692,
+                    "titulo": "Capítulo 17: El final del camino"
+                },
+                {
+                    "inicio": 48971692,
+                    "fin": 51978241,
+                    "titulo": "Capítulo 18: ¿Crees en la reencarnación"
+                },
+                {
+                    "inicio": 51978241,
+                    "fin": 54814294,
+                    "titulo": "Capítulo 19: El espectáculo de la vida"
+                },
+                {
+                    "inicio": 54814294,
+                    "fin": 57781675,
+                    "titulo": "Capítulo 20: Tu sitio en el cielo"
+                },
+                {
+                    "inicio": 57781675,
+                    "fin": 60985728,
+                    "titulo": "Capítulo 21: Vivir muchas vidas"
+                },
+                {
+                    "inicio": 60985728,
+                    "fin": 64106581,
+                    "titulo": "Capítulo 22: Válvulas de escape"
+                },
+                {
+                    "inicio": 64106581,
+                    "fin": 67238016,
+                    "titulo": "Capítulo 23: Ciencia ilusionada"
+                },
+                {
+                    "inicio": 67238016,
+                    "fin": 70118016,
+                    "titulo": "Capítulo 24: La teoría de la elegancia"
+                },
+                {
+                    "inicio": 70118016,
+                    "fin": 73132715,
+                    "titulo": "Capítulo 25: Lo que se habla en la cama"
+                },
+                {
+                    "inicio": 73132715,
+                    "fin": 77586688,
+                    "titulo": "Capítulo 26: Una tradición familiar"
+                }
+            ]
+        },
+        {
             "nombre": "Apache: la vida de Carlos Tévez",
             "genero": "Drama",
             "anio": 2019,
@@ -15904,283 +16178,6 @@
                     "inicio": 13253248,
                     "fin": 16033493,
                     "titulo": "Capítulo 6: Lo mejor para ti"
-                }
-            ]
-        },
-        {
-            "nombre": "La casa de papel, temporada 1",
-            "genero": "Thriller",
-            "anio": 2017,
-            "reparto": [
-                "Úrsula Corberó",
-                "Álvaro Morte",
-                "Paco Tous",
-                "Alba Flores",
-                "Miguel Herrán",
-                "Pedro Alonso",
-                "Kiti Manver",
-                "Enrique Arce",
-                "María Pedraza",
-                "Anna Gras",
-                "Fernando Soto",
-                "Darko Peric",
-                "Juan Fernández",
-                "Itziar Ituño",
-                "Jaime Lorente",
-                "Fran Morcillo",
-                "Roberto García Ruiz",
-                "Esther Acebo"
-            ],
-            "pais_origen": "España",
-            "cantidad_episodios": 9,
-            "sinopsis": "Un misterioso personaje, que se hace llamar El Profesor, planea el mayor de los atracos jamás contado. Para llevar a cabo el ambicioso plan recluta a una banda formada por personas con ciertas cualidades y algo en común: no tienen nada que perder. El objetivo es atracar la Fábrica de la Moneda y Timbre con la intención de quedarse encerrados dentro con una misión muy concreta: no robar dinero, sino crearlo. Tras cinco meses de reclusión memorizando cada paso, cada detalle, cada probabilidad, por fin llega el día: les esperan once días de encierro en la Fábrica de Moneda, rodeados de los cuerpos de élite de la policía y con 67 rehenes en su poder para saber si saldrán vencedores de su apuesta.",
-            "enlaces": [
-                {
-                    "idioma": "Español España",
-                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-casa-de-papel-1.m4a"
-                }
-            ],
-            "capitulos": [
-                {
-                    "inicio": 0,
-                    "fin": 4810368,
-                    "titulo": "Capítulo 1: Efectuar lo acordado"
-                },
-                {
-                    "inicio": 4810368,
-                    "fin": 8812032,
-                    "titulo": "Capítulo 2: Imprudencias letales"
-                },
-                {
-                    "inicio": 8812032,
-                    "fin": 12607317,
-                    "titulo": "Capítulo 3: Errar al disparar"
-                },
-                {
-                    "inicio": 12607317,
-                    "fin": 16450730,
-                    "titulo": "Capítulo 4: Caballo de Troya"
-                },
-                {
-                    "inicio": 16450730,
-                    "fin": 20588501,
-                    "titulo": "Capítulo 5: El día de la marmota"
-                },
-                {
-                    "inicio": 20588501,
-                    "fin": 25040512,
-                    "titulo": "Capítulo 6: La cálida guerra fría"
-                },
-                {
-                    "inicio": 25040512,
-                    "fin": 29055701,
-                    "titulo": "Capítulo 7: Refrigerada inestabilidad"
-                },
-                {
-                    "inicio": 29055701,
-                    "fin": 33143893,
-                    "titulo": "Capítulo 8: Tú lo has buscado"
-                },
-                {
-                    "inicio": 33143893,
-                    "fin": 37442560,
-                    "titulo": "Capítulo 9: El que la sigue la consigue"
-                },
-                {
-                    "inicio": 37442560,
-                    "fin": 41246165,
-                    "titulo": "Capítulo 10: Se acabaron las máscaras"
-                },
-                {
-                    "inicio": 41246165,
-                    "fin": 44996010,
-                    "titulo": "Capítulo 11: La cabeza del plan"
-                },
-                {
-                    "inicio": 44996010,
-                    "fin": 48832341,
-                    "titulo": "Capítulo 12: Cuestión de eficacia"
-                },
-                {
-                    "inicio": 48832341,
-                    "fin": 53070080,
-                    "titulo": "Capítulo 13: ¿Qué hemos hecho?"
-                },
-                {
-                    "inicio": 53070080,
-                    "fin": 56920107,
-                    "titulo": "Capítulo 14: A contrarreloj"
-                },
-                {
-                    "inicio": 56920107,
-                    "fin": 61051307,
-                    "titulo": "Capítulo 15: Bella ciao"
-                }
-            ]
-        },
-        {
-            "nombre": "La casa de papel, temporada 2",
-            "genero": "Thriller",
-            "anio": 2017,
-            "reparto": [
-                "Úrsula Corberó",
-                "Álvaro Morte",
-                "Paco Tous",
-                "Alba Flores",
-                "Miguel Herrán",
-                "Pedro Alonso",
-                "Kiti Manver",
-                "Enrique Arce",
-                "María Pedraza",
-                "Anna Gras",
-                "Fernando Soto",
-                "Darko Peric",
-                "Juan Fernández",
-                "Itziar Ituño",
-                "Jaime Lorente",
-                "Fran Morcillo",
-                "Roberto García Ruiz",
-                "Esther Acebo"
-            ],
-            "pais_origen": "España",
-            "cantidad_episodios": 6,
-            "sinopsis": "En la segunda temporada de La casa de papel se desarrolla el desenlace del robo. El grupo de atracadores mantiene su plan de encierro con la intención de fabricar el dinero que pretenden robar. ¿Se hará realidad el robo más grande de la historia o se quedará todo en un sueño? \nEl Profesor sigue coordinando la operación desde fuera y debe tomar medidas extremas para que el grupo siga el plan rigurosamente.",
-            "enlaces": [
-                {
-                    "idioma": "Español España",
-                    "enlace": "https://ia800804.us.archive.org/34/items/sernefua/la-casa-de-papel-2.m4a"
-                }
-            ],
-            "capitulos": [
-                {
-                    "inicio": 0,
-                    "fin": 2972459,
-                    "titulo": "Capítulo 1: Hemos vuelto"
-                },
-                {
-                    "inicio": 2972459,
-                    "fin": 5420118,
-                    "titulo": "Capítulo 2: Aikido"
-                },
-                {
-                    "inicio": 5420118,
-                    "fin": 8316118,
-                    "titulo": "Capítulo 3: 48 metros bajo el suelo"
-                },
-                {
-                    "inicio": 8316118,
-                    "fin": 10864470,
-                    "titulo": "Capítulo 4: La hora del delfín"
-                },
-                {
-                    "inicio": 10864470,
-                    "fin": 13789142,
-                    "titulo": "Capítulo 5: Bum, bum, ciao"
-                },
-                {
-                    "inicio": 13789142,
-                    "fin": 16574806,
-                    "titulo": "Capítulo 6: Todo pareció insignificante"
-                },
-                {
-                    "inicio": 16574806,
-                    "fin": 19213014,
-                    "titulo": "Capítulo 7: Pequeñas vacaciones"
-                },
-                {
-                    "inicio": 19213014,
-                    "fin": 22717825,
-                    "titulo": "Capítulo 8: La deriva"
-                },
-                {
-                    "inicio": 22717825,
-                    "fin": 25864193,
-                    "titulo": "Capítulo 9: Game Over"
-                },
-                {
-                    "inicio": 25864193,
-                    "fin": 28510166,
-                    "titulo": "Capítulo 10: La boda de Berlín"
-                },
-                {
-                    "inicio": 28510166,
-                    "fin": 31018539,
-                    "titulo": "Capítulo 11: Lección de anatomía"
-                },
-                {
-                    "inicio": 31018539,
-                    "fin": 34190422,
-                    "titulo": "Capítulo 12: Suspiros de España"
-                },
-                {
-                    "inicio": 34190422,
-                    "fin": 36726273,
-                    "titulo": "Capítulo 13: 5 minutos antes"
-                },
-                {
-                    "inicio": 36726273,
-                    "fin": 39451308,
-                    "titulo": "Capítulo 14: KO técnico"
-                },
-                {
-                    "inicio": 39451308,
-                    "fin": 42554711,
-                    "titulo": "Capítulo 15: Tumbar la carpa"
-                },
-                {
-                    "inicio": 42554711,
-                    "fin": 46133335,
-                    "titulo": "Capítulo 16: Plan París"
-                },
-                {
-                    "inicio": 46133335,
-                    "fin": 48971692,
-                    "titulo": "Capítulo 17: El final del camino"
-                },
-                {
-                    "inicio": 48971692,
-                    "fin": 51978241,
-                    "titulo": "Capítulo 18: ¿Crees en la reencarnación"
-                },
-                {
-                    "inicio": 51978241,
-                    "fin": 54814294,
-                    "titulo": "Capítulo 19: El espectáculo de la vida"
-                },
-                {
-                    "inicio": 54814294,
-                    "fin": 57781675,
-                    "titulo": "Capítulo 20: Tu sitio en el cielo"
-                },
-                {
-                    "inicio": 57781675,
-                    "fin": 60985728,
-                    "titulo": "Capítulo 21: Vivir muchas vidas"
-                },
-                {
-                    "inicio": 60985728,
-                    "fin": 64106581,
-                    "titulo": "Capítulo 22: Válvulas de escape"
-                },
-                {
-                    "inicio": 64106581,
-                    "fin": 67238016,
-                    "titulo": "Capítulo 23: Ciencia ilusionada"
-                },
-                {
-                    "inicio": 67238016,
-                    "fin": 70118016,
-                    "titulo": "Capítulo 24: La teoría de la elegancia"
-                },
-                {
-                    "inicio": 70118016,
-                    "fin": 73132715,
-                    "titulo": "Capítulo 25: Lo que se habla en la cama"
-                },
-                {
-                    "inicio": 73132715,
-                    "fin": 77586688,
-                    "titulo": "Capítulo 26: Una tradición familiar"
                 }
             ]
         },
