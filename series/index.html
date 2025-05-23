@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series</title>
     <style>
-        /* Estilos CSS */
         html,
         body {
             margin: 0;
@@ -265,7 +264,6 @@
             font-size: 1.1em
         }
 
-        /* Estilos adicionales para el encabezado */
         #selector-series {
             text-align: center;
             margin-bottom: 20px;
@@ -306,7 +304,6 @@
 
 <body>
     <div class="c">
-        <!-- Encabezado con enlaces dinámicos -->
         <div id="selector-series">
             <h2>¿Qué quieres ver?</h2>
             <ul>
@@ -406,9 +403,9 @@
             CCI = 0,
             CP = 0,
             S,
+            ST,
             SD = SDP1 + SDP2;
 
-        // Funciones de autenticación
         const sWGi = async () => {
                 try {
                     const r = await signInWithPopup(auth, gP),
@@ -427,7 +424,6 @@
                 }
             };
 
-        // Observador de estado de autenticación
         onAuthStateChanged(auth, u => {
             u ? (console.log("Usuario conectado:", u.uid), gSI.classList.add('h'), sO.classList.remove('h'), UCW()) : (console.log("Usuario desconectado"), gSI.classList.remove('h'), sO.classList.add('h'), UCW())
         });
@@ -435,7 +431,6 @@
         gSI.addEventListener('click', sWGi);
         sO.addEventListener('click', sOG);
 
-        // Funciones auxiliares
         const FT = t => {
                 const m = Math.floor(t / 60),
                     s = Math.floor(t % 60);
@@ -448,15 +443,15 @@
                 try {
                     const u = auth.currentUser;
                     if (!u) throw new Error("No hay usuario conectado.");
-                    const p = { serieNombre: S.nombre, capituloIndex: CCI, tiempo: t, idiomaIndex: CLI, userId: u.uid, ultimaActualizacion: serverTimestamp() };
-                    await setDoc(doc(db, "progresoSeries", `${u.uid}_${S.nombre}`), p);
+                    const p = { serieNombre: n, temporadaNombre: ST ? ST.nombre : null, capituloIndex: CCI, tiempo: t, idiomaIndex: CLI, userId: u.uid, ultimaActualizacion: serverTimestamp() };
+                    await setDoc(doc(db, "progresoSeries", `${u.uid}_${n}`), p);
                     console.log("Progreso guardado en Firebase:", p);
                     UCW()
                 } catch (e) {
                     console.error("Error al guardar el progreso en Firebase:", e)
                 }
             },
-            RP = async n => {
+            RP = async (n) => {
                 try {
                     const u = auth.currentUser;
                     if (!u) throw new Error("No hay usuario conectado.");
@@ -494,6 +489,7 @@
                 SELECTOR_SERIES.style.display = "block";
             },
             O = s => {
+                ST = null;
                 S = s;
                 IP = !1;
                 CLI = 0;
@@ -580,7 +576,7 @@
                 });
                 TS.addEventListener('change', e => {
                     const sS = s.find(s => s.nombre === e.target.value);
-                    sS && O(sS)
+                    sS && (ST = sS, O(sS))
                 })
             },
             LI = s => {
@@ -721,7 +717,6 @@
                 }
             };
 
-        // Event Listeners
         CBC.addEventListener('click', C);
         window.addEventListener('click', t => {
             t.target === M && C()
@@ -754,7 +749,6 @@
             cargarSeries();
         });
 
-        // Cargar series
         const cargarSeries = () => {
             FD().then(s => RCAS(s));
         };
@@ -767,7 +761,6 @@
             M.style.display === "block" && S && GP(S.nombre)
         }, 5e3);
 
-        // Focus Trap
         function createFocusTrap(element) {
             let focusableElements = element.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])');
             let firstFocusableElement = focusableElements[0];
