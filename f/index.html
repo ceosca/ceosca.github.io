@@ -201,7 +201,18 @@
         CL=()=>{CP=A.currentTime;CLI=parseInt(LS.value);S&&LCF(S); A.currentTime=CP; if(IP) A.play().catch(e=>console.warn("Error al reanudar en CL:",e))},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
         DCW=async s_n_full=>{if(!auth.currentUser)return;try{const u=auth.currentUser;const baseSN=s_n_full.split(', temporada')[0].trim();await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`));UCW()}catch(e){console.error("Error eliminando progreso:",e)}},
         UCW=async()=>{CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
-        document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",30));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})}); 
+        document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",30));const qS=await getDocs(q);const c_all=[];qS.forEach(d=>{c_all.push({...d.data(),id:d.id})}); 
+        
+        const pAgr={};
+        for(const pActual of c_all){
+            const bSN=pActual.serieNombre.split(', temporada')[0].trim();
+            const pExistente=pAgr[bSN];
+            if(!pExistente || (pExistente.ultimaActualizacion && pActual.ultimaActualizacion && pActual.ultimaActualizacion.toDate() > pExistente.ultimaActualizacion.toDate()) || (!pExistente.ultimaActualizacion && pActual.ultimaActualizacion)){
+                pAgr[bSN]=pActual;
+            }
+        }
+        const c=Object.values(pAgr);
+
         if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";return}
         if(TS_C.length === 0) { 
             await FD();
