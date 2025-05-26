@@ -54,7 +54,7 @@
             font-size: 1em;
             background-color: var(--pc);
             color: var(--w);
-            margin-top: 5px; /* Espacio para botones de auth */
+            margin-top: 5px;
         }
 
         .b:hover,
@@ -96,25 +96,21 @@
             background-color: rgba(0, 0, 0, .7)
         }
 
-        .mc { /* Contenedor principal de contenido de series */
+        .mc {
             background-color: var(--w);
-            /* margin: 15% auto; Ya no aplica el margen superior si auth está arriba */
             padding: 20px;
             border: 1px solid #888;
-            width: 100%; /* Ajustado para ocupar el espacio disponible */
+            width: 100%;
             position: relative;
             border-radius: 10px;
-            /* padding-top: 60px; Ya no es necesario si el header interno se simplifica */
-            /* padding-bottom: 70px; El footer del reproductor ya maneja su padding */
         }
         
-        .m .mc { /* Estilos específicos para el mc del modal */
-             margin: 15% auto; /* Restaurar margen para el modal */
-             padding-top: 60px; /* Restaurar padding para el modal */
-             padding-bottom: 70px; /* Restaurar padding para el modal */
-             width: 90%; /* Restaurar ancho para el modal */
+        .m .mc {
+             margin: 15% auto;
+             padding-top: 60px;
+             padding-bottom: 70px;
+             width: 90%;
         }
-
 
         .fh {
             position: fixed;
@@ -167,20 +163,26 @@
         }
 
         .lc,
-        .ec {
+        .ec,
+        .tc {
             margin-top: 1em;
-            width: 100%
+            width: 100%;
+        }
+        .tc { 
+             margin-bottom: 1em; 
         }
 
         .lc label,
-        .ec label {
+        .ec label,
+        .tc label {
             display: block;
             margin-bottom: .5em;
             font-size: 1.1em
         }
 
         .lc select,
-        .ec select {
+        .ec select,
+        .tc select {
             width: 100%;
             padding: 10px;
             font-size: 1em;
@@ -222,12 +224,12 @@
                 font-size: 1em
             }
 
-            .m .mc { /* Ajuste para modal en pantallas pequeñas */
+            .m .mc {
                 margin: 20% auto
             }
         }
 
-        #as { /* Auth Section */
+        #as {
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #eee;
@@ -237,8 +239,7 @@
             margin-bottom: 10px;
         }
 
-
-        #cw { /* Continuar Viendo */
+        #cw {
             margin-bottom: 20px
         }
 
@@ -260,37 +261,13 @@
             margin-right: 5px
         }
 
-        #usac { /* Últimas Series Agregadas Contenedor */
+        #usac {
             margin-bottom: 20px;
         }
 
         #usac h2 {
             font-size: 1.5em; 
             margin-bottom: 10px;
-        }
-
-        .ts {
-            width: 100%;
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 1em;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px top 50%;
-            background-size: 1.5em
-        }
-
-        .tc {
-            margin-bottom: 1em
-        }
-
-        .tc label {
-            display: block;
-            margin-bottom: .5em;
-            font-size: 1.1em
         }
 
         #selector-series {
@@ -307,11 +284,11 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
+            flex-wrap: wrap;
         }
 
         #selector-series li {
-            margin: 5px 10px; /* Ajuste de margen para wrap */
+            margin: 5px 10px;
         }
 
         #selector-series a {
@@ -334,14 +311,12 @@
 
 <body>
     <div class="c">
-        <!-- SECCIÓN DE AUTENTICACIÓN Y BIENVENIDA -->
         <div id="as">
             <p>¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:</p>
             <button id="gsi" class="b">Iniciar sesión con Google</button>
             <button id="so" class="b h">Cerrar sesión</button>
         </div>
 
-        <!-- SELECTOR DE TIPO DE SERIES -->
         <div id="selector-series">
             <h2>¿Qué quieres escuchar?</h2>
             <ul>
@@ -350,31 +325,25 @@
             </ul>
         </div>
 
-        <!-- CONTENEDOR PRINCIPAL DE SERIES -->
         <div id="mc">
-            <!-- Ya no hay header aquí, se movió la autenticación -->
             <main>
-                <!-- CONTINUAR ESCUCHANDO -->
                 <div id="cw">
                     <h2>Continuar escuchando</h2>
                     <ul id="cwl"></ul>
                 </div>
 
-                <!-- ÚLTIMAS SERIES AGREGADAS (NUEVA POSICIÓN) -->
                 <div id="usac">
                     <h2>Últimas Series Agregadas</h2>
                     <ul id="usal" class="sl"></ul> 
                 </div>
                 
-                <!-- CONTENIDO ORIGINAL POR PAÍS / LISTA DE SERIES -->
                 <div id="coc"></div>
             </main>
         </div>
     </div>
 
-    <!-- MODAL DE DETALLES Y REPRODUCTOR DE SERIE -->
     <div id="sM" class="m" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-        <div class="mc" tabindex="-1"> <!-- mc del modal -->
+        <div class="mc" tabindex="-1">
             <header class="fh">
                 <h2 id="modal-title">Detalles de la Serie</h2>
                 <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
@@ -383,7 +352,7 @@
                 <div id="si" aria-live="polite"></div>
                 <section class="tc h" id="tasc">
                     <label for="t">Temporada:</label>
-                    <select id="t" class="ts"></select>
+                    <select id="t"></select>
                 </section>
             </main>
             <audio id="ap">Audio no soportado.</audio>
@@ -394,6 +363,7 @@
                 <button id="ppb" class="b" aria-label="Reproducir/Pausar">Reproducir</button>
                 <button id="fb" class="b" aria-label="Avanzar 15 segundos">Avanzar</button>
                 <button id="bb" class="b" aria-label="Retroceder 15 segundos">Retroceder</button>
+                <button id="reb" class="b" aria-label="Reiniciar episodio">Reiniciar episodio</button>
                 <button id="ncb" class="b" aria-label="Siguiente episodio">Siguiente episodio</button>
                 <button id="pcb" class="b" aria-label="Episodio anterior">Episodio anterior</button>
                 <button id="ivb" class="b" aria-label="Subir volumen">Subir volumen</button>
@@ -420,27 +390,28 @@
             db = getFirestore(app),
             auth = getAuth(app),
             gP = new GoogleAuthProvider,
-            gSI = document.getElementById('gsi'), // Botón Iniciar Sesión
-            sO = document.getElementById('so'),   // Botón Cerrar Sesión
+            gSI = document.getElementById('gsi'), 
+            sO = document.getElementById('so'),   
             EN_ESPANOL_LINK = document.getElementById('en-espanol'),
             CON_DOBLAJE_LINK = document.getElementById('con-doblaje'),
             SDP1 = 'https://dl.dropbox.com/',
             SDP2 = 'scl/fi/q5gd1j2lor3fbe6dtv15c/series.json?rlkey=vpgalrx1bbqhjy513q9qr9jvp&dl=1',
             SDP3 = 'scl/fi/725dxvrb9i69xd4td620v/doblaje.json?rlkey=4elbmhb2ruq76jsi4ohfcp7we&dl=1',
             A = document.getElementById('ap'),
-            MC_CONTENT_DIV = document.getElementById('mc'), // Contenedor principal de series, no el del modal.
-            M = document.getElementById("sM"),    // Modal
-            CBC = document.getElementById("cb"),  // Botón Cerrar Modal
-            PB = document.getElementById('ppb'),  // Botón Play/Pause
-            CS = document.getElementById('c'),    // Select Capítulos
-            LC = document.getElementById('lasc'), // Contenedor Select Lenguaje
-            LS = document.getElementById('l'),    // Select Lenguaje
-            CI = document.getElementById('ci'),   // Info Capítulo
-            TI = document.getElementById('ti'),   // Info Tiempo
-            CWL = document.getElementById('cwl'), // Lista Continuar Viendo
-            TS = document.getElementById('t'),    // Select Temporadas
+            MC_CONTENT_DIV = document.getElementById('mc'), 
+            M = document.getElementById("sM"),    
+            CBC = document.getElementById("cb"),  
+            PB = document.getElementById('ppb'),  
+            CS = document.getElementById('c'),    
+            LC = document.getElementById('lasc'), 
+            LS = document.getElementById('l'),    
+            CI = document.getElementById('ci'),   
+            TI = document.getElementById('ti'),   
+            CWL = document.getElementById('cwl'), 
+            TS = document.getElementById('t'),    
             SELECTOR_SERIES_DIV = document.getElementById('selector-series'),
-            USAL = document.getElementById('usal'); // Últimas Series Agregadas Lista
+            USAL = document.getElementById('usal'),
+            REB = document.getElementById('reb'); // Botón Reiniciar Episodio
 
         let TII,
             IP = !1,
@@ -475,7 +446,7 @@
                 gSI.classList.remove('h');
                 sO.classList.add('h');
                 if(authSectionText) authSectionText.textContent = `¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;
-                UCW(); // Se llama para limpiar la lista de "Continuar viendo" si el usuario cierra sesión
+                UCW(); 
             }
         });
 
@@ -489,7 +460,7 @@
             },
             PZ = n => (n < 10 ? '0' : '') + n,
             GP = async n => {
-                if (!S || !auth.currentUser) return; // No guardar si no hay serie o usuario
+                if (!S || !auth.currentUser) return; 
                 const t = A.currentTime;
                 try {
                     const u = auth.currentUser;
@@ -499,7 +470,7 @@
                 } catch (e) {}
             },
             RP = async (n) => {
-                if (!auth.currentUser) return !1; // No cargar si no hay usuario
+                if (!auth.currentUser) return !1; 
                 try {
                     const u = auth.currentUser;
                     const dS = await getDoc(doc(db, "progresoSeries", `${u.uid}_${n}`));
@@ -519,47 +490,46 @@
                     return !1
                 }
             },
-            C = () => { // Cerrar modal
+            C = () => { 
                 S && GP(S.nombre);
                 M.style.display = "none";
                 M.setAttribute("aria-hidden", "true");
                 A.pause();
                 A.src = '';
-                MC_CONTENT_DIV.classList.remove('h'); // Mostrar contenido principal de series
+                MC_CONTENT_DIV.classList.remove('h'); 
                 clearInterval(TII);
                 IP = !1;
                 PB.textContent = 'Reproducir';
                 CP = A.currentTime;
                 disableFocusTrap(M);
-                SELECTOR_SERIES_DIV.style.display = "block"; // Mostrar selector de tipo de series
-                document.getElementById('as').style.display = "block"; // Mostrar sección de auth
+                SELECTOR_SERIES_DIV.style.display = "block"; 
+                document.getElementById('as').style.display = "block"; 
             },
-            O = s => { // Abrir modal
+            O = s => { 
                 ST = null;
                 S = s;
                 IP = !1;
                 CLI = 0;
                 CCI = 0;
-                CP = 0; // Resetear CP al abrir nueva serie/temporada
+                CP = 0; 
                 CSD = [];
                 LI(s);
                 LL(s);
                 LCF(s);
                 RP(s.nombre).then((progresoCargado) => {
-                    if (progresoCargado) { // Si se cargó progreso, usar ese tiempo
-                        // A.currentTime ya fue seteado en RP
+                    if (progresoCargado) { 
                     } else {
-                        A.currentTime = 0; // Si no hay progreso, empezar desde el inicio
+                        A.currentTime = 0; 
                     }
-                    A.play(); // Siempre intentar reproducir después de cargar o no progreso
+                    A.play(); 
                 });
-                MC_CONTENT_DIV.classList.add('h'); // Ocultar contenido principal de series
+                MC_CONTENT_DIV.classList.add('h'); 
                 M.style.display = "block";
                 M.setAttribute("aria-hidden", "false");
                 document.querySelector('#sM .mc').focus();
                 enableFocusTrap(M);
-                SELECTOR_SERIES_DIV.style.display = "none"; // Ocultar selector de tipo de series
-                document.getElementById('as').style.display = "none"; // Ocultar sección de auth
+                SELECTOR_SERIES_DIV.style.display = "none"; 
+                document.getElementById('as').style.display = "none"; 
             },
             FD = async () => {
                 try {
@@ -580,20 +550,20 @@
                 const nX = gtn(x.nombre), nY = gtn(y.nombre);
                 return nX !== nY ? nX - nY : x.nombre.localeCompare(y.nombre);
             })),
-            RCAS = s => { 
+            RCAS = s_array => { 
                 const t = document.getElementById('coc');
                 t.innerHTML = "";
-                if (!s || s.length === 0) {
+                if (!s_array || s_array.length === 0) {
                     t.innerHTML = "<p>No hay series disponibles para esta selección.</p>";
                     return;
                 }
                 const sAgrup = {}; 
-                s.forEach(serie => {
+                s_array.forEach(serie => {
                     const nB = serie.nombre.split(', temporada')[0].trim(); 
                     sAgrup[nB] || (sAgrup[nB] = []);
                     sAgrup[nB].push(serie)
                 });
-                const pOrigenes = [...new Set(s.map(serie => serie.pais_origen))].sort(); 
+                const pOrigenes = [...new Set(s_array.map(serie => serie.pais_origen))].sort(); 
                 pOrigenes.forEach(pO => {
                     const h2 = document.createElement('h2');
                     h2.textContent = pO;
@@ -628,8 +598,8 @@
                     return;
                 }
                 USAL.innerHTML = '';
-                const u20 = sa.slice(-20).reverse(); // Tomar las últimas y revertir para que la más nueva esté arriba
-                u20.forEach(s_item => { // Renombrar s a s_item para evitar conflicto con S global
+                const u20 = sa.slice(-20).reverse(); 
+                u20.forEach(s_item => { 
                     const li = document.createElement('li');
                     const btn = document.createElement('button');
                     btn.textContent = s_item.nombre;
@@ -650,10 +620,9 @@
                     USAL.appendChild(li);
                 });
             },
-            LT = s_array => { // Renombrar s a s_array
+            LT = s_array => { 
                 TS.innerHTML = '';
                 document.getElementById('tasc').classList.remove('h');
-                // s_array ya debería estar ordenado por OTS antes de llamar a LT
                 s_array.forEach(serie => { 
                     const tN = serie.nombre.split(', temporada ')[1]; 
                     const opt = document.createElement('option');
@@ -661,20 +630,18 @@
                     opt.textContent = tN ? `Temporada ${tN}` : serie.nombre; 
                     TS.appendChild(opt)
                 });
-                // Mover el event listener fuera del bucle si es posible, o asegurar que no se acumulen
-                // Como TS.innerHTML se limpia, el listener se añade una vez por cada llamada a LT, lo cual está bien.
-                TS.onchange = e => { // Usar onchange para evitar múltiples listeners si LT se llama repetidamente
+                TS.onchange = e => { 
                     const sS = s_array.find(serie => serie.nombre === e.target.value); 
-                    sS && (ST = sS, O(sS)) // ST se setea aquí, es la temporada actual seleccionada
+                    sS && (ST = sS, O(sS)) 
                 };
             },
-            LI = s_data => { // Renombrar s a s_data
+            LI = s_data => { 
                 const t = document.getElementById('si');
                 let rHTML = ''; 
-                if (SD === SDP1 + SDP2 && s_data.reparto) { // Verificar que reparto exista
+                if (SD === SDP1 + SDP2 && s_data.reparto) { 
                     rHTML = `<div><strong>Reparto:</strong> ${s_data.reparto.join(", ")}</div>`;
                 }
-                S = s_data; // S global se setea aquí
+                S = s_data; 
                 t.innerHTML = `<h2>${s_data.nombre}</h2><div><strong>Género:</strong> ${s_data.genero}</div><div><strong>Año:</strong> ${s_data.anio}</div>${rHTML}<div><strong>País:</strong> ${s_data.pais_origen}</div><div><strong>Episodios:</strong> ${s_data.cantidad_episodios}</div>${s_data.sinopsis ? `<div><strong>Sinopsis:</strong> ${s_data.sinopsis}</div>` : ''}`
             },
             LL = s_data => { 
@@ -691,18 +658,18 @@
                     const n = document.createElement('option');
                     n.value = e, n.textContent = t.titulo, CS.appendChild(n)
                 });
-                CS.value = CCI; // CCI debe estar definido antes de esto (en O o RP)
+                CS.value = CCI; 
                 UC();
-                A.src = s_data.enlaces[CLI].enlace; // CLI debe estar definido (en O o RP)
+                A.src = s_data.enlaces[CLI].enlace; 
                 A.load();
-                A.currentTime = CP; // CP debe estar definido (en O o RP)
+                A.currentTime = CP; 
                 IP && A.play();
                 clearInterval(TII);
                 UT();
                 TII = setInterval(UT, 1e3)
             },
             UC = () => { 
-                if (CSD && CSD[CCI]) { // Verificar que CSD y el índice CCI sean válidos
+                if (CSD && CSD[CCI]) { 
                   CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`
                 } else {
                   CI.textContent = "Cargando capítulo...";
@@ -710,15 +677,15 @@
             },
             UT = () => { 
                 const t = A.currentTime;
-                if (!CSD || CSD.length === 0) return; // Evitar errores si CSD no está cargado
+                if (!CSD || CSD.length === 0) return; 
                 const e = GCI(t);
-                 if (e < 0 || e >= CSD.length || !CSD[e]) return; // Verificación adicional
+                 if (e < 0 || e >= CSD.length || !CSD[e]) return; 
                 const n = CSD[e],
                     i = n.inicio / 1e3,
                     o = n.fin / 1e3,
                     r = FT(t - i),
                     c = FT(o - i);
-                if (CSD[CCI]) { // Verificar de nuevo antes de actualizar
+                if (CSD[CCI]) { 
                     CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`;
                 }
                 TI.textContent = `${r} / ${c}`
@@ -728,6 +695,18 @@
             },
             F = () => { A.currentTime += 15 }, 
             B = () => { A.currentTime -= 15 }, 
+            RE = () => { // Reiniciar Episodio
+                if (S && CSD && typeof CCI !== 'undefined' && CSD[CCI]) {
+                    A.currentTime = CSD[CCI].inicio / 1000;
+                    if (!IP) { // Si estaba pausado, iniciar reproducción
+                        A.play();
+                        IP = true;
+                        PB.textContent = 'Pausar';
+                        PB.setAttribute('aria-label', 'Pausar');
+                    }
+                    UC();
+                }
+            },
             PC = () => { 
                 CCI = parseInt(CS.value);
                 if (CSD && CSD[CCI]) {
@@ -739,9 +718,9 @@
             },
             GCI = t => { 
                 let e = 0;
-                if (!CSD || CSD.length === 0) return 0; // Si no hay capítulos, devuelve 0
+                if (!CSD || CSD.length === 0) return 0; 
                 CSD.forEach((n, i) => {
-                    if (n && typeof n.inicio !== 'undefined' && typeof n.fin !== 'undefined') { // Verificar que n, inicio y fin existan
+                    if (n && typeof n.inicio !== 'undefined' && typeof n.fin !== 'undefined') { 
                         if (t >= n.inicio / 1e3 && t <= n.fin / 1e3) e = i;
                     }
                 });
@@ -749,10 +728,10 @@
             },
             PP = () => { let t = CCI; t > 0 && (t--, CS.value = t, PC()) }, 
             NP = () => { let t = CCI; t < CSD.length - 1 && (t++, CS.value = t, PC()) }, 
-            CL = () => { CP = A.currentTime; CLI = parseInt(LS.value); S && LCF(S) }, // Asegurar que S exista
+            CL = () => { CP = A.currentTime; CLI = parseInt(LS.value); S && LCF(S) }, 
             IV = () => { A.volume = Math.min(1, A.volume + .05) }, 
             DV = () => { A.volume = Math.max(0, A.volume - .05) }, 
-            DCW = async s_nombre => { // Renombrar s a s_nombre
+            DCW = async s_nombre => { 
                 if (!auth.currentUser) return;
                 try {
                     const u = auth.currentUser;
@@ -762,14 +741,14 @@
             },
             UCW = async () => { 
                 CWL.innerHTML = '';
-                if (!auth.currentUser) { // Si no hay usuario, limpiar y salir
-                    document.getElementById('cw').classList.add('h'); // Ocultar sección "Continuar Viendo"
+                if (!auth.currentUser) { 
+                    document.getElementById('cw').classList.add('h'); 
                     return;
                 }
-                document.getElementById('cw').classList.remove('h'); // Mostrar sección si hay usuario
+                document.getElementById('cw').classList.remove('h'); 
                 try {
                     const u = auth.currentUser;
-                    const q = query(collection(db, "progresoSeries"), where("userId", "==", u.uid), where("tiempo", ">", 30)); // Progreso > 30s
+                    const q = query(collection(db, "progresoSeries"), where("userId", "==", u.uid), where("tiempo", ">", 30)); 
                         
                     const qS = await getDocs(q);
                     const c = [];
@@ -782,10 +761,10 @@
                         return;
                     }
                     
-                    const s_all = await FD(); // s_all: todas las series del JSON
+                    const s_all = await FD(); 
                     for (const t of c) {
                         const ser = s_all.find(e => e.nombre === t.serieNombre);
-                        if (ser && ser.capitulos && ser.capitulos[t.capituloIndex]) { // Verificar que la serie y el capítulo existan
+                        if (ser && ser.capitulos && ser.capitulos[t.capituloIndex]) { 
                             const cap = ser.capitulos[t.capituloIndex],
                                 ini = cap.inicio / 1e3,
                                 fin = cap.fin / 1e3,
@@ -794,21 +773,21 @@
                                 btn = document.createElement('button');
                             btn.textContent = `${ser.nombre}, ${cap.titulo}, Restante: ${durR}`;
                             btn.addEventListener('click', () => {
-                                O(ser); // S global se setea dentro de O() o LI()
-                                RP(ser.nombre); // RP necesita que S global ya esté seteado si la serie es diferente a la actual
+                                O(ser); 
+                                RP(ser.nombre); 
                             });
                             btn.classList.add('b');
                             li.appendChild(btn);
                             const delB = document.createElement('button');
                             delB.textContent = 'Eliminar';
                             delB.classList.add('b');
-                            delB.style.backgroundColor = '#f44336'; // Color rojo para eliminar
+                            delB.style.backgroundColor = '#f44336'; 
                             delB.addEventListener('click', (e) => { e.stopPropagation(); DCW(t.serieNombre) });
                             li.appendChild(delB);
                             CWL.appendChild(li)
                         }
                     }
-                    if (CWL.children.length === 0) { // Si después de filtrar no quedó nada
+                    if (CWL.children.length === 0) { 
                          CWL.innerHTML = "<li>No tienes series para continuar escuchando (o el progreso es muy corto).</li>";
                     }
                 } catch (e) { CWL.innerHTML = "<li>Error al cargar tu progreso.</li>"; }
@@ -823,6 +802,7 @@
         PB.addEventListener('click', TP);
         document.getElementById('fb').addEventListener('click', F);
         document.getElementById('bb').addEventListener('click', B);
+        REB.addEventListener('click', RE); // Event listener para el nuevo botón
         document.getElementById('pcb').addEventListener('click', PP);
         document.getElementById('ncb').addEventListener('click', NP);
         document.getElementById('ivb').addEventListener('click', IV);
@@ -838,13 +818,13 @@
         EN_ESPANOL_LINK.addEventListener('click', (e) => { e.preventDefault(); SD = SDP1 + SDP2; CSRS(); });
         CON_DOBLAJE_LINK.addEventListener('click', (e) => { e.preventDefault(); SD = SDP1 + SDP3; CSRS(); });
         
-        window.onload = () => { CSRS(); UCW(); }; // Cargar series y actualizar "continuar viendo" al cargar
+        window.onload = () => { CSRS(); UCW(); }; 
 
         setInterval(() => { M.style.display === "block" && S && GP(S.nombre) }, 5e3);
 
         function createFocusTrap(element) {
             let focusableElements = element.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])');
-            if (focusableElements.length === 0) return { destroy: () => {}, update: () => {} }; // Si no hay elementos enfocables
+            if (focusableElements.length === 0) return { destroy: () => {}, update: () => {} }; 
             let firstFocusableElement = focusableElements[0];
             let lastFocusableElement = focusableElements[focusableElements.length - 1];
             const keydownHandler = (e) => {
@@ -872,7 +852,7 @@
             if (currentFocusTrap) { currentFocusTrap.destroy(); }
             currentFocusTrap = createFocusTrap(element);
         }
-        function disableFocusTrap() { // No necesita 'element' ya que opera sobre 'currentFocusTrap'
+        function disableFocusTrap() { 
             if (currentFocusTrap) { currentFocusTrap.destroy(); currentFocusTrap = null; }
         }
     </script>
