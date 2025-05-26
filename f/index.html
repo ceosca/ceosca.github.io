@@ -46,8 +46,8 @@
         #cw li button{margin-right:5px}
         #usac{margin-bottom:20px}
         #usac h2{font-size:1.5em;margin-bottom:10px}
-        #t10smv-c{margin-bottom:20px} 
-        #t10smv-c h2{font-size:1.5em;margin-bottom:10px} 
+        #t10smv-c{margin-bottom:20px}
+        #t10smv-c h2{font-size:1.5em;margin-bottom:10px}
         #selector-series{text-align:center;margin-bottom:20px}
         #selector-series h2{margin-bottom:10px}
         #selector-series ul{list-style:none;padding:0;display:flex;justify-content:center;flex-wrap:wrap}
@@ -81,12 +81,12 @@
 
                 <div id="usac">
                     <h2>Últimas Series Agregadas</h2>
-                    <ul id="usal" class="sl"></ul> 
+                    <ul id="usal" class="sl"></ul>
                 </div>
 
-                <div id="t10smv-c"> 
-                    <h2>Las 10 series más vistas</h2>
-                    <ul id="t10l" class="sl"></ul> 
+                <div id="t10smv-c">
+                    <h2>Las 10 series más escuchadas</h2>
+                    <ul id="t10l" class="sl"></ul>
                 </div>
                 
                 <div id="coc"></div>
@@ -147,15 +147,15 @@
             
         let TII,IP = !1,CSD = [],CLI = 0,CCI = 0,CP = 0,S,ST,SD = SDP1 + SDP2,TS_C = [];
 
-        const sWGi=async()=>{try{const r=await signInWithPopup(auth,gP),u=r.user}catch(e){}},sOG=async()=>{try{await signOut(auth)}catch(e){}};
+        const sWGi=async()=>{try{const r=await signInWithPopup(auth,gP),u=r.user}catch(e){console.error("Error inicio sesion:", e)}},sOG=async()=>{try{await signOut(auth)}catch(e){console.error("Error cerrar sesion:", e)}};
         onAuthStateChanged(auth,u=>{const aST=document.querySelector('#as p');if(u){gSI.classList.add('h');sO.classList.remove('h');if(aST)aST.textContent=`¡Hola de nuevo! Tu progreso se guardará automáticamente.`;UCW()}else{gSI.classList.remove('h');sO.classList.add('h');if(aST)aST.textContent=`¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;UCW()}});
         gSI.addEventListener('click',sWGi);sO.addEventListener('click',sOG);
         const FT=t=>{const m=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(m)}:${PZ(s)}`},PZ=n=>(n<10?'0':'')+n,
-        GP=async n=>{if(!S||!auth.currentUser)return;const t=A.currentTime;try{const u=auth.currentUser;const p={serieNombre:n,temporadaNombre:ST?ST.nombre:null,capituloIndex:CCI,tiempo:t,idiomaIndex:CLI,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${n}`),p);UCW()}catch(e){}},
-        RP=async n=>{if(!auth.currentUser)return !1;try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${n}`));if(dS.exists()){const d=dS.data();CCI=d.capituloIndex;A.currentTime=d.tiempo;CLI=d.idiomaIndex||0;CS.value=CCI;LS.value=CLI;UC();return !0}else{return !1}}catch(e){return !1}},
+        GP=async nSFull=>{if(!S||!auth.currentUser)return;const t=A.currentTime;try{const u=auth.currentUser;const baseSN=nSFull.split(', temporada')[0].trim();const p={serieNombre:nSFull,temporadaNombre:ST?ST.nombre:null,capituloIndex:CCI,tiempo:t,idiomaIndex:CLI,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`),p);UCW()}catch(e){console.error("Error guardando progreso:",e)}},
+        RP=async nSFull=>{if(!auth.currentUser)return null;const baseSN=nSFull.split(', temporada')[0].trim();try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`));if(dS.exists()){return dS.data()}else{return null}}catch(e){console.error("Error restaurando progreso:",e);return null}},
         C=()=>{S&&GP(S.nombre);M.style.display="none";M.setAttribute("aria-hidden","true");A.pause();A.src='';MC_DIV.classList.remove('h');clearInterval(TII);IP=!1;PB.textContent='Reproducir';CP=A.currentTime;dFT(M);SEL_SER_DIV.style.display="block";document.getElementById('as').style.display="block"},
-        O=s=>{ST=null;S=s;IP=!1;CLI=0;CCI=0;CP=0;CSD=[];LI(s);LL(s);LCF(s);RP(s.nombre).then(pC=>{if(!pC)A.currentTime=0;A.play()});MC_DIV.classList.add('h');M.style.display="block";M.setAttribute("aria-hidden","false");document.querySelector('#sM .mc').focus();eFT(M);SEL_SER_DIV.style.display="none";document.getElementById('as').style.display="none"},
-        FD=async()=>{try{const t=await fetch(SD);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();TS_C=e.series||[];return TS_C}catch(t){TS_C=[];return[]}},
+        O=async s_clicked=>{let seriesToLoad = s_clicked; ST = null; const progressData = await RP(s_clicked.nombre); if (progressData && progressData.serieNombre && progressData.serieNombre !== s_clicked.nombre) { const seriesFromProgress = TS_C.find(serie => serie.nombre === progressData.serieNombre); if (seriesFromProgress) { seriesToLoad = seriesFromProgress; } } S = seriesToLoad; IP = !1; CLI = 0; CCI = 0; CP = 0; CSD = []; LI(S); LL(S); const baseNameOfS = S.nombre.split(', temporada')[0].trim(); const allSeasonsOfS = TS_C.filter(item => item.nombre.split(', temporada')[0].trim() === baseNameOfS); if (allSeasonsOfS.length > 1) { const sortedSeasons = OTS(allSeasonsOfS); LT(sortedSeasons); TS.value = S.nombre; ST = S; document.getElementById('tasc').classList.remove('h'); } else { document.getElementById('tasc').classList.add('h'); } LCF(S); if (progressData && progressData.serieNombre === S.nombre) { CCI = progressData.capituloIndex; CP = progressData.tiempo; CLI = progressData.idiomaIndex || 0; CS.value = CCI; if (LS.options.length > 0) LS.value = CLI; } else { CP = 0; } A.currentTime = CP; try { await A.play(); IP = !0; PB.textContent = 'Pausar'; PB.setAttribute('aria-label', 'Pausar'); } catch(e) { console.warn("Reproducción automática bloqueada o fallida:", e); IP = !1; PB.textContent = 'Reproducir'; PB.setAttribute('aria-label', 'Reproducir'); } MC_DIV.classList.add('h'); M.style.display="block"; M.setAttribute("aria-hidden","false"); const modalContent = M.querySelector('.mc'); if(modalContent) modalContent.focus(); eFT(M); SEL_SER_DIV.style.display="none"; document.getElementById('as').style.display="none"; },
+        FD=async()=>{try{const t=await fetch(SD);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();TS_C=e.series||[];return TS_C}catch(t){console.error("Error fetching series data:", t);TS_C=[];return[]}},
         OTS=a=>([...a].sort((x,y)=>{const gtn=nm=>{const p=nm.split(', temporada ');if(p.length>1){const n=parseInt(p[1]);return isNaN(n)?Infinity:n}return 1};const nX=gtn(x.nombre),nY=gtn(y.nombre);return nX!==nY?nX-nY:x.nombre.localeCompare(y.nombre)})),
         RCAS=s_a=>{const t=document.getElementById('coc');t.innerHTML="";if(!s_a||s_a.length===0){t.innerHTML="<p>No hay series.</p>";return}
         const sAg={};s_a.forEach(sE=>{const nB=sE.nombre.split(', temporada')[0].trim();sAg[nB]||(sAg[nB]=[]);sAg[nB].push(sE)});
@@ -163,62 +163,81 @@
         pO_s.forEach(pO=>{const h2=document.createElement('h2');h2.textContent=pO;t.appendChild(h2);const ul=document.createElement('ul');ul.classList.add('sl');
         Object.keys(sAg).sort((a,b)=>a.localeCompare(b,'es',{sensitivity:'base'})).forEach(nB=>{const sD=sAg[nB].filter(sE=>sE.pais_origen===pO);
         if(sD.length>0){const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=nB;
-        btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];O(pT);sOrds.length>1?LT(sOrds):document.getElementById('tasc').classList.add('h')});
+        btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];O(pT)});
         btn.setAttribute('tabindex','0');btn.classList.add('b');li.appendChild(btn);ul.appendChild(li)}});t.appendChild(ul)});UCW()},
         LUSA=sa=>{if(!USAL||!sa||sa.length===0){if(USAL)USAL.innerHTML="<li>No hay series nuevas.</li>";return}
         USAL.innerHTML='';const u20=sa.slice(-20).reverse();
         u20.forEach(s_i=>{const li=document.createElement('li');const btn=document.createElement('button');btn.textContent=s_i.nombre;btn.classList.add('b');
-        btn.addEventListener('click',()=>{const nb=s_i.nombre.split(', temporada')[0].trim();const sg=sa.filter(i=>i.nombre.split(', temporada')[0].trim()===nb);O(s_i);if(sg.length>1){const so=OTS(sg);LT(so);TS.value=s_i.nombre}else{document.getElementById('tasc').classList.add('h')}});
+        btn.addEventListener('click',()=>{O(s_i)});
         li.appendChild(btn);USAL.appendChild(li)})},
-        RVS_C=async sNC=>{if(!sNC)return;const sNB=sNC.split(', temporada')[0].trim();if(!sNB)return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}}catch(e){}},
+        RVS_C=async sNC=>{if(!sNC)return;const sNB=sNC.split(', temporada')[0].trim();if(!sNB)return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}}catch(e){console.error("Error incrementando vistas:",e)}},
         CT10SMV=async()=>{if(!T10L)return;T10L.innerHTML='<li>Cargando...</li>';try{const cDR=doc(db,ESD,CVD);const dSnp=await getDoc(cDR);if(!dSnp.exists()||!dSnp.data().vistasPorSerie){T10L.innerHTML="<li>Aún no hay datos.</li>";return}
         const vPSM=dSnp.data().vistasPorSerie;const sCA=Object.entries(vPSM).map(([nC,v])=>({n:nC.replace(/_/g,'.'),v})).sort((a,b)=>b.v-a.v).slice(0,10);
         if(sCA.length===0){T10L.innerHTML="<li>No hay series en el top.</li>";return}
         T10L.innerHTML='';if(!TS_C||TS_C.length===0){T10L.innerHTML="<li>Error: datos de series no disponibles.</li>";return}
-        sCA.forEach(i=>{const sDO=TS_C.find(s=>s.nombre.split(', temporada')[0].trim()===i.n);
-        if(sDO){const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${i.n} (${i.v} ${i.v===1?'vista':'vistas'})`;btn.classList.add('b');
-        btn.addEventListener('click',()=>{const sDMNB=TS_C.filter(s=>s.nombre.split(', temporada')[0].trim()===i.n),sOPT=OTS(sDMNB);
-        if(sOPT.length>0){O(sOPT[0]);if(sOPT.length>1){LT(sOPT);TS.value=sOPT[0].nombre}else{document.getElementById('tasc').classList.add('h')}}});li.appendChild(btn);T10L.appendChild(li)}});
+        sCA.forEach(i=>{const sDO_base=TS_C.filter(s=>s.nombre.split(', temporada')[0].trim()===i.n); 
+        if(sDO_base.length > 0){
+            const sDO = OTS(sDO_base)[0]; 
+            const li=document.createElement('li'),btn=document.createElement('button');
+            btn.textContent=`${i.n}, reproducida ${i.v} ${i.v===1?'vez':'veces'}`;
+            btn.classList.add('b');
+            btn.addEventListener('click',()=>{O(sDO)}); 
+            li.appendChild(btn);T10L.appendChild(li)}
+        });
         if(T10L.children.length===0&&sCA.length>0)T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>";
-        if(T10L.children.length===0&&sCA.length===0)T10L.innerHTML="<li>No hay series en el top.</li>"}catch(e){T10L.innerHTML="<li>Error al cargar.</li>"}},
-        LT=s_a=>{TS.innerHTML='';document.getElementById('tasc').classList.remove('h');s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);sS&&(ST=sS,O(sS))}},
+        if(T10L.children.length===0&&sCA.length===0)T10L.innerHTML="<li>No hay series en el top.</li>"}catch(e){console.error("Error cargando top 10:", e);T10L.innerHTML="<li>Error al cargar.</li>"}},
+        LT=s_a=>{TS.innerHTML='';s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){ST=sS;O(sS)}}},
         LI=s_d=>{const t=document.getElementById('si');let rH='';if(SD===SDP1+SDP2&&s_d.reparto){rH=`<div><strong>Reparto:</strong> ${s_d.reparto.join(", ")}</div>`}S=s_d;t.innerHTML=`<h2>${s_d.nombre}</h2><div><strong>Género:</strong> ${s_d.genero}</div><div><strong>Año:</strong> ${s_d.anio}</div>${rH}<div><strong>País:</strong> ${s_d.pais_origen}</div><div><strong>Episodios:</strong> ${s_d.cantidad_episodios}</div>${s_d.sinopsis?`<div><strong>Sinopsis:</strong> ${s_d.sinopsis}</div>`:''}`},
         LL=s_d=>{LS.innerHTML='';s_d.enlaces.length>1?(s_d.enlaces.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.idioma,LS.appendChild(n)}),LC.classList.remove('h')):LC.classList.add('h')},
-        LCF=s_d=>{CS.innerHTML='';CSD=s_d.capitulos;CSD.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCI;UC();A.src=s_d.enlaces[CLI].enlace;A.load();A.currentTime=CP;IP&&A.play();clearInterval(TII);UT();TII=setInterval(UT,1e3)},
+        LCF=s_d=>{CS.innerHTML='';CSD=s_d.capitulos;CSD.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCI;UC();if(s_d.enlaces[CLI]){A.src=s_d.enlaces[CLI].enlace}else if(s_d.enlaces[0]){A.src=s_d.enlaces[0].enlace;CLI=0;if(LS.options.length > 0)LS.value=0}else{A.src='';console.error("No hay enlaces de audio para esta serie/idioma")} A.load();A.currentTime=CP; clearInterval(TII);UT();TII=setInterval(UT,1e3)},
         UC=()=>{if(CSD&&CSD[CCI]){CI.textContent=IP?`Reproduciendo: ${CSD[CCI].titulo}`:`${CSD[CCI].titulo}`}else{CI.textContent="Cargando..."}},
         UT=()=>{const t=A.currentTime;if(!CSD||CSD.length===0)return;const e=GCI(t);if(e<0||e>=CSD.length||!CSD[e])return;const n=CSD[e],i=n.inicio/1e3,o=n.fin/1e3,r=FT(t-i),c=FT(o-i);if(CSD[CCI]){CI.textContent=IP?`Reproduciendo: ${CSD[CCI].titulo}`:`${CSD[CCI].titulo}`}TI.textContent=`${r} / ${c}`},
-        TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir')):(A.play(),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar'))},
+        TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir')):(A.play().then(()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar')}).catch(e=>{console.warn("Error al reproducir en TP:",e)}))},
         F=()=>{A.currentTime+=15},B=()=>{A.currentTime-=15},
-        RE=()=>{if(S&&CSD&&typeof CCI!=='undefined'&&CSD[CCI]){A.currentTime=CSD[CCI].inicio/1e3;if(!IP){A.play();IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar')}UC()}},
-        PC=()=>{CCI=parseInt(CS.value);if(CSD&&CSD[CCI]){A.currentTime=CSD[CCI].inicio/1e3;A.play();IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar');UC()}else{}},
+        RE=()=>{if(S&&CSD&&typeof CCI!=='undefined'&&CSD[CCI]){A.currentTime=CSD[CCI].inicio/1e3;if(!IP){A.play().then(()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar')}).catch(e=>console.warn("Error al reproducir en RE:",e))}UC()}},
+        PC=()=>{CCI=parseInt(CS.value);if(CSD&&CSD[CCI]){A.currentTime=CSD[CCI].inicio/1e3;A.play().then(()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar')}).catch(e=>console.warn("Error al reproducir en PC:",e));UC()}else{}},
         GCI=t=>{let e=0;if(!CSD||CSD.length===0)return 0;CSD.forEach((n,i)=>{if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3)e=i}});return e},
         PP=()=>{let t=CCI;t>0&&(t--,CS.value=t,PC())},NP=()=>{let t=CCI;t<CSD.length-1&&(t++,CS.value=t,PC())},
-        CL=()=>{CP=A.currentTime;CLI=parseInt(LS.value);S&&LCF(S)},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
-        DCW=async s_n=>{if(!auth.currentUser)return;try{const u=auth.currentUser;await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${s_n}`));UCW()}catch(e){}},
+        CL=()=>{CP=A.currentTime;CLI=parseInt(LS.value);S&&LCF(S); A.currentTime=CP; if(IP) A.play().catch(e=>console.warn("Error al reanudar en CL:",e))},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
+        DCW=async s_n_full=>{if(!auth.currentUser)return;try{const u=auth.currentUser;const baseSN=s_n_full.split(', temporada')[0].trim();await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`));UCW()}catch(e){console.error("Error eliminando progreso:",e)}},
         UCW=async()=>{CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
-        document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",30));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})});
+        document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",30));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})}); 
         if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";return}
-        const s_all=TS_C.length>0?TS_C:await FD();for(const t of c){const ser=s_all.find(e=>e.nombre===t.serieNombre);
-        if(ser&&ser.capitulos&&ser.capitulos[t.capituloIndex]){const cap=ser.capitulos[t.capituloIndex],ini=cap.inicio/1e3,fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
-        li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${ser.nombre}, ${cap.titulo}, Restante: ${durR}`;
-        btn.addEventListener('click',()=>{O(ser);RP(ser.nombre)});btn.classList.add('b');li.appendChild(btn);
-        const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombre)});li.appendChild(delB);CWL.appendChild(li)}}
-        if(CWL.children.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}};
+        if(TS_C.length === 0) { 
+            await FD();
+            if(TS_C.length === 0) {
+                 CWL.innerHTML="<li>Error al cargar datos de series para mostrar progreso.</li>";
+                 return;
+            }
+        }
+        const s_all = TS_C;
+        for(const t of c){ 
+            const ser=s_all.find(e=>e.nombre===t.serieNombre); 
+            if(ser&&ser.capitulos&&ser.capitulos[t.capituloIndex]){const cap=ser.capitulos[t.capituloIndex],ini=cap.inicio/1e3,fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
+            li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${ser.nombre}, ${cap.titulo}, Restante: ${durR}`;
+            btn.addEventListener('click',()=>{O(ser)}); 
+            btn.classList.add('b');li.appendChild(btn);
+            const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombre)});li.appendChild(delB);CWL.appendChild(li)}}
+        if(CWL.children.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){console.error("Error al cargar progreso UCW:",e);CWL.innerHTML="<li>Error al cargar progreso.</li>"}};
         CBC.addEventListener('click',C);window.addEventListener('click',t=>{t.target===M&&C()});
         CS.addEventListener('change',()=>{S&&GP(S.nombre);PC()});
-        A.addEventListener('pause',()=>{S&&GP(S.nombre)});
+        A.addEventListener('pause',()=>{if(S && M.style.display === "block") GP(S.nombre)}); 
         A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar');if(S&&S.nombre)RVS_C(S.nombre)});
         LS.addEventListener('change',CL);PB.addEventListener('click',TP);
         document.getElementById('fb').addEventListener('click',F);document.getElementById('bb').addEventListener('click',B);REB.addEventListener('click',RE);
         document.getElementById('pcb').addEventListener('click',PP);document.getElementById('ncb').addEventListener('click',NP);
         document.getElementById('ivb').addEventListener('click',IV);document.getElementById('dvb').addEventListener('click',DV);
-        const CSRS=()=>{FD().then(s_d=>{RCAS(s_d);if(s_d&&s_d.length>0)LUSA(s_d);CT10SMV()}).catch(e=>{})};
+        const CSRS=()=>{FD().then(s_d=>{RCAS(s_d);if(s_d&&s_d.length>0)LUSA(s_d);CT10SMV()}).catch(e=>{console.error("Error en CSRS:",e)})};
         EEL.addEventListener('click',e=>{e.preventDefault();SD=SDP1+SDP2;CSRS()});
         CDL.addEventListener('click',e=>{e.preventDefault();SD=SDP1+SDP3;CSRS()});
-        window.onload=()=>{CSRS();UCW()}; 
-        setInterval(()=>{M.style.display==="block"&&S&&GP(S.nombre)},5e3);
-        function createFocusTrap(el){let fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
-        let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=createFocusTrap(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
+        window.onload=async ()=>{
+            await FD(); 
+            CSRS(); 
+            UCW();  
+        }; 
+        setInterval(()=>{if(M.style.display==="block"&&S&&auth.currentUser)GP(S.nombre)},5e3);
+        function cFTrpF(el){let fe=el.querySelectorAll('a[href]:not([tabindex="-1"]),button:not([disabled]):not([tabindex="-1"]),textarea:not([disabled]):not([tabindex="-1"]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]):not([tabindex="-1"])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href]:not([tabindex="-1"]),button:not([disabled]):not([tabindex="-1"]),textarea:not([disabled]):not([tabindex="-1"]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]):not([tabindex="-1"])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
+        let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=cFTrpF(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
     </script>
 </body>
 </html>
