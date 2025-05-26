@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración de Series</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; margin: 5px 0; }
+        button:hover { background-color: #0056b3; }
+        button.danger { background-color: #dc3545; }
+        button.danger:hover { background-color: #c82333; }
+        .section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        #adminAuth, #adminPanel { display: none; }
+        #adminPanel.active { display: block; }
+        #adminAuth.active { display: block; }
+        ul { list-style-type: none; padding: 0; }
+        li { background-color: #f9f9f9; border: 1px solid #ddd; margin-bottom: 8px; padding: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+        li code { font-size: 0.9em; color: #555; }
+        .user-info { font-weight: bold; }
+        .status-message { margin-top: 15px; padding: 10px; border-radius: 4px; }
+        .status-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status-error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Panel de Administración de Series</h1>
+
+        <div id="adminAuth" class="active section">
+            <h2>Autenticación de Administrador</h2>
+            <button id="adminLoginBtn">Iniciar Sesión como Administrador (Google)</button>
+            <p id="adminLoginStatus"></p>
+        </div>
+
+        <div id="adminPanel" class="section">
+            <p>Bienvenido, Administrador (<span id="adminUserEmail" class="user-info"></span>) <button id="adminLogoutBtn">Cerrar Sesión</button></p>
+            
+            <div class="section">
+                <h2>Gestión de Usuarios</h2>
+                <button id="listMyInfoBtn">Ver Mi Información de Admin</button>
+                <!-- <button id="listAllUsersBtn">Listar Todos los Usuarios (Requiere Cloud Function)</button> -->
+                <p><em><strong>Nota:</strong> Listar todos los usuarios requiere el SDK de Admin en un backend (ej. Cloud Functions).</em></p>
+                <div id="userInfoArea"></div>
+            </div>
+
+            <div class="section">
+                <h2>Progreso de Series (`progresoSeries`)</h2>
+                <button id="listProgressBtn">Listar Todos los Progresos</button>
+                <button id="deleteAllProgressBtn" class="danger">Eliminar TODOS los Progresos</button>
+                <ul id="progressList"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Estadísticas de Series (`estadisticasSeries`)</h2>
+                <button id="viewStatsBtn">Ver Estadísticas Globales</button>
+                <button id="deleteStatsBtn" class="danger">Eliminar Documento de Estadísticas</button>
+                <div id="statsArea"></div>
+            </div>
+            
+            <div id="statusMessage" class="status-message hidden"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getFirestore, collection, doc, getDocs, getDoc, deleteDoc, serverTimestamp /* add other functions as needed */ } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+        const fC = { apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0", authDomain: "pfdsuaaug.firebaseapp.com", projectId: "pfdsuaaug", storageBucket: "pfdsuaaug.firebasestorage.app", messagingSenderId: "701797222900", appId: "1:701797222900:web:01836d45db1b35be2bd1a1" };
+        
+        const app = initializeApp(fC);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        const gP = new GoogleAuthProvider();
+
+        // --- CONFIGURACIÓN DE ADMINISTRADOR ---
+        // ¡IMPORTANTE! Reemplaza esto con los UIDs reales de tus administradores.
+        const ADMIN_UIDS = ["TU_UID_DE_ADMIN_AQUI_1", "TU_UID_DE_ADMIN_AQUI_2"]; 
+        const PROGRESO_COLLECTION = "progresoSeries";
+        const STATS_COLLECTION = "estadisticasSeries";
+        const STATS_DOC_ID = "conteoVistasGlobal";
+
+        // Elementos UI
+        const adminAuthDiv = document.getElementById('adminAuth');
+        const adminPanelDiv = document.getElementById('adminPanel');
+        const adminLoginBtn = document.getElementById('adminLoginBtn');
+        const adminLogoutBtn = document.getElementById('adminLogoutBtn');
+        const adminLoginStatus = document.getElementById('adminLoginStatus');
+        const adminUserEmailSpan = document.getElementById('adminUserEmail');
+        
+        const listMyInfoBtn = document.getElementById('listMyInfoBtn');
+        const userInfoArea = document.getElementById('userInfoArea');
+        
+        const listProgressBtn = document.getElementById('listProgressBtn');
+        const deleteAllProgressBtn = document.getElementById('deleteAllProgressBtn');
+        const progressListUl = document.getElementById('progressList');
+
+        const viewStatsBtn = document.getElementById('viewStatsBtn');
+        const deleteStatsBtn = document.getElementById('deleteStatsBtn');
+        const statsArea = document.getElementById('statsArea');
+        const statusMessageDiv = document.getElementById('statusMessage');
+
+        // --- LÓGICA DE AUTENTICACIÓN Y ESTADO DE ADMIN ---
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                if (ADMIN_UIDS.includes(user.uid)) {
+                    adminAuthDiv.classList.remove('active');
+                    adminPanelDiv.classList.add('active');
+                    adminUserEmailSpan.textContent = user.email || user.displayName || user.uid;
+                    adminLoginStatus.textContent = '';
+                    showStatus("Sesión de administrador iniciada.", "success");
+                } else {
+                    adminLoginStatus.textContent = 'Acceso denegado. No eres un administrador.';
+                    adminPanelDiv.classList.remove('active');
+                    adminAuthDiv.classList.add('active');
+                    signOut(auth).catch(e => console.error("Error al cerrar sesión de no admin:", e));
+                    showStatus("Acceso denegado. No eres un administrador.", "error");
+                }
+            } else {
+                adminAuthDiv.classList.add('active');
+                adminPanelDiv.classList.remove('active');
+                adminUserEmailSpan.textContent = '';
+                adminLoginStatus.textContent = 'Por favor, inicia sesión.';
+                 userInfoArea.innerHTML = '';
+                 progressListUl.innerHTML = '';
+                 statsArea.innerHTML = '';
+            }
+        });
+
+        adminLoginBtn.addEventListener('click', async () => {
+            try {
+                await signInWithPopup(auth, gP);
+            } catch (error) {
+                console.error("Error de inicio de sesión:", error);
+                adminLoginStatus.textContent = `Error: ${error.message}`;
+                showStatus(`Error de inicio de sesión: ${error.message}`, "error");
+            }
+        });
+
+        adminLogoutBtn.addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                showStatus("Sesión cerrada.", "success");
+            } catch (error) {
+                console.error("Error al cerrar sesión:", error);
+                showStatus(`Error al cerrar sesión: ${error.message}`, "error");
+            }
+        });
+        
+        function showStatus(message, type = "info") { // type can be "success", "error", "info"
+            statusMessageDiv.textContent = message;
+            statusMessageDiv.className = 'status-message'; // Reset classes
+            if (type === "success") statusMessageDiv.classList.add('status-success');
+            else if (type === "error") statusMessageDiv.classList.add('status-error');
+            statusMessageDiv.classList.remove('hidden');
+            setTimeout(() => statusMessageDiv.classList.add('hidden'), 5000);
+        }
+
+        // --- GESTIÓN DE USUARIOS (Limitado) ---
+        listMyInfoBtn.addEventListener('click', () => {
+            const user = auth.currentUser;
+            userInfoArea.innerHTML = ''; // Clear previous
+            if (user && ADMIN_UIDS.includes(user.uid)) {
+                const ul = document.createElement('ul');
+                const liUid = document.createElement('li');
+                liUid.innerHTML = `<strong>UID:</strong> <code>${user.uid}</code>`;
+                ul.appendChild(liUid);
+                const liEmail = document.createElement('li');
+                liEmail.innerHTML = `<strong>Email:</strong> <code>${user.email || 'No disponible'}</code>`;
+                ul.appendChild(liEmail);
+                const liName = document.createElement('li');
+                liName.innerHTML = `<strong>Nombre:</strong> <code>${user.displayName || 'No disponible'}</code>`;
+                ul.appendChild(liName);
+                userInfoArea.appendChild(ul);
+            } else {
+                userInfoArea.textContent = 'No hay información de administrador disponible o no estás autenticado como admin.';
+            }
+        });
+
+        // --- GESTIÓN DE PROGRESO DE SERIES ---
+        listProgressBtn.addEventListener('click', async () => {
+            progressListUl.innerHTML = '<li>Cargando progresos...</li>';
+            try {
+                const querySnapshot = await getDocs(collection(db, PROGRESO_COLLECTION));
+                progressListUl.innerHTML = ''; // Clear
+                if (querySnapshot.empty) {
+                    progressListUl.innerHTML = '<li>No se encontraron documentos de progreso.</li>';
+                    return;
+                }
+                querySnapshot.forEach(docSnap => {
+                    const data = docSnap.data();
+                    const li = document.createElement('li');
+                    let progressInfo = `<strong>Serie Base:</strong> ${data.serieNombreBase || 'N/A'} <br>
+                                        <strong>UID Usuario:</strong> ${data.userId || 'N/A'} <br>
+                                        <strong>Cap. Global:</strong> ${data.capituloGlobalIndex !== undefined ? data.capituloGlobalIndex : 'N/A'} | 
+                                        <strong>Tiempo:</strong> ${data.tiempo !== undefined ? Math.round(data.tiempo) : 'N/A'}s <br>
+                                        <strong>Temporada Actual:</strong> ${data.serieTemporadaActualNombre || data.serieNombre || 'N/A'}`;
+                    
+                    li.innerHTML = `<div><code>ID Doc: ${docSnap.id}</code><br>${progressInfo}</div>`;
+                    
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.textContent = 'Eliminar';
+                    deleteBtn.classList.add('danger');
+                    deleteBtn.onclick = async () => {
+                        if (confirm(`¿Seguro que quieres eliminar el progreso con ID: ${docSnap.id}?`)) {
+                            try {
+                                await deleteDoc(doc(db, PROGRESO_COLLECTION, docSnap.id));
+                                showStatus(`Progreso ${docSnap.id} eliminado. Refresca la lista.`, "success");
+                                listProgressBtn.click(); // Refresh list
+                            } catch (e) {
+                                console.error("Error eliminando progreso:", e);
+                                showStatus(`Error eliminando progreso ${docSnap.id}: ${e.message}`, "error");
+                            }
+                        }
+                    };
+                    li.appendChild(deleteBtn);
+                    progressListUl.appendChild(li);
+                });
+            } catch (e) {
+                console.error("Error listando progresos:", e);
+                progressListUl.innerHTML = `<li>Error al cargar: ${e.message}</li>`;
+                showStatus(`Error listando progresos: ${e.message}`, "error");
+            }
+        });
+
+        deleteAllProgressBtn.addEventListener('click', async () => {
+            if (!confirm("¿ESTÁS ABSOLUTAMENTE SEGURO de que quieres eliminar TODOS los documentos de progreso? Esta acción es irreversible.")) {
+                return;
+            }
+            if (!confirm("CONFIRMACIÓN FINAL: ¿Realmente quieres borrar toda la colección de progreso?")) {
+                return;
+            }
+            showStatus("Eliminando todos los progresos... esto puede tardar.", "info");
+            try {
+                const querySnapshot = await getDocs(collection(db, PROGRESO_COLLECTION));
+                const deletePromises = [];
+                querySnapshot.forEach(docSnap => {
+                    deletePromises.push(deleteDoc(doc(db, PROGRESO_COLLECTION, docSnap.id)));
+                });
+                await Promise.all(deletePromises);
+                progressListUl.innerHTML = '<li>Todos los progresos han sido eliminados.</li>';
+                showStatus("Todos los documentos de progreso eliminados.", "success");
+            } catch (e) {
+                console.error("Error eliminando todos los progresos:", e);
+                showStatus(`Error eliminando todos los progresos: ${e.message}`, "error");
+            }
+        });
+
+        // --- GESTIÓN DE ESTADÍSTICAS ---
+        viewStatsBtn.addEventListener('click', async () => {
+            statsArea.innerHTML = 'Cargando estadísticas...';
+            try {
+                const docRef = doc(db, STATS_COLLECTION, STATS_DOC_ID);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    statsArea.innerHTML = `<pre>${JSON.stringify(docSnap.data(), null, 2)}</pre>`;
+                } else {
+                    statsArea.innerHTML = 'No se encontró el documento de estadísticas globales.';
+                }
+            } catch (e) {
+                console.error("Error viendo estadísticas:", e);
+                statsArea.innerHTML = `Error al cargar: ${e.message}`;
+                showStatus(`Error viendo estadísticas: ${e.message}`, "error");
+            }
+        });
+
+        deleteStatsBtn.addEventListener('click', async () => {
+            if (confirm(`¿Seguro que quieres eliminar el documento de estadísticas globales ('${STATS_DOC_ID}')?`)) {
+                try {
+                    await deleteDoc(doc(db, STATS_COLLECTION, STATS_DOC_ID));
+                    statsArea.innerHTML = 'Documento de estadísticas eliminado.';
+                    showStatus(`Documento de estadísticas '${STATS_DOC_ID}' eliminado.`, "success");
+                } catch (e) {
+                    console.error("Error eliminando estadísticas:", e);
+                    showStatus(`Error eliminando estadísticas: ${e.message}`, "error");
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
