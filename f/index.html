@@ -47,6 +47,7 @@
         #usac{margin-bottom:20px}
         #usac h2{font-size:1.5em;margin-bottom:10px}
         #t10smv-c{margin-bottom:20px}
+        /* CAMBIO: Texto del título */
         #t10smv-c h2{font-size:1.5em;margin-bottom:10px}
         #selector-series{text-align:center;margin-bottom:20px}
         #selector-series h2{margin-bottom:10px}
@@ -85,6 +86,7 @@
                 </div>
 
                 <div id="t10smv-c">
+                    <!-- CAMBIO: Texto del título -->
                     <h2>Las 10 series más escuchadas</h2>
                     <ul id="t10l" class="sl"></ul>
                 </div>
@@ -143,7 +145,7 @@
             EEL = document.getElementById('en-espanol'),CDL = document.getElementById('con-doblaje'),
             SDP1 = 'https://dl.dropbox.com/',SDP2 = 'scl/fi/q5gd1j2lor3fbe6dtv15c/series.json?rlkey=vpgalrx1bbqhjy513q9qr9jvp&dl=1',SDP3 = 'scl/fi/725dxvrb9i69xd4td620v/doblaje.json?rlkey=4elbmhb2ruq76jsi4ohfcp7we&dl=1',
             A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),M = document.getElementById("sM"),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
-            T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal";
+            T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal"; // CVD podría ser conteoReproduccionesGlobal
             
         let TII,IP = !1,CSD = [],CLI = 0,CCI = 0,CP = 0,S,ST,SD = SDP1 + SDP2,TS_C = [];
 
@@ -151,10 +153,82 @@
         onAuthStateChanged(auth,u=>{const aST=document.querySelector('#as p');if(u){gSI.classList.add('h');sO.classList.remove('h');if(aST)aST.textContent=`¡Hola de nuevo! Tu progreso se guardará automáticamente.`;UCW()}else{gSI.classList.remove('h');sO.classList.add('h');if(aST)aST.textContent=`¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;UCW()}});
         gSI.addEventListener('click',sWGi);sO.addEventListener('click',sOG);
         const FT=t=>{const m=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(m)}:${PZ(s)}`},PZ=n=>(n<10?'0':'')+n,
+        
+        // CAMBIO: GP guarda usando el nombre base de la serie para el ID del documento
         GP=async nSFull=>{if(!S||!auth.currentUser)return;const t=A.currentTime;try{const u=auth.currentUser;const baseSN=nSFull.split(', temporada')[0].trim();const p={serieNombre:nSFull,temporadaNombre:ST?ST.nombre:null,capituloIndex:CCI,tiempo:t,idiomaIndex:CLI,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`),p);UCW()}catch(e){console.error("Error guardando progreso:",e)}},
+        
+        // CAMBIO: RP ahora solo recupera datos, la lógica de qué hacer con ellos está en O.
+        // nSFull es el nombre completo de la serie que se intenta abrir.
         RP=async nSFull=>{if(!auth.currentUser)return null;const baseSN=nSFull.split(', temporada')[0].trim();try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`));if(dS.exists()){return dS.data()}else{return null}}catch(e){console.error("Error restaurando progreso:",e);return null}},
+        
         C=()=>{S&&GP(S.nombre);M.style.display="none";M.setAttribute("aria-hidden","true");A.pause();A.src='';MC_DIV.classList.remove('h');clearInterval(TII);IP=!1;PB.textContent='Reproducir';CP=A.currentTime;dFT(M);SEL_SER_DIV.style.display="block";document.getElementById('as').style.display="block"},
-        O=async s_clicked=>{let seriesToLoad = s_clicked; ST = null; const progressData = await RP(s_clicked.nombre); if (progressData && progressData.serieNombre && progressData.serieNombre !== s_clicked.nombre) { const seriesFromProgress = TS_C.find(serie => serie.nombre === progressData.serieNombre); if (seriesFromProgress) { seriesToLoad = seriesFromProgress; } } S = seriesToLoad; IP = !1; CLI = 0; CCI = 0; CP = 0; CSD = []; LI(S); LL(S); const baseNameOfS = S.nombre.split(', temporada')[0].trim(); const allSeasonsOfS = TS_C.filter(item => item.nombre.split(', temporada')[0].trim() === baseNameOfS); if (allSeasonsOfS.length > 1) { const sortedSeasons = OTS(allSeasonsOfS); LT(sortedSeasons); TS.value = S.nombre; ST = S; document.getElementById('tasc').classList.remove('h'); } else { document.getElementById('tasc').classList.add('h'); } LCF(S); if (progressData && progressData.serieNombre === S.nombre) { CCI = progressData.capituloIndex; CP = progressData.tiempo; CLI = progressData.idiomaIndex || 0; CS.value = CCI; if (LS.options.length > 0) LS.value = CLI; } else { CP = 0; } A.currentTime = CP; try { await A.play(); IP = !0; PB.textContent = 'Pausar'; PB.setAttribute('aria-label', 'Pausar'); } catch(e) { console.warn("Reproducción automática bloqueada o fallida:", e); IP = !1; PB.textContent = 'Reproducir'; PB.setAttribute('aria-label', 'Reproducir'); } MC_DIV.classList.add('h'); M.style.display="block"; M.setAttribute("aria-hidden","false"); const modalContent = M.querySelector('.mc'); if(modalContent) modalContent.focus(); eFT(M); SEL_SER_DIV.style.display="none"; document.getElementById('as').style.display="none"; },
+        
+        // CAMBIO: Nueva lógica en O para manejar el progreso de la "última temporada escuchada" de una serie base.
+        O=async s_clicked=>{ // s_clicked es el objeto de la serie/temporada en la que el usuario hizo clic
+            let seriesToLoad = s_clicked; // Por defecto, cargamos la que se clickeó
+            ST = null; 
+
+            const progressData = await RP(s_clicked.nombre); // Intenta obtener progreso para la serie base
+
+            if (progressData && progressData.serieNombre && progressData.serieNombre !== s_clicked.nombre) {
+                // Hay progreso guardado, y es para una temporada DIFERENTE de la misma serie base
+                const seriesFromProgress = TS_C.find(serie => serie.nombre === progressData.serieNombre);
+                if (seriesFromProgress) {
+                    seriesToLoad = seriesFromProgress; // Cambiamos para cargar la temporada del progreso guardado
+                }
+            }
+            
+            S = seriesToLoad; // S será la serie/temporada que efectivamente se va a configurar y reproducir
+            IP = !1; CLI = 0; CCI = 0; CP = 0; CSD = [];
+
+            LI(S); // Carga información de la serie S
+            LL(S); // Carga idiomas de la serie S
+
+            // Configura el selector de temporadas si S es parte de una serie multi-temporada
+            const baseNameOfS = S.nombre.split(', temporada')[0].trim();
+            const allSeasonsOfS = TS_C.filter(item => item.nombre.split(', temporada')[0].trim() === baseNameOfS);
+            
+            if (allSeasonsOfS.length > 1) {
+                const sortedSeasons = OTS(allSeasonsOfS);
+                LT(sortedSeasons); // Popula el dropdown de temporadas
+                TS.value = S.nombre; // Selecciona la temporada actual (S.nombre) en el dropdown
+                ST = S; // Establece el contexto de la temporada actual
+                document.getElementById('tasc').classList.remove('h');
+            } else {
+                document.getElementById('tasc').classList.add('h'); // Oculta el selector si solo hay una "temporada"
+            }
+
+            LCF(S); // Carga capítulos y configura el audio para S. Usa CP para A.currentTime.
+
+            if (progressData && progressData.serieNombre === S.nombre) {
+                // Si el progreso recuperado coincide con la serie que vamos a cargar (seriesToLoad/S)
+                CCI = progressData.capituloIndex;
+                CP = progressData.tiempo; // CP se usará en LCF para A.currentTime
+                CLI = progressData.idiomaIndex || 0;
+                CS.value = CCI; // Actualiza dropdown de capítulos
+                if (LS.options.length > 0) LS.value = CLI; // Actualiza dropdown de idioma si existe
+            } else {
+                // No hay progreso, o el progreso era de una temporada que no pudimos identificar/cargar
+                CP = 0; // Empezar desde el inicio
+            }
+            
+            A.currentTime = CP; // Asegurarse de que el tiempo se establece después de LCF
+            
+            // LCF llama a A.load(). Intentamos reproducir.
+            try {
+                await A.play();
+                IP = !0; PB.textContent = 'Pausar'; PB.setAttribute('aria-label', 'Pausar');
+            } catch(e) {
+                console.warn("Reproducción automática bloqueada o fallida:", e);
+                IP = !1; PB.textContent = 'Reproducir'; PB.setAttribute('aria-label', 'Reproducir');
+            }
+            
+            MC_DIV.classList.add('h'); M.style.display="block"; M.setAttribute("aria-hidden","false");
+            const modalContent = M.querySelector('.mc');
+            if(modalContent) modalContent.focus();
+            eFT(M); SEL_SER_DIV.style.display="none"; document.getElementById('as').style.display="none";
+        },
+
         FD=async()=>{try{const t=await fetch(SD);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();TS_C=e.series||[];return TS_C}catch(t){console.error("Error fetching series data:", t);TS_C=[];return[]}},
         OTS=a=>([...a].sort((x,y)=>{const gtn=nm=>{const p=nm.split(', temporada ');if(p.length>1){const n=parseInt(p[1]);return isNaN(n)?Infinity:n}return 1};const nX=gtn(x.nombre),nY=gtn(y.nombre);return nX!==nY?nX-nY:x.nombre.localeCompare(y.nombre)})),
         RCAS=s_a=>{const t=document.getElementById('coc');t.innerHTML="";if(!s_a||s_a.length===0){t.innerHTML="<p>No hay series.</p>";return}
@@ -163,33 +237,34 @@
         pO_s.forEach(pO=>{const h2=document.createElement('h2');h2.textContent=pO;t.appendChild(h2);const ul=document.createElement('ul');ul.classList.add('sl');
         Object.keys(sAg).sort((a,b)=>a.localeCompare(b,'es',{sensitivity:'base'})).forEach(nB=>{const sD=sAg[nB].filter(sE=>sE.pais_origen===pO);
         if(sD.length>0){const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=nB;
-        btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];O(pT)});
+        btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];O(pT)}); // O(pT) ya maneja la lógica de temporadas y progreso
         btn.setAttribute('tabindex','0');btn.classList.add('b');li.appendChild(btn);ul.appendChild(li)}});t.appendChild(ul)});UCW()},
         LUSA=sa=>{if(!USAL||!sa||sa.length===0){if(USAL)USAL.innerHTML="<li>No hay series nuevas.</li>";return}
         USAL.innerHTML='';const u20=sa.slice(-20).reverse();
         u20.forEach(s_i=>{const li=document.createElement('li');const btn=document.createElement('button');btn.textContent=s_i.nombre;btn.classList.add('b');
-        btn.addEventListener('click',()=>{O(s_i)});
+        btn.addEventListener('click',()=>{O(s_i)}); // O(s_i) ya maneja la lógica de temporadas y progreso
         li.appendChild(btn);USAL.appendChild(li)})},
         RVS_C=async sNC=>{if(!sNC)return;const sNB=sNC.split(', temporada')[0].trim();if(!sNB)return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}}catch(e){console.error("Error incrementando vistas:",e)}},
         CT10SMV=async()=>{if(!T10L)return;T10L.innerHTML='<li>Cargando...</li>';try{const cDR=doc(db,ESD,CVD);const dSnp=await getDoc(cDR);if(!dSnp.exists()||!dSnp.data().vistasPorSerie){T10L.innerHTML="<li>Aún no hay datos.</li>";return}
         const vPSM=dSnp.data().vistasPorSerie;const sCA=Object.entries(vPSM).map(([nC,v])=>({n:nC.replace(/_/g,'.'),v})).sort((a,b)=>b.v-a.v).slice(0,10);
         if(sCA.length===0){T10L.innerHTML="<li>No hay series en el top.</li>";return}
         T10L.innerHTML='';if(!TS_C||TS_C.length===0){T10L.innerHTML="<li>Error: datos de series no disponibles.</li>";return}
-        sCA.forEach(i=>{const sDO_base=TS_C.filter(s=>s.nombre.split(', temporada')[0].trim()===i.n); 
+        sCA.forEach(i=>{const sDO_base=TS_C.filter(s=>s.nombre.split(', temporada')[0].trim()===i.n); // Encuentra todas las temporadas de la serie base
         if(sDO_base.length > 0){
-            const sDO = OTS(sDO_base)[0]; 
+            const sDO = OTS(sDO_base)[0]; // Toma la primera temporada (o la principal) para el click
             const li=document.createElement('li'),btn=document.createElement('button');
+            // CAMBIO: Texto del botón
             btn.textContent=`${i.n}, reproducida ${i.v} ${i.v===1?'vez':'veces'}`;
             btn.classList.add('b');
-            btn.addEventListener('click',()=>{O(sDO)}); 
+            btn.addEventListener('click',()=>{O(sDO)}); // O(sDO) ya maneja la lógica de temporadas y progreso
             li.appendChild(btn);T10L.appendChild(li)}
         });
         if(T10L.children.length===0&&sCA.length>0)T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>";
         if(T10L.children.length===0&&sCA.length===0)T10L.innerHTML="<li>No hay series en el top.</li>"}catch(e){console.error("Error cargando top 10:", e);T10L.innerHTML="<li>Error al cargar.</li>"}},
-        LT=s_a=>{TS.innerHTML='';s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){ST=sS;O(sS)}}},
+        LT=s_a=>{TS.innerHTML='';/*document.getElementById('tasc').classList.remove('h'); -- Se maneja en O() */ s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){ST=sS;O(sS)}}}, // ST=sS es importante aquí para el contexto. O(sS) cargará esa temporada.
         LI=s_d=>{const t=document.getElementById('si');let rH='';if(SD===SDP1+SDP2&&s_d.reparto){rH=`<div><strong>Reparto:</strong> ${s_d.reparto.join(", ")}</div>`}S=s_d;t.innerHTML=`<h2>${s_d.nombre}</h2><div><strong>Género:</strong> ${s_d.genero}</div><div><strong>Año:</strong> ${s_d.anio}</div>${rH}<div><strong>País:</strong> ${s_d.pais_origen}</div><div><strong>Episodios:</strong> ${s_d.cantidad_episodios}</div>${s_d.sinopsis?`<div><strong>Sinopsis:</strong> ${s_d.sinopsis}</div>`:''}`},
         LL=s_d=>{LS.innerHTML='';s_d.enlaces.length>1?(s_d.enlaces.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.idioma,LS.appendChild(n)}),LC.classList.remove('h')):LC.classList.add('h')},
-        LCF=s_d=>{CS.innerHTML='';CSD=s_d.capitulos;CSD.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCI;UC();if(s_d.enlaces[CLI]){A.src=s_d.enlaces[CLI].enlace}else if(s_d.enlaces[0]){A.src=s_d.enlaces[0].enlace;CLI=0;if(LS.options.length > 0)LS.value=0}else{A.src='';console.error("No hay enlaces de audio para esta serie/idioma")} A.load();A.currentTime=CP; clearInterval(TII);UT();TII=setInterval(UT,1e3)},
+        LCF=s_d=>{CS.innerHTML='';CSD=s_d.capitulos;CSD.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCI;UC();if(s_d.enlaces[CLI]){A.src=s_d.enlaces[CLI].enlace}else if(s_d.enlaces[0]){A.src=s_d.enlaces[0].enlace;CLI=0;LS.value=0}else{A.src='';console.error("No hay enlaces de audio para esta serie/idioma")} A.load();A.currentTime=CP;/*IP&&A.play(); -- La reproducción se maneja en O() o TP()*/ clearInterval(TII);UT();TII=setInterval(UT,1e3)},
         UC=()=>{if(CSD&&CSD[CCI]){CI.textContent=IP?`Reproduciendo: ${CSD[CCI].titulo}`:`${CSD[CCI].titulo}`}else{CI.textContent="Cargando..."}},
         UT=()=>{const t=A.currentTime;if(!CSD||CSD.length===0)return;const e=GCI(t);if(e<0||e>=CSD.length||!CSD[e])return;const n=CSD[e],i=n.inicio/1e3,o=n.fin/1e3,r=FT(t-i),c=FT(o-i);if(CSD[CCI]){CI.textContent=IP?`Reproduciendo: ${CSD[CCI].titulo}`:`${CSD[CCI].titulo}`}TI.textContent=`${r} / ${c}`},
         TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir')):(A.play().then(()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar')}).catch(e=>{console.warn("Error al reproducir en TP:",e)}))},
@@ -199,40 +274,34 @@
         GCI=t=>{let e=0;if(!CSD||CSD.length===0)return 0;CSD.forEach((n,i)=>{if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3)e=i}});return e},
         PP=()=>{let t=CCI;t>0&&(t--,CS.value=t,PC())},NP=()=>{let t=CCI;t<CSD.length-1&&(t++,CS.value=t,PC())},
         CL=()=>{CP=A.currentTime;CLI=parseInt(LS.value);S&&LCF(S); A.currentTime=CP; if(IP) A.play().catch(e=>console.warn("Error al reanudar en CL:",e))},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
-        DCW=async s_n_full=>{if(!auth.currentUser)return;try{const u=auth.currentUser;const baseSN=s_n_full.split(', temporada')[0].trim();await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`));UCW()}catch(e){console.error("Error eliminando progreso:",e)}},
-        UCW=async()=>{CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
-        document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",30));const qS=await getDocs(q);const c_all=[];qS.forEach(d=>{c_all.push({...d.data(),id:d.id})}); 
         
-        const pAgr={};
-        for(const pActual of c_all){
-            const bSN=pActual.serieNombre.split(', temporada')[0].trim();
-            const pExistente=pAgr[bSN];
-            if(!pExistente || (pExistente.ultimaActualizacion && pActual.ultimaActualizacion && pActual.ultimaActualizacion.toDate() > pExistente.ultimaActualizacion.toDate()) || (!pExistente.ultimaActualizacion && pActual.ultimaActualizacion)){
-                pAgr[bSN]=pActual;
-            }
-        }
-        const c=Object.values(pAgr);
-
+        // CAMBIO: DCW usa el nombre base de la serie para eliminar el documento de progreso.
+        DCW=async s_n_full=>{if(!auth.currentUser)return;try{const u=auth.currentUser;const baseSN=s_n_full.split(', temporada')[0].trim();await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${baseSN}`));UCW()}catch(e){console.error("Error eliminando progreso:",e)}},
+        
+        UCW=async()=>{CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
+        document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",30));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})}); // Los documentos ya tienen el ID base en su clave, pero el campo serieNombre es el completo.
         if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";return}
-        if(TS_C.length === 0) { 
+        // const s_all=TS_C.length>0?TS_C:await FD(); // Asegurarse que TS_C está cargado
+        if(TS_C.length === 0) { // Si TS_C no está cargado, cárgalo ahora.
             await FD();
-            if(TS_C.length === 0) {
+            if(TS_C.length === 0) { // Si sigue vacío después de intentar cargar
                  CWL.innerHTML="<li>Error al cargar datos de series para mostrar progreso.</li>";
                  return;
             }
         }
         const s_all = TS_C;
-        for(const t of c){ 
-            const ser=s_all.find(e=>e.nombre===t.serieNombre); 
+
+        for(const t of c){ // t.serieNombre es el nombre completo de la serie/temporada guardada.
+            const ser=s_all.find(e=>e.nombre===t.serieNombre); // Busca la serie/temporada específica guardada.
             if(ser&&ser.capitulos&&ser.capitulos[t.capituloIndex]){const cap=ser.capitulos[t.capituloIndex],ini=cap.inicio/1e3,fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
             li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${ser.nombre}, ${cap.titulo}, Restante: ${durR}`;
-            btn.addEventListener('click',()=>{O(ser)}); 
+            btn.addEventListener('click',()=>{O(ser)}); // O(ser) se encargará de cargar esta serie/temporada específica.
             btn.classList.add('b');li.appendChild(btn);
             const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombre)});li.appendChild(delB);CWL.appendChild(li)}}
         if(CWL.children.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){console.error("Error al cargar progreso UCW:",e);CWL.innerHTML="<li>Error al cargar progreso.</li>"}};
         CBC.addEventListener('click',C);window.addEventListener('click',t=>{t.target===M&&C()});
         CS.addEventListener('change',()=>{S&&GP(S.nombre);PC()});
-        A.addEventListener('pause',()=>{if(S && M.style.display === "block") GP(S.nombre)}); 
+        A.addEventListener('pause',()=>{if(S && M.style.display === "block") GP(S.nombre)}); // Solo guardar si el modal está activo
         A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar');if(S&&S.nombre)RVS_C(S.nombre)});
         LS.addEventListener('change',CL);PB.addEventListener('click',TP);
         document.getElementById('fb').addEventListener('click',F);document.getElementById('bb').addEventListener('click',B);REB.addEventListener('click',RE);
@@ -241,14 +310,16 @@
         const CSRS=()=>{FD().then(s_d=>{RCAS(s_d);if(s_d&&s_d.length>0)LUSA(s_d);CT10SMV()}).catch(e=>{console.error("Error en CSRS:",e)})};
         EEL.addEventListener('click',e=>{e.preventDefault();SD=SDP1+SDP2;CSRS()});
         CDL.addEventListener('click',e=>{e.preventDefault();SD=SDP1+SDP3;CSRS()});
+        
+        // Asegurar que TS_C se carga antes de UCW y CT10SMV
         window.onload=async ()=>{
-            await FD(); 
-            CSRS(); 
-            UCW();  
+            await FD(); // Carga los datos de series primero
+            CSRS(); // Esto ahora usará el TS_C ya cargado (RCAS, LUSA, CT10SMV)
+            UCW();  // UCW también usará el TS_C ya cargado
         }; 
         setInterval(()=>{if(M.style.display==="block"&&S&&auth.currentUser)GP(S.nombre)},5e3);
-        function cFTrpF(el){let fe=el.querySelectorAll('a[href]:not([tabindex="-1"]),button:not([disabled]):not([tabindex="-1"]),textarea:not([disabled]):not([tabindex="-1"]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]):not([tabindex="-1"])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href]:not([tabindex="-1"]),button:not([disabled]):not([tabindex="-1"]),textarea:not([disabled]):not([tabindex="-1"]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]):not([tabindex="-1"])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
-        let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=cFTrpF(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
+        function createFocusTrap(el){let fe=el.querySelectorAll('a[href]:not([tabindex="-1"]),button:not([disabled]):not([tabindex="-1"]),textarea:not([disabled]):not([tabindex="-1"]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]):not([tabindex="-1"])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href]:not([tabindex="-1"]),button:not([disabled]):not([tabindex="-1"]),textarea:not([disabled]):not([tabindex="-1"]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]):not([tabindex="-1"])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
+        let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=createFocusTrap(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
     </script>
 </body>
 </html>
