@@ -54,7 +54,7 @@
             font-size: 1em;
             background-color: var(--pc);
             color: var(--w);
-            margin-top: 5px;
+            margin-top: 5px; /* Espacio para botones de auth */
         }
 
         .b:hover,
@@ -96,20 +96,23 @@
             background-color: rgba(0, 0, 0, .7)
         }
 
-        .mc {
+        .mc { /* Contenedor principal de contenido de series */
             background-color: var(--w);
+            /* margin: 15% auto; Ya no aplica el margen superior si auth está arriba */
             padding: 20px;
             border: 1px solid #888;
-            width: 100%;
+            width: 100%; /* Ajustado para ocupar el espacio disponible */
             position: relative;
             border-radius: 10px;
+            /* padding-top: 60px; Ya no es necesario si el header interno se simplifica */
+            /* padding-bottom: 70px; El footer del reproductor ya maneja su padding */
         }
         
-        .m .mc {
-             margin: 15% auto;
-             padding-top: 60px;
-             padding-bottom: 70px;
-             width: 90%;
+        .m .mc { /* Estilos específicos para el mc del modal */
+             margin: 15% auto; /* Restaurar margen para el modal */
+             padding-top: 60px; /* Restaurar padding para el modal */
+             padding-bottom: 70px; /* Restaurar padding para el modal */
+             width: 90%; /* Restaurar ancho para el modal */
         }
 
 
@@ -219,12 +222,12 @@
                 font-size: 1em
             }
 
-            .m .mc {
+            .m .mc { /* Ajuste para modal en pantallas pequeñas */
                 margin: 20% auto
             }
         }
 
-        #as {
+        #as { /* Auth Section */
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #eee;
@@ -235,7 +238,7 @@
         }
 
 
-        #cw {
+        #cw { /* Continuar Viendo */
             margin-bottom: 20px
         }
 
@@ -257,7 +260,7 @@
             margin-right: 5px
         }
 
-        #usac {
+        #usac { /* Últimas Series Agregadas Contenedor */
             margin-bottom: 20px;
         }
 
@@ -304,11 +307,11 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
         }
 
         #selector-series li {
-            margin: 5px 10px;
+            margin: 5px 10px; /* Ajuste de margen para wrap */
         }
 
         #selector-series a {
@@ -331,12 +334,14 @@
 
 <body>
     <div class="c">
+        <!-- SECCIÓN DE AUTENTICACIÓN Y BIENVENIDA -->
         <div id="as">
             <p>¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:</p>
             <button id="gsi" class="b">Iniciar sesión con Google</button>
             <button id="so" class="b h">Cerrar sesión</button>
         </div>
 
+        <!-- SELECTOR DE TIPO DE SERIES -->
         <div id="selector-series">
             <h2>¿Qué quieres escuchar?</h2>
             <ul>
@@ -345,25 +350,31 @@
             </ul>
         </div>
 
+        <!-- CONTENEDOR PRINCIPAL DE SERIES -->
         <div id="mc">
+            <!-- Ya no hay header aquí, se movió la autenticación -->
             <main>
+                <!-- CONTINUAR ESCUCHANDO -->
                 <div id="cw">
                     <h2>Continuar escuchando</h2>
                     <ul id="cwl"></ul>
                 </div>
 
+                <!-- ÚLTIMAS SERIES AGREGADAS (NUEVA POSICIÓN) -->
                 <div id="usac">
                     <h2>Últimas Series Agregadas</h2>
                     <ul id="usal" class="sl"></ul> 
                 </div>
                 
+                <!-- CONTENIDO ORIGINAL POR PAÍS / LISTA DE SERIES -->
                 <div id="coc"></div>
             </main>
         </div>
     </div>
 
+    <!-- MODAL DE DETALLES Y REPRODUCTOR DE SERIE -->
     <div id="sM" class="m" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-        <div class="mc" tabindex="-1">
+        <div class="mc" tabindex="-1"> <!-- mc del modal -->
             <header class="fh">
                 <h2 id="modal-title">Detalles de la Serie</h2>
                 <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
@@ -409,27 +420,27 @@
             db = getFirestore(app),
             auth = getAuth(app),
             gP = new GoogleAuthProvider,
-            gSI = document.getElementById('gsi'),
-            sO = document.getElementById('so'),
+            gSI = document.getElementById('gsi'), // Botón Iniciar Sesión
+            sO = document.getElementById('so'),   // Botón Cerrar Sesión
             EN_ESPANOL_LINK = document.getElementById('en-espanol'),
             CON_DOBLAJE_LINK = document.getElementById('con-doblaje'),
             SDP1 = 'https://dl.dropbox.com/',
             SDP2 = 'scl/fi/q5gd1j2lor3fbe6dtv15c/series.json?rlkey=vpgalrx1bbqhjy513q9qr9jvp&dl=1',
             SDP3 = 'scl/fi/725dxvrb9i69xd4td620v/doblaje.json?rlkey=4elbmhb2ruq76jsi4ohfcp7we&dl=1',
             A = document.getElementById('ap'),
-            MC_CONTENT_DIV = document.getElementById('mc'),
-            M = document.getElementById("sM"),
-            CBC = document.getElementById("cb"),
-            PB = document.getElementById('ppb'),
-            CS = document.getElementById('c'),
-            LC = document.getElementById('lasc'),
-            LS = document.getElementById('l'),
-            CI = document.getElementById('ci'),
-            TI = document.getElementById('ti'),
-            CWL = document.getElementById('cwl'),
-            TS = document.getElementById('t'),
+            MC_CONTENT_DIV = document.getElementById('mc'), // Contenedor principal de series, no el del modal.
+            M = document.getElementById("sM"),    // Modal
+            CBC = document.getElementById("cb"),  // Botón Cerrar Modal
+            PB = document.getElementById('ppb'),  // Botón Play/Pause
+            CS = document.getElementById('c'),    // Select Capítulos
+            LC = document.getElementById('lasc'), // Contenedor Select Lenguaje
+            LS = document.getElementById('l'),    // Select Lenguaje
+            CI = document.getElementById('ci'),   // Info Capítulo
+            TI = document.getElementById('ti'),   // Info Tiempo
+            CWL = document.getElementById('cwl'), // Lista Continuar Viendo
+            TS = document.getElementById('t'),    // Select Temporadas
             SELECTOR_SERIES_DIV = document.getElementById('selector-series'),
-            USAL = document.getElementById('usal');
+            USAL = document.getElementById('usal'); // Últimas Series Agregadas Lista
 
         let TII,
             IP = !1,
@@ -443,7 +454,8 @@
 
         const sWGi = async () => {
                 try {
-                    const r = await signInWithPopup(auth, gP), u = r.user;
+                    const r = await signInWithPopup(auth, gP),
+                        u = r.user;
                 } catch (e) {}
             },
             sOG = async () => {
@@ -453,17 +465,17 @@
             };
 
         onAuthStateChanged(auth, u => {
-            const aST = document.querySelector('#as p');
+            const authSectionText = document.querySelector('#as p');
             if (u) {
                 gSI.classList.add('h');
                 sO.classList.remove('h');
-                if(aST) aST.textContent = `¡Hola de nuevo! Tu progreso se guardará automáticamente.`;
+                if(authSectionText) authSectionText.textContent = `¡Hola de nuevo! Tu progreso se guardará automáticamente.`;
                 UCW();
             } else {
                 gSI.classList.remove('h');
                 sO.classList.add('h');
-                if(aST) aST.textContent = `¡Te damos la bienvenida! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste,:`;
-                UCW();
+                if(authSectionText) authSectionText.textContent = `¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;
+                UCW(); // Se llama para limpiar la lista de "Continuar viendo" si el usuario cierra sesión
             }
         });
 
@@ -471,12 +483,13 @@
         sO.addEventListener('click', sOG);
 
         const FT = t => {
-                const m = Math.floor(t / 60), s = Math.floor(t % 60);
+                const m = Math.floor(t / 60),
+                    s = Math.floor(t % 60);
                 return `${PZ(m)}:${PZ(s)}`
             },
             PZ = n => (n < 10 ? '0' : '') + n,
             GP = async n => {
-                if (!S || !auth.currentUser) return;
+                if (!S || !auth.currentUser) return; // No guardar si no hay serie o usuario
                 const t = A.currentTime;
                 try {
                     const u = auth.currentUser;
@@ -486,7 +499,7 @@
                 } catch (e) {}
             },
             RP = async (n) => {
-                if (!auth.currentUser) return !1;
+                if (!auth.currentUser) return !1; // No cargar si no hay usuario
                 try {
                     const u = auth.currentUser;
                     const dS = await getDoc(doc(db, "progresoSeries", `${u.uid}_${n}`));
@@ -506,48 +519,52 @@
                     return !1
                 }
             },
-            C = () => {
+            C = () => { // Cerrar modal
                 S && GP(S.nombre);
                 M.style.display = "none";
                 M.setAttribute("aria-hidden", "true");
                 A.pause();
                 A.src = '';
-                MC_CONTENT_DIV.classList.remove('h');
+                MC_CONTENT_DIV.classList.remove('h'); // Mostrar contenido principal de series
                 clearInterval(TII);
                 IP = !1;
                 PB.textContent = 'Reproducir';
                 CP = A.currentTime;
-                disableFocusTrap();
-                SELECTOR_SERIES_DIV.style.display = "block";
-                document.getElementById('as').style.display = "block";
+                disableFocusTrap(M);
+                SELECTOR_SERIES_DIV.style.display = "block"; // Mostrar selector de tipo de series
+                document.getElementById('as').style.display = "block"; // Mostrar sección de auth
             },
-            O = s_param => {
+            O = s => { // Abrir modal
                 ST = null;
-                S = s_param;
+                S = s;
                 IP = !1;
                 CLI = 0;
                 CCI = 0;
-                CP = 0;
+                CP = 0; // Resetear CP al abrir nueva serie/temporada
                 CSD = [];
-                LI(s_param);
-                LL(s_param);
-                LCF(s_param);
-                RP(s_param.nombre).then((pC) => {
-                    if (!pC) A.currentTime = 0;
-                    A.play();
+                LI(s);
+                LL(s);
+                LCF(s);
+                RP(s.nombre).then((progresoCargado) => {
+                    if (progresoCargado) { // Si se cargó progreso, usar ese tiempo
+                        // A.currentTime ya fue seteado en RP
+                    } else {
+                        A.currentTime = 0; // Si no hay progreso, empezar desde el inicio
+                    }
+                    A.play(); // Siempre intentar reproducir después de cargar o no progreso
                 });
-                MC_CONTENT_DIV.classList.add('h');
+                MC_CONTENT_DIV.classList.add('h'); // Ocultar contenido principal de series
                 M.style.display = "block";
                 M.setAttribute("aria-hidden", "false");
                 document.querySelector('#sM .mc').focus();
                 enableFocusTrap(M);
-                SELECTOR_SERIES_DIV.style.display = "none";
-                document.getElementById('as').style.display = "none";
+                SELECTOR_SERIES_DIV.style.display = "none"; // Ocultar selector de tipo de series
+                document.getElementById('as').style.display = "none"; // Ocultar sección de auth
             },
             FD = async () => {
                 try {
                     const t = await fetch(SD);
-                    if (!t.ok) throw new Error(`E: ${t.status}`);
+                    if (!t.ok) throw new Error(`Error! Status: ${t.status}`);
                     const e = await t.json();
                     return e.series
                 } catch (t) {
@@ -563,28 +580,28 @@
                 const nX = gtn(x.nombre), nY = gtn(y.nombre);
                 return nX !== nY ? nX - nY : x.nombre.localeCompare(y.nombre);
             })),
-            RCAS = s_arr => { 
+            RCAS = s => { 
                 const t = document.getElementById('coc');
                 t.innerHTML = "";
-                if (!s_arr || s_arr.length === 0) {
-                    t.innerHTML = "<p>N/A</p>";
+                if (!s || s.length === 0) {
+                    t.innerHTML = "<p>No hay series disponibles para esta selección.</p>";
                     return;
                 }
-                const sA = {}; 
-                s_arr.forEach(s_i => {
-                    const nB = s_i.nombre.split(', temporada')[0].trim(); 
-                    sA[nB] || (sA[nB] = []);
-                    sA[nB].push(s_i)
+                const sAgrup = {}; 
+                s.forEach(serie => {
+                    const nB = serie.nombre.split(', temporada')[0].trim(); 
+                    sAgrup[nB] || (sAgrup[nB] = []);
+                    sAgrup[nB].push(serie)
                 });
-                const pO = [...new Set(s_arr.map(s_i => s_i.pais_origen))].sort(); 
-                pO.forEach(pais => {
+                const pOrigenes = [...new Set(s.map(serie => serie.pais_origen))].sort(); 
+                pOrigenes.forEach(pO => {
                     const h2 = document.createElement('h2');
-                    h2.textContent = pais;
+                    h2.textContent = pO;
                     t.appendChild(h2);
                     const ul = document.createElement('ul');
                     ul.classList.add('sl');
-                    Object.keys(sA).sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' })).forEach(nB => {
-                        const sD = sA[nB].filter(s_i => s_i.pais_origen === pais); 
+                    Object.keys(sAgrup).sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' })).forEach(nB => {
+                        const sD = sAgrup[nB].filter(serie => serie.pais_origen === pO); 
                         if (sD.length > 0) {
                             const li = document.createElement('li'),
                                 btn = document.createElement('button');
@@ -607,12 +624,12 @@
             },
             LUSA = (sa) => { 
                 if (!USAL || !sa || sa.length === 0) {
-                    if(USAL) USAL.innerHTML = "<li>N/A</li>";
+                    if(USAL) USAL.innerHTML = "<li>No hay series nuevas recientemente.</li>";
                     return;
                 }
                 USAL.innerHTML = '';
-                const u20 = sa.slice(-20).reverse();
-                u20.forEach(s_item => {
+                const u20 = sa.slice(-20).reverse(); // Tomar las últimas y revertir para que la más nueva esté arriba
+                u20.forEach(s_item => { // Renombrar s a s_item para evitar conflicto con S global
                     const li = document.createElement('li');
                     const btn = document.createElement('button');
                     btn.textContent = s_item.nombre;
@@ -633,9 +650,10 @@
                     USAL.appendChild(li);
                 });
             },
-            LT = s_array => {
+            LT = s_array => { // Renombrar s a s_array
                 TS.innerHTML = '';
                 document.getElementById('tasc').classList.remove('h');
+                // s_array ya debería estar ordenado por OTS antes de llamar a LT
                 s_array.forEach(serie => { 
                     const tN = serie.nombre.split(', temporada ')[1]; 
                     const opt = document.createElement('option');
@@ -643,19 +661,21 @@
                     opt.textContent = tN ? `Temporada ${tN}` : serie.nombre; 
                     TS.appendChild(opt)
                 });
-                TS.onchange = e => {
+                // Mover el event listener fuera del bucle si es posible, o asegurar que no se acumulen
+                // Como TS.innerHTML se limpia, el listener se añade una vez por cada llamada a LT, lo cual está bien.
+                TS.onchange = e => { // Usar onchange para evitar múltiples listeners si LT se llama repetidamente
                     const sS = s_array.find(serie => serie.nombre === e.target.value); 
-                    sS && (ST = sS, O(sS))
+                    sS && (ST = sS, O(sS)) // ST se setea aquí, es la temporada actual seleccionada
                 };
             },
-            LI = s_data => {
+            LI = s_data => { // Renombrar s a s_data
                 const t = document.getElementById('si');
                 let rHTML = ''; 
-                if (SD === SDP1 + SDP2 && s_data.reparto) {
-                    rHTML = `<div><strong>R:</strong> ${s_data.reparto.join(", ")}</div>`;
+                if (SD === SDP1 + SDP2 && s_data.reparto) { // Verificar que reparto exista
+                    rHTML = `<div><strong>Reparto:</strong> ${s_data.reparto.join(", ")}</div>`;
                 }
-                S = s_data;
-                t.innerHTML = `<h2>${s_data.nombre}</h2><div><strong>G:</strong> ${s_data.genero}</div><div><strong>A:</strong> ${s_data.anio}</div>${rHTML}<div><strong>P:</strong> ${s_data.pais_origen}</div><div><strong>E:</strong> ${s_data.cantidad_episodios}</div>${s_data.sinopsis ? `<div><strong>S:</strong> ${s_data.sinopsis}</div>` : ''}`
+                S = s_data; // S global se setea aquí
+                t.innerHTML = `<h2>${s_data.nombre}</h2><div><strong>Género:</strong> ${s_data.genero}</div><div><strong>Año:</strong> ${s_data.anio}</div>${rHTML}<div><strong>País:</strong> ${s_data.pais_origen}</div><div><strong>Episodios:</strong> ${s_data.cantidad_episodios}</div>${s_data.sinopsis ? `<div><strong>Sinopsis:</strong> ${s_data.sinopsis}</div>` : ''}`
             },
             LL = s_data => { 
                 LS.innerHTML = '';
@@ -671,31 +691,35 @@
                     const n = document.createElement('option');
                     n.value = e, n.textContent = t.titulo, CS.appendChild(n)
                 });
-                CS.value = CCI;
+                CS.value = CCI; // CCI debe estar definido antes de esto (en O o RP)
                 UC();
-                A.src = s_data.enlaces[CLI].enlace;
+                A.src = s_data.enlaces[CLI].enlace; // CLI debe estar definido (en O o RP)
                 A.load();
-                A.currentTime = CP;
+                A.currentTime = CP; // CP debe estar definido (en O o RP)
                 IP && A.play();
                 clearInterval(TII);
                 UT();
                 TII = setInterval(UT, 1e3)
             },
             UC = () => { 
-                if (CSD && CSD[CCI]) {
-                  CI.textContent = IP ? `▶️ ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`
+                if (CSD && CSD[CCI]) { // Verificar que CSD y el índice CCI sean válidos
+                  CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`
                 } else {
-                  CI.textContent = "Cargando...";
+                  CI.textContent = "Cargando capítulo...";
                 }
             },
             UT = () => { 
                 const t = A.currentTime;
-                if (!CSD || CSD.length === 0) return;
+                if (!CSD || CSD.length === 0) return; // Evitar errores si CSD no está cargado
                 const e = GCI(t);
-                 if (e < 0 || e >= CSD.length || !CSD[e]) return;
-                const n = CSD[e], i = n.inicio / 1e3, o = n.fin / 1e3, r = FT(t - i), c = FT(o - i);
-                if (CSD[CCI]) {
-                    CI.textContent = IP ? `▶️ ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`;
+                 if (e < 0 || e >= CSD.length || !CSD[e]) return; // Verificación adicional
+                const n = CSD[e],
+                    i = n.inicio / 1e3,
+                    o = n.fin / 1e3,
+                    r = FT(t - i),
+                    c = FT(o - i);
+                if (CSD[CCI]) { // Verificar de nuevo antes de actualizar
+                    CI.textContent = IP ? `Reproduciendo: ${CSD[CCI].titulo}` : `${CSD[CCI].titulo}`;
                 }
                 TI.textContent = `${r} / ${c}`
             },
@@ -711,13 +735,13 @@
                     A.play();
                     IP = !0; PB.textContent = 'Pausar'; PB.setAttribute('aria-label', 'Pausar');
                     UC();
-                }
+                } else {}
             },
             GCI = t => { 
                 let e = 0;
-                if (!CSD || CSD.length === 0) return 0;
+                if (!CSD || CSD.length === 0) return 0; // Si no hay capítulos, devuelve 0
                 CSD.forEach((n, i) => {
-                    if (n && typeof n.inicio !== 'undefined' && typeof n.fin !== 'undefined') {
+                    if (n && typeof n.inicio !== 'undefined' && typeof n.fin !== 'undefined') { // Verificar que n, inicio y fin existan
                         if (t >= n.inicio / 1e3 && t <= n.fin / 1e3) e = i;
                     }
                 });
@@ -725,10 +749,10 @@
             },
             PP = () => { let t = CCI; t > 0 && (t--, CS.value = t, PC()) }, 
             NP = () => { let t = CCI; t < CSD.length - 1 && (t++, CS.value = t, PC()) }, 
-            CL = () => { CP = A.currentTime; CLI = parseInt(LS.value); S && LCF(S) },
+            CL = () => { CP = A.currentTime; CLI = parseInt(LS.value); S && LCF(S) }, // Asegurar que S exista
             IV = () => { A.volume = Math.min(1, A.volume + .05) }, 
             DV = () => { A.volume = Math.max(0, A.volume - .05) }, 
-            DCW = async s_nombre => {
+            DCW = async s_nombre => { // Renombrar s a s_nombre
                 if (!auth.currentUser) return;
                 try {
                     const u = auth.currentUser;
@@ -738,42 +762,56 @@
             },
             UCW = async () => { 
                 CWL.innerHTML = '';
-                const cwDiv = document.getElementById('cw');
-                if (!auth.currentUser) {
-                    cwDiv.classList.add('h');
+                if (!auth.currentUser) { // Si no hay usuario, limpiar y salir
+                    document.getElementById('cw').classList.add('h'); // Ocultar sección "Continuar Viendo"
                     return;
                 }
-                cwDiv.classList.remove('h');
+                document.getElementById('cw').classList.remove('h'); // Mostrar sección si hay usuario
                 try {
                     const u = auth.currentUser;
-                    const q = query(collection(db, "progresoSeries"), where("userId", "==", u.uid), where("tiempo", ">", 30));
+                    const q = query(collection(db, "progresoSeries"), where("userId", "==", u.uid), where("tiempo", ">", 30)); // Progreso > 30s
+                        
                     const qS = await getDocs(q);
                     const c = [];
-                    qS.forEach(d => { c.push({ ...d.data(), id: d.id }) });
+                    qS.forEach(d => {
+                        c.push({ ...d.data(), id: d.id })
+                    });
 
-                    if (c.length === 0) { CWL.innerHTML = "<li>N/A</li>"; return; }
+                    if (c.length === 0) {
+                        CWL.innerHTML = "<li>No tienes series para continuar escuchando.</li>";
+                        return;
+                    }
                     
-                    const s_all = await FD();
+                    const s_all = await FD(); // s_all: todas las series del JSON
                     for (const t of c) {
                         const ser = s_all.find(e => e.nombre === t.serieNombre);
-                        if (ser && ser.capitulos && ser.capitulos[t.capituloIndex]) {
-                            const cap = ser.capitulos[t.capituloIndex], ini = cap.inicio / 1e3, fin = cap.fin / 1e3, durR = FT(fin - t.tiempo),
-                                li = document.createElement('li'), btn = document.createElement('button');
-                            btn.textContent = `${ser.nombre}, ${cap.titulo}, R: ${durR}`;
-                            btn.addEventListener('click', () => { O(ser); RP(ser.nombre); });
+                        if (ser && ser.capitulos && ser.capitulos[t.capituloIndex]) { // Verificar que la serie y el capítulo existan
+                            const cap = ser.capitulos[t.capituloIndex],
+                                ini = cap.inicio / 1e3,
+                                fin = cap.fin / 1e3,
+                                durR = FT(fin - t.tiempo),
+                                li = document.createElement('li'),
+                                btn = document.createElement('button');
+                            btn.textContent = `${ser.nombre}, ${cap.titulo}, Restante: ${durR}`;
+                            btn.addEventListener('click', () => {
+                                O(ser); // S global se setea dentro de O() o LI()
+                                RP(ser.nombre); // RP necesita que S global ya esté seteado si la serie es diferente a la actual
+                            });
                             btn.classList.add('b');
                             li.appendChild(btn);
                             const delB = document.createElement('button');
-                            delB.textContent = 'X';
+                            delB.textContent = 'Eliminar';
                             delB.classList.add('b');
-                            delB.style.backgroundColor = '#f44336';
+                            delB.style.backgroundColor = '#f44336'; // Color rojo para eliminar
                             delB.addEventListener('click', (e) => { e.stopPropagation(); DCW(t.serieNombre) });
                             li.appendChild(delB);
                             CWL.appendChild(li)
                         }
                     }
-                    if (CWL.children.length === 0) { CWL.innerHTML = "<li>N/A</li>"; }
-                } catch (e) { CWL.innerHTML = "<li>Error</li>"; }
+                    if (CWL.children.length === 0) { // Si después de filtrar no quedó nada
+                         CWL.innerHTML = "<li>No tienes series para continuar escuchando (o el progreso es muy corto).</li>";
+                    }
+                } catch (e) { CWL.innerHTML = "<li>Error al cargar tu progreso.</li>"; }
             };
 
         CBC.addEventListener('click', C);
@@ -800,13 +838,13 @@
         EN_ESPANOL_LINK.addEventListener('click', (e) => { e.preventDefault(); SD = SDP1 + SDP2; CSRS(); });
         CON_DOBLAJE_LINK.addEventListener('click', (e) => { e.preventDefault(); SD = SDP1 + SDP3; CSRS(); });
         
-        window.onload = () => { CSRS(); UCW(); };
+        window.onload = () => { CSRS(); UCW(); }; // Cargar series y actualizar "continuar viendo" al cargar
 
         setInterval(() => { M.style.display === "block" && S && GP(S.nombre) }, 5e3);
 
         function createFocusTrap(element) {
             let focusableElements = element.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])');
-            if (focusableElements.length === 0) return { destroy: () => {}, update: () => {} };
+            if (focusableElements.length === 0) return { destroy: () => {}, update: () => {} }; // Si no hay elementos enfocables
             let firstFocusableElement = focusableElements[0];
             let lastFocusableElement = focusableElements[focusableElements.length - 1];
             const keydownHandler = (e) => {
@@ -834,7 +872,7 @@
             if (currentFocusTrap) { currentFocusTrap.destroy(); }
             currentFocusTrap = createFocusTrap(element);
         }
-        function disableFocusTrap() {
+        function disableFocusTrap() { // No necesita 'element' ya que opera sobre 'currentFocusTrap'
             if (currentFocusTrap) { currentFocusTrap.destroy(); currentFocusTrap = null; }
         }
     </script>
