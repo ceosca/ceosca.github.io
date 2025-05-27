@@ -85,7 +85,7 @@
                 </div>
 
                 <div id="t10smv-c"> 
-                    <h2>Las 10 series más vistas</h2>
+                    <h2>Las 10 series más escuchadas</h2>
                     <ul id="t10l" class="sl"></ul> 
                 </div>
                 
@@ -186,7 +186,7 @@
         if(sCA.length===0){T10L.innerHTML="<li>No hay series en el top.</li>";return}
         T10L.innerHTML='';if(!TS_C||TS_C.length===0){await FD();if(!TS_C||TS_C.length===0){T10L.innerHTML="<li>Error: datos de series no disponibles.</li>";return}}
         sCA.forEach(i=>{const sDO_arr=TS_C.filter(s=>GNB(s.nombre)===i.n);
-        if(sDO_arr.length > 0){const sDO=sDO_arr[0];const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${i.n} (${i.v} ${i.v===1?'vista':'vistas'})`;btn.classList.add('b');
+        if(sDO_arr.length > 0){const sDO=sDO_arr[0];const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${i.n} (${i.v} ${i.v===1?'reproducción':'reproducciones'})`;btn.classList.add('b');
         btn.addEventListener('click',()=>{const sDMNB=TS_C.filter(s=>GNB(s.nombre)===i.n),sOPT=OTS(sDMNB);
         if(sOPT.length>0){O(sOPT[0]);if(sOPT.length>1){LT(sOPT,sOPT[0].nombre)}else{document.getElementById('tasc').classList.add('h')}}});li.appendChild(btn);T10L.appendChild(li)}});
         if(T10L.children.length===0&&sCA.length>0)T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>";
