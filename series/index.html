@@ -145,17 +145,17 @@
             EEL = document.getElementById('en-espanol'),CDL = document.getElementById('con-doblaje'),
             SDP1 = 'https://dl.dropbox.com/',SDP2 = 'scl/fi/q5gd1j2lor3fbe6dtv15c/series.json?rlkey=vpgalrx1bbqhjy513q9qr9jvp&dl=1',SDP3 = 'scl/fi/725dxvrb9i69xd4td620v/doblaje.json?rlkey=4elbmhb2ruq76jsi4ohfcp7we&dl=1',
             A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),M = document.getElementById("sM"),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
-            T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal", ACCI = document.getElementById('acc-info');
+            T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal", ACCI = document.getElementById('acc-info'), VSS_KEY = 'vsis';
             
-        let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VIEWED_IN_SESSION = new Set();
+        let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VSSS = new Set();
 
         const GNB=snc=>snc.split(', temporada')[0].trim();
         const MCGLTSL=(nbs,cgi,tasl)=>{const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgc=0;for(const stp of semsbo){const nce=stp.capitulos.length;if(cgi<cgc+nce){return{stp,ccl:cgi-cgc}}cgc+=nce}return semsbo.length>0?{stp:semsbo[0],ccl:0}:{stp:null,ccl:0}};
         const MTSLCG=(ste,ccl,tasl)=>{const nbs=GNB(ste.nombre);const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgi=0;for(const stp of semsbo){if(stp.nombre===ste.nombre){cgi+=ccl;return cgi}if(stp.capitulos)cgi+=stp.capitulos.length}return ccl};
 
         const sWGi=async()=>{try{await signInWithPopup(auth,gP)}catch(e){}};
-        const sOG=async()=>{try{await signOut(auth);VIEWED_IN_SESSION.clear()}catch(e){}};
-        onAuthStateChanged(auth,u=>{const aST=document.querySelector('#as p');if(u){gSI.classList.add('h');sO.classList.remove('h');if(aST)aST.textContent=`¡Hola de nuevo! Tu progreso se guardará automáticamente.`}else{gSI.classList.remove('h');sO.classList.add('h');if(aST)aST.textContent=`¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;VIEWED_IN_SESSION.clear()}UCW()});
+        const sOG=async()=>{try{await signOut(auth);VSSS.clear();sessionStorage.removeItem(VSS_KEY)}catch(e){}};
+        onAuthStateChanged(auth,u=>{const aST=document.querySelector('#as p');if(u){gSI.classList.add('h');sO.classList.remove('h');if(aST)aST.textContent=`¡Hola de nuevo! Tu progreso se guardará automáticamente.`}else{gSI.classList.remove('h');sO.classList.add('h');if(aST)aST.textContent=`¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;VSSS.clear();sessionStorage.removeItem(VSS_KEY)}UCW()});
         gSI.addEventListener('click',sWGi);sO.addEventListener('click',sOG);
         
         const FT=t=>{const m=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(m)}:${PZ(s)}`},PZ=n=>(n<10?'0':'')+n;
@@ -163,9 +163,9 @@
         const GP=async()=>{if(!S||!auth.currentUser)return;const t=A.currentTime;const nbs=GNB(S.nombre);const cgi=MTSLCG(S,CCL,TS_C);try{const u=auth.currentUser;const p={serieNombreBase:nbs,capituloGlobalIndex:cgi,tiempo:t,idiomaIndex:CLI,serieTemporadaActualNombre:S.nombre,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`),p);UCW()}catch(e){}};
         const RP=async nbs=>{if(!auth.currentUser||!TS_C||TS_C.length===0)return !1;try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`));if(dS.exists()){const d=dS.data();const{stp,ccl}=MCGLTSL(nbs,d.capituloGlobalIndex,TS_C);if(stp){S=stp;CCL=ccl;A.currentTime=d.tiempo;CLI=d.idiomaIndex||0;if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0){TS.value=S.nombre}CS.value=CCL;LS.value=CLI;UC();return!0}}}catch(e){}return!1};
         
-        const C=()=>{S&&GP();M.style.display="none";M.setAttribute("aria-hidden","true");A.pause();A.src='';MC_DIV.classList.remove('h');clearInterval(TII);IP=!1;PB.textContent='Reproducir';CPT=A.currentTime;dFT(M);SEL_SER_DIV.style.display="block";document.getElementById('as').style.display="block"};
+        const C=()=>{S&&GP();M.style.display="none";M.setAttribute("aria-hidden","true");A.pause();A.src='';MC_DIV.classList.remove('h');clearInterval(TII);IP=!1;PB.textContent='Reproducir';CPT=A.currentTime;dFT(M);SEL_SER_DIV.style.display="block";document.getElementById('as').style.display="block";CI.textContent='';TI.textContent='';if(ACCI)ACCI.textContent='';};
         
-        const RVS_C=async sNC=>{if(!sNC)return;const sNB=GNB(sNC);if(!sNB||VIEWED_IN_SESSION.has(sNB))return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}VIEWED_IN_SESSION.add(sNB)}catch(e){}};
+        const RVS_C=async sNC=>{if(!sNC)return;const sNB=GNB(sNC);if(!sNB||VSSS.has(sNB))return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}VSSS.add(sNB);sessionStorage.setItem(VSS_KEY,JSON.stringify(Array.from(VSSS)))}catch(e){}};
         const O=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){await FD()}RP(nbs).then(pC=>{if(pC){CPT=A.currentTime}else{S=s_i;CCL=0;CPT=0;CLI=0;if(TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PC(true)})};lYC();MC_DIV.classList.add('h');M.style.display="block";M.setAttribute("aria-hidden","false");document.querySelector('#sM .mc').focus();eFT(M);SEL_SER_DIV.style.display="none";document.getElementById('as').style.display="none"};
         
         const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();TS_C=e.series||[];return TS_C}catch(t){TS_C=[];return[]}};
@@ -202,7 +202,7 @@
         TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir (Alt + K)')):(A.play().catch(e=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC())},
         F=()=>{A.currentTime+=15},B=()=>{A.currentTime-=15},
         RE=()=>{if(S&&CSD_L&&typeof CCL!=='undefined'&&CSD_L[CCL]){A.currentTime=CSD_L[CCL].inicio/1e3;if(!IP){A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}UC();PC(true)}},
-        PC=(anC = false)=>{ // anC: announceChange
+        PC=(anC = false)=>{ 
             CCL=parseInt(CS.value);
             if(CSD_L&&CSD_L[CCL]){
                 A.currentTime=CSD_L[CCL].inicio/1e3;
@@ -242,7 +242,7 @@
         const CSRS=()=>{FD().then(s_d=>{RCAS(s_d);if(s_d&&s_d.length>0)LUSA(s_d);CT10SMV();UCW()}).catch(e=>{})};
         EEL.addEventListener('click',e=>{e.preventDefault();SD_J=SDP1+SDP2;CSRS()});
         CDL.addEventListener('click',e=>{e.preventDefault();SD_J=SDP1+SDP3;CSRS()});
-        window.onload=()=>{VIEWED_IN_SESSION.clear(); CSRS()}; 
+        window.onload=()=>{const sV=sessionStorage.getItem(VSS_KEY);if(sV){try{VSSS=new Set(JSON.parse(sV))}catch(e){VSSS=new Set()}}else{VSSS=new Set()}CSRS()}; 
         setInterval(()=>{M.style.display==="block"&&S&&IP&&GP()},10000);
         function createFocusTrap(el){let fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
         let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=createFocusTrap(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
@@ -281,8 +281,8 @@
                     case 'u': { const btn = document.getElementById('dvb'); if (btn) { btn.click(); aT = true; } break; }
                     case 'o': { const btn = document.getElementById('ivb'); if (btn) { btn.click(); aT = true; } break; }
                     case 'r': if (REB) { REB.click(); aT = true; } break;
-                    case 'a': { const btn = document.getElementById('pcb'); if (btn) { btn.click(); aT = true; } break; } // PP() llama a PC(true)
-                    case 's': { const btn = document.getElementById('ncb'); if (btn) { btn.click(); aT = true; } break; } // NP() llama a PC(true)
+                    case 'a': { const btn = document.getElementById('pcb'); if (btn) { btn.click(); aT = true; } break; } 
+                    case 's': { const btn = document.getElementById('ncb'); if (btn) { btn.click(); aT = true; } break; } 
                     case 'i':
                         if (S && CSD_L && typeof CCL !== 'undefined' && CSD_L[CCL] && TI && ACCI) {
                             UT(); 
