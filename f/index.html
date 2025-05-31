@@ -170,7 +170,7 @@
 
     const C=()=>{
         window.removeEventListener('popstate', modalPopstateHandler);
-        if (window.location.hash === '#modal-activo') {
+        if (window.location.hash === '#os') {
             history.replaceState(null, '', window.location.pathname + window.location.search);
         }
 
@@ -181,7 +181,7 @@
     
     const LCF=(s_d)=>{CS.innerHTML='';CSD_L=s_d.capitulos;CSD_L.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCL;UC();A.src=s_d.enlaces[CLI].enlace;const CPTactual=CPT;const sSCT=()=>{A.currentTime=CPTactual};A.onloadedmetadata=null;A.onloadedmetadata=()=>{sSCT();A.onloadedmetadata=null};if(A.readyState>=1){sSCT();A.onloadedmetadata=null}A.load();clearInterval(TII);UT();TII=setInterval(UT,1e3)};
     const O=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){await FD()}const pL=await RP(nbs);if(pL){CPT=A.currentTime}else{S=s_i;CCL=0;CLI=0;if(S&&S.capitulos&&S.capitulos[CCL]){CPT=S.capitulos[CCL].inicio/1e3}else{CPT=0}if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()};lYC();MC_DIV.classList.add('h');M.style.display="block";M.setAttribute("aria-hidden","false");document.querySelector('#sM .mc').focus();eFT(M);SEL_SER_DIV.style.display="none";document.getElementById('as').style.display="none";
-        history.pushState({ modalOpenFor: 'sM' }, '', '#modal-activo');
+        history.pushState({ modalOpenFor: 'sM' }, '', '#os');
         window.addEventListener('popstate', modalPopstateHandler);
     };
     
