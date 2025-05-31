@@ -54,6 +54,7 @@
         #selector-series li{margin:5px 10px}
         #selector-series a{text-decoration:none;color:var(--pc);font-weight:bold;padding:8px 12px;border:2px solid var(--pc);border-radius:5px;transition:background-color .2s ease,color .2s ease;display:block}
         #selector-series a:hover{background-color:var(--pc);color:var(--w)}
+        #acc-info{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
     </style>
 </head>
 <body>
@@ -63,175 +64,283 @@
             <button id="gsi" class="b">Inicia sesión con Google</button>
             <button id="so" class="b h">Cerrar sesión</button>
         </div>
-
-        <div id="selector-series">
-            <h2>¿Qué quieres escuchar?</h2>
-            <ul>
-                <li><a href="#" id="en-espanol">Series en español original</a></li>
-                <li><a href="#" id="con-doblaje">Series con doblaje</a></li>
-            </ul>
-        </div>
-
-        <div id="mc">
-            <main>
-                <div id="cw" class="h">
-                    <h2>Continuar escuchando</h2>
-                    <ul id="cwl"></ul>
-                </div>
-
-                <div id="usac">
-                    <h2>Últimas Series Agregadas</h2>
-                    <ul id="usal" class="sl"></ul> 
-                </div>
-
-                <div id="t10smv-c"> 
-                    <h2>Las 10 series más escuchadas</h2>
-                    <ul id="t10l" class="sl"></ul> 
-                </div>
-                
-                <div id="coc"></div>
-            </main>
-        </div>
+<div id="selector-series">
+        <h2>¿Qué quieres escuchar?</h2>
+        <ul>
+            <li><a href="#" id="en-espanol">Series en español original</a></li>
+            <li><a href="#" id="con-doblaje">Series con doblaje</a></li>
+        </ul>
     </div>
 
-    <div id="sM" class="m" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-        <div class="mc" tabindex="-1">
-            <header class="fh">
-                <h2 id="modal-title">Detalles de la Serie</h2>
-                <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
-            </header>
-            <main>
-                <div id="si" aria-live="polite"></div>
-                <section class="tc h" id="tasc">
-                    <label for="t">Temporada:</label>
-                    <select id="t"></select>
-                </section>
-            </main>
-            <audio id="ap">Audio no soportado.</audio>
-            <h2>Reproductor</h2>
-            <footer class="fp">
-                <div id="ci"></div>
-                <div id="ti"></div>
-                <button id="ppb" class="b" aria-label="Reproducir/Pausar">Reproducir</button>
-                <button id="fb" class="b" aria-label="Avanzar 15 segundos">Avanzar</button>
-                <button id="bb" class="b" aria-label="Retroceder 15 segundos">Retroceder</button>
-                <button id="reb" class="b" aria-label="Reiniciar episodio">Reiniciar episodio</button>
-                <button id="ncb" class="b" aria-label="Siguiente episodio">Siguiente episodio</button>
-                <button id="pcb" class="b" aria-label="Episodio anterior">Episodio anterior</button>
-                <button id="ivb" class="b" aria-label="Subir volumen">Subir volumen</button>
-                <button id="dvb" class="b" aria-label="Bajar volumen">Bajar volumen</button>
-                <section class="ec" id="easc">
-                    <label for="c">Capítulo:</label>
-                    <select id="c"></select>
-                </section>
-                <section class="lc h" id="lasc">
-                    <label for="l">Pista de audio:</label>
-                    <select id="l"></select>
-                </section>
-            </footer>
-        </div>
-    </div>
+    <div id="mc">
+        <main>
+            <div id="cw" class="h">
+                <h2>Continuar escuchando</h2>
+                <ul id="cwl"></ul>
+            </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-        import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp, deleteDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+            <div id="usac">
+                <h2>Últimas Series Agregadas</h2>
+                <ul id="usal" class="sl"></ul> 
+            </div>
 
-        const fC = { apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0", authDomain: "pfdsuaaug.firebaseapp.com", projectId: "pfdsuaaug", storageBucket: "pfdsuaaug.firebasestorage.app", messagingSenderId: "701797222900", appId: "1:701797222900:web:01836d45db1b35be2bd1a1" },
-            app = initializeApp(fC),db = getFirestore(app),auth = getAuth(app),gP = new GoogleAuthProvider,
-            gSI = document.getElementById('gsi'),sO = document.getElementById('so'),   
-            EEL = document.getElementById('en-espanol'),CDL = document.getElementById('con-doblaje'),
-            SDP1 = 'https://dl.dropbox.com/',SDP2 = 'scl/fi/q5gd1j2lor3fbe6dtv15c/series.json?rlkey=vpgalrx1bbqhjy513q9qr9jvp&dl=1',SDP3 = 'scl/fi/725dxvrb9i69xd4td620v/doblaje.json?rlkey=4elbmhb2ruq76jsi4ohfcp7we&dl=1',
-            A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),M = document.getElementById("sM"),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
-            T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal";
+            <div id="t10smv-c"> 
+                <h2>Las 10 series más escuchadas</h2>
+                <ul id="t10l" class="sl"></ul> 
+            </div>
             
-        let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VIEWED_IN_SESSION = new Set();
+            <div id="coc"></div>
+        </main>
+    </div>
+</div>
 
-        const GNB=snc=>snc.split(', temporada')[0].trim();
-        const MCGLTSL=(nbs,cgi,tasl)=>{const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgc=0;for(const stp of semsbo){const nce=stp.capitulos.length;if(cgi<cgc+nce){return{stp,ccl:cgi-cgc}}cgc+=nce}return semsbo.length>0?{stp:semsbo[0],ccl:0}:{stp:null,ccl:0}};
-        const MTSLCG=(ste,ccl,tasl)=>{const nbs=GNB(ste.nombre);const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgi=0;for(const stp of semsbo){if(stp.nombre===ste.nombre){cgi+=ccl;return cgi}if(stp.capitulos)cgi+=stp.capitulos.length}return ccl};
+<div id="sM" class="m" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="mc" tabindex="-1">
+        <header class="fh">
+            <h2 id="modal-title">Detalles de la Serie</h2>
+            <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
+        </header>
+        <main>
+            <div id="si" aria-live="polite"></div>
+            <section class="tc h" id="tasc">
+                <label for="t">Temporada:</label>
+                <select id="t"></select>
+            </section>
+        </main>
+        <audio id="ap">Audio no soportado.</audio>
+        <h2>Reproductor</h2>
+        <footer class="fp">
+            <div id="ci"></div>
+            <div id="ti"></div>
+            <button id="ppb" class="b" aria-label="Reproducir/Pausar (Alt + K)">Reproducir</button>
+            <button id="fb" class="b" aria-label="Avanzar 15 segundos (Alt + L)">Avanzar</button>
+            <button id="bb" class="b" aria-label="Retroceder 15 segundos (Alt + J)">Retroceder</button>
+            <button id="reb" class="b" aria-label="Reiniciar episodio (Alt + R)">Reiniciar episodio</button>
+            <button id="ncb" class="b" aria-label="Siguiente episodio (Alt + S)">Siguiente episodio</button>
+            <button id="pcb" class="b" aria-label="Episodio anterior (Alt + A)">Episodio anterior</button>
+            <button id="ivb" class="b" aria-label="Subir volumen (Alt + O)">Subir volumen</button>
+            <button id="dvb" class="b" aria-label="Bajar volumen (Alt + U)">Bajar volumen</button>
+            <section class="ec" id="easc">
+                <label for="c">Capítulo:</label>
+                <select id="c"></select>
+            </section>
+            <section class="lc h" id="lasc">
+                <label for="l">Pista de audio:</label>
+                <select id="l"></select>
+            </section>
+        </footer>
+    </div>
+</div>
+<div id="acc-info" aria-live="polite"></div>
 
-        const sWGi=async()=>{try{await signInWithPopup(auth,gP)}catch(e){}};
-        const sOG=async()=>{try{await signOut(auth);VIEWED_IN_SESSION.clear()}catch(e){}};
-        onAuthStateChanged(auth,u=>{const aST=document.querySelector('#as p');if(u){gSI.classList.add('h');sO.classList.remove('h');if(aST)aST.textContent=`¡Hola de nuevo! Tu progreso se guardará automáticamente.`}else{gSI.classList.remove('h');sO.classList.add('h');if(aST)aST.textContent=`¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;VIEWED_IN_SESSION.clear()}UCW()});
-        gSI.addEventListener('click',sWGi);sO.addEventListener('click',sOG);
-        
-        const FT=t=>{const m=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(m)}:${PZ(s)}`},PZ=n=>(n<10?'0':'')+n;
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+    import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp, deleteDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-        const GP=async()=>{if(!S||!auth.currentUser)return;const t=A.currentTime;const nbs=GNB(S.nombre);const cgi=MTSLCG(S,CCL,TS_C);try{const u=auth.currentUser;const p={serieNombreBase:nbs,capituloGlobalIndex:cgi,tiempo:t,idiomaIndex:CLI,serieTemporadaActualNombre:S.nombre,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`),p);UCW()}catch(e){}};
-        const RP=async nbs=>{if(!auth.currentUser||!TS_C||TS_C.length===0)return !1;try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`));if(dS.exists()){const d=dS.data();const{stp,ccl}=MCGLTSL(nbs,d.capituloGlobalIndex,TS_C);if(stp){S=stp;CCL=ccl;A.currentTime=d.tiempo;CLI=d.idiomaIndex||0;if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0){TS.value=S.nombre}CS.value=CCL;LS.value=CLI;UC();return!0}}}catch(e){}return!1};
+    const fC = { apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0", authDomain: "pfdsuaaug.firebaseapp.com", projectId: "pfdsuaaug", storageBucket: "pfdsuaaug.firebasestorage.app", messagingSenderId: "701797222900", appId: "1:701797222900:web:01836d45db1b35be2bd1a1" },
+        app = initializeApp(fC),db = getFirestore(app),auth = getAuth(app),gP = new GoogleAuthProvider,
+        gSI = document.getElementById('gsi'),sO = document.getElementById('so'),   
+        EEL = document.getElementById('en-espanol'),CDL = document.getElementById('con-doblaje'),
+        SDP1 = 'https://dl.dropbox.com/',SDP2 = 'scl/fi/q5gd1j2lor3fbe6dtv15c/series.json?rlkey=vpgalrx1bbqhjy513q9qr9jvp&dl=1',SDP3 = 'scl/fi/725dxvrb9i69xd4td620v/doblaje.json?rlkey=4elbmhb2ruq76jsi4ohfcp7we&dl=1',
+        A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),M = document.getElementById("sM"),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
+        T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal", ACCI = document.getElementById('acc-info'), VSS_KEY = 'vsis';
         
-        const C=()=>{S&&GP();M.style.display="none";M.setAttribute("aria-hidden","true");A.pause();A.src='';MC_DIV.classList.remove('h');clearInterval(TII);IP=!1;PB.textContent='Reproducir';CPT=A.currentTime;dFT(M);SEL_SER_DIV.style.display="block";document.getElementById('as').style.display="block"};
-        
-        const RVS_C=async sNC=>{if(!sNC)return;const sNB=GNB(sNC);if(!sNB||VIEWED_IN_SESSION.has(sNB))return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}VIEWED_IN_SESSION.add(sNB)}catch(e){}};
-        const O=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){await FD()}RP(nbs).then(pC=>{if(pC){CPT=A.currentTime}else{S=s_i;CCL=0;CPT=0;CLI=0;if(TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar'})};lYC();MC_DIV.classList.add('h');M.style.display="block";M.setAttribute("aria-hidden","false");document.querySelector('#sM .mc').focus();eFT(M);SEL_SER_DIV.style.display="none";document.getElementById('as').style.display="none"};
-        
-        const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();TS_C=e.series||[];return TS_C}catch(t){TS_C=[];return[]}};
-        const OTS=a=>([...a].sort((x,y)=>{const gtn=nm=>{const p=nm.split(', temporada ');if(p.length>1){const n=parseInt(p[1]);return isNaN(n)?Infinity:n}return 1};const nX=gtn(x.nombre),nY=gtn(y.nombre);return nX!==nY?nX-nY:x.nombre.localeCompare(y.nombre)})),
-        RCAS=s_a=>{const t=document.getElementById('coc');t.innerHTML="";if(!s_a||s_a.length===0){t.innerHTML="<p>No hay series.</p>";return}
-        const sAg={};s_a.forEach(sE=>{const nB=GNB(sE.nombre);sAg[nB]||(sAg[nB]=[]);sAg[nB].push(sE)});
-        const pO_s=[...new Set(s_a.map(sE=>sE.pais_origen))].sort();
-        pO_s.forEach(pO=>{const h2=document.createElement('h2');h2.textContent=pO;t.appendChild(h2);const ul=document.createElement('ul');ul.classList.add('sl');
-        Object.keys(sAg).sort((a,b)=>a.localeCompare(b,'es',{sensitivity:'base'})).forEach(nB=>{const sD=sAg[nB].filter(sE=>sE.pais_origen===pO);
-        if(sD.length>0){const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=nB;
-        btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];O(pT);sOrds.length>1?LT(sOrds,pT.nombre):document.getElementById('tasc').classList.add('h')});
-        btn.setAttribute('tabindex','0');btn.classList.add('b');li.appendChild(btn);ul.appendChild(li)}});t.appendChild(ul)});UCW()},
-        LUSA=sa=>{if(!USAL||!sa||sa.length===0){if(USAL)USAL.innerHTML="<li>No hay series nuevas.</li>";return}
-        USAL.innerHTML='';const u20=sa.slice(-20).reverse();
-        u20.forEach(s_i=>{const li=document.createElement('li');const btn=document.createElement('button');btn.textContent=s_i.nombre;btn.classList.add('b');
-        btn.addEventListener('click',()=>{const nb=GNB(s_i.nombre);const sg=TS_C.filter(i=>GNB(i.nombre)===nb);O(s_i);if(sg.length>1){const so=OTS(sg);LT(so,s_i.nombre)}else{document.getElementById('tasc').classList.add('h')}});
-        li.appendChild(btn);USAL.appendChild(li)})},
-        CT10SMV=async()=>{if(!T10L)return;T10L.innerHTML='<li>Cargando...</li>';try{const cDR=doc(db,ESD,CVD);const dSnp=await getDoc(cDR);if(!dSnp.exists()||!dSnp.data().vistasPorSerie){T10L.innerHTML="<li>Aún no hay datos.</li>";return}
-        const vPSM=dSnp.data().vistasPorSerie;const sCA=Object.entries(vPSM).map(([nC,v])=>({n:nC.replace(/_/g,'.'),v})).sort((a,b)=>b.v-a.v).slice(0,10);
-        if(sCA.length===0){T10L.innerHTML="<li>No hay series en el top.</li>";return}
-        T10L.innerHTML='';if(!TS_C||TS_C.length===0){await FD();if(!TS_C||TS_C.length===0){T10L.innerHTML="<li>Error: datos de series no disponibles.</li>";return}}
-        sCA.forEach(i=>{const sDO_arr=TS_C.filter(s=>GNB(s.nombre)===i.n);
-        if(sDO_arr.length > 0){const sDO=sDO_arr[0];const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${i.n} (${i.v} ${i.v===1?'reproducción':'reproducciones'})`;btn.classList.add('b');
-        btn.addEventListener('click',()=>{const sDMNB=TS_C.filter(s=>GNB(s.nombre)===i.n),sOPT=OTS(sDMNB);
-        if(sOPT.length>0){O(sOPT[0]);if(sOPT.length>1){LT(sOPT,sOPT[0].nombre)}else{document.getElementById('tasc').classList.add('h')}}});li.appendChild(btn);T10L.appendChild(li)}});
-        if(T10L.children.length===0&&sCA.length>0)T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>";
-        if(T10L.children.length===0&&sCA.length===0)T10L.innerHTML="<li>No hay series en el top.</li>"}catch(e){T10L.innerHTML="<li>Error al cargar.</li>"}},
-        LT=(s_a,stn)=>{TS.innerHTML='';document.getElementById('tasc').classList.remove('h');s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});if(stn)TS.value=stn;TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){S=sS;CCL=0;CPT=0;A.currentTime=0;CLI=parseInt(LS.value)||0;LI(S);LL(S);LCF(S);A.play().catch(err=>{});IP=!0;PB.textContent='Pausar'}}},
-        LI=s_d=>{const t=document.getElementById('si');let rH='';if(SD_J===SDP1+SDP2&&s_d.reparto){rH=`<div><strong>Reparto:</strong> ${s_d.reparto.join(", ")}</div>`}S=s_d;t.innerHTML=`<h2>${s_d.nombre}</h2><div><strong>Género:</strong> ${s_d.genero}</div><div><strong>Año:</strong> ${s_d.anio}</div>${rH}<div><strong>País:</strong> ${s_d.pais_origen}</div><div><strong>Episodios:</strong> ${s_d.cantidad_episodios}</div>${s_d.sinopsis?`<div><strong>Sinopsis:</strong> ${s_d.sinopsis}</div>`:''}`},
-        LL=s_d=>{LS.innerHTML='';s_d.enlaces.length>1?(s_d.enlaces.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.idioma,LS.appendChild(n)}),LC.classList.remove('h')):LC.classList.add('h');LS.value=CLI},
-        LCF=s_d=>{CS.innerHTML='';CSD_L=s_d.capitulos;CSD_L.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCL;UC();A.src=s_d.enlaces[CLI].enlace;A.load();A.currentTime=CPT;if(IP)A.play().catch(e=>{});clearInterval(TII);UT();TII=setInterval(UT,1e3)},
-        UC=()=>{CI.textContent=(CSD_L&&CSD_L[CCL])?(IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`):"Cargando..."},
-        UT=()=>{const t=A.currentTime;if(!CSD_L||CSD_L.length===0)return;const e=GCI(t);if(e<0||e>=CSD_L.length||!CSD_L[e])return;const n=CSD_L[e],i=n.inicio/1e3,o=n.fin/1e3,r=FT(t-i),c=FT(o-i);if(CSD_L[CCL]){CI.textContent=IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`}TI.textContent=`${r} / ${c}`},
-        TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir')):(A.play().catch(e=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar'),UC())},
-        F=()=>{A.currentTime+=15},B=()=>{A.currentTime-=15},
-        RE=()=>{if(S&&CSD_L&&typeof CCL!=='undefined'&&CSD_L[CCL]){A.currentTime=CSD_L[CCL].inicio/1e3;if(!IP){A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar')}UC()}},
-        PC=()=>{CCL=parseInt(CS.value);if(CSD_L&&CSD_L[CCL]){A.currentTime=CSD_L[CCL].inicio/1e3;A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar');UC()}else{}},
-        GCI=t=>{let e=0;if(!CSD_L||CSD_L.length===0)return 0;CSD_L.forEach((n,i)=>{if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3)e=i}});return e},
-        PP=()=>{let t=CCL;t>0&&(t--,CS.value=t,PC())},NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;PC()}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){O(semsbo[cti+1])}else{}}},
-        CLS=()=>{CPT=A.currentTime;CLI=parseInt(LS.value);S&&LCF(S)},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
-        DCW=async s_nb=>{if(!auth.currentUser)return;try{const u=auth.currentUser;await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${s_nb}`));UCW()}catch(e){}},
-        UCW=async()=>{CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
-        document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",10));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})});
-        if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";return}
-        const s_all=TS_C.length>0?TS_C:await FD();if(s_all.length===0){CWL.innerHTML="<li>Error al cargar datos de series para progreso.</li>";return;}
-        for(const t of c){const{stp,ccl}=MCGLTSL(t.serieNombreBase,t.capituloGlobalIndex,s_all);
-        if(stp&&stp.capitulos&&stp.capitulos[ccl]){const cap=stp.capitulos[ccl],ini=cap.inicio/1e3,fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
-        li=document.createElement('li'),btn=document.createElement('button');let tnm=stp.nombre.includes(', temporada ')?`, temporada ${stp.nombre.split(', temporada ')[1]}`:(t.serieNombreBase!==stp.nombre?`, ${stp.nombre}`:'');
-        btn.textContent=`${t.serieNombreBase}${tnm}, ${cap.titulo}, Restante: ${durR}`;
-        btn.addEventListener('click',()=>{O(stp)});btn.classList.add('b');li.appendChild(btn);
-        const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombreBase)});li.appendChild(delB);CWL.appendChild(li)}}
-        if(CWL.children.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}};
-        CBC.addEventListener('click',C);window.addEventListener('click',t=>{t.target===M&&C()});
-        CS.addEventListener('change',()=>{S&&GP();PC()});
-        A.addEventListener('pause',()=>{if(S&&M.style.display==="block")GP()});
-        A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar');UC()});
-        A.addEventListener('ended',()=>{NP()});
-        LS.addEventListener('change',CLS);PB.addEventListener('click',TP);
-        document.getElementById('fb').addEventListener('click',F);document.getElementById('bb').addEventListener('click',B);REB.addEventListener('click',RE);
-        document.getElementById('pcb').addEventListener('click',PP);document.getElementById('ncb').addEventListener('click',NP);
-        document.getElementById('ivb').addEventListener('click',IV);document.getElementById('dvb').addEventListener('click',DV);
-        const CSRS=()=>{FD().then(s_d=>{RCAS(s_d);if(s_d&&s_d.length>0)LUSA(s_d);CT10SMV();UCW()}).catch(e=>{})};
-        EEL.addEventListener('click',e=>{e.preventDefault();SD_J=SDP1+SDP2;CSRS()});
-        CDL.addEventListener('click',e=>{e.preventDefault();SD_J=SDP1+SDP3;CSRS()});
-        window.onload=()=>{VIEWED_IN_SESSION.clear(); CSRS()}; 
-        setInterval(()=>{M.style.display==="block"&&S&&IP&&GP()},10000);
-        function createFocusTrap(el){let fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
-        let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=createFocusTrap(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
-    </script>
+    let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VSSS = new Set();
+
+    const GNB=snc=>snc.split(', temporada')[0].trim();
+    const MCGLTSL=(nbs,cgi,tasl)=>{const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgc=0;for(const stp of semsbo){const nce=stp.capitulos.length;if(cgi<cgc+nce){return{stp,ccl:cgi-cgc}}cgc+=nce}return semsbo.length>0?{stp:semsbo[0],ccl:0}:{stp:null,ccl:0}};
+    const MTSLCG=(ste,ccl,tasl)=>{const nbs=GNB(ste.nombre);const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgi=0;for(const stp of semsbo){if(stp.nombre===ste.nombre){cgi+=ccl;return cgi}if(stp.capitulos)cgi+=stp.capitulos.length}return ccl};
+
+    const sWGi=async()=>{try{await signInWithPopup(auth,gP)}catch(e){}};
+    const sOG=async()=>{try{await signOut(auth);VSSS.clear();sessionStorage.removeItem(VSS_KEY)}catch(e){}};
+    onAuthStateChanged(auth,u=>{const aST=document.querySelector('#as p');if(u){gSI.classList.add('h');sO.classList.remove('h');if(aST)aST.textContent=`¡Hola de nuevo! Tu progreso se guardará automáticamente.`}else{gSI.classList.remove('h');sO.classList.add('h');if(aST)aST.textContent=`¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;VSSS.clear();sessionStorage.removeItem(VSS_KEY)}UCW()});
+    gSI.addEventListener('click',sWGi);sO.addEventListener('click',sOG);
+    
+    const FT=t=>{const m=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(m)}:${PZ(s)}`},PZ=n=>(n<10?'0':'')+n;
+
+    const GP=async()=>{if(!S||!auth.currentUser)return;const t=A.currentTime;const nbs=GNB(S.nombre);const cgi=MTSLCG(S,CCL,TS_C);try{const u=auth.currentUser;const p={serieNombreBase:nbs,capituloGlobalIndex:cgi,tiempo:t,idiomaIndex:CLI,serieTemporadaActualNombre:S.nombre,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`),p);UCW()}catch(e){}};
+    const RP=async nbs=>{if(!auth.currentUser||!TS_C||TS_C.length===0)return !1;try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`));if(dS.exists()){const d=dS.data();const{stp,ccl}=MCGLTSL(nbs,d.capituloGlobalIndex,TS_C);if(stp){S=stp;CCL=ccl;A.currentTime=d.tiempo;CLI=d.idiomaIndex||0;if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0){TS.value=S.nombre}CS.value=CCL;LS.value=CLI;UC();return!0}}}catch(e){}return!1};
+    
+    function modalPopstateHandler() {
+        if (M && M.style.display === "block") {
+            C();
+        }
+    }
+
+    const C=()=>{
+        window.removeEventListener('popstate', modalPopstateHandler);
+        if (window.location.hash === '#os') {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+
+        S&&GP();M.style.display="none";M.setAttribute("aria-hidden","true");A.pause();A.src='';MC_DIV.classList.remove('h');clearInterval(TII);IP=!1;PB.textContent='Reproducir';CPT=A.currentTime;dFT(M);SEL_SER_DIV.style.display="block";document.getElementById('as').style.display="block";CI.textContent='';TI.textContent='';if(ACCI)ACCI.textContent='';
+    };
+    
+    const RVS_C=async sNC=>{if(!sNC)return;const sNB=GNB(sNC);if(!sNB||VSSS.has(sNB))return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}VSSS.add(sNB);sessionStorage.setItem(VSS_KEY,JSON.stringify(Array.from(VSSS)))}catch(e){}};
+    
+    const LCF=(s_d)=>{CS.innerHTML='';CSD_L=s_d.capitulos;CSD_L.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCL;UC();A.src=s_d.enlaces[CLI].enlace;const CPTactual=CPT;const sSCT=()=>{A.currentTime=CPTactual};A.onloadedmetadata=null;A.onloadedmetadata=()=>{sSCT();A.onloadedmetadata=null};if(A.readyState>=1){sSCT();A.onloadedmetadata=null}A.load();clearInterval(TII);UT();TII=setInterval(UT,1e3)};
+    const O=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){await FD()}const pL=await RP(nbs);if(pL){CPT=A.currentTime}else{S=s_i;CCL=0;CLI=0;if(S&&S.capitulos&&S.capitulos[CCL]){CPT=S.capitulos[CCL].inicio/1e3}else{CPT=0}if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()};lYC();MC_DIV.classList.add('h');M.style.display="block";M.setAttribute("aria-hidden","false");document.querySelector('#sM .mc').focus();eFT(M);SEL_SER_DIV.style.display="none";document.getElementById('as').style.display="none";
+        history.pushState({ modalOpenFor: 'sM' }, '', '#os');
+        window.addEventListener('popstate', modalPopstateHandler);
+    };
+    
+    const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();TS_C=e.series||[];return TS_C}catch(t){TS_C=[];return[]}};
+    const OTS=a=>([...a].sort((x,y)=>{const gtn=nm=>{const p=nm.split(', temporada ');if(p.length>1){const n=parseInt(p[1]);return isNaN(n)?Infinity:n}return 1};const nX=gtn(x.nombre),nY=gtn(y.nombre);return nX!==nY?nX-nY:x.nombre.localeCompare(y.nombre)})),
+    RCAS=s_a=>{const t=document.getElementById('coc');t.innerHTML="";if(!s_a||s_a.length===0){t.innerHTML="<p>No hay series.</p>";return}
+    const sAg={};s_a.forEach(sE=>{const nB=GNB(sE.nombre);sAg[nB]||(sAg[nB]=[]);sAg[nB].push(sE)});
+    const pO_s=[...new Set(s_a.map(sE=>sE.pais_origen))].sort();
+    pO_s.forEach(pO=>{const h2=document.createElement('h2');h2.textContent=pO;t.appendChild(h2);const ul=document.createElement('ul');ul.classList.add('sl');
+    Object.keys(sAg).sort((a,b)=>a.localeCompare(b,'es',{sensitivity:'base'})).forEach(nB=>{const sD=sAg[nB].filter(sE=>sE.pais_origen===pO);
+    if(sD.length>0){const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=nB;
+    btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];O(pT);sOrds.length>1?LT(sOrds,pT.nombre):document.getElementById('tasc').classList.add('h')});
+    btn.setAttribute('tabindex','0');btn.classList.add('b');li.appendChild(btn);ul.appendChild(li)}});t.appendChild(ul)});UCW()},
+    LUSA=sa=>{if(!USAL||!sa||sa.length===0){if(USAL)USAL.innerHTML="<li>No hay series nuevas.</li>";return}
+    USAL.innerHTML='';const u20=sa.slice(-20).reverse();
+    u20.forEach(s_i=>{const li=document.createElement('li');const btn=document.createElement('button');btn.textContent=s_i.nombre;btn.classList.add('b');
+    btn.addEventListener('click',()=>{const nb=GNB(s_i.nombre);const sg=TS_C.filter(i=>GNB(i.nombre)===nb);O(s_i);if(sg.length>1){const so=OTS(sg);LT(so,s_i.nombre)}else{document.getElementById('tasc').classList.add('h')}});
+    li.appendChild(btn);USAL.appendChild(li)})},
+    CT10SMV=async()=>{if(!T10L)return;T10L.innerHTML='<li>Cargando...</li>';try{const cDR=doc(db,ESD,CVD);const dSnp=await getDoc(cDR);if(!dSnp.exists()||!dSnp.data().vistasPorSerie){T10L.innerHTML="<li>Aún no hay datos.</li>";return}
+    const vPSM=dSnp.data().vistasPorSerie;const sCA=Object.entries(vPSM).map(([nC,v])=>({n:nC.replace(/_/g,'.'),v})).sort((a,b)=>b.v-a.v).slice(0,10);
+    if(sCA.length===0){T10L.innerHTML="<li>No hay series en el top.</li>";return}
+    T10L.innerHTML='';if(!TS_C||TS_C.length===0){await FD();if(!TS_C||TS_C.length===0){T10L.innerHTML="<li>Error: datos de series no disponibles.</li>";return}}
+    sCA.forEach(i=>{const sDO_arr=TS_C.filter(s=>GNB(s.nombre)===i.n);
+    if(sDO_arr.length > 0){const sDO=sDO_arr[0];const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${i.n} (${i.v} ${i.v===1?'reproducción':'reproducciones'})`;btn.classList.add('b');
+    btn.addEventListener('click',()=>{const sDMNB=TS_C.filter(s=>GNB(s.nombre)===i.n),sOPT=OTS(sDMNB);
+    if(sOPT.length>0){O(sOPT[0]);if(sOPT.length>1){LT(sOPT,sOPT[0].nombre)}else{document.getElementById('tasc').classList.add('h')}}});li.appendChild(btn);T10L.appendChild(li)}});
+    if(T10L.children.length===0&&sCA.length>0)T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>";
+    if(T10L.children.length===0&&sCA.length===0)T10L.innerHTML="<li>No hay series en el top.</li>"}catch(e){T10L.innerHTML="<li>Error al cargar.</li>"}},
+    LT=(s_a,stn)=>{TS.innerHTML='';document.getElementById('tasc').classList.remove('h');s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});if(stn)TS.value=stn;TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){S=sS;CCL=0;CPT=0;A.currentTime=0;CLI=parseInt(LS.value)||0;LI(S);LL(S);LCF(S);A.play().catch(err=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}}},
+    LI=s_d=>{const t=document.getElementById('si');let rH='';if(SD_J===SDP1+SDP2&&s_d.reparto){rH=`<div><strong>Reparto:</strong> ${s_d.reparto.join(", ")}</div>`}S=s_d;t.innerHTML=`<h2>${s_d.nombre}</h2><div><strong>Género:</strong> ${s_d.genero}</div><div><strong>Año:</strong> ${s_d.anio}</div>${rH}<div><strong>País:</strong> ${s_d.pais_origen}</div><div><strong>Episodios:</strong> ${s_d.cantidad_episodios}</div>${s_d.sinopsis?`<div><strong>Sinopsis:</strong> ${s_d.sinopsis}</div>`:''}`},
+    LL=s_d=>{LS.innerHTML='';s_d.enlaces.length>1?(s_d.enlaces.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.idioma,LS.appendChild(n)}),LC.classList.remove('h')):LC.classList.add('h');LS.value=CLI},
+    UC=()=>{CI.textContent=(CSD_L&&CSD_L[CCL])?(IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`):"Cargando..."},
+    UT=()=>{const t=A.currentTime;if(!CSD_L||CSD_L.length===0)return;const e=GCI(t);if(e<0||e>=CSD_L.length||!CSD_L[e])return;const n=CSD_L[e],i=n.inicio/1e3,o=n.fin/1e3,r=FT(t-i),c=FT(o-i);if(CSD_L[CCL]){CI.textContent=IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`}TI.textContent=`${r} / ${c}`},
+    TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir (Alt + K)')):(A.play().catch(e=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC())},
+    F=()=>{A.currentTime+=15},B=()=>{A.currentTime-=15},
+    RE=()=>{if(S&&CSD_L&&typeof CCL!=='undefined'&&CSD_L[CCL]){A.currentTime=CSD_L[CCL].inicio/1e3;if(!IP){A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}UC();PC(true)}},
+    PC=(anC = false)=>{ 
+        CCL=parseInt(CS.value);
+        if(CSD_L&&CSD_L[CCL]){
+            A.currentTime=CSD_L[CCL].inicio/1e3;
+            A.play().catch(e=>{});IP=!0;
+            PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');
+            UC();
+            if (anC && CSD_L[CCL] && ACCI) {
+                ACCI.textContent = CSD_L[CCL].titulo;
+            }
+        }
+    },
+    GCI=t=>{let e=0;if(!CSD_L||CSD_L.length===0)return 0;CSD_L.forEach((n,i)=>{if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3)e=i}});return e},
+    PP=()=>{let t=CCL;t>0&&(t--,CS.value=t,PC(true))},
+    NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;PC(true)}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){O(semsbo[cti+1])}else{}}},
+    CLS=()=>{CPT=A.currentTime;CLI=parseInt(LS.value);S&&LCF(S)},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
+    DCW=async s_nb=>{if(!auth.currentUser)return;try{const u=auth.currentUser;await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${s_nb}`));UCW()}catch(e){}},
+    UCW=async()=>{CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
+    document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",10));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})});
+    if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";return}
+    const s_all=TS_C.length>0?TS_C:await FD();if(s_all.length===0){CWL.innerHTML="<li>Error al cargar datos de series para progreso.</li>";return;}
+    for(const t of c){const{stp,ccl}=MCGLTSL(t.serieNombreBase,t.capituloGlobalIndex,s_all);
+    if(stp&&stp.capitulos&&stp.capitulos[ccl]){const cap=stp.capitulos[ccl],ini=cap.inicio/1e3,fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
+    li=document.createElement('li'),btn=document.createElement('button');let tnm=stp.nombre.includes(', temporada ')?`, temporada ${stp.nombre.split(', temporada ')[1]}`:(t.serieNombreBase!==stp.nombre?`, ${stp.nombre}`:'');
+    btn.textContent=`${t.serieNombreBase}${tnm}, ${cap.titulo}, Restante: ${durR}`;
+    btn.addEventListener('click',()=>{O(stp)});btn.classList.add('b');li.appendChild(btn);
+    const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombreBase)});li.appendChild(delB);CWL.appendChild(li)}}
+    if(CWL.children.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}};
+    CBC.addEventListener('click',C);window.addEventListener('click',t=>{t.target===M&&C()});
+    CS.addEventListener('change',()=>{S&&GP();PC(true)});
+    A.addEventListener('pause',()=>{if(S&&M.style.display==="block"){GP();PB.setAttribute('aria-label','Reproducir (Alt + K)')}});
+    A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()});
+    A.addEventListener('ended',()=>{NP()});
+    LS.addEventListener('change',CLS);PB.addEventListener('click',TP);
+    document.getElementById('fb').addEventListener('click',F);document.getElementById('bb').addEventListener('click',B);REB.addEventListener('click',RE);
+    document.getElementById('pcb').addEventListener('click',PP);document.getElementById('ncb').addEventListener('click',NP);
+    document.getElementById('ivb').addEventListener('click',IV);document.getElementById('dvb').addEventListener('click',DV);
+    const CSRS=()=>{FD().then(s_d=>{RCAS(s_d);if(s_d&&s_d.length>0)LUSA(s_d);CT10SMV();UCW()}).catch(e=>{})};
+    EEL.addEventListener('click',e=>{e.preventDefault();SD_J=SDP1+SDP2;CSRS()});
+    CDL.addEventListener('click',e=>{e.preventDefault();SD_J=SDP1+SDP3;CSRS()});
+    window.onload=()=>{const sV=sessionStorage.getItem(VSS_KEY);if(sV){try{VSSS=new Set(JSON.parse(sV))}catch(e){VSSS=new Set()}}else{VSSS=new Set()}CSRS()}; 
+    setInterval(()=>{M.style.display==="block"&&S&&IP&&GP()},10000);
+    function createFocusTrap(el){let fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
+    let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=createFocusTrap(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
+    document.addEventListener('keydown', function(event) {
+        const modalIsVisible = M && M.style.display === "block";
+
+        if (event.altKey) {
+            if (modalIsVisible) {
+                if (event.key === 'ArrowLeft') {
+                    C();
+                    event.preventDefault();
+                    return; 
+                }
+
+                const k = event.key.toLowerCase();
+                let aT = false;
+                switch (k) {
+                    case 'k': if (PB) { PB.click(); aT = true; } break;
+                    case 'j': {
+                        const btn = document.getElementById('bb');
+                        if (btn) {
+                            btn.click(); 
+                            if (TI && ACCI) { 
+                                UT(); 
+                                ACCI.textContent = TI.textContent;
+                            }
+                            aT = true;
+                        }
+                        break;
+                    }
+                    case 'l': {
+                        const btn = document.getElementById('fb');
+                        if (btn) {
+                            btn.click();
+                            if (TI && ACCI) {
+                                UT();
+                                ACCI.textContent = TI.textContent;
+                            }
+                            aT = true;
+                        }
+                        break;
+                    }
+                    case 'u': { const btn = document.getElementById('dvb'); if (btn) { btn.click(); aT = true; } break; }
+                    case 'o': { const btn = document.getElementById('ivb'); if (btn) { btn.click(); aT = true; } break; }
+                    case 'r': if (REB) { REB.click(); aT = true; } break;
+                    case 'a': { const btn = document.getElementById('pcb'); if (btn) { btn.click(); aT = true; } break; } 
+                    case 's': { const btn = document.getElementById('ncb'); if (btn) { btn.click(); aT = true; } break; } 
+                    case 'i':
+                        if (S && CSD_L && typeof CCL !== 'undefined' && CSD_L[CCL] && TI && ACCI) {
+                            UT(); 
+                            const nB = GNB(S.nombre);
+                            let sInf = nB;
+                            const tP = S.nombre.split(', temporada ');
+                            if (tP.length > 1) sInf += `. Temporada ${tP[1]}`;
+                            sInf += ".";
+                            const cTt = CSD_L[CCL].titulo;
+                            ACCI.textContent = `${sInf} ${cTt}. ${TI.textContent}.`;
+                            aT = true;
+                        }
+                        break;
+                    case 't': {
+                        const sel = TS; const el = document.getElementById('tasc');
+                        if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; }
+                        break;
+                    }
+                    case 'c': {
+                        const sel = CS; const el = document.getElementById('easc');
+                        if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; }
+                        break;
+                    }
+                    case 'p': {
+                        const sel = LS; const el = document.getElementById('lasc');
+                        if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; }
+                        break;
+                    }
+                }
+                if (aT) {
+                    event.preventDefault();
+                }
+            }
+        }
+    });
+</script> 
 </body>
 </html>
