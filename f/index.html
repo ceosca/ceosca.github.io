@@ -146,7 +146,7 @@
         A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),M = document.getElementById("sM"),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
         T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal", ACCI = document.getElementById('acc-info'), VSS_KEY = 'vsis';
         
-    let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VSSS = new Set(), ICACTU = !1;
+    let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VSSS = new Set(), ICACTU = !1, isUpdatingCWL = !1;
 
     const GNB=snc=>snc.split(', temporada')[0].trim();
     const MCGLTSL=(nbs,cgi,tasl)=>{const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgc=0;for(const stp of semsbo){const nce=stp.capitulos.length;if(cgi<cgc+nce){return{stp,ccl:cgi-cgc}}cgc+=nce}return semsbo.length>0?{stp:semsbo[0],ccl:0}:{stp:null,ccl:0}};
@@ -215,29 +215,39 @@
     NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;PC()}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){O(semsbo[cti+1])}else{}}},
     CLS=()=>{const eIP=IP;CPT=A.currentTime;CLI=parseInt(LS.value);if(S)LCF(S,eIP)},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
     DCW=async s_nb=>{if(!auth.currentUser)return;try{const u=auth.currentUser;await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${s_nb}`));UCW(TS_C)}catch(e){}},
-    UCW=async(seriesData = null)=>{CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
-    document.getElementById('cw').classList.remove('h');
-    const renderedProgressIds = new Set();
-    try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",10));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})});
-    if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";return}
-    let currentSeriesData = seriesData;
-    if (!currentSeriesData || currentSeriesData.length === 0) {
-        currentSeriesData = TS_C.length > 0 ? TS_C : await FD();
-    }
-    if(currentSeriesData.length===0){CWL.innerHTML="<li>Error al cargar datos de series para progreso.</li>";return;}
-    for(const t of c){
-        if (renderedProgressIds.has(t.id)) {continue}
-        const{stp,ccl}=MCGLTSL(t.serieNombreBase,t.capituloGlobalIndex,currentSeriesData);
-        if(stp&&stp.capitulos&&stp.capitulos[ccl]){
-            const cap=stp.capitulos[ccl],ini=cap.inicio/1e3,fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
-            li=document.createElement('li'),btn=document.createElement('button');let tnm=stp.nombre.includes(', temporada ')?`, temporada ${stp.nombre.split(', temporada ')[1]}`:(t.serieNombreBase!==stp.nombre?`, ${stp.nombre}`:'');
-            btn.textContent=`${t.serieNombreBase}${tnm}, ${cap.titulo}, Restante: ${durR}`;
-            btn.addEventListener('click',()=>{O(stp)});btn.classList.add('b');li.appendChild(btn);
-            const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombreBase)});li.appendChild(delB);CWL.appendChild(li);
-            renderedProgressIds.add(t.id);
-        }
-    }
-    if(CWL.children.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}};
+    UCW=async(s_d=null)=>{
+        if(isUpdatingCWL)return;
+        isUpdatingCWL=!0;
+        try{
+            CWL.innerHTML='';
+            if(!auth.currentUser){document.getElementById('cw').classList.add('h');return}
+            document.getElementById('cw').classList.remove('h');
+            const rPI=new Set();
+            const u=auth.currentUser;
+            const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",10));
+            const qS=await getDocs(q);
+            const c=[]; 
+            qS.forEach(d=>{c.push({...d.data(),id:d.id})});
+            if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";return}
+            let cS_D=s_d; 
+            if(!cS_D||cS_D.length===0){cS_D=TS_C.length>0?TS_C:await FD()}
+            if(!cS_D||cS_D.length===0){CWL.innerHTML="<li>Error al cargar datos de series para progreso.</li>";return}
+            for(const t of c){
+                if(rPI.has(t.id)){continue}
+                const{stp,ccl}=MCGLTSL(t.serieNombreBase,t.capituloGlobalIndex,cS_D); 
+                if(stp&&stp.capitulos&&stp.capitulos[ccl]){
+                    const cap=stp.capitulos[ccl],ini=cap.inicio/1e3,fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
+                    li=document.createElement('li'),btn=document.createElement('button');let tnm=stp.nombre.includes(', temporada ')?`, temporada ${stp.nombre.split(', temporada ')[1]}`:(t.serieNombreBase!==stp.nombre?`, ${stp.nombre}`:'');
+                    btn.textContent=`${t.serieNombreBase}${tnm}, ${cap.titulo}, Restante: ${durR}`;
+                    btn.addEventListener('click',()=>{O(stp)});btn.classList.add('b');li.appendChild(btn);
+                    const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombreBase)});li.appendChild(delB);CWL.appendChild(li);
+                    rPI.add(t.id);
+                }
+            }
+            if(CWL.children.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}
+        }catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}
+        finally{isUpdatingCWL=!1}
+    };
     CBC.addEventListener('click',C);window.addEventListener('click',t=>{t.target===M&&C()});
     CS.addEventListener('change',()=>{S&&GP();PC()});
     A.addEventListener('pause',()=>{if(S&&M.style.display==="block"){GP();PB.setAttribute('aria-label','Reproducir (Alt + K)')}});
