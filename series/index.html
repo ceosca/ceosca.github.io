@@ -169,7 +169,32 @@
     
     const RVS_C=async sNC=>{if(!sNC)return;const sNB=GNB(sNC);if(!sNB||VSSS.has(sNB))return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}VSSS.add(sNB);sessionStorage.setItem(VSS_KEY,JSON.stringify(Array.from(VSSS)))}catch(e){}};
     
-    const LCF=(s_d)=>{CS.innerHTML='';CSD_L=s_d.capitulos;CSD_L.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});CS.value=CCL;UC();A.src=s_d.enlaces[CLI].enlace;const CPTactual=CPT;const sSCT=()=>{A.currentTime=CPTactual};A.onloadedmetadata=null;A.onloadedmetadata=()=>{sSCT();A.onloadedmetadata=null};if(A.readyState>=1){sSCT();A.onloadedmetadata=null}A.load();clearInterval(TII);UT();TII=setInterval(UT,1e3)};
+    const LCF=(s_d, srp = !1)=>{
+        CS.innerHTML='';
+        CSD_L=s_d.capitulos;
+        CSD_L.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});
+        CS.value=CCL;
+        UC();
+        A.src=s_d.enlaces[CLI].enlace;
+        const CPTactual=CPT;
+
+        const stcapin=()=>{
+            A.currentTime=CPTactual;
+            if (srp) {
+                A.play().catch(e=>{});
+            }
+        };
+        
+        A.onloadedmetadata=null; 
+        A.addEventListener('canplay', stcapin, { once: true });
+
+        A.load();
+        
+        clearInterval(TII);
+        UT();
+        TII=setInterval(UT,1e3);
+    };
+
     const O=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){TS_C=await FD()}const pL=await RP(nbs);if(pL){CPT=A.currentTime}else{S=s_i;CCL=0;CLI=0;if(S&&S.capitulos&&S.capitulos[CCL]){CPT=S.capitulos[CCL].inicio/1e3}else{CPT=0}if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()};lYC();MC_DIV.classList.add('h');M.style.display="block";M.setAttribute("aria-hidden","false");document.querySelector('#sM .mc').focus();eFT(M);SEL_SER_DIV.style.display="none";document.getElementById('as').style.display="none";history.pushState({modalOpenFor:'sM'},'','#os');window.addEventListener('popstate',modalPopstateHandler);};
     
     const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();return e.series||[]}catch(t){return[]}};
@@ -210,7 +235,15 @@
     GCI=t=>{let e=0;if(!CSD_L||CSD_L.length===0)return 0;for(let i=0;i<CSD_L.length;i++){const n=CSD_L[i];if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3){e=i;break}if(t<n.inicio/1e3){e=i>0?i-1:0;break}if(i===CSD_L.length-1&&t>n.fin/1e3){e=i;break}}}return e},
     PP=()=>{let t=CCL;t>0&&(t--,CS.value=t,PC(true,false))},
     NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;PC(true,false)}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){O(semsbo[cti+1])}else{}}},
-    CLS=()=>{CPT=A.currentTime;CLI=parseInt(LS.value);S&&LCF(S)},IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
+    CLS=()=>{
+        const wP = IP;
+        CPT=A.currentTime;
+        CLI=parseInt(LS.value);
+        if(S) {
+            LCF(S, wP);
+        }
+    },
+    IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
     DCW=async s_nb=>{if(!auth.currentUser)return;try{const u=auth.currentUser;await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${s_nb}`));UCW()}catch(e){}},
     UCW=async()=>{if(isUCWRunning)return;isUCWRunning=!0;CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');isUCWRunning=!1;return}
     document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",10));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})});
@@ -226,8 +259,10 @@
     if(iA===0&&c.length>0){CWL.innerHTML="<li>No hay progreso para las series actualmente seleccionadas.</li>"}else if(iA===0&&c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}finally{isUCWRunning=!1}};
     CBC.addEventListener('click',C);window.addEventListener('click',t=>{t.target===M&&C()});
     CS.addEventListener('change',()=>{S&&GP();PC(true,true)});
-    A.addEventListener('pause',()=>{if(S&&M.style.display==="block"){GP();PB.setAttribute('aria-label','Reproducir (Alt + K)')}});
+    
     A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()});
+    A.addEventListener('pause',()=>{IP=!1;PB.textContent='Reproducir';PB.setAttribute('aria-label','Reproducir (Alt + K)');if(S&&M.style.display==="block"){GP()}});
+    
     A.addEventListener('ended',()=>{NP()});
     LS.addEventListener('change',CLS);PB.addEventListener('click',TP);
     document.getElementById('fb').addEventListener('click',F);document.getElementById('bb').addEventListener('click',B);REB.addEventListener('click',RE);
