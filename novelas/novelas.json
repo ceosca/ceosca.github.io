@@ -2828,6 +2828,652 @@
                     "titulo": "Capítulo 135"
                 }
             ]
+        },
+        {
+            "nombre": "Betty en NY",
+            "genero": "Comedia; Drama;",
+            "anio": 2019,
+            "reparto": [
+                "Elyfer Torres",
+                "Erick Elias",
+                "Sabrina Seara",
+                "Amaranta Ruiz",
+                "Aarón Díaz",
+                "Sheyla Tadeo",
+                "Sylvia Saenz",
+                "Valeria Vera",
+                "Jeirmarie Osorio",
+                "Isabel Moreno",
+                "Daniela Tapia",
+                "Mauricio Garza",
+                "Alma Delfina"
+            ],
+            "pais_origen": "Estados Unidos, telemundo",
+            "cantidad_episodios": 123,
+            "sinopsis": "Betty es una joven latina en Nueva York que, rechazada en múltiples empleos, acepta uno por debajo de sus calificaciones en la industria de la moda. En medio del glamour y los negocios, de la guerra entre las bonitas y las feas, Betty crece y se enfrenta al mayor reto de su vida: el amor.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://ia601709.us.archive.org/15/items/telemundoua/betty-en-ni.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3323434,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 3323434,
+                    "fin": 6548778,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 6548778,
+                    "fin": 9868244,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 9868244,
+                    "fin": 12587092,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 12587092,
+                    "fin": 15275902,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 15275902,
+                    "fin": 17994750,
+                    "titulo": "Capítulo 6"
+                },
+                {
+                    "inicio": 17994750,
+                    "fin": 20713598,
+                    "titulo": "Capítulo 7"
+                },
+                {
+                    "inicio": 20713598,
+                    "fin": 23432446,
+                    "titulo": "Capítulo 8"
+                },
+                {
+                    "inicio": 23432446,
+                    "fin": 26151294,
+                    "titulo": "Capítulo 9"
+                },
+                {
+                    "inicio": 26151294,
+                    "fin": 28870142,
+                    "titulo": "Capítulo 10"
+                },
+                {
+                    "inicio": 28870142,
+                    "fin": 31588990,
+                    "titulo": "Capítulo 11"
+                },
+                {
+                    "inicio": 31588990,
+                    "fin": 34287827,
+                    "titulo": "Capítulo 12"
+                },
+                {
+                    "inicio": 34287827,
+                    "fin": 37008680,
+                    "titulo": "Capítulo 13"
+                },
+                {
+                    "inicio": 37008680,
+                    "fin": 39641426,
+                    "titulo": "Capítulo 14"
+                },
+                {
+                    "inicio": 39641426,
+                    "fin": 42274172,
+                    "titulo": "Capítulo 15"
+                },
+                {
+                    "inicio": 42274172,
+                    "fin": 44924966,
+                    "titulo": "Capítulo 16"
+                },
+                {
+                    "inicio": 44924966,
+                    "fin": 47545723,
+                    "titulo": "Capítulo 17"
+                },
+                {
+                    "inicio": 47545723,
+                    "fin": 50200485,
+                    "titulo": "Capítulo 18"
+                },
+                {
+                    "inicio": 50200485,
+                    "fin": 52839247,
+                    "titulo": "Capítulo 19"
+                },
+                {
+                    "inicio": 52839247,
+                    "fin": 55492047,
+                    "titulo": "Capítulo 20"
+                },
+                {
+                    "inicio": 55492047,
+                    "fin": 58124793,
+                    "titulo": "Capítulo 21"
+                },
+                {
+                    "inicio": 58124793,
+                    "fin": 60777593,
+                    "titulo": "Capítulo 22"
+                },
+                {
+                    "inicio": 60777593,
+                    "fin": 63406329,
+                    "titulo": "Capítulo 23"
+                },
+                {
+                    "inicio": 63406329,
+                    "fin": 66009038,
+                    "titulo": "Capítulo 24"
+                },
+                {
+                    "inicio": 66009038,
+                    "fin": 68729891,
+                    "titulo": "Capítulo 25"
+                },
+                {
+                    "inicio": 68729891,
+                    "fin": 71332600,
+                    "titulo": "Capítulo 26"
+                },
+                {
+                    "inicio": 71332600,
+                    "fin": 73943330,
+                    "titulo": "Capítulo 27"
+                },
+                {
+                    "inicio": 73943330,
+                    "fin": 76580087,
+                    "titulo": "Capítulo 28"
+                },
+                {
+                    "inicio": 76580087,
+                    "fin": 79230881,
+                    "titulo": "Capítulo 29"
+                },
+                {
+                    "inicio": 79230881,
+                    "fin": 81883681,
+                    "titulo": "Capítulo 30"
+                },
+                {
+                    "inicio": 81883681,
+                    "fin": 84536481,
+                    "titulo": "Capítulo 31"
+                },
+                {
+                    "inicio": 84536481,
+                    "fin": 87129206,
+                    "titulo": "Capítulo 32"
+                },
+                {
+                    "inicio": 87129206,
+                    "fin": 89721931,
+                    "titulo": "Capítulo 33"
+                },
+                {
+                    "inicio": 89721931,
+                    "fin": 92374731,
+                    "titulo": "Capítulo 34"
+                },
+                {
+                    "inicio": 92374731,
+                    "fin": 94991477,
+                    "titulo": "Capítulo 35"
+                },
+                {
+                    "inicio": 94991477,
+                    "fin": 97644277,
+                    "titulo": "Capítulo 36"
+                },
+                {
+                    "inicio": 97644277,
+                    "fin": 100265034,
+                    "titulo": "Capítulo 37"
+                },
+                {
+                    "inicio": 100265034,
+                    "fin": 102867743,
+                    "titulo": "Capítulo 38"
+                },
+                {
+                    "inicio": 102867743,
+                    "fin": 105510516,
+                    "titulo": "Capítulo 39"
+                },
+                {
+                    "inicio": 105510516,
+                    "fin": 108103241,
+                    "titulo": "Capítulo 40"
+                },
+                {
+                    "inicio": 108103241,
+                    "fin": 110705950,
+                    "titulo": "Capítulo 41"
+                },
+                {
+                    "inicio": 110705950,
+                    "fin": 113298675,
+                    "titulo": "Capítulo 42"
+                },
+                {
+                    "inicio": 113298675,
+                    "fin": 115949469,
+                    "titulo": "Capítulo 43"
+                },
+                {
+                    "inicio": 115949469,
+                    "fin": 118602269,
+                    "titulo": "Capítulo 44"
+                },
+                {
+                    "inicio": 118602269,
+                    "fin": 121194994,
+                    "titulo": "Capítulo 45"
+                },
+                {
+                    "inicio": 121194994,
+                    "fin": 123817756,
+                    "titulo": "Capítulo 46"
+                },
+                {
+                    "inicio": 123817756,
+                    "fin": 126470556,
+                    "titulo": "Capítulo 47"
+                },
+                {
+                    "inicio": 126470556,
+                    "fin": 129119345,
+                    "titulo": "Capítulo 48"
+                },
+                {
+                    "inicio": 129119345,
+                    "fin": 132084422,
+                    "titulo": "Capítulo 49"
+                },
+                {
+                    "inicio": 132084422,
+                    "fin": 134707184,
+                    "titulo": "Capítulo 50"
+                },
+                {
+                    "inicio": 134707184,
+                    "fin": 137329946,
+                    "titulo": "Capítulo 51"
+                },
+                {
+                    "inicio": 137329946,
+                    "fin": 139966703,
+                    "titulo": "Capítulo 52"
+                },
+                {
+                    "inicio": 139966703,
+                    "fin": 142577433,
+                    "titulo": "Capítulo 53"
+                },
+                {
+                    "inicio": 142577433,
+                    "fin": 145212185,
+                    "titulo": "Capítulo 54"
+                },
+                {
+                    "inicio": 145212185,
+                    "fin": 147832942,
+                    "titulo": "Capítulo 55"
+                },
+                {
+                    "inicio": 147832942,
+                    "fin": 150457710,
+                    "titulo": "Capítulo 56"
+                },
+                {
+                    "inicio": 150457710,
+                    "fin": 153066435,
+                    "titulo": "Capítulo 57"
+                },
+                {
+                    "inicio": 153066435,
+                    "fin": 155631128,
+                    "titulo": "Capítulo 58"
+                },
+                {
+                    "inicio": 155631128,
+                    "fin": 158287896,
+                    "titulo": "Capítulo 59"
+                },
+                {
+                    "inicio": 158287896,
+                    "fin": 160934680,
+                    "titulo": "Capítulo 60"
+                },
+                {
+                    "inicio": 160934680,
+                    "fin": 163539394,
+                    "titulo": "Capítulo 61"
+                },
+                {
+                    "inicio": 163539394,
+                    "fin": 166040002,
+                    "titulo": "Capítulo 62"
+                },
+                {
+                    "inicio": 166040002,
+                    "fin": 168640748,
+                    "titulo": "Capítulo 63"
+                },
+                {
+                    "inicio": 168640748,
+                    "fin": 171287532,
+                    "titulo": "Capítulo 64"
+                },
+                {
+                    "inicio": 171287532,
+                    "fin": 173898262,
+                    "titulo": "Capítulo 65"
+                },
+                {
+                    "inicio": 173898262,
+                    "fin": 176510998,
+                    "titulo": "Capítulo 66"
+                },
+                {
+                    "inicio": 176510998,
+                    "fin": 179103723,
+                    "titulo": "Capítulo 67"
+                },
+                {
+                    "inicio": 179103723,
+                    "fin": 181704469,
+                    "titulo": "Capítulo 68"
+                },
+                {
+                    "inicio": 181704469,
+                    "fin": 184315199,
+                    "titulo": "Capítulo 69"
+                },
+                {
+                    "inicio": 184315199,
+                    "fin": 186945940,
+                    "titulo": "Capítulo 70"
+                },
+                {
+                    "inicio": 186945940,
+                    "fin": 189536660,
+                    "titulo": "Capítulo 71"
+                },
+                {
+                    "inicio": 189536660,
+                    "fin": 192173417,
+                    "titulo": "Capítulo 72"
+                },
+                {
+                    "inicio": 192173417,
+                    "fin": 194774163,
+                    "titulo": "Capítulo 73"
+                },
+                {
+                    "inicio": 194774163,
+                    "fin": 197424957,
+                    "titulo": "Capítulo 74"
+                },
+                {
+                    "inicio": 197424957,
+                    "fin": 200039698,
+                    "titulo": "Capítulo 75"
+                },
+                {
+                    "inicio": 200039698,
+                    "fin": 202682471,
+                    "titulo": "Capítulo 76"
+                },
+                {
+                    "inicio": 202682471,
+                    "fin": 205281212,
+                    "titulo": "Capítulo 77"
+                },
+                {
+                    "inicio": 205281212,
+                    "fin": 208418492,
+                    "titulo": "Capítulo 78"
+                },
+                {
+                    "inicio": 208418492,
+                    "fin": 210931132,
+                    "titulo": "Capítulo 79"
+                },
+                {
+                    "inicio": 210931132,
+                    "fin": 213435750,
+                    "titulo": "Capítulo 80"
+                },
+                {
+                    "inicio": 213435750,
+                    "fin": 215952400,
+                    "titulo": "Capítulo 81"
+                },
+                {
+                    "inicio": 215952400,
+                    "fin": 218461029,
+                    "titulo": "Capítulo 82"
+                },
+                {
+                    "inicio": 218461029,
+                    "fin": 220971663,
+                    "titulo": "Capítulo 83"
+                },
+                {
+                    "inicio": 220971663,
+                    "fin": 223496335,
+                    "titulo": "Capítulo 84"
+                },
+                {
+                    "inicio": 223496335,
+                    "fin": 226006969,
+                    "titulo": "Capítulo 85"
+                },
+                {
+                    "inicio": 226006969,
+                    "fin": 228537614,
+                    "titulo": "Capítulo 86"
+                },
+                {
+                    "inicio": 228537614,
+                    "fin": 231064248,
+                    "titulo": "Capítulo 87"
+                },
+                {
+                    "inicio": 231064248,
+                    "fin": 233685005,
+                    "titulo": "Capítulo 88"
+                },
+                {
+                    "inicio": 233685005,
+                    "fin": 236291725,
+                    "titulo": "Capítulo 89"
+                },
+                {
+                    "inicio": 236291725,
+                    "fin": 238880439,
+                    "titulo": "Capítulo 90"
+                },
+                {
+                    "inicio": 238880439,
+                    "fin": 241471159,
+                    "titulo": "Capítulo 91"
+                },
+                {
+                    "inicio": 241471159,
+                    "fin": 244083895,
+                    "titulo": "Capítulo 92"
+                },
+                {
+                    "inicio": 244083895,
+                    "fin": 246698636,
+                    "titulo": "Capítulo 93"
+                },
+                {
+                    "inicio": 246698636,
+                    "fin": 249311372,
+                    "titulo": "Capítulo 94"
+                },
+                {
+                    "inicio": 249311372,
+                    "fin": 251922102,
+                    "titulo": "Capítulo 95"
+                },
+                {
+                    "inicio": 251922102,
+                    "fin": 254542859,
+                    "titulo": "Capítulo 96"
+                },
+                {
+                    "inicio": 254542859,
+                    "fin": 257161611,
+                    "titulo": "Capítulo 97"
+                },
+                {
+                    "inicio": 257161611,
+                    "fin": 259752331,
+                    "titulo": "Capítulo 98"
+                },
+                {
+                    "inicio": 259752331,
+                    "fin": 262343051,
+                    "titulo": "Capítulo 99"
+                },
+                {
+                    "inicio": 262343051,
+                    "fin": 264933771,
+                    "titulo": "Capítulo 100"
+                },
+                {
+                    "inicio": 264933771,
+                    "fin": 267544501,
+                    "titulo": "Capítulo 101"
+                },
+                {
+                    "inicio": 267544501,
+                    "fin": 270137226,
+                    "titulo": "Capítulo 102"
+                },
+                {
+                    "inicio": 270137226,
+                    "fin": 272757983,
+                    "titulo": "Capítulo 103"
+                },
+                {
+                    "inicio": 272757983,
+                    "fin": 275350708,
+                    "titulo": "Capítulo 104"
+                },
+                {
+                    "inicio": 275350708,
+                    "fin": 277973470,
+                    "titulo": "Capítulo 105"
+                },
+                {
+                    "inicio": 277973470,
+                    "fin": 280596232,
+                    "titulo": "Capítulo 106"
+                },
+                {
+                    "inicio": 280596232,
+                    "fin": 283218994,
+                    "titulo": "Capítulo 107"
+                },
+                {
+                    "inicio": 283218994,
+                    "fin": 285819740,
+                    "titulo": "Capítulo 108"
+                },
+                {
+                    "inicio": 285819740,
+                    "fin": 288442502,
+                    "titulo": "Capítulo 109"
+                },
+                {
+                    "inicio": 288442502,
+                    "fin": 291045211,
+                    "titulo": "Capítulo 110"
+                },
+                {
+                    "inicio": 291045211,
+                    "fin": 293637936,
+                    "titulo": "Capítulo 111"
+                },
+                {
+                    "inicio": 293637936,
+                    "fin": 296260698,
+                    "titulo": "Capítulo 112"
+                },
+                {
+                    "inicio": 296260698,
+                    "fin": 298883460,
+                    "titulo": "Capítulo 113"
+                },
+                {
+                    "inicio": 298883460,
+                    "fin": 301506222,
+                    "titulo": "Capítulo 114"
+                },
+                {
+                    "inicio": 301506222,
+                    "fin": 304128984,
+                    "titulo": "Capítulo 115"
+                },
+                {
+                    "inicio": 304128984,
+                    "fin": 306739714,
+                    "titulo": "Capítulo 116"
+                },
+                {
+                    "inicio": 306739714,
+                    "fin": 309338455,
+                    "titulo": "Capítulo 117"
+                },
+                {
+                    "inicio": 309338455,
+                    "fin": 311965228,
+                    "titulo": "Capítulo 118"
+                },
+                {
+                    "inicio": 311965228,
+                    "fin": 314587990,
+                    "titulo": "Capítulo 119"
+                },
+                {
+                    "inicio": 314587990,
+                    "fin": 317190699,
+                    "titulo": "Capítulo 120"
+                },
+                {
+                    "inicio": 317190699,
+                    "fin": 319813461,
+                    "titulo": "Capítulo 121"
+                },
+                {
+                    "inicio": 319813461,
+                    "fin": 322430207,
+                    "titulo": "Capítulo 122"
+                },
+                {
+                    "inicio": 322430207,
+                    "fin": 325052969,
+                    "titulo": "Capítulo 123"
+                }
+            ]
         }
     ]
 }
