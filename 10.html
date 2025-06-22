@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor Flow - Canal 10 CBA HD (Verimatrix)</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f0f0f0; }
+        #playerContainer {
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+    <!-- CDN de JWPlayer -->
+    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
+    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+</head>
+<body>
+
+    <h1>Reproduciendo Canal 10 CBA HD (Intento con Verimatrix HLS AES-128)</h1>
+    <p><strong>Nota:</strong> La reproducción depende de la validez del token en la URL de licencia y de las políticas CORS del servidor.</p>
+
+    <div id="playerContainer">
+        <div id="myElement">Cargando reproductor...</div>
+    </div>
+
+    <script type="text/javascript">
+        // URL del Master Playlist M3U8 que usa AES-128 con la URL de licencia Verimatrix
+        const m3u8Url = "http://cdn.cvattv.com.ar/live/c4eds/Canal10_CBA_HD/verimatrix_rotating/Canal10_CBA_HD.m3u8";
+
+        // URL de licencia obtenida del media playlist.
+        // ¡¡¡ADVERTENCIA: El parámetro 'p' probablemente necesite ser dinámico!!!
+        const licenseUrl = "https://200.89.191.123/CAB/keyfile?r=vmx_Canal10_CBA&t=DTV&p=1750475357"; // Este valor 'p' probablemente ya expiró
+
+        try {
+            const playerInstance = jwplayer("myElement").setup({
+                "playlist": [{
+                    "sources": [{
+                        "file": m3u8Url,
+                        "type": "hls"
+                        // JWPlayer 8 debería detectar AES-128 HLS y usar la URI de la etiqueta #EXT-X-KEY
+                        // Si la URI es absoluta (como en este caso), la usará directamente.
+                        // El desafío principal será si esa URI de licencia (con su parámetro 'p')
+                        // sigue siendo válida y si no requiere cabeceras adicionales.
+                    }]
+                }],
+                "width": "100%",
+                "aspectratio": "16:9",
+                "autostart": false, // Puedes ponerlo en true si quieres que inicie automáticamente
+                "cast": {} // Habilitar Chromecast si es necesario
+            });
+
+            playerInstance.on('ready', function() {
+                console.log("JWPlayer listo.");
+            });
+
+            playerInstance.on('error', function(event) {
+                console.error("Error de JWPlayer:", event.message);
+                // Podrías mostrar un mensaje más amigable al usuario aquí
+                document.getElementById("myElement").innerHTML = "Error al cargar el video: " + event.message;
+
+            });
+
+            // Si necesitas interceptar y modificar la solicitud de licencia (más avanzado)
+            // Esto es solo un ejemplo conceptual, la implementación exacta varía
+            // entre versiones de JWPlayer y podría requerir configuración a nivel de `drm`
+            /*
+            playerInstance.on('beforePlay', function() {
+                var hlsInstance = playerInstance.getProvider().hls;
+                if (hlsInstance) {
+                    hlsInstance.on(Hls.Events.KEY_LOADING, function (event, data) {
+                        console.log("KEY_LOADING event:", data);
+                        // Aquí podrías intentar modificar data.frag.decryptdata.uri o agregar headers
+                        // si la versión de hls.js lo permite y JWPlayer lo expone.
+                        // Por ejemplo, si necesitas actualizar el parámetro 'p' dinámicamente:
+                        // let currentLicenseUrl = new URL(data.frag.decryptdata.uri);
+                        // currentLicenseUrl.searchParams.set('p', obtenerNuevoValorDeP());
+                        // data.frag.decryptdata.uri = currentLicenseUrl.toString();
+
+                        // O para añadir headers (esto es más complejo y depende de la capa de red de hls.js):
+                        // data.request.headers = data.request.headers || {};
+                        // data.request.headers['X-Custom-Header'] = 'valor';
+                    });
+                }
+            });
+            */
+
+        } catch (e) {
+            console.error("Error al inicializar JWPlayer:", e);
+            document.getElementById("myElement").innerHTML = "Error al inicializar el reproductor.";
+        }
+
+        // Función placeholder si necesitaras obtener un token 'p' dinámicamente
+        // function obtenerNuevoValorDeP() {
+        //     // Aquí iría la lógica para obtener un nuevo valor para 'p'
+        //     // Esto podría ser una llamada a otra API, un cálculo, etc.
+        //     return Date.now(); // Ejemplo muy simplista, probablemente incorrecto
+        // }
+    </script>
+
+</body>
+</html>
