@@ -1,299 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Reproductor de Audio de Streams</title>
-    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
-    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canales de Audio</title>
     <style>
         body {
             font-family: sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 80px; /* Espacio para el reproductor fijo */
             background-color: #f4f4f4;
-        }
-        #player {
-            width: 100%;
-            height: 40px;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            line-height: 40px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-        #controls {
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        button {
-            padding: 10px 15px;
-            margin-right: 5px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
+            color: #333;
         }
         .container {
-            background-color: white;
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
             padding: 20px;
-            border-radius: 8px;
+            background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 500px;
-            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        li:hover {
+            background-color: #e9e9e9;
+        }
+        li.playing {
+            background-color: #d1e7dd;
+            font-weight: bold;
+        }
+        .player-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .controls button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .controls button:hover {
+            background-color: #777;
+        }
+        .current-channel-info {
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            min-height: 1.2em; /* Para evitar saltos cuando no hay nada */
+        }
+        #video-player {
+            display: none; /* Ocultamos el reproductor nativo */
+            width: 1px; /* Algunos navegadores requieren dimensiones mínimas para cargar */
+            height: 1px; /*  HLS en un tag <video> */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div>
-            <label for="categorySelector">Selecciona una categoría:</label>
-            <select id="categorySelector" onchange="updateChannelList()"></select>
-        </div>
-        <div>
-            <label for="channelSelector">Selecciona un canal:</label>
-            <select id="channelSelector" onchange="cargarStream()"></select>
-        </div>
-        <div id="player">CARGANDO REPRODUCTOR...</div>
-        <div id="controls">
-            <button onclick="playPause()">Play/Pausa</button>
-            <button onclick="changeVolume(-10)">Bajar Volumen</button>
-            <button onclick="changeVolume(10)">Subir Volumen</button>
-            <button onclick="changeAudioTrack(-1)">Track Anterior</button>
-            <button onclick="changeAudioTrack(1)">Siguiente Track</button>
+        <h1>Canales de Audio en Vivo</h1>
+        <div id="canales-lista">
+            <p>Cargando canales...</p>
         </div>
     </div>
 
-    <script type='text/javascript'>
-        var playerInstance = null;
-        var canales = [];
-        var categorias = [];
+    <div class="player-container">
+        <div id="current-channel-name" class="current-channel-info"></div>
+        <div class="controls">
+            <button id="prev-btn">⏮️ Anterior</button>
+            <button id="play-pause-btn">▶️ Reproducir</button>
+            <button id="next-btn">Siguiente ⏭️</button>
+            <button id="vol-down-btn">🔉-</button>
+            <button id="vol-up-btn">🔊+</button>
+        </div>
+        <video id="video-player" playsinline></video> <!-- playsinline es bueno para móviles -->
+    </div>
 
-        fetch('canales.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                canales = data;
-                categorias = obtenerCategoriasOrdenadas();
-                cargarCategorias();
-                if (categorias.length > 0) {
-                    document.getElementById("categorySelector").value = categorias[0];
-                    updateChannelList();
-                }
-            })
-            .catch(error => {
-                console.error('Error al cargar el JSON de canales:', error);
-                document.getElementById("player").textContent = "Error al cargar lista de canales.";
-            });
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canalesListaDiv = document.getElementById('canales-lista');
+            const videoPlayer = document.getElementById('video-player'); // Cambiado a videoPlayer
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const volUpBtn = document.getElementById('vol-up-btn');
+            const volDownBtn = document.getElementById('vol-down-btn');
+            const currentChannelNameDiv = document.getElementById('current-channel-name');
 
-        function cargarCategorias() {
-            var selectBox = document.getElementById("categorySelector");
-            selectBox.innerHTML = "";
-            if (categorias.length === 0) {
-                var option = document.createElement("option");
-                option.text = "No hay categorías disponibles";
-                option.disabled = true;
-                selectBox.add(option);
-                return;
-            }
-            categorias.forEach(function(categoria) {
-                var option = document.createElement("option");
-                option.text = categoria;
-                option.value = categoria;
-                selectBox.add(option);
-            });
-        }
+            const jsonUrl = 'https://ceosca.github.io/audio/canales.json';
+            let allChannelsFlat = [];
+            let currentIndex = -1;
+            let currentPlayingLi = null;
 
-        function obtenerCategoriasOrdenadas() {
-            var categoriasSet = new Set();
-            canales.forEach(function(canal) {
-                if (canal.url && canal.url.startsWith("http") && (canal.url.includes(".m3u8") || canal.url.includes(".mpd"))) {
-                    categoriasSet.add(canal.categoria);
-                }
-            });
-            return Array.from(categoriasSet).sort();
-        }
+            videoPlayer.controls = false; 
 
-        function updateChannelList() {
-            var selectedCategory = document.getElementById("categorySelector").value;
-            var channelSelector = document.getElementById("channelSelector");
-            channelSelector.innerHTML = "";
-
-            var filteredChannels = canales.filter(function(canal) {
-                return canal.categoria === selectedCategory &&
-                       canal.url &&
-                       canal.url.startsWith("http") &&
-                       (canal.url.includes(".m3u8") || canal.url.includes(".mpd"));
-            });
-
-            filteredChannels.sort(function(a, b) {
-                return a.nombre.localeCompare(b.nombre);
-            });
-
-            if (filteredChannels.length === 0) {
-                var option = document.createElement("option");
-                option.text = "No hay canales disponibles en esta categoría";
-                option.disabled = true;
-                channelSelector.add(option);
-                if(playerInstance) {
-                    playerInstance.remove();
-                    playerInstance = null;
-                }
-                document.getElementById("player").textContent = "Seleccione un canal";
-                return;
-            }
-
-            filteredChannels.forEach(function(canal) {
-                var option = document.createElement("option");
-                option.text = canal.nombre;
-                option.value = JSON.stringify(canal);
-                channelSelector.add(option);
-            });
-
-            if (filteredChannels.length > 0) {
-                cargarStream();
-            }
-        }
-
-        function cargarStream() {
-            var selectBox = document.getElementById("channelSelector");
-            if (!selectBox.value || selectBox.selectedOptions.length === 0 || selectBox.selectedOptions[0].disabled) {
-                if(playerInstance) {
-                    playerInstance.remove();
-                    playerInstance = null;
-                }
-                document.getElementById("player").textContent = "Seleccione un canal válido.";
-                return;
-            }
-            var selectedValue;
-            try {
-                selectedValue = JSON.parse(selectBox.value);
-            } catch (e) {
-                document.getElementById("player").textContent = "Error en datos del canal.";
-                return;
-            }
-
-            if (!selectedValue || !selectedValue.url || !selectedValue.url.startsWith("http")) {
-                 if(playerInstance) {
-                    playerInstance.stop();
-                 }
-                 document.getElementById("player").textContent = "URL de stream inválida.";
-                 return;
-            }
-            
-            document.getElementById("player").textContent = "CARGANDO STREAM: " + selectedValue.nombre;
-
-            var streamType = selectedValue.url.includes(".mpd") ? "mpd" : "hls";
-
-            var config = {
-                playlist: [{
-                    title: selectedValue.nombre || "Audio Stream",
-                    sources: [{
-                        file: selectedValue.url,
-                        type: streamType
-                    }]
-                }],
-                width: "100%",
-                height: 40,
-                autostart: true,
-                audioOnly: true,
-                visualPlaylist: false,
-                controls: true 
-            };
-            
-            if (selectedValue.keyId && selectedValue.key) {
-                config.drm = {
-                    clearkey: {
-                        keyId: selectedValue.keyId,
-                        key: selectedValue.key
+            async function cargarCanales() {
+                try {
+                    const response = await fetch(jsonUrl);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
                     }
-                };
-            }
-            
-            if (playerInstance) {
-                playerInstance.remove();
-            }
-            playerInstance = jwplayer("player").setup(config);
-
-            playerInstance.on('error', function(event) {
-                document.getElementById("player").textContent = "Error: " + event.message + " (" + selectedValue.nombre + ")";
-            });
-
-            playerInstance.on('ready', function() {
-                 document.getElementById("player").textContent = "Reproductor Listo. Stream: " + selectedValue.nombre;
-                 if (playerInstance.getState() !== 'playing' && playerInstance.getState() !== 'buffering') {
-                    playerInstance.play().catch(function(e) {
-                        document.getElementById("player").textContent = "Play bloqueado. Haz clic en Play/Pausa.";
-                    });
-                 }
-            });
-             playerInstance.on('play', function(event) {
-                 document.getElementById("player").textContent = "Reproduciendo: " + selectedValue.nombre;
-            });
-            playerInstance.on('pause', function() {
-                 document.getElementById("player").textContent = "Pausado: " + selectedValue.nombre;
-            });
-            playerInstance.on('buffer', function() {
-                document.getElementById("player").textContent = "Cargando buffer: " + selectedValue.nombre;
-            });
-             playerInstance.on('complete', function() {
-                document.getElementById("player").textContent = "Stream completado: " + selectedValue.nombre;
-            });
-        }
-
-        function playPause() {
-            if (playerInstance) {
-                if (playerInstance.getState() === "playing") {
-                    playerInstance.pause();
-                } else {
-                    playerInstance.play();
+                    const canales = await response.json();
+                    procesarYMostrarCanales(canales);
+                } catch (error) {
+                    canalesListaDiv.innerHTML = `<p style="color: red;">Error al cargar los canales: ${error.message}</p>`;
+                    console.error("Error al cargar canales:", error);
                 }
             }
-        }
 
-        function changeVolume(amount) {
-            if (playerInstance) {
-                var currentVolume = playerInstance.getVolume();
-                var newVolume = Math.max(0, Math.min(100, currentVolume + amount));
-                playerInstance.setVolume(newVolume);
-            }
-        }
+            function procesarYMostrarCanales(canales) {
+                const categorias = {};
+                canales.forEach(canal => {
+                    if (!categorias[canal.categoria]) {
+                        categorias[canal.categoria] = [];
+                    }
+                    categorias[canal.categoria].push(canal);
+                });
 
-        function changeAudioTrack(offset) {
-            if (playerInstance) {
-                var audioTracks = playerInstance.getAudioTracks();
-                if (audioTracks && audioTracks.length > 1) {
-                    var currentAudioTrackIndex = playerInstance.getCurrentAudioTrack();
-                    var newTrackIndex = currentAudioTrackIndex + offset;
+                canalesListaDiv.innerHTML = ''; 
+                allChannelsFlat = [];
+
+                Object.keys(categorias).sort().forEach(nombreCategoria => {
+                    const h2 = document.createElement('h2');
+                    h2.textContent = nombreCategoria;
+                    canalesListaDiv.appendChild(h2);
+
+                    const ul = document.createElement('ul');
+                    const canalesEnCategoria = categorias[nombreCategoria].sort((a, b) => a.nombre.localeCompare(b.nombre));
                     
-                    if (newTrackIndex < 0) {
-                        newTrackIndex = audioTracks.length - 1;
-                    } else if (newTrackIndex >= audioTracks.length) {
-                        newTrackIndex = 0;
-                    }
-                    playerInstance.setCurrentAudioTrack(newTrackIndex);
+                    canalesEnCategoria.forEach(canal => {
+                        const li = document.createElement('li');
+                        li.textContent = canal.nombre;
+                        const channelIndex = allChannelsFlat.length; 
+                        allChannelsFlat.push(canal); 
+
+                        li.addEventListener('click', () => {
+                            playChannel(canal.url, canal.nombre, channelIndex, li);
+                        });
+                        ul.appendChild(li);
+                    });
+                    canalesListaDiv.appendChild(ul);
+                });
+                
+                if (allChannelsFlat.length === 0) {
+                    canalesListaDiv.innerHTML = '<p>No hay canales disponibles.</p>';
                 }
             }
-        }
+
+            function playChannel(url, nombre, index, liElement) {
+                videoPlayer.src = url; // Cambiado a videoPlayer
+                videoPlayer.play()    // Cambiado a videoPlayer
+                    .then(() => {
+                        playPauseBtn.textContent = '⏸️ Pausar';
+                        currentChannelNameDiv.textContent = `Reproduciendo: ${nombre}`;
+                        currentIndex = index;
+                        
+                        if (currentPlayingLi) {
+                            currentPlayingLi.classList.remove('playing');
+                        }
+                        if (liElement) {
+                            liElement.classList.add('playing');
+                            currentPlayingLi = liElement;
+                        } else {
+                           const listItems = document.querySelectorAll('#canales-lista li');
+                           listItems.forEach(item => {
+                               item.classList.remove('playing'); // Limpia todos por si acaso
+                               if (item.textContent === nombre) {
+                                   item.classList.add('playing');
+                                   currentPlayingLi = item;
+                               }
+                           });
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error al reproducir:", error);
+                        currentChannelNameDiv.textContent = `Error al reproducir: ${nombre}`;
+                        playPauseBtn.textContent = '▶️ Reproducir';
+                         if (currentPlayingLi) currentPlayingLi.classList.remove('playing');
+                    });
+            }
+
+            playPauseBtn.addEventListener('click', () => {
+                if (!videoPlayer.src) { // Cambiado a videoPlayer
+                    if (allChannelsFlat.length > 0) {
+                        const firstChannel = allChannelsFlat[0];
+                        const firstLi = document.querySelector('#canales-lista li'); 
+                        playChannel(firstChannel.url, firstChannel.nombre, 0, firstLi);
+                    }
+                    return;
+                }
+                if (videoPlayer.paused || videoPlayer.ended) { // Cambiado a videoPlayer
+                    videoPlayer.play().catch(e => console.error("Error play:", e)); // Cambiado a videoPlayer
+                    playPauseBtn.textContent = '⏸️ Pausar';
+                } else {
+                    videoPlayer.pause(); // Cambiado a videoPlayer
+                    playPauseBtn.textContent = '▶️ Reproducir';
+                }
+            });
+
+            videoPlayer.addEventListener('play', () => { // Cambiado a videoPlayer
+                playPauseBtn.textContent = '⏸️ Pausar';
+            });
+            videoPlayer.addEventListener('pause', () => { // Cambiado a videoPlayer
+                playPauseBtn.textContent = '▶️ Reproducir';
+            });
+            videoPlayer.addEventListener('ended', () => { // Cambiado a videoPlayer
+                playPauseBtn.textContent = '▶️ Reproducir';
+            });
+            videoPlayer.addEventListener('error', (e) => { // Cambiado a videoPlayer
+                console.error("Error en el elemento video:", e); // Cambiado a video
+                let errorMessage = `Error: No se pudo cargar el audio.`;
+                if (videoPlayer.error) {
+                    switch (videoPlayer.error.code) {
+                        case MediaError.MEDIA_ERR_ABORTED:
+                            errorMessage = 'Carga de audio abortada.';
+                            break;
+                        case MediaError.MEDIA_ERR_NETWORK:
+                            errorMessage = 'Error de red al cargar audio.';
+                            break;
+                        case MediaError.MEDIA_ERR_DECODE:
+                            errorMessage = 'Error de decodificación de audio.';
+                            break;
+                        case MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                            errorMessage = 'Formato de audio no soportado.';
+                            break;
+                        default:
+                            errorMessage = 'Ocurrió un error desconocido con el audio.';
+                    }
+                }
+                currentChannelNameDiv.textContent = errorMessage;
+                if (currentPlayingLi) currentPlayingLi.classList.remove('playing');
+                playPauseBtn.textContent = '▶️ Reproducir';
+            });
+
+
+            function nextChannel() {
+                if (allChannelsFlat.length === 0) return;
+                currentIndex = (currentIndex + 1) % allChannelsFlat.length;
+                const next = allChannelsFlat[currentIndex];
+                const nextLi = findLiForChannel(next.nombre);
+                playChannel(next.url, next.nombre, currentIndex, nextLi);
+            }
+
+            function prevChannel() {
+                if (allChannelsFlat.length === 0) return;
+                currentIndex = (currentIndex - 1 + allChannelsFlat.length) % allChannelsFlat.length;
+                const prev = allChannelsFlat[currentIndex];
+                const prevLi = findLiForChannel(prev.nombre);
+                playChannel(prev.url, prev.nombre, currentIndex, prevLi);
+            }
+            
+            function findLiForChannel(channelName) {
+                const listItems = document.querySelectorAll('#canales-lista li');
+                for (let item of listItems) {
+                    if (item.textContent === channelName) {
+                        return item;
+                    }
+                }
+                return null;
+            }
+
+            nextBtn.addEventListener('click', nextChannel);
+            prevBtn.addEventListener('click', prevChannel);
+
+            volUpBtn.addEventListener('click', () => {
+                if (videoPlayer.volume < 1) { // Cambiado a videoPlayer
+                    videoPlayer.volume = Math.min(1, videoPlayer.volume + 0.1); // Cambiado a videoPlayer
+                }
+            });
+
+            volDownBtn.addEventListener('click', () => {
+                if (videoPlayer.volume > 0) { // Cambiado a videoPlayer
+                    videoPlayer.volume = Math.max(0, videoPlayer.volume - 0.1); // Cambiado a videoPlayer
+                }
+            });
+
+            cargarCanales();
+        });
     </script>
 </body>
 </html>
