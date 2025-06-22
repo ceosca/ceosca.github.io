@@ -1,377 +1,151 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canales de Audio con Shaka Player</title>
-    <!-- Shaka Player CSS (necesario para Shaka UI, aunque aquí lo ocultemos y usemos controles propios) -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/shaka-player/4.3.11/controls.css">
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 100px; /* Espacio para el reproductor fijo */
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        h2 {
-            color: #555;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li[role="button"] { /* Estilo para los elementos de lista que actúan como botones */
-            padding: 12px 10px;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-            outline: none; /* Quitar el outline por defecto al enfocar, si se desea un estilo personalizado */
-        }
-        li[role="button"]:hover,
-        li[role="button"]:focus { /* Estilo para hover y focus para accesibilidad */
-            background-color: #e9e9e9;
-            outline: 2px solid #007bff; /* Resaltado de foco visible */
-        }
-        li.playing {
-            background-color: #d1e7dd;
-            font-weight: bold;
-            color: #0f5132;
-        }
-        .player-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-            z-index: 1000;
-        }
-        .controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-        .controls button {
-            background-color: #555;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-        .controls button:hover,
-        .controls button:focus {
-            background-color: #777;
-            outline: 2px solid #00bfff; /* Resaltado de foco visible */
-        }
-        .current-channel-info {
-            text-align: center;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-            min-height: 1.2em; /* Para evitar saltos cuando no hay nada */
-            padding: 0 10px;
-        }
-        /* Ocultamos el contenedor de vídeo de Shaka Player, ya que solo queremos audio y nuestros controles */
-        #video-container {
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            position: absolute; /* Para que no ocupe espacio visual */
-            opacity: 0;
-        }
-    </style>
+    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
+    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
 </head>
 <body>
-    <div class="container">
-        <h1>Canales de Audio en Vivo</h1>
-        <div id="canales-lista">
-            <p>Cargando canales...</p>
-        </div>
+    <div id="playerContainer"></div>
+    <div id="controls">
+        <select id="channelSelector" style="display:none;" onchange="changeChannelManually()"></select>
     </div>
+    <script type='text/javascript'>
+        var playerInstance = null;
+        var canales = [];
+        var currentChannelIndex = null;
+        var channelNumberBuffer = "";
+        var timeoutId = null;
+        var downArrowTimer = null;
+        var upArrowTimer = null;
 
-    <!-- Contenedor para el vídeo que Shaka Player necesita -->
-    <div id="video-container" aria-hidden="true">
-        <video id="audio-element" playsinline poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-            Tu navegador no soporta el elemento de vídeo.
-        video>
-    </div>
+        fetch('https://ceosca.github.io/audio/canales.json')
+            .then(response => response.json())
+            .then(data => {
+                canales = data;
+                cargarOpciones();
+                cargarStream();
+            })
+            .catch(error => console.error('Error al cargar el JSON:', error));
 
-    <div class="player-container">
-        <div id="current-channel-name" class="current-channel-info" aria-live="polite">Selecciona un canal</div>
-        <div class="controls">
-            <button id="prev-btn" aria-label="Canal anterior">⏮️ Anterior</button>
-            <button id="play-pause-btn" aria-label="Reproducir">▶️ Reproducir</button>
-            <button id="next-btn" aria-label="Siguiente canal">Siguiente ⏭️</button>
-            <button id="vol-down-btn" aria-label="Bajar volumen">🔉-</button>
-            <button id="vol-up-btn" aria-label="Subir volumen">🔊+</button>
-        </div>
-    </div>
-
-    <!-- Shaka Player library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.3.11/shaka-player.ui.js" integrity="sha384-HNB6bS53L3Kxouj9PVk9u4sPEBUhF46S3F0rQSPHSA4gfURe5f31lSMob7UPh7Ru" crossorigin="anonymous"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const canalesListaDiv = document.getElementById('canales-lista');
-            const audioElement = document.getElementById('audio-element');
-            const playPauseBtn = document.getElementById('play-pause-btn');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const volUpBtn = document.getElementById('vol-up-btn');
-            const volDownBtn = document.getElementById('vol-down-btn');
-            const currentChannelNameDiv = document.getElementById('current-channel-name');
-
-            const jsonUrl = 'https://ceosca.github.io/audio/canales.json';
-            let allChannelsFlat = [];
-            let currentIndex = -1;
-            let currentPlayingLi = null;
-            let shakaPlayer;
-
-            // Inicializar Shaka Player
-            async function initShakaPlayer() {
-                shaka.polyfill.installAll(); // Polyfills para navegadores más antiguos
-                if (shaka.Player.isBrowserSupported()) {
-                    shakaPlayer = new shaka.Player(audioElement);
-                    
-                    // Configurar Shaka Player para audio solamente (si es relevante)
-                    // shakaPlayer.configure({
-                    //     preferredAudioLanguage: 'es', // Ejemplo
-                    //     abr: { enabled: true }
-                    // });
-
-                    // Escuchar errores de Shaka Player
-                    shakaPlayer.addEventListener('error', onShakaErrorEvent);
-
-                    // Escuchar eventos del elemento de audio para actualizar UI
-                    audioElement.addEventListener('play', () => {
-                        playPauseBtn.textContent = '⏸️ Pausar';
-                        playPauseBtn.setAttribute('aria-label', 'Pausar');
-                    });
-                    audioElement.addEventListener('pause', () => {
-                        playPauseBtn.textContent = '▶️ Reproducir';
-                        playPauseBtn.setAttribute('aria-label', 'Reproducir');
-                    });
-                    audioElement.addEventListener('ended', () => {
-                        playPauseBtn.textContent = '▶️ Reproducir';
-                        playPauseBtn.setAttribute('aria-label', 'Reproducir');
-                        // Opcional: reproducir siguiente automáticamente
-                        // nextChannel(); 
-                    });
-
-                } else {
-                    console.error('Shaka Player no es soportado por este navegador.');
-                    currentChannelNameDiv.textContent = 'Error: Reproductor no compatible con este navegador.';
-                }
-            }
-
-            function onShakaErrorEvent(event) {
-                const error = event.detail;
-                console.error('Error de Shaka Player:', error.code, 'Data:', error.data, 'Category:', error.category, 'Severity:', error.severity);
-                let userMessage = `Error al reproducir: ${error.code}.`;
-                // Puedes personalizar mensajes basados en error.code o error.category
-                switch (error.category) {
-                    case shaka.util.Error.Category.NETWORK:
-                        userMessage = 'Error de red al intentar cargar el canal.';
-                        break;
-                    case shaka.util.Error.Category.MEDIA:
-                        userMessage = 'Error con el formato del medio o no soportado.';
-                        break;
-                    case shaka.util.Error.Category.MANIFEST:
-                         userMessage = 'Error al procesar la información del canal.';
-                         break;
-                }
-                currentChannelNameDiv.textContent = userMessage;
-                playPauseBtn.textContent = '▶️ Reproducir';
-                playPauseBtn.setAttribute('aria-label', 'Reproducir');
-                if (currentPlayingLi) currentPlayingLi.classList.remove('playing');
-            }
-
-            async function cargarCanales() {
-                try {
-                    const response = await fetch(jsonUrl);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    const canales = await response.json();
-                    procesarYMostrarCanales(canales);
-                } catch (error) {
-                    canalesListaDiv.innerHTML = `<p style="color: red;">Error al cargar los canales: ${error.message}</p>`;
-                    console.error("Error al cargar canales:", error);
-                }
-            }
-
-            function procesarYMostrarCanales(canales) {
-                const categorias = {};
-                canales.forEach(canal => {
-                    if (!categorias[canal.categoria]) {
-                        categorias[canal.categoria] = [];
-                    }
-                    categorias[canal.categoria].push(canal);
-                });
-
-                canalesListaDiv.innerHTML = ''; 
-                allChannelsFlat = [];
-
-                Object.keys(categorias).sort().forEach(nombreCategoria => {
-                    const h2 = document.createElement('h2');
-                    h2.textContent = nombreCategoria;
-                    canalesListaDiv.appendChild(h2);
-
-                    const ul = document.createElement('ul');
-                    const canalesEnCategoria = categorias[nombreCategoria].sort((a, b) => a.nombre.localeCompare(b.nombre));
-                    
-                    canalesEnCategoria.forEach(canal => {
-                        const li = document.createElement('li');
-                        li.textContent = canal.nombre;
-                        // Accesibilidad para los elementos de la lista
-                        li.setAttribute('role', 'button');
-                        li.setAttribute('tabindex', '0'); 
-
-                        const channelIndex = allChannelsFlat.length; 
-                        allChannelsFlat.push(canal); 
-
-                        li.addEventListener('click', () => {
-                            playChannel(canal.url, canal.nombre, channelIndex, li);
-                        });
-                        // Permitir activación con teclado (Enter o Espacio)
-                        li.addEventListener('keydown', (event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                                event.preventDefault(); // Prevenir scroll con la barra espaciadora
-                                playChannel(canal.url, canal.nombre, channelIndex, li);
-                            }
-                        });
-                        ul.appendChild(li);
-                    });
-                    canalesListaDiv.appendChild(ul);
-                });
-                
-                if (allChannelsFlat.length === 0) {
-                    canalesListaDiv.innerHTML = '<p>No hay canales disponibles.</p>';
-                }
-            }
-
-            async function playChannel(url, nombre, index, liElement) {
-                if (!shakaPlayer) {
-                    currentChannelNameDiv.textContent = 'Reproductor no inicializado.';
-                    console.error("Shaka Player no está listo.");
-                    return;
-                }
-                currentChannelNameDiv.textContent = `Cargando: ${nombre}...`;
-                try {
-                    await shakaPlayer.load(url);
-                    audioElement.play(); // Shaka carga, pero play() asegura que inicie
-
-                    currentChannelNameDiv.textContent = `Reproduciendo: ${nombre}`;
-                    currentIndex = index;
-                    
-                    if (currentPlayingLi) {
-                        currentPlayingLi.classList.remove('playing');
-                    }
-                    if (liElement) {
-                        liElement.classList.add('playing');
-                        currentPlayingLi = liElement;
-                        liElement.focus(); // Opcional: mover el foco al elemento seleccionado
-                    } else { // Si se llama desde next/prev sin un liElement directo
-                       const listItems = document.querySelectorAll('#canales-lista li[role="button"]');
-                       listItems.forEach(item => item.classList.remove('playing'));
-                       const activeLi = findLiForChannel(nombre);
-                       if (activeLi) {
-                           activeLi.classList.add('playing');
-                           currentPlayingLi = activeLi;
-                           // activeLi.focus(); // Opcional
-                       }
-                    }
-                } catch (error) { // Error de shakaPlayer.load()
-                    // El error ya es manejado por onShakaErrorEvent, pero podemos loguear aquí también.
-                    console.error("Error al intentar cargar el canal con Shaka:", error);
-                    // onShakaErrorEvent se encargará de actualizar la UI
-                }
-            }
-
-            playPauseBtn.addEventListener('click', () => {
-                if (!shakaPlayer) return;
-
-                if (!shakaPlayer.getMediaElement() || !shakaPlayer.getMediaElement().src || shakaPlayer.getLoadMode() === shaka.Player.LoadMode.NOT_LOADED) {
-                    if (allChannelsFlat.length > 0) {
-                        const firstChannel = allChannelsFlat[0];
-                        const firstLi = document.querySelector('#canales-lista li[role="button"]'); 
-                        playChannel(firstChannel.url, firstChannel.nombre, 0, firstLi);
-                    }
-                    return;
-                }
-
-                if (audioElement.paused || audioElement.ended) {
-                    audioElement.play().catch(e => console.error("Error al intentar reproducir (play):", e));
-                } else {
-                    audioElement.pause();
-                }
+        function cargarOpciones() {
+            var selectBox = document.getElementById("channelSelector");
+            canales.forEach(function(canal, index) {
+                var option = document.createElement("option");
+                option.text = canal.nombre;
+                option.value = index + 1;
+                selectBox.add(option);
             });
+            selectBox.selectedIndex = 0;
+        }
 
-            function findLiForChannel(channelName) {
-                const listItems = document.querySelectorAll('#canales-lista li[role="button"]');
-                for (let item of listItems) {
-                    if (item.textContent === channelName) {
-                        return item;
+        function cargarStream() {
+            var selectedValue = canales[currentChannelIndex];
+            var config = {
+                playlist: [{
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }]
+                }],
+                autostart: true,
+                cast: {},
+                controls: false,
+                drm: {
+                    widevine: {
+                        licenseUrl: "https://wv-client.cvattv.com.ar?deviceId=NjAxNmY0Y2E4OWI5M2FmMjllZTAyNWY2YmNlNGEyZWQ="
                     }
                 }
-                return null;
-            }
+            };
+            playerInstance = jwplayer("playerContainer").setup(config);
+            document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
+        }
 
-            function nextChannel() {
-                if (allChannelsFlat.length === 0) return;
-                currentIndex = (currentIndex + 1) % allChannelsFlat.length;
-                const next = allChannelsFlat[currentIndex];
-                const nextLi = findLiForChannel(next.nombre);
-                playChannel(next.url, next.nombre, currentIndex, nextLi);
-            }
+        function changeAudioTrack(offset) {
+            var currentAudioTrack = playerInstance.getCurrentAudioTrack();
+            var audioTracks = playerInstance.getAudioTracks();
+            var newTrackIndex = (currentAudioTrack + offset + audioTracks.length) % audioTracks.length;
+            playerInstance.setCurrentAudioTrack(newTrackIndex);
+        }
 
-            function prevChannel() {
-                if (allChannelsFlat.length === 0) return;
-                currentIndex = (currentIndex - 1 + allChannelsFlat.length) % allChannelsFlat.length;
-                const prev = allChannelsFlat[currentIndex];
-                const prevLi = findLiForChannel(prev.nombre);
-                playChannel(prev.url, prev.nombre, currentIndex, prevLi);
+        function changeChannel(offset) {
+            if (channelNumberBuffer !== "") {
+                currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                channelNumberBuffer = "";
+                cargarStream();
+            } else {
+                currentChannelIndex = (currentChannelIndex + offset + canales.length) % canales.length;
+                cargarStream();
             }
-            
-            nextBtn.addEventListener('click', nextChannel);
-            prevBtn.addEventListener('click', prevChannel);
+        }
 
-            volUpBtn.addEventListener('click', () => {
-                if (audioElement.volume < 1) {
-                    audioElement.volume = Math.min(1, audioElement.volume + 0.1);
+        function changeChannelManually() {
+            var selectBox = document.getElementById("channelSelector");
+            currentChannelIndex = parseInt(selectBox.value) - 1;
+            channelNumberBuffer = "";
+            cargarStream();
+            ocultarSelector(); 
+        }
+
+        function ocultarSelector() {
+            document.getElementById("channelSelector").style.display = "none"; 
+        }
+
+        function handleDownArrow() {
+            downArrowTimer = setTimeout(function() {
+                changeAudioTrack(1);
+            }, 1000);
+        }
+
+        function handleUpArrow() {
+            upArrowTimer = setTimeout(function() {
+                changeAudioTrack(-1);
+            }, 1000);
+        }
+
+        function cancelDownArrowTimer() {
+            clearTimeout(downArrowTimer);
+        }
+
+        function cancelUpArrowTimer() {
+            clearTimeout(upArrowTimer);
+        }
+
+        document.addEventListener("keydown", function(event) {
+            var keyCode = event.keyCode;
+            if (keyCode === 13) { 
+                document.getElementById("channelSelector").style.display = "block"; 
+                document.getElementById("channelSelector").focus(); 
+            } else if (keyCode === 37) {
+                changeChannel(-1);
+            } else if (keyCode === 39) {
+                changeChannel(1);
+            } else if (keyCode === 40) {
+                handleDownArrow();
+            } else if (keyCode === 38) {
+                handleUpArrow();
+            } else {
+                var pressedKey = parseInt(event.key);
+                if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
+                    clearTimeout(timeoutId);
+                    channelNumberBuffer += event.key;
+                    timeoutId = setTimeout(function() {
+                        if (channelNumberBuffer !== "") {
+                            currentChannelIndex = parseInt(channelNumberBuffer) - 1;
+                            channelNumberBuffer = "";
+                            cargarStream();
+                        }
+                    }, 1000);
                 }
-            });
+            }
+        });
 
-            volDownBtn.addEventListener('click', () => {
-                if (audioElement.volume > 0) {
-                    audioElement.volume = Math.max(0, audioElement.volume - 0.1);
-                }
-            });
-
-            // --- Inicialización ---
-            await initShakaPlayer(); // Esperar a que Shaka se inicialice
-            await cargarCanales();   // Luego cargar canales
+        document.addEventListener("keyup", function(event) {
+            var keyCode = event.keyCode;
+            if (keyCode === 40) {
+                cancelDownArrowTimer();
+            } else if (keyCode === 38) {
+                cancelUpArrowTimer();
+            }
         });
     </script>
 </body>
