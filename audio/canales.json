@@ -85,6 +85,11 @@
         "url": "https://broker.cdn.rcs.net.ar/mnp/ekkiry71mqajaf000000226lkrbcwjpr_hls/audio_4/playlist.m3u8"
     },
     {
+        "nombre": "TyC Sports Inernacional",
+        "categoria": "Deportes",
+        "url": "http://38.44.109.41:8003/play/a02l/index.m3u8"
+    },
+    {
         "nombre": "TyC Sports HD",
         "categoria": "Deportes",
         "url": "https://broker.cdn.rcs.net.ar/mnp/tzeohupdr68s7sld3fejjidm9e2hxjoe_hls/audio_5/playlist.m3u8"
