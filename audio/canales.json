@@ -1,0 +1,602 @@
+[
+    {
+        "nombre": "America TV",
+        "categoria": "Nacionales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/americahls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Telefe",
+        "categoria": "Nacionales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/mdr800000004i1ehev75u46zjoxlbnsy_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "TV Publica",
+        "categoria": "Nacionales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/79sgpei8yp2kn0ledlptzl8nz5tjc3lz_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "El Trece",
+        "categoria": "Nacionales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/el13_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "El Nueve",
+        "categoria": "Nacionales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/elnueve_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "TN",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tn_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "A24",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/a24_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "C5N",
+        "categoria": "Noticias",
+        "url": "Error descargando: Timeout para https://broker.cdn.rcs.net.ar/mnp/c5n_hls/playlist.m3u8"
+    },
+    {
+        "nombre": "Cronica TV",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cronica_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Canal 26",
+        "categoria": "Noticias",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "IP Noticias",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/ip_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "LN +",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/lnmas_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "CN 23",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cn23_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Encuentro",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/encuentro_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Tec TV",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tecnopolis_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Construir",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/construiriptv_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "DeporTv",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/ekkiry71mqajaf000000226lkrbcwjpr_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "TyC Sports HD",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tzeohupdr68s7sld3fejjidm9e2hxjoe_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "ESPN",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/yft2eRNwcYbjJwa0YvCvw8a6HoSQwc4g_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "ESPN 2",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/sJDmPFpTWBNS2gZhzj8ydHU7tR9Y6uf4k_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "ESPN 3",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/QVsZxnupYwKdAtb5Dk3zvFXBMGqcWgmfR_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "ESPN 4",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/bPHSdXgELpUR4JkCe3Qu5mV6zn8qMwjTY_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "FOX Sports HD",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/q4odrh3fgtbonghui87px00000051hpm_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "FOX Sports 2",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/YTBPx3ZQCwrDXNudJAFzkhLmEen2j94pU_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "FOX Sports 3",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/zrGB5jxs4VLbqCw8eQkEDWYHU7tvfhuZR_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "El Garage",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/garage_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Golf Channel",
+        "categoria": "Deportes",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/golf_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery Turbo",
+        "categoria": "Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/dsc_turbo_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "TyC Sports 2",
+        "categoria": "Deportes",
+        "url": "https://router.cdn.rcs.net.ar/mnp/ux5ibtjkcqww5qhv6xirxem6wnpi6xr1_hls/audio_5/playlist.m3u8"
+    },
+    {
+        "nombre": "Paka Paka",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/pkpk_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Disney Channel",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disney_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Nick",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/nickelodeon_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Cartoon Network",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cartoon_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery Kids",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disc_kids_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Cartoonito",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/boomerang_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Tooncast",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tooncast_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Nick Jr.",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/nickjr_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Disney Junior",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disneyjr_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Baby Tv",
+        "categoria": "Infantiles",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/babytv_hls/audio_2/playlist.m3u8"
+    },
+    {
+        "nombre": "CINE.AR",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cinear_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Space",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/space_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Cinecanal",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cinecanal_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "TNT",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tnt_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "TNT Series",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tntseries_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "FX",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/fx_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Star Channel",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/foxhd_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Sony",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/sony_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Warner",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/warner_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "AXN",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/axn_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "USA Network",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/syfy_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "A&E",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/j26j2rzpt800000288vtpyar1sx5a31e_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Europa Europa",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/europa_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "TNT Novelas",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tntnovelas_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "TCM",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/tcm_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "AMC",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/amc_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Universal",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/universal_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Studio Universal",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/st_universal_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Lifetime",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/lifetime_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Adult Swim",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/trutv_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Comedy Central",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/comedy_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Paramount",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/paramount_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Cinemax",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cinemax_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "El Gourmet",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/gourmet_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery HGTV",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/dsc_hgtv_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Food Network",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disc_fn_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "E! Entertainment",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/eent_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Home & Health",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disc_hh_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Mas Chic",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/maschic_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery TLC",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/dsc_tlc_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Telemundo",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/telemundo_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Rural",
+        "categoria": "Estilo de Vida y Variedades",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/rural_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "Telediario Digital TV",
+        "categoria": "Regionales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/imperio_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Argentinisima Satelital",
+        "categoria": "Música",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/arg_sat_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "National Geografic",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/natgeohd_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery Channel",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/discovery_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Animal Planet",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disc_apar_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery Theater",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disc_theater_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "History Channel",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/history_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery I+D",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disc_idar_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Film&Arts",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/filmsarts_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery World",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/disc_world_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Discovery Science",
+        "categoria": "Cultura y Documentales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/dsc_sci_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "MTV",
+        "categoria": "Música",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/mtv_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "HTV",
+        "categoria": "Música",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/htv_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "CM",
+        "categoria": "Música",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cmmusica_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "CNN en Español",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cnne_hls/audio_2/playlist.m3u8"
+    },
+    {
+        "nombre": "Telesur",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/telesurtda_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "CNN Internacional",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/cnn_hls/audio_2/playlist.m3u8"
+    },
+    {
+        "nombre": "RT TV",
+        "categoria": "Noticias",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/iptvrt_hls/audio_3/playlist.m3u8"
+    },
+    {
+        "nombre": "NHK",
+        "categoria": "Internacionales",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/nhk_hls/audio_4/playlist.m3u8"
+    },
+    {
+        "nombre": "Canal Luz",
+        "categoria": "Religiosos",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "Santa Maria/Maria Vision",
+        "categoria": "Religiosos",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "Aliento Vision",
+        "categoria": "Religiosos",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "EWTN",
+        "categoria": "Religiosos",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "El Once Parana",
+        "categoria": "Regionales",
+        "url": "https://broker.cdn.rcs.net.ar/hub/eloncetv/stream_0.m3u8"
+    },
+    {
+        "nombre": "Entre Rios Tv",
+        "categoria": "Regionales",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "Remanso TV",
+        "categoria": "Regionales",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "CN 24/7",
+        "categoria": "Regionales",
+        "url": "https://broker.cdn.rcs.net.ar/hub/c247tv/stream_0.m3u8"
+    },
+    {
+        "nombre": "RTN",
+        "categoria": "Regionales",
+        "url": "https://broker.cdn.rcs.net.ar/hub/rtn/stream_0.m3u8"
+    },
+    {
+        "nombre": "BVC Online",
+        "categoria": "Regionales",
+        "url": "https://broker.cdn.rcs.net.ar/inet/bvc/BVC_HD-audio_spa=128000.m3u8"
+    },
+    {
+        "nombre": "Canal 12 Trenque Lauquen",
+        "categoria": "Regionales",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "Aire de Santa Fe",
+        "categoria": "Regionales",
+        "url": "https://broker.cdn.rcs.net.ar/hub/airestafe/stream_0.m3u8"
+    },
+    {
+        "nombre": "Canal 19 La Pampa",
+        "categoria": "Regionales",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "T5 Satelital",
+        "categoria": "Regionales",
+        "url": "Error descargando: 404 Client Error: Not Found for url: https://access.cdn.rcs.net.ar/faster/t5_hls/playlist.m3u8"
+    },
+    {
+        "nombre": "Canal de la Ciudad",
+        "categoria": "Nacionales",
+        "url": "https://broker.cdn.rcs.net.ar/hub/canaldelaciudad/stream_0.m3u8"
+    },
+    {
+        "nombre": "Radio Maria",
+        "categoria": "Religiosos",
+        "url": "https://broker.cdn.rcs.net.ar/hub/radiomariaargentina/stream_0.m3u8"
+    },
+    {
+        "nombre": "Ciudad TV",
+        "categoria": "Regionales",
+        "url": "https://broker.cdn.rcs.net.ar/hub/ciudadtv/stream_0.m3u8"
+    },
+    {
+        "nombre": "Sicardi TV",
+        "categoria": "Regionales",
+        "url": "No se encontró un enlace de audio (línea #EXT-X-MEDIA con TYPE=AUDIO y URI)."
+    },
+    {
+        "nombre": "ESPN Premium",
+        "categoria": "Deportes",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "TNT Sports Argentina",
+        "categoria": "Deportes",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO 2",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO Plus",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO Pop",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO Family",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO Xtreme",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO Mundi",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "HBO Signature",
+        "categoria": "Cine y Series",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "CC_test",
+        "categoria": "Otros",
+        "url": "No disponible"
+    },
+    {
+        "nombre": "CC_test2",
+        "categoria": "Otros",
+        "url": "No disponible"
+    }
+]
