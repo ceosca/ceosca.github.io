@@ -11,13 +11,14 @@
             background-color: #f4f4f4;
         }
         #player {
-            width: 300px; /* Ancho mínimo para que se vea algo, aunque sea audio-only */
-            height: 40px; /* Altura mínima para controles si se activaran */
+            width: 100%;
+            height: 40px;
             background-color: #000;
             color: #fff;
             text-align: center;
-            line-height: 40px; /* Centrar verticalmente el texto CARGANDO */
+            line-height: 40px;
             margin-bottom: 10px;
+            box-sizing: border-box;
         }
         #controls {
             margin-top: 10px;
@@ -71,10 +72,8 @@
         <div id="player">CARGANDO REPRODUCTOR...</div>
         <div id="controls">
             <button onclick="playPause()">Play/Pausa</button>
-            <button onclick="changeVolume(-10)">Bajar Volumen</button> <!-- Ajustado a -10 para que sea más notable -->
-            <button onclick="changeVolume(10)">Subir Volumen</button>  <!-- Ajustado a +10 para que sea más notable -->
-            <!-- Los botones de cambio de track de audio pueden no ser muy útiles para streams HLS simples,
-                 pero los dejamos por si algún stream tuviera múltiples pistas de audio. -->
+            <button onclick="changeVolume(-10)">Bajar Volumen</button>
+            <button onclick="changeVolume(10)">Subir Volumen</button>
             <button onclick="changeAudioTrack(-1)">Track Anterior</button>
             <button onclick="changeAudioTrack(1)">Siguiente Track</button>
         </div>
@@ -85,8 +84,7 @@
         var canales = [];
         var categorias = [];
 
-        // Asegúrate de que la ruta a canales.json sea correcta
-        fetch('canales.json') // Si está en el mismo directorio
+        fetch('canales.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -97,8 +95,6 @@
                 canales = data;
                 categorias = obtenerCategoriasOrdenadas();
                 cargarCategorias();
-                // La primera carga de canales se hará cuando se seleccione una categoría.
-                // O podemos forzar la carga de la primera categoría:
                 if (categorias.length > 0) {
                     document.getElementById("categorySelector").value = categorias[0];
                     updateChannelList();
@@ -111,7 +107,7 @@
 
         function cargarCategorias() {
             var selectBox = document.getElementById("categorySelector");
-            selectBox.innerHTML = ""; // Limpiar opciones previas
+            selectBox.innerHTML = "";
             if (categorias.length === 0) {
                 var option = document.createElement("option");
                 option.text = "No hay categorías disponibles";
@@ -122,7 +118,7 @@
             categorias.forEach(function(categoria) {
                 var option = document.createElement("option");
                 option.text = categoria;
-                option.value = categoria; // Usar el nombre de la categoría como valor
+                option.value = categoria;
                 selectBox.add(option);
             });
         }
@@ -130,7 +126,6 @@
         function obtenerCategoriasOrdenadas() {
             var categoriasSet = new Set();
             canales.forEach(function(canal) {
-                 // Solo añadir categoría si hay al menos un canal válido en ella
                 if (canal.url && canal.url.startsWith("http") && (canal.url.includes(".m3u8") || canal.url.includes(".mpd"))) {
                     categoriasSet.add(canal.categoria);
                 }
@@ -141,10 +136,9 @@
         function updateChannelList() {
             var selectedCategory = document.getElementById("categorySelector").value;
             var channelSelector = document.getElementById("channelSelector");
-            channelSelector.innerHTML = ""; // Limpiar opciones previas
+            channelSelector.innerHTML = "";
 
             var filteredChannels = canales.filter(function(canal) {
-                // Filtrar por categoría y por URL válida (que comience con http y contenga .m3u8 o .mpd)
                 return canal.categoria === selectedCategory &&
                        canal.url &&
                        canal.url.startsWith("http") &&
@@ -160,7 +154,10 @@
                 option.text = "No hay canales disponibles en esta categoría";
                 option.disabled = true;
                 channelSelector.add(option);
-                if(playerInstance) playerInstance.stop(); // Detener si no hay canales
+                if(playerInstance) {
+                    playerInstance.remove();
+                    playerInstance = null;
+                }
                 document.getElementById("player").textContent = "Seleccione un canal";
                 return;
             }
@@ -168,11 +165,10 @@
             filteredChannels.forEach(function(canal) {
                 var option = document.createElement("option");
                 option.text = canal.nombre;
-                option.value = JSON.stringify(canal); // Guardar el objeto canal completo
+                option.value = JSON.stringify(canal);
                 channelSelector.add(option);
             });
 
-            // Cargar el primer stream de la lista actualizada automáticamente
             if (filteredChannels.length > 0) {
                 cargarStream();
             }
@@ -180,30 +176,31 @@
 
         function cargarStream() {
             var selectBox = document.getElementById("channelSelector");
-            if (!selectBox.value) { // Si no hay valor seleccionado (ej. "No hay canales...")
-                if(playerInstance) playerInstance.remove(); // Limpiar instancia anterior
-                document.getElementById("player").textContent = "No hay canal para reproducir.";
+            if (!selectBox.value || selectBox.selectedOptions.length === 0 || selectBox.selectedOptions[0].disabled) {
+                if(playerInstance) {
+                    playerInstance.remove();
+                    playerInstance = null;
+                }
+                document.getElementById("player").textContent = "Seleccione un canal válido.";
                 return;
             }
             var selectedValue;
             try {
                 selectedValue = JSON.parse(selectBox.value);
             } catch (e) {
-                console.error("Error al parsear valor del canal:", e);
                 document.getElementById("player").textContent = "Error en datos del canal.";
                 return;
             }
 
-
             if (!selectedValue || !selectedValue.url || !selectedValue.url.startsWith("http")) {
-                 console.warn("URL inválida o no seleccionada:", selectedValue);
-                 if(playerInstance) playerInstance.stop();
+                 if(playerInstance) {
+                    playerInstance.stop();
+                 }
                  document.getElementById("player").textContent = "URL de stream inválida.";
                  return;
             }
             
-            document.getElementById("player").textContent = "CARGANDO STREAM...";
-
+            document.getElementById("player").textContent = "CARGANDO STREAM: " + selectedValue.nombre;
 
             var streamType = selectedValue.url.includes(".mpd") ? "mpd" : "hls";
 
@@ -212,18 +209,17 @@
                     title: selectedValue.nombre || "Audio Stream",
                     sources: [{
                         file: selectedValue.url,
-                        type: streamType // Dinámico HLS o MPD
+                        type: streamType
                     }]
                 }],
-                width: "100%", // Puede ser % o px
-                height: 40,    // Altura mínima para mostrar algo
+                width: "100%",
+                height: 40,
                 autostart: true,
-                audioOnly: true, // Importante para M3U8 de solo audio
+                audioOnly: true,
                 visualPlaylist: false,
-                controls: true // Activar controles básicos de JWPlayer, aunque tengamos los nuestros
+                controls: true 
             };
             
-            // Configuración DRM (Clearkey) condicional
             if (selectedValue.keyId && selectedValue.key) {
                 config.drm = {
                     clearkey: {
@@ -233,26 +229,35 @@
                 };
             }
             
-            // Si ya existe una instancia, la removemos antes de crear una nueva
             if (playerInstance) {
                 playerInstance.remove();
             }
             playerInstance = jwplayer("player").setup(config);
 
             playerInstance.on('error', function(event) {
-                console.error('Error de JWPlayer:', event.message);
-                document.getElementById("player").textContent = "Error: " + event.message;
+                document.getElementById("player").textContent = "Error: " + event.message + " (" + selectedValue.nombre + ")";
             });
+
             playerInstance.on('ready', function() {
                  document.getElementById("player").textContent = "Reproductor Listo. Stream: " + selectedValue.nombre;
+                 if (playerInstance.getState() !== 'playing' && playerInstance.getState() !== 'buffering') {
+                    playerInstance.play().catch(function(e) {
+                        document.getElementById("player").textContent = "Play bloqueado. Haz clic en Play/Pausa.";
+                    });
+                 }
             });
-             playerInstance.on('play', function() {
+             playerInstance.on('play', function(event) {
                  document.getElementById("player").textContent = "Reproduciendo: " + selectedValue.nombre;
             });
             playerInstance.on('pause', function() {
                  document.getElementById("player").textContent = "Pausado: " + selectedValue.nombre;
             });
-
+            playerInstance.on('buffer', function() {
+                document.getElementById("player").textContent = "Cargando buffer: " + selectedValue.nombre;
+            });
+             playerInstance.on('complete', function() {
+                document.getElementById("player").textContent = "Stream completado: " + selectedValue.nombre;
+            });
         }
 
         function playPause() {
@@ -262,8 +267,6 @@
                 } else {
                     playerInstance.play();
                 }
-            } else {
-                console.warn("Player no inicializado.");
             }
         }
 
@@ -272,8 +275,6 @@
                 var currentVolume = playerInstance.getVolume();
                 var newVolume = Math.max(0, Math.min(100, currentVolume + amount));
                 playerInstance.setVolume(newVolume);
-            } else {
-                console.warn("Player no inicializado.");
             }
         }
 
@@ -281,7 +282,7 @@
             if (playerInstance) {
                 var audioTracks = playerInstance.getAudioTracks();
                 if (audioTracks && audioTracks.length > 1) {
-                    var currentAudioTrackIndex = playerInstance.getCurrentAudioTrack(); // Esto da el índice
+                    var currentAudioTrackIndex = playerInstance.getCurrentAudioTrack();
                     var newTrackIndex = currentAudioTrackIndex + offset;
                     
                     if (newTrackIndex < 0) {
@@ -290,11 +291,7 @@
                         newTrackIndex = 0;
                     }
                     playerInstance.setCurrentAudioTrack(newTrackIndex);
-                } else {
-                    console.log("No hay múltiples pistas de audio o no se pudieron obtener.");
                 }
-            } else {
-                console.warn("Player no inicializado.");
             }
         }
     </script>
