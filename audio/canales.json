@@ -628,5 +628,61 @@
         "url": "http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/613237a1c9e0db0007a91350livestitch/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus",
         "keyId": "",
         "key": ""
+    },
+    {
+        "nombre": "HBO",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hbo_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO 2",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hbo2_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Plus",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hboplus_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Extreme",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hboxtr_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Family",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hbofam_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Mundi",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hbomund_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Pop",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hbopop_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Signature",
+        "categoria": "Cine y Series",
+        "url": "https://broker.cdn.rcs.net.ar/mnp/hbosig_hls/audio_4/playlist.m3u8",
+        "keyId": "",
+        "key": ""
     }
 ]
