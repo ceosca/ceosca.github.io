@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RAPSVP v2 - CSP Test</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://ssl.p.jwpcdn.com; style-src 'self' 'unsafe-inline'; media-src 'self' https: http://38.44.109.41:8003 data: blob:; connect-src 'self' https: http://38.44.109.41:8003 data: blob:; img-src 'self' data: https: http:;">
+    <title>RAPSVP v2</title>
     <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
     <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
     <style>
@@ -35,38 +34,24 @@
     <script type='text/javascript'>
         var pi=null, cns=[], cts=[];
 
-        // Asegúrate de que tu JSON de canales incluya el canal HTTP para probarlo
-        // Ejemplo de cómo podría ser un canal en tu JSON:
-        // {
-        //   "nombre": "Canal HTTP Test",
-        //   "categoria": "Pruebas",
-        //   "url": "http://38.44.109.41:8003/play/a02l/index.m3u8"
-        // }
-
-        fetch('https://ceosca.github.io/audio/canales.json') // o tu URL del JSON
+        fetch('https://ceosca.github.io/audio/canales.json')
             .then(r=>r.json())
             .then(d=>{
                 cns=d;
-                // Si el canal HTTP no está en tu JSON, podrías añadirlo aquí para probar:
-                // cns.push({
-                //  "nombre": "Canal HTTP Test (Local)",
-                //  "categoria": "Pruebas HTTP",
-                //  "url": "http://38.44.109.41:8003/play/a02l/index.m3u8"
-                // });
                 cts=gco();
-                rcl();
+                rcl(); // Render Channel List
             })
             .catch(e=>console.error('Err:',e));
 
-        function gco(){
+        function gco(){ // get categories ordered
             var cs=new Set();
             cns.forEach(cn=>cs.add(cn.categoria));
             return Array.from(cs).sort();
         }
 
-        function rcl() {
+        function rcl() { // render channel list
             var ctnr = document.getElementById("chlCtnr");
-            ctnr.innerHTML = "";
+            ctnr.innerHTML = ""; // Limpiar contenido previo
 
             cts.forEach(cat => {
                 var catHdr = document.createElement("h3");
@@ -81,7 +66,7 @@
                     var li = document.createElement("li");
                     var btn = document.createElement("button");
                     btn.textContent = cn.nombre;
-                    btn.onclick = function() { ls(cn); };
+                    btn.onclick = function() { ls(cn); }; // Pasar el objeto canal completo
                     li.appendChild(btn);
                     chnLst.appendChild(li);
                 });
@@ -89,8 +74,7 @@
             });
         }
 
-        function ls(chnObj){
-            console.log("Cargando stream:", chnObj.url); // Para depurar
+        function ls(chnObj){ // load stream, ahora recibe el objeto canal
             var cfg = {
                 playlist:[{
                     title: chnObj.nombre || "Audio Stream",
@@ -100,20 +84,15 @@
                 width:1, height:1, autostart:true, controls:false
             };
 
-            if (pi) { pi.remove(); }
+            if (pi) { pi.remove(); } // Eliminar instancia anterior si existe
             pi = jwplayer("p").setup(cfg);
 
-            pi.on('error', (e) => { // Añadir un listener de errores
-                console.error("Error de JW Player:", e);
-                var ppBtn = document.getElementById("ppBtn");
-                ppBtn.textContent = 'Error';
-            });
-
+            // Actualizar texto del botón Play/Pausa según el estado
             var ppBtn = document.getElementById("ppBtn");
             pi.on('play', () => ppBtn.textContent = 'Pausar');
             pi.on('pause', () => ppBtn.textContent = 'Reproducir');
-            pi.on('idle', () => ppBtn.textContent = 'Reproducir');
-            pi.on('complete', () => ppBtn.textContent = 'Reproducir');
+            pi.on('idle', () => ppBtn.textContent = 'Reproducir'); // Estado inicial o detenido
+            pi.on('complete', () => ppBtn.textContent = 'Reproducir'); // Al finalizar
         }
 
         function pp(){
@@ -125,7 +104,7 @@
             }
         }
 
-        function cv(a){
+        function cv(a){ // change volume
             if (!pi) return;
             var v = pi.getVolume();
             pi.setVolume(Math.max(0, Math.min(100, v + a)));
