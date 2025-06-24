@@ -684,5 +684,54 @@
         "url": "https://broker.cdn.rcs.net.ar/mnp/hbosig_hls/audio_4/playlist.m3u8",
         "keyId": "",
         "key": ""
+    },
+    {
+        "nombre": "Cadena 3",
+        "categoria": "Radios",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/AM700",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Cadena Heat",
+        "categoria": "Radios",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENAHEAT",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "D Sports",
+        "categoria": "Radios",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/DSPORTSRADIO",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "La Popu",
+        "categoria": "Radios",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/LAPOPU",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "La red",
+        "categoria": "Radios",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/LA_RED_AM910",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Mitre",
+        "categoria": "Radios",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/AM790_56",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Rivadavia",
+        "categoria": "Radios",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIA",
+        "keyId": "",
+        "key": ""
     }
 ]
