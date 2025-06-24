@@ -688,49 +688,49 @@
     {
         "nombre": "Cadena 3",
         "categoria": "Radios",
-        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/AM700",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/AM700.mp3",
         "keyId": "",
         "key": ""
     },
     {
         "nombre": "Cadena Heat",
         "categoria": "Radios",
-        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENAHEAT",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENAHEAT.mp3",
         "keyId": "",
         "key": ""
     },
     {
         "nombre": "D Sports",
         "categoria": "Radios",
-        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/DSPORTSRADIO",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/DSPORTSRADIO.mp3",
         "keyId": "",
         "key": ""
     },
     {
         "nombre": "La Popu",
         "categoria": "Radios",
-        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/LAPOPU",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/LAPOPU.mp3",
         "keyId": "",
         "key": ""
     },
     {
         "nombre": "La red",
         "categoria": "Radios",
-        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/LA_RED_AM910",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/LA_RED_AM910.mp3",
         "keyId": "",
         "key": ""
     },
     {
         "nombre": "Mitre",
         "categoria": "Radios",
-        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/AM790_56",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/AM790_56.mp3",
         "keyId": "",
         "key": ""
     },
     {
         "nombre": "Rivadavia",
         "categoria": "Radios",
-        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIA",
+        "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIA.mp3",
         "keyId": "",
         "key": ""
     }
