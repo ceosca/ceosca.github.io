@@ -3040,7 +3040,7 @@
             ]
         },
         {
-            "nombre": "El ADN del delito",
+            "nombre": "El ADN del delito, temporada 1",
             "genero": "Thriller; Drama",
             "anio": 2023,
             "reparto": [],
@@ -3097,6 +3097,67 @@
                     "inicio": 25125928,
                     "fin": 28123688,
                     "titulo": "Capítulo 8: El final y el principio"
+                }
+            ]
+        },
+        {
+            "nombre": "El ADN del delito, temporada 2",
+            "genero": "Thriller; Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Brasil",
+            "cantidad_episodios": 8,
+            "sinopsis": "Suellen y Benício están de vuelta, lo que significa que el crimen también. Ahora, la policía tiene un nuevo objetivo: Isaac y su Equipo Fantasma. Atrapar a estas grandes leyendas criminales que cada vez cometen robos más audaces no será nada fácil.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-adn-del-delito-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-adn-del-delito-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3200000,
+                    "titulo": "Capítulo 1: Día de juego"
+                },
+                {
+                    "inicio": 3200000,
+                    "fin": 6451925,
+                    "titulo": "Capítulo 2: Presas y cazadores"
+                },
+                {
+                    "inicio": 6451925,
+                    "fin": 9560831,
+                    "titulo": "Capítulo 3: Shangri‑lá"
+                },
+                {
+                    "inicio": 9560831,
+                    "fin": 12645033,
+                    "titulo": "Capítulo 4: Rehenes"
+                },
+                {
+                    "inicio": 12645033,
+                    "fin": 15795411,
+                    "titulo": "Capítulo 5: Asuntos de familia"
+                },
+                {
+                    "inicio": 15795411,
+                    "fin": 18979752,
+                    "titulo": "Capítulo 6: Duplas inesperadas"
+                },
+                {
+                    "inicio": 18979752,
+                    "fin": 22054098,
+                    "titulo": "Capítulo 7: La carga fantasma"
+                },
+                {
+                    "inicio": 22054098,
+                    "fin": 24917970,
+                    "titulo": "Capítulo 8: Frontera dominada"
                 }
             ]
         },
@@ -8322,6 +8383,591 @@
                     "inicio": 27199146,
                     "fin": 30247509,
                     "titulo": "Capítulo 10: No teman"
+                }
+            ]
+        },
+        {
+            "nombre": "El abogado del Lincoln, temporada 1",
+            "genero": "Drama",
+            "anio": 2022,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "El abogado de Los Ángeles Mickey Haller (Manuel Garcia-Rulfo) retoma su carrera, tras un largo tiempo sin ejercer, aceptando un intrincado caso de asesinato. Mickey es un idealista iconoclasta que dirige su práctica jurídica desde la parte trasera de su Lincoln Town Car... Serie basada en las novelas más vendidas de Michael Connelly.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-abogado-del-lincoln-1.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-abogado-del-lincoln-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2936960,
+                    "titulo": "Capítulo 1: Volver al ruedo"
+                },
+                {
+                    "inicio": 2936960,
+                    "fin": 5757952,
+                    "titulo": "Capítulo 2: La pieza clave"
+                },
+                {
+                    "inicio": 5757952,
+                    "fin": 8790101,
+                    "titulo": "Capítulo 3: Ímpetu"
+                },
+                {
+                    "inicio": 8790101,
+                    "fin": 11543082,
+                    "titulo": "Capítulo 4: La teoría del caos"
+                },
+                {
+                    "inicio": 11543082,
+                    "fin": 14363391,
+                    "titulo": "Capítulo 5: Doce lemmings en una caja"
+                },
+                {
+                    "inicio": 14363391,
+                    "fin": 17245780,
+                    "titulo": "Capítulo 6: Corrupción"
+                },
+                {
+                    "inicio": 17245780,
+                    "fin": 20180863,
+                    "titulo": "Capítulo 7: El lemming número siete"
+                },
+                {
+                    "inicio": 20180863,
+                    "fin": 23295188,
+                    "titulo": "Capítulo 8: De vuelta a la pieza clave"
+                },
+                {
+                    "inicio": 23295188,
+                    "fin": 26621524,
+                    "titulo": "Capítulo 9: El valle inquietante"
+                },
+                {
+                    "inicio": 26621524,
+                    "fin": 29997908,
+                    "titulo": "Capítulo 10: El veredicto"
+                }
+            ]
+        },
+        {
+            "nombre": "El abogado del Lincoln, temporada 2",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Entre clientes que no paran de llegar y un equipo más ocupado que nunca, Mickey conoce a alguien especial y acepta otro caso desafiante.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-abogado-del-lincoln-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-abogado-del-lincoln-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3069141,
+                    "titulo": "Capítulo 1: Las reglas de la conducta profesional"
+                },
+                {
+                    "inicio": 3069141,
+                    "fin": 6047872,
+                    "titulo": "Capítulo 2: Obligaciones"
+                },
+                {
+                    "inicio": 6047872,
+                    "fin": 9350485,
+                    "titulo": "Capítulo 3: Conflictos"
+                },
+                {
+                    "inicio": 9350485,
+                    "fin": 12247381,
+                    "titulo": "Capítulo 4: Pruebas"
+                },
+                {
+                    "inicio": 12247381,
+                    "fin": 15263573,
+                    "titulo": "Capítulo 5: Mentes suspicaces"
+                },
+                {
+                    "inicio": 15263573,
+                    "fin": 17976362,
+                    "titulo": "Capítulo 6: Moción retirada"
+                },
+                {
+                    "inicio": 17976362,
+                    "fin": 20829610,
+                    "titulo": "Capítulo 7: Cui bono"
+                },
+                {
+                    "inicio": 20829610,
+                    "fin": 23427199,
+                    "titulo": "Capítulo 8: Cláusulas y condiciones"
+                },
+                {
+                    "inicio": 23427199,
+                    "fin": 26665428,
+                    "titulo": "Capítulo 9: El quinto testigo"
+                },
+                {
+                    "inicio": 26665428,
+                    "fin": 29509759,
+                    "titulo": "Capítulo 10: Deja el pasado atrás"
+                }
+            ]
+        },
+        {
+            "nombre": "El abogado del Lincoln, temporada 3",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Cuando Mickey Haller descubre que la víctima de un asesinato es una antigua clienta suya, una prostituta a la que creyó haber ayudado a cambiar de vida, siente que tiene una deuda pendiente con el caso. La noticia lo golpea profundamente, ya que revive los fantasmas de su pasado y lo hace cuestionarse si realmente hizo todo lo posible por salvarla.\nDeterminado a encontrar al verdadero culpable, Haller se compromete a fondo en la investigación, consciente de que este caso podría redimirlo o, por el contrario, hundirlo aún más en la culpa.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-abogado-del-lincoln-3.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-abogado-del-lincoln-3-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3144064,
+                    "titulo": "Capítulo 1: La culebra"
+                },
+                {
+                    "inicio": 3144064,
+                    "fin": 6339157,
+                    "titulo": "Capítulo 2: Circunstancia especial"
+                },
+                {
+                    "inicio": 6339157,
+                    "fin": 9638229,
+                    "titulo": "Capítulo 3: Una pareja dispareja"
+                },
+                {
+                    "inicio": 9638229,
+                    "fin": 12567125,
+                    "titulo": "Capítulo 4: Los puntos ciegos del retrovisor"
+                },
+                {
+                    "inicio": 12567125,
+                    "fin": 15809749,
+                    "titulo": "Capítulo 5: Lo que pasa en Victorville…"
+                },
+                {
+                    "inicio": 15809749,
+                    "fin": 18492586,
+                    "titulo": "Capítulo 6: Imparable"
+                },
+                {
+                    "inicio": 18492586,
+                    "fin": 21534335,
+                    "titulo": "Capítulo 7: Relevancia"
+                },
+                {
+                    "inicio": 21534335,
+                    "fin": 24241236,
+                    "titulo": "Capítulo 8: Hombre misterioso"
+                },
+                {
+                    "inicio": 24241236,
+                    "fin": 27255892,
+                    "titulo": "Capítulo 9: Fantasmas"
+                },
+                {
+                    "inicio": 27255892,
+                    "fin": 30692052,
+                    "titulo": "Capítulo 10: Los dioses de la culpa"
+                }
+            ]
+        },
+        {
+            "nombre": "El agente nocturno, temporada 1",
+            "genero": "Thriller; Acción",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Un agente del FBI de perfil bajo, Peter Sutherland, trabaja en el sótano de la Casa Blanca pendiente de un teléfono que nunca suena... hasta la noche en que lo hace, lo que impulsa a una conspiración que le lleva hasta la Oficina Oval.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-agente-nocturno.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-agente-nopturno-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3384149,
+                    "titulo": "Capítulo 1: La llamada"
+                },
+                {
+                    "inicio": 3384149,
+                    "fin": 6315562,
+                    "titulo": "Capítulo 2: Retomar el contacto"
+                },
+                {
+                    "inicio": 6315562,
+                    "fin": 9728767,
+                    "titulo": "Capítulo 3: La que controla todo"
+                },
+                {
+                    "inicio": 9728767,
+                    "fin": 12661034,
+                    "titulo": "Capítulo 4: Confidencial"
+                },
+                {
+                    "inicio": 12661034,
+                    "fin": 15841151,
+                    "titulo": "Capítulo 5: La marioneta"
+                },
+                {
+                    "inicio": 15841151,
+                    "fin": 18855167,
+                    "titulo": "Capítulo 6: Claro como el agua"
+                },
+                {
+                    "inicio": 18855167,
+                    "fin": 21650858,
+                    "titulo": "Capítulo 7: Un plato que se sirve frío"
+                },
+                {
+                    "inicio": 21650858,
+                    "fin": 24425685,
+                    "titulo": "Capítulo 8: Otra vez"
+                },
+                {
+                    "inicio": 24425685,
+                    "fin": 27174101,
+                    "titulo": "Capítulo 9: Más vale malo conocido"
+                },
+                {
+                    "inicio": 27174101,
+                    "fin": 29921066,
+                    "titulo": "Capítulo 10: Padres"
+                }
+            ]
+        },
+        {
+            "nombre": "El agente nocturno, temporada 2",
+            "genero": "Thriller; Acción",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Peter asume el rol de \"agente nocturno\" en Acción Nocturna, una organización envuelta en secretos. Mientras enfrenta traiciones y amenazas, deberá descubrir en quién puede confiar para cumplir su misión y salvaguardar su vida.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-agente-nocturno-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-agente-nocturno-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3003349,
+                    "titulo": "Capítulo 1: Rastreo de llamadas"
+                },
+                {
+                    "inicio": 3003349,
+                    "fin": 6117461,
+                    "titulo": "Capítulo 2: Desconexión"
+                },
+                {
+                    "inicio": 6117461,
+                    "fin": 9387434,
+                    "titulo": "Capítulo 3: Propiedad del Gobierno"
+                },
+                {
+                    "inicio": 9387434,
+                    "fin": 12667946,
+                    "titulo": "Capítulo 4: Medidas desesperadas"
+                },
+                {
+                    "inicio": 12667946,
+                    "fin": 15781119,
+                    "titulo": "Capítulo 5: Un asunto familiar"
+                },
+                {
+                    "inicio": 15781119,
+                    "fin": 19062698,
+                    "titulo": "Capítulo 6: Un buen agente"
+                },
+                {
+                    "inicio": 19062698,
+                    "fin": 22286975,
+                    "titulo": "Capítulo 7: Rabia"
+                },
+                {
+                    "inicio": 22286975,
+                    "fin": 25546836,
+                    "titulo": "Capítulo 8: Divergencia"
+                },
+                {
+                    "inicio": 25546836,
+                    "fin": 28248745,
+                    "titulo": "Capítulo 9: Intercambio cultural"
+                },
+                {
+                    "inicio": 28248745,
+                    "fin": 30990334,
+                    "titulo": "Capítulo 10: Remordimiento del comprador"
+                }
+            ]
+        },
+        {
+            "nombre": "El frente costero",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "La historia de la familia Buckley, desesperada por mantener el control del declive de su imperio pesquero de Carolina del Norte. Para salir a flote, tendrán que recurrir a medios cada vez más peligrosos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-frente-costero.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3293397,
+                    "titulo": "Capítulo 1: Casi bien"
+                },
+                {
+                    "inicio": 3293397,
+                    "fin": 6611413,
+                    "titulo": "Capítulo 2: Tomar el control"
+                },
+                {
+                    "inicio": 6611413,
+                    "fin": 9159978,
+                    "titulo": "Capítulo 3: Jugar con fuego"
+                },
+                {
+                    "inicio": 9159978,
+                    "fin": 12077226,
+                    "titulo": "Capítulo 4: No puedes confiar en un Buckley"
+                },
+                {
+                    "inicio": 12077226,
+                    "fin": 14863530,
+                    "titulo": "Capítulo 5: Me gustan los abrazos"
+                },
+                {
+                    "inicio": 14863530,
+                    "fin": 17590826,
+                    "titulo": "Capítulo 6: Temporada de caza"
+                },
+                {
+                    "inicio": 17590826,
+                    "fin": 20479146,
+                    "titulo": "Capítulo 7: Buen intento"
+                },
+                {
+                    "inicio": 20479146,
+                    "fin": 23102122,
+                    "titulo": "Capítulo 8: Un mar de incertidumbres"
+                }
+            ]
+        },
+        {
+            "nombre": "El juego del calamar, temporada 1",
+            "genero": "Thriller",
+            "anio": 2021,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 9,
+            "sinopsis": "Cientos de jugadores con problemas económicos aceptan una extraña invitación para competir en juegos infantiles. Dentro les esperan un premio tentador y desafíos letales.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juego-del-calamar-1.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juego-del-calamar-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3644672,
+                    "titulo": "Capítulo 1: Luz roja, luz verde"
+                },
+                {
+                    "inicio": 3644672,
+                    "fin": 7459541,
+                    "titulo": "Capítulo 2: Infierno"
+                },
+                {
+                    "inicio": 7459541,
+                    "fin": 10763904,
+                    "titulo": "Capítulo 3: El hombre del paraguas"
+                },
+                {
+                    "inicio": 10763904,
+                    "fin": 14126293,
+                    "titulo": "Capítulo 4: No abandones el equipo"
+                },
+                {
+                    "inicio": 14126293,
+                    "fin": 17292501,
+                    "titulo": "Capítulo 5: Un mundo justo"
+                },
+                {
+                    "inicio": 17292501,
+                    "fin": 21061333,
+                    "titulo": "Capítulo 6: Gganbu"
+                },
+                {
+                    "inicio": 21061333,
+                    "fin": 24597930,
+                    "titulo": "Capítulo 7: Los VIP"
+                },
+                {
+                    "inicio": 24597930,
+                    "fin": 26580949,
+                    "titulo": "Capítulo 8: El líder"
+                },
+                {
+                    "inicio": 26580949,
+                    "fin": 29965397,
+                    "titulo": "Capítulo 9: Un día de suerte"
+                }
+            ]
+        },
+        {
+            "nombre": "El juego del calamar, temporada 2",
+            "genero": "Thriller",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 7,
+            "sinopsis": "El jugador 456 vuelve para participar en juegos macabros y enfrentarse a nuevos y mortales desafíos, pero esta vez con un plan secreto bajo el brazo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juego-del-calamar-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juego-del-calamar-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3922517,
+                    "titulo": "Capítulo 1: Sustento y azar"
+                },
+                {
+                    "inicio": 3922517,
+                    "fin": 7021653,
+                    "titulo": "Capítulo 2: Fiesta de Halloween"
+                },
+                {
+                    "inicio": 7021653,
+                    "fin": 10737408,
+                    "titulo": "Capítulo 3: 001"
+                },
+                {
+                    "inicio": 10737408,
+                    "fin": 14500736,
+                    "titulo": "Capítulo 4: Seis piernas"
+                },
+                {
+                    "inicio": 14500736,
+                    "fin": 19064917,
+                    "titulo": "Capítulo 5: Otra ronda"
+                },
+                {
+                    "inicio": 19064917,
+                    "fin": 22200661,
+                    "titulo": "Capítulo 6: O  X"
+                },
+                {
+                    "inicio": 22200661,
+                    "fin": 25816661,
+                    "titulo": "Capítulo 7: Amigos o enemigos"
+                }
+            ]
+        },
+        {
+            "nombre": "El juego del calamar, temporada 3",
+            "genero": "Thriller",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 6,
+            "sinopsis": "En este juego nadie está a salvo, ni siquiera los que creen tener el poder\nGi-hun toca fondo. Después de una rebelión fallida, una traición inesperada y la pérdida de un aliado, ya nada es lo mismo. Pero el Juego del Calamar no se detiene por nadie, y obligado a seguir adelante, deberá tomar decisiones límites. Nuevos desafíos, aún más letales, empujan a los jugadores al borde de la locura y cada movimiento tiene consecuencias irreversibles.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juego-del-calamar-3.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juego-del-calamar-3-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3433515,
+                    "titulo": "Capítulo 1: Llaves y cuchillos"
+                },
+                {
+                    "inicio": 3433515,
+                    "fin": 7035435,
+                    "titulo": "Capítulo 2: Noche estrellada"
+                },
+                {
+                    "inicio": 7035435,
+                    "fin": 10997462,
+                    "titulo": "Capítulo 3: No es culpa tuya"
+                },
+                {
+                    "inicio": 10997462,
+                    "fin": 14970667,
+                    "titulo": "Capítulo 4: 222"
+                },
+                {
+                    "inicio": 14970667,
+                    "fin": 18746454,
+                    "titulo": "Capítulo 5: ○△□"
+                },
+                {
+                    "inicio": 18746454,
+                    "fin": 22096214,
+                    "titulo": "Capítulo 6: La naturaleza humana"
                 }
             ]
         }
