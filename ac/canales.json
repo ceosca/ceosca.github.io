@@ -1,0 +1,583 @@
+[
+    {
+        "nombre": "26TV",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/26TV",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "A&E HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/AE_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "A24",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/A24",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "AM Sports",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/AM_Sports",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "AMC",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/AMC",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ARGENTINISIMA",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/ARGENTINISIMA",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "AXN HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/AXN_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "America TV HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/America_TV_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Baby TV",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Baby_TV",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "C5N",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/C5N",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "CNN en Espanol",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/CNN_en_Espanol",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Canal a",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Canal_a",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Canal de la Ciudad",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Canal_de_la_Ciudad",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Cartoon Network HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Cartoon_Network_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Cine.AR",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Cine.AR",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Cinecanal HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Cinecanal_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Cinemax",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Cinemax",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Comedy Central HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Comedy_Central_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Discovery Channel HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Discovery_Channel_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Discovery H&H HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Discovery_HH_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Discovery Kids",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Discovery_Kids",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Discovery Science",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Discovery_Science",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Discovery Theater HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Discovery_Theater_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Discovery Turbo",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Discovery_Turbo",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Discovery World HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Discovery_World_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Disney Channel HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Disney_Channel_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Disney Junior",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Disney_Junior",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "E! Entertainment",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/E_Entertainment",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "EL 13 PARAGUAY",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/EL_13_PARAGUAY",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 2 HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/ESPN_2_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 3 HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/ESPN_3_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN 4 HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/ESPN_4_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/ESPN_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "ESPN Premium HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/ESPN_Premium_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "EWTN",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/EWTN",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "El Canal  de las Estrellas",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/El_Canal__de_las_Estrellas",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "El Gourmet",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/El_Gourmet",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "El nueve HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/El_nueve_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "El trece HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/El_trece_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Encuentro",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Encuentro",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Europa Europa",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Europa_Europa",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "FX HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/FX_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Film & Arts HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Film__Arts_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Fox Sports 2 HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Fox_Sports_2_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Fox Sports 3 HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Fox_Sports_3_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Fox Sports HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Fox_Sports_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO 2",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/HBO_2",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Family",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/HBO_Family",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Signature",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/HBO_Signature",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HBO Xtreme",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/HBO_Xtreme",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HGTV",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/HGTV",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "HTV",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/HTV",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "IN",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/IN",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "KILLA TV HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/KILLA_TV_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Lifetime",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Lifetime",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "MTV",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/MTV",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Metro",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Metro",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Nat Geo HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Nat_Geo_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Nick Jr",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Nick_Jr",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Nickelodeon",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Nickelodeon",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Paramount HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Paramount_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Rural",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Rural",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Sony HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Sony_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Sony Movies HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Sony_Movies_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Space HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Space_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Star Channel HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Star_Channel_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Studio Universal",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Studio_Universal",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TCM",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TCM",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TELEFUTURO PARAGUAY",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TELEFUTURO_PARAGUAY",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TN HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TN_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TNT HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TNT_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TNT Novelas HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TNT_Novelas_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TNT Series HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TNT_Series_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TNT Sports HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TNT_Sports_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TV Publica HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TV_Publica_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TVE",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TVE",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Telefe HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Telefe_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "The History Channel HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/The_History_Channel_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "TyC Sports HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/TyC_Sports_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "USA Network",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/USA_Network",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Universal HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Universal_HD",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Volver",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Volver",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Warner Channel HD",
+        "categoria": "Desconocida",
+        "url": "https://4308-2803-9800-9886-4bfa-7c48-33ca-458e-6fe4.ngrok-free.app/stream/Warner_Channel_HD",
+        "keyId": "",
+        "key": ""
+    }
+]
