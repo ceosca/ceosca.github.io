@@ -8116,7 +8116,48 @@
                     "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/dulce-hogar-3.m4a"
                 }
             ],
-            "capitulos": []
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2978346,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2978346,
+                    "fin": 7123711,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 7123711,
+                    "fin": 10681769,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 10681769,
+                    "fin": 13832659,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 13832659,
+                    "fin": 16788520,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 16788520,
+                    "fin": 19791314,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 19791314,
+                    "fin": 22685650,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 22685650,
+                    "fin": 25511932,
+                    "titulo": "Capítulo 8: Episodio 8"
+                }
+            ]
         },
         {
             "nombre": "Dulces magnolias, temporada 1",
@@ -8935,7 +8976,7 @@
                 },
                 {
                     "idioma": "Español España",
-                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juego-del-calamar-3-es.m4a"
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-juedo-del-calamar-3-es.m4a"
                 }
             ],
             "capitulos": [
@@ -8968,6 +9009,870 @@
                     "inicio": 18746454,
                     "fin": 22096214,
                     "titulo": "Capítulo 6: La naturaleza humana"
+                }
+            ]
+        },
+        {
+            "nombre": "El monstruo de la vieja Seúl, temporada 1",
+            "genero": "Acción; Thriller",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 10,
+            "sinopsis": "En la primavera de 1945, una época lúgubre y siniestra, un hombre y una mujer luchan por sobrevivir mientras se enfrentan a una horrible criatura nacida de la avaricia humana.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-monstruo-de-la-vieja-se%C3%BAl-1.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-monstruo-de-la-vieja-se%C3%BAl-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 4088320,
+                    "titulo": "Capítulo 1: Najin"
+                },
+                {
+                    "inicio": 4088320,
+                    "fin": 8210219,
+                    "titulo": "Capítulo 2: Madre"
+                },
+                {
+                    "inicio": 8210219,
+                    "fin": 12622806,
+                    "titulo": "Capítulo 3: Señal"
+                },
+                {
+                    "inicio": 12622806,
+                    "fin": 16580353,
+                    "titulo": "Capítulo 4: Huella"
+                },
+                {
+                    "inicio": 16580353,
+                    "fin": 20658646,
+                    "titulo": "Capítulo 5: Desesperación"
+                },
+                {
+                    "inicio": 20658646,
+                    "fin": 24825515,
+                    "titulo": "Capítulo 6: Caos"
+                },
+                {
+                    "inicio": 24825515,
+                    "fin": 28720427,
+                    "titulo": "Capítulo 7: Persecución"
+                },
+                {
+                    "inicio": 28720427,
+                    "fin": 32628736,
+                    "titulo": "Capítulo 8: Despertar"
+                },
+                {
+                    "inicio": 32628736,
+                    "fin": 36830080,
+                    "titulo": "Capítulo 9: Atrocidad"
+                },
+                {
+                    "inicio": 36830080,
+                    "fin": 41536683,
+                    "titulo": "Capítulo 10: Desgarro"
+                }
+            ]
+        },
+        {
+            "nombre": "El monstruo de la vieja Seúl, temporada 2",
+            "genero": "Acción; Thriller",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 7,
+            "sinopsis": "Seúl, 2024. Chae‑ok conoce a Ho‑jae, un hombre muy parecido a Tae‑sang, y los misterios que habían estado ocultos comienzan a revelarse. ¿Qué les deparará el destino?",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-monstruo-de-la-vieja-se%C3%BAl-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-monstruo-de-la-vieja-seul-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2813013,
+                    "titulo": "Capítulo 1: Ho-jae"
+                },
+                {
+                    "inicio": 2813013,
+                    "fin": 5802581,
+                    "titulo": "Capítulo 2: Señal"
+                },
+                {
+                    "inicio": 5802581,
+                    "fin": 8407680,
+                    "titulo": "Capítulo 3: Fragmentos de recuerdos"
+                },
+                {
+                    "inicio": 8407680,
+                    "fin": 11177515,
+                    "titulo": "Capítulo 4: El otro lado"
+                },
+                {
+                    "inicio": 11177515,
+                    "fin": 14238550,
+                    "titulo": "Capítulo 5: El monstruo"
+                },
+                {
+                    "inicio": 14238550,
+                    "fin": 17130369,
+                    "titulo": "Capítulo 6: Carnada"
+                },
+                {
+                    "inicio": 17130369,
+                    "fin": 20542721,
+                    "titulo": "Capítulo 7: El marginado"
+                }
+            ]
+        },
+        {
+            "nombre": "El novato, temporada 1",
+            "genero": "Drama",
+            "anio": 2022,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "Un joven y temerario abogado es reclutado por la CIA al salir de la facultad de Derecho y se adentra sin preparación en el peligroso mundo del espionaje internacional.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-novato.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-novato-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3072768,
+                    "titulo": "Capítulo 1: N.S.E.S.A."
+                },
+                {
+                    "inicio": 3072768,
+                    "fin": 6549504,
+                    "titulo": "Capítulo 2: N.D.Q.N.Q.F."
+                },
+                {
+                    "inicio": 6549504,
+                    "fin": 9794261,
+                    "titulo": "Capítulo 3: N.S.S.L.Q.H."
+                },
+                {
+                    "inicio": 9794261,
+                    "fin": 13203029,
+                    "titulo": "Capítulo 4: S.L.H.C.A.C."
+                },
+                {
+                    "inicio": 13203029,
+                    "fin": 16253781,
+                    "titulo": "Capítulo 5: E.E.T.P."
+                },
+                {
+                    "inicio": 16253781,
+                    "fin": 19508522,
+                    "titulo": "Capítulo 6: E.A.N.E.A."
+                },
+                {
+                    "inicio": 19508522,
+                    "fin": 22995285,
+                    "titulo": "Capítulo 7: E.M.P.V.S.S."
+                },
+                {
+                    "inicio": 22995285,
+                    "fin": 26336042,
+                    "titulo": "Capítulo 8: Q.C.E.O.H."
+                }
+            ]
+        },
+        {
+            "nombre": "El novato, temporada 2",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 6,
+            "sinopsis": "Traiciones y aliados inesperados surgen en una nueva misión a Seúl\nOwen Hendricks se desempeña como agente de la CIA y está a punto de comenzar una peligrosa misión de espionaje en Corea del Sur. Con su vida en peligro, Owen deberá descubrir esa amenaza que podría estar dentro de su misma agencia.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-novato-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-novato-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3260800,
+                    "titulo": "Capítulo 1: N.E.U.H.E.U.A"
+                },
+                {
+                    "inicio": 3260800,
+                    "fin": 6346325,
+                    "titulo": "Capítulo 2: U.E.C.U.C.E.E.P.D.P"
+                },
+                {
+                    "inicio": 6346325,
+                    "fin": 9351168,
+                    "titulo": "Capítulo 3: Q.T.D.E.M.A.U.A"
+                },
+                {
+                    "inicio": 9351168,
+                    "fin": 12704981,
+                    "titulo": "Capítulo 4: Y.L.N.H.Q.U.C.T.D"
+                },
+                {
+                    "inicio": 12704981,
+                    "fin": 15718954,
+                    "titulo": "Capítulo 5: A.E.T.E.L.S"
+                },
+                {
+                    "inicio": 15718954,
+                    "fin": 19453397,
+                    "titulo": "Capítulo 6: Y.N.Q.E.M.P.D"
+                }
+            ]
+        },
+        {
+            "nombre": "El sastre, temporada 1",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Turquía",
+            "cantidad_episodios": 7,
+            "sinopsis": "Un famoso sastre empieza a coser un vestido de novia para la prometida de su mejor amigo, pero los tres tienen oscuros secretos que pronto harán tambalear sus vidas.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-sastre-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2842027,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2842027,
+                    "fin": 5574272,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5574272,
+                    "fin": 7749760,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 7749760,
+                    "fin": 9599701,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 9599701,
+                    "fin": 12324736,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 12324736,
+                    "fin": 14869077,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 14869077,
+                    "fin": 17112149,
+                    "titulo": "Capítulo 7: Episodio 7"
+                }
+            ]
+        },
+        {
+            "nombre": "El sastre, temporada 2",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Turquía",
+            "cantidad_episodios": 8,
+            "sinopsis": "Peyami afronta nuevos desafíos cuando su amistad con Dimitri es puesta a prueba. Mientras tanto, Esvet pasa más tiempo en la casa con Mustafa..., y otra mujer entra en su vida.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-sastre-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2016597,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2016597,
+                    "fin": 4496384,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 4496384,
+                    "fin": 7402581,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 7402581,
+                    "fin": 9401216,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 9401216,
+                    "fin": 11820288,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 11820288,
+                    "fin": 14584789,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 14584789,
+                    "fin": 17043626,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 17043626,
+                    "fin": 19367295,
+                    "titulo": "Capítulo 8: Episodio 8"
+                }
+            ]
+        },
+        {
+            "nombre": "El sastre, temporada 3",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Turquía",
+            "cantidad_episodios": 8,
+            "sinopsis": "Los sentimientos de Peyami por Esvet crecen sin control..., y lo obligan a elegir entre el amor y su larga amistad con Dimitri.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-sastre-3.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1948800,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 1948800,
+                    "fin": 4684885,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 4684885,
+                    "fin": 6948266,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 6948266,
+                    "fin": 9435391,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 9435391,
+                    "fin": 11605418,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 11605418,
+                    "fin": 14162175,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 14162175,
+                    "fin": 16635860,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 16635860,
+                    "fin": 18330367,
+                    "titulo": "Capítulo 8: Episodio 8"
+                }
+            ]
+        },
+        {
+            "nombre": "Emily en París, temporada 1",
+            "genero": "Drama; Comedia",
+            "anio": 2020,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Tras aceptar el trabajo de sus sueños en París, Emily Cooper, ejecutiva de marketing de Chicago, estrena una vida de aventuras mientras compagina trabajo, amistad y amor.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-1.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1823104,
+                    "titulo": "Capítulo 1: Emily en París"
+                },
+                {
+                    "inicio": 1823104,
+                    "fin": 3467904,
+                    "titulo": "Capítulo 2: Femenina y masculina"
+                },
+                {
+                    "inicio": 3467904,
+                    "fin": 5094699,
+                    "titulo": "Capítulo 3: ¿Sexi o sexista?"
+                },
+                {
+                    "inicio": 5094699,
+                    "fin": 6769664,
+                    "titulo": "Capítulo 4: Un beso es solo eso"
+                },
+                {
+                    "inicio": 6769664,
+                    "fin": 8408747,
+                    "titulo": "Capítulo 5: Falsos amigos"
+                },
+                {
+                    "inicio": 8408747,
+                    "fin": 10217984,
+                    "titulo": "Capítulo 6: Ringarde"
+                },
+                {
+                    "inicio": 10217984,
+                    "fin": 11948544,
+                    "titulo": "Capítulo 7: Final a la francesa"
+                },
+                {
+                    "inicio": 11948544,
+                    "fin": 13737856,
+                    "titulo": "Capítulo 8: A la conquista de una familia"
+                },
+                {
+                    "inicio": 13737856,
+                    "fin": 15228245,
+                    "titulo": "Capítulo 9: La subasta"
+                },
+                {
+                    "inicio": 15228245,
+                    "fin": 17337088,
+                    "titulo": "Capítulo 10: Recalculando"
+                }
+            ]
+        },
+        {
+            "nombre": "Emily en París, temporada 2",
+            "genero": "Drama; Comedia",
+            "anio": 2021,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Más diversión. Más moda. Más pifias. Mientras Emily encuentra su lugar en París, las consecuencias de una noche de pasión podrían meterla en un montón de líos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1632085,
+                    "titulo": "Capítulo 1: Voulez-Vous Coucher Avec Moi?"
+                },
+                {
+                    "inicio": 1632085,
+                    "fin": 3347797,
+                    "titulo": "Capítulo 2: ¿Conoces el camino a Saint-Tropez?"
+                },
+                {
+                    "inicio": 3347797,
+                    "fin": 5001429,
+                    "titulo": "Capítulo 3: ¡Feliz cumpleaños!"
+                },
+                {
+                    "inicio": 5001429,
+                    "fin": 7126954,
+                    "titulo": "Capítulo 4: Jules y Em"
+                },
+                {
+                    "inicio": 7126954,
+                    "fin": 8862421,
+                    "titulo": "Capítulo 5: Un inglés en París"
+                },
+                {
+                    "inicio": 8862421,
+                    "fin": 10708181,
+                    "titulo": "Capítulo 6: Al límite"
+                },
+                {
+                    "inicio": 10708181,
+                    "fin": 12510165,
+                    "titulo": "Capítulo 7: El cocinero, el ladrón, el fantasma y su amante"
+                },
+                {
+                    "inicio": 12510165,
+                    "fin": 14143104,
+                    "titulo": "Capítulo 8: Problemas en Champagne"
+                },
+                {
+                    "inicio": 14143104,
+                    "fin": 15931093,
+                    "titulo": "Capítulo 9: Esencia y sentimientos"
+                },
+                {
+                    "inicio": 15931093,
+                    "fin": 18286336,
+                    "titulo": "Capítulo 10: Una revolución francesa"
+                }
+            ]
+        },
+        {
+            "nombre": "Emily en París, temporada 3",
+            "genero": "Drama; Comedia",
+            "anio": 2022,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Un año después de mudarse a París por trabajo, Emily está en una encrucijada profesional y sentimental que la obligará a tomar decisiones sobre su futuro.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-3.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-3-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2178432,
+                    "titulo": "Capítulo 1: Entre dos amores"
+                },
+                {
+                    "inicio": 2178432,
+                    "fin": 4176597,
+                    "titulo": "Capítulo 2: ¿De qué se trata, Alfie?"
+                },
+                {
+                    "inicio": 4176597,
+                    "fin": 6133504,
+                    "titulo": "Capítulo 3: La paloma sin la paz"
+                },
+                {
+                    "inicio": 6133504,
+                    "fin": 8029184,
+                    "titulo": "Capítulo 4: En vivo, desde París, soy Emily Cooper"
+                },
+                {
+                    "inicio": 8029184,
+                    "fin": 10014464,
+                    "titulo": "Capítulo 5: Oh la La Liste"
+                },
+                {
+                    "inicio": 10014464,
+                    "fin": 12099115,
+                    "titulo": "Capítulo 6: Todos en Provenza"
+                },
+                {
+                    "inicio": 12099115,
+                    "fin": 13721942,
+                    "titulo": "Capítulo 7: Cómo perder a un diseñador en 10 días"
+                },
+                {
+                    "inicio": 13721942,
+                    "fin": 15349633,
+                    "titulo": "Capítulo 8: Víctima de la moda"
+                },
+                {
+                    "inicio": 15349633,
+                    "fin": 17577772,
+                    "titulo": "Capítulo 9: El amor está en el aire"
+                },
+                {
+                    "inicio": 17577772,
+                    "fin": 19832108,
+                    "titulo": "Capítulo 10: La farsa"
+                }
+            ]
+        },
+        {
+            "nombre": "Emily en París, temporada 4",
+            "genero": "Drama; Comedia",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Luego de la revelación de Gabriel , donde le confiesa que Camille está embarazada, Emily se encuentra ante un escenario inesperado. ¿Podrá lidiar con todo el drama que se asoma en el horizonte?",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-4.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/emily-en-par%C3%ADs-4-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2000469,
+                    "titulo": "Capítulo 1: Punto de quiebre"
+                },
+                {
+                    "inicio": 2000469,
+                    "fin": 4106282,
+                    "titulo": "Capítulo 2: Amor fugitivo"
+                },
+                {
+                    "inicio": 4106282,
+                    "fin": 6056490,
+                    "titulo": "Capítulo 3: Mascarada"
+                },
+                {
+                    "inicio": 6056490,
+                    "fin": 8122026,
+                    "titulo": "Capítulo 4: El área gris"
+                },
+                {
+                    "inicio": 8122026,
+                    "fin": 10229546,
+                    "titulo": "Capítulo 5: Trampa para el ojo"
+                },
+                {
+                    "inicio": 10229546,
+                    "fin": 12598314,
+                    "titulo": "Capítulo 6: La última Navidad"
+                },
+                {
+                    "inicio": 12598314,
+                    "fin": 14873087,
+                    "titulo": "Capítulo 7: Distintos idiomas"
+                },
+                {
+                    "inicio": 14873087,
+                    "fin": 16726228,
+                    "titulo": "Capítulo 8: De vuelta al ruedo"
+                },
+                {
+                    "inicio": 16726228,
+                    "fin": 18628180,
+                    "titulo": "Capítulo 9: Vacaciones en Roma"
+                },
+                {
+                    "inicio": 18628180,
+                    "fin": 21407487,
+                    "titulo": "Capítulo 10: Todos los caminos conducen a Roma"
+                }
+            ]
+        },
+        {
+            "nombre": "Escuela para señoritas Al Rawabi, temporada 1",
+            "genero": "Drama",
+            "anio": 2021,
+            "reparto": [],
+            "pais_origen": "Jordania",
+            "cantidad_episodios": 6,
+            "sinopsis": "En la prestigiosa escuela para señoritas Al Rawabi, las alumnas marginadas que sufren acoso traman una serie de arriesgados ataques para vengarse de sus torturadoras.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/escuela-para-se%C3%B1oritas-al-rawabi-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3146155,
+                    "titulo": "Capítulo 1: Siempre me encantó la escuela"
+                },
+                {
+                    "inicio": 3146155,
+                    "fin": 6020907,
+                    "titulo": "Capítulo 2: ¡Que empiece el juego!"
+                },
+                {
+                    "inicio": 6020907,
+                    "fin": 8873259,
+                    "titulo": "Capítulo 3: Cosechas lo que siembras"
+                },
+                {
+                    "inicio": 8873259,
+                    "fin": 11535403,
+                    "titulo": "Capítulo 4: Cristal roto"
+                },
+                {
+                    "inicio": 11535403,
+                    "fin": 14587776,
+                    "titulo": "Capítulo 5: Y así se volvió una extraña"
+                },
+                {
+                    "inicio": 14587776,
+                    "fin": 17446656,
+                    "titulo": "Capítulo 6: La calma antes de la tormenta"
+                }
+            ]
+        },
+        {
+            "nombre": "Escuela para señoritas Al Rawabi, temporada 2",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Jordania",
+            "cantidad_episodios": 6,
+            "sinopsis": "La Escuela para señoritas Al Rawabi se convierte en un campo de batalla\nMariam y sus compañeras enfrentan las consecuencias de conformarse con las normas sociales. Ahora las amistades corren el riesgo de desmoronarse, mientras navegan las complejidades de esta etapa. Romances, alianzas, expectativas sociales y secretos que salen a la luz y amenazan con separar a este grupo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/escuela-para-se%C3%B1oritas-al-rawabi-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2760021,
+                    "titulo": "Capítulo 1: Nuevos comienzos"
+                },
+                {
+                    "inicio": 2760021,
+                    "fin": 5520042,
+                    "titulo": "Capítulo 2: Púrpura elegante"
+                },
+                {
+                    "inicio": 5520042,
+                    "fin": 8280063,
+                    "titulo": "Capítulo 3: Conoce a tus candidatas favoritas"
+                },
+                {
+                    "inicio": 8280063,
+                    "fin": 11040084,
+                    "titulo": "Capítulo 4: Otro mundo"
+                },
+                {
+                    "inicio": 11040084,
+                    "fin": 13800105,
+                    "titulo": "Capítulo 5: Uniforme sagrado"
+                },
+                {
+                    "inicio": 13800105,
+                    "fin": 16560126,
+                    "titulo": "Capítulo 6: Si pudiera hacerlo todo otra vez"
+                }
+            ]
+        },
+        {
+            "nombre": "Estamos muertos",
+            "genero": "Drama",
+            "anio": 2022,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 12,
+            "sinopsis": "Un grupo de estudiantes se da cuenta de que tienen que enfrentarse con las pocas existencias que tienen a una situación de crisis extrema. Estos quedan atrapados en el instituto donde estudian mientras que un virus zombie se propaga por todo el mundo.\n\nLa escuela está llena de infectados, pero nadie puede salir de allí. El gupo de amigos deberá hacer todo lo posible para sobrevivir y salir del colegio sanos y salvos cuando el apocalipsis zombie termine.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/estamos-muertos-1.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/estamos-muertos-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3984939,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3984939,
+                    "fin": 8188971,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 8188971,
+                    "fin": 11929600,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 11929600,
+                    "fin": 16225024,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 16225024,
+                    "fin": 19605376,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 19605376,
+                    "fin": 23613269,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 23613269,
+                    "fin": 27188138,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 27188138,
+                    "fin": 30641621,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 30641621,
+                    "fin": 34295936,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 34295936,
+                    "fin": 37531179,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 37531179,
+                    "fin": 40872406,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 40872406,
+                    "fin": 44056235,
+                    "titulo": "Capítulo 12: Episodio 12"
                 }
             ]
         }
