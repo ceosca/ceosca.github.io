@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reproductor de Audio de Streams de Video</title>
+    <script type='text/javascript' src="//ssl.p.jwpcdn.com/player/v/8.25.0/jwplayer.js"></script>
+    <script type='text/javascript'>jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo'</script>
+    <style>
+        #controls {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="categorySelector">Selecciona una categoría:</label>
+        <select id="categorySelector" onchange="updateChannelList()"></select>
+    </div>
+    <div>
+        <label for="channelSelector">Selecciona un canal:</label>
+        <select id="channelSelector" onchange="cargarStream()"></select>
+    </div>
+    <div id="player">CARGANDO...</div>
+    <div id="controls">
+        <button onclick="playPause()">Play/Pausa</button>
+        <button onclick="changeVolume(-5)">Bajar Volumen</button>
+        <button onclick="changeVolume(5)">Subir Volumen</button>
+        <button onclick="changeAudioTrack(-1)">Track Anterior</button>
+        <button onclick="changeAudioTrack(1)">Siguiente Track</button>
+    </div>
+    <script type='text/javascript'>
+        var playerInstance = null;
+        var canales = [];
+        var categorias = [];
+
+        fetch('https://ceosca.github.io/sensa/canales.json')
+            .then(response => response.json())
+            .then(data => {
+                canales = data;
+                categorias = obtenerCategoriasOrdenadas();
+                cargarCategorias();
+                updateChannelList();
+            })
+            .catch(error => console.error('Error al cargar el JSON:', error));
+
+        function cargarCategorias() {
+            var selectBox = document.getElementById("categorySelector");
+            categorias.forEach(function(categoria) {
+                var option = document.createElement("option");
+                option.text = categoria;
+                selectBox.add(option);
+            });
+        }
+
+        function obtenerCategoriasOrdenadas() {
+            var categoriasSet = new Set();
+            canales.forEach(function(canal) {
+                categoriasSet.add(canal.categoria);
+            });
+            return Array.from(categoriasSet).sort();
+        }
+
+        function updateChannelList() {
+            var selectedCategory = document.getElementById("categorySelector").value;
+            var channelSelector = document.getElementById("channelSelector");
+            channelSelector.innerHTML = "";
+            var filteredChannels = canales.filter(function(canal) {
+                return canal.categoria === selectedCategory;
+            });
+            filteredChannels.sort(function(a, b) {
+                return a.nombre.localeCompare(b.nombre);
+            });
+            filteredChannels.forEach(function(canal) {
+                var option = document.createElement("option");
+                option.text = canal.nombre;
+                option.value = JSON.stringify(canal);
+                channelSelector.add(option);
+            });
+            if (filteredChannels.length > 0) {
+                cargarStream();
+            }
+        }
+
+        function cargarStream() {
+            var selectBox = document.getElementById("channelSelector");
+            var selectedValue = JSON.parse(selectBox.value);
+            var config = {
+                playlist: [{
+                    title: "Audio del Stream Seleccionado",
+                    sources: [{
+                        file: selectedValue.url,
+                        type: "mpd"
+                    }],
+                    tracks: []  // Esto asegura que solo se utilicen pistas de audio.
+                }],
+                width: 0,
+                height: 0,
+                autostart: true,
+                audioOnly: true,
+                visualPlaylist: false, // Desactiva cualquier elemento visual relacionado con la lista de reproducción
+                controls: false
+            };
+            
+            if (selectedValue.keyId && selectedValue.key) {
+                config.drm = {
+                    clearkey: {
+                        keyId: selectedValue.keyId,
+                        key: selectedValue.key
+                    }
+                };
+            }
+            
+            playerInstance = jwplayer("player").setup(config);
+        }
+
+        function playPause() {
+            if (playerInstance.getState() === "playing") {
+                playerInstance.pause();
+            } else {
+                playerInstance.play();
+            }
+        }
+
+        function changeVolume(amount) {
+            var currentVolume = playerInstance.getVolume();
+            var newVolume = Math.max(0, Math.min(100, currentVolume + amount));
+            playerInstance.setVolume(newVolume);
+        }
+
+        function changeAudioTrack(offset) {
+            if (playerInstance) {
+                var currentAudioTrack = playerInstance.getCurrentAudioTrack();
+                var audioTracks = playerInstance.getAudioTracks();
+                var newTrackIndex = currentAudioTrack + offset;
+                
+                if (newTrackIndex < 0) {
+                    newTrackIndex = audioTracks.length - 1;
+                } else if (newTrackIndex >= audioTracks.length) {
+                    newTrackIndex = 0;
+                }
+
+                playerInstance.setCurrentAudioTrack(newTrackIndex);
+            }
+        }
+    </script>
+</body>
+</html>
