@@ -38287,6 +38287,281 @@
                     "titulo": "Capítulo 9: Luz, cámara, bebé."
                 }
             ]
+        },
+        {
+            "nombre": "Ángela",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [
+                "Verónica Sánchez",
+                "Daniel Grao",
+                "Jaime Zatarain"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 6,
+            "sinopsis": "Ángela lleva una vida aparentemente idílica de puertas para afuera: tiene dos hijos fantásticos, un esposo encantador y una casa espectacular. Sin embargo, esta fachada es un fraude y cada vez le cuesta más esfuerzo mantenerla. Ángela es en realidad una mujer maltratada por un marido obsesivo que le ha convencido de que sin él no sería nada. Hasta que un día aparece Edu, un atractivo joven que le desvela sorprendentes secretos y que está dispuesto a ayudarla eliminándolo de su vida.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/%C3%A1ngela.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3137579,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 3137579,
+                    "fin": 6208896,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 6208896,
+                    "fin": 9166208,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 9166208,
+                    "fin": 12133120,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 12133120,
+                    "fin": 15100459,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 15100459,
+                    "fin": 18075862,
+                    "titulo": "Capítulo 6"
+                }
+            ]
+        },
+        {
+            "nombre": "Desaparecido",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Jon Lukas",
+                "Ane Rot",
+                "Ainhoa Larrañaga",
+                "Asier Rikarte",
+                "Ainhoa Azpitarte",
+                "Unai Arana",
+                "Julen Taboada",
+                "Itziar Atienza",
+                "Gorka Otxoa",
+                "Jon Olivares",
+                "Leire Martínez"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 8,
+            "sinopsis": "Tras pasar una noche en el monte con su grupo de amigos, Jon, un joven vasco, desaparece sin dejar rastro. La única pista es un inquietante vídeo que él mismo publica en redes sociales minutos antes de perderse su pista.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/desaparecidos.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2506965,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 2506965,
+                    "fin": 5238528,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 5238528,
+                    "fin": 8121429,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 8121429,
+                    "fin": 11021610,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 11021610,
+                    "fin": 13721642,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 13721642,
+                    "fin": 16485162,
+                    "titulo": "Capítulo 6"
+                },
+                {
+                    "inicio": 16485162,
+                    "fin": 19385429,
+                    "titulo": "Capítulo 7"
+                },
+                {
+                    "inicio": 19385429,
+                    "fin": 22122666,
+                    "titulo": "Capítulo 8"
+                }
+            ]
+        },
+        {
+            "nombre": "Los gringo hunters",
+            "genero": "Thriller",
+            "anio": 2025,
+            "reparto": [
+                "Manuel Masalva",
+                "Héctor Kotsifakis",
+                "Sebastian Roché",
+                "Harold Torres",
+                "Mayra Hermosillo",
+                "Andrew Leland Rogers",
+                "Dagoberto Gama",
+                "Regina Nava",
+                "Gerardo Trejoluna",
+                "Paulina Dávila",
+                "José María Yázpik"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 12,
+            "sinopsis": "En esta serie inspirada en hechos reales, una unidad de élite de la policía mexicana da caza a fugitivos de EE. UU. sin saber que una conspiración crece en su interior.",
+            "enlaces": [
+                {
+                    "idioma": "Español, México",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/los-gringo-hunters.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2978133,
+                    "titulo": "Capítulo 1: Otro bad hombre"
+                },
+                {
+                    "inicio": 2978133,
+                    "fin": 5822293,
+                    "titulo": "Capítulo 2: Escape to Baja"
+                },
+                {
+                    "inicio": 5822293,
+                    "fin": 8684160,
+                    "titulo": "Capítulo 3: Poder blanco"
+                },
+                {
+                    "inicio": 8684160,
+                    "fin": 11823659,
+                    "titulo": "Capítulo 4: Soy la carnada"
+                },
+                {
+                    "inicio": 11823659,
+                    "fin": 14850432,
+                    "titulo": "Capítulo 5: El American Dream"
+                },
+                {
+                    "inicio": 14850432,
+                    "fin": 17979776,
+                    "titulo": "Capítulo 6: Nueva Tijuana"
+                },
+                {
+                    "inicio": 17979776,
+                    "fin": 21174571,
+                    "titulo": "Capítulo 7: El Mexican Dream"
+                },
+                {
+                    "inicio": 21174571,
+                    "fin": 23866710,
+                    "titulo": "Capítulo 8: ¿Y qué, no puedo llorar?"
+                },
+                {
+                    "inicio": 23866710,
+                    "fin": 26817921,
+                    "titulo": "Capítulo 9: Control de confianza"
+                },
+                {
+                    "inicio": 26817921,
+                    "fin": 29539286,
+                    "titulo": "Capítulo 10: Cordero de Dios"
+                },
+                {
+                    "inicio": 29539286,
+                    "fin": 32535382,
+                    "titulo": "Capítulo 11: Anybody call a cop?"
+                },
+                {
+                    "inicio": 32535382,
+                    "fin": 35734657,
+                    "titulo": "Capítulo 12: 428"
+                }
+            ]
+        },
+        {
+            "nombre": "Menem",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Leonardo Sbaraglia",
+                "Sergio Gabriel D'Angelo",
+                "Juan Minujín",
+                "Griselda Siciliani",
+                "Jorgelina Aruzzi",
+                "Marco Antonio Caponi",
+                "Cumelén Sanz",
+                "Alberto Ajaka",
+                "Violeta Urtizberea",
+                "Guillermo Arengo",
+                "Agustín Sullivan",
+                "Mónica Antonópulos",
+                "Martín Campilongo",
+                "Candela Vetrano",
+                "Virginia Gallardo",
+                "Mario Alarcón",
+                "Sebastián Almada",
+                "Fernán Mirás"
+            ],
+            "pais_origen": "Argentina",
+            "cantidad_episodios": 6,
+            "sinopsis": "Menem, un político extravagante y carismático, llega a ser Presidente de un país en crisis. Su mandato, donde privatiza empresas públicas, dolariza la economía y consulta brujas, es atravesado por atentados terroristas y la muerte de su hijo. A su lado, su fotógrafo, Olegario Salas, ve su vida transformarse, como toda la sociedad argentina, entre la recuperación económica y casos de corrupción.",
+            "enlaces": [
+                {
+                    "idioma": "Español, Argentina",
+                    "enlace": "https://dn721709.ca.archive.org/0/items/serdispri/menem.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2798485,
+                    "titulo": "Capítulo 1: La elección interna"
+                },
+                {
+                    "inicio": 2798485,
+                    "fin": 5093013,
+                    "titulo": "Capítulo 2: Pasaron cosas"
+                },
+                {
+                    "inicio": 5093013,
+                    "fin": 7637290,
+                    "titulo": "Capítulo 3: Una voz en el teléfono"
+                },
+                {
+                    "inicio": 7637290,
+                    "fin": 9990997,
+                    "titulo": "Capítulo 4: Convertible"
+                },
+                {
+                    "inicio": 9990997,
+                    "fin": 12574933,
+                    "titulo": "Capítulo 5: Los caminos"
+                },
+                {
+                    "inicio": 12574933,
+                    "fin": 15146666,
+                    "titulo": "Capítulo 6: El hombre dorado"
+                }
+            ]
         }
     ]
 }
