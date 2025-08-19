@@ -128,15 +128,11 @@
     const fC = { apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0", authDomain: "pfdsuaaug.firebaseapp.com", projectId: "pfdsuaaug", storageBucket: "pfdsuaaug.firebasestorage.app", messagingSenderId: "701797222900", appId: "1:701797222900:web:01836d45db1b35be2bd1a1" },
         app = initializeApp(fC),db = getFirestore(app),auth = getAuth(app),gP = new GoogleAuthProvider,
         gSI = document.getElementById('gsi'),sO = document.getElementById('so'),
-        DBS = [
-            'https://ceosca.github.io/novelas/novelas.json',
-            'https://raw.githubusercontent.com/criseduas/stuff/refs/heads/main/serbraua.json',
-            'https://raw.githubusercontent.com/ivanack123/espiriwings/3fd7d88b55612414e47d931d01e72361d102742f/sivelas.json',
-
-        ],
+        SDP1 = 'https://ceosca.github.io/',SDP2 = 'novelas/novelas.json',
         A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),M = document.getElementById("sM"),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
         T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal", ACCI = document.getElementById('acc-info'), VSS_KEY = 'vsis';
     
+    const SD_J = SDP1 + SDP2;
     let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,TS_C = [], VSSS = new Set();
     let isUCWRunning = !1, isCSRSRunning = !1;
     let isManuallySwitchingChapter = false;
@@ -188,7 +184,7 @@
 
     const O=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){TS_C=await FD()}const pL=await RP(nbs);if(pL){CPT=A.currentTime}else{S=s_i;CCL=0;CLI=0;if(S&&S.capitulos&&S.capitulos[CCL]){CPT=S.capitulos[CCL].inicio/1e3}else{CPT=0}if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()};lYC();MC_DIV.classList.add('h');M.style.display="block";M.setAttribute("aria-hidden","false");document.querySelector('#sM .mc').focus();eFT(M);document.getElementById('as').style.display="none";history.pushState({modalOpenFor:'sM'},'','#os');window.addEventListener('popstate',modalPopstateHandler);};
     
-    const FD=async()=>{try{const r=await Promise.all(DBS.filter(u=>u).map(u=>fetch(u).then(res=>{if(!res.ok)throw new Error(`E!S:${res.status}`);return res.json()})));return r.flatMap(d=>d.series||[])}catch(t){return[]}};
+    const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();return e.series||[]}catch(t){return[]}};
     const OTS=a=>([...a].sort((x,y)=>{const gtn=nm=>{const p=nm.split(', temporada ');if(p.length>1){const n=parseInt(p[1]);return isNaN(n)?Infinity:n}return 1};const nX=gtn(x.nombre),nY=gtn(y.nombre);return nX!==nY?nX-nY:x.nombre.localeCompare(y.nombre)})),
     RCAS=s_a=>{
         const t=document.getElementById('coc');
