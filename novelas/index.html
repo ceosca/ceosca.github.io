@@ -314,8 +314,8 @@
         }
     },
     TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir (Alt + K)')):(A.play().catch(e=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC())},
-    F=()=>{A.currentTime+=15},
-    B=()=>{if(S&&CSD_L&&typeof CCL!=='undefined'&&CSD_L[CCL]){const cS=CSD_L[CCL].inicio/1e3;let nT=A.currentTime-15;A.currentTime=nT<cS?cS:nT}else{A.currentTime-=15}},
+    F=()=>{if(S&&CSD_L&&CSD_L[CCL]){const cE=CSD_L[CCL].fin/1e3;A.currentTime=Math.min(cE,A.currentTime+15)}},
+    B=()=>{if(S&&CSD_L&&CSD_L[CCL]){const cS=CSD_L[CCL].inicio/1e3;A.currentTime=Math.max(cS,A.currentTime-15)}},
     RE=()=>{if(S&&CSD_L&&typeof CCL!=='undefined'&&CSD_L[CCL]){isManuallySwitchingChapter=true;A.currentTime=CSD_L[CCL].inicio/1e3;if(!IP){A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}UC();PC(true,true)}},
     PC=(anC=!1,fS=!1)=>{
         CCL=parseInt(CS.value);
@@ -330,7 +330,7 @@
             }
         }
     },
-    GCI=t=>{let e=0;if(!CSD_L||CSD_L.length===0)return 0;for(let i=0;i<CSD_L.length;i++){const n=CSD_L[i];if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3){e=i;break}if(t<n.inicio/1e3){e=i>0?i-1:0;break}if(i===CSD_L.length-1&&t>n.fin/1e3){e=i;break}}}return e},
+    GCI=t=>{if(!CSD_L||CSD_L.length===0)return 0;let ci=0;for(let i=0;i<CSD_L.length;i++){if(t>=CSD_L[i].inicio/1e3){ci=i}else{break}}return ci},
     PP=()=>{let t=CCL;t>0&&(t--,CS.value=t,isManuallySwitchingChapter=true,PC(true,true))},
     NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;isManuallySwitchingChapter=true,PC(true,true)}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){isManuallySwitchingChapter=true;O(semsbo[cti+1])}else{}}},
     CLS=()=>{
