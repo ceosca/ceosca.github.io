@@ -715,7 +715,7 @@
             ]
         },
         {
-            "nombre": "División Palermo",
+            "nombre": "División Palermo, temporada 1",
             "genero": "Comedia",
             "anio": 2023,
             "reparto": [
@@ -779,6 +779,68 @@
                     "inicio": 11081557,
                     "fin": 12619776,
                     "titulo": "Capítulo 8: Casi héroes"
+                }
+            ]
+        },
+        {
+            "nombre": "División Palermo, temporada 2",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [
+                "Santiago Korovsky",
+                "Daniel Hendler",
+                "Pilar Gamboa",
+                "Martín Garabal",
+                "Charo López",
+                "Hernán Cuevas",
+                "Facundo Bogarín",
+                "Jonatan Nugnes",
+                "Juan Minujín",
+                "Guillermo Arengo",
+                "Alejandra Flechner",
+                "Esteban Bigliardi",
+                "Inés Efron",
+                "Martín Piroyansky"
+            ],
+            "pais_origen": "Argentina",
+            "cantidad_episodios": 6,
+            "sinopsis": "La Guardia Urbana se expande y el caos también. En plena campaña electoral, el barrio está más peligroso que nunca. Para investigar a una banda criminal que opera desde el café de especialidad Cuero Café, los Servicios de Inteligencia reclutan a Felipe Rozenfeld. La ciudad no está lista. La División Palermo, mucho menos.",
+            "enlaces": [
+                {
+                    "idioma": "Español, Argentina",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/divisi%C3%B3n-palermo-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1685888,
+                    "titulo": "Capítulo 1: Felipe 2.0"
+                },
+                {
+                    "inicio": 1685888,
+                    "fin": 3325483,
+                    "titulo": "Capítulo 2: Operación Flat White"
+                },
+                {
+                    "inicio": 3325483,
+                    "fin": 5007659,
+                    "titulo": "Capítulo 3: ¿Hay un nosotros?"
+                },
+                {
+                    "inicio": 5007659,
+                    "fin": 6632363,
+                    "titulo": "Capítulo 4: Palermo de rehén"
+                },
+                {
+                    "inicio": 6632363,
+                    "fin": 8214656,
+                    "titulo": "Capítulo 5: El último sacrificio"
+                },
+                {
+                    "inicio": 8214656,
+                    "fin": 9546112,
+                    "titulo": "Capítulo 6: Todos en cuero"
                 }
             ]
         },
@@ -38560,6 +38622,377 @@
                     "inicio": 12574933,
                     "fin": 15146666,
                     "titulo": "Capítulo 6: El hombre dorado"
+                }
+            ]
+        },
+        {
+            "nombre": "Superestar",
+            "genero": "Drama; Comedia",
+            "anio": 2025,
+            "reparto": [
+                "Ingrid García Jonsson",
+                "Rocío Ibáñez",
+                "Secun de la Rosa",
+                "Carlos Areces",
+                "Pepón Nieto",
+                "Natalia de Molina",
+                "Julián Villagrán",
+                "Nacho Vigalondo",
+                "Javier Gurruchaga"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 6,
+            "sinopsis": "Con el cambio de siglo un cometa atravesó el cielo de España desmontando las leyes de la fama y el éxito, desintegrando la frontera entre lo popular y lo underground. Durante un par de años las portadas y las horas de prime time fueron conquistadas por famosos de otra dimensión. Criaturas que hasta entonces parecían condenadas a la burla y el desprecio y que acapararon nuestra atención sin adaptarse a ninguna normalidad. Un relato mágico donde caben conspiraciones esotéricas, noches eternas, ladrillos cuánticos, supervillanos multicolores y una improbabilidad hecha estrella: Tamara.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/superestar.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3283371,
+                    "titulo": "Capítulo 1: Margarita Seisdedos y la crisis del ladrillo"
+                },
+                {
+                    "inicio": 3283371,
+                    "fin": 6421931,
+                    "titulo": "Capítulo 2: El extraño caso del doctor Leonardo y míster Dantés"
+                },
+                {
+                    "inicio": 6421931,
+                    "fin": 9879851,
+                    "titulo": "Capítulo 3: Loly Álvarez y Arlekin en la carretera podrida"
+                },
+                {
+                    "inicio": 9879851,
+                    "fin": 13049856,
+                    "titulo": "Capítulo 4: Quiero la cabeza de Paco Porras"
+                },
+                {
+                    "inicio": 13049856,
+                    "fin": 15848448,
+                    "titulo": "Capítulo 5: Tony Genil y las «losers» de Bohemia"
+                },
+                {
+                    "inicio": 15848448,
+                    "fin": 19630208,
+                    "titulo": "Capítulo 6: La balada de Marimar Cuena Seisdedos"
+                }
+            ]
+        },
+        {
+            "nombre": "Delirio",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Estefania Piñeres",
+                "Juan Pablo Raba",
+                "Juan Pablo Urrego",
+                "Paola Turbay",
+                "José Julián Gaviria",
+                "Jacobo Diez",
+                "Salvador del Solar",
+                "Fernando Bocanegra Delgado"
+            ],
+            "pais_origen": "Colombia",
+            "cantidad_episodios": 8,
+            "sinopsis": "Cuando su esposa Agustina se sume en un estado de delirio, un profesor investiga su oscuro pasado para intentar reconstruir su historia y descubrir la causa de su locura.",
+            "enlaces": [
+                {
+                    "idioma": "Español, Colombia",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/delirio.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2816896,
+                    "titulo": "Capítulo 1: Caída de una torre"
+                },
+                {
+                    "inicio": 2816896,
+                    "fin": 5484672,
+                    "titulo": "Capítulo 2: Me da miedo"
+                },
+                {
+                    "inicio": 5484672,
+                    "fin": 7933355,
+                    "titulo": "Capítulo 3: Nadie te va a querer como yo"
+                },
+                {
+                    "inicio": 7933355,
+                    "fin": 10273110,
+                    "titulo": "Capítulo 4: Nunca terminas nada"
+                },
+                {
+                    "inicio": 10273110,
+                    "fin": 12751019,
+                    "titulo": "Capítulo 5: Se llamaba Yenny"
+                },
+                {
+                    "inicio": 12751019,
+                    "fin": 15241728,
+                    "titulo": "Capítulo 6: Papá se fue a Francia"
+                },
+                {
+                    "inicio": 15241728,
+                    "fin": 17734827,
+                    "titulo": "Capítulo 7: Nunca te habías ido"
+                },
+                {
+                    "inicio": 17734827,
+                    "fin": 20510891,
+                    "titulo": "Capítulo 8: El último conjuro"
+                }
+            ]
+        },
+        {
+            "nombre": "En el barro",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Ana Garibaldi",
+                "Valentina Zenere",
+                "Rita Cortese",
+                "Lorena Vega",
+                "Marcelo Subiotto",
+                "Carolina Ramírez",
+                "Ana Rujas",
+                "Gerardo Romano",
+                "Cecilia Rossetto",
+                "Juana Molina",
+                "Erika de Sautu Riestra",
+                "María Becerra"
+            ],
+            "pais_origen": "Argentina",
+            "cantidad_episodios": 8,
+            "sinopsis": "Cinco presas forjan un vínculo único tras un accidente mortal, pero la corrupción y las luchas de poder de la cárcel amenazan con separarlas.",
+            "enlaces": [
+                {
+                    "idioma": "Español, Argentina",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/en-el-barro.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3293653,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3293653,
+                    "fin": 5976661,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5976661,
+                    "fin": 9457877,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 9457877,
+                    "fin": 12797866,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 12797866,
+                    "fin": 16137215,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 16137215,
+                    "fin": 19010260,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 19010260,
+                    "fin": 21876820,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 21876820,
+                    "fin": 25387647,
+                    "titulo": "Capítulo 8: Episodio 8"
+                }
+            ]
+        },
+        {
+            "nombre": "Pecados inconfesables",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Zuria Vega",
+                "Andres Baida",
+                "Erik Hayser",
+                "Adriana Louvier",
+                "José María Torre",
+                "Eugenio Siller",
+                "Ana Sofía Gatica"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 18,
+            "sinopsis": "Una mujer atrapada en un matrimonio controlador encuentra consuelo y venganza en un joven amante, hasta que todo se convierte en una lucha desesperada por sobrevivir.",
+            "enlaces": [
+                {
+                    "idioma": "Español, México",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/pecados-inconfesables.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2710613,
+                    "titulo": "Capítulo 1: La trampa"
+                },
+                {
+                    "inicio": 2710613,
+                    "fin": 5005610,
+                    "titulo": "Capítulo 2: Reencuentro"
+                },
+                {
+                    "inicio": 5005610,
+                    "fin": 7269034,
+                    "titulo": "Capítulo 3: Desesperada"
+                },
+                {
+                    "inicio": 7269034,
+                    "fin": 9562239,
+                    "titulo": "Capítulo 4: Bajo sospecha"
+                },
+                {
+                    "inicio": 9562239,
+                    "fin": 11785940,
+                    "titulo": "Capítulo 5: Las dudas"
+                },
+                {
+                    "inicio": 11785940,
+                    "fin": 13965353,
+                    "titulo": "Capítulo 6: Falsa muerte"
+                },
+                {
+                    "inicio": 13965353,
+                    "fin": 16427988,
+                    "titulo": "Capítulo 7: La caída del fiscal"
+                },
+                {
+                    "inicio": 16427988,
+                    "fin": 18499283,
+                    "titulo": "Capítulo 8: La llamada"
+                },
+                {
+                    "inicio": 18499283,
+                    "fin": 20667091,
+                    "titulo": "Capítulo 9: Capturados"
+                },
+                {
+                    "inicio": 20667091,
+                    "fin": 22833406,
+                    "titulo": "Capítulo 10: Está vivo"
+                },
+                {
+                    "inicio": 22833406,
+                    "fin": 25124563,
+                    "titulo": "Capítulo 11: Chantaje"
+                },
+                {
+                    "inicio": 25124563,
+                    "fin": 27355475,
+                    "titulo": "Capítulo 12: Secreto del pasado"
+                },
+                {
+                    "inicio": 27355475,
+                    "fin": 29526056,
+                    "titulo": "Capítulo 13: Escándalo"
+                },
+                {
+                    "inicio": 29526056,
+                    "fin": 31715795,
+                    "titulo": "Capítulo 14: Desilusión"
+                },
+                {
+                    "inicio": 31715795,
+                    "fin": 33873747,
+                    "titulo": "Capítulo 15: Todos contra todos"
+                },
+                {
+                    "inicio": 33873747,
+                    "fin": 35935656,
+                    "titulo": "Capítulo 16: Revelaciones"
+                },
+                {
+                    "inicio": 35935656,
+                    "fin": 38061267,
+                    "titulo": "Capítulo 17: Duro golpe"
+                },
+                {
+                    "inicio": 38061267,
+                    "fin": 40194430,
+                    "titulo": "Capítulo 18: Nueva vida"
+                }
+            ]
+        },
+        {
+            "nombre": "Quebranto",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "TINI",
+                "Jorge López",
+                "Martín Barba",
+                "Antonio de la Vega",
+                "Rafael Ferro",
+                "Otto Sirgo",
+                "Daniela Peña",
+                "Lucía Gómez-Robledo",
+                "Sebastian Silveti",
+                "Jyasú Torruco",
+                "Karla Garrido",
+                "Rebeca Manríquez",
+                "Arelí González",
+                "Daniela Vargas",
+                "Albi De Abreu"
+            ],
+            "pais_origen": "Argentina",
+            "cantidad_episodios": 6,
+            "sinopsis": "Miranda regresa a México para descubrir su historia familiar y se entera de que su madre no la abandonó, sino que fue secuestrada al nacer. Al encontrar a su madre en un hospital psiquiátrico, sufriendo los efectos del abuso y la violencia, Miranda decide abrirse camino en el corazón de una organización criminal para descubrir la verdad sobre lo sucedido y asegurarse de que los responsables sean castigados.",
+            "enlaces": [
+                {
+                    "idioma": "Español, Argentina",
+                    "enlace": "https://dn721709.ca.archive.org/0/items/serdispri/quebranto.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2628544,
+                    "titulo": "Capítulo 1: Miranda"
+                },
+                {
+                    "inicio": 2628544,
+                    "fin": 5551509,
+                    "titulo": "Capítulo 2: Música de otro tiempo"
+                },
+                {
+                    "inicio": 5551509,
+                    "fin": 8059690,
+                    "titulo": "Capítulo 3: Motivos para no volver"
+                },
+                {
+                    "inicio": 8059690,
+                    "fin": 10598122,
+                    "titulo": "Capítulo 4: Tu hija"
+                },
+                {
+                    "inicio": 10598122,
+                    "fin": 13480426,
+                    "titulo": "Capítulo 5: Ángel caído"
+                },
+                {
+                    "inicio": 13480426,
+                    "fin": 16332863,
+                    "titulo": "Capítulo 6: Nadie dijo que fuera fácil"
                 }
             ]
         }
