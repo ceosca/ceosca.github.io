@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi App de TV</title>
+    
+    <!-- Shaka Player UI (reemplaza a Saka) -->
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.7.12/dist/shaka-player.ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.7.12/dist/controls.css">
+    
+    <style>
+        :root {
+            --bg-color: #121212;
+            --primary-text-color: #e0e0e0;
+            --secondary-text-color: #a0a0a0;
+            --accent-color: #03dac6;
+            --surface-color: #1e1e1e;
+            --border-color: #333;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0; padding: 0; background-color: var(--bg-color); color: var(--primary-text-color);
+            display: flex; height: 100vh; overflow: hidden;
+        }
+        #app-container { display: flex; width: 100%; height: 100%; }
+        #playlist-container {
+            width: 350px; min-width: 300px; height: 100%; background-color: var(--surface-color);
+            overflow-y: auto; border-right: 1px solid var(--border-color); padding: 10px; box-sizing: border-box;
+        }
+        #player-wrapper { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #000; }
+        /* Contenedor para que la UI de Shaka se acople */
+        #player-container { width: 100%; height: 100%; }
+        #player-placeholder {
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            height: 100%; font-size: 1.2em; color: var(--secondary-text-color);
+        }
+        .category-header {
+            color: var(--accent-color); font-size: 1.2em; margin-top: 20px; margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color); padding-bottom: 5px;
+        }
+        .channel-link {
+            display: block; padding: 12px 10px; color: var(--primary-text-color); text-decoration: none;
+            border-radius: 4px; transition: background-color 0.2s ease; white-space: nowrap;
+            overflow: hidden; text-overflow: ellipsis; cursor: pointer;
+        }
+        .channel-link:hover, .channel-link.active { background-color: rgba(3, 218, 198, 0.2); }
+        .epg-info { display: block; font-size: 0.8em; color: var(--secondary-text-color); margin-top: 2px; }
+        #loading-message { text-align: center; padding: 20px; font-size: 1.2em; }
+
+        /* Estilos para la barra de scroll */
+        #playlist-container::-webkit-scrollbar { width: 8px; }
+        #playlist-container::-webkit-scrollbar-track { background: var(--surface-color); }
+        #playlist-container::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div id="app-container">
+        <div id="playlist-container">
+            <h1 style="text-align: center; margin-top: 10px;">Lista de Canales</h1>
+            <div id="loading-message">Cargando...</div>
+            <div id="channel-list"></div>
+        </div>
+        <div id="player-wrapper">
+            <div id="player-container" data-shaka-player-container>
+                <div id="player-placeholder">Selecciona un canal para reproducir</div>
+                <video id="video-player" style="display: none;" data-shaka-player autoplay></video>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const JSON_URL = 'milista.json';
+            const videoElement = document.getElementById('video-player');
+            const playerContainer = document.getElementById('player-container');
+            const placeholder = document.getElementById('player-placeholder');
+            
+            let jsonData = {};
+            let epgData = {};
+            let player;
+            let ui;
+
+            async function initPlayer() {
+                if (player) return; // Si ya está inicializado, no hacer nada.
+                
+                shaka.polyfill.installAll();
+                if (!shaka.Player.isBrowserSupported()) {
+                    console.error('Este navegador no es compatible con Shaka Player.');
+                    return;
+                }
+                
+                player = new shaka.Player(videoElement);
+                ui = new shaka.ui.Overlay(player, playerContainer, videoElement);
+                
+                player.addEventListener('error', onError);
+            }
+
+            function onError(event) {
+                console.error('Error de Shaka Player:', event.detail);
+                placeholder.textContent = `Error al cargar el canal. Código: ${event.detail.code}. Revisa la consola (F12).`;
+                placeholder.style.display = 'flex';
+                videoElement.style.display = 'none';
+            }
+
+            function parseUrlAttributes(channel) {
+                const parts = channel.url.split('|');
+                const src = parts[0];
+                const headers = {};
+                const drmConfig = {};
+
+                if (channel.user_agent) {
+                    headers['User-Agent'] = channel.user_agent;
+                }
+
+                parts.slice(1).forEach(part => {
+                    const separatorIndex = part.indexOf('=');
+                    if (separatorIndex > -1) {
+                        const key = part.substring(0, separatorIndex).trim();
+                        const value = part.substring(separatorIndex + 1).trim();
+                        const keyLower = key.toLowerCase();
+                        
+                        if (keyLower === 'referer') headers['Referer'] = value;
+                        else if (keyLower === 'origin') headers['Origin'] = value;
+                        else if (keyLower === 'user-agent') headers['User-Agent'] = value;
+                    }
+                });
+                
+                if (channel.drm_type === 'clearkey' && channel.drm_key) {
+                    const [kid, key] = channel.drm_key.split(':');
+                    drmConfig[kid] = key;
+                }
+
+                return { src, headers, drmConfig };
+            }
+
+            async function playChannel(channel) {
+                await initPlayer(); // Asegura que el player esté listo
+
+                placeholder.textContent = `Cargando ${channel.name}...`;
+                placeholder.style.display = 'flex';
+                videoElement.style.display = 'none';
+
+                const { src, headers, drmConfig } = parseUrlAttributes(channel);
+                
+                console.log('--- Intentando Cargar Canal ---');
+                console.log('Nombre:', channel.name);
+                console.log('URL:', src);
+                console.log('Encabezados:', headers);
+                console.log('DRM Config:', drmConfig);
+
+                // Limpiar filtros y configurar los nuevos. Esta es la parte clave.
+                player.getNetworkingEngine().clearAllRequestFilters();
+                player.getNetworkingEngine().registerRequestFilter((type, request) => {
+                    if (type === shaka.net.NetworkingEngine.RequestType.MANIFEST) {
+                        for (const header in headers) {
+                            request.headers[header] = headers[header];
+                        }
+                    }
+                });
+
+                player.configure({
+                    drm: {
+                        clearKeys: drmConfig
+                    }
+                });
+
+                try {
+                    await player.load(src);
+                    console.log('El canal se ha cargado correctamente.');
+                    placeholder.style.display = 'none';
+                    videoElement.style.display = 'block';
+                } catch (e) {
+                    onError({ detail: e }); // Llama a nuestra función de error
+                }
+            }
+            
+            // --- Funciones para EPG y lista de canales (sin cambios) ---
+            function parseEpgDate(dateString) { if (!dateString) return null; const y = dateString.substring(0,4), M = dateString.substring(4,6), d = dateString.substring(6,8), h = dateString.substring(8,10), m = dateString.substring(10,12), s = dateString.substring(12,14); return new Date(`${y}-${M}-${d}T${h}:${m}:${s}Z`); }
+            async function fetchAndParseAllEpgs(epgUrls) { const urls=epgUrls.split(',');const promises=urls.map(async(url)=>{try{const r=await fetch(url);if(!r.ok)throw new Error(`HTTP ${r.status}`);const b=await r.arrayBuffer();let x;if(url.endsWith('.gz')){x=pako.inflate(new Uint8Array(b),{to:'string'})}else{x=new TextDecoder('utf-8').decode(b)}const p=new DOMParser(),d=p.parseFromString(x,"application/xml");const pr=d.getElementsByTagName('programme');for(const o of pr){const c=o.getAttribute('channel'),t=o.getElementsByTagName('title')[0];if(c&&t){if(!epgData[c])epgData[c]=[];epgData[c].push({title:t.textContent,start:parseEpgDate(o.getAttribute('start')),stop:parseEpgDate(o.getAttribute('stop'))})}}}catch(e){console.error(`Fallo EPG ${url}:`,e)}});await Promise.all(promises); }
+            function getCurrentProgram(epgId) { const n=new Date(),p=epgData[epgId];if(!p)return null;p.sort((a,b)=>a.start-b.start);return p.find(pr=>pr.start<=n&&pr.stop>n)?.title||null; }
+            function buildChannelList() { const c=document.getElementById('channel-list');c.innerHTML='';const b=jsonData.channels.reduce((a,ch)=>{const cat=ch.category||"Sin Grupo";if(!a[cat])a[cat]=[];a[cat].push(ch);return a;},{});const o=jsonData.categories?Object.keys(jsonData.categories):Object.keys(b).sort();o.forEach(n=>{if(b[n]){const h=document.createElement('h2');h.className='category-header';h.textContent=n;c.appendChild(h);b[n].forEach((ch,i)=>{const l=document.createElement('a'),u=`${n.replace(/\s/g,'')}-${i}`;l.className='channel-link';l.href='#';l.id=`channel-${u}`;const t=getCurrentProgram(ch.epg_id)||'Información no disponible';l.innerHTML=`${ch.name}<span class="epg-info" id="epg-${u}">${t}</span>`;l.addEventListener('click',e=>{e.preventDefault();playChannel(ch);document.querySelectorAll('.channel-link.active').forEach(el=>el.classList.remove('active'));l.classList.add('active')});c.appendChild(l)})}}) }
+
+            async function initializeApp() {
+                try {
+                    const response = await fetch(JSON_URL);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    jsonData = await response.json();
+                    
+                    await fetchAndParseAllEpgs(jsonData.provider.epg);
+                    
+                    document.getElementById('loading-message').style.display = 'none';
+                    buildChannelList();
+                } catch (error) {
+                    console.error('Error al inicializar la aplicación:', error);
+                    document.getElementById('loading-message').textContent = 'Error al cargar milista.json.';
+                }
+            }
+
+            initializeApp();
+        });
+    </script>
+</body>
+</html>
