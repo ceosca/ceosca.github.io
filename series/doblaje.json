@@ -771,7 +771,7 @@
             ]
         },
         {
-            "nombre": "Beauty in Black",
+            "nombre": "Beauty in Black, temporada 1",
             "genero": "Drama",
             "anio": 2024,
             "reparto": [
@@ -870,6 +870,67 @@
                     "inicio": 42505428,
                     "fin": 45416105,
                     "titulo": "Capítulo 16: Ahora le lloverán truenos"
+                }
+            ]
+        },
+        {
+            "nombre": "Beauty in Black, temporada 2",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "La vida de una stripper que ya conoce demasiado bien el lado más peligroso del poder se enreda aún más con los secretos de una dinastía cosmética donde la ambición y la corrupción no tienen límites. Entre traiciones familiares, un turbio entramado de trata y una red de influencias imposible de ignorar, ella deberá decidir hasta dónde arriesgarse para sobrevivir y para vengar su pasado.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/beauty-in-black-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/beauty-in-black-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3298048,
+                    "titulo": "Capítulo 1: Corona de belleza"
+                },
+                {
+                    "inicio": 3298048,
+                    "fin": 6351317,
+                    "titulo": "Capítulo 2: Cuando cambia la suerte"
+                },
+                {
+                    "inicio": 6351317,
+                    "fin": 9546026,
+                    "titulo": "Capítulo 3: El brillo de la belleza"
+                },
+                {
+                    "inicio": 9546026,
+                    "fin": 12603690,
+                    "titulo": "Capítulo 4: El siguiente capítulo"
+                },
+                {
+                    "inicio": 12603690,
+                    "fin": 15460138,
+                    "titulo": "Capítulo 5: Cazar o ser presa"
+                },
+                {
+                    "inicio": 15460138,
+                    "fin": 18922026,
+                    "titulo": "Capítulo 6: El enemigo de mi enemigo"
+                },
+                {
+                    "inicio": 18922026,
+                    "fin": 21680255,
+                    "titulo": "Capítulo 7: Dar pelea"
+                },
+                {
+                    "inicio": 21680255,
+                    "fin": 24981034,
+                    "titulo": "Capítulo 8: Basta de cordialidades"
                 }
             ]
         },
@@ -2091,13 +2152,33 @@
                 },
                 {
                     "inicio": 2180566,
-                    "fin": 3071361,
+                    "fin": 3073366,
                     "titulo": "Capítulo 3: ¡Yo también quiero evolucionar ya!"
                 },
                 {
-                    "inicio": 3071361,
-                    "fin": 4278742,
+                    "inicio": 3073366,
+                    "fin": 4280747,
                     "titulo": "Capítulo 4: ¡Bienvenida al Resort Pokémon!"
+                },
+                {
+                    "inicio": 4280747,
+                    "fin": 5419008,
+                    "titulo": "Capítulo 5: ¡Un Pokémon que me ayude!"
+                },
+                {
+                    "inicio": 5419008,
+                    "fin": 6526293,
+                    "titulo": "Capítulo 6: ¿Será la mejor opción?"
+                },
+                {
+                    "inicio": 6526293,
+                    "fin": 7549909,
+                    "titulo": "Capítulo 7: ¿Soy un ejemplo a seguir?"
+                },
+                {
+                    "inicio": 7549909,
+                    "fin": 8871509,
+                    "titulo": "Capítulo 8: Este es mi hogar"
                 }
             ]
         },
@@ -13781,6 +13862,3268 @@
                     "inicio": 14685867,
                     "fin": 17807659,
                     "titulo": "Capítulo 6: Dreadnought"
+                }
+            ]
+        },
+        {
+            "nombre": "El catálogo",
+            "genero": "Drama; Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Egipto",
+            "cantidad_episodios": 8,
+            "sinopsis": "Youssef, un joven viudo adicto al trabajo, se las arregla como puede con sus hijos, siguiendo los consejos virtuales de su difunta esposa. ¿Superará el curso intensivo sobre paternidad?",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/el-cat%C3%A1logo.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3196203,
+                    "titulo": "Capítulo 1: Amina partió"
+                },
+                {
+                    "inicio": 3196203,
+                    "fin": 6412843,
+                    "titulo": "Capítulo 2: Prioridades"
+                },
+                {
+                    "inicio": 6412843,
+                    "fin": 9439488,
+                    "titulo": "Capítulo 3: Un sabor perdido"
+                },
+                {
+                    "inicio": 9439488,
+                    "fin": 12506027,
+                    "titulo": "Capítulo 4: Día de la Madre"
+                },
+                {
+                    "inicio": 12506027,
+                    "fin": 15821611,
+                    "titulo": "Capítulo 5: ¡Sorpresa!"
+                },
+                {
+                    "inicio": 15821611,
+                    "fin": 18900694,
+                    "titulo": "Capítulo 6: ¡Contra$eñ@!"
+                },
+                {
+                    "inicio": 18900694,
+                    "fin": 22200278,
+                    "titulo": "Capítulo 7: La última persona en enterarse"
+                },
+                {
+                    "inicio": 22200278,
+                    "fin": 26055510,
+                    "titulo": "Capítulo 8: No hay catálogo"
+                }
+            ]
+        },
+        {
+            "nombre": "Indomable",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 6,
+            "sinopsis": "En la inmensidad del Parque Nacional de Yosemite, la muerte de una joven arrastra a un agente federal hasta una tierra sin ley en donde la naturaleza obedece sus propias reglas.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/indomable.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/indomable-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2914773,
+                    "titulo": "Capítulo 1: Un evento celestial"
+                },
+                {
+                    "inicio": 2914773,
+                    "fin": 6021077,
+                    "titulo": "Capítulo 2: NN"
+                },
+                {
+                    "inicio": 6021077,
+                    "fin": 9016960,
+                    "titulo": "Capítulo 3: El‑o’‑win"
+                },
+                {
+                    "inicio": 9016960,
+                    "fin": 11872853,
+                    "titulo": "Capítulo 4: Fiebre del oro"
+                },
+                {
+                    "inicio": 11872853,
+                    "fin": 14440618,
+                    "titulo": "Capítulo 5: Terces"
+                },
+                {
+                    "inicio": 14440618,
+                    "fin": 17502549,
+                    "titulo": "Capítulo 6: Todas las pistas conducen aquí"
+                }
+            ]
+        },
+        {
+            "nombre": "Cartas desde el pasado",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Turquía",
+            "cantidad_episodios": 8,
+            "sinopsis": "Una joven encuentra pistas del pasado en una colección de cartas y se embarca en una búsqueda para descubrir quién las escribió... y qué verdades esconden.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/cartas-desde-el-pasado.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/cartas-desde-el-pasado-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2377344,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2377344,
+                    "fin": 5052928,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5052928,
+                    "fin": 7497387,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 7497387,
+                    "fin": 9763115,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 9763115,
+                    "fin": 12120278,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 12120278,
+                    "fin": 14492587,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 14492587,
+                    "fin": 16849494,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 16849494,
+                    "fin": 18815105,
+                    "titulo": "Capítulo 8: Episodio 8"
+                }
+            ]
+        },
+        {
+            "nombre": "Gatillo",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 10,
+            "sinopsis": "En Corea del Sur, donde la posesión de armas está prohibida, un audaz policía y un misterioso aliado unen fuerzas y luchan por frenar una amenaza inminente.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/gatillo.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/gatillo-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3043285,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3043285,
+                    "fin": 6707285,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6707285,
+                    "fin": 9319296,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 9319296,
+                    "fin": 12637440,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 12637440,
+                    "fin": 15343915,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 15343915,
+                    "fin": 18027051,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 18027051,
+                    "fin": 20811307,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 20811307,
+                    "fin": 23620182,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 23620182,
+                    "fin": 25888598,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 25888598,
+                    "fin": 28403371,
+                    "titulo": "Capítulo 10: Episodio 10"
+                }
+            ]
+        },
+        {
+            "nombre": "La emperatriz, temporada 1",
+            "genero": "Drama",
+            "anio": 2022,
+            "reparto": [],
+            "pais_origen": "Alemania",
+            "cantidad_episodios": 6,
+            "sinopsis": "Austria, siglo XIX. El amor entre la apasionada y rebelde Sisí y el emperador Francisco José hace frente a presiones, intrigas y luchas de poder en la corte vienesa.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-emperatriz-1.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-emperatriz-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3718784,
+                    "titulo": "Capítulo 1: El lugar de uno en el mundo"
+                },
+                {
+                    "inicio": 3718784,
+                    "fin": 7197909,
+                    "titulo": "Capítulo 2: La llegada"
+                },
+                {
+                    "inicio": 7197909,
+                    "fin": 10554112,
+                    "titulo": "Capítulo 3: La boda"
+                },
+                {
+                    "inicio": 10554112,
+                    "fin": 13809749,
+                    "titulo": "Capítulo 4: La cacería"
+                },
+                {
+                    "inicio": 13809749,
+                    "fin": 16879061,
+                    "titulo": "Capítulo 5: Los zapatos"
+                },
+                {
+                    "inicio": 16879061,
+                    "fin": 20545664,
+                    "titulo": "Capítulo 6: Ese Dios llamado libertad"
+                }
+            ]
+        },
+        {
+            "nombre": "La emperatriz, temporada 2",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Alemania",
+            "cantidad_episodios": 6,
+            "sinopsis": "Mientras la tormenta se cierne sobre el Imperio austriaco, la presión de darle a la nación un heredero al trono afecta el matrimonio de Francisco e Isabel.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-emperatriz-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-emperatriz-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2867968,
+                    "titulo": "Capítulo 1: Un heredero al trono"
+                },
+                {
+                    "inicio": 2867968,
+                    "fin": 6264747,
+                    "titulo": "Capítulo 2: El sueño"
+                },
+                {
+                    "inicio": 6264747,
+                    "fin": 9477120,
+                    "titulo": "Capítulo 3: La carta de la emperatriz"
+                },
+                {
+                    "inicio": 9477120,
+                    "fin": 12632320,
+                    "titulo": "Capítulo 4: ¿Adónde van las estrellas en el día?"
+                },
+                {
+                    "inicio": 12632320,
+                    "fin": 16449707,
+                    "titulo": "Capítulo 5: El bosque dentro de nosotros"
+                },
+                {
+                    "inicio": 16449707,
+                    "fin": 19708758,
+                    "titulo": "Capítulo 6: Lo único que nos queda"
+                }
+            ]
+        },
+        {
+            "nombre": "La enfermera",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Dinamarca",
+            "cantidad_episodios": 4,
+            "sinopsis": "Pernille Kurzmann Larsen, una enfermera de rostro fresco en un hospital, comienza a cuestionar las tendencias de búsqueda de atención de su colega, Christina Aistrup Hansen. A medida que Pernille profundiza en sus sospechas, comienza a creer que el comportamiento de Christina puede estar relacionado con una serie de muertes de pacientes.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-enfermera.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3248683,
+                    "titulo": "Capítulo 1: Sobreviviré"
+                },
+                {
+                    "inicio": 3248683,
+                    "fin": 6201344,
+                    "titulo": "Capítulo 2: Dream Team"
+                },
+                {
+                    "inicio": 6201344,
+                    "fin": 8872021,
+                    "titulo": "Capítulo 3: Mi corazón entre tus manos"
+                },
+                {
+                    "inicio": 8872021,
+                    "fin": 11468714,
+                    "titulo": "Capítulo 4: El turno nocturno"
+                }
+            ]
+        },
+        {
+            "nombre": "La historia de mi familia",
+            "genero": "Drama; Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Italia",
+            "cantidad_episodios": 6,
+            "sinopsis": "Un padre gravemente enfermo prepara a su caótica familia para que cuiden de sus dos hijos pequeños y afronten la vida sin él, pero deben resolver sus antiguos conflictos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-historia-de-mi-familia.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2758016,
+                    "titulo": "Capítulo 1: Fausto"
+                },
+                {
+                    "inicio": 2758016,
+                    "fin": 5460779,
+                    "titulo": "Capítulo 2: Lucia"
+                },
+                {
+                    "inicio": 5460779,
+                    "fin": 8125056,
+                    "titulo": "Capítulo 3: Demetrio"
+                },
+                {
+                    "inicio": 8125056,
+                    "fin": 10604800,
+                    "titulo": "Capítulo 4: Valerio"
+                },
+                {
+                    "inicio": 10604800,
+                    "fin": 13203755,
+                    "titulo": "Capítulo 5: Maria"
+                },
+                {
+                    "inicio": 13203755,
+                    "fin": 16278016,
+                    "titulo": "Capítulo 6: Nuestra vida"
+                }
+            ]
+        },
+        {
+            "nombre": "La isla del salmón y la discordia",
+            "genero": "Comedia; Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Noruega",
+            "cantidad_episodios": 6,
+            "sinopsis": "La implacable propietaria de una empresa noruega dedicada al salmón planea adquirir como sea la compañía rival local y convertirse en la mayor productora del mundo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-isla-del-salm%C3%B3n-y-la-discordia.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-isla-del-salm%C3%B3n-y-la-discordia-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2723115,
+                    "titulo": "Capítulo 1: Una adquisición hostil"
+                },
+                {
+                    "inicio": 2723115,
+                    "fin": 5496619,
+                    "titulo": "Capítulo 2: Desert Salmon"
+                },
+                {
+                    "inicio": 5496619,
+                    "fin": 8179712,
+                    "titulo": "Capítulo 3: Una buena carnada para un pez gordo"
+                },
+                {
+                    "inicio": 8179712,
+                    "fin": 10865408,
+                    "titulo": "Capítulo 4: Paseo de la infamia"
+                },
+                {
+                    "inicio": 10865408,
+                    "fin": 13688277,
+                    "titulo": "Capítulo 5: Feliz Halloween"
+                },
+                {
+                    "inicio": 13688277,
+                    "fin": 16449237,
+                    "titulo": "Capítulo 6: Reina del Solitario"
+                }
+            ]
+        },
+        {
+            "nombre": "La jaula",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Francia",
+            "cantidad_episodios": 5,
+            "sinopsis": "Un joven que aspira a ser luchador profesional se deja la piel para hacerse ver, hasta que un combate insólito le pone frente a la oportunidad de triunfar... y a un despiadado rival.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-jaula.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-jaula-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2562475,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2562475,
+                    "fin": 5862443,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5862443,
+                    "fin": 8578134,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8578134,
+                    "fin": 11502038,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 11502038,
+                    "fin": 15443713,
+                    "titulo": "Capítulo 5: Episodio 5"
+                }
+            ]
+        },
+        {
+            "nombre": "La ley de Lidia Poët, temporada 1",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Italia",
+            "cantidad_episodios": 6,
+            "sinopsis": "Una joven que aspira a ejercer la abogacía investiga, junto con su hermano letrado y su cuñado periodista, unos asesinatos en la Italia del siglo XIX.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-ley-de-lidia-poet-1.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-ley-de-lidia-poet-1-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3120469,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3120469,
+                    "fin": 6073258,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6073258,
+                    "fin": 8717311,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8717311,
+                    "fin": 11563690,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 11563690,
+                    "fin": 14564394,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 14564394,
+                    "fin": 17330773,
+                    "titulo": "Capítulo 6: Episodio 6"
+                }
+            ]
+        },
+        {
+            "nombre": "La ley de Lidia Poët, temporada 2",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Italia",
+            "cantidad_episodios": 6,
+            "sinopsis": "Lidia continúa su lucha por la igualdad, pero la llegada de un nuevo fiscal sacude su mundo. Enrico considera llevar su carrera por otro rumbo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-ley-de-lidia-poet-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-ley-de-lidia-poet-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3432747,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3432747,
+                    "fin": 6869590,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6869590,
+                    "fin": 10234966,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 10234966,
+                    "fin": 13556139,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 13556139,
+                    "fin": 16646528,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 16646528,
+                    "fin": 19802197,
+                    "titulo": "Capítulo 6: Episodio 6"
+                }
+            ]
+        },
+        {
+            "nombre": "La locura",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "Después de tropezarse con un cadáver en las profundidades de un bosque de las Pocono, un tertuliano es incriminado por el asesinato de un famoso supremacista blanco.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-locura.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-locura-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3207467,
+                    "titulo": "Capítulo 1: Piloto"
+                },
+                {
+                    "inicio": 3207467,
+                    "fin": 5828566,
+                    "titulo": "Capítulo 2: Yibuti"
+                },
+                {
+                    "inicio": 5828566,
+                    "fin": 8877014,
+                    "titulo": "Capítulo 3: Discordia"
+                },
+                {
+                    "inicio": 8877014,
+                    "fin": 11599745,
+                    "titulo": "Capítulo 4: Radioactivo"
+                },
+                {
+                    "inicio": 11599745,
+                    "fin": 14477910,
+                    "titulo": "Capítulo 5: Ícaro"
+                },
+                {
+                    "inicio": 14477910,
+                    "fin": 17561558,
+                    "titulo": "Capítulo 6: Loco"
+                },
+                {
+                    "inicio": 17561558,
+                    "fin": 20211457,
+                    "titulo": "Capítulo 7: ADN"
+                },
+                {
+                    "inicio": 20211457,
+                    "fin": 23730348,
+                    "titulo": "Capítulo 8: No más locura"
+                }
+            ]
+        },
+        {
+            "nombre": "La luz que no puedes ver",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 4,
+            "sinopsis": "La historia de Marie-Laure, una adolescente francesa ciega, y Werner, un brillante adolescente alemán reclutado como soldado para rastrear emisiones de radio ilegales, cuyos caminos chocan en la Francia ocupada mientras ambos intentan sobrevivir a la devastación de la segunda Guerra Mundial.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-luz-que-no-puedes-ver.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-luz-que-no-puedes-ver-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3765888,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3765888,
+                    "fin": 6830763,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6830763,
+                    "fin": 10560427,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 10560427,
+                    "fin": 13798059,
+                    "titulo": "Capítulo 4: Episodio 4"
+                }
+            ]
+        },
+        {
+            "nombre": "Corazón de cristal",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Japón",
+            "cantidad_episodios": 10,
+            "sinopsis": "Una aspirante a baterista pierde repentinamente su lugar en la banda. Pero cuando un músico brillante la recluta para su nueva banda, su vida da un giro apasionado.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/coraz%C3%B3n-de-cristal.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2976256,
+                    "titulo": "Capítulo 1: corazón de cristal"
+                },
+                {
+                    "inicio": 2976256,
+                    "fin": 5460437,
+                    "titulo": "Capítulo 2: Eco cristalino"
+                },
+                {
+                    "inicio": 5460437,
+                    "fin": 7978709,
+                    "titulo": "Capítulo 3: Inquebrantable"
+                },
+                {
+                    "inicio": 7978709,
+                    "fin": 10786474,
+                    "titulo": "Capítulo 4: Toca bien fuerte"
+                },
+                {
+                    "inicio": 10786474,
+                    "fin": 13235754,
+                    "titulo": "Capítulo 5: Cítricos"
+                },
+                {
+                    "inicio": 13235754,
+                    "fin": 15578581,
+                    "titulo": "Capítulo 6: Vibrato"
+                },
+                {
+                    "inicio": 15578581,
+                    "fin": 18015872,
+                    "titulo": "Capítulo 7: Qué suerte la mía"
+                },
+                {
+                    "inicio": 18015872,
+                    "fin": 20669824,
+                    "titulo": "Capítulo 8: Matrix"
+                },
+                {
+                    "inicio": 20669824,
+                    "fin": 23915520,
+                    "titulo": "Capítulo 9: Para siempre"
+                },
+                {
+                    "inicio": 23915520,
+                    "fin": 25909547,
+                    "titulo": "Capítulo 10: Corazón de cristal"
+                }
+            ]
+        },
+        {
+            "nombre": "Jóvenes y millonarios",
+            "genero": "Comedia; Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Francia",
+            "cantidad_episodios": 8,
+            "sinopsis": "Cuando cuatro adolescentes de Marsella ganan 17 millones de euros, hacen realidad sus sueños de libertad y dinero rápido... pero el premio trae consigo un caos que nunca imaginaron.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/j%C3%B3venes-y-millonarios.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/j%C3%B3venes-y-millonarios-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2101632,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2101632,
+                    "fin": 3937323,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 3937323,
+                    "fin": 5780523,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 5780523,
+                    "fin": 7815339,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 7815339,
+                    "fin": 9781888,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 9781888,
+                    "fin": 11818837,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 11818837,
+                    "fin": 13782485,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 13782485,
+                    "fin": 15795370,
+                    "titulo": "Capítulo 8: Episodio 8"
+                }
+            ]
+        },
+        {
+            "nombre": "La noche del solsticio de verano",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Noruega",
+            "cantidad_episodios": 5,
+            "sinopsis": "Carina reúne a su familia para celebrar un San Juan al estilo sueco tradicional, pero la ocasión especial se tuerce cuando salen a la luz antiguos secretos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-noche-del-solsticio-de-verano.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-noche-del-solsticio-de-verano-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1913429,
+                    "titulo": "Capítulo 1: Rupturas y enamoramientos"
+                },
+                {
+                    "inicio": 1913429,
+                    "fin": 3766186,
+                    "titulo": "Capítulo 2: Lujuria"
+                },
+                {
+                    "inicio": 3766186,
+                    "fin": 5521151,
+                    "titulo": "Capítulo 3: Envidia"
+                },
+                {
+                    "inicio": 5521151,
+                    "fin": 7182463,
+                    "titulo": "Capítulo 4: Reconciliación"
+                },
+                {
+                    "inicio": 7182463,
+                    "fin": 9212415,
+                    "titulo": "Capítulo 5: Perdón"
+                }
+            ]
+        },
+        {
+            "nombre": "La Palma",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Noruega",
+            "cantidad_episodios": 4,
+            "sinopsis": "Una familia noruega de vacaciones en la isla de La Palma se enfrenta al desastre cuando una joven investigadora descubre señales alarmantes de una inminente erupción volcánica.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-palma.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-palma-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3056896,
+                    "titulo": "Capítulo 1: El pastorcito mentiroso"
+                },
+                {
+                    "inicio": 3056896,
+                    "fin": 5980629,
+                    "titulo": "Capítulo 2: Despegue"
+                },
+                {
+                    "inicio": 5980629,
+                    "fin": 8640469,
+                    "titulo": "Capítulo 3: A Tenerife"
+                },
+                {
+                    "inicio": 8640469,
+                    "fin": 11018880,
+                    "titulo": "Capítulo 4: Punto seguro"
+                }
+            ]
+        },
+        {
+            "nombre": "La pareja perfecta",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 6,
+            "sinopsis": "Amelia está a punto de entrar, por la vía del altar, en una de las familias más ricas de Nantucket, pero aparece un cadáver que arruina la boda y convierte a todos en sospechosos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-pareja-perfecta.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-pareja-perfecta-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3190400,
+                    "titulo": "Capítulo 1: El día antes de la boda"
+                },
+                {
+                    "inicio": 3190400,
+                    "fin": 5732693,
+                    "titulo": "Capítulo 2: Ella jamás haría eso"
+                },
+                {
+                    "inicio": 5732693,
+                    "fin": 8682410,
+                    "titulo": "Capítulo 3: La familia perfecta"
+                },
+                {
+                    "inicio": 8682410,
+                    "fin": 11310122,
+                    "titulo": "Capítulo 4: Alguien podría salir lastimado"
+                },
+                {
+                    "inicio": 11310122,
+                    "fin": 14515754,
+                    "titulo": "Capítulo 5: Nunca te abandonaré"
+                },
+                {
+                    "inicio": 14515754,
+                    "fin": 18352724,
+                    "titulo": "Capítulo 6: Ya me siento mejor"
+                }
+            ]
+        },
+        {
+            "nombre": "La paz de Marsella",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Francia",
+            "cantidad_episodios": 6,
+            "sinopsis": "Mientras un brutal traficante de drogas intenta apoderarse de Marsella, un capitán de policía y su equipo dan la bienvenida a una recién llegada con intenciones ocultas.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-paz-de-marsella.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-paz-de-marsella-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3118464,
+                    "titulo": "Capítulo 1: Los locos"
+                },
+                {
+                    "inicio": 3118464,
+                    "fin": 6496427,
+                    "titulo": "Capítulo 2: Integración"
+                },
+                {
+                    "inicio": 6496427,
+                    "fin": 9635755,
+                    "titulo": "Capítulo 3: Acercándose"
+                },
+                {
+                    "inicio": 9635755,
+                    "fin": 12564822,
+                    "titulo": "Capítulo 4: Confrontación"
+                },
+                {
+                    "inicio": 12564822,
+                    "fin": 15773526,
+                    "titulo": "Capítulo 5: Lazos de sangre"
+                },
+                {
+                    "inicio": 15773526,
+                    "fin": 19018881,
+                    "titulo": "Capítulo 6: La persecución"
+                }
+            ]
+        },
+        {
+            "nombre": "La primera muerte",
+            "genero": "Drama",
+            "anio": 2022,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "Enamorarse no es cosa fácil para las adolescentes Juliette y Calíope. Una es vampira, la otra es cazavampiros... y las dos están listas para matar.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-primera-muerte.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2897579,
+                    "titulo": "Capítulo 1: El primer beso"
+                },
+                {
+                    "inicio": 2897579,
+                    "fin": 6053419,
+                    "titulo": "Capítulo 2: La primera sangre"
+                },
+                {
+                    "inicio": 6053419,
+                    "fin": 8838870,
+                    "titulo": "Capítulo 3: La primera batalla"
+                },
+                {
+                    "inicio": 8838870,
+                    "fin": 11370070,
+                    "titulo": "Capítulo 4: La primera cita"
+                },
+                {
+                    "inicio": 11370070,
+                    "fin": 14211585,
+                    "titulo": "Capítulo 5: El primer amor"
+                },
+                {
+                    "inicio": 14211585,
+                    "fin": 17399425,
+                    "titulo": "Capítulo 6: La primera ruptura"
+                },
+                {
+                    "inicio": 17399425,
+                    "fin": 20126806,
+                    "titulo": "Capítulo 7: El primer adiós"
+                },
+                {
+                    "inicio": 20126806,
+                    "fin": 23715073,
+                    "titulo": "Capítulo 8: La primera traición"
+                }
+            ]
+        },
+        {
+            "nombre": "La reina Charlotte: Una historia de Bridgerton",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 6,
+            "sinopsis": "Precuela del universo de 'Los Bridgerton' centrada en el ascenso a la relevancia y al poder de la reina Carlota que cuenta la historia de cómo el matrimonio de la joven reina con el rey Jorge provocó tanto una gran historia de amor como un cambio social, creando el mundo de Ton heredado por los personajes de 'Los Bridgerton'.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-reina-charlotte-una-historia-de-bridgerton.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-reina-charlotte-una-historia-de-bridgerton-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3320064,
+                    "titulo": "Capítulo 1: Futura reina"
+                },
+                {
+                    "inicio": 3320064,
+                    "fin": 6982485,
+                    "titulo": "Capítulo 2: Una luna de miel espléndida"
+                },
+                {
+                    "inicio": 6982485,
+                    "fin": 10354602,
+                    "titulo": "Capítulo 3: Los días pares"
+                },
+                {
+                    "inicio": 10354602,
+                    "fin": 13592575,
+                    "titulo": "Capítulo 4: Al servicio del rey"
+                },
+                {
+                    "inicio": 13592575,
+                    "fin": 18163882,
+                    "titulo": "Capítulo 5: Jardines en flor"
+                },
+                {
+                    "inicio": 18163882,
+                    "fin": 23359829,
+                    "titulo": "Capítulo 6: Las joyas de la corona"
+                }
+            ]
+        },
+        {
+            "nombre": "La reina de las villanas",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Japón",
+            "cantidad_episodios": 5,
+            "sinopsis": "En los salvajes años 80, una bondadosa muchacha se convierte en una sanguinaria luchadora profesional que disfruta librando caóticas peleas y que pone a todo el país en su contra.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-reina-de-las-villanas.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3761664,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3761664,
+                    "fin": 7550763,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 7550763,
+                    "fin": 12057515,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 12057515,
+                    "fin": 15709611,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 15709611,
+                    "fin": 20685568,
+                    "titulo": "Capítulo 5: Episodio 5"
+                }
+            ]
+        },
+        {
+            "nombre": "La residencia",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "Una excéntrica y brillante inspectora investiga un crimen en la Casa Blanca, donde todos los empleados e invitados a la cena de Estado esconden un secreto y podrían ser el asesino.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-residencia.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-residencia-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3061290,
+                    "titulo": "Capítulo 1: El aliento perdido"
+                },
+                {
+                    "inicio": 3061290,
+                    "fin": 6083626,
+                    "titulo": "Capítulo 2: Con M de Muerte"
+                },
+                {
+                    "inicio": 6083626,
+                    "fin": 9154132,
+                    "titulo": "Capítulo 3: Entre navajas y secretos"
+                },
+                {
+                    "inicio": 9154132,
+                    "fin": 12428073,
+                    "titulo": "Capítulo 4: El fin de Sheila"
+                },
+                {
+                    "inicio": 12428073,
+                    "fin": 15255465,
+                    "titulo": "Capítulo 5: Harry el sucio"
+                },
+                {
+                    "inicio": 15255465,
+                    "fin": 18475774,
+                    "titulo": "Capítulo 6: El tercer hombre"
+                },
+                {
+                    "inicio": 18475774,
+                    "fin": 22543656,
+                    "titulo": "Capítulo 7: El dedo pulgar del ingeniero"
+                },
+                {
+                    "inicio": 22543656,
+                    "fin": 27819389,
+                    "titulo": "Capítulo 8: El misterio del cuarto amarillo"
+                }
+            ]
+        },
+        {
+            "nombre": "Las cosas por limpiar",
+            "genero": "Drama",
+            "anio": 2021,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Tras escapar de una relación de maltrato, una joven madre encuentra trabajo como asistenta mientras lucha por cuidar de su hija y crear un futuro mejor para las dos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/las-cosas-por-limpiar.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3026133,
+                    "titulo": "Capítulo 1: Todo por un dólar"
+                },
+                {
+                    "inicio": 3026133,
+                    "fin": 6194645,
+                    "titulo": "Capítulo 2: Ponis"
+                },
+                {
+                    "inicio": 6194645,
+                    "fin": 9053653,
+                    "titulo": "Capítulo 3: Vidrio marino"
+                },
+                {
+                    "inicio": 9053653,
+                    "fin": 11954730,
+                    "titulo": "Capítulo 4: Cachemir"
+                },
+                {
+                    "inicio": 11954730,
+                    "fin": 15532245,
+                    "titulo": "Capítulo 5: Ladrón"
+                },
+                {
+                    "inicio": 15532245,
+                    "fin": 18994517,
+                    "titulo": "Capítulo 6: M"
+                },
+                {
+                    "inicio": 18994517,
+                    "fin": 22217984,
+                    "titulo": "Capítulo 7: El caballo"
+                },
+                {
+                    "inicio": 22217984,
+                    "fin": 25794560,
+                    "titulo": "Capítulo 8: Sin nada que perder"
+                },
+                {
+                    "inicio": 25794560,
+                    "fin": 29415467,
+                    "titulo": "Capítulo 9: El color del cielo"
+                },
+                {
+                    "inicio": 29415467,
+                    "fin": 32674006,
+                    "titulo": "Capítulo 10: Chasquidos"
+                }
+            ]
+        },
+        {
+            "nombre": "Las cuatro estaciones",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "La amistad entre tres parejas casadas se pone a prueba cuando una de ellas se divorcia, lo que complica su tradición de hacer escapadas de fin de semana cada tres meses.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/las-cuatro-estaciones.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/las-cuatro-estaciones-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1635840,
+                    "titulo": "Capítulo 1: La casa del lago"
+                },
+                {
+                    "inicio": 1635840,
+                    "fin": 3481728,
+                    "titulo": "Capítulo 2: Fiesta en el jardín"
+                },
+                {
+                    "inicio": 3481728,
+                    "fin": 5371434,
+                    "titulo": "Capítulo 3: El resort ecológico"
+                },
+                {
+                    "inicio": 5371434,
+                    "fin": 7346175,
+                    "titulo": "Capítulo 4: El bar de la playa"
+                },
+                {
+                    "inicio": 7346175,
+                    "fin": 9348521,
+                    "titulo": "Capítulo 5: Fin de semana familiar"
+                },
+                {
+                    "inicio": 9348521,
+                    "fin": 11253075,
+                    "titulo": "Capítulo 6: Ultimate Frisbee"
+                },
+                {
+                    "inicio": 11253075,
+                    "fin": 13308413,
+                    "titulo": "Capítulo 7: El viaje de esquí"
+                },
+                {
+                    "inicio": 13308413,
+                    "fin": 15466066,
+                    "titulo": "Capítulo 8: Celebración"
+                }
+            ]
+        },
+        {
+            "nombre": "La señal",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Alemania",
+            "cantidad_episodios": 4,
+            "sinopsis": "Tras la desaparición de una astronauta, su familia busca desesperadamente la verdad. Pero cuanto más descubren, mayor es la amenaza que se cierne sobre ellos... y el mundo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-se%C3%B1al.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-se%C3%B1al-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2760021,
+                    "titulo": "Capítulo 1: Desaparecer"
+                },
+                {
+                    "inicio": 2760021,
+                    "fin": 5520042,
+                    "titulo": "Capítulo 2: Paula"
+                },
+                {
+                    "inicio": 5520042,
+                    "fin": 8280063,
+                    "titulo": "Capítulo 3: Caja negra"
+                },
+                {
+                    "inicio": 8280063,
+                    "fin": 11040084,
+                    "titulo": "Capítulo 4: Partida"
+                }
+            ]
+        },
+        {
+            "nombre": "Las madres de los Pingüinos",
+            "genero": "Drama; Comedia",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Polonia",
+            "cantidad_episodios": 6,
+            "sinopsis": "Cuando su hijo de siete años cambia de colegio, una luchadora de la MMA se da cuenta de que su combate más duro no es en el octágono, sino en la maternidad.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/las-madres-de-los-ping%C3%BCinos.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3041237,
+                    "titulo": "Capítulo 1: Algún problema"
+                },
+                {
+                    "inicio": 3041237,
+                    "fin": 5621418,
+                    "titulo": "Capítulo 2: En línea"
+                },
+                {
+                    "inicio": 5621418,
+                    "fin": 8426837,
+                    "titulo": "Capítulo 3: Los desafíos"
+                },
+                {
+                    "inicio": 8426837,
+                    "fin": 11643178,
+                    "titulo": "Capítulo 4: Fracaso"
+                },
+                {
+                    "inicio": 11643178,
+                    "fin": 15158186,
+                    "titulo": "Capítulo 5: \\#protesta"
+                },
+                {
+                    "inicio": 15158186,
+                    "fin": 18170367,
+                    "titulo": "Capítulo 6: Nocaut"
+                }
+            ]
+        },
+        {
+            "nombre": "Las Super-4, temporada 1",
+            "genero": "Animación",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Zambia",
+            "cantidad_episodios": 8,
+            "sinopsis": "Cuatro adolescentes centradas en intentar sobrevivir al instituto son reclutadas por una exespía para formar un equipo de superheroínas. ¿Su tarea? Salvar el mundo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/las-super-4.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1613525,
+                    "titulo": "Capítulo 1: Hay equipo"
+                },
+                {
+                    "inicio": 1613525,
+                    "fin": 3235029,
+                    "titulo": "Capítulo 2: El manejo del hambre"
+                },
+                {
+                    "inicio": 3235029,
+                    "fin": 4876544,
+                    "titulo": "Capítulo 3: Zee"
+                },
+                {
+                    "inicio": 4876544,
+                    "fin": 6508032,
+                    "titulo": "Capítulo 4: El desafío de Monde"
+                },
+                {
+                    "inicio": 6508032,
+                    "fin": 8141525,
+                    "titulo": "Capítulo 5: Arte inteligente"
+                },
+                {
+                    "inicio": 8141525,
+                    "fin": 9765034,
+                    "titulo": "Capítulo 6: Perdido"
+                },
+                {
+                    "inicio": 9765034,
+                    "fin": 11382527,
+                    "titulo": "Capítulo 7: Su historia"
+                },
+                {
+                    "inicio": 11382527,
+                    "fin": 13004031,
+                    "titulo": "Capítulo 8: El poder de la mente (Parte 1)"
+                }
+            ]
+        },
+        {
+            "nombre": "Las Super-4, temporada 2",
+            "genero": "Animación",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Zambia",
+            "cantidad_episodios": 8,
+            "sinopsis": "Mientras el Sr. Magedzee busca una fuente de energía más limpia y ecológica, las Super‑4 van tras el malvado Chusi. ¿Quién logrará su objetivo primero?",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/las-super-4-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1640149,
+                    "titulo": "Capítulo 1: Intercambio de vidas"
+                },
+                {
+                    "inicio": 1640149,
+                    "fin": 3282901,
+                    "titulo": "Capítulo 2: Sin invitación"
+                },
+                {
+                    "inicio": 3282901,
+                    "fin": 4937088,
+                    "titulo": "Capítulo 3: Problemas con Marjory"
+                },
+                {
+                    "inicio": 4937088,
+                    "fin": 6573952,
+                    "titulo": "Capítulo 4: Hermanas ante todo"
+                },
+                {
+                    "inicio": 6573952,
+                    "fin": 8158080,
+                    "titulo": "Capítulo 5: Una zambinita para recordar"
+                },
+                {
+                    "inicio": 8158080,
+                    "fin": 9766229,
+                    "titulo": "Capítulo 6: El poder de la mente (Parte 2)"
+                },
+                {
+                    "inicio": 9766229,
+                    "fin": 11350186,
+                    "titulo": "Capítulo 7: La tormenta perfecta (Parte 1)"
+                },
+                {
+                    "inicio": 11350186,
+                    "fin": 13105322,
+                    "titulo": "Capítulo 8: La tormenta perfecta (Parte 2)"
+                }
+            ]
+        },
+        {
+            "nombre": "Aema",
+            "genero": "Drama; Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 6,
+            "sinopsis": "En la década de 1980 en Corea, una estrella de cine y una estrella desafían las reglas de la industria dominadas por los hombres y la corrupción entre bastidores mientras filman la provocativa 'Madame Aema'.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/aema.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2876843,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2876843,
+                    "fin": 6061782,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6061782,
+                    "fin": 9700395,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 9700395,
+                    "fin": 13275862,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 13275862,
+                    "fin": 17116673,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 17116673,
+                    "fin": 21210369,
+                    "titulo": "Capítulo 6: Episodio 6"
+                }
+            ]
+        },
+        {
+            "nombre": "Black Rabbit",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Reino Unido",
+            "cantidad_episodios": 8,
+            "sinopsis": "El dueño de un restaurante de moda se ve arrastrado al hampa neoyorquina cuando su hermano, un imán para los problemas, vuelve a la ciudad con unos usureros pisándole los talones.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/black-rabbit.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/black-rabbit-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3715840,
+                    "titulo": "Capítulo 1: El ciclón"
+                },
+                {
+                    "inicio": 3715840,
+                    "fin": 7833045,
+                    "titulo": "Capítulo 2: Los Black Rabbit"
+                },
+                {
+                    "inicio": 7833045,
+                    "fin": 10710698,
+                    "titulo": "Capítulo 3: Contacto con la piel"
+                },
+                {
+                    "inicio": 10710698,
+                    "fin": 13372117,
+                    "titulo": "Capítulo 4: Basta de cag**as"
+                },
+                {
+                    "inicio": 13372117,
+                    "fin": 16525696,
+                    "titulo": "Capítulo 5: Todoterreno"
+                },
+                {
+                    "inicio": 16525696,
+                    "fin": 20339072,
+                    "titulo": "Capítulo 6: ¡Bien hecho, cabrón!"
+                },
+                {
+                    "inicio": 20339072,
+                    "fin": 23982379,
+                    "titulo": "Capítulo 7: Dos bolos de boliche en la canaleta"
+                },
+                {
+                    "inicio": 23982379,
+                    "fin": 27354368,
+                    "titulo": "Capítulo 8: La isla de la alegría"
+                }
+            ]
+        },
+        {
+            "nombre": "Diario de una chica experta en desastres de amor",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Suecia",
+            "cantidad_episodios": 7,
+            "sinopsis": "Amanda, de 31 años, y sus amigas, conocen a una amplia variedad de hombres mientras se enfrentan a la complejidad de las citas modernas en bares y apps.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/diario-de-una-chica-experta-en-desastres-de-amor.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1900245,
+                    "titulo": "Capítulo 1: El consultor"
+                },
+                {
+                    "inicio": 1900245,
+                    "fin": 3887616,
+                    "titulo": "Capítulo 2: El cantinero"
+                },
+                {
+                    "inicio": 3887616,
+                    "fin": 5726891,
+                    "titulo": "Capítulo 3: Citas rápidas"
+                },
+                {
+                    "inicio": 5726891,
+                    "fin": 7870464,
+                    "titulo": "Capítulo 4: Tinder"
+                },
+                {
+                    "inicio": 7870464,
+                    "fin": 9803051,
+                    "titulo": "Capítulo 5: El vecino"
+                },
+                {
+                    "inicio": 9803051,
+                    "fin": 11364054,
+                    "titulo": "Capítulo 6: Retroceso"
+                },
+                {
+                    "inicio": 11364054,
+                    "fin": 12985345,
+                    "titulo": "Capítulo 7: Amanda"
+                }
+            ]
+        },
+        {
+            "nombre": "Dr. Seuss: Pez rojo, pez azul",
+            "genero": "Animación",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 5,
+            "sinopsis": "Un pez, dos peces… ¡Te presentamos a Pez Rojo y Pez Azul! De allá hasta acá y de acá hasta allá… son muy distintos, pero amigos de verdad.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/dr-seuss-pez-rojo-pez-azul.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/dr-seuss-pez-rojo-pez-azul-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1863467,
+                    "titulo": "Capítulo 1: Silencioso/ruidoso + Limpio/sucio + Avanzar/detenerse + Bloquear/desbloquear"
+                },
+                {
+                    "inicio": 1863467,
+                    "fin": 3774976,
+                    "titulo": "Capítulo 2: Suelto/apretado + Reunir/esparcir + Agarrar/soltar + Relajado/estresado"
+                },
+                {
+                    "inicio": 3774976,
+                    "fin": 5256149,
+                    "titulo": "Capítulo 3: Peligroso/seguro + Dentro/fuera + Primero/último"
+                },
+                {
+                    "inicio": 5256149,
+                    "fin": 6751104,
+                    "titulo": "Capítulo 4: Despertar/dormir + Calor/frío + Tosco/delicado"
+                },
+                {
+                    "inicio": 6751104,
+                    "fin": 8283733,
+                    "titulo": "Capítulo 5: Cerca/lejos + Pesado/ligero + Abrir/cerrar"
+                }
+            ]
+        },
+        {
+            "nombre": "El hotel embrujado",
+            "genero": "Animación; Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Una madre soltera hereda el hotel de su difunto hermano y se muda a vivir allí con su amable fantasma y unos huéspedes muy exigentes que no van a marcharse.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/El hotel embrujado.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1522304,
+                    "titulo": "Capítulo 1: Bienvenidos al Undervale"
+                },
+                {
+                    "inicio": 1522304,
+                    "fin": 3019947,
+                    "titulo": "Capítulo 2: Asuntos pendientes"
+                },
+                {
+                    "inicio": 3019947,
+                    "fin": 4546432,
+                    "titulo": "Capítulo 3: El asesino de Randy"
+                },
+                {
+                    "inicio": 4546432,
+                    "fin": 6081365,
+                    "titulo": "Capítulo 4: Cómo entrenar a tu demonio"
+                },
+                {
+                    "inicio": 6081365,
+                    "fin": 7599530,
+                    "titulo": "Capítulo 5: Criaturas monstruosas"
+                },
+                {
+                    "inicio": 7599530,
+                    "fin": 9129258,
+                    "titulo": "Capítulo 6: ¡Cazaespectros!"
+                },
+                {
+                    "inicio": 9129258,
+                    "fin": 10661162,
+                    "titulo": "Capítulo 7: Los siete Bens"
+                },
+                {
+                    "inicio": 10661162,
+                    "fin": 12199423,
+                    "titulo": "Capítulo 8: La tía Rose"
+                },
+                {
+                    "inicio": 12199423,
+                    "fin": 13709823,
+                    "titulo": "Capítulo 9: El Esthercismo"
+                },
+                {
+                    "inicio": 13709823,
+                    "fin": 15232554,
+                    "titulo": "Capítulo 10: Los acólitos de Abaddon"
+                }
+            ]
+        },
+        {
+            "nombre": "La supervivencia de una chica con curvas, temporada 1",
+            "genero": "Comedia; Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "Después de una mala ruptura, la apasionada estilista Mavis Beaumont aprovecha la oportunidad para comenzar de nuevo en la vida y el amor mientras encuentra la felicidad en sus propios términos.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-supervivencia-de-una-chica-con-curvas.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-supervivencia-de-una-chica-con-curvas-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1678336,
+                    "titulo": "Capítulo 1: Riega tus plantas, perra"
+                },
+                {
+                    "inicio": 1678336,
+                    "fin": 3395755,
+                    "titulo": "Capítulo 2: Demuestra quién manda, perra"
+                },
+                {
+                    "inicio": 3395755,
+                    "fin": 5066582,
+                    "titulo": "Capítulo 3: ¿Que hiciste qué en público, perra?"
+                },
+                {
+                    "inicio": 5066582,
+                    "fin": 6711595,
+                    "titulo": "Capítulo 4: ¿Estás llorando, perra?"
+                },
+                {
+                    "inicio": 6711595,
+                    "fin": 8383531,
+                    "titulo": "Capítulo 5: ¡Es un domingo cualquiera, perra!"
+                },
+                {
+                    "inicio": 8383531,
+                    "fin": 9963051,
+                    "titulo": "Capítulo 6: Haz lo correcto, perra"
+                },
+                {
+                    "inicio": 9963051,
+                    "fin": 11422550,
+                    "titulo": "Capítulo 7: ¡Déjalo salir, perra!"
+                },
+                {
+                    "inicio": 11422550,
+                    "fin": 12960811,
+                    "titulo": "Capítulo 8: Por un propósito XXL, perra"
+                }
+            ]
+        },
+        {
+            "nombre": "La supervivencia de una chica con curvas, temporada 2",
+            "genero": "Comedia; Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "Con su marca de asesoría de imagen en auge y su vida amorosa en crisis, Mavis asume ambiciosos riesgos para dejar su huella en el mundo de la alta costura.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-supervivencia-de-una-chica-con-curvas-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-supervivencia-de-una-chica-con-curvas-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1588139,
+                    "titulo": "Capítulo 1: ¡Mavis está en Roma, perra!"
+                },
+                {
+                    "inicio": 1588139,
+                    "fin": 3111680,
+                    "titulo": "Capítulo 2: Los sueños se cumplen en el Afropunk, perra"
+                },
+                {
+                    "inicio": 3111680,
+                    "fin": 4611669,
+                    "titulo": "Capítulo 3: Disfruta tu fase de zorra, perra"
+                },
+                {
+                    "inicio": 4611669,
+                    "fin": 6252800,
+                    "titulo": "Capítulo 4: ¡Ocúpate de lo tuyo, perra!"
+                },
+                {
+                    "inicio": 6252800,
+                    "fin": 7837739,
+                    "titulo": "Capítulo 5: Vientos de cambio, perra"
+                },
+                {
+                    "inicio": 7837739,
+                    "fin": 9328683,
+                    "titulo": "Capítulo 6: La categoría es amor, perra"
+                },
+                {
+                    "inicio": 9328683,
+                    "fin": 10963926,
+                    "titulo": "Capítulo 7: Haz bien las cosas, perra"
+                },
+                {
+                    "inicio": 10963926,
+                    "fin": 12659670,
+                    "titulo": "Capítulo 8: No somos tendencia, ¡somos un movimiento, perra!"
+                }
+            ]
+        },
+        {
+            "nombre": "Las variaciones Grimm",
+            "genero": "Animación; Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Japón",
+            "cantidad_episodios": 6,
+            "sinopsis": "Esta antología inspirada en los cuentos clásicos de los hermanos Grimm que narra seis historias con un toque siniestro, que exponen el lado más sombrío del deseo humano.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/las-variaciones-grimm.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2616576,
+                    "titulo": "Capítulo 1: La Cenicienta"
+                },
+                {
+                    "inicio": 2616576,
+                    "fin": 4846891,
+                    "titulo": "Capítulo 2: Caperucita Roja"
+                },
+                {
+                    "inicio": 4846891,
+                    "fin": 7663787,
+                    "titulo": "Capítulo 3: Hansel y Gretel"
+                },
+                {
+                    "inicio": 7663787,
+                    "fin": 10347307,
+                    "titulo": "Capítulo 4: Los duendecillos y el zapatero"
+                },
+                {
+                    "inicio": 10347307,
+                    "fin": 12283350,
+                    "titulo": "Capítulo 5: Los músicos de Bremen"
+                },
+                {
+                    "inicio": 12283350,
+                    "fin": 15098155,
+                    "titulo": "Capítulo 6: El flautista de Hamelin"
+                }
+            ]
+        },
+        {
+            "nombre": "La última familia ninja",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Japón",
+            "cantidad_episodios": 8,
+            "sinopsis": "Años después de abandonar sus formidables vidas como ninjas, una familia desestructurada retoma sus misteriosas misiones para plantarle cara a una amenaza inquietante.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-ultima-familia-ninja.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2760021,
+                    "titulo": "Capítulo 1: La oferta"
+                },
+                {
+                    "inicio": 2760021,
+                    "fin": 5520042,
+                    "titulo": "Capítulo 2: La pista"
+                },
+                {
+                    "inicio": 5520042,
+                    "fin": 8280063,
+                    "titulo": "Capítulo 3: La flor"
+                },
+                {
+                    "inicio": 8280063,
+                    "fin": 11040084,
+                    "titulo": "Capítulo 4: La resurrección"
+                },
+                {
+                    "inicio": 11040084,
+                    "fin": 13800105,
+                    "titulo": "Capítulo 5: La confesión"
+                },
+                {
+                    "inicio": 13800105,
+                    "fin": 16560126,
+                    "titulo": "Capítulo 6: El extraño"
+                },
+                {
+                    "inicio": 16560126,
+                    "fin": 19320147,
+                    "titulo": "Capítulo 7: El acuerdo"
+                },
+                {
+                    "inicio": 19320147,
+                    "fin": 22080168,
+                    "titulo": "Capítulo 8: El eclipse"
+                }
+            ]
+        },
+        {
+            "nombre": "La vida fabulosa",
+            "genero": "Drama; Comedia",
+            "anio": 2022,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 8,
+            "sinopsis": "En esta comedia romántica ambientada en el exigente mundo de la moda, unos apasionados mileniales intentan encontrar el difícil equilibrio entre sueños, amor y amistad.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-vida-fabulosa.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3992704,
+                    "titulo": "Capítulo 1: Dom Pérignon y un trago de soju"
+                },
+                {
+                    "inicio": 3992704,
+                    "fin": 7218645,
+                    "titulo": "Capítulo 2: El recuerdo de la abuela y la moda en Cheongdam"
+                },
+                {
+                    "inicio": 7218645,
+                    "fin": 10804949,
+                    "titulo": "Capítulo 3: Los VIP y los comunes"
+                },
+                {
+                    "inicio": 10804949,
+                    "fin": 14545408,
+                    "titulo": "Capítulo 4: La tienda fugaz y la sastrería de siempre"
+                },
+                {
+                    "inicio": 14545408,
+                    "fin": 18313899,
+                    "titulo": "Capítulo 5: Seguidores y seguidos"
+                },
+                {
+                    "inicio": 18313899,
+                    "fin": 21637931,
+                    "titulo": "Capítulo 6: La pared de fotos y la exhibición"
+                },
+                {
+                    "inicio": 21637931,
+                    "fin": 24293291,
+                    "titulo": "Capítulo 7: Ropa de antaño y sostenibilidad"
+                },
+                {
+                    "inicio": 24293291,
+                    "fin": 27022720,
+                    "titulo": "Capítulo 8: Moda y pasión"
+                }
+            ]
+        },
+        {
+            "nombre": "La vida mentirosa de los adultos",
+            "genero": "Drama",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Italia",
+            "cantidad_episodios": 6,
+            "sinopsis": "Nápoles, años 90. La impetuosa y atrevida tía Vittoria ayuda a su sobrina a descubrir un lado diferente de la ciudad... lo que enfada a los estrictos padres de la joven.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-vida-mentirosa-de-los-adultos.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3014400,
+                    "titulo": "Capítulo 1: Belleza"
+                },
+                {
+                    "inicio": 3014400,
+                    "fin": 6056789,
+                    "titulo": "Capítulo 2: Semejanza"
+                },
+                {
+                    "inicio": 6056789,
+                    "fin": 8845184,
+                    "titulo": "Capítulo 3: Amargura"
+                },
+                {
+                    "inicio": 8845184,
+                    "fin": 12049579,
+                    "titulo": "Capítulo 4: Soledad"
+                },
+                {
+                    "inicio": 12049579,
+                    "fin": 14507947,
+                    "titulo": "Capítulo 5: Amor"
+                },
+                {
+                    "inicio": 14507947,
+                    "fin": 18160342,
+                    "titulo": "Capítulo 6: Verdad"
+                }
+            ]
+        },
+        {
+            "nombre": "La vida que querías",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Italia",
+            "cantidad_episodios": 6,
+            "sinopsis": "Gloria por fin es feliz después de la transición y de estabilizarse... pero una vieja amiga reaparece con una impactante noticia y pone su vida patas arriba.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-vida-que-quer%C3%ADas.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-vida-que-quer%C3%ADas-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2912939,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 2912939,
+                    "fin": 5943424,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 5943424,
+                    "fin": 8769365,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 8769365,
+                    "fin": 11719381,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 11719381,
+                    "fin": 14556714,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 14556714,
+                    "fin": 17494954,
+                    "titulo": "Capítulo 6: Episodio 6"
+                }
+            ]
+        },
+        {
+            "nombre": "La vorágine",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Corea del Sur",
+            "cantidad_episodios": 12,
+            "sinopsis": "Una encarnizada lucha de poder entre el primer ministro y la vice primera ministra se desata el día en que el presidente sufre un intento de asesinato.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/la-vor%C3%A1gine.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3313195,
+                    "titulo": "Capítulo 1: Episodio 1"
+                },
+                {
+                    "inicio": 3313195,
+                    "fin": 6097622,
+                    "titulo": "Capítulo 2: Episodio 2"
+                },
+                {
+                    "inicio": 6097622,
+                    "fin": 9011883,
+                    "titulo": "Capítulo 3: Episodio 3"
+                },
+                {
+                    "inicio": 9011883,
+                    "fin": 11933824,
+                    "titulo": "Capítulo 4: Episodio 4"
+                },
+                {
+                    "inicio": 11933824,
+                    "fin": 14910933,
+                    "titulo": "Capítulo 5: Episodio 5"
+                },
+                {
+                    "inicio": 14910933,
+                    "fin": 17651328,
+                    "titulo": "Capítulo 6: Episodio 6"
+                },
+                {
+                    "inicio": 17651328,
+                    "fin": 20172331,
+                    "titulo": "Capítulo 7: Episodio 7"
+                },
+                {
+                    "inicio": 20172331,
+                    "fin": 22966187,
+                    "titulo": "Capítulo 8: Episodio 8"
+                },
+                {
+                    "inicio": 22966187,
+                    "fin": 25749803,
+                    "titulo": "Capítulo 9: Episodio 9"
+                },
+                {
+                    "inicio": 25749803,
+                    "fin": 28263680,
+                    "titulo": "Capítulo 10: Episodio 10"
+                },
+                {
+                    "inicio": 28263680,
+                    "fin": 30737835,
+                    "titulo": "Capítulo 11: Episodio 11"
+                },
+                {
+                    "inicio": 30737835,
+                    "fin": 33062614,
+                    "titulo": "Capítulo 12: Episodio 12"
+                }
+            ]
+        },
+        {
+            "nombre": "Leanne",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 16,
+            "sinopsis": "Cuando su marido la abandona por otra mujer, una madre sureña y luchadora intenta rehacer su vida con el apoyo de su cariñosa (y sincerísima) familia.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/leanne.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/leanne-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1174827,
+                    "titulo": "Capítulo 1: Lo más importante"
+                },
+                {
+                    "inicio": 1174827,
+                    "fin": 2347691,
+                    "titulo": "Capítulo 2: La magia curativa de la familia"
+                },
+                {
+                    "inicio": 2347691,
+                    "fin": 3531947,
+                    "titulo": "Capítulo 3: Ay, Knoxville"
+                },
+                {
+                    "inicio": 3531947,
+                    "fin": 4710912,
+                    "titulo": "Capítulo 4: Suave como el delfín"
+                },
+                {
+                    "inicio": 4710912,
+                    "fin": 5808213,
+                    "titulo": "Capítulo 5: Un plomero enviado del cielo"
+                },
+                {
+                    "inicio": 5808213,
+                    "fin": 7128362,
+                    "titulo": "Capítulo 6: Demasiado anillo de bodas"
+                },
+                {
+                    "inicio": 7128362,
+                    "fin": 8508415,
+                    "titulo": "Capítulo 7: Por favor, que sea un lagarto"
+                },
+                {
+                    "inicio": 8508415,
+                    "fin": 9955754,
+                    "titulo": "Capítulo 8: Memoria muscular"
+                },
+                {
+                    "inicio": 9955754,
+                    "fin": 11110783,
+                    "titulo": "Capítulo 9: Ardilla en la pared de yeso"
+                },
+                {
+                    "inicio": 11110783,
+                    "fin": 12355711,
+                    "titulo": "Capítulo 10: Pastel de disculpas"
+                },
+                {
+                    "inicio": 12355711,
+                    "fin": 13526100,
+                    "titulo": "Capítulo 11: Tarde de perros"
+                },
+                {
+                    "inicio": 13526100,
+                    "fin": 14969855,
+                    "titulo": "Capítulo 12: El dilema de la reina"
+                },
+                {
+                    "inicio": 14969855,
+                    "fin": 16404778,
+                    "titulo": "Capítulo 13: No me pongas un sueño enfrente"
+                },
+                {
+                    "inicio": 16404778,
+                    "fin": 17604565,
+                    "titulo": "Capítulo 14: Gomez es una mujer"
+                },
+                {
+                    "inicio": 17604565,
+                    "fin": 18845738,
+                    "titulo": "Capítulo 15: Bolsas de aire espirituales"
+                },
+                {
+                    "inicio": 18845738,
+                    "fin": 20127871,
+                    "titulo": "Capítulo 16: Sentimientos fuertes"
+                }
+            ]
+        },
+        {
+            "nombre": "Legado de sangre",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Sudáfrica",
+            "cantidad_episodios": 20,
+            "sinopsis": "Tras años de distanciamiento, Khanyi Adesina regresa a casa para luchar por el imperio empresarial de su familia, que amenaza con derrumbarse debido a la corrupción.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/legado-de-sangre.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1654187,
+                    "titulo": "Capítulo 1: La llamada"
+                },
+                {
+                    "inicio": 1654187,
+                    "fin": 3499350,
+                    "titulo": "Capítulo 2: La poda"
+                },
+                {
+                    "inicio": 3499350,
+                    "fin": 5200214,
+                    "titulo": "Capítulo 3: El velatorio"
+                },
+                {
+                    "inicio": 5200214,
+                    "fin": 6881025,
+                    "titulo": "Capítulo 4: El testamento"
+                },
+                {
+                    "inicio": 6881025,
+                    "fin": 8368897,
+                    "titulo": "Capítulo 5: El descenso"
+                },
+                {
+                    "inicio": 8368897,
+                    "fin": 9977857,
+                    "titulo": "Capítulo 6: La decisión"
+                },
+                {
+                    "inicio": 9977857,
+                    "fin": 11486166,
+                    "titulo": "Capítulo 7: La coronación"
+                },
+                {
+                    "inicio": 11486166,
+                    "fin": 12882475,
+                    "titulo": "Capítulo 8: Asquerosamente ricos"
+                },
+                {
+                    "inicio": 12882475,
+                    "fin": 14502742,
+                    "titulo": "Capítulo 9: El aniversario"
+                },
+                {
+                    "inicio": 14502742,
+                    "fin": 15738027,
+                    "titulo": "Capítulo 10: No todo lo que brilla"
+                },
+                {
+                    "inicio": 15738027,
+                    "fin": 17090902,
+                    "titulo": "Capítulo 11: La boca del lobo"
+                },
+                {
+                    "inicio": 17090902,
+                    "fin": 18581291,
+                    "titulo": "Capítulo 12: Un pacto con el diablo"
+                },
+                {
+                    "inicio": 18581291,
+                    "fin": 19881344,
+                    "titulo": "Capítulo 13: Lucha o huida"
+                },
+                {
+                    "inicio": 19881344,
+                    "fin": 21392213,
+                    "titulo": "Capítulo 14: Encrucijada"
+                },
+                {
+                    "inicio": 21392213,
+                    "fin": 23004202,
+                    "titulo": "Capítulo 15: Golpe de Estado"
+                },
+                {
+                    "inicio": 23004202,
+                    "fin": 24416597,
+                    "titulo": "Capítulo 16: Revelaciones"
+                },
+                {
+                    "inicio": 24416597,
+                    "fin": 26003072,
+                    "titulo": "Capítulo 17: La hora de la verdad"
+                },
+                {
+                    "inicio": 26003072,
+                    "fin": 27473280,
+                    "titulo": "Capítulo 18: Judas"
+                },
+                {
+                    "inicio": 27473280,
+                    "fin": 28775595,
+                    "titulo": "Capítulo 19: Un castillo de naipes"
+                },
+                {
+                    "inicio": 28775595,
+                    "fin": 30199382,
+                    "titulo": "Capítulo 20: La cosecha"
+                }
+            ]
+        },
+        {
+            "nombre": "Leviathan",
+            "genero": "Animación",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Japón",
+            "cantidad_episodios": 12,
+            "sinopsis": "En un pasado alternativo de estética ‘steampunk’, un príncipe austriaco a la fuga y un aviador escocés de incógnito emprenden una misión inesperada para evitar una guerra mundial.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/leviathan.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1464533,
+                    "titulo": "Capítulo 1: En la tormenta"
+                },
+                {
+                    "inicio": 1464533,
+                    "fin": 3201365,
+                    "titulo": "Capítulo 2: Preludio de la guerra"
+                },
+                {
+                    "inicio": 3201365,
+                    "fin": 4933205,
+                    "titulo": "Capítulo 3: Los clankers y los darwinistas"
+                },
+                {
+                    "inicio": 4933205,
+                    "fin": 6358698,
+                    "titulo": "Capítulo 4: El peso del pasado"
+                },
+                {
+                    "inicio": 6358698,
+                    "fin": 7784191,
+                    "titulo": "Capítulo 5: Bien al este"
+                },
+                {
+                    "inicio": 7784191,
+                    "fin": 9484970,
+                    "titulo": "Capítulo 6: Sombras de Estambul"
+                },
+                {
+                    "inicio": 9484970,
+                    "fin": 11091669,
+                    "titulo": "Capítulo 7: Mares tormentosos"
+                },
+                {
+                    "inicio": 11091669,
+                    "fin": 12618282,
+                    "titulo": "Capítulo 8: El Behemoth"
+                },
+                {
+                    "inicio": 12618282,
+                    "fin": 13987754,
+                    "titulo": "Capítulo 9: Tunguska"
+                },
+                {
+                    "inicio": 13987754,
+                    "fin": 15508351,
+                    "titulo": "Capítulo 10: Verdades y mentiras"
+                },
+                {
+                    "inicio": 15508351,
+                    "fin": 16904831,
+                    "titulo": "Capítulo 11: Goliath"
+                },
+                {
+                    "inicio": 16904831,
+                    "fin": 18672682,
+                    "titulo": "Capítulo 12: Bajo el mismo cielo"
+                }
+            ]
+        },
+        {
+            "nombre": "Little Baby Bum: ¡Hora de cantar!, temporada 1",
+            "genero": "Animación",
+            "anio": 2023,
+            "reparto": [],
+            "pais_origen": "Reino Unido",
+            "cantidad_episodios": 9,
+            "sinopsis": "En la mágica escuela de preescolar Music Time cada día es una nueva aventura llena de canciones para los más pequeños de la casa... ¡y montones de cosas que aprender!",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/little-baby-bum-hora-de-cantar-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1473536,
+                    "titulo": "Capítulo 1: El gran autobús / Juan Paco Pedro de la Mar / Cuatro gatitos"
+                },
+                {
+                    "inicio": 1473536,
+                    "fin": 2926720,
+                    "titulo": "Capítulo 2: Si estás feliz / Mis dientes bien voy a lavar / ABC estrellita"
+                },
+                {
+                    "inicio": 2926720,
+                    "fin": 4400512,
+                    "titulo": "Capítulo 3: Cabeza, hombros, rodillas y pies / ¿Qué hay ahí? / Lluvia, vete ya"
+                },
+                {
+                    "inicio": 4400512,
+                    "fin": 5868075,
+                    "titulo": "Capítulo 4: Estrellita, ¿dónde estás? / Una gran manzana / Cascabel, cascabel"
+                },
+                {
+                    "inicio": 5868075,
+                    "fin": 7349718,
+                    "titulo": "Capítulo 5: Mary tiene un corderito / ¡La comadreja! / Canción de calentamiento"
+                },
+                {
+                    "inicio": 7349718,
+                    "fin": 8761643,
+                    "titulo": "Capítulo 6: Cinco patitos / Itsy bitsy araña / Punchinello"
+                },
+                {
+                    "inicio": 8761643,
+                    "fin": 10185003,
+                    "titulo": "Capítulo 7: Hay que hornear / A la caza del león / Chootay maatey"
+                },
+                {
+                    "inicio": 10185003,
+                    "fin": 11628374,
+                    "titulo": "Capítulo 8: ¿Habías visto un monito? / Osito Teddy, osito Teddy / Un señor"
+                },
+                {
+                    "inicio": 11628374,
+                    "fin": 14160982,
+                    "titulo": "Capítulo 9: Recopilación del Escenario Arcoíris 1"
+                }
+            ]
+        },
+        {
+            "nombre": "Little Baby Bum: ¡Hora de cantar!, temporada 2",
+            "genero": "Animación",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Reino Unido",
+            "cantidad_episodios": 8,
+            "sinopsis": "Las clases están de vuelta y es Hora de Cantar. Mia, Max, Maple, Ahan y Bari están listos para aprender.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/little-baby-bum-hora-de-cantar-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1520768,
+                    "titulo": "Capítulo 1: La vieja MacDonald / La canción para limpiar / La canción para saludar"
+                },
+                {
+                    "inicio": 1520768,
+                    "fin": 3095339,
+                    "titulo": "Capítulo 2: Rema, rema tu bote / ¡Oh, cielos! ¿Qué pasa? / Las hormigas marchan"
+                },
+                {
+                    "inicio": 3095339,
+                    "fin": 4636459,
+                    "titulo": "Capítulo 3: Grita ¡bú! / La canción para brincar / En el campo aquel"
+                },
+                {
+                    "inicio": 4636459,
+                    "fin": 6207744,
+                    "titulo": "Capítulo 4: Feliz cumpleaños / Bingo / Roquear me gusta"
+                },
+                {
+                    "inicio": 6207744,
+                    "fin": 7782144,
+                    "titulo": "Capítulo 5: Baby Shark / Uno, dos, tres, ¿qué vamos a hacer? / Pide un deseo"
+                },
+                {
+                    "inicio": 7782144,
+                    "fin": 9315328,
+                    "titulo": "Capítulo 6: Un pececito / La canción para compartir / Jaltarang"
+                },
+                {
+                    "inicio": 9315328,
+                    "fin": 10826283,
+                    "titulo": "Capítulo 7: Yo tengo unas cartas / Bailando Dubi Du / La canción de la armonía"
+                },
+                {
+                    "inicio": 10826283,
+                    "fin": 12376320,
+                    "titulo": "Capítulo 8: Humpty Dumpty / Diez autobuses / Hickory Dickory Dock"
+                }
+            ]
+        },
+        {
+            "nombre": "Llantas, temporada 1",
+            "genero": "Comedia",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 6,
+            "sinopsis": "En el taller de su padre, un gerente desventurado intenta mejorar el servicio al cliente y aumentar las ganancias mientras mantiene a raya a su problemático primo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/llantas.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/llantas-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1438293,
+                    "titulo": "Capítulo 1: La iniciativa"
+                },
+                {
+                    "inicio": 1438293,
+                    "fin": 2843008,
+                    "titulo": "Capítulo 2: Ventanas de oportunidad"
+                },
+                {
+                    "inicio": 2843008,
+                    "fin": 4275968,
+                    "titulo": "Capítulo 3: Concurso de ventas"
+                },
+                {
+                    "inicio": 4275968,
+                    "fin": 5505963,
+                    "titulo": "Capítulo 4: Fábrica de rumores"
+                },
+                {
+                    "inicio": 5505963,
+                    "fin": 6893526,
+                    "titulo": "Capítulo 5: Autolavado en bikini"
+                },
+                {
+                    "inicio": 6893526,
+                    "fin": 8116694,
+                    "titulo": "Capítulo 6: Papá"
+                }
+            ]
+        },
+        {
+            "nombre": "Llantas, temporada 2",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 12,
+            "sinopsis": "Tras el inesperado éxito de su gran idea de marketing, Will y Shane se apresuran a crecer personal y profesionalmente sin ser completamente conscientes del precio que conlleva el mundo de los negocios.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/llantas-2.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/llantas-2-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1363669,
+                    "titulo": "Capítulo 1: Dinero extra"
+                },
+                {
+                    "inicio": 1363669,
+                    "fin": 2753450,
+                    "titulo": "Capítulo 2: RR. HH"
+                },
+                {
+                    "inicio": 2753450,
+                    "fin": 4094293,
+                    "titulo": "Capítulo 3: Inspección"
+                },
+                {
+                    "inicio": 4094293,
+                    "fin": 5655296,
+                    "titulo": "Capítulo 4: El brillo de la novedad"
+                },
+                {
+                    "inicio": 5655296,
+                    "fin": 7030741,
+                    "titulo": "Capítulo 5: Subidón de ventas"
+                },
+                {
+                    "inicio": 7030741,
+                    "fin": 8910165,
+                    "titulo": "Capítulo 6: La exposición"
+                },
+                {
+                    "inicio": 8910165,
+                    "fin": 10222464,
+                    "titulo": "Capítulo 7: Papas fritas gratis"
+                },
+                {
+                    "inicio": 10222464,
+                    "fin": 11706453,
+                    "titulo": "Capítulo 8: Jubilación"
+                },
+                {
+                    "inicio": 11706453,
+                    "fin": 13098410,
+                    "titulo": "Capítulo 9: Anuncio en la radio"
+                },
+                {
+                    "inicio": 13098410,
+                    "fin": 14537130,
+                    "titulo": "Capítulo 10: Patriotas y traidores"
+                },
+                {
+                    "inicio": 14537130,
+                    "fin": 16056405,
+                    "titulo": "Capítulo 11: La amargura se comparte"
+                },
+                {
+                    "inicio": 16056405,
+                    "fin": 17673642,
+                    "titulo": "Capítulo 12: A qué costo"
+                }
+            ]
+        },
+        {
+            "nombre": "Long Story Short",
+            "genero": "Comedia; Animación",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 10,
+            "sinopsis": "Del creador de ‘BoJack Horseman’ llega esta comedia de animación sobre una familia que narra la trayectoria de unos hermanos desde la infancia a la madurez y revive el pasado.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/long-story-short.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1531861,
+                    "titulo": "Capítulo 1: El bar mitzvá de Yoshi"
+                },
+                {
+                    "inicio": 1531861,
+                    "fin": 3053781,
+                    "titulo": "Capítulo 2: El recital de danza de Hannah"
+                },
+                {
+                    "inicio": 3053781,
+                    "fin": 4582058,
+                    "titulo": "Capítulo 3: Hay un colchón ahí dentro"
+                },
+                {
+                    "inicio": 4582058,
+                    "fin": 6107093,
+                    "titulo": "Capítulo 4: Shira no sabe cocinar"
+                },
+                {
+                    "inicio": 6107093,
+                    "fin": 7632298,
+                    "titulo": "Capítulo 5: Yoshi y Bebé"
+                },
+                {
+                    "inicio": 7632298,
+                    "fin": 9147050,
+                    "titulo": "Capítulo 6: Lobos"
+                },
+                {
+                    "inicio": 9147050,
+                    "fin": 10674047,
+                    "titulo": "Capítulo 7: El trabajo de Kendra"
+                },
+                {
+                    "inicio": 10674047,
+                    "fin": 12216276,
+                    "titulo": "Capítulo 8: La intervención"
+                },
+                {
+                    "inicio": 12216276,
+                    "fin": 13745151,
+                    "titulo": "Capítulo 9: En honor a Naomi Schwartz"
+                },
+                {
+                    "inicio": 13745151,
+                    "fin": 15275860,
+                    "titulo": "Capítulo 10: El tío Barry"
+                }
+            ]
+        },
+        {
+            "nombre": "Los 7 osos",
+            "genero": "Animación",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Francia",
+            "cantidad_episodios": 10,
+            "sinopsis": "Olvídate de los siete enanitos... ¡llegan los 7 osos! Este adorable grupo de peludos le da un giro muy tierno a los cuentos clásicos que creías conocer.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-7-osos.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-7-osos-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1657173,
+                    "titulo": "Capítulo 1: Blanca Nieves y los siete ositos / Los siete ositos, no enanitos"
+                },
+                {
+                    "inicio": 1657173,
+                    "fin": 3369557,
+                    "titulo": "Capítulo 2: La poción para bailar / El toque de la papa"
+                },
+                {
+                    "inicio": 3369557,
+                    "fin": 4996053,
+                    "titulo": "Capítulo 3: Pateadores de traseros campeones / La tostada perfecta"
+                },
+                {
+                    "inicio": 4996053,
+                    "fin": 6675754,
+                    "titulo": "Capítulo 4: Osunzel / Ricitos de oro y los siete ositos"
+                },
+                {
+                    "inicio": 6675754,
+                    "fin": 8310783,
+                    "titulo": "Capítulo 5: Osel y Gretel / Jack y las osichuelas mágicas"
+                },
+                {
+                    "inicio": 8310783,
+                    "fin": 9990399,
+                    "titulo": "Capítulo 6: El favor feroz / La canasta búnker"
+                },
+                {
+                    "inicio": 9990399,
+                    "fin": 11578111,
+                    "titulo": "Capítulo 7: El rascanalgas de Hamelín / La princesa y ¿la papa?"
+                },
+                {
+                    "inicio": 11578111,
+                    "fin": 13209727,
+                    "titulo": "Capítulo 8: Ositos vs. enanitos / El oso de la lámpara"
+                },
+                {
+                    "inicio": 13209727,
+                    "fin": 14892799,
+                    "titulo": "Capítulo 9: El oso príncipe / El osito feo"
+                },
+                {
+                    "inicio": 14892799,
+                    "fin": 16564223,
+                    "titulo": "Capítulo 10: La maravillosa fiesta de Cenicienta / El oso con botas"
+                }
+            ]
+        },
+        {
+            "nombre": "Los bandidos del oro",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Italia",
+            "cantidad_episodios": 6,
+            "sinopsis": "En el siglo XIX, cuando las tierras del sur de Italia eran territorio de bandidos, Filomena deja su acomodada pero triste vida para protagonizar una peligrosa búsqueda del tesoro.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-bandidos-del-oro.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2789291,
+                    "titulo": "Capítulo 1: El mapa"
+                },
+                {
+                    "inicio": 2789291,
+                    "fin": 5859712,
+                    "titulo": "Capítulo 2: El rifle"
+                },
+                {
+                    "inicio": 5859712,
+                    "fin": 9147136,
+                    "titulo": "Capítulo 3: El buey"
+                },
+                {
+                    "inicio": 9147136,
+                    "fin": 12491904,
+                    "titulo": "Capítulo 4: De la Tierra se nace"
+                },
+                {
+                    "inicio": 12491904,
+                    "fin": 15972779,
+                    "titulo": "Capítulo 5: La novia, la asesina y la lunática"
+                },
+                {
+                    "inicio": 15972779,
+                    "fin": 18351787,
+                    "titulo": "Capítulo 6: El pozo"
+                }
+            ]
+        },
+        {
+            "nombre": "Los caballeros",
+            "genero": "Comedia; Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Reino Unido",
+            "cantidad_episodios": 8,
+            "sinopsis": "Cuando Eddie hereda la finca de su aristocrática familia, descubre que alberga una enorme plantación de marihuana... y que sus propietarios no piensan marcharse.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-caballeros.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-caballeros-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2760021,
+                    "titulo": "Capítulo 1: Agresión refinada"
+                },
+                {
+                    "inicio": 2760021,
+                    "fin": 5520042,
+                    "titulo": "Capítulo 2: Cielo Tommy pum pum"
+                },
+                {
+                    "inicio": 5520042,
+                    "fin": 8280063,
+                    "titulo": "Capítulo 3: ¿Dónde está mi hierba?"
+                },
+                {
+                    "inicio": 8280063,
+                    "fin": 10749567,
+                    "titulo": "Capítulo 4: Un caballero un poco antipático"
+                },
+                {
+                    "inicio": 10749567,
+                    "fin": 13392852,
+                    "titulo": "Capítulo 5: Tengo cientos de primos"
+                },
+                {
+                    "inicio": 13392852,
+                    "fin": 16152873,
+                    "titulo": "Capítulo 6: Cualquier eventualidad"
+                },
+                {
+                    "inicio": 16152873,
+                    "fin": 18766206,
+                    "titulo": "Capítulo 7: Todo tiene riesgo"
+                },
+                {
+                    "inicio": 18766206,
+                    "fin": 21360809,
+                    "titulo": "Capítulo 8: El evangelio según Bobby Glass"
+                }
+            ]
+        },
+        {
+            "nombre": "Los crímenes de Åre",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [],
+            "pais_origen": "Suecia",
+            "cantidad_episodios": 5,
+            "sinopsis": "Una policía de Estocolmo sometida a una investigación interna se va a una estación de esquí para desconectar, pero la desaparición de una chica la obliga a volver al trabajo.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-cr%C3%ADmenes-de-are.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-cr%C3%ADmenes-de-are-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2108117,
+                    "titulo": "Capítulo 1: Muerte en las montañas (Parte 1)"
+                },
+                {
+                    "inicio": 2108117,
+                    "fin": 4283562,
+                    "titulo": "Capítulo 2: Muerte en las montañas (Parte 2)"
+                },
+                {
+                    "inicio": 4283562,
+                    "fin": 6963882,
+                    "titulo": "Capítulo 3: Muerte en las montañas (Parte 3)"
+                },
+                {
+                    "inicio": 6963882,
+                    "fin": 10389887,
+                    "titulo": "Capítulo 4: Muerte en las sombras (Parte 1)"
+                },
+                {
+                    "inicio": 10389887,
+                    "fin": 13071060,
+                    "titulo": "Capítulo 5: Muerte en las sombras (Parte 2)"
+                }
+            ]
+        },
+        {
+            "nombre": "Los detectives difuntos",
+            "genero": "Drama",
+            "anio": 2024,
+            "reparto": [],
+            "pais_origen": "Estados Unidos",
+            "cantidad_episodios": 8,
+            "sinopsis": "Dos fantasmas adolescentes forman equipo con una médium para resolver los misterios de su sobrenatural clientela... hasta que una poderosa bruja les complica los planes.\n\nLos Detectives Muertos está ambientada en el universo de Sandman y basada en los célebres cómics de Neil Gaiman.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-detectives-difuntos.m4a"
+                },
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-detectives-difuntos-es.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3384107,
+                    "titulo": "Capítulo 1: El caso de Crystal Palace"
+                },
+                {
+                    "inicio": 3384107,
+                    "fin": 6525526,
+                    "titulo": "Capítulo 2: El caso del altar de los duendes diente de león"
+                },
+                {
+                    "inicio": 6525526,
+                    "fin": 9672577,
+                    "titulo": "Capítulo 3: El caso de la casa de los Devlin"
+                },
+                {
+                    "inicio": 9672577,
+                    "fin": 12863489,
+                    "titulo": "Capítulo 4: El caso de los saltadores del faro"
+                },
+                {
+                    "inicio": 12863489,
+                    "fin": 16044289,
+                    "titulo": "Capítulo 5: El caso de los dos dragones muertos"
+                },
+                {
+                    "inicio": 16044289,
+                    "fin": 19312129,
+                    "titulo": "Capítulo 6: El caso del bosque misterioso"
+                },
+                {
+                    "inicio": 19312129,
+                    "fin": 22761686,
+                    "titulo": "Capítulo 7: El caso de la escalera interminable"
+                },
+                {
+                    "inicio": 22761686,
+                    "fin": 26140203,
+                    "titulo": "Capítulo 8: El caso de la serpiente hambrienta"
+                }
+            ]
+        },
+        {
+            "nombre": "Los fantasmas de la ciudad",
+            "genero": "Animación",
+            "anio": 2021,
+            "reparto": [],
+            "pais_origen": "Francia",
+            "cantidad_episodios": 6,
+            "sinopsis": "¡Conoce al Club Fantasma! Sus aventuras los llevan a todos los rincones de L. Á., donde entrevistan a fantasmas, resuelven problemas y aprenden sobre la historia local.",
+            "enlaces": [
+                {
+                    "idioma": "Español Latino",
+                    "enlace": "https://dn721608.ca.archive.org/0/items/sernefuad/los-fantasmas-de-la-ciudad.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1208917,
+                    "titulo": "Capítulo 1: El restaurante tipo japonés"
+                },
+                {
+                    "inicio": 1208917,
+                    "fin": 2353834,
+                    "titulo": "Capítulo 2: Venice, California"
+                },
+                {
+                    "inicio": 2353834,
+                    "fin": 3482751,
+                    "titulo": "Capítulo 3: Leimert Park"
+                },
+                {
+                    "inicio": 3482751,
+                    "fin": 4609663,
+                    "titulo": "Capítulo 4: Tovaangar"
+                },
+                {
+                    "inicio": 4609663,
+                    "fin": 5734570,
+                    "titulo": "Capítulo 5: Bob y Nancy"
+                },
+                {
+                    "inicio": 5734570,
+                    "fin": 6875477,
+                    "titulo": "Capítulo 6: El barrio coreano"
                 }
             ]
         }

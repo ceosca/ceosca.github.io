@@ -38995,6 +38995,686 @@
                     "titulo": "Capítulo 6: Nadie dijo que fuera fácil"
                 }
             ]
+        },
+        {
+            "nombre": "Cuerpo de élite",
+            "genero": "Comedia",
+            "anio": 2018,
+            "reparto": [
+                "María Botto",
+                "Cristina Castaño",
+                "Miki Esparbé",
+                "El Langui",
+                "Andoni Agirregomezkorta",
+                "Canco Rodríguez",
+                "Adriana Torrebejano",
+                "Álvaro Fontalba",
+                "Ismael Martínez",
+                "Ana Morgade",
+                "Octavi Pujades",
+                "Antonio Garrido",
+                "Joaquín Reyes"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 13,
+            "sinopsis": "Desde que el gobierno aprobara su creación durante la Transición, existe un grupo secreto de operaciones especiales formado por miembros de diferentes cuerpos policiales que protege al país sin que nadie sepa de su existencia. Ante el éxito de este singular \"Cuerpo de Élite\" - aunque cueste creerlo viendo el proceder de sus integrantes- el Ministro de Interior decide ampliar el proyecto y montar una nueva unidad.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/CUERPO-DE-%C3%89LITE.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 4005504,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 4005504,
+                    "fin": 8325163,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 8325163,
+                    "fin": 12525355,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 12525355,
+                    "fin": 16732203,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 16732203,
+                    "fin": 21044395,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 21044395,
+                    "fin": 25149142,
+                    "titulo": "Capítulo 6"
+                },
+                {
+                    "inicio": 25149142,
+                    "fin": 29502294,
+                    "titulo": "Capítulo 7"
+                },
+                {
+                    "inicio": 29502294,
+                    "fin": 33658070,
+                    "titulo": "Capítulo 8"
+                },
+                {
+                    "inicio": 33658070,
+                    "fin": 37803947,
+                    "titulo": "Capítulo 9"
+                },
+                {
+                    "inicio": 37803947,
+                    "fin": 42074112,
+                    "titulo": "Capítulo 10"
+                },
+                {
+                    "inicio": 42074112,
+                    "fin": 46449408,
+                    "titulo": "Capítulo 11"
+                },
+                {
+                    "inicio": 46449408,
+                    "fin": 50691371,
+                    "titulo": "Capítulo 12"
+                },
+                {
+                    "inicio": 50691371,
+                    "fin": 54939606,
+                    "titulo": "Capítulo 13"
+                }
+            ]
+        },
+        {
+            "nombre": "Muertos S.L., temporada 1",
+            "genero": "Comedia",
+            "anio": 2024,
+            "reparto": [
+                "Carlos Areces",
+                "Gerald B. Fillmore",
+                "Aitziber Garmendia",
+                "Ascen López",
+                "Diego Martín",
+                "Salva Reina",
+                "Roque Ruiz",
+                "Amaia Salamanca",
+                "Adriana Torrebejano",
+                "Manolo Cal",
+                "Lorea Intxausti",
+                "Lucía Quintana",
+                "Bárbara Santa-Cruz"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 8,
+            "sinopsis": "Comedia de situación que transcurre en el día a día de la funeraria Torregrosa: un negocio familiar al borde del desastre que siempre consigue mantenerse a flote.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/muertos-sl-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1627605,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 1627605,
+                    "fin": 3205717,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 3205717,
+                    "fin": 4970880,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 4970880,
+                    "fin": 6734677,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 6734677,
+                    "fin": 8570069,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 8570069,
+                    "fin": 10321493,
+                    "titulo": "Capítulo 6"
+                },
+                {
+                    "inicio": 10321493,
+                    "fin": 12088960,
+                    "titulo": "Capítulo 7"
+                },
+                {
+                    "inicio": 12088960,
+                    "fin": 13914709,
+                    "titulo": "Capítulo 8"
+                }
+            ]
+        },
+        {
+            "nombre": "Muertos S.L., temporada 2",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [
+                "Carlos Areces",
+                "Gerald B. Fillmore",
+                "Aitziber Garmendia",
+                "Ascen López",
+                "Diego Martín",
+                "Salva Reina",
+                "Roque Ruiz",
+                "Amaia Salamanca",
+                "Adriana Torrebejano",
+                "Manolo Cal",
+                "Lorea Intxausti",
+                "Lucía Quintana",
+                "Bárbara Santa-Cruz",
+                "Juan Miguel Bataller"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 6,
+            "sinopsis": "Dámaso se encuentra en un dilema personal, deseando descubrir si realmente es un Torregrosa, pero para ello necesita pruebas concluyentes que justifiquen la exhumación.\nMientras tanto, lleva su vida cotidiana en la funeraria, enfrentándose a las extravagantes ideas de su compañero Chemi y a la firme dirección de Nieves. A su vez, su rivalidad con Vanesa se intensifica, ya que ella conspira con las hijas de Nieves para lograr la absorción de Torregrosa.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/muertos-sl-2.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1839061,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 1839061,
+                    "fin": 3591680,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 3591680,
+                    "fin": 5551232,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 5551232,
+                    "fin": 7377237,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 7377237,
+                    "fin": 9204309,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 9204309,
+                    "fin": 10953856,
+                    "titulo": "Capítulo 6"
+                }
+            ]
+        },
+        {
+            "nombre": "Muertos S.L., temporada 3",
+            "genero": "Comedia",
+            "anio": 2025,
+            "reparto": [
+                "Carlos Areces",
+                "Gerald B. Fillmore",
+                "Aitziber Garmendia",
+                "Ascen López",
+                "Diego Martín",
+                "Salva Reina",
+                "Roque Ruiz",
+                "Amaia Salamanca",
+                "Adriana Torrebejano",
+                "Manolo Cal",
+                "Lorea Intxausti",
+                "Lucía Quintana",
+                "Bárbara Santa-Cruz"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 6,
+            "sinopsis": "Vanesa (Amaia Salamanca), antigua protegida de Dámaso (Carlos Areces), se convierte ahora en la nueva directora del negocio tras dejar atrás a la competencia de Transitus. Este movimiento desencadena un enfrentamiento directo entre ambos personajes, ya que Dámaso no piensa quedarse de brazos cruzados y pondrá en marcha toda su creatividad —por retorcida que sea— para evitar perder su poder dentro de la empresa.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/muertos-sl-3.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 1692757,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 1692757,
+                    "fin": 3456042,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 3456042,
+                    "fin": 5121365,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 5121365,
+                    "fin": 6721536,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 6721536,
+                    "fin": 8464427,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 8464427,
+                    "fin": 10465579,
+                    "titulo": "Capítulo 6"
+                }
+            ]
+        },
+        {
+            "nombre": "Dos tumbas",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Álvaro Morte",
+                "Hovik Keuchkerian",
+                "Kiti Mánver",
+                "Zoe Arnao",
+                "Nonna Cardoner"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 3,
+            "sinopsis": "Cuando la desaparición de dos chicas adolescentes conmociona a una apacible localidad costera, una abuela lo arriesga todo para descubrir la verdad y clamar venganza por su nieta.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/dos-tumbas.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3178240,
+                    "titulo": "Capítulo 1: Part I"
+                },
+                {
+                    "inicio": 3178240,
+                    "fin": 5711275,
+                    "titulo": "Capítulo 2: Part II"
+                },
+                {
+                    "inicio": 5711275,
+                    "fin": 8966016,
+                    "titulo": "Capítulo 3: Part III"
+                }
+            ]
+        },
+        {
+            "nombre": "Las muertas",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Arcelia Ramírez",
+                "Paulina Gaitán",
+                "Joaquín Cosío",
+                "Mauricio Isaac",
+                "Alfonso Herrera",
+                "Leticia Huijara",
+                "Carlos Aragón",
+                "Sonia Couoh",
+                "Yessica Borroto Perryman",
+                "Sofía Espinosa",
+                "Mariané Cartas",
+                "Renée Sabina",
+                "Fernanda Rivera",
+                "Kat Rigoni",
+                "Patricia loranca",
+                "Cecilia de los Santos Vargas",
+                "Dunia Alexandra",
+                "Natalia Quiroz",
+                "Marya Sotelo",
+                "Isabella Terramoccia"
+            ],
+            "pais_origen": "México",
+            "cantidad_episodios": 6,
+            "sinopsis": "Basada en la aclamada novela de Jorge Ibargüengoitia, que ficciona el escalofriante caso de 'Las Poquianchis', 'Las muertas' narra el ascenso y la caída de las hermanas Arcángela y Serafina Baladro, quienes construyeron un imperio de burdeles en el México de los años 60, quedando marcadas en la historia como las asesinas seriales más despiadadas y temidas del país.",
+            "enlaces": [
+                {
+                    "idioma": "Español, México",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/las-muertas.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 4056149,
+                    "titulo": "Capítulo 1: Las dos venganzas"
+                },
+                {
+                    "inicio": 4056149,
+                    "fin": 7743061,
+                    "titulo": "Capítulo 2: Historia de las casas"
+                },
+                {
+                    "inicio": 7743061,
+                    "fin": 12107733,
+                    "titulo": "Capítulo 3: La mala noche"
+                },
+                {
+                    "inicio": 12107733,
+                    "fin": 16213589,
+                    "titulo": "Capítulo 4: Los dientes de Blanca"
+                },
+                {
+                    "inicio": 16213589,
+                    "fin": 19956522,
+                    "titulo": "Capítulo 5: La ley marcial"
+                },
+                {
+                    "inicio": 19956522,
+                    "fin": 24753493,
+                    "titulo": "Capítulo 6: Llega la policía"
+                }
+            ]
+        },
+        {
+            "nombre": "Presunto culpable",
+            "genero": "Drama",
+            "anio": 2018,
+            "reparto": [
+                "Miguel Ángel Muñoz",
+                "Susi Sánchez",
+                "Carlos Serrano",
+                "Alejandra Onieva"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 13,
+            "sinopsis": "Ambientada en un pequeño e idílico pueblo pesquero del País Vasco, 'Presunto Culpable' cuenta la historia de Jon Arístegui, un investigador que vive en París y que, tras un terrible suceso, se verá obligado a volver al pueblo en el que nació y que abandonó seis años atrás. Allí tendrá que enfrentarse a los fantasmas de su pasado y a un misterio que nunca llegó a resolverse: la desaparición de su novia, Anne.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/presunto-culpable.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 4051626,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 4051626,
+                    "fin": 8098047,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 8098047,
+                    "fin": 12200319,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 12200319,
+                    "fin": 16168447,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 16168447,
+                    "fin": 20389033,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 20389033,
+                    "fin": 24410366,
+                    "titulo": "Capítulo 6"
+                },
+                {
+                    "inicio": 24410366,
+                    "fin": 28523902,
+                    "titulo": "Capítulo 7"
+                },
+                {
+                    "inicio": 28523902,
+                    "fin": 32365992,
+                    "titulo": "Capítulo 8"
+                },
+                {
+                    "inicio": 32365992,
+                    "fin": 36605949,
+                    "titulo": "Capítulo 9"
+                },
+                {
+                    "inicio": 36605949,
+                    "fin": 41102631,
+                    "titulo": "Capítulo 10"
+                },
+                {
+                    "inicio": 41102631,
+                    "fin": 45434876,
+                    "titulo": "Capítulo 11"
+                },
+                {
+                    "inicio": 45434876,
+                    "fin": 49371857,
+                    "titulo": "Capítulo 12"
+                },
+                {
+                    "inicio": 49371857,
+                    "fin": 54033190,
+                    "titulo": "Capítulo 13"
+                }
+            ]
+        },
+        {
+            "nombre": "Los protegidos",
+            "genero": "Comedia; Drama",
+            "anio": 2010,
+            "reparto": [
+                "Antonio Garrido",
+                "Marta Torné",
+                "Ana Fernández",
+                "Luis Fernández",
+                "Mario Marzo",
+                "Priscilla Delgado",
+                "Daniel Avilés"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 13,
+            "sinopsis": "Un grupo de personas se hacen pasar por una familia, los Castillo Rey, con el objetivo de huir de una extraña organización que les busca llamada el Clan del Elefante. El motivo no es otro que los poderes sobrenaturales de muchos de sus miembros. Bajo el cuidado de Mario, padre viudo con ciertas inseguridades, y Jimena, una madre que ha sufrido el secuestro de su hija Blanca a manos del Clan del Elefante, se encuentran: el rebelde Culebra, dotado del don de la invisibilidad; Sandra, poseedora de un poder eléctrico; Carlos, hijo de Mario y que domina la telequinesia; Lucía, una huérfana capaz de leer los pensamientos ajenos y transmitir los suyos propios; y Lucas, un adolescente que puede transformarse en otras personas. Ahora deben convivir cómo si fueran una verdadera familia, ocultando además su secreto, mientras buscan un modo de rescatar a Blanca.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/los-protegidos-1.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 4867413,
+                    "titulo": "Capítulo 1"
+                },
+                {
+                    "inicio": 4867413,
+                    "fin": 9121279,
+                    "titulo": "Capítulo 2"
+                },
+                {
+                    "inicio": 9121279,
+                    "fin": 13526484,
+                    "titulo": "Capítulo 3"
+                },
+                {
+                    "inicio": 13526484,
+                    "fin": 17842174,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 17842174,
+                    "fin": 22142120,
+                    "titulo": "Capítulo 5"
+                },
+                {
+                    "inicio": 22142120,
+                    "fin": 26529192,
+                    "titulo": "Capítulo 6"
+                },
+                {
+                    "inicio": 26529192,
+                    "fin": 31076904,
+                    "titulo": "Capítulo 7"
+                },
+                {
+                    "inicio": 31076904,
+                    "fin": 35481256,
+                    "titulo": "Capítulo 8"
+                },
+                {
+                    "inicio": 35481256,
+                    "fin": 39981906,
+                    "titulo": "Capítulo 9"
+                },
+                {
+                    "inicio": 39981906,
+                    "fin": 44609106,
+                    "titulo": "Capítulo 10"
+                },
+                {
+                    "inicio": 44609106,
+                    "fin": 48995239,
+                    "titulo": "Capítulo 11"
+                },
+                {
+                    "inicio": 48995239,
+                    "fin": 53429201,
+                    "titulo": "Capítulo 12"
+                },
+                {
+                    "inicio": 53429201,
+                    "fin": 57826470,
+                    "titulo": "Capítulo 13"
+                }
+            ]
+        },
+        {
+            "nombre": "El refugio atómico",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Miren Ibarguren",
+                "Joaquín Furriel",
+                "Natalia Verbeke",
+                "Carlos Santos",
+                "Montse Guallar",
+                "Pau Simon",
+                "Alicia Falcó",
+                "Agustina Bisio",
+                "Álex Villazán",
+                "Alicia Fernández",
+                "Omar Banana"
+            ],
+            "pais_origen": "España",
+            "cantidad_episodios": 8,
+            "sinopsis": "Tras refugiarse en un búnker de lujo para millonarios, dos familias deben hacer frente a la herida que las separó mientras crece la amenaza de un conflicto global sin precedentes.",
+            "enlaces": [
+                {
+                    "idioma": "Español España",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/el-refugio-at%C3%B3mico.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 3378048,
+                    "titulo": "Capítulo 1: Return from Hell"
+                },
+                {
+                    "inicio": 3378048,
+                    "fin": 6740352,
+                    "titulo": "Capítulo 2: The Greatest Con Ever Pulled on Humanity"
+                },
+                {
+                    "inicio": 6740352,
+                    "fin": 9479125,
+                    "titulo": "Capítulo 3: I Hate the Rich"
+                },
+                {
+                    "inicio": 9479125,
+                    "fin": 9479125,
+                    "titulo": "Capítulo 4"
+                },
+                {
+                    "inicio": 9479125,
+                    "fin": 12789205,
+                    "titulo": "Capítulo 5: The Truth Is Overrated"
+                },
+                {
+                    "inicio": 12789205,
+                    "fin": 15589717,
+                    "titulo": "Capítulo 6: The Woman of Numbered Days"
+                },
+                {
+                    "inicio": 15589717,
+                    "fin": 18838698,
+                    "titulo": "Capítulo 7: Learn to Live without Me"
+                },
+                {
+                    "inicio": 18838698,
+                    "fin": 23095125,
+                    "titulo": "Capítulo 8: Two Minutes without Roxán"
+                }
+            ]
+        },
+        {
+            "nombre": "Las maldiciones",
+            "genero": "Drama",
+            "anio": 2025,
+            "reparto": [
+                "Leonardo Sbaraglia",
+                "Gustavo Bassani",
+                "Francesca Varela",
+                "Alejandra Flechner",
+                "Mónica Antonópulos"
+            ],
+            "pais_origen": "Argentina",
+            "cantidad_episodios": 3,
+            "sinopsis": "La hija de un gobernador desaparece en un momento clave para su carrera. Entre la ambición y los secretos familiares, debe elegir: la política o la seguridad de su hija.",
+            "enlaces": [
+                {
+                    "idioma": "Español, Argentina",
+                    "enlace": "https://dn721907.ca.archive.org/0/items/sernefua/las-maldiciones.m4a"
+                }
+            ],
+            "capitulos": [
+                {
+                    "inicio": 0,
+                    "fin": 2124971,
+                    "titulo": "Capítulo 1: Acto I: La ley"
+                },
+                {
+                    "inicio": 2124971,
+                    "fin": 4735872,
+                    "titulo": "Capítulo 2: Acto II: Normal"
+                },
+                {
+                    "inicio": 4735872,
+                    "fin": 7668907,
+                    "titulo": "Capítulo 3: Acto III: La maldición"
+                }
+            ]
         }
     ]
 }
