@@ -1433,5 +1433,12 @@
         "url": "https://ics-ex.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc/Venus.mpd",
         "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
         "key": "05d973d987915120e567880f50a422af"
+    },
+    {
+        "nombre": "canal12",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_ELDOCECORDOBA/playlist.mpd",
+        "keyId": "",
+        "key": ""
     }
 ]
