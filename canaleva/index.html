@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FR Channels TV</title>
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.7.12/dist/shaka-player.ui.js"></script>
+    <style>
+        body { font-family: sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; }
+        #main-container { display: flex; flex-direction: column; height: 100vh; }
+        #player-container { flex: 1; background-color: #000; display: flex; justify-content: center; align-items: center; }
+        video { width: 100%; height: 100%; }
+        #controls { padding: 10px; text-align: center; background-color: #1e1e1e; }
+        #controls button { background-color: #333; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        #controls button:hover { background-color: #555; }
+        #channels-container { display: flex; overflow-x: auto; background-color: #1e1e1e; padding: 10px; }
+        .cat-group { margin-right: 20px; }
+        .cat-header { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; color: #bb86fc; }
+        .ch-btn { display: block; background-color: #333; color: white; border: 1px solid #555; padding: 8px 12px; margin-bottom: 5px; cursor: pointer; width: 200px; text-align: left; border-radius: 5px; }
+        .ch-btn:hover { background-color: #bb86fc; color: #000; }
+        #epg-container { padding: 20px; background-color: #121212; border-top: 1px solid #333; display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="main-container">
+        <div id="player-container">
+            <video id="vid" autoplay controls></video>
+        </div>
+        <div id="controls">
+            <button id="show-epg-btn">Mostrar Grilla</button>
+        </div>
+        <div id="epg-container"></div>
+        <div id="channels-container"></div>
+    </div>
+
+    <script>
+        const D = document;
+        const VID_EL = D.getElementById('vid');
+        const CH_CONT = D.getElementById('channels-container');
+        const EPG_CONT = D.getElementById('epg-container');
+        const EPG_BTN = D.getElementById('show-epg-btn');
+        const JSON_URL = "https://ceosca.github.io/canaleva/canales.json";
+
+        let plr, currentCh;
+
+        const init = async () => {
+            await ldChs();
+            initPlr();
+            EPG_BTN.onclick = () => shwEpg();
+        };
+
+        const initPlr = () => {
+            shaka.polyfill.installAll();
+            if (!shaka.Player.isBrowserSupported()) {
+                console.error("Browser not supported!");
+                return;
+            }
+            plr = new shaka.Player(VID_EL);
+            plr.addEventListener('error', onPlrErr);
+        };
+
+        const ldChs = async () => {
+            try {
+                const res = await fetch(JSON_URL);
+                const data = await res.json();
+                const cats = {};
+                data.channels.forEach(ch => {
+                    if (!cats[ch.category]) {
+                        cats[ch.category] = [];
+                    }
+                    cats[ch.category].push(ch);
+                });
+
+                CH_CONT.innerHTML = '';
+                for (const catName in cats) {
+                    const catDiv = D.createElement('div');
+                    catDiv.className = 'cat-group';
+                    const catH = D.createElement('h2');
+                    catH.className = 'cat-header';
+                    catH.textContent = catName;
+                    catDiv.appendChild(catH);
+                    cats[catName].forEach(ch => {
+                        const btn = D.createElement('button');
+                        btn.className = 'ch-btn';
+                        btn.textContent = ch.name;
+                        btn.onclick = () => plyCh(ch);
+                        catDiv.appendChild(btn);
+                    });
+                    CH_CONT.appendChild(catDiv);
+                }
+            } catch (e) {
+                console.error("Error loading channels:", e);
+                CH_CONT.innerHTML = `<p style="color:red;">Error al cargar la lista de canales.</p>`;
+            }
+        };
+
+        const plyCh = (ch) => {
+            currentCh = ch;
+            let [uri, hdrs, drmCfg] = prsUrl(ch.url, ch);
+
+            plr.getNetworkingEngine().clearAllRequestFilters();
+            plr.getNetworkingEngine().registerRequestFilter((type, req) => {
+                if (type === shaka.net.NetworkingEngine.RequestType.MANIFEST) {
+                    for (const hdr in hdrs) {
+                        req.headers[hdr] = hdrs[hdr];
+                    }
+                }
+            });
+
+            plr.configure({ drm: { clearKeys: drmCfg } });
+            plr.load(uri).catch(onPlrErr);
+            EPG_CONT.style.display = 'none';
+        };
+        
+        const prsUrl = (url, ch) => {
+            let mUrl = url;
+            const rHdrs = {};
+            let drm = {};
+
+            if (mUrl.includes('?|')) {
+                const parts = mUrl.split('?|');
+                mUrl = parts[0];
+                const params = new URLSearchParams(parts[1]);
+                for (const [key, value] of params) {
+                   rHdrs[key] = value;
+                }
+            }
+            
+            if(ch.user_agent) rHdrs['User-Agent'] = ch.user_agent;
+
+            if (ch.drm_type === 'clearkey' && ch.drm_key) {
+                if (ch.drm_key.includes(':')) {
+                    const [kid, key] = ch.drm_key.split(':');
+                    drm[kid.replace(/-/g, '')] = key.replace(/-/g, '');
+                }
+            }
+            return [mUrl, rHdrs, drm];
+        };
+        
+        const onPlrErr = (err) => {
+            console.error('Player Error:', err.detail);
+        };
+
+        const shwEpg = () => {
+            if (!currentCh || !currentCh.epg_id) {
+                EPG_CONT.innerHTML = `<p>No hay información de EPG para este canal.</p>`;
+                EPG_CONT.style.display = 'block';
+                return;
+            }
+            EPG_CONT.innerHTML = `<p>Función de EPG no implementada. ID de EPG: ${currentCh.epg_id}</p>`;
+            EPG_CONT.style.display = 'block';
+        };
+
+        D.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
