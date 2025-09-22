@@ -1440,5 +1440,82 @@
         "url": "https://mediastore01.playme.com.ar/dash/CH_ELDOCECORDOBA/playlist.mpd",
         "keyId": "d214e556e2344bc7aaa08a6352a1d492",
         "key": "0e5b24a6867f287a75dbce24502d7f0d"
+    },
+    {
+        "nombre": "NexTV",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_NEXT/playlist.mpd",
+        "keyId": "aaf33eb1568e4a7693dc20eb249b5753",
+        "key": "36d4fa2290921f07bad1523ecf198834"
+    },
+    {
+        "nombre": "TN",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TN/playlist.mpd\n",
+        "keyId": "d5f49863d2f843219d84316c725cbbc9",
+        "key": "48e4ece770a97ea75bb702812c08abcf"
+    },
+    {
+        "nombre": "A24",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_AMERICA24/playlist.mpd",
+        "keyId": "da74d4c565014556b61110a0dc71e7f8",
+        "key": "a247dac6ade04074a15eb8f77fc10c20"
+    },
+    {
+        "nombre": "C5N",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_C5N/playlist.mpd",
+        "keyId": "e3dce2d9bf0d4575a3708c6487a6a450",
+        "key": "3df15714dd2daec26853562aa1762d53"
+    },
+    {
+        "nombre": "Cronica TV",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CRONICA/playlist.mpd",
+        "keyId": "1104e2efc15849e8a23d7ee7fbcbc720",
+        "key": "f0f423088ede1661e228163c6b4ca18b"
+    },
+    {
+        "nombre": "Canal 26",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_26TV/playlist.mpd",
+        "keyId": "cd51e13d4f814f28a0f78655e31feb21",
+        "key": "19dae699e660c7617ac28ace37d17742"
+    },
+    {
+        "nombre": "unife",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_UNIFE/playlist.mpd",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "América",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_AMERICA/playlist.mpd",
+        "keyId": "a78afaca42854720875a9dd5df582b9b",
+        "key": "ff6b0620f609008e80481a14c22d130b"
+    },
+    {
+        "nombre": "Telefe",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TELEFE/playlist.mpd",
+        "keyId": "b7188713fc9245c1862eb95c7ee6b0d3",
+        "key": "39da548204061a60743365e453ed4e1f"
+    },
+    {
+        "nombre": "TV Publica",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TVPUBLICA/playlist.mpd",
+        "keyId": "9f375beaf5834b469741d92d9f87f0e5",
+        "key": "7e473bd2e8488b1f93d075f86fb9e537"
+    },
+    {
+        "nombre": "El Trece",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CANAL13/playlist.mpd",
+        "keyId": "8dbf5b81eb92449488511b512e26a0d2",
+        "key": "b817d6edb15273e4c8c6f1a7fef26589"
     }
 ]
