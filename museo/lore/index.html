@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor</title>
+<style>body{font-family:sans-serif;background-color:#f0f0f0;display:flex;justify-content:center;align-items:center;height:100vh}.r-c{background-color:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.1);text-align:center}.r-c h2{margin-top:0;color:#333}.ctrls button{background-color:#8A0000;color:white;border:none;padding:10px 20px;margin:5px;cursor:pointer;border-radius:5px;font-size:16px;min-width:150px}.ctrls button:hover{background-color:#B70000}</style>
+</head>
+<body>
+<audio id="a_x"></audio>
+<div class="r-c">
+<h2>Descripción del Traje</h2>
+<p id="p_a">Pista actual: Cargando...</p>
+<div class="ctrls">
+<button id="b1">Reproducir</button>
+<button id="b2">Reiniciar Descripción</button>
+<button id="b3">Bajar Volumen</button>
+<button id="b4">Subir Volumen</button>
+</div>
+</div>
+<script>
+const pL=['index.wav','1.m4a','2.m4a','3.m4a'];
+let cI=0;
+const aX=document.getElementById('a_x');
+const b1=document.getElementById('b1');
+const b2=document.getElementById('b2');
+const b3=document.getElementById('b3');
+const b4=document.getElementById('b4');
+const pA=document.getElementById('p_a');
+function lP(i){aX.src=pL[i];aX.load();pA.textContent=`Pista actual: ${pL[i]}`;}
+function tP(){if(aX.paused){aX.play();b1.textContent='Pausar';}else{aX.pause();b1.textContent='Reproducir';}}
+function vU(){if(aX.volume<1.0){aX.volume=Math.min(1.0,aX.volume+0.1);}}
+function vD(){if(aX.volume>0.0){aX.volume=Math.max(0.0,aX.volume-0.1);}}
+function rD(){cI=0;lP(cI);aX.play();b1.textContent='Pausar';}
+function nP(){cI++;if(cI<pL.length){lP(cI);aX.play();}else{cI=0;lP(cI);b1.textContent='Reproducir';}}
+b1.addEventListener('click',tP);
+b2.addEventListener('click',rD);
+b3.addEventListener('click',vD);
+b4.addEventListener('click',vU);
+aX.addEventListener('ended',nP);
+window.onload=()=>{lP(cI);};
+</script>
+</body>
+</html>
