@@ -188,12 +188,12 @@
         {
             "category": "Córdoba",
             "name": "El Doce Córdoba",
-            "url": "https://cdn.sensa.com.ar/bpk-tv/Canal12cba/default/index.mpd?|referer=https://player.sensa.com.ar/&webtoken=1.0|User-Agent=Mozilla/5.0 (SMART-TV; LINUX; Tizen 6.0) AppleWebKit/537.36 (KHTML, like Gecko) 76.0.3809.146/6.0 TV Safari/537.36",
+            "url": "https://mediastore01.playme.com.ar/dash/CH_ELDOCECORDOBA/playlist.mpd",
             "number": 12,
             "epg_id": "135#El Doce CANAL 12 DE CORDOBA",
             "icon": "https://i.imgur.com/HfyKPpD.png",
             "drm_type": "clearkey",
-            "drm_key": "4c816a8c004ab857e53d7897c7c1db1b:a57bb2fbf55f52d9d827a04bbb531588"
+            "drm_key": "d214e556e2344bc7aaa08a6352a1d492:0e5b24a6867f287a75dbce24502d7f0d"
         },
         {
             "category": "Argentina",
