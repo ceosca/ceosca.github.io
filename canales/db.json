@@ -1,0 +1,898 @@
+[
+    {
+        "nombre": "NexTV",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_NEXT/playlist.mpd?csi=30643430613665612d303865642d343366612d613966612d323630613165336137663262235745422331373538353437343631",
+        "keyId": "aaf33eb1568e4a7693dc20eb249b5753",
+        "key": "36d4fa2290921f07bad1523ecf198834"
+    },
+    {
+        "nombre": "TN",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TN/playlist.mpd",
+        "keyId": "d5f49863d2f843219d84316c725cbbc9",
+        "key": "48e4ece770a97ea75bb702812c08abcf"
+    },
+    {
+        "nombre": "A24",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_AMERICA24/playlist.mpd",
+        "keyId": "da74d4c565014556b61110a0dc71e7f8",
+        "key": "a247dac6ade04074a15eb8f77fc10c20"
+    },
+    {
+        "nombre": "C5N",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_C5N/playlist.mpd",
+        "keyId": "e3dce2d9bf0d4575a3708c6487a6a450",
+        "key": "3df15714dd2daec26853562aa1762d53"
+    },
+    {
+        "nombre": "Crónica",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CRONICA/playlist.mpd",
+        "keyId": "1104e2efc15849e8a23d7ee7fbcbc720",
+        "key": "f0f423088ede1661e228163c6b4ca18b"
+    },
+    {
+        "nombre": "26 TV",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_26TV/playlist.mpd",
+        "keyId": "cd51e13d4f814f28a0f78655e31feb21",
+        "key": "19dae699e660c7617ac28ace37d17742"
+    },
+    {
+        "nombre": "Unife",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_UNIFE/playlist.mpd",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "América",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_AMERICA/playlist.mpd",
+        "keyId": "a78afaca42854720875a9dd5df582b9b",
+        "key": "ff6b0620f609008e80481a14c22d130b"
+    },
+    {
+        "nombre": "Telefe",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TELEFE/playlist.mpd",
+        "keyId": "b7188713fc9245c1862eb95c7ee6b0d3",
+        "key": "39da548204061a60743365e453ed4e1f"
+    },
+    {
+        "nombre": "TV Pública",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TVPUBLICA/playlist.mpd",
+        "keyId": "9f375beaf5834b469741d92d9f87f0e5",
+        "key": "7e473bd2e8488b1f93d075f86fb9e537"
+    },
+    {
+        "nombre": "El Trece",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CANAL13/playlist.mpd",
+        "keyId": "8dbf5b81eb92449488511b512e26a0d2",
+        "key": "b817d6edb15273e4c8c6f1a7fef26589"
+    },
+    {
+        "nombre": "Canal 9",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CANAL9/playlist.mpd",
+        "keyId": "cb0b1832d4814e4bb87473a18a455096",
+        "key": "a06da668a04359990549186e1ca8f378"
+    },
+    {
+        "nombre": "LN Más",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_LNPLUS/playlist.mpd",
+        "keyId": "013ebd274b2c40f79c0fa61635a3ec60",
+        "key": "8a0e53015a399eeacb1dfc75f1a8b11f"
+    },
+    {
+        "nombre": "Ciudad Magazine",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_MAGAZINE/playlist.mpd",
+        "keyId": "9d54a6773d5447f3a1470442b9d2fd92",
+        "key": "2eb77a2c84ddfc7ab6720912e9a03474"
+    },
+    {
+        "nombre": "Aunar",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_AUNAR/playlist.mpd",
+        "keyId": "4c47c2330d9a4a86924d31b1b060a7d8",
+        "key": "913a62e7b1dd82df806acf303bedb6f2"
+    },
+    {
+        "nombre": "IP Noticias",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_IPNOTICIAS/playlist.mpd",
+        "keyId": "3d646fece0c24db693bffe075893b964",
+        "key": "a67b42cd97716506b76552b48fda6c32"
+    },
+    {
+        "nombre": "Net TV",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_NETTV/playlist.mpd",
+        "keyId": "",
+        "key": ""
+    },
+    {
+        "nombre": "Vive TV",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_VIVETV/playlist.mpd",
+        "keyId": "4c37462a75f44f5b9813079d24aac428",
+        "key": "8b8dd91cab58e3e0524629166fb4dfa9"
+    },
+    {
+        "nombre": "Canal C",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_CANALC/playlist.mpd",
+        "keyId": "bd0d1cff5c724d4d9d9a39018f802471",
+        "key": "d8dd9240d959ac761b457065a3fe0fc7"
+    },
+    {
+        "nombre": "CNN Español",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CNNE/playlist.mpd",
+        "keyId": "2080cd2ea3524384bd95b9a59f2d3923",
+        "key": "e48f85dac72a741d9614259ce421a697"
+    },
+    {
+        "nombre": "CNN Internacional",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_CNNI/playlist.mpd",
+        "keyId": "3a3edbfbbb33427b841db3b711c07393",
+        "key": "d5d31bf6326b0d460442867a1ec2efb6"
+    },
+    {
+        "nombre": "Telemundo",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_TELEMUNDO/playlist.mpd",
+        "keyId": "d1de95d7d1b445159d397a3d5e531c98",
+        "key": "c90bc4c708a6044f60e89efbb397090c"
+    },
+    {
+        "nombre": "DW lat",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_DW/playlist.mpd",
+        "keyId": "ab75f3cb7aaa43f7b2edc710e51d8a60",
+        "key": "5d9813fd2fa1ed2d9c5324e14ea88c5b"
+    },
+    {
+        "nombre": "TVE",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_TVE/playlist.mpd",
+        "keyId": "393d6a4fa82d41a59622342c63f99649",
+        "key": "1b22c3179df54bfbb3b1c730da330053"
+    },
+    {
+        "nombre": "Rai",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_RAI/playlist.mpd",
+        "keyId": "32e41d5d7e994638a4e9ec37d5c472ff",
+        "key": "32d15af8870564e4560e6eca7b771086"
+    },
+    {
+        "nombre": "RT",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_RT/playlist.mpd",
+        "keyId": "80f9ba66a0654c7d985c2ff22951b29d",
+        "key": "e32ad9bb96a2c18905fc4b44fbf9c265"
+    },
+    {
+        "nombre": "Telesur",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TELESUR/playlist.mpd",
+        "keyId": "0000a0dac8844b46aafdb432ed61bd85",
+        "key": "5cd3550b3e53f2546d6bfa1eb0fddc2d"
+    },
+    {
+        "nombre": "Euronews",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_EURONEWS/playlist.mpd",
+        "keyId": "beab4c31cd4047fe9278e7640cffce40",
+        "key": "151aceec8172be67f3d36fbd20a217ba"
+    },
+    {
+        "nombre": "Rural",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_RURAL/playlist.mpd",
+        "keyId": "8217fc626aee4ed8a5b079be3591432d",
+        "key": "21c04034f07ecc13d6847a8fb4a6796f"
+    },
+    {
+        "nombre": "Fox Sports",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_FOXSPORTS/playlist.mpd",
+        "keyId": "ec9c173777b2486e9e80eaa51c3e2d38",
+        "key": "24aa223abcbc2dca14acda5cca4f257b"
+    },
+    {
+        "nombre": "Fox Sports 2",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_FOXSPORTS2/playlist.mpd",
+        "keyId": "12258ea9a53743a68c77403450181a8f",
+        "key": "d08e12e43729376201f59025c8cc2358"
+    },
+    {
+        "nombre": "Fox Sports 3",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_FOXSPORTS3/playlist.mpd",
+        "keyId": "b9067005d51b41d895b177cf2a303bf4",
+        "key": "c86fef1f25fd51d268f13d2e4f5cafe0"
+    },
+    {
+        "nombre": "ESPN",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ESPN/playlist.mpd",
+        "keyId": "4cc39a5ab8674285b6478e369bf16f07",
+        "key": "b6da3253edc7e4651c04740dd73ce251"
+    },
+    {
+        "nombre": "ESPN 2",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ESPN2/playlist.mpd",
+        "keyId": "825c1481d9ab4f249cddc0f376df0a6e",
+        "key": "68362d9ba77f543a1526744868ea0d90"
+    },
+    {
+        "nombre": "ESPN 3",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ESPN3/playlist.mpd",
+        "keyId": "5970f07242c44f0ab28382dc6fe0c7f9",
+        "key": "adeb7719ce25643f6155c4f91cc73e8c"
+    },
+    {
+        "nombre": "ESPN 4",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ESPN4/playlist.mpd",
+        "keyId": "ef1e86a9702c4741b22294415b3d249c",
+        "key": "ab7ecb4f98d199da26168504c30e0874"
+    },
+    {
+        "nombre": "NBA",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_NBA/playlist.mpd",
+        "keyId": "5a9ef67bfb4c4b7193ab2f44564746ff",
+        "key": "e14d11250f77a235d8bda293424bf82a"
+    },
+    {
+        "nombre": "Golf",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_GOLF/playlist.mpd",
+        "keyId": "2300fc4fe8ca47239ec1b4e5fc2dd286",
+        "key": "5b4fdae3c90c89649e5ac0c7675f630e"
+    },
+    {
+        "nombre": "PX sports",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_PXSPORTS/playlist.mpd",
+        "keyId": "fdde181620094961bd02556f61feda08",
+        "key": "5b6de91a3c0e73b85c1a1faac49eac1b"
+    },
+    {
+        "nombre": "TyC Sports",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TYCSPORTS/playlist.mpd",
+        "keyId": "e46730fb0f27431dbb19bbbff0007c0d",
+        "key": "99848caa9a91a5914d9e9ae4ae5f01af"
+    },
+    {
+        "nombre": "DeporTV",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_DEPORTV/playlist.mpd",
+        "keyId": "9f8bd58f71ce4713ab2f21a607b4d2f5",
+        "key": "cb8a6069572eade8342b986b97304963"
+    },
+    {
+        "nombre": "América Sports",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_AMERICASPORTS/playlist.mpd",
+        "keyId": "aaf99ceb41c644caa5666eb0ff4fc9e0",
+        "key": "595d9dc82fa98a4154afe32f1036bf48"
+    },
+    {
+        "nombre": "El Garage",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_ELGARAGE/playlist.mpd",
+        "keyId": "d214e556e2344bc7aaa08a6352a1d492",
+        "key": "0e5b24a6867f287a75dbce24502d7f0d"
+    },
+    {
+        "nombre": "Pakapaka",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_PAKAPAKA/playlist.mpd",
+        "keyId": "443d3ab4a9be499d938d8d8bd34a4edc",
+        "key": "f5b50ea466bec117491c3d2435dffbfa"
+    },
+    {
+        "nombre": "Zoomoo",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_ZOOMOO/playlist.mpd",
+        "keyId": "75ad916e3e454401a902761d2a614b66",
+        "key": "db0c9602d8e2319db1413e88f3cdc811"
+    },
+    {
+        "nombre": "Disney Junior",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_DISNEYJR/playlist.mpd",
+        "keyId": "ab3f16ca18784da5bfc10384b5293bad",
+        "key": "f0bc866b33c8c8366c41707684e65706"
+    },
+    {
+        "nombre": "Disney Channel",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_DISNEYCHANNEL/playlist.mpd",
+        "keyId": "74126bc8bd6d44aba05e87af592f5fa4",
+        "key": "e4dd17fcd8971d7b79d66ae0c223c7dc"
+    },
+    {
+        "nombre": "Dreamworks",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_DREAMWORKS/playlist.mpd",
+        "keyId": "7da562188aa048b8b74802b09bb26cd7",
+        "key": "3d9ea3039676dfbdeec876b00cb0bdb1"
+    },
+    {
+        "nombre": "Nickelodeon",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_NICKELODEON/playlist.mpd",
+        "keyId": "80fc19b967ae45b4a7401cd0c0cfb88d",
+        "key": "3b6b61795e2484b7a1706d51a196389b"
+    },
+    {
+        "nombre": "Nick Junior",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_NICKJR/playlist.mpd",
+        "keyId": "638eab4572834bc29deb36eb14a03a92",
+        "key": "f47d9f97a60a882251ee588b9796b670"
+    },
+    {
+        "nombre": "Cartoon Network",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_CARTOONNETWORK/playlist.mpd",
+        "keyId": "2c5ff937c14648db88e4401eb1f262e5",
+        "key": "6e89da7bed21646f12b068ea1cf8b886"
+    },
+    {
+        "nombre": "Cartoonito",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CARTOONITO/playlist.mpd",
+        "keyId": "8ccffb3b71284b628f2b3a153e236135",
+        "key": "539c7567be915cd8b4cb9a6daf6f43ec"
+    },
+    {
+        "nombre": "Tooncast",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_TOONCAST/playlist.mpd",
+        "keyId": "41684a65fecf450693708a10b5a04bbe",
+        "key": "9dc3d3fe40cd05669395391853b97196"
+    },
+    {
+        "nombre": "Discovery Kids",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_DISCOVERYKIDS/playlist.mpd",
+        "keyId": "c06f8e39d8104d578b2219495fb869a3",
+        "key": "c4b0ce9b84127b911b4f8398b7f46562"
+    },
+    {
+        "nombre": "Sony",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_SONY/playlist.mpd",
+        "keyId": "ca29cf64546f4c23b722d057f78af310",
+        "key": "196b795f1bc7df15e924fb4cc2fc8082"
+    },
+    {
+        "nombre": "Warner",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_WARNER/playlist.mpd",
+        "keyId": "6aea61725fc540108138005b398c55a1",
+        "key": "96f6e78601ab085871d11d6d54a2f78d"
+    },
+    {
+        "nombre": "AXN",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_AXN/playlist.mpd",
+        "keyId": "23cb414000424f949741c247dc663032",
+        "key": "a76f3c7ff34103a24ee4f168ac61075a"
+    },
+    {
+        "nombre": "FX",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_FX/playlist.mpd",
+        "keyId": "4199e804f9c5414893a539a067330d1e",
+        "key": "b8b494e467aae6954b5a20bc50b07f4d"
+    },
+    {
+        "nombre": "Star Channel",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_STARCHANNEL/playlist.mpd",
+        "keyId": "2b70eecd6d2448c2b9624e5617001128",
+        "key": "b22329ea940a0638d5f1c734848f39df"
+    },
+    {
+        "nombre": "Universal",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_UNIVERSAL/playlist.mpd",
+        "keyId": "408116f69dfa4f468f6c4cdbc97f324a",
+        "key": "b9df40e75b8fc3baacd8f21171b3a6e0"
+    },
+    {
+        "nombre": "Studio Universal",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_STUDIOUNIVERSAL/playlist.mpd",
+        "keyId": "08ce5fec851e435aa349c3c73ccaf25b",
+        "key": "b608e0fe47e1775cdca602fa1206ab67"
+    },
+    {
+        "nombre": "TNT Series",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_TNTSERIES/playlist.mpd",
+        "keyId": "387b2334c4ac4039994ae3c4892eb4f7",
+        "key": "18a2b0e892d14ea682281453100096ba"
+    },
+    {
+        "nombre": "AMC",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_AMC/playlist.mpd",
+        "keyId": "8b2f26ba6d7441019aeb09949ecaf232",
+        "key": "9858f285c3f20a73ccf632c9033dd8f2"
+    },
+    {
+        "nombre": "TNT Novelas",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_TNTNOVELAS/playlist.mpd",
+        "keyId": "57f751d25c1e4ee69f9482e0b88a253c",
+        "key": "a050ac526b9ffc20d3436f7401456d93"
+    },
+    {
+        "nombre": "Space",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_SPACE/playlist.mpd",
+        "keyId": "3e9e00f933fd4a6fa7d1d2e78db97969",
+        "key": "3f7d18d0cf2e236386a9dff43d92264b"
+    },
+    {
+        "nombre": "TNT",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_TNT/playlist.mpd",
+        "keyId": "81330ca6d350457ea74d00f42a2c6a14",
+        "key": "82640762d981b573f8ce7d9ea112818a"
+    },
+    {
+        "nombre": "Cinemax",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_CINEMAX/playlist.mpd",
+        "keyId": "a2c373839adc42058fef771f91c79df1",
+        "key": "92081afca9993662d61ae78ea044f832"
+    },
+    {
+        "nombre": "Cinecanal",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CINECANAL/playlist.mpd",
+        "keyId": "0b07785e749f48e18289e2b383e7bb1b",
+        "key": "cfc4ee051f98bb0fcd29e3cdd9474212"
+    },
+    {
+        "nombre": "Sonymovies",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_SONYMOVIES/playlist.mpd",
+        "keyId": "2e7d7e29ebbd49e9ac5691c0bd541854",
+        "key": "a5fd1d3404577764129f0398ed75a5c6"
+    },
+    {
+        "nombre": "Paramount",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_PARAMOUNT/playlist.mpd",
+        "keyId": "d89ad53f51194451b3fadcf348317857",
+        "key": "40787015418d850ab789496c6fb3c3b0"
+    },
+    {
+        "nombre": "Comedy Central",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_COMEDYCENTRAL/playlist.mpd",
+        "keyId": "e2eeb9d81d6749f7a950553412eda35d",
+        "key": "75c36d905d9a41fe6521f4aa9927795d"
+    },
+    {
+        "nombre": "Usa Network",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_USA_NETWORK/playlist.mpd",
+        "keyId": "7c3aeeac0ace488a8bd9fe8b1781caec",
+        "key": "b0aa9f88360256e956066eccd473006d"
+    },
+    {
+        "nombre": "Europa Europa",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_EUROPAEUROPA/playlist.mpd",
+        "keyId": "5420478e093e4480b32e585465caa94d",
+        "key": "93539a93934917cbe20e695d396a9625"
+    },
+    {
+        "nombre": "Euro channel",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_EUROCHANNEL/playlist.mpd",
+        "keyId": "ece4b8f9a49042fdb5264675bdfe665b",
+        "key": "32978ff0fec2a06b8a7449394fbc225b"
+    },
+    {
+        "nombre": "TCM",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_TCM/playlist.mpd",
+        "keyId": "568f5e47fbc945c2950400a86ef0693b",
+        "key": "1df84a282e656b591daad9c855aebece"
+    },
+    {
+        "nombre": "Cine AR",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CINE.AR/playlist.mpd",
+        "keyId": "e34f8dd1bb42400b8d44c0d82a33d591",
+        "key": "136181a3e7c3d6136e7d037c5783947c"
+    },
+    {
+        "nombre": "Volver",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_VOLVER/playlist.mpd",
+        "keyId": "a29696041e6f468f85d4dad0f93bd51c",
+        "key": "79935c724bfa4a4116e49d845c4804f6"
+    },
+    {
+        "nombre": "HBO",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBO/playlist.mpd",
+        "keyId": "8dcfff21473c44f98408fdc89089d9fd",
+        "key": "4101fca4b12861c60c8ce2de4c011678"
+    },
+    {
+        "nombre": "HBO 2",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBO2/playlist.mpd",
+        "keyId": "672fbd549e5c49b1a832fca5fd9a77cf",
+        "key": "e7cd4fa898ea7459ae2d2c7319741da7"
+    },
+    {
+        "nombre": "HBO Pop",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBOPOP/playlist.mpd",
+        "keyId": "4562cd3d525348f5baf6b2219225b43d",
+        "key": "e52a9b004b2bddbe1759b6681fe26033"
+    },
+    {
+        "nombre": "HBO Xtreme",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBOXTREME/playlist.mpd",
+        "keyId": "943adbd7239445ea83882587c6e1dcd7",
+        "key": "d38b2289d3fcce9091c8e2a67852a7c1"
+    },
+    {
+        "nombre": "HBO Plus",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBOPLUS/playlist.mpd",
+        "keyId": "9303797aeb0f467a99f73ff84469926e",
+        "key": "f61006fbd439eb7e0d9f873f36936ee5"
+    },
+    {
+        "nombre": "HBO Family",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBOFAMILY/playlist.mpd",
+        "keyId": "53a96afe77934a17b67b82f522ba2521",
+        "key": "28eeb7c54ca182c1d92d4c42f2c1ee1a"
+    },
+    {
+        "nombre": "HBO Signature",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBOSIGNATURE/playlist.mpd",
+        "keyId": "c266941fb11b459eab073aed929c3842",
+        "key": "7fbb5e4eba2e561499a5af9c9ee4fb97"
+    },
+    {
+        "nombre": "HBO Mundi",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HBOMUNDI/playlist.mpd",
+        "keyId": "3eba0bcecaf94df78b912dc4bf7ab9f4",
+        "key": "908a8dd956ac427711fbe40e1a15e940"
+    },
+    {
+        "nombre": "El Gourmet",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ELGOURMET/playlist.mpd",
+        "keyId": "9c097ed525724b3fae1b1aca4e48ff7b",
+        "key": "803c37158a1c1f1180635a9c56d71c67"
+    },
+    {
+        "nombre": "Discovery TLC",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TLC/playlist.mpd",
+        "keyId": "d996da2a78b3489f8e4d6daf04b2460c",
+        "key": "4bbb160a1bb5ac9824f826d5ba14c006"
+    },
+    {
+        "nombre": "A E",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_A_E/playlist.mpd",
+        "keyId": "a87970b6b0994a6b9409476676d6f89d",
+        "key": "066b61571378fe95578a6cce77a95710"
+    },
+    {
+        "nombre": "Food Network",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_FOODNETWORK/playlist.mpd",
+        "keyId": "85a45fed76534a03b00880622fc843af",
+        "key": "1dbd2e94334463cf0743ff6681bb73dd"
+    },
+    {
+        "nombre": "HGTV",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_HGTV/playlist.mpd",
+        "keyId": "7e674c3c46364adb98789a87b29d21d1",
+        "key": "3cec9cdd35e2c62012382a464b8ba334"
+    },
+    {
+        "nombre": "Hola TV",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HOLATV/playlist.mpd",
+        "keyId": "2fd6c951f6cf4093b1413dfd228e5e2b",
+        "key": "02a6d1e6516c2b5a4ca3973e1f904625"
+    },
+    {
+        "nombre": "Discovery Home and Health",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HOMEANDHEALTH/playlist.mpd",
+        "keyId": "eededd4684f741918e8c6f0b38775300",
+        "key": "a48690207508c5293c254255078f9e84"
+    },
+    {
+        "nombre": "Mas Chic",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_MASCHIC/playlist.mpd",
+        "keyId": "0cead8f4a19042b48003e6aad72a5173",
+        "key": "949fcb920cee1bc2e58106f53bbade50"
+    },
+    {
+        "nombre": "Lifetime",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_LIFETIME/playlist.mpd",
+        "keyId": "040e2070170f4aca885114de950458e4",
+        "key": "7bd3b09bfe3182667d46554e7db445bd"
+    },
+    {
+        "nombre": "Adult Swim",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ADULTSWIM/playlist.mpd",
+        "keyId": "a1c821316a324cd6867550ea3f87d7e4",
+        "key": "8c8132cf7851c138bc38379117b27ec1"
+    },
+    {
+        "nombre": "e!",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_E/playlist.mpd",
+        "keyId": "f15493072a4b4fc880327db9d785142a",
+        "key": "1706e8000dd78a7da2805ea2a0860d04"
+    },
+    {
+        "nombre": "El Canal De Las Estrellas",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_CANALDELASESTRELLAS/playlist.mpd",
+        "keyId": "bd83eb8f95324d5e860feaa6b81d92b8",
+        "key": "10827f46d653860037152f924c691f96"
+    },
+    {
+        "nombre": "Canal A",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CANAL_A/playlist.mpd",
+        "keyId": "b4964aa3c0a34b9c9f07e01cfd9d0b17",
+        "key": "eca3dc5eb0355fdbe2f50fc8021e89ad"
+    },
+    {
+        "nombre": "Film Arts",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_FILMANDARTS/playlist.mpd",
+        "keyId": "dca9d4ef35e7482888f7158752f5f480",
+        "key": "19c124be90c004f587dda6678919aea2"
+    },
+    {
+        "nombre": "HTV",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_HTV/playlist.mpd",
+        "keyId": "00b8d835256c41af96173235036dc82c",
+        "key": "7e5a5e6a9265a67b9199178b0106efdf"
+    },
+    {
+        "nombre": "Club MTV",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CLUBMTV/playlist.mpd",
+        "keyId": "69e34d76c4494d569e9d2d277b797add",
+        "key": "0b19577d020da2a8054e6b9a5d8a3fb2"
+    },
+    {
+        "nombre": "CM",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_CANALDELAMUSICA/playlist.mpd",
+        "keyId": "829c7109eaeb4990adef12d3279327e0",
+        "key": "24b352dff24729232f48792de4ae4f72"
+    },
+    {
+        "nombre": "MTV",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_MTV/playlist.mpd",
+        "keyId": "49f9ec3a408c44a0803e6d94acedc925",
+        "key": "fb296bd736550c1b3abb8594712ad852"
+    },
+    {
+        "nombre": "MTV Hits",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_MTVHITS/playlist.mpd",
+        "keyId": "7d66b9c62a5a4e3c96ba9a29777b8d76",
+        "key": "d1852eaf729e19d100596dc077bf5270"
+    },
+    {
+        "nombre": "Nick Music",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_NICKMUSIC/playlist.mpd",
+        "keyId": "028c31ac2667465ab675b55f8514a001",
+        "key": "3ff5c972361657959c1afb5f3d461603"
+    },
+    {
+        "nombre": "MTV 80s",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_MTV80S/playlist.mpd",
+        "keyId": "f09dc9cf250d4a10a2fa08ddd573cb3b",
+        "key": "785a378db02f733adf591b187c4d0a8b"
+    },
+    {
+        "nombre": "Quiro Música",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_QMUSICA/playlist.mpd",
+        "keyId": "cc176a2872a749b1baffd05983a6cd82",
+        "key": "31914939ae7994fc60b0edaf146c70c6"
+    },
+    {
+        "nombre": "Discovery Channel",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_DISCOVERYCHANNEL/playlist.mpd",
+        "keyId": "404b9905d076475bae72ad9c480a3ffb",
+        "key": "8d87d40cc82c4a9efad7728fa71f1d73"
+    },
+    {
+        "nombre": "Discovery Theater",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_DISCOVERYTHEATER/playlist.mpd",
+        "keyId": "11635ff5842c4ee28d93592f0a6c5bd0",
+        "key": "023cb85af2ef0a226724017313e48d17"
+    },
+    {
+        "nombre": "discovery World",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_DISCOVERYWORLD/playlist.mpd",
+        "keyId": "3432116484924a6da52373da9838ff18",
+        "key": "eea07cfd07834807094837a7fac3f774"
+    },
+    {
+        "nombre": "Discovery Science",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_DISCOVERYSCIENCE/playlist.mpd",
+        "keyId": "6bbdd4f0caaf481cb44d8851a707566e",
+        "key": "dffaddca89f1bc07cae678215645d1a5"
+    },
+    {
+        "nombre": "Discovery ID",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_IDINVESTIGATION/playlist.mpd",
+        "keyId": "bfd3a07182b84ef692bf602e4862d1e4",
+        "key": "4cdd4f8d14afff237c9a5e053347b7ea"
+    },
+    {
+        "nombre": "Discovery Turbo",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_DISCOVERYTURBO/playlist.mpd",
+        "keyId": "6a5dca41ee2f47108a2de15a4bdeb71f",
+        "key": "79911fab12fbcaf8d1c780af88252ca9"
+    },
+    {
+        "nombre": "History",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_HISTORY/playlist.mpd",
+        "keyId": "9795cda20f2c4615ba38fad3e56f75a0",
+        "key": "36c351073f639de77a471c3bbff5f5e4"
+    },
+    {
+        "nombre": "History 2",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_HISTORY2/playlist.mpd",
+        "keyId": "99fc5fedc8d54df2bf7598ae21cb0f0e",
+        "key": "364dccdcc9c9073c1e2ea6380c7593de"
+    },
+    {
+        "nombre": "Nat Geo",
+        "categoria": "",
+        "url": "https://mediastore01.playme.com.ar/dash/CH_NATIONALGEO/playlist.mpd",
+        "keyId": "4eb7443c5c1742dd9e03394ad2870ed1",
+        "key": "d4da065b37b7ebb436540fa6842ecaaf"
+    },
+    {
+        "nombre": "Animal Planet",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ANIMALPLANET/playlist.mpd",
+        "keyId": "224e96c43e4745d2abd463326584b39d",
+        "key": "a77ffbe62498f23cd13a778579a11d6e"
+    },
+    {
+        "nombre": "Tecnopolis",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_TECNOPOLIS/playlist.mpd",
+        "keyId": "158a419b45194da681dfb43fad986e73",
+        "key": "19d16530597094bc61a37bd6fbd342c5"
+    },
+    {
+        "nombre": "Encuentro",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_ENCUENTRO/playlist.mpd",
+        "keyId": "3836904ad97d4b7d9d447ebf513ae0e7",
+        "key": "837dec62c4f24ee4ad41399fc635e03e"
+    },
+    {
+        "nombre": "EWTN",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_EWTN/playlist.mpd",
+        "keyId": "e27f3c85ca1c42b288c52a99813c9752",
+        "key": "5f763e9b5a8db7dbe5d8b1e9cb590b54"
+    },
+    {
+        "nombre": "Canal Luz",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_CANALLUZ/playlist.mpd",
+        "keyId": "cedc5bb7146547729b5f6587fcfc55a4",
+        "key": "abe83710658e59e8b36b231b640b516b"
+    },
+    {
+        "nombre": "Mitre",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_RADIO_MITRE/playlist.mpd",
+        "keyId": "577e403310754c598f808ca04295627c",
+        "key": "454281157401ca1aef979f12b81bbed1"
+    },
+    {
+        "nombre": "KZO",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_RADIO_KZO/playlist.mpd",
+        "keyId": "60ee658ab0124a67a9396ac9dd30651b",
+        "key": "e0c20d399579efca9c25c85df5135bf1"
+    },
+    {
+        "nombre": "Vorterix",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_RADIO_VORTERIX/playlist.mpd",
+        "keyId": "ed5e3f7b1daa46cab385f454449361d0",
+        "key": "925b8f9fad23a1d831c2103a528e6034"
+    },
+    {
+        "nombre": "Continental",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_RADIO_CONTINENTAL/playlist.mpd",
+        "keyId": "148ac72331d54a3ba381abcb4643d6c4",
+        "key": "18aa3d5ca09273db341689b73c0e5819"
+    },
+    {
+        "nombre": "MTV Digital",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_MTVDIGITAL/playlist.mpd",
+        "keyId": "8619d2a0d03d43c9ae3be866fce9e15e",
+        "key": "f1f79c37ce48aae67d6a3a309c0662cb"
+    },
+    {
+        "nombre": "Radio 10",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_AM710/playlist.mpd",
+        "keyId": "8619d2a0d03d43c9ae3be866fce9e15e",
+        "key": "f1f79c37ce48aae67d6a3a309c0662cb"
+    },
+    {
+        "nombre": "AM 870",
+        "categoria": "",
+        "url": "https://mediastore02.playme.com.ar/dash/CH_AM870/playlist.mpd",
+        "keyId": "454b93ff33d34794b22a7d691b517ff4",
+        "key": "46b52c154c2a59757468cd48f1d86562"
+    }
+]
