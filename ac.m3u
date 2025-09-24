@@ -28,7 +28,7 @@ https://broker.cdn.rcs.net.ar/mnp/c5n_hls/audio_3/playlist.m3u8
 https://broker.cdn.rcs.net.ar/mnp/cronica_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Noticias" tvg-name="IP Noticias",IP Noticias
-https://broker.cdn.rcs.net.ar/mnp/ip_hls/audio_3/playlist.m3u8
+https://broker.cdn.rcs.net.ar/mnp/ip_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Noticias" tvg-name="LN +",LN +
 https://broker.cdn.rcs.net.ar/mnp/lnmas_hls/audio_4/playlist.m3u8
