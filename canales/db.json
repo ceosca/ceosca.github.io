@@ -661,8 +661,8 @@
         "nombre": "Adult Swim",
         "categoria": "",
         "url": "https://mediastore02.playme.com.ar/dash/CH_ADULTSWIM/playlist.mpd",
-        "keyId": "a1c821316a324cd6867550ea3f87d7e4",
-        "key": "8c8132cf7851c138bc38379117b27ec1"
+        "keyId": "a29696041e6f468f85d4dad0f93bd51c",
+        "key": "79935c724bfa4a4116e49d845c4804f6"
     },
     {
         "nombre": "e!",
@@ -894,5 +894,12 @@
         "url": "https://mediastore02.playme.com.ar/dash/CH_AM870/playlist.mpd",
         "keyId": "454b93ff33d34794b22a7d691b517ff4",
         "key": "46b52c154c2a59757468cd48f1d86562"
+    },
+    {
+        "nombre": "tyc",
+        "categoria": "",
+        "url": "http://200.12.41.194:8000/play/a00i/index.m3u8",
+        "keyId": "",
+        "key": ""
     }
 ]
