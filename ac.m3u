@@ -154,7 +154,7 @@ https://broker.cdn.rcs.net.ar/mnp/j26j2rzpt800000288vtpyar1sx5a31e_hls/audio_4/p
 https://broker.cdn.rcs.net.ar/mnp/europa_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Cine y Series" tvg-name="TNT Novelas",TNT Novelas
-https://broker.cdn.rcs.net.ar/mnp/tntnovelas_hls/audio_3/playlist.m3u8
+https://broker.cdn.rcs.net.ar/mnp/tntnovelas_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Cine y Series" tvg-name="TCM",TCM
 https://broker.cdn.rcs.net.ar/mnp/tcm_hls/audio_4/playlist.m3u8
@@ -169,7 +169,7 @@ https://broker.cdn.rcs.net.ar/mnp/universal_hls/audio_4/playlist.m3u8
 https://broker.cdn.rcs.net.ar/mnp/st_universal_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Culturales" tvg-name="Lifetime",Lifetime
-https://broker.cdn.rcs.net.ar/mnp/lifetime_hls/audio_3/playlist.m3u8
+https://broker.cdn.rcs.net.ar/mnp/lifetime_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Cine y Series" tvg-name="Adult Swim",Adult Swim
 https://broker.cdn.rcs.net.ar/mnp/trutv_hls/audio_3/playlist.m3u8
@@ -208,7 +208,7 @@ https://broker.cdn.rcs.net.ar/mnp/dsc_tlc_hls/audio_4/playlist.m3u8
 https://broker.cdn.rcs.net.ar/mnp/telemundo_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Nacionales" tvg-name="Rural",Rural
-https://broker.cdn.rcs.net.ar/mnp/rural_hls/audio_3/playlist.m3u8
+https://broker.cdn.rcs.net.ar/mnp/rural_hls/audio_4/playlist.m3u8
 
 #EXTINF:-1 group-title="Nacionales" tvg-name="Argentinisima Satelital",Argentinisima Satelital
 https://broker.cdn.rcs.net.ar/mnp/arg_sat_hls/audio_4/playlist.m3u8
