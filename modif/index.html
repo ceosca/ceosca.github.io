@@ -16,11 +16,10 @@
         .sl{list-style-type:none;padding:0}
         .sl li{margin-bottom:10px}
         .sl button{width:100%;text-align:left;font-size:1.1em;display:block}
-        .m{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:1em}
-        .mc{background-color:var(--w);width:100%;max-width:90vw;max-height:90vh;border-radius:10px;display:flex;flex-direction:column;overflow:hidden;position:relative}
-        .fh{position:sticky;top:0;background-color:var(--w);padding:10px 20px;z-index:2;box-shadow:0 2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-between;align-items:center;width:100%;flex-shrink:0}
-        .m-main{overflow-y:auto;padding:20px;flex-grow:1}
-        .fp{position:sticky;bottom:0;background-color:#f0f0f0;padding:10px;z-index:2;box-shadow:0 -2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;flex-shrink:0}
+        .view-hidden{display:none !important}
+        #player-view{padding-top:80px;padding-bottom:180px;position:relative}
+        .fh{position:fixed;top:0;left:0;width:100%;background-color:var(--w);padding:10px 20px;z-index:2;box-shadow:0 2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-between;align-items:center}
+        .fp{position:fixed;bottom:0;left:0;width:100%;background-color:#f0f0f0;padding:10px;text-align:center;z-index:2;box-shadow:0 -2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap}
         .fp button{background-color:#555;color:var(--w);transition:background-color .3s;font-size:.9em;padding:8px 12px;margin-bottom:5px}
         .fp button:hover{background-color:#777}
         .fp #ti,.fp #ci{font-size:.8em;color:var(--tc);width:100%;text-align:center;order:-1}
@@ -35,8 +34,6 @@
             h2{font-size:1.5em}
             .c{padding:10px}
             .sl button{padding:12px 15px;font-size:1em}
-            .m{padding:.5em}
-            .mc{max-width:95vw;max-height:95vh}
         }
         #as{margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #eee;text-align:center}
         #as p{margin-bottom:10px}
@@ -59,74 +56,74 @@
     </style>
 </head>
 <body>
-    <div class="c">
-        <div id="as">
-            <p>¡te doy la bienvenida! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, </p>
-            <button id="gsi" class="b">Inicia sesión con Google</button>
-            <button id="so" class="b h">Cerrar sesión</button>
-        </div>
-        <div id="selector-series">
-            <h2>¿Qué quieres escuchar?</h2>
-            <ul>
-                <li><a href="#" id="en-espanol">Series en español original</a></li>
-                <li><a href="#" id="con-doblaje">Series con doblaje</a></li>
-            </ul>
-        </div>
-        <div id="mc">
-            <main>
-                <div id="cw" class="h">
-                    <h2>Continuar escuchando</h2>
-                    <ul id="cwl"></ul>
-                </div>
-                <div id="usac">
-                    <h2>Últimas Series Agregadas</h2>
-                    <ul id="usal" class="sl"></ul> 
-                </div>
-                <div id="t10smv-c"> 
-                    <h2>Las 10 series más escuchadas</h2>
-                    <ul id="t10l" class="sl"></ul> 
-                </div>
-                <div id="coc"></div>
-            </main>
+    <div id="list-view">
+        <div class="c">
+            <div id="as">
+                <p>¡te doy la bienvenida! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, </p>
+                <button id="gsi" class="b">Inicia sesión con Google</button>
+                <button id="so" class="b h">Cerrar sesión</button>
+            </div>
+            <div id="selector-series">
+                <h2>¿Qué quieres escuchar?</h2>
+                <ul>
+                    <li><a href="#" id="en-espanol">Series en español original</a></li>
+                    <li><a href="#" id="con-doblaje">Series con doblaje</a></li>
+                </ul>
+            </div>
+            <div id="mc">
+                <main>
+                    <div id="cw" class="h">
+                        <h2>Continuar escuchando</h2>
+                        <ul id="cwl"></ul>
+                    </div>
+                    <div id="usac">
+                        <h2>Últimas Series Agregadas</h2>
+                        <ul id="usal" class="sl"></ul> 
+                    </div>
+                    <div id="t10smv-c"> 
+                        <h2>Las 10 series más escuchadas</h2>
+                        <ul id="t10l" class="sl"></ul> 
+                    </div>
+                    <div id="coc"></div>
+                </main>
+            </div>
         </div>
     </div>
 
-    <div id="sM" class="m" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-modal="true">
-        <div class="mc" role="document">
-            <header class="fh">
-                <h2 id="modal-title">Detalles de la Serie</h2>
-                <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
-            </header>
-            <main class="m-main">
-                <div id="si" aria-live="polite"></div>
-                <section class="tc h" id="tasc">
-                    <label for="t">Temporada:</label>
-                    <select id="t"></select>
-                </section>
-                <audio id="ap">Audio no soportado.</audio>
-                <h2>Reproductor</h2>
-            </main>
-            <footer class="fp">
-                <div id="ci"></div>
-                <div id="ti"></div>
-                <button id="ppb" class="b" aria-label="Reproducir/Pausar (Alt + K)">Reproducir</button>
-                <button id="fb" class="b" aria-label="Avanzar 15 segundos (Alt + L)">Avanzar</button>
-                <button id="bb" class="b" aria-label="Retroceder 15 segundos (Alt + J)">Retroceder</button>
-                <button id="reb" class="b" aria-label="Reiniciar episodio (Alt + R)">Reiniciar episodio</button>
-                <button id="ncb" class="b" aria-label="Siguiente episodio (Alt + S)">Siguiente episodio</button>
-                <button id="pcb" class="b" aria-label="Episodio anterior (Alt + A)">Episodio anterior</button>
-                <button id="ivb" class="b" aria-label="Subir volumen (Alt + O)">Subir volumen</button>
-                <button id="dvb" class="b" aria-label="Bajar volumen (Alt + U)">Bajar volumen</button>
-                <section class="ec" id="easc">
-                    <label for="c">Capítulo:</label>
-                    <select id="c"></select>
-                </section>
-                <section class="lc h" id="lasc">
-                    <label for="l">Pista de audio:</label>
-                    <select id="l"></select>
-                </section>
-            </footer>
-        </div>
+    <div id="player-view" class="view-hidden">
+        <header class="fh">
+            <h2 id="modal-title">Detalles de la Serie</h2>
+            <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
+        </header>
+        <main class="c">
+            <div id="si" aria-live="polite"></div>
+            <section class="tc h" id="tasc">
+                <label for="t">Temporada:</label>
+                <select id="t"></select>
+            </section>
+            <audio id="ap">Audio no soportado.</audio>
+            <h2>Reproductor</h2>
+        </main>
+        <footer class="fp">
+            <div id="ci"></div>
+            <div id="ti"></div>
+            <button id="ppb" class="b" aria-label="Reproducir/Pausar (Alt + K)">Reproducir</button>
+            <button id="fb" class="b" aria-label="Avanzar 15 segundos (Alt + L)">Avanzar</button>
+            <button id="bb" class="b" aria-label="Retroceder 15 segundos (Alt + J)">Retroceder</button>
+            <button id="reb" class="b" aria-label="Reiniciar episodio (Alt + R)">Reiniciar episodio</button>
+            <button id="ncb" class="b" aria-label="Siguiente episodio (Alt + S)">Siguiente episodio</button>
+            <button id="pcb" class="b" aria-label="Episodio anterior (Alt + A)">Episodio anterior</button>
+            <button id="ivb" class="b" aria-label="Subir volumen (Alt + O)">Subir volumen</button>
+            <button id="dvb" class="b" aria-label="Bajar volumen (Alt + U)">Bajar volumen</button>
+            <section class="ec" id="easc">
+                <label for="c">Capítulo:</label>
+                <select id="c"></select>
+            </section>
+            <section class="lc h" id="lasc">
+                <label for="l">Pista de audio:</label>
+                <select id="l"></select>
+            </section>
+        </footer>
     </div>
     <div id="acc-info" aria-live="polite"></div>
 
@@ -140,9 +137,9 @@
         gSI = document.getElementById('gsi'),sO = document.getElementById('so'),   
         EEL = document.getElementById('en-espanol'),CDL = document.getElementById('con-doblaje'),
         SDP1 = 'https://ceosca.github.io/',SDP2 = 'series/series.json',SDP3 = 'series/doblaje.json',
-        A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),M = document.getElementById("sM"),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
+        A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
         T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal", ACCI = document.getElementById('acc-info'), VSS_KEY = 'vsis',
-        MAIN_CONTENT = document.querySelector('.c');
+        listView = document.getElementById('list-view'), playerView = document.getElementById('player-view');
         
     let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VSSS = new Set();
     let isUCWRunning = !1, isCSRSRunning = !1;
@@ -162,9 +159,8 @@
     const GP=async()=>{if(!S||!auth.currentUser)return;const t=A.currentTime;const nbs=GNB(S.nombre);const cgi=MTSLCG(S,CCL,TS_C);try{const u=auth.currentUser;const p={serieNombreBase:nbs,capituloGlobalIndex:cgi,tiempo:t,idiomaIndex:CLI,serieTemporadaActualNombre:S.nombre,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`),p);UCW()}catch(e){}};
     const RP=async nbs=>{if(!auth.currentUser||!TS_C||TS_C.length===0)return !1;try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`));if(dS.exists()){const d=dS.data();const{stp,ccl}=MCGLTSL(nbs,d.capituloGlobalIndex,TS_C);if(stp){S=stp;CCL=ccl;A.currentTime=d.tiempo;CLI=d.idiomaIndex||0;if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0){TS.value=S.nombre}CS.value=CCL;LS.value=CLI;UC();return!0}}}catch(e){}return!1};
     
-    function modalPopstateHandler(){if(M&&M.style.display==="flex"){C()}}
-
-    const C=()=>{window.removeEventListener('popstate',modalPopstateHandler);if(window.location.hash==='#os'){history.replaceState(null,'',window.location.pathname+window.location.search)}S&&GP();M.style.display="none";M.setAttribute("aria-hidden","true");MAIN_CONTENT.removeAttribute('inert');A.pause();A.src='';MC_DIV.classList.remove('h');clearInterval(TII);IP=!1;PB.textContent='Reproducir';CPT=A.currentTime;dFT(M);SEL_SER_DIV.style.display="block";document.getElementById('as').style.display="block";CI.textContent='';TI.textContent='';if(ACCI)ACCI.textContent='';isManuallySwitchingChapter=false;};
+    const showListView=()=>{S&&GP();playerView.classList.add('view-hidden');listView.classList.remove('view-hidden');listView.removeAttribute('inert');A.pause();A.src='';clearInterval(TII);IP=!1;PB.textContent='Reproducir';CPT=A.currentTime;CI.textContent='';TI.textContent='';if(ACCI)ACCI.textContent='';isManuallySwitchingChapter=false;window.scrollTo(0,0);};
+    const showPlayerView=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){TS_C=await FD()}const pL=await RP(nbs);if(pL){CPT=A.currentTime}else{S=s_i;CCL=0;CLI=0;if(S&&S.capitulos&&S.capitulos[CCL]){CPT=S.capitulos[CCL].inicio/1e3}else{CPT=0}if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()};lYC();listView.classList.add('view-hidden');listView.setAttribute('inert','');playerView.classList.remove('view-hidden');const url=new URL(window.location);url.searchParams.set('serie',GNB(s_i.nombre));history.pushState({serie:GNB(s_i.nombre)},'',url);CBC.focus();window.scrollTo(0,0);};
     
     const RVS_C=async sNC=>{if(!sNC)return;const sNB=GNB(sNC);if(!sNB||VSSS.has(sNB))return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}VSSS.add(sNB);sessionStorage.setItem(VSS_KEY,JSON.stringify(Array.from(VSSS)))}catch(e){}};
     
@@ -193,8 +189,6 @@
         TII=setInterval(UT,1e3);
     };
 
-    const O=s_i=>{RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){TS_C=await FD()}const pL=await RP(nbs);if(pL){CPT=A.currentTime}else{S=s_i;CCL=0;CLI=0;if(S&&S.capitulos&&S.capitulos[CCL]){CPT=S.capitulos[CCL].inicio/1e3}else{CPT=0}if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()};lYC();MC_DIV.classList.add('h');M.style.display="flex";M.setAttribute("aria-hidden","false");MAIN_CONTENT.setAttribute('inert', '');CBC.focus();eFT(M);SEL_SER_DIV.style.display="none";document.getElementById('as').style.display="none";history.pushState({modalOpenFor:'sM'},'','#os');window.addEventListener('popstate',modalPopstateHandler);};
-    
     const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();return e.series||[]}catch(t){return[]}};
     const OTS=a=>([...a].sort((x,y)=>{const gtn=nm=>{const p=nm.split(', temporada ');if(p.length>1){const n=parseInt(p[1]);return isNaN(n)?Infinity:n}return 1};const nX=gtn(x.nombre),nY=gtn(y.nombre);return nX!==nY?nX-nY:x.nombre.localeCompare(y.nombre)})),
     RCAS=s_a=>{const t=document.getElementById('coc');t.innerHTML="";if(!s_a||s_a.length===0){t.innerHTML="<p>No hay series.</p>";return}
@@ -203,12 +197,12 @@
     pO_s.forEach(pO=>{const h2=document.createElement('h2');h2.textContent=pO;t.appendChild(h2);const ul=document.createElement('ul');ul.classList.add('sl');
     Object.keys(sAg).sort((a,b)=>a.localeCompare(b,'es',{sensitivity:'base'})).forEach(nB=>{const sD=sAg[nB].filter(sE=>sE.pais_origen===pO);
     if(sD.length>0){const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=nB;
-    btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];O(pT);sOrds.length>1?LT(sOrds,pT.nombre):document.getElementById('tasc').classList.add('h')});
+    btn.addEventListener('click',()=>{const sOrds=OTS(sD);const pT=sOrds[0];showPlayerView(pT);sOrds.length>1?LT(sOrds,pT.nombre):document.getElementById('tasc').classList.add('h')});
     btn.setAttribute('tabindex','0');btn.classList.add('b');li.appendChild(btn);ul.appendChild(li)}});t.appendChild(ul)});UCW()},
     LUSA=sa=>{if(!USAL||!sa||sa.length===0){if(USAL)USAL.innerHTML="<li>No hay series nuevas.</li>";return}
     USAL.innerHTML='';const u20=sa.slice(-20).reverse();
     u20.forEach(s_i=>{const li=document.createElement('li');const btn=document.createElement('button');btn.textContent=s_i.nombre;btn.classList.add('b');
-    btn.addEventListener('click',()=>{const nb=GNB(s_i.nombre);const sg=TS_C.filter(i=>GNB(i.nombre)===nb);O(s_i);if(sg.length>1){const so=OTS(sg);LT(so,s_i.nombre)}else{document.getElementById('tasc').classList.add('h')}});
+    btn.addEventListener('click',()=>{const nb=GNB(s_i.nombre);const sg=TS_C.filter(i=>GNB(i.nombre)===nb);showPlayerView(s_i);if(sg.length>1){const so=OTS(sg);LT(so,s_i.nombre)}else{document.getElementById('tasc').classList.add('h')}});
     li.appendChild(btn);USAL.appendChild(li)})},
     CT10SMV=async()=>{if(!T10L)return;T10L.innerHTML='<li>Cargando...</li>';try{const cDR=doc(db,ESD,CVD);const dSnp=await getDoc(cDR);if(!dSnp.exists()||!dSnp.data().vistasPorSerie){T10L.innerHTML="<li>Aún no hay datos.</li>";return}
     const vPSM=dSnp.data().vistasPorSerie;const sCA=Object.entries(vPSM).map(([nC,v])=>({n:nC.replace(/_/g,'.'),v})).sort((a,b)=>b.v-a.v).slice(0,10);
@@ -217,7 +211,7 @@
     sCA.forEach(i=>{const sDO_arr=TS_C.filter(s=>GNB(s.nombre)===i.n);
     if(sDO_arr.length>0){const sDO=sDO_arr[0];const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${i.n} (${i.v} ${i.v===1?'reproducción':'reproducciones'})`;btn.classList.add('b');
     btn.addEventListener('click',()=>{const sDMNB=TS_C.filter(s=>GNB(s.nombre)===i.n),sOPT=OTS(sDMNB);
-    if(sOPT.length>0){O(sOPT[0]);if(sOPT.length>1){LT(sOPT,sOPT[0].nombre)}else{document.getElementById('tasc').classList.add('h')}}});li.appendChild(btn);T10L.appendChild(li)}});
+    if(sOPT.length>0){showPlayerView(sOPT[0]);if(sOPT.length>1){LT(sOPT,sOPT[0].nombre)}else{document.getElementById('tasc').classList.add('h')}}});li.appendChild(btn);T10L.appendChild(li)}});
     if(T10L.children.length===0&&sCA.length>0)T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>";
     if(T10L.children.length===0&&sCA.length===0)T10L.innerHTML="<li>No hay series en el top.</li>"}catch(e){T10L.innerHTML="<li>Error al cargar.</li>"}},
     LT=(s_a,stn)=>{TS.innerHTML='';document.getElementById('tasc').classList.remove('h');s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});if(stn)TS.value=stn;TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){S=sS;CCL=0;CPT=0;A.currentTime=0;CLI=parseInt(LS.value)||0;LI(S);LL(S);LCF(S);A.play().catch(err=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}}},
@@ -282,7 +276,7 @@
     },
     GCI=t=>{let e=0;if(!CSD_L||CSD_L.length===0)return 0;for(let i=0;i<CSD_L.length;i++){const n=CSD_L[i];if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3){e=i;break}if(t<n.inicio/1e3){e=i>0?i-1:0;break}if(i===CSD_L.length-1&&t>n.fin/1e3){e=i;break}}}return e},
     PP=()=>{let t=CCL;t>0&&(t--,CS.value=t,isManuallySwitchingChapter=true,PC(true,true))},
-    NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;isManuallySwitchingChapter=true,PC(true,true)}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){isManuallySwitchingChapter=true;O(semsbo[cti+1])}else{}}},
+    NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;isManuallySwitchingChapter=true,PC(true,true)}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){isManuallySwitchingChapter=true;showPlayerView(semsbo[cti+1])}else{}}},
     CLS=()=>{
         const wP = IP;
         CPT=A.currentTime;
@@ -303,105 +297,49 @@
     if(stp&&stp.capitulos&&stp.capitulos[ccl]){const cap=stp.capitulos[ccl],fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
     li=document.createElement('li'),btn=document.createElement('button');let tnm=stp.nombre.includes(', temporada ')?`, temporada ${stp.nombre.split(', temporada ')[1]}`:(t.serieNombreBase!==stp.nombre?`, ${stp.nombre}`:'');
     btn.textContent=`${t.serieNombreBase}${tnm}, ${cap.titulo}, Restante: ${durR}`;
-    btn.addEventListener('click',()=>{O(stp)});btn.classList.add('b');li.appendChild(btn);
+    btn.addEventListener('click',()=>{showPlayerView(stp)});btn.classList.add('b');li.appendChild(btn);
     const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombreBase)});li.appendChild(delB);CWL.appendChild(li);iA++}}
     if(iA===0&&c.length>0){CWL.innerHTML="<li>No hay progreso para las series actualmente seleccionadas.</li>"}else if(iA===0&&c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}finally{isUCWRunning=!1}};
-    CBC.addEventListener('click',C);window.addEventListener('click',t=>{t.target===M&&C()});
+    CBC.addEventListener('click',()=>{history.back();});
     
     CS.addEventListener('change',()=>{S&&GP();isManuallySwitchingChapter = true; PC(true,true);});
     
     A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()});
-    A.addEventListener('pause',()=>{IP=!1;PB.textContent='Reproducir';PB.setAttribute('aria-label','Reproducir (Alt + K)');if(S&&M.style.display==="flex"){GP()}});
+    A.addEventListener('pause',()=>{IP=!1;PB.textContent='Reproducir';PB.setAttribute('aria-label','Reproducir (Alt + K)');if(S&&!playerView.classList.contains('view-hidden')){GP()}});
     
     A.addEventListener('ended',()=>{NP()});
     LS.addEventListener('change',CLS);PB.addEventListener('click',TP);
     document.getElementById('fb').addEventListener('click',F);document.getElementById('bb').addEventListener('click',B);REB.addEventListener('click',RE);
     document.getElementById('pcb').addEventListener('click',PP);document.getElementById('ncb').addEventListener('click',NP);
     document.getElementById('ivb').addEventListener('click',IV);document.getElementById('dvb').addEventListener('click',DV);
-    const CSRS=()=>{if(isCSRSRunning)return;isCSRSRunning=!0;FD().then(s_d=>{TS_C=s_d;RCAS(TS_C);if(TS_C&&TS_C.length>0)LUSA(TS_C);CT10SMV();UCW()}).catch(e=>{}).finally(()=>{isCSRSRunning=!1})};
+    const CSRS=async ()=>{if(isCSRSRunning)return;isCSRSRunning=!0;try{const s_d=await FD();TS_C=s_d;RCAS(TS_C);if(TS_C&&TS_C.length>0)LUSA(TS_C);await CT10SMV();await UCW();const params=new URLSearchParams(window.location.search);const serieParam=params.get('serie');if(serieParam){const serieToShow=TS_C.find(s=>GNB(s.nombre)===serieParam);if(serieToShow)showPlayerView(serieToShow)}}catch(e){}finally{isCSRSRunning=!1}};
     EEL.addEventListener('click',e=>{e.preventDefault();if(SD_J===SDP1+SDP2&&TS_C.length>0)return;SD_J=SDP1+SDP2;CSRS()});
     CDL.addEventListener('click',e=>{e.preventDefault();if(SD_J===SDP1+SDP3&&TS_C.length>0)return;SD_J=SDP1+SDP3;CSRS()});
+    window.addEventListener('popstate',()=>{const params=new URLSearchParams(window.location.search);if(!params.has('serie')){showListView()}});
     window.onload=()=>{const sV=sessionStorage.getItem(VSS_KEY);if(sV){try{VSSS=new Set(JSON.parse(sV))}catch(e){VSSS=new Set()}}else{VSSS=new Set()}CSRS()}; 
-    setInterval(()=>{M.style.display==="flex"&&S&&IP&&GP()},10000);
-    function createFocusTrap(el){let fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return{destroy:()=>{},update:()=>{}};let ffe=fe[0];let lfe=fe[fe.length-1];const kh=e=>{const iTP=e.key==='Tab'||e.keyCode===9;if(!iTP){return}if(e.shiftKey){if(document.activeElement===ffe){lfe.focus();e.preventDefault()}}else{if(document.activeElement===lfe){ffe.focus();e.preventDefault()}}};el.addEventListener('keydown',kh);return{destroy:()=>{el.removeEventListener('keydown',kh)},update:()=>{fe=el.querySelectorAll('a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled])');if(fe.length===0)return;ffe=fe[0];lfe=fe[fe.length-1]}}};
-    let cFT=null;function eFT(el){if(cFT){cFT.destroy()}cFT=createFocusTrap(el)};function dFT(){if(cFT){cFT.destroy();cFT=null}};
+    setInterval(()=>{if(!playerView.classList.contains('view-hidden')&&S&&IP){GP()}},10000);
+
     document.addEventListener('keydown', function(event) {
-        const modalIsVisible = M && M.style.display === "flex";
-
-        if (event.altKey) {
-            if (modalIsVisible) {
-                if (event.key === 'ArrowLeft') {
-                    C();
-                    event.preventDefault();
-                    return; 
-                }
-
-                const k = event.key.toLowerCase();
-                let aT = false;
-                switch (k) {
-                    case 'k': if (PB) { PB.click(); aT = true; } break;
-                    case 'j': {
-                        const btn = document.getElementById('bb');
-                        if (btn) {
-                            btn.click(); 
-                            if (TI && ACCI) { 
-                                UT(); 
-                                ACCI.textContent = TI.textContent;
-                            }
-                            aT = true;
-                        }
-                        break;
-                    }
-                    case 'l': {
-                        const btn = document.getElementById('fb');
-                        if (btn) {
-                            btn.click();
-                            if (TI && ACCI) {
-                                UT();
-                                ACCI.textContent = TI.textContent;
-                            }
-                            aT = true;
-                        }
-                        break;
-                    }
-                    case 'u': { const btn = document.getElementById('dvb'); if (btn) { btn.click(); aT = true; } break; }
-                    case 'o': { const btn = document.getElementById('ivb'); if (btn) { btn.click(); aT = true; } break; }
-                    case 'r': if (REB) { REB.click(); aT = true; } break;
-                    case 'a': { const btn = document.getElementById('pcb'); if (btn) { btn.click(); aT = true; } break; } 
-                    case 's': { const btn = document.getElementById('ncb'); if (btn) { btn.click(); aT = true; } break; } 
-                    case 'i':
-                        if (S && CSD_L && typeof CCL !== 'undefined' && CSD_L[CCL] && TI && ACCI) {
-                            UT(); 
-                            const nB = GNB(S.nombre);
-                            let sInf = nB;
-                            const tP = S.nombre.split(', temporada ');
-                            if (tP.length > 1) sInf += `. Temporada ${tP[1]}`;
-                            sInf += ".";
-                            const cTt = CSD_L[CCL].titulo;
-                            ACCI.textContent = `${sInf} ${cTt}. ${TI.textContent}.`;
-                            aT = true;
-                        }
-                        break;
-                    case 't': {
-                        const sel = TS; const el = document.getElementById('tasc');
-                        if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; }
-                        break;
-                    }
-                    case 'c': {
-                        const sel = CS; const el = document.getElementById('easc');
-                        if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; }
-                        break;
-                    }
-                    case 'p': {
-                        const sel = LS; const el = document.getElementById('lasc');
-                        if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; }
-                        break;
-                    }
-                }
-                if (aT) {
-                    event.preventDefault();
-                }
+        const playerIsVisible = !playerView.classList.contains('view-hidden');
+        if (event.altKey && playerIsVisible) {
+            if (event.key === 'ArrowLeft') { history.back(); event.preventDefault(); return; }
+            const k = event.key.toLowerCase();
+            let aT = false;
+            switch (k) {
+                case 'k': if (PB) { PB.click(); aT = true; } break;
+                case 'j': { const btn = document.getElementById('bb'); if (btn) { btn.click(); if (TI && ACCI) { UT(); ACCI.textContent = TI.textContent; } aT = true; } break; }
+                case 'l': { const btn = document.getElementById('fb'); if (btn) { btn.click(); if (TI && ACCI) { UT(); ACCI.textContent = TI.textContent; } aT = true; } break; }
+                case 'u': { const btn = document.getElementById('dvb'); if (btn) { btn.click(); aT = true; } break; }
+                case 'o': { const btn = document.getElementById('ivb'); if (btn) { btn.click(); aT = true; } break; }
+                case 'r': if (REB) { REB.click(); aT = true; } break;
+                case 'a': { const btn = document.getElementById('pcb'); if (btn) { btn.click(); aT = true; } break; } 
+                case 's': { const btn = document.getElementById('ncb'); if (btn) { btn.click(); aT = true; } break; } 
+                case 'i': if (S && CSD_L && typeof CCL !== 'undefined' && CSD_L[CCL] && TI && ACCI) { UT(); const nB = GNB(S.nombre); let sInf = nB; const tP = S.nombre.split(', temporada '); if (tP.length > 1) sInf += `. Temporada ${tP[1]}`; sInf += "."; const cTt = CSD_L[CCL].titulo; ACCI.textContent = `${sInf} ${cTt}. ${TI.textContent}.`; aT = true; } break;
+                case 't': { const sel = TS; const el = document.getElementById('tasc'); if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; } break; }
+                case 'c': { const sel = CS; const el = document.getElementById('easc'); if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; } break; }
+                case 'p': { const sel = LS; const el = document.getElementById('lasc'); if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; } break; }
             }
+            if (aT) { event.preventDefault(); }
         }
     });
 </script> 
