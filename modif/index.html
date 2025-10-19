@@ -20,8 +20,8 @@
         #player-view{padding-top:80px;padding-bottom:180px;position:relative}
         .fh{position:fixed;top:0;left:0;width:100%;background-color:var(--w);padding:10px 20px;z-index:2;box-shadow:0 2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-between;align-items:center}
         .fp{position:fixed;bottom:0;left:0;width:100%;background-color:#f0f0f0;padding:10px;text-align:center;z-index:2;box-shadow:0 -2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap}
-        .fp button{background-color:#555;color:var(--w);transition:background-color .3s;font-size:.9em;padding:8px 12px;margin-bottom:5px}
-        .fp button:hover{background-color:#777}
+        .fp button,.fp select{background-color:#555;color:var(--w);transition:background-color .3s;font-size:.9em;padding:8px 12px;margin-bottom:5px;border:none;border-radius:5px;cursor:pointer}
+        .fp button:hover,.fp select:hover{background-color:#777}
         .fp #ti,.fp #ci{font-size:.8em;color:var(--tc);width:100%;text-align:center;order:-1}
         .lc,.ec,.tc{margin-top:1em;width:100%}
         .tc{margin-bottom:1em}
@@ -29,6 +29,8 @@
         .lc select,.ec select,.tc select{width:100%;padding:10px;font-size:1em;border:1px solid #ccc;border-radius:5px;margin-bottom:1em;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px top 50%;background-size:1.5em}
         .h{display:none !important}
         *:focus{outline:var(--fo);outline-offset:var(--foo)}
+        #search-container{margin-bottom:20px}
+        #search-input{width:100%;padding:10px;font-size:1em;border:1px solid #ccc;border-radius:5px}
         @media (max-width:600px){
             body{font-size:1.1em}
             h2{font-size:1.5em}
@@ -69,6 +71,9 @@
                     <li><a href="#" id="en-espanol">Series en español original</a></li>
                     <li><a href="#" id="con-doblaje">Series con doblaje</a></li>
                 </ul>
+            </div>
+            <div id="search-container">
+                <input type="search" id="search-input" placeholder="Buscar series por nombre...">
             </div>
             <div id="mc">
                 <main>
@@ -115,6 +120,13 @@
             <button id="pcb" class="b" aria-label="Episodio anterior (Alt + A)">Episodio anterior</button>
             <button id="ivb" class="b" aria-label="Subir volumen (Alt + O)">Subir volumen</button>
             <button id="dvb" class="b" aria-label="Bajar volumen (Alt + U)">Bajar volumen</button>
+            <select id="speed-selector" aria-label="Control de velocidad">
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>Normal</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+            </select>
             <section class="ec" id="easc">
                 <label for="c">Capítulo:</label>
                 <select id="c"></select>
@@ -132,218 +144,24 @@
     import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, serverTimestamp, deleteDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
     import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-    const fC = { apiKey: "AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0", authDomain: "pfdsuaaug.firebaseapp.com", projectId: "pfdsuaaug", storageBucket: "pfdsuaaug.firebasestorage.app", messagingSenderId: "701797222900", appId: "1:701797222900:web:01836d45db1b35be2bd1a1" },
-        app = initializeApp(fC),db = getFirestore(app),auth = getAuth(app),gP = new GoogleAuthProvider,
-        gSI = document.getElementById('gsi'),sO = document.getElementById('so'),   
-        EEL = document.getElementById('en-espanol'),CDL = document.getElementById('con-doblaje'),
-        SDP1 = 'https://ceosca.github.io/',SDP2 = 'series/series.json',SDP3 = 'series/doblaje.json',
-        A = document.getElementById('ap'),MC_DIV = document.getElementById('mc'),CBC = document.getElementById("cb"),PB = document.getElementById('ppb'),CS = document.getElementById('c'),LC = document.getElementById('lasc'),LS = document.getElementById('l'),CI = document.getElementById('ci'),TI = document.getElementById('ti'),CWL = document.getElementById('cwl'),TS = document.getElementById('t'),SEL_SER_DIV = document.getElementById('selector-series'),USAL = document.getElementById('usal'),REB = document.getElementById('reb'),
-        T10L = document.getElementById('t10l'),ESD = "estadisticasSeries", CVD = "conteoVistasGlobal", ACCI = document.getElementById('acc-info'), VSS_KEY = 'vsis',
-        listView = document.getElementById('list-view'), playerView = document.getElementById('player-view');
-        
-    let TII,IP = !1,CSD_L = [],CLI = 0,CCL = 0,CPT = 0,S,SD_J = SDP1 + SDP2,TS_C = [], VSSS = new Set();
-    let isUCWRunning = !1, isCSRSRunning = !1;
-    let isManuallySwitchingChapter = false;
-    let lastFocusedElement = null;
-
-    const GNB=snc=>snc.split(', temporada')[0].trim();
-    const slugify=text=>text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/\s+/g,'-').replace(/[^\w-]+/g,'').replace(/--+/g,'-');
-    const MCGLTSL=(nbs,cgi,tasl)=>{const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgc=0;for(const stp of semsbo){const nce=stp.capitulos.length;if(cgi<cgc+nce){return{stp,ccl:cgi-cgc}}cgc+=nce}return semsbo.length>0?{stp:semsbo[0],ccl:0}:{stp:null,ccl:0}};
-    const MTSLCG=(ste,ccl,tasl)=>{const nbs=GNB(ste.nombre);const semsb=tasl.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);let cgi=0;for(const stp of semsbo){if(stp.nombre===ste.nombre){cgi+=ccl;return cgi}if(stp.capitulos)cgi+=stp.capitulos.length}return ccl};
-
-    const sWGi=async()=>{try{await signInWithPopup(auth,gP)}catch(e){}};
-    const sOG=async()=>{try{await signOut(auth);VSSS.clear();sessionStorage.removeItem(VSS_KEY)}catch(e){}};
-    onAuthStateChanged(auth,u=>{const aST=document.querySelector('#as p');if(u){gSI.classList.add('h');sO.classList.remove('h');if(aST)aST.textContent=`¡Hola de nuevo! Tu progreso se guardará automáticamente.`}else{gSI.classList.remove('h');sO.classList.add('h');if(aST)aST.textContent=`¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:`;VSSS.clear();sessionStorage.removeItem(VSS_KEY)}UCW()});
-    gSI.addEventListener('click',sWGi);sO.addEventListener('click',sOG);
-    
-    const FT=t=>{const m=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(m)}:${PZ(s)}`},PZ=n=>(n<10?'0':'')+n;
-
-    const GP=async()=>{if(!S||!auth.currentUser)return;const t=A.currentTime;const nbs=GNB(S.nombre);const cgi=MTSLCG(S,CCL,TS_C);try{const u=auth.currentUser;const p={serieNombreBase:nbs,capituloGlobalIndex:cgi,tiempo:t,idiomaIndex:CLI,serieTemporadaActualNombre:S.nombre,userId:u.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`),p);UCW()}catch(e){}};
-    const RP=async nbs=>{if(!auth.currentUser||!TS_C||TS_C.length===0)return !1;try{const u=auth.currentUser;const dS=await getDoc(doc(db,"progresoSeries",`${u.uid}_${nbs}`));if(dS.exists()){const d=dS.data();const{stp,ccl}=MCGLTSL(nbs,d.capituloGlobalIndex,TS_C);if(stp){S=stp;CCL=ccl;A.currentTime=d.tiempo;CLI=d.idiomaIndex||0;if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0){TS.value=S.nombre}CS.value=CCL;LS.value=CLI;UC();return!0}}}catch(e){}return!1};
-    
-    const showListView=()=>{S&&GP();playerView.classList.add('view-hidden');listView.classList.remove('view-hidden');listView.removeAttribute('inert');A.pause();A.src='';clearInterval(TII);IP=!1;PB.textContent='Reproducir';CPT=A.currentTime;CI.textContent='';TI.textContent='';if(ACCI)ACCI.textContent='';isManuallySwitchingChapter=false;window.scrollTo(0,0);if(lastFocusedElement){lastFocusedElement.focus()}};
-    const showPlayerView=(s_i,clickedElement=null)=>{if(clickedElement){lastFocusedElement=clickedElement}RVS_C(s_i.nombre);const nbs=GNB(s_i.nombre);IP=!1;CLI=0;CCL=0;CPT=0;CSD_L=[];const lYC=async()=>{if(TS_C.length===0){TS_C=await FD()}const pL=await RP(nbs);if(pL){CPT=A.currentTime}else{S=s_i;CCL=0;CLI=0;if(S&&S.capitulos&&S.capitulos[CCL]){CPT=S.capitulos[CCL].inicio/1e3}else{CPT=0}if(document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(opt=>opt.value===S.nombre)){TS.value=S.nombre}}LI(S);LL(S);LCF(S);A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()};lYC();listView.classList.add('view-hidden');listView.setAttribute('inert','');playerView.classList.remove('view-hidden');const url=new URL(window.location);url.searchParams.set('serie',slugify(GNB(s_i.nombre)));history.pushState({view:'player',serie:slugify(GNB(s_i.nombre))},'',url);CBC.focus();window.scrollTo(0,0);};
-    
-    const RVS_C=async sNC=>{if(!sNC)return;const sNB=GNB(sNC);if(!sNB||VSSS.has(sNB))return;try{const cDR=doc(db,ESD,CVD);const cAI=`vistasPorSerie.${sNB.replace(/\./g,'_')}`;const dSnp=await getDoc(cDR);if(dSnp.exists()){await updateDoc(cDR,{[cAI]:increment(1)})}else{await setDoc(cDR,{vistasPorSerie:{[sNB.replace(/\./g,'_')]:1}})}VSSS.add(sNB);sessionStorage.setItem(VSS_KEY,JSON.stringify(Array.from(VSSS)))}catch(e){}};
-    
-    const LCF=(s_d, srp = !1)=>{
-        CS.innerHTML='';
-        CSD_L=s_d.capitulos;
-        CSD_L.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.titulo,CS.appendChild(n)});
-        CS.value=CCL;
-        UC();
-        A.src=s_d.enlaces[CLI].enlace;
-        const CPTactual=CPT;
-
-        const stcapin=()=>{
-            A.currentTime=CPTactual;
-            if (srp) {
-                A.play().catch(e=>{});
-            }
-        };
-        
-        A.onloadedmetadata=null; 
-        A.addEventListener('canplay', stcapin, { once: true });
-        A.load();
-        
-        clearInterval(TII);
-        UT();
-        TII=setInterval(UT,1e3);
-    };
-
-    const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const e=await t.json();return e.series||[]}catch(t){return[]}};
-    const OTS=a=>([...a].sort((x,y)=>{const gtn=nm=>{const p=nm.split(', temporada ');if(p.length>1){const n=parseInt(p[1]);return isNaN(n)?Infinity:n}return 1};const nX=gtn(x.nombre),nY=gtn(y.nombre);return nX!==nY?nX-nY:x.nombre.localeCompare(y.nombre)})),
-    RCAS=s_a=>{const t=document.getElementById('coc');t.innerHTML="";if(!s_a||s_a.length===0){t.innerHTML="<p>No hay series.</p>";return}
-    const sAg={};s_a.forEach(sE=>{const nB=GNB(sE.nombre);sAg[nB]||(sAg[nB]=[]);sAg[nB].push(sE)});
-    const pO_s=[...new Set(s_a.map(sE=>sE.pais_origen))].sort();
-    pO_s.forEach(pO=>{const h2=document.createElement('h2');h2.textContent=pO;t.appendChild(h2);const ul=document.createElement('ul');ul.classList.add('sl');
-    Object.keys(sAg).sort((a,b)=>a.localeCompare(b,'es',{sensitivity:'base'})).forEach(nB=>{const sD=sAg[nB].filter(sE=>sE.pais_origen===pO);
-    if(sD.length>0){const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=nB;
-    btn.addEventListener('click',(e)=>{const sOrds=OTS(sD);const pT=sOrds[0];showPlayerView(pT,e.currentTarget);sOrds.length>1?LT(sOrds,pT.nombre):document.getElementById('tasc').classList.add('h')});
-    btn.setAttribute('tabindex','0');btn.classList.add('b');li.appendChild(btn);ul.appendChild(li)}});t.appendChild(ul)});UCW()},
-    LUSA=sa=>{if(!USAL||!sa||sa.length===0){if(USAL)USAL.innerHTML="<li>No hay series nuevas.</li>";return}
-    USAL.innerHTML='';const u20=sa.slice(-20).reverse();
-    u20.forEach(s_i=>{const li=document.createElement('li');const btn=document.createElement('button');btn.textContent=s_i.nombre;btn.classList.add('b');
-    btn.addEventListener('click',(e)=>{const nb=GNB(s_i.nombre);const sg=TS_C.filter(i=>GNB(i.nombre)===nb);showPlayerView(s_i,e.currentTarget);if(sg.length>1){const so=OTS(sg);LT(so,s_i.nombre)}else{document.getElementById('tasc').classList.add('h')}});
-    li.appendChild(btn);USAL.appendChild(li)})},
-    CT10SMV=async()=>{if(!T10L)return;T10L.innerHTML='<li>Cargando...</li>';try{const cDR=doc(db,ESD,CVD);const dSnp=await getDoc(cDR);if(!dSnp.exists()||!dSnp.data().vistasPorSerie){T10L.innerHTML="<li>Aún no hay datos.</li>";return}
-    const vPSM=dSnp.data().vistasPorSerie;const sCA=Object.entries(vPSM).map(([nC,v])=>({n:nC.replace(/_/g,'.'),v})).sort((a,b)=>b.v-a.v).slice(0,10);
-    if(sCA.length===0){T10L.innerHTML="<li>No hay series en el top.</li>";return}
-    T10L.innerHTML='';if(!TS_C||TS_C.length===0){T10L.innerHTML="<li>Error: datos de series no disponibles para el Top 10.</li>";return}
-    sCA.forEach(i=>{const sDO_arr=TS_C.filter(s=>GNB(s.nombre)===i.n);
-    if(sDO_arr.length>0){const sDO=sDO_arr[0];const li=document.createElement('li'),btn=document.createElement('button');btn.textContent=`${i.n} (${i.v} ${i.v===1?'reproducción':'reproducciones'})`;btn.classList.add('b');
-    btn.addEventListener('click',(e)=>{const sDMNB=TS_C.filter(s=>GNB(s.nombre)===i.n),sOPT=OTS(sDMNB);
-    if(sOPT.length>0){showPlayerView(sOPT[0],e.currentTarget);if(sOPT.length>1){LT(sOPT,sOPT[0].nombre)}else{document.getElementById('tasc').classList.add('h')}}});li.appendChild(btn);T10L.appendChild(li)}});
-    if(T10L.children.length===0&&sCA.length>0)T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>";
-    if(T10L.children.length===0&&sCA.length===0)T10L.innerHTML="<li>No hay series en el top.</li>"}catch(e){T10L.innerHTML="<li>Error al cargar.</li>"}},
-    LT=(s_a,stn)=>{TS.innerHTML='';document.getElementById('tasc').classList.remove('h');s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});if(stn)TS.value=stn;TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){S=sS;CCL=0;CPT=0;A.currentTime=0;CLI=parseInt(LS.value)||0;LI(S);LL(S);LCF(S);A.play().catch(err=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}}},
-    LI=s_d=>{const t=document.getElementById('si');let rH='';if(SD_J===SDP1+SDP2&&s_d.reparto){rH=`<div><strong>Reparto:</strong> ${s_d.reparto.join(", ")}</div>`}S=s_d;t.innerHTML=`<h2>${s_d.nombre}</h2><div><strong>Género:</strong> ${s_d.genero}</div><div><strong>Año:</strong> ${s_d.anio}</div>${rH}<div><strong>País:</strong> ${s_d.pais_origen}</div><div><strong>Episodios:</strong> ${s_d.cantidad_episodios}</div>${s_d.sinopsis?`<div><strong>Sinopsis:</strong> ${s_d.sinopsis}</div>`:''}`},
-    LL=s_d=>{LS.innerHTML='';s_d.enlaces.length>1?(s_d.enlaces.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.idioma,LS.appendChild(n)}),LC.classList.remove('h')):LC.classList.add('h');LS.value=CLI},
-    UC=()=>{if(CSD_L&&CSD_L[CCL]&&CSD_L[CCL].titulo){CI.textContent=(IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`)}else{CI.textContent="Cargando..."}},
-    UT=()=>{
-        const curT=A.currentTime;
-        if(!CSD_L||CSD_L.length===0)return;
-        const calCI=GCI(curT);
-        if(calCI<0||calCI>=CSD_L.length||!CSD_L[calCI])return;
-
-        const actualDisplayCap = CSD_L[calCI];
-        if (actualDisplayCap && typeof actualDisplayCap.inicio !== 'undefined' && typeof actualDisplayCap.fin !== 'undefined') {
-            const capS_ti=actualDisplayCap.inicio/1e3,capE_ti=actualDisplayCap.fin/1e3;
-            if (!isNaN(capS_ti) && !isNaN(capE_ti) && !isNaN(curT)) {
-                 TI.textContent=`${FT(curT-capS_ti)} / ${FT(capE_ti-capS_ti)}`;
-            }
-        }
-        
-        if (CSD_L[CCL] && CSD_L[CCL].titulo) {
-            CI.textContent = (IP ? `Reproduciendo: ${CSD_L[CCL].titulo}` : `${CSD_L[CCL].titulo}`);
-        }
-
-        if(isManuallySwitchingChapter) {
-            if (calCI === parseInt(CS.value)) {
-                isManuallySwitchingChapter = false;
-                if (CCL !== calCI) {
-                    CCL = calCI;
-                    UC(); 
-                }
-            }
-            return; 
-        }
-
-        if(calCI!==CCL && parseInt(CS.value) !== calCI){ 
-            CCL=calCI;
-            CS.value=CCL; 
-            UC();
-            if(ACCI&&CSD_L[CCL]&&CSD_L[CCL].titulo)ACCI.textContent=CSD_L[CCL].titulo 
-        } else if (calCI !== CCL && parseInt(CS.value) === calCI) {
-             CCL = calCI;
-             UC(); 
-        }
-    },
-    TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir (Alt + K)')):(A.play().catch(e=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC())},
-    F=()=>{A.currentTime+=15},
-    B=()=>{if(S&&CSD_L&&typeof CCL!=='undefined'&&CSD_L[CCL]){const cS=CSD_L[CCL].inicio/1e3;let nT=A.currentTime-15;A.currentTime=nT<cS?cS:nT}else{A.currentTime-=15}},
-    RE=()=>{if(S&&CSD_L&&typeof CCL!=='undefined'&&CSD_L[CCL]){isManuallySwitchingChapter=true;A.currentTime=CSD_L[CCL].inicio/1e3;if(!IP){A.play().catch(e=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}UC();PC(true,true)}},
-    PC=(anC=!1,fS=!1)=>{
-        CCL=parseInt(CS.value);
-        if(CSD_L&&CSD_L[CCL]){
-            A.currentTime=CSD_L[CCL].inicio/1e3;
-            A.play().catch(e=>{});
-            IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');
-            UC();
-            if(ACCI){
-                if(anC&&!fS && CSD_L[CCL].titulo){ ACCI.textContent=CSD_L[CCL].titulo }
-                else if(fS){ ACCI.textContent='' }
-            }
-        }
-    },
-    GCI=t=>{let e=0;if(!CSD_L||CSD_L.length===0)return 0;for(let i=0;i<CSD_L.length;i++){const n=CSD_L[i];if(n&&typeof n.inicio!=='undefined'&&typeof n.fin!=='undefined'){if(t>=n.inicio/1e3&&t<=n.fin/1e3){e=i;break}if(t<n.inicio/1e3){e=i>0?i-1:0;break}if(i===CSD_L.length-1&&t>n.fin/1e3){e=i;break}}}return e},
-    PP=()=>{let t=CCL;t>0&&(t--,CS.value=t,isManuallySwitchingChapter=true,PC(true,true))},
-    NP=()=>{let t=CCL;if(t<CSD_L.length-1){t++;CS.value=t;isManuallySwitchingChapter=true,PC(true,true)}else if(t===CSD_L.length-1){const nbs=GNB(S.nombre);const semsb=TS_C.filter(s=>GNB(s.nombre)===nbs);const semsbo=OTS(semsb);const cti=semsbo.findIndex(st=>st.nombre===S.nombre);if(cti>=0&&cti<semsbo.length-1){isManuallySwitchingChapter=true;showPlayerView(semsbo[cti+1])}else{}}},
-    CLS=()=>{
-        const wP = IP;
-        CPT=A.currentTime;
-        CLI=parseInt(LS.value);
-        if(S) {
-            isManuallySwitchingChapter=true;
-            LCF(S, wP);
-        }
-    },
-    IV=()=>{A.volume=Math.min(1,A.volume+.05)},DV=()=>{A.volume=Math.max(0,A.volume-.05)},
-    DCW=async s_nb=>{if(!auth.currentUser)return;try{const u=auth.currentUser;await deleteDoc(doc(db,"progresoSeries",`${u.uid}_${s_nb}`));UCW()}catch(e){}},
-    UCW=async()=>{if(isUCWRunning)return;isUCWRunning=!0;CWL.innerHTML='';if(!auth.currentUser){document.getElementById('cw').classList.add('h');isUCWRunning=!1;return}
-    document.getElementById('cw').classList.remove('h');try{const u=auth.currentUser;const q=query(collection(db,"progresoSeries"),where("userId","==",u.uid),where("tiempo",">",10));const qS=await getDocs(q);const c=[];qS.forEach(d=>{c.push({...d.data(),id:d.id})});
-    if(c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>";isUCWRunning=!1;return}
-    if(TS_C.length===0){CWL.innerHTML="<li>Cargando lista de series para mostrar progreso...</li>";isUCWRunning=!1;return}
-    const s_all=TS_C;let iA=0;
-    for(const t of c){const{stp,ccl}=MCGLTSL(t.serieNombreBase,t.capituloGlobalIndex,s_all);
-    if(stp&&stp.capitulos&&stp.capitulos[ccl]){const cap=stp.capitulos[ccl],fin=cap.fin/1e3,durR=FT(fin-t.tiempo),
-    li=document.createElement('li'),btn=document.createElement('button');let tnm=stp.nombre.includes(', temporada ')?`, temporada ${stp.nombre.split(', temporada ')[1]}`:(t.serieNombreBase!==stp.nombre?`, ${stp.nombre}`:'');
-    btn.textContent=`${t.serieNombreBase}${tnm}, ${cap.titulo}, Restante: ${durR}`;
-    btn.addEventListener('click',(e)=>{showPlayerView(stp,e.currentTarget)});btn.classList.add('b');li.appendChild(btn);
-    const delB=document.createElement('button');delB.textContent='Eliminar';delB.classList.add('b');delB.style.backgroundColor='#f44336';delB.addEventListener('click',e=>{e.stopPropagation();DCW(t.serieNombreBase)});li.appendChild(delB);CWL.appendChild(li);iA++}}
-    if(iA===0&&c.length>0){CWL.innerHTML="<li>No hay progreso para las series actualmente seleccionadas.</li>"}else if(iA===0&&c.length===0){CWL.innerHTML="<li>No tienes series para continuar.</li>"}}catch(e){CWL.innerHTML="<li>Error al cargar progreso.</li>"}finally{isUCWRunning=!1}};
-    CBC.addEventListener('click',()=>{history.back();});
-    
-    CS.addEventListener('change',()=>{S&&GP();isManuallySwitchingChapter = true; PC(true,true);});
-    
-    A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()});
-    A.addEventListener('pause',()=>{IP=!1;PB.textContent='Reproducir';PB.setAttribute('aria-label','Reproducir (Alt + K)');if(S&&!playerView.classList.contains('view-hidden')){GP()}});
-    
-    A.addEventListener('ended',()=>{NP()});
-    LS.addEventListener('change',CLS);PB.addEventListener('click',TP);
-    document.getElementById('fb').addEventListener('click',F);document.getElementById('bb').addEventListener('click',B);REB.addEventListener('click',RE);
-    document.getElementById('pcb').addEventListener('click',PP);document.getElementById('ncb').addEventListener('click',NP);
-    document.getElementById('ivb').addEventListener('click',IV);document.getElementById('dvb').addEventListener('click',DV);
-    const CSRS=async ()=>{if(isCSRSRunning)return;isCSRSRunning=!0;try{const s_d=await FD();TS_C=s_d;RCAS(TS_C);if(TS_C&&TS_C.length>0)LUSA(TS_C);await CT10SMV();await UCW();const params=new URLSearchParams(window.location.search);const serieParam=params.get('serie');if(serieParam){const serieToShow=TS_C.find(s=>slugify(GNB(s.nombre))===serieParam);if(serieToShow){showPlayerView(serieToShow);const allSeasons=OTS(TS_C.filter(s=>GNB(s.nombre)===GNB(serieToShow.nombre)));if(allSeasons.length>1){LT(allSeasons,serieToShow.nombre)}}}}catch(e){}finally{isCSRSRunning=!1}};
-    EEL.addEventListener('click',e=>{e.preventDefault();if(SD_J===SDP1+SDP2&&TS_C.length>0)return;SD_J=SDP1+SDP2;CSRS()});
-    CDL.addEventListener('click',e=>{e.preventDefault();if(SD_J===SDP1+SDP3&&TS_C.length>0)return;SD_J=SDP1+SDP3;CSRS()});
-    window.addEventListener('popstate',(e)=>{if(!e.state||e.state.view==='list'){showListView()}});
-    window.onload=()=>{const sV=sessionStorage.getItem(VSS_KEY);if(sV){try{VSSS=new Set(JSON.parse(sV))}catch(e){VSSS=new Set()}}else{VSSS=new Set()}history.replaceState({view:'list'},'','');CSRS()}; 
-    setInterval(()=>{if(!playerView.classList.contains('view-hidden')&&S&&IP){GP()}},10000);
-
-    document.addEventListener('keydown', function(event) {
-        const playerIsVisible = !playerView.classList.contains('view-hidden');
-        if (event.altKey && playerIsVisible) {
-            if (event.key === 'ArrowLeft') { history.back(); event.preventDefault(); return; }
-            const k = event.key.toLowerCase();
-            let aT = false;
-            switch (k) {
-                case 'k': if (PB) { PB.click(); aT = true; } break;
-                case 'j': { const btn = document.getElementById('bb'); if (btn) { btn.click(); if (TI && ACCI) { UT(); ACCI.textContent = TI.textContent; } aT = true; } break; }
-                case 'l': { const btn = document.getElementById('fb'); if (btn) { btn.click(); if (TI && ACCI) { UT(); ACCI.textContent = TI.textContent; } aT = true; } break; }
-                case 'u': { const btn = document.getElementById('dvb'); if (btn) { btn.click(); aT = true; } break; }
-                case 'o': { const btn = document.getElementById('ivb'); if (btn) { btn.click(); aT = true; } break; }
-                case 'r': if (REB) { REB.click(); aT = true; } break;
-                case 'a': { const btn = document.getElementById('pcb'); if (btn) { btn.click(); aT = true; } break; } 
-                case 's': { const btn = document.getElementById('ncb'); if (btn) { btn.click(); aT = true; } break; } 
-                case 'i': if (S && CSD_L && typeof CCL !== 'undefined' && CSD_L[CCL] && TI && ACCI) { UT(); const nB = GNB(S.nombre); let sInf = nB; const tP = S.nombre.split(', temporada '); if (tP.length > 1) sInf += `. Temporada ${tP[1]}`; sInf += "."; const cTt = CSD_L[CCL].titulo; ACCI.textContent = `${sInf} ${cTt}. ${TI.textContent}.`; aT = true; } break;
-                case 't': { const sel = TS; const el = document.getElementById('tasc'); if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; } break; }
-                case 'c': { const sel = CS; const el = document.getElementById('easc'); if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; } break; }
-                case 'p': { const sel = LS; const el = document.getElementById('lasc'); if (sel && el && !el.classList.contains('h')) { sel.focus(); aT = true; } break; }
-            }
-            if (aT) { event.preventDefault(); }
-        }
-    });
+    const fC={apiKey:"AIzaSyAGzPA5b5P1NofFZtbBvGpuYE3tVR-JaS0",authDomain:"pfdsuaaug.firebaseapp.com",projectId:"pfdsuaaug",storageBucket:"pfdsuaaug.firebasestorage.app",messagingSenderId:"701797222900",appId:"1:701797222900:web:01836d45db1b35be2bd1a1"},app=initializeApp(fC),db=getFirestore(app),auth=getAuth(app),gP=new GoogleAuthProvider,gSI=document.getElementById('gsi'),sO=document.getElementById('so'),EEL=document.getElementById('en-espanol'),CDL=document.getElementById('con-doblaje'),SDP1='https://ceosca.github.io/',SDP2='series/series.json',SDP3='series/doblaje.json',A=document.getElementById('ap'),MC_DIV=document.getElementById('mc'),CBC=document.getElementById("cb"),PB=document.getElementById('ppb'),CS=document.getElementById('c'),LC=document.getElementById('lasc'),LS=document.getElementById('l'),CI=document.getElementById('ci'),TI=document.getElementById('ti'),CWL=document.getElementById('cwl'),TS=document.getElementById('t'),SEL_SER_DIV=document.getElementById('selector-series'),USAL=document.getElementById('usal'),REB=document.getElementById('reb'),T10L=document.getElementById('t10l'),ESD="estadisticasSeries",CVD="conteoVistasGlobal",ACCI=document.getElementById('acc-info'),listView=document.getElementById('list-view'),playerView=document.getElementById('player-view'),sI=document.getElementById('search-input'),pS=document.getElementById('speed-selector');
+    let TII,IP=!1,CSD_L=[],CLI=0,CCL=0,CPT=0,S,SD_J=SDP1+SDP2,TS_C=[],isUCWRunning=!1,isCSRSRunning=!1,isManuallySwitchingChapter=!1,lastFocusedElement=null,eC=!1;const UMBRAL_ESCUCHA=60;
+    const GNB=t=>t.split(', temporada')[0].trim(),slugify=t=>t.toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/\s+/g,'-').replace(/[^\w-]+/g,'').replace(/--+/g,'-'),nmlz=t=>slugify(t).replace(/-/g,' ');
+    const MCGLTSL=(n,c,s)=>{const l=s.filter(t=>GNB(t.nombre)===n),o=OTS(l);let g=0;for(const p of o){const h=p.capitulos.length;if(c<g+h)return{stp:p,ccl:c-g};g+=h}return o.length>0?{stp:o[0],ccl:0}:{stp:null,ccl:0}};
+    const MTSLCG=(t,c,s)=>{const n=GNB(t.nombre),l=s.filter(t=>GNB(t.nombre)===n),o=OTS(l);let g=0;for(const p of o){if(p.nombre===t.nombre){g+=c;return g}if(p.capitulos)g+=p.capitulos.length}return c};
+    const sWGi=async()=>{try{await signInWithPopup(auth,gP)}catch(t){}},sOG=async()=>{try{await signOut(auth)}catch(t){}};onAuthStateChanged(auth,t=>{const c=document.querySelector('#as p');t?(gSI.classList.add('h'),sO.classList.remove('h'),c&&(c.textContent="¡Hola de nuevo! Tu progreso se guardará automáticamente.")):(gSI.classList.remove('h'),sO.classList.add('h'),c&&(c.textContent="¡Bienvenido/a! Puedes explorar y escuchar series sin iniciar sesión. Si deseas guardar tu progreso y continuar escuchando más tarde donde lo dejaste, por favor:")),UCW()});gSI.addEventListener('click',sWGi),sO.addEventListener('click',sOG);
+    const FT=t=>{const c=Math.floor(t/60),s=Math.floor(t%60);return`${PZ(c)}:${PZ(s)}`},PZ=t=>("0"+t).slice(-2);
+    const GP=async()=>{if(!S||!auth.currentUser)return;const t=A.currentTime,c=GNB(S.nombre),s=MTSLCG(S,CCL,TS_C);try{const n=auth.currentUser,l={serieNombreBase:c,capituloGlobalIndex:s,tiempo:t,idiomaIndex:CLI,serieTemporadaActualNombre:S.nombre,userId:n.uid,ultimaActualizacion:serverTimestamp()};await setDoc(doc(db,"progresoSeries",`${n.uid}_${c}`),l),UCW()}catch(t){}},RP=async t=>{if(!auth.currentUser||!TS_C||0===TS_C.length)return!1;try{const c=auth.currentUser,s=await getDoc(doc(db,"progresoSeries",`${c.uid}_${t}`));if(s.exists()){const n=s.data(),{stp:l,ccl:o}=MCGLTSL(t,n.capituloGlobalIndex,TS_C);if(l)return S=l,CCL=o,A.currentTime=n.tiempo,CLI=n.idiomaIndex||0,document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&(TS.value=S.nombre),CS.value=CCL,LS.value=CLI,UC(),!0}}catch(t){}return!1};
+    const showListView=()=>{S&&GP(),playerView.classList.add('view-hidden'),listView.classList.remove('view-hidden'),listView.removeAttribute('inert'),A.pause(),A.src='',clearInterval(TII),IP=!1,PB.textContent='Reproducir',CPT=A.currentTime,CI.textContent='',TI.textContent='',ACCI&&""===(ACCI.textContent=""),isManuallySwitchingChapter=!1,window.scrollTo(0,0),lastFocusedElement&&lastFocusedElement.focus()},showPlayerView=(t,c=null)=>{c&&(lastFocusedElement=c);const s=GNB(t.nombre);IP=!1,CLI=0,CCL=0,CPT=0,CSD_L=[];(async()=>{TS_C.length||(TS_C=await FD());const c=await RP(s);c?CPT=A.currentTime:(S=t,CCL=0,CLI=0,S&&S.capitulos&&S.capitulos[CCL]?CPT=S.capitulos[CCL].inicio/1e3:CPT=0,document.getElementById('tasc').classList.contains('h')===!1&&TS.options.length>0&&Array.from(TS.options).some(t=>t.value===S.nombre)&&(TS.value=S.nombre)),LI(S),LL(S),LCF(S),A.play().catch(t=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC()})(),listView.classList.add('view-hidden'),listView.setAttribute('inert',''),playerView.classList.remove('view-hidden');const n=new URL(window.location);n.searchParams.set('serie',slugify(GNB(t.nombre))),history.pushState({view:'player',serie:slugify(GNB(t.nombre))},'',n),CBC.focus(),window.scrollTo(0,0)};
+    const rVU=async()=>{if(!S||!auth.currentUser)return;const t=GNB(S.nombre),c=auth.currentUser,s=(new Date).toISOString().split("T")[0],n=`${c.uid}_${t}_${s}`;try{const c=doc(db,"vistasDiarias",n),l=await getDoc(c);if(!l.exists()){await setDoc(c,{timestamp:serverTimestamp()});const c=doc(db,ESD,CVD),s=`vistasPorSerie.${t.replace(/\./g,"_")}`;await updateDoc(c,{[s]:increment(1)})}}catch(t){}};
+    const lS=()=>{try{const t=localStorage.getItem('pS');if(t){const c=JSON.parse(t);A.volume=c.v||1,pS.value=c.s||1,A.playbackRate=c.s||1}}catch(t){A.volume=1,pS.value=1,A.playbackRate=1}},sS=()=>{try{const t={v:A.volume,s:A.playbackRate};localStorage.setItem('pS',JSON.stringify(t))}catch(t){}};
+    const LCF=(t,c=!1)=>{eC=!1,CS.innerHTML='',CSD_L=t.capitulos,CSD_L.forEach((t,c)=>{const s=document.createElement('option');s.value=c,s.textContent=t.titulo,CS.appendChild(s)}),CS.value=CCL,UC(),A.src=t.enlaces[CLI].enlace;const s=CPT,n=()=>{A.currentTime=s,c&&A.play().catch(t=>{})};A.onloadedmetadata=null,A.addEventListener('canplay',n,{once:!0}),lS(),A.load(),clearInterval(TII),UT(),TII=setInterval(UT,1e3)};
+    const FD=async()=>{try{const t=await fetch(SD_J);if(!t.ok)throw new Error(`E!S:${t.status}`);const c=await t.json();return c.series||[]}catch(t){return[]}},OTS=t=>[...t].sort((t,c)=>{const s=t=>{const c=t.split(", temporada ");if(c.length>1){const t=parseInt(c[1]);return isNaN(t)?1/0:t}return 1},n=s(t.nombre),l=s(c.nombre);return n!==l?n-l:t.nombre.localeCompare(c.nombre)}),RCAS=t=>{const c=document.getElementById('coc');if(c.innerHTML="",!t||0===t.length)return void(c.innerHTML="<p>No hay series.</p>");const s={};t.forEach(t=>{const c=GNB(t.nombre);s[c]||(s[c]=[]),s[c].push(t)});const n=[...new Set(t.map(t=>t.pais_origen))].sort();n.forEach(t=>{const n=document.createElement('h2');n.textContent=t,c.appendChild(n);const l=document.createElement('ul');l.classList.add('sl'),Object.keys(s).sort((t,c)=>t.localeCompare(c,'es',{sensitivity:'base'})).forEach(t=>{const c=s[t].filter(c=>c.pais_origen===t);if(c.length>0){const s=document.createElement('li'),n=document.createElement('button');n.textContent=t,n.addEventListener('click',s=>{const n=OTS(c),o=n[0];showPlayerView(o,s.currentTarget),n.length>1?LT(n,o.nombre):document.getElementById('tasc').classList.add('h')}),n.setAttribute('tabindex','0'),n.classList.add('b'),s.appendChild(n),l.appendChild(s)}}),c.appendChild(l)}),UCW()},LUSA=t=>{if(!USAL||!t||0===t.length)return void(USAL&&(USAL.innerHTML="<li>No hay series nuevas.</li>"));USAL.innerHTML='';const c=t.slice(-20).reverse();c.forEach(t=>{const c=document.createElement('li'),s=document.createElement('button');s.textContent=t.nombre,s.classList.add('b'),s.addEventListener('click',c=>{const n=GNB(t.nombre),l=TS_C.filter(c=>GNB(c.nombre)===n);showPlayerView(t,c.currentTarget),l.length>1?(LT(OTS(l),t.nombre),void 0):document.getElementById('tasc').classList.add('h')}),c.appendChild(s),USAL.appendChild(c)})},CT10SMV=async()=>{if(!T10L)return;T10L.innerHTML='<li>Cargando...</li>';try{const t=doc(db,ESD,CVD),c=await getDoc(t);if(!c.exists()||!c.data().vistasPorSerie)return void(T10L.innerHTML="<li>Aún no hay datos.</li>");const s=c.data().vistasPorSerie,n=Object.entries(s).map(([t,c])=>({n:t.replace(/_/g,'.'),v:c})).sort((t,c)=>c.v-t.v).slice(0,10);if(0===n.length)return void(T10L.innerHTML="<li>No hay series en el top.</li>");if(T10L.innerHTML='',!TS_C||0===TS_C.length)return void(T10L.innerHTML="<li>Error: datos de series no disponibles para el Top 10.</li>");n.forEach(t=>{const c=TS_C.filter(c=>GNB(c.nombre)===t.n);if(c.length>0){c[0];const s=document.createElement('li'),n=document.createElement('button');n.textContent=`${t.n} (${t.v} ${1===t.v?"escucha":"escuchas"})`,n.classList.add('b'),n.addEventListener('click',c=>{const s=TS_C.filter(c=>GNB(c.nombre)===t.n),l=OTS(s);l.length>0&&(showPlayerView(l[0],c.currentTarget),l.length>1?LT(l,l[0].nombre):document.getElementById('tasc').classList.add('h'))}),s.appendChild(n),T10L.appendChild(s)}}),0===T10L.children.length&&n.length>0&&(T10L.innerHTML="<li>No se pudieron mostrar (datos no encontrados).</li>"),0===T10L.children.length&&0===n.length&&(T10L.innerHTML="<li>No hay series en el top.</li>")}catch(t){T10L.innerHTML="<li>Error al cargar.</li>"}},LT=(t,c)=>{TS.innerHTML='',document.getElementById('tasc').classList.remove('h'),t.forEach(t=>{const c=t.nombre.split(', temporada ')[1],s=document.createElement('option');s.value=t.nombre,s.textContent=c?`Temporada ${c}`:t.nombre,TS.appendChild(s)}),c&&(TS.value=c),TS.onchange=t=>{const c=t.target.value,s=TS_C.find(t=>t.nombre===c);s&&(S=s,CCL=0,CPT=0,A.currentTime=0,CLI=parseInt(LS.value)||0,LI(S),LL(S),LCF(S),A.play().catch(t=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'))}},LI=t=>{const c=document.getElementById('si');let s="";SD_J===SDP1+SDP2&&t.reparto&&(s=`<div><strong>Reparto:</strong> ${t.reparto.join(", ")}</div>`),S=t,c.innerHTML=`<h2>${t.nombre}</h2><div><strong>Género:</strong> ${t.genero}</div><div><strong>Año:</strong> ${t.anio}</div>${s}<div><strong>País:</strong> ${t.pais_origen}</div><div><strong>Episodios:</strong> ${t.cantidad_episodios}</div>${t.sinopsis?`<div><strong>Sinopsis:</strong> ${t.sinopsis}</div>`:""}`},LL=t=>{LS.innerHTML='',t.enlaces.length>1?(t.enlaces.forEach((t,c)=>{const s=document.createElement('option');s.value=c,s.textContent=t.idioma,LS.appendChild(s)}),LC.classList.remove('h')):LC.classList.add('h'),LS.value=CLI},UC=()=>{CI.textContent=CSD_L&&CSD_L[CCL]&&CSD_L[CCL].titulo?IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`:"Cargando..."},UT=()=>{if(!eC&&A.currentTime>UMBRAL_ESCUCHA&&(rVU(),eC=!0),!CSD_L||0===CSD_L.length)return;const t=A.currentTime,c=GCI(t);if(!(c<0||c>=CSD_L.length||!CSD_L[c])){const s=CSD_L[c];if(s&&"undefined"!=typeof s.inicio&&"undefined"!=typeof s.fin){const c=s.inicio/1e3,n=s.fin/1e3;isNaN(c)||isNaN(n)||isNaN(t)||(TI.textContent=`${FT(t-c)} / ${FT(n-c)}`)}if(CSD_L[CCL]&&CSD_L[CCL].titulo&&(CI.textContent=IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`),isManuallySwitchingChapter)return void(c===parseInt(CS.value)&&(isManuallySwitchingChapter=!1,CCL!==c&&(CCL=c,UC())));c!==CCL&&parseInt(CS.value)!==c?(CCL=c,CS.value=CCL,UC(),ACCI&&CSD_L[CCL]&&CSD_L[CCL].titulo&&(ACCI.textContent=CSD_L[CCL].titulo)):c!==CCL&&parseInt(CS.value)===c&&(CCL=c,UC())}},TP=()=>{IP?(A.pause(),IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir (Alt + K)')):(A.play().catch(t=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC())},F=()=>{A.currentTime+=15},B=()=>{if(S&&CSD_L&&"undefined"!=typeof CCL&&CSD_L[CCL]){const t=CSD_L[CCL].inicio/1e3,c=A.currentTime-15;A.currentTime=c<t?t:c}else A.currentTime-=15},RE=()=>{S&&CSD_L&&"undefined"!=typeof CCL&&CSD_L[CCL]&&(isManuallySwitchingChapter=!0,A.currentTime=CSD_L[CCL].inicio/1e3,IP||(A.play().catch(t=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)')),UC(),PC(!0,!0))},PC=(t=!1,c=!1)=>{CCL=parseInt(CS.value),CSD_L&&CSD_L[CCL]&&(A.currentTime=CSD_L[CCL].inicio/1e3,A.play().catch(t=>{}),IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC(),ACCI&&(t&&!c&&CSD_L[CCL].titulo?ACCI.textContent=CSD_L[CCL].titulo:c&&(ACCI.textContent="")))},GCI=t=>{let c=0;if(!CSD_L||0===CSD_L.length)return 0;for(let s=0;s<CSD_L.length;s++){const n=CSD_L[s];if(n&&"undefined"!=typeof n.inicio&&"undefined"!=typeof n.fin){if(t>=n.inicio/1e3&&t<=n.fin/1e3){c=s;break}if(t<n.inicio/1e3){c=s>0?s-1:0;break}if(s===CSD_L.length-1&&t>n.fin/1e3){c=s;break}}}return c},PP=()=>{let t=CCL;t>0&&(t--,CS.value=t,isManuallySwitchingChapter=!0,PC(!0,!0))},NP=()=>{let t=CCL;if(t<CSD_L.length-1)t++,CS.value=t,isManuallySwitchingChapter=!0,PC(!0,!0);else if(t===CSD_L.length-1){const t=GNB(S.nombre),c=TS_C.filter(c=>GNB(c.nombre)===t),s=OTS(c),n=s.findIndex(t=>t.nombre===S.nombre);n>=0&&n<s.length-1&&(isManuallySwitchingChapter=!0,showPlayerView(s[n+1]))}},CLS=()=>{const t=IP;CPT=A.currentTime,CLI=parseInt(LS.value),S&&(isManuallySwitchingChapter=!0,LCF(S,t))},IV=()=>{A.volume=Math.min(1,A.volume+.05),sS()},DV=()=>{A.volume=Math.max(0,A.volume-.05),sS()},DCW=async t=>{if(!auth.currentUser)return;try{const c=auth.currentUser;await deleteDoc(doc(db,"progresoSeries",`${c.uid}_${t}`)),UCW()}catch(t){}};
+    const UCW=async()=>{if(isUCWRunning)return;isUCWRunning=!0,CWL.innerHTML='',auth.currentUser?(document.getElementById('cw').classList.remove('h'),(async()=>{try{const t=auth.currentUser,c=query(collection(db,"progresoSeries"),where("userId","==",t.uid),where("tiempo",">",10)),s=await getDocs(c),n=[];if(s.forEach(t=>{n.push({...t.data(),id:t.id})}),0===n.length)return void(CWL.innerHTML="<li>No tienes series para continuar.</li>");if(0===TS_C.length)return void(CWL.innerHTML="<li>Cargando lista de series para mostrar progreso...</li>");const l=TS_C;let o=0;for(const t of n){const{stp:c,ccl:s}=MCGLTSL(t.serieNombreBase,t.capituloGlobalIndex,l);if(c&&c.capitulos&&c.capitulos[s]){const n=c.capitulos[s],l=n.fin/1e3,a=FT(l-t.tiempo),i=document.createElement('li'),d=document.createElement('button');let r=c.nombre.includes(", temporada ")?`, temporada ${c.nombre.split(", temporada ")[1]}`:t.serieNombreBase!==c.nombre?`, ${c.nombre}`:"";d.textContent=`${t.serieNombreBase}${r}, ${n.titulo}, Restante: ${a}`,d.addEventListener('click',t=>{showPlayerView(c,t.currentTarget)}),d.classList.add('b'),i.appendChild(d);const u=document.createElement('button');u.textContent='Eliminar',u.classList.add('b'),u.style.backgroundColor='#f44336',u.addEventListener('click',c=>{c.stopPropagation(),DCW(t.serieNombreBase)}),i.appendChild(u),CWL.appendChild(i),o++}}0===o&&n.length>0&&(CWL.innerHTML="<li>No hay progreso para las series actualmente seleccionadas.</li>"),0===o&&0===n.length&&(CWL.innerHTML="<li>No tienes series para continuar.</li>")}catch(t){CWL.innerHTML="<li>Error al cargar progreso.</li>"}finally{isUCWRunning=!1}})()):(document.getElementById('cw').classList.add('h'),isUCWRunning=!1)};
+    CBC.addEventListener('click',()=>{history.back()}),CS.addEventListener('change',()=>{S&&GP(),isManuallySwitchingChapter=!0,PC(!0,!0)}),A.addEventListener('play',()=>{IP=!0,PB.textContent='Pausar',PB.setAttribute('aria-label','Pausar (Alt + K)'),UC()}),A.addEventListener('pause',()=>{IP=!1,PB.textContent='Reproducir',PB.setAttribute('aria-label','Reproducir (Alt + K)'),S&&!playerView.classList.contains('view-hidden')&&GP()}),A.addEventListener('ended',()=>{NP()}),LS.addEventListener('change',CLS),PB.addEventListener('click',TP),document.getElementById('fb').addEventListener('click',F),document.getElementById('bb').addEventListener('click',B),REB.addEventListener('click',RE),document.getElementById('pcb').addEventListener('click',PP),document.getElementById('ncb').addEventListener('click',NP),document.getElementById('ivb').addEventListener('click',IV),document.getElementById('dvb').addEventListener('click',DV),pS.addEventListener('change',t=>{A.playbackRate=parseFloat(t.target.value),sS()});
+    const CSRS=async()=>{if(isCSRSRunning)return;isCSRSRunning=!0;try{const t=await FD();if(TS_C=t,RCAS(t),t&&t.length>0&&LUSA(t),await CT10SMV(),await UCW(),new URLSearchParams(window.location.search).get('serie')){const c=new URLSearchParams(window.location.search).get('serie'),s=TS_C.find(t=>slugify(GNB(t.nombre))===c);if(s){showPlayerView(s);const t=OTS(TS_C.filter(t=>GNB(t.nombre)===GNB(s.nombre)));t.length>1&&LT(t,s.nombre)}}}catch(t){}finally{isCSRSRunning=!1}};
+    const hS=()=>{const t=nmlz(sI.value);document.querySelectorAll('#cwl, #usal, #t10l, #coc').forEach(c=>{let s=!1;c.querySelectorAll('li').forEach(c=>{const n=c.querySelector('button'),l=n?nmlz(n.textContent):"";l.includes(t)?(c.style.display="",s=!0):c.style.display="none"});const n=c.previousElementSibling;n&&"H2"===n.tagName&&(n.style.display=s?"":"none")})};sI.addEventListener('input',hS);
+    EEL.addEventListener('click',t=>{t.preventDefault(),SD_J===SDP1+SDP2&&TS_C.length>0||(SD_J=SDP1+SDP2,CSRS())}),CDL.addEventListener('click',t=>{t.preventDefault(),SD_J===SDP1+SDP3&&TS_C.length>0||(SD_J=SDP1+SDP3,CSRS())}),window.addEventListener('popstate',t=>{t.state&&"list"!==t.state.view||showListView()}),window.onload=()=>{history.replaceState({view:'list'},'',''),CSRS()},setInterval(()=>{!playerView.classList.contains('view-hidden')&&S&&IP&&GP()},1e4),document.addEventListener('keydown',function(t){const c=!playerView.classList.contains('view-hidden');if(t.altKey&&c){if("ArrowLeft"===t.key)return t.preventDefault(),void history.back();const s=t.key.toLowerCase();let n=!1;switch(s){case"k":PB&&PB.click()&&(n=!0);break;case"j":{const c=document.getElementById('bb');c&&(c.click(),TI&&ACCI&&(UT(),ACCI.textContent=TI.textContent),n=!0)}break;case"l":{const c=document.getElementById('fb');c&&(c.click(),TI&&ACCI&&(UT(),ACCI.textContent=TI.textContent),n=!0)}break;case"u":{const c=document.getElementById('dvb');c&&c.click()&&(n=!0)}break;case"o":{const c=document.getElementById('ivb');c&&c.click()&&(n=!0)}break;case"r":REB&&REB.click()&&(n=!0);break;case"a":{const c=document.getElementById('pcb');c&&c.click()&&(n=!0)}break;case"s":{const c=document.getElementById('ncb');c&&c.click()&&(n=!0)}break;case"i":S&&CSD_L&&"undefined"!=typeof CCL&&CSD_L[CCL]&&TI&&ACCI&&(UT(),(()=>{const t=GNB(S.nombre);let c=t;const n=S.nombre.split(", temporada ");n.length>1&&(c+=`. Temporada ${n[1]}`),c+=".";const l=CSD_L[CCL].titulo;ACCI.textContent=`${c} ${l}. ${TI.textContent}.`})(),n=!0);break;case"t":{const t=TS,c=document.getElementById('tasc');t&&c&&!c.classList.contains('h')&&(t.focus(),n=!0)}break;case"c":{const t=CS,c=document.getElementById('easc');t&&c&&!c.classList.contains('h')&&(t.focus(),n=!0)}break;case"p":{const t=LS,c=document.getElementById('lasc');t&&c&&!c.classList.contains('h')&&(t.focus(),n=!0)}break}n&&t.preventDefault()}});
 </script> 
 </body>
 </html>
