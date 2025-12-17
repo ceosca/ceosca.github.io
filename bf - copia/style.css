@@ -44,5 +44,6 @@ h2{font-size:1.8em;margin-bottom:.5em}
 #selector-series ul{list-style:none;padding:0;display:flex;justify-content:center;flex-wrap:wrap}
 #selector-series li{margin:5px 10px}
 #selector-series a{text-decoration:none;color:var(--pc);font-weight:bold;padding:8px 12px;border:2px solid var(--pc);border-radius:5px;transition:background-color .2s ease,color .2s ease;display:block}
-#selector-series a:hover{background-color:var(--pc);color:var(--w)}
+#selector-series a:hover, #selector-series a.active{background-color:var(--pc);color:var(--w)}
+#selector-series a.active {cursor: default;}
 #acc-info{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}

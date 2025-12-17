@@ -1,0 +1,723 @@
+[
+    {
+        "nombre": "BUNDESLIGA",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/SKYSPORTS24HD/default.mpd",
+        "keyId": "d8d5823d92a9ef9306a4cc4bd634b4b4",
+        "key": "df9fbdaa0ef9e905b75f4692f213af19"
+    },
+    {
+        "nombre": "TNT",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/TNTHD/default.mpd",
+        "keyId": "dca8597f12f8d6928b55c1291c7bb300",
+        "key": "36c8b3f51d474b95f0adad70899343e1"
+    },
+    {
+        "nombre": "MTV 80s",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv:443/14/out/u/dash/MTV80SSD/default.mpd",
+        "keyId": "b515c27589fda8f9607e7949697de6b3",
+        "key": "27d2061c0972931e18d43fbb3301c6f0"
+    },
+    {
+        "nombre": "Azteca 7 - izzi go",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/AZTECA7HD/default.mpd",
+        "keyId": "c15a10921bed75a3ec5385e0ecdb6499",
+        "key": "4e44df62547a1544a4623418918658d0"
+    },
+    {
+        "nombre": "Azteca Uno - izzi go",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/AZTECA1HD/default.mpd",
+        "keyId": "158b196625b3fa3a6cbd45d081d28995",
+        "key": "b955044f81ed40faec97bee0d7a20aea"
+    },
+    {
+        "nombre": "Baby TV",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/BABYTVSD/default.mpd",
+        "keyId": "e5e06331cab5a18d87cfd61c024c6ed5",
+        "key": "97bef40343b1eb8b57dcb2fde7191e49"
+    },
+    {
+        "nombre": "Cartoon Network",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/CARTOONNETWORKHD/default.mpd",
+        "keyId": "85d06ba283f3b18bb14f9f8d59b8fb82",
+        "key": "6659fed472544289adee986c1d33fa79"
+    },
+    {
+        "nombre": "Cartoonito",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/CARTOONITOHD/default.mpd",
+        "keyId": "3fc370ab08218da5dad9b9644f1df57b",
+        "key": "1ddc60916c0efd29990cb1d319e7710a"
+    },
+    {
+        "nombre": "Clan",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/CLANHD/default.mpd",
+        "keyId": "ba8f89c842c0cb9bfadf0a3ab7046695",
+        "key": "715b5a449ec3a9f66e4fe4f923073956"
+    },
+    {
+        "nombre": "Discovery Kids",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/DISCOVERYKIDSHD/default.mpd",
+        "keyId": "9201c07931b74c37c4e30a9e96b64c30",
+        "key": "8e1ce4f1b1185f64e42f9974cbad1442"
+    },
+    {
+        "nombre": "Disney Channel",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/DISNEYCHANNELHD/default.mpd",
+        "keyId": "f047ea1abdca6f03117454c4de0b6d5b",
+        "key": "b038c8c8f114c568956d428e80ae38d7"
+    },
+    {
+        "nombre": "Disney Jr.",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/DISNEYJRHD/default.mpd",
+        "keyId": "d41d2ae9b0d875ba12e97c5a3f3eec82",
+        "key": "3a443892e1ad1158c6fd2bf9c9146eb6"
+    },
+    {
+        "nombre": "DogTV",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/DOGTVSD/default.mpd",
+        "keyId": "3d2063b495202a5a78a2b7df6ba1d6d1",
+        "key": "9b0e8c590f387c6b45ffef5827d9d90b"
+    },
+    {
+        "nombre": "DreamWorks",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/DREAMWORKSHD/default.mpd",
+        "keyId": "a255e1384db3e9ce7e0349e8aa9b9f77",
+        "key": "404cc4fb45f82c9a7dffd3d2496cca20"
+    },
+    {
+        "nombre": "Edye TV",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/12/out/u/dash/EDYEHD/default.mpd",
+        "keyId": "6957d1b268de52d70a69ad287960839e",
+        "key": "00aeb583afc321e7c75a95b080c70441"
+    },
+    {
+        "nombre": "Nickelodeon",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/NICKHD/default.mpd",
+        "keyId": "294848a1c20273b5546c204b117fd7fe",
+        "key": "47b4a3e3b2d5bbd54143a6af43268bbd"
+    },
+    {
+        "nombre": "Nick Jr.",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/NICKJRHD/default.mpd",
+        "keyId": "1ff80f6edca24a644b8f5b4532e908a4",
+        "key": "273d66feb7edc254d70d73aecddd31f8"
+    },
+    {
+        "nombre": "NickMusic",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/NICKMUSICSD/default.mpd",
+        "keyId": "96c869392d2e908eaf78a9fcfa8c3107",
+        "key": "cd307966418dafe8fa5e673f8c172f39"
+    },
+    {
+        "nombre": "TeenNick",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/TEENNICKHD/default.mpd",
+        "keyId": "57588399a2a939927418a588126e316d",
+        "key": "6566f7996a957773701e2de8741ce176"
+    },
+    {
+        "nombre": "Tooncast",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/TOONCASTSD/default.mpd",
+        "keyId": "5c9418c5729e8224f99940cf5b6c0c45",
+        "key": "336cd7efd1d7a1829d0f3d22c2c8dc0a"
+    },
+    {
+        "nombre": "Curiosity Channel",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/CURIOSITYHD/default.mpd",
+        "keyId": "310ddeefcec5f96a75faed2a96afd26a",
+        "key": "041fe42d066d50d59fc368312647bb2f"
+    },
+    {
+        "nombre": "History 2",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/HISTORY2HD/default.mpd",
+        "keyId": "14402e6154aafa2b79408ea5c1651b1c",
+        "key": "6a38619d21191891d09b357a6b1cabd1"
+    },
+    {
+        "nombre": "History",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HISTORYCHANNELHD/default.mpd",
+        "keyId": "1264e3667616b52060028be25404d6a4",
+        "key": "470720a6152157a5d3c5de89de1b909c"
+    },
+    {
+        "nombre": "Nat Geo",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/NATGEOHD/default.mpd",
+        "keyId": "157c0fb2bfdc323521d52ab43b7fa131",
+        "key": "6c4af37b6abc72cbcd91aa7716968336"
+    },
+    {
+        "nombre": "Discovery Science",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/DISCOVERYSCIENCEHD/default.mpd",
+        "keyId": "b6a1dfce06caf463d29b91fc890baad1",
+        "key": "4ce50c2ee03a4fbec5ddbf57bc8e6c8b"
+    },
+    {
+        "nombre": "Discovery Channel",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/DISCOVERYCHANNELHD/default.mpd",
+        "keyId": "7f2c6d8a46280fe52bf23c5eff6b9abc",
+        "key": "85f45d230efd697375da7b373e682053"
+    },
+    {
+        "nombre": "Animal Planet",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/ANIMALPLANETHD/default.mpd",
+        "keyId": "80833609a69c8647766a2de347512f92",
+        "key": "039c1884003d62b4fb55babf944e1523"
+    },
+    {
+        "nombre": "Discovery Theater",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/DISCOVERYTHEATERHD/default.mpd",
+        "keyId": "f6fa84513dfc29251a24917125905d8b",
+        "key": "54124304e26cb27f4d0f51b126829e30"
+    },
+    {
+        "nombre": "EWTN",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/EWTNSD/default.mpd",
+        "keyId": "8509b92b026e55436652236929b271c6",
+        "key": "8375e666c0d128cb323250020d96787e"
+    },
+    {
+        "nombre": "Maria Visión",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/MARIAVISIONHD/default.mpd",
+        "keyId": "c691321378ea03ffb80eabac9c699a6a",
+        "key": "df65710d35c513c00cb3fd32938c274a"
+    },
+    {
+        "nombre": "Enlace",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/ENLACESD/default.mpd",
+        "keyId": "2999b4ceb2573173af94a711b4a8dfb1",
+        "key": "7ce7a687e83196c9a1cdf7f50f2f58d5"
+    },
+    {
+        "nombre": "AMC",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/AMCHD/default.mpd",
+        "keyId": "97cfeda35c2f42d6c2be729ea2945b12",
+        "key": "59c1f3c384bd0a25e817539d5fe6e24b"
+    },
+    {
+        "nombre": "Atrescine",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/A3CINEHD/default.mpd",
+        "keyId": "c86a2c9cca0c05c04dbc49c06561c033",
+        "key": "b6b00e852c2e160bd3ed1f0dd797883a"
+    },
+    {
+        "nombre": "Atreseries",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/ATRESSERIESHD/default.mpd",
+        "keyId": "2ec74612833c48e4e2bf730aef0f92a5",
+        "key": "bf851c48ef13fde3aa7ce6183fb5f861"
+    },
+    {
+        "nombre": "AXN",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/AXNHD/default.mpd",
+        "keyId": "976d703cb95202a808972c722544fae1",
+        "key": "562775b170402c6e2309ff69b9e48e82"
+    },
+    {
+        "nombre": "Cinecanal",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/CINECANALHD/default.mpd",
+        "keyId": "5e87d24ed7b54576895548ffa65eab1d",
+        "key": "1e5d7c9e67248af38e48ec56d2241507"
+    },
+    {
+        "nombre": "Cinemax",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/CINEMAXHD/default.mpd",
+        "keyId": "fa6d1b52dd986d8faab9cca6adb8874b",
+        "key": "6022259ba9edb1fe66b4507b51e1c12f"
+    },
+    {
+        "nombre": "De Película",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/DEPELICULASD/default.mpd",
+        "keyId": "208012d154bf5128dc04433c22e00698",
+        "key": "d17913671a71821ed7e4c4937cd2fba5"
+    },
+    {
+        "nombre": "De Película Plus",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/DEPELICULAHD/default.mpd",
+        "keyId": "70a3ab1ea3c45dd570da2a660ae5eeda",
+        "key": "0a9db0e08d0b737e6a64ecaed525d4cb"
+    },
+    {
+        "nombre": "Europa Europa",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/EUROPAHD/default.mpd",
+        "keyId": "23ca6a142d580eb99bd14dda4b023b5d",
+        "key": "d0534260b536e85d76efe8576afcf473"
+    },
+    {
+        "nombre": "Film & Arts",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/FILMANDARTSHD/default.mpd",
+        "keyId": "31107b01ab02c96457fe0a000f3e0569",
+        "key": "c024c45d71db474d2fa121729e596ca8"
+    },
+    {
+        "nombre": "Golden",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/GOLDENSD/default.mpd",
+        "keyId": "bc0e4c7dfb10d483357572000180cca5",
+        "key": "247351382fcd721f2872c4bda15c5245"
+    },
+    {
+        "nombre": "Golden Edge",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/GOLDENEDGESD/default.mpd",
+        "keyId": "98aa90cb620b972a0d0d66a51cdaca56",
+        "key": "6e8bd53378356ed7f5103d91efb5e54e"
+    },
+    {
+        "nombre": "Golden Multiplex",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/GOLDENMULTIPLEX/default.mpd",
+        "keyId": "f23601997bc024ea96b6b9d1e2b8b3fc",
+        "key": "521a2cfdd3f649a9543422dc41fa4ca0"
+    },
+    {
+        "nombre": "Golden Plus",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/GOLDENPLUSHD/default.mpd",
+        "keyId": "3555824ee6a09d671a2362f37f5a39b9",
+        "key": "f240e5b5e8a27ca8550f23a553451a90"
+    },
+    {
+        "nombre": "Golden Premier",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/GOLDENPREMIERHD/default.mpd",
+        "keyId": "34fa35c8323c11cbb83cb381be55bd64",
+        "key": "02ccc6ae07d997bdbd8b97865d69bb35"
+    },
+    {
+        "nombre": "Golden Premier 2",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/GOLDENPREMIER2HRHD/default.mpd",
+        "keyId": "717324c2c4e6694baddacfd5fbd3a20f",
+        "key": "aacbecfb7f1da441a420a582400102da"
+    },
+    {
+        "nombre": "Paramount",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/PARAMOUNTHD/default.mpd",
+        "keyId": "90cc957ead3f42e98b46d14e8c4b08de",
+        "key": "3ab7cff1e63b9efc40aa962023b4b6b8"
+    },
+    {
+        "nombre": "Sony Movies",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/SONYMOVIESHD/default.mpd",
+        "keyId": "d6c0b2a5a6d7aa72f6f76f3607364cea",
+        "key": "29772b450393146e8d1b56107f5163a2"
+    },
+    {
+        "nombre": "TCM",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/TCMSD/default.mpd",
+        "keyId": "5f667f1e6db8de6ac2ce1b710866aeff",
+        "key": "c8ea6e60d50c6fe170e46da019d59910"
+    },
+    {
+        "nombre": "Universal Channel",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/UNIVERSALCHANNELHD/default.mpd",
+        "keyId": "840bcd9ffdd5721c40b0ade4d9b68246",
+        "key": "d19d330de1f428d1902bc1629a65c0bf"
+    },
+    {
+        "nombre": "N+ FORO",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/FOROTVHD/default.mpd",
+        "keyId": "ea39b9575f51b840a58bda829f20f38d",
+        "key": "9c200a2b120d45e60af506be1d7ad932"
+    },
+    {
+        "nombre": "JUSTICIA TV",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/JUSTICIATVHD/default.mpd",
+        "keyId": "177ec8d93674c51229b3335b72098ea9",
+        "key": "22931411cb487063a6e2152d0c4d4957"
+    },
+    {
+        "nombre": "CANAL DEL CONGRESO",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/CONGRESOSD/default.mpd",
+        "keyId": "a5ab4774832590830c6be4a475500e5f",
+        "key": "37df095b1a36b2abd451f69c32aa7950"
+    },
+    {
+        "nombre": "MILENIO TELEVISIÓN",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/MILENIOHD/default.mpd",
+        "keyId": "a2bffcbe59cee9f1021da53b96dc6e2c",
+        "key": "8cbdc79e0a64dd8d1c3b7ea85830bd10"
+    },
+    {
+        "nombre": "TELEFÓRMULA",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/TELEFORMULASD/default.mpd",
+        "keyId": "c49501c4b1cefd7b0a92935ce1b20be8",
+        "key": "1664d2cc6280dd0f268d2d3f28c76665"
+    },
+    {
+        "nombre": "EL FINANCIERO BLOOMBERG TV",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/ELFINANCIEROHD/default.mpd",
+        "keyId": "d3c97fa71d06d0cd4049185c473ec7dd",
+        "key": "24da4b34a7ae12920a95ebdccd883e54"
+    },
+    {
+        "nombre": "FOX NEWS",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/FOXNEWSHD/default.mpd",
+        "keyId": "aa611985e0c890fdf50d5c6ed88ad0c0",
+        "key": "61dc9d01e315bf46ee43bc9fe882ebd8"
+    },
+    {
+        "nombre": "24 HORAS ESPAÑA",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/24HRSSD/default.mpd",
+        "keyId": "83b70dd2efb59c4afc82f6291057560d",
+        "key": "e6ee9459151ac38d37cfc3ca1a424440"
+    },
+    {
+        "nombre": "CNN EN ESPAÑOL",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/CNNENESPANOLSD/default.mpd",
+        "keyId": "f3a704793810e4848980bf8ebe11ba72",
+        "key": "8a761310bfa7436136729b23ea590185"
+    },
+    {
+        "nombre": "CNN INTERNACIONAL",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/CNNISD/default.mpd",
+        "keyId": "d3b827c857110fd3de6161416854eabd",
+        "key": "3ed74ba1f566d0217dc1a59ba9d61918"
+    },
+    {
+        "nombre": "CNN Headline News",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/HLNSD/default.mpd",
+        "keyId": "daf03fe2327a7ba87a60b54ac531bc75",
+        "key": "040019dfecbe32c0532bb2231665ec33"
+    },
+    {
+        "nombre": "CNN HD",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/CNNHD/default.mpd",
+        "keyId": "4514db2f0b4864f56dbf8b14bcdd4022",
+        "key": "6cc79244441f942839b867572702364e"
+    },
+    {
+        "nombre": "BBC WORLD NEWS",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/BBCWORLDNEWSSD/default.mpd",
+        "keyId": "467298f399dca8777774a9cb49094ffe",
+        "key": "ddfdd52d68df9f18c82d579326c9cfcb"
+    },
+    {
+        "nombre": "AL JAZEERA",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/ALJAZEERAHD/default.mpd",
+        "keyId": "ba7146a3064f23e9f34a76096509d664",
+        "key": "604e9a361c3f7033d930c34ff4d3d830"
+    },
+    {
+        "nombre": "EURONEWS",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/EURONEWSSD/default.mpd",
+        "keyId": "b948db41702afa5e6646243e57b43def",
+        "key": "168d105c8ac7654667c37b576d0bc7c3"
+    },
+    {
+        "nombre": "TUDN",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/TUDNHD/default.mpd",
+        "keyId": "2722647f77b44824c432a3c4555830a2",
+        "key": "1734befb82f4b438bd84195f6c212e7b"
+    },
+    {
+        "nombre": "ESPN",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/ESPNHD/dash/default.mpd",
+        "keyId": "bb43112b7b72e9c287da0ecdec8606a7",
+        "key": "29e3d2678107f0ab0b35b6537c734f2a"
+    },
+    {
+        "nombre": "ESPN 2",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/ESPN2HD/default.mpd",
+        "keyId": "90e2e491c850a49a5ab21bb6fa6b4d24",
+        "key": "4d7e33da19b971cef49e35eccdb9de0b"
+    },
+    {
+        "nombre": "ESPN 3",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/ESPN3HD/dash/default.mpd",
+        "keyId": "0355f64277082b903022985035c498ca",
+        "key": "7a8ed20a4958398677e2c9ccd5a53a00"
+    },
+    {
+        "nombre": "ESPN 4",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/ESPN4HD/default.mpd",
+        "keyId": "2b087348dcaa1bd66a86a4fc7150abc9",
+        "key": "13fb668260b5c982f0c756aeb1ea072d"
+    },
+    {
+        "nombre": "FOX Sports Premium",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/FOXSPORTSPREMIUMHD/default.mpd",
+        "keyId": "0fefd5d94a8cb5b40c057ab182f7dc27",
+        "key": "5548c4823ff7f1ea61bafb7cbc19e005"
+    },
+    {
+        "nombre": "FOX Sports",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/FOXSPORTSHD/default.mpd",
+        "keyId": "9e276bd34034a2c4dcf61d74e1242fbf",
+        "key": "4b466a4affb61d2672a4194b14e10ef2"
+    },
+    {
+        "nombre": "FOX Sports 2",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/FOXSPORTS2HD/default.mpd",
+        "keyId": "23986dae03fa883ed8e489cbf70f9ec3",
+        "key": "6a42c42732a9dd1da1205971b2c5c535"
+    },
+    {
+        "nombre": "FOX Sports 3",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/FOXSPORTS3HD/default.mpd",
+        "keyId": "ed8dd7562fd9f9064bed8d52fa42cc11",
+        "key": "d65a22cfe5bfbd33d8d25b183649e44f"
+    },
+    {
+        "nombre": "Adrenalina Sports Network",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/ADRENALINAHD/default.mpd",
+        "keyId": "6de0a66b528401c0378c559712f74643",
+        "key": "f9a240cea75f585add8405375ad1d787"
+    },
+    {
+        "nombre": "Hi Sports",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/HISPORTSSD/default.mpd",
+        "keyId": "f2966ad533e52a19c3ded1c7b9e40370",
+        "key": "2e0bb20e3edb3ce7fc0d616b3ff28748"
+    },
+    {
+        "nombre": "Golf Channel",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/GOLFCHANNELHD/default.mpd",
+        "keyId": "bd45f6a37a3887044bac88a63e55b70e",
+        "key": "2dff34fba01dd53d0a37dc913bb9ba51"
+    },
+    {
+        "nombre": "PX Sports",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/PXSPORTSHD/default.mpd",
+        "keyId": "8c53466401bf1c02903470cf41d01b6e",
+        "key": "90898b3079182c414ecc104ff53dc9b7"
+    },
+    {
+        "nombre": "NBA TV",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/NBAHD/default.mpd",
+        "keyId": "a5cd47bba986b233d3731297cb62fdf9",
+        "key": "0d067e22a727ae9f264478f5c2ed903a"
+    },
+    {
+        "nombre": "NFL Network",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/NFLHD/default.mpd",
+        "keyId": "9b40cafa23cb7de8418bae6c66159f3a",
+        "key": "b1bde4692ea730163539adc9a84cc488"
+    },
+    {
+        "nombre": "Real Madrid TV",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/4/out/u/dash/REALMADRIDHD/default.mpd",
+        "keyId": "77e93f69c2d4c23e2cf8dc9e892f4ac7",
+        "key": "71a786d7774d6df4487494145db485a4"
+    },
+    {
+        "nombre": "TELEFE INTERNACIONAL",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/1/out/u/dash/TELEFEHD/default.mpd",
+        "keyId": "024bb38ecf7831a54d6ff8eb9d9c5e6a",
+        "key": "031599eff8092a9a9428363fb4356d53"
+    },
+    {
+        "nombre": "TELEMUNDO INTERNACIONAL",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/TELEMUNDOHD/default.mpd",
+        "keyId": "87234ef8a0328b000941fd18bd75d78e",
+        "key": "2bbbeb8783509a4e77e3b79cd7b1869f"
+    },
+    {
+        "nombre": "ANTENA 3 INTERNACIONAL",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/ANTENA3HD/default.mpd",
+        "keyId": "bcfe92161ae5c20d6ffec80cbad9f74b",
+        "key": "6e74e556df5223c5a5102d4846b5670a"
+    },
+    {
+        "nombre": "RAI ITALIA",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/RAIHD/default.mpd",
+        "keyId": "65b6395665d92c16e12f202c9480c425",
+        "key": "eda358f71a474029f1580327ae6766e1"
+    },
+    {
+        "nombre": "TV5MONDE AMÉRIQUE LATINE",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/TV5SD/default.mpd",
+        "keyId": "fb80d09d70628c20bb91cf65a195e1f9",
+        "key": "6115b75f155d1a7a686a525fbd6ca2f6"
+    },
+    {
+        "nombre": "TV GLOBO",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/TVGLOBOSD/default.mpd",
+        "keyId": "29852829d373dfb35df80c5fa1d9bff0",
+        "key": "ceb31ec6a6d90090f490b54f524a27b4"
+    },
+    {
+        "nombre": "TV GALICIA",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/3/out/u/dash/TVGALICIASD/default.mpd",
+        "keyId": "246d0b7d6918c716c74398718df8b380",
+        "key": "0d61192c2a9439439c80e27f9fde622f"
+    },
+    {
+        "nombre": "NHK WORLD JAPAN",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/NHKHD/default.mpd",
+        "keyId": "2ce0d00cf2a4eb71e1f70f06e2b7d3d4",
+        "key": "ceb983f224593c2fbc75a75a6ec92c06"
+    },
+    {
+        "nombre": "Universal Cinema",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/UNIVERSALCINEMAHD/default.mpd",
+        "keyId": "44a9e6477651b3b47f3a2b727d562835",
+        "key": "1b87070d9fad5dee0a35ff014a2063a7"
+    },
+    {
+        "nombre": "Universal Comedy",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/UNIVERSALCOMEDYHD/default.mpd",
+        "keyId": "92b162b0b1d0dbb1e401f5845b4ce109",
+        "key": "83b7ae276784a7f78f4a0c1190974d5c"
+    },
+    {
+        "nombre": "Universal Crime",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/UNIVERSALCRIMEHD/default.mpd",
+        "keyId": "3a908a5d38a9c496ced27faa6bf5ff8e",
+        "key": "85a5835a92bd7f87faf5ffbcb8814d33"
+    },
+    {
+        "nombre": "Universal Premiere",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/UNIVERSALPREMIEREHD/default.mpd",
+        "keyId": "9ccd5dd0c86a40ed719b83e1801bcd88",
+        "key": "6d5e62525837ba9b7e09cfb8716116ba"
+    },
+    {
+        "nombre": "Universal Reality",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/2/out/u/dash/UNIVERSALREALITYHD/default.mpd",
+        "keyId": "02a02bce7a3c518386e0da4e5ec0188d",
+        "key": "071c7cc4c2f33e1e2d3fa3807d1bbbcc"
+    },
+    {
+        "nombre": "HBO",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBOHD/default.mpd",
+        "keyId": "df18f6a05bab28d89e5dc01d88f4deb8",
+        "key": "baceb525467c0db22ba83090616c1ad0"
+    },
+    {
+        "nombre": "HBO 2",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBO2HD/default.mpd",
+        "keyId": "09e84fc7ecb71def143cd7e2771f3b35",
+        "key": "1a91f2d315fb0593321ba60aa783ec2c"
+    },
+    {
+        "nombre": "HBO Family",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBOFAMILYHD/default.mpd",
+        "keyId": "3b1b15c86e64344e8802b06b806957c5",
+        "key": "114983add26911b589595d931b505ca5"
+    },
+    {
+        "nombre": "HBO Mundi",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBOMUNDIHD/default.mpd",
+        "keyId": "ba4052ca5eb6f8ff6b98d47d098b2dec",
+        "key": "bb3e4bfa1821d2bdc25c9a0970e4e3b8"
+    },
+    {
+        "nombre": "HBO Plus",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBOPLUSHD/default.mpd",
+        "keyId": "861ab989089891d84ad0da296954437c",
+        "key": "3bdf94f9fc1888529f8d27d070d38566"
+    },
+    {
+        "nombre": "HBO Pop",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBOPOPHD/default.mpd",
+        "keyId": "bcf36f412fa3d735cea04f7443fbf77c",
+        "key": "6ff29fb2d6b7d825eb06004650a0a4ea"
+    },
+    {
+        "nombre": "HBO Signature",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBOSIGNATUREHD/default.mpd",
+        "keyId": "5782156290f035ef28ae66cca252eedd",
+        "key": "10d8bb6d9f9852747298487ab3c4afa3"
+    },
+    {
+        "nombre": "HBO Xtreme",
+        "categoria": "",
+        "url": "https://live-atv-cdn.izzigo.tv/5/out/u/dash/HBOXTREMEHD/default.mpd",
+        "keyId": "bc8d4369fcff86db765db82356b4797c",
+        "key": "8a7e801dbc275e3f4e1f43cba648906a"
+    }
+]

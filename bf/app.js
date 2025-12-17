@@ -83,7 +83,7 @@ import { db, auth, googleProvider, collection, doc, setDoc, getDoc, query, where
     LT=(s_a,stn)=>{TS.innerHTML='';document.getElementById('tasc').classList.remove('h');s_a.forEach(sE=>{const tN=sE.nombre.split(', temporada ')[1];const opt=document.createElement('option');opt.value=sE.nombre;opt.textContent=tN?`Temporada ${tN}`:sE.nombre;TS.appendChild(opt)});if(stn)TS.value=stn;TS.onchange=e=>{const sS=s_a.find(sE=>sE.nombre===e.target.value);if(sS){S=sS;CCL=0;CPT=0;A.currentTime=0;CLI=parseInt(LS.value)||0;LI(S);LL(S);LCF(S);A.play().catch(err=>{});IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)')}}},
     LI=s_d=>{const t=document.getElementById('si');let rH='';if(s_d.reparto){rH=`<div><strong>Reparto:</strong> ${s_d.reparto.join(", ")}</div>`}S=s_d;t.innerHTML=`<h2>${s_d.nombre}</h2><div><strong>Género:</strong> ${s_d.genero}</div><div><strong>Año:</strong> ${s_d.anio}</div>${rH}<div><strong>País:</strong> ${s_d.pais_origen}</div><div><strong>Episodios:</strong> ${s_d.cantidad_episodios}</div>${s_d.sinopsis?`<div><strong>Sinopsis:</strong> ${s_d.sinopsis}</div>`:''}`},
     LL=s_d=>{LS.innerHTML='';s_d.enlaces.length>1?(s_d.enlaces.forEach((t,e)=>{const n=document.createElement('option');n.value=e,n.textContent=t.idioma,LS.appendChild(n)}),LC.classList.remove('h')):LC.classList.add('h');LS.value=CLI},
-    UC=()=>{if(CSD_L&&CSD_L[CCL]&&CSD_L[CCL].titulo){CI.textContent=(IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`)}else{CI.textContent="Cargando..."}},
+    UC=()=>{if(CSD_L&&CSD_L[CCL]&&CSD_L[CCL].titulo){const nci=(IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`);if(CI.textContent!==nci)CI.textContent=nci}else{const nci="Cargando...";if(CI.textContent!==nci)CI.textContent=nci}},
     UT=()=>{
         if(!escuchaContada&&A.currentTime>UMBRAL_ESCUCHA){registrarVistaUnica();escuchaContada=true}
         const curT=A.currentTime;
@@ -91,8 +91,7 @@ import { db, auth, googleProvider, collection, doc, setDoc, getDoc, query, where
         const calCI=GCI(curT);
         if(calCI<0||calCI>=CSD_L.length||!CSD_L[calCI])return;
         const actualDisplayCap=CSD_L[calCI];
-        if(actualDisplayCap&&typeof actualDisplayCap.inicio!=='undefined'&&typeof actualDisplayCap.fin!=='undefined'){const capS_ti=actualDisplayCap.inicio/1e3,capE_ti=actualDisplayCap.fin/1e3;if(!isNaN(capS_ti)&&!isNaN(capE_ti)&&!isNaN(curT)){TI.textContent=`${FT(curT-capS_ti)} / ${FT(capE_ti-capS_ti)}`}}
-        if(CSD_L[CCL]&&CSD_L[CCL].titulo){CI.textContent=(IP?`Reproduciendo: ${CSD_L[CCL].titulo}`:`${CSD_L[CCL].titulo}`)}
+        if(actualDisplayCap&&typeof actualDisplayCap.inicio!=='undefined'&&typeof actualDisplayCap.fin!=='undefined'){const capS_ti=actualDisplayCap.inicio/1e3,capE_ti=actualDisplayCap.fin/1e3;if(!isNaN(capS_ti)&&!isNaN(capE_ti)&&!isNaN(curT)){const nti=`${FT(curT-capS_ti)} / ${FT(capE_ti-capS_ti)}`;if(TI.textContent!==nti)TI.textContent=nti}}
         if(isManuallySwitchingChapter){if(calCI===parseInt(CS.value)){isManuallySwitchingChapter=false;if(CCL!==calCI){CCL=calCI;UC()}}return}
         if(calCI!==CCL&&parseInt(CS.value)!==calCI){CCL=calCI;CS.value=CCL;UC();if(ACCI&&CSD_L[CCL]&&CSD_L[CCL].titulo)ACCI.textContent=CSD_L[CCL].titulo}else if(calCI!==CCL&&parseInt(CS.value)===calCI){CCL=calCI;UC()}
     },
@@ -124,7 +123,7 @@ import { db, auth, googleProvider, collection, doc, setDoc, getDoc, query, where
     CS.addEventListener('change',()=>{S&&GP();isManuallySwitchingChapter=true;PC(true,true);});
     
     A.addEventListener('play',()=>{IP=!0;PB.textContent='Pausar';PB.setAttribute('aria-label','Pausar (Alt + K)');UC()});
-    A.addEventListener('pause',()=>{IP=!1;PB.textContent='Reproducir';PB.setAttribute('aria-label','Reproducir (Alt + K)');if(S&&!playerView.classList.contains('view-hidden')){GP()}});
+    A.addEventListener('pause',()=>{IP=!1;PB.textContent='Reproducir';PB.setAttribute('aria-label','Reproducir (Alt + K)');UC();if(S&&!playerView.classList.contains('view-hidden')){GP()}});
     
     A.addEventListener('ended',()=>{NP()});
     LS.addEventListener('change',CLS);PB.addEventListener('click',TP);
