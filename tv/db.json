@@ -1508,6 +1508,13 @@
         "key": "90854705154fd5b33b430bbe1aa2a78f"
     },
     {
+        "nombre": "Telemundo",
+        "categoria": "Mundiales",
+        "url": "https://live-oneapp-prd-news.akamaized.net/Content/CMAF_OL1-CTR-4s/Live/channel(WNJU)/master.mpd",
+        "keyId": "e1f756cffcc838e28a3da6541c00ee8b",
+        "key": "1444b1c17a5c1f78435de12dcff47c8e"
+    },
+    {
         "nombre": "Warner",
         "categoria": "España",
         "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/TNT_HD_B/__op/dash-wv/__f/manifest.mpd",
