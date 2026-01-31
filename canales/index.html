@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>R</title>
+<script src="https://cdn.jsdelivr.net/npm/shaka-player@4.7.12/dist/shaka-player.ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body{font-family:sans-serif;background:#eee;display:flex;justify-content:center;min-height:100vh;margin:0;color:#000}
+button,select{font-size:1.1rem;padding:15px;margin:5px;cursor:pointer;border-radius:8px;border:2px solid #333;background:#fff;color:#000;width:100%;box-sizing:border-box}
+button:focus,select:focus{outline:4px solid #00f;background:#ff9}
+.box{background:#fff;padding:20px;width:95%;max-width:600px;border-radius:10px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.row{display:flex;justify-content:space-between;gap:5px;flex-wrap:wrap}
+.g{margin-bottom:15px}
+label{display:block;font-weight:bold;margin-bottom:5px}
+.sub{background:#f9f9f9;padding:10px;border:1px solid #ccc;margin-top:5px;display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.bp{width:100%;background:#004494;color:#fff;font-size:2rem;height:80px}
+.bp:hover{background:#003377}
+.br{color:red;border-color:darkred}
+.br.on{background:red;color:white;animation:p 1s infinite}
+@keyframes p{50%{opacity:0.5}}
+#rx{display:none;margin-top:20px;padding-top:15px;border-top:2px dashed #999;text-align:center}
+.row>div{flex:1}
+</style>
+</head>
+<body>
+<div class="box">
+    <h1>📻</h1>
+    <div id="z" class="sr" aria-live="polite"></div>
+    <div class="g"><label for="p">País:</label><select id="p" onchange="CB(this.value)"></select></div>
+    <div class="g"><label for="c">Categoría:</label><select id="c" onchange="U()"></select></div>
+    <div class="g"><label for="h">Canal:</label><select id="h" onchange="L()"></select></div>
+    <div class="g" id="lg" style="display:none"><label for="l">Idioma:</label><select id="l" onchange="P.l(this.value)"></select></div>
+    
+    <button id="pb" class="bp" onclick="P.t()" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+    <button id="rb" class="br" onclick="P.gr()" aria-label="Grabar"><i class="fas fa-circle"></i></button>
+    
+    <div class="row">
+        <div>
+            <button onclick="T('mr',this)" aria-expanded="false" aria-controls="mr"><i class="fas fa-backward"></i> Retroceder...</button>
+            <div id="mr" class="sub" style="display:none">
+                <button onclick="P.s(-10)">-10s</button><button onclick="P.s(-30)">-30s</button>
+                <button onclick="P.s(-60)">-1m</button><button onclick="P.s(-300)">-5m</button>
+                <button onclick="P.s(-600)">-10m</button><button onclick="P.s(-900)">-15m</button>
+                <button onclick="P.s(-1800)">-30m</button><button onclick="P.s(-3600)">-1h</button><button onclick="P.s(-7200)">-2h</button>
+            </div>
+        </div>
+        <div>
+            <button onclick="T('mf',this)" aria-expanded="false" aria-controls="mf">Avanzar... <i class="fas fa-forward"></i></button>
+            <div id="mf" class="sub" style="display:none">
+                <button onclick="P.s(10)">+10s</button><button onclick="P.s(30)">+30s</button>
+                <button onclick="P.s(60)">+1m</button><button onclick="P.s(300)">+5m</button>
+                <button onclick="P.s(600)">+10m</button><button onclick="P.s(900)">+15m</button><button onclick="P.s(1800)">+30m</button><button onclick="P.s(3600)">+1h</button><button onclick="P.s(7200)">+2h</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" style="margin-top:10px;align-items:center">
+        <button onclick="P.v(-0.05)" style="width:auto"><i class="fas fa-volume-down"></i></button>
+        <span id="vd" style="font-size:1.5rem;font-weight:bold;flex:1;text-align:center">100%</span>
+        <button onclick="P.v(0.05)" style="width:auto"><i class="fas fa-volume-up"></i></button>
+    </div>
+    
+    <div id="st" style="margin-top:10px;text-align:center">Listo</div>
+    
+    <div id="rx">
+        <div style="font-size:1.5rem;font-weight:bold;margin-bottom:10px" id="tmr">00:00:00</div>
+        <button onclick="P.gp()" style="width:100%;background:#28a745;color:white"><i class="fas fa-save"></i> Guardar Progreso</button>
+    </div>
+    
+    <audio id="a" crossorigin="anonymous"></audio>
+</div>
+<script>
+// CONFIGURA AQUÍ TUS BASES DE DATOS
+const K=[
+    {n:"Argentina, Uruguay y Paraguay",u:"/canales/db.json"},
+    {n:"Argentina",u:"/canales/dbp.json"},
+    {n:"Chile",u:"/canales/dbch.json"},
+    {n:"España",u:"/canales/dbes.json"},
+    {n:"México",u:"/canales/mx.json"}
+];
+
+var D=[],$=i=>document.getElementById(i),S=(t)=>{let e=$("z");e.innerText=t;setTimeout(()=>e.innerText="",999)};
+function T(i,b){let x=$(i),v=x.style.display==="none";x.style.display=v?"grid":"none";b.setAttribute("aria-expanded",v);if(v)x.querySelector("button").focus()}
+window.onbeforeunload=e=>{if(P.r&&P.r.state==="recording"){e.preventDefault();return"G"}};
+
+const P={
+    k:null,a:null,r:null,rc:[],ac:null,ms:null,ds:null,gn:null,tm:null,st:0,vl:1,
+    i(){
+        shaka.polyfill.installAll();
+        if(!shaka.Player.isBrowserSupported())return alert("X");
+        this.a=$("a");
+        this.k=new shaka.Player(this.a);
+        this.k.configure({streaming:{followRedirects:!0,restrictions:{maxHeight:0}}});
+        this.k.getNetworkingEngine().registerRequestFilter((t,r)=>{
+            if(t==shaka.net.NetworkingEngine.RequestType.MANIFEST||t==shaka.net.NetworkingEngine.RequestType.SEGMENT){
+                let p=r.uris[0].split("|");r.uris[0]=p[0];
+                if(p.length>1)for(let i=1;i<p.length;i++){let h=p[i].split("=");if(h.length===2)r.headers[h[0]]=h[1]}
+            }
+        });
+        this.a.addEventListener("play",()=>{U(!0);S("Play")});
+        this.a.addEventListener("pause",()=>{U(!1);S("Pausa")});
+        $("vd").innerText="100%"
+    },
+    ax(){
+        if(this.ac)return;this.ac=new(window.AudioContext||window.webkitAudioContext);
+        this.ms=this.ac.createMediaElementSource(this.a);this.gn=this.ac.createGain();
+        this.ds=this.ac.createMediaStreamDestination();
+        this.ms.connect(this.ds);this.ms.connect(this.gn);this.gn.connect(this.ac.destination);
+        this.gn.gain.value=this.vl
+    },
+    async p(d){
+        try{
+            this.ax();
+            if(this.ac.state==="suspended")this.ac.resume();
+            this.a.volume=1;
+            
+            // LOGICA DRM ACTUALIZADA PARA SOPORTAR AMBOS FORMATOS
+            let c={};
+            if(d.clearkeys) {
+                // Formato MundoGo: objeto con multiples llaves
+                c={clearKeys:d.clearkeys};
+            } else if(d.keyId && d.key) {
+                // Formato Argentina: keyId y key individuales
+                c={clearKeys:{[d.keyId.replace(/-/g,"")]:d.key.replace(/-/g,"")}};
+            }
+            
+            this.k.configure({drm:c});
+            await this.k.load(d.url);
+            $("st").innerText=d.nombre;
+            S("Cargando "+d.nombre);
+            this.a.play().catch(()=>{});
+            this.u()
+        }catch(e){
+            console.log(e);
+            S("Error")
+        }
+    },
+    t(){this.a.paused?this.a.play():this.a.pause()},
+    s(n){try{this.a.currentTime+=n;S((n>0?"Av ":"Ret ")+Math.abs(n)+"s")}catch(e){S("Error mover")}},
+    v(n){this.ax();this.vl=Math.min(1,Math.max(0,Math.round((this.vl+n)*100)/100));this.gn.gain.value=this.vl;let v=Math.round(this.vl*100);$("vd").innerText=v+"%";S("Vol "+v)},
+    u(){let t=this.k.getAudioLanguagesAndRoles(),s=$("l"),g=$("lg");s.innerHTML="";let o=new Set;t.forEach(x=>{if(!o.has(x.language)){o.add(x.language);s.add(new Option(x.language==="es"?"Español":x.language,x.language))}});g.style.display=t.length>1?"block":"none";if(t.length>1)S("Idiomas")},
+    l(n){this.k.selectAudioLanguage(n);S("Idioma "+n)},
+    gr(){let b=$("rb"),x=$("rx");if(this.r&&this.r.state==="recording"){this.r.stop();b.classList.remove("on");b.setAttribute("aria-label","Grabar");x.style.display="none";clearInterval(this.tm);S("Guardando...");return}try{this.ax();if(this.ac.state==="suspended")this.ac.resume();this.rc=[];this.r=new MediaRecorder(this.ds.stream);this.r.ondataavailable=e=>{if(e.data.size>0)this.rc.push(e.data)};this.r.onstop=()=>{this.dl()};this.r.start(1000);b.classList.add("on");b.setAttribute("aria-label","Detener");x.style.display="block";this.st=Date.now();this.tm=setInterval(()=>this.upT(),1000);S("Grabando...")}catch(e){console.log(e);S("Error DRM")}},
+    gp(){if(this.r&&this.r.state==="recording"){this.dl(true);S("Guardado")}},
+    dl(p){if(!this.rc.length)return;let b=new Blob(this.rc,{type:"audio/webm"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="R_"+(p?"P_":"")+Date.now()+".webm";a.click();setTimeout(()=>URL.revokeObjectURL(u),100)},
+    upT(){let d=Math.floor((Date.now()-this.st)/1000),h=Math.floor(d/3600),m=Math.floor((d%3600)/60),s=d%60;if(h<10)h="0"+h;if(m<10)m="0"+m;if(s<10)s="0"+s;document.getElementById("tmr").innerText=h+":"+m+":"+s}
+};
+
+function I(){
+    P.i();
+    let s=$("p");
+    K.forEach(b=>s.add(new Option(b.n,b.u)));
+    if(K.length>0)CB(K[0].u)
+}
+function CB(u){
+    S("Cargando DB...");
+    fetch(u).then(r=>r.json()).then(d=>{
+        D=d;
+        let s=$("c");
+        s.innerHTML="";
+        [...new Set(D.map(z=>z.categoria))].sort().forEach(k=>s.add(new Option(k,k)));
+        U();
+        S("Listo")
+    }).catch(()=>{S("Error DB");$("c").innerHTML="";$("h").innerHTML=""})
+}
+function U(p){
+    if(typeof p==="boolean"){
+        $("pb").innerHTML='<i class="fas fa-'+(p?"pause":"play")+'"></i>';
+        $("pb").setAttribute("aria-label",p?"Pausar":"Reproducir");
+        return
+    }
+    let k=$("c").value,s=$("h");
+    s.innerHTML="";
+    if(D.length)D.filter(z=>z.categoria===k).sort((a,b)=>a.nombre.localeCompare(b.nombre)).forEach(z=>s.add(new Option(z.nombre,JSON.stringify(z))));
+    if(s.length>0)L()
+}
+function L(){
+    let v=$("h").value;
+    if(v)P.p(JSON.parse(v))
+}
+document.addEventListener("DOMContentLoaded",I);
+</script>
+</body>
+</html>
