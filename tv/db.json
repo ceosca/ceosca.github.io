@@ -529,6 +529,13 @@
         "key": "d1fd24db1b61d634cabfc44538ce9b0e"
     },
     {
+        "nombre": "Telemundo Internacional mx",
+        "categoria": "Internacionales",
+        "url": "https://nog-live1-ott.izzigo.tv/13/out/u/dash/TELEMUNDO-HD/default.mpd",
+        "keyId": "87234ef8a0328b000941fd18bd75d78e",
+        "key": "2bbbeb8783509a4e77e3b79cd7b1869f"
+    },
+    {
         "nombre": "TNT",
         "categoria": "Cine y Series",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/TNT_HD_Arg/SA_Live_dash_enc_C/TNT_HD_Arg.mpd",
@@ -1125,25 +1132,28 @@
         "key": "39fa06836ec0f81d8dd9b6e01a3070e3"
     },
     {
-        "nombre": "Canal 4 URU",
+        "nombre": "Canal 4",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal4_URU/SA_Live_dash_enc_C/Canal4_URU.mpd",
         "keyId": "dabefaac89742589778fcfab78f08354",
-        "key": "896dd914683b01c8044ffd34d7b6416b"
+        "key": "896dd914683b01c8044ffd34d7b6416b",
+        "epg_id": ""
     },
     {
-        "nombre": "Canal 10 URU",
+        "nombre": "Canal 10",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal10_URU/SA_Live_dash_enc_C/Canal10_URU.mpd",
         "keyId": "8dd34782d754f8fcb1e8b38da9ffad0b",
-        "key": "6fb97467c0f0ea13f86d41a70e029c51"
+        "key": "6fb97467c0f0ea13f86d41a70e029c51",
+        "epg_id": ""
     },
     {
-        "nombre": "Canal 12 URU",
+        "nombre": "Canal 12",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/Canal12URU/SA_Live_dash_enc_C/Canal12URU.mpd",
         "keyId": "dfde9d35d7438bfdf61da5dfac0557c1",
-        "key": "acb13370c03a7254e2bb9cc9d2125017"
+        "key": "acb13370c03a7254e2bb9cc9d2125017",
+        "epg_id": ""
     },
     {
         "nombre": "Teve Ciudad",
@@ -1153,11 +1163,12 @@
         "key": "d691c88a95440666742d1d8183182347"
     },
     {
-        "nombre": "TV Nacional Uy",
+        "nombre": "TV Nacional",
         "categoria": "Uruguay",
         "url": "https://chromecast.cvattv.com.ar/live/c3eds/TV_Nacional_Uy/SA_Live_dash_enc_C/TV_Nacional_Uy.mpd",
         "keyId": "c50518d7f59f4c0aa9a3079fe2b014fd",
-        "key": "96038f76a2ba33866ea54eb4b260573f"
+        "key": "96038f76a2ba33866ea54eb4b260573f",
+        "epg_id": ""
     },
     {
         "nombre": "UCL",
@@ -1167,32 +1178,36 @@
         "key": "07015b4cfa048a3351b83d60aeca5ead"
     },
     {
-        "nombre": "5 Dias PY",
+        "nombre": "5 Días",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/5_Dias_PY/SA_Live_dash_enc_C/5_Dias_PY.mpd",
         "keyId": "746091c502edcf1e9d003535ce01f3e4",
-        "key": "29081b5f92d1a37c88fbbd0ece55c839"
+        "key": "29081b5f92d1a37c88fbbd0ece55c839",
+        "epg_id": ""
     },
     {
-        "nombre": "ABC TV C4",
+        "nombre": "ABC TV",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c5eds/ABC_TV_C4/SA_Live_dash_enc_C/ABC_TV_C4.mpd",
         "keyId": "c0bef75733b2645452432bd4e76f36f5",
-        "key": "ea16243367d814c1d53f1eaf21f005ff"
+        "key": "ea16243367d814c1d53f1eaf21f005ff",
+        "epg_id": ""
     },
     {
-        "nombre": "America PY",
+        "nombre": "América",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/America_PY/SA_Live_dash_enc_C/America_PY.mpd",
         "keyId": "4e4a187474de8e29a8507d496c8a594f",
-        "key": "daab5ccf306d67749740f7ce02c07850"
+        "key": "daab5ccf306d67749740f7ce02c07850",
+        "epg_id": ""
     },
     {
-        "nombre": "C9N C4",
+        "nombre": "C9N",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c5eds/C9N_C4/SA_Live_dash_enc_C/C9N_C4.mpd",
         "keyId": "646700eeb14cadfa0543a20cf413d37e",
-        "key": "4fc037c462023764624d8446442cbbca"
+        "key": "4fc037c462023764624d8446442cbbca",
+        "epg_id": ""
     },
     {
         "nombre": "Canal PRO",
@@ -1216,11 +1231,12 @@
         "key": "dd9d597ceaf05fa903587ff1a657a04e"
     },
     {
-        "nombre": "LA TELE C4",
+        "nombre": "LA Tele",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/LA_TELE_C4/SA_Live_dash_enc_C/LA_TELE_C4.mpd",
         "keyId": "7c6a481adf6a080ec09637d3f25989cf",
-        "key": "036e343d636b821ab81838de387b62cb"
+        "key": "036e343d636b821ab81838de387b62cb",
+        "epg_id": ""
     },
     {
         "nombre": "Mega TV",
@@ -1230,18 +1246,20 @@
         "key": "58face97c908502f17549eb62459bd80"
     },
     {
-        "nombre": "Nanduti Py",
+        "nombre": "Nanduti",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/Nanduti_Py/SA_Live_dash_enc_C/Nanduti_Py.mpd",
-        "keyId": null,
-        "key": null
+        "keyId": "",
+        "key": "",
+        "epg_id": ""
     },
     {
-        "nombre": "NOTICIAS PY C4",
+        "nombre": "Noticias",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/NOTICIAS_PY_C4/SA_Live_dash_enc_C/NOTICIAS_PY_C4.mpd",
         "keyId": "8f66fe15735b2b1b3d5eb3646caa405e",
-        "key": "404b93fd7b499b1061c9a714e1cdb2d0"
+        "key": "404b93fd7b499b1061c9a714e1cdb2d0",
+        "epg_id": ""
     },
     {
         "nombre": "Paraguay TV",
@@ -1251,39 +1269,44 @@
         "key": "ae23f8357512df2dfabcb8104b078182"
     },
     {
-        "nombre": "PARAVISION C4",
+        "nombre": "Paravisión",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/PARAVISION_C4/SA_Live_dash_enc_C/PARAVISION_C4.mpd",
         "keyId": "bd8e8c9b32ef027e8ff4ff0cfce855a4",
-        "key": "2918e9893b570c3fa1f215b52a12cc91"
+        "key": "2918e9893b570c3fa1f215b52a12cc91",
+        "epg_id": ""
     },
     {
-        "nombre": "RPC C4",
+        "nombre": "RPC",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/RPC_C4/SA_Live_dash_enc_C/RPC_C4.mpd",
         "keyId": "a8093cdcb2d504bd38f16764bd21b6e5",
-        "key": "bfcf3b033b5f0b5ae020751a6746326f"
+        "key": "bfcf3b033b5f0b5ae020751a6746326f",
+        "epg_id": ""
     },
     {
-        "nombre": "SNT C4",
+        "nombre": "SNT",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/SNT_C4/SA_Live_dash_enc_C/SNT_C4.mpd",
         "keyId": "9f61dcce871cc41aeb206d05028fc30a",
-        "key": "9f6248194a3bf5e35b96b194e8624693"
+        "key": "9f6248194a3bf5e35b96b194e8624693",
+        "epg_id": ""
     },
     {
-        "nombre": "SUR TV C4",
+        "nombre": "Sur TV",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/SUR_TV_C4/SA_Live_dash_enc_C/SUR_TV_C4.mpd",
         "keyId": "988ae4e8408981609ded9f8b23bbf79d",
-        "key": "b867c66791bcad67ee142be1e21c2577"
+        "key": "b867c66791bcad67ee142be1e21c2577",
+        "epg_id": ""
     },
     {
-        "nombre": "TELEFUTURO C4",
+        "nombre": "Telefuturo",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/TELEFUTURO_C4/SA_Live_dash_enc_C/TELEFUTURO_C4.mpd",
         "keyId": "5d2731cf8a59b73438ef59d88cd882bf",
-        "key": "3f412fa6368b7db4903588de695377e1"
+        "key": "3f412fa6368b7db4903588de695377e1",
+        "epg_id": ""
     },
     {
         "nombre": "TV Camara",
@@ -1293,11 +1316,12 @@
         "key": "3d03e0a79d8f7b7aa2897c3d24bd4b6a"
     },
     {
-        "nombre": "UNICANAL C4",
+        "nombre": "Unicanal",
         "categoria": "Paraguay",
         "url": "https://chromecast.cvattv.com.ar/live/c4eds/UNICANAL_C4/SA_Live_dash_enc_C/UNICANAL_C4.mpd",
         "keyId": "63a3729cfd60f24f7e1266bee5eca02c",
-        "key": "cb9ed028af40654e1aa43934ee58db58"
+        "key": "cb9ed028af40654e1aa43934ee58db58",
+        "epg_id": ""
     },
     {
         "nombre": "UnionTV",
@@ -1347,5 +1371,147 @@
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc_C/Venus.mpd",
         "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
         "key": "05d973d987915120e567880f50a422af"
+    },
+    {
+        "nombre": "La 1",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/La1_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "0f875d143e454c202da20d59b2605329",
+        "key": "32ac16cdbdd7575ed49efcae69632a0d",
+        "epg_id": ""
+    },
+    {
+        "nombre": "La 2",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/La2_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "9fdcfbaa9596c46578831e0ebbf91d8f",
+        "key": "a37a755f5190a9723f05435d92c84865"
+    },
+    {
+        "nombre": "Antena 3",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Antena3_HD_A/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "8db0263979f7a0f26f89281364854c6b",
+        "key": "22ae33e7e93c2d42524e7b01a66021d4"
+    },
+    {
+        "nombre": "Cuatro",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/Cuatro_HD_B/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "193be40bb296833376ed175df676898c",
+        "key": "b3c0940e95d002c12b00b62d49e33e77",
+        "epg_id": ""
+    },
+    {
+        "nombre": "Telecinco",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/Telecinco_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "9e50300e0f017c1f0530872407bab429",
+        "key": "570286e1e20decf9039b465551d66fa1"
+    },
+    {
+        "nombre": "LaSexta",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/La_Sexta_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "c5c11187dfbcd7f510476c3bdbcca9b9",
+        "key": "7ce9a4d00d62cded522d7b597c921b9d"
+    },
+    {
+        "nombre": "Clan",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Clan_HD_A/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "5432cd170289e6430388808959bc5bf3",
+        "key": "7855017ea5e6e6cb22d75d00d267e8b8"
+    },
+    {
+        "nombre": "Atreseries",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/Atreseries_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "3a7c504d770ba33ce3fb15490af0622c",
+        "key": "ca245d465a0afe9a79e2a0b980c96c06"
+    },
+    {
+        "nombre": "Neox",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Neox_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "de52558331eaebf4e64afd1a29b8147c",
+        "key": "c1428d543ca470e6f085899828ac442e"
+    },
+    {
+        "nombre": "Nova",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/NOVA_HD_B/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "9da2c93972f0c2d5904fdd5b1869ccff",
+        "key": "8fc401fb609f404ad32536a48c3b61ac"
+    },
+    {
+        "nombre": "FDF",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/FDF_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "b78575ebae962ff1818d1a4920419450",
+        "key": "d53c30a2172b6826cdd90aa0f420c573"
+    },
+    {
+        "nombre": "Divinity",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Divinity_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "98bf90e780111590239c3eb5cf3f31af",
+        "key": "34470939de7cee65b2ed233302f9a27b"
+    },
+    {
+        "nombre": "Energy",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Energy_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "0e3ee9e756605e7da4ac62c1ff9c0ed4",
+        "key": "6ecd14b91901983d229d034f2aec3bbd"
+    },
+    {
+        "nombre": "MEGA",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Mega_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "1961bc1fcdbcff17bc56e04abd908a8a",
+        "key": "55a2cdec44bd52a94af30e9a5dc5383b"
+    },
+    {
+        "nombre": "AMC",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/AMC_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "0feb7c47084408d66c6b5ce716727f33",
+        "key": "85afb2740cb742d96f0c2b32ab50b372"
+    },
+    {
+        "nombre": "Be Mad TV",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/BeMadTV_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "517f1f86c2feae6abd574f61731bdf7a",
+        "key": "9401610de3771804887fad9e0c3b1307"
+    },
+    {
+        "nombre": "Canal Hollywood",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/HWD_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "b45d5423083c241e3b455deb09ff11e5",
+        "key": "1cc0c110d828d638c7e53d6055205ae6"
+    },
+    {
+        "nombre": "STAR CHANNEL",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-p1/__c/FOX_HD/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "13ff6a1cc570dc53f7ce42e70db1ad82",
+        "key": "8d97281b0a59e66cc56f954cf738589c"
+    },
+    {
+        "nombre": "TCM",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/TCM_HD_A/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "04bbddd6a74f290646a50057733fb992",
+        "key": "90854705154fd5b33b430bbe1aa2a78f"
+    },
+    {
+        "nombre": "Warner",
+        "categoria": "España",
+        "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/TNT_HD_B/__op/dash-wv/__f/manifest.mpd",
+        "keyId": "1f5cdba60223ed2b1dfb47b6ddf49a63",
+        "key": "41ccf772d994b23182bcb2f829bfe526"
     }
 ]
