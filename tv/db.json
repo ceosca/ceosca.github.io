@@ -1520,5 +1520,13 @@
         "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/TNT_HD_B/__op/dash-wv/__f/manifest.mpd",
         "keyId": "1f5cdba60223ed2b1dfb47b6ddf49a63",
         "key": "41ccf772d994b23182bcb2f829bfe526"
+    },
+    {
+        "nombre": "TyC sports lista",
+        "categoria": "",
+        "url": "http://104.194.8.54:9090/285433_.m3u8",
+        "epg_id": "",
+        "keyId": "",
+        "key": ""
     }
 ]
