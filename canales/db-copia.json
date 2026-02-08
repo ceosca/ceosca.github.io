@@ -217,7 +217,7 @@
     {
         "nombre": "ESPN Premiun",
         "categoria": "Deportes",
-        "url": "https://qn-01282-hor-1-02-1---7482-vm9d.http.global.dns.qwilted-cds.cqloud.com/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzcwNjc2MjIzIiwic2lwIjoiMTg2LjEyMi4yMjQuMjAxIiwicGF0aCI6Ii9saXZlL2M3ZWRzL1RlbGVtdW5kb19IRC9TQV9MaXZlX2Rhc2hfZW5jLyIsInNlc3Npb25fY2RuX2lkIjoiNTliMjY1ZmE4NjIwZWI1NCIsInNlc3Npb25faWQiOiI3ODEyNTkwNi0xNzcwNTAzNDM4LTM5NyIsImNsaWVudF9pZCI6Ijk5OTkwMDAwMTg5MzU1Mi0tMTIyOTQzMTQiLCJkZXZpY2VfaWQiOiI3ODEyNTkwNiIsIm1heF9zZXNzaW9ucyI6MCwic2Vzc2lvbl9kdXJhdGlvbiI6MCwidXJsIjoiaHR0cHM6Ly8yMDEuMjM1LjY2LjEyMyIsImF1ZCI6IjIzMSIsInNvdXJjZXMiOls4NSwxNDQsODYsODhdfQ==.BzxVjyAHK1Waytbzlq4W7derjARu90GOcOAJfp7banL8A5kdrJU_I1_xPoKquWfo5wuz_cxlJiqze4C7vfqvdA==/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_C/Fox_Sports_Premiun_HD.mpd",
+        "url": "https://chromecast.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_C/Fox_Sports_Premiun_HD.mpd",
         "keyId": "4c230dbc7f6a4bfa6ad0aa73ff792374",
         "key": "4186a7c2a15f590a9399886feaec4257",
         "epg": ""
@@ -225,7 +225,7 @@
     {
         "nombre": "ESPN (Uruguay)",
         "categoria": "Deportes",
-        "url": "https://qn-01282-hor-1-02-1---7482-vm9d.http.global.dns.qwilted-cds.cqloud.com/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzcwNjc2MjIzIiwic2lwIjoiMTg2LjEyMi4yMjQuMjAxIiwicGF0aCI6Ii9saXZlL2M3ZWRzL1RlbGVtdW5kb19IRC9TQV9MaXZlX2Rhc2hfZW5jLyIsInNlc3Npb25fY2RuX2lkIjoiNTliMjY1ZmE4NjIwZWI1NCIsInNlc3Npb25faWQiOiI3ODEyNTkwNi0xNzcwNTAzNDM4LTM5NyIsImNsaWVudF9pZCI6Ijk5OTkwMDAwMTg5MzU1Mi0tMTIyOTQzMTQiLCJkZXZpY2VfaWQiOiI3ODEyNTkwNiIsIm1heF9zZXNzaW9ucyI6MCwic2Vzc2lvbl9kdXJhdGlvbiI6MCwidXJsIjoiaHR0cHM6Ly8yMDEuMjM1LjY2LjEyMyIsImF1ZCI6IjIzMSIsInNvdXJjZXMiOls4NSwxNDQsODYsODhdfQ==.BzxVjyAHK1Waytbzlq4W7derjARu90GOcOAJfp7banL8A5kdrJU_I1_xPoKquWfo5wuz_cxlJiqze4C7vfqvdA==/live/c4eds/ESPN_UY/SA_Live_dash_enc_C/ESPN_UY.mpd",
+        "url": "https://chromecast.cvattv.com.ar/live/c4eds/ESPN_UY/SA_Live_dash_enc_C/ESPN_UY.mpd",
         "keyId": "6362e1f36fcb7ee3c47debd9140336ad",
         "key": "9ba1d46c5b9c7a3130a5dabbf7155175",
         "epg": ""
@@ -528,6 +528,13 @@
         "keyId": "53d752e4649dadd808d913985f86ee77",
         "key": "d1fd24db1b61d634cabfc44538ce9b0e"
     },
+  {
+    "nombre": "Telemundo Internacional mx",
+    "categoria": "Internacionales",
+    "url": "https://nog-live1-ott.izzigo.tv/13/out/u/dash/TELEMUNDO-HD/default.mpd",
+    "keyId": "87234ef8a0328b000941fd18bd75d78e",
+    "key": "2bbbeb8783509a4e77e3b79cd7b1869f"
+  },
     {
         "nombre": "TNT",
         "categoria": "Cine y Series",
@@ -1347,5 +1354,145 @@
         "url": "https://chromecast.cvattv.com.ar/live/c6eds/Venus/SA_Live_dash_enc_C/Venus.mpd",
         "keyId": "34237d2ae6684ee7a011f5b9c7c43e6d",
         "key": "05d973d987915120e567880f50a422af"
-    }
+    },
+  {
+    "nombre": "La 1 HD",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/La1_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "0f875d143e454c202da20d59b2605329",
+    "key": "32ac16cdbdd7575ed49efcae69632a0d"
+  },
+  {
+    "nombre": "La 2",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/La2_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "9fdcfbaa9596c46578831e0ebbf91d8f",
+    "key": "a37a755f5190a9723f05435d92c84865"
+  },
+  {
+    "nombre": "Antena 3",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Antena3_HD_A/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "8db0263979f7a0f26f89281364854c6b",
+    "key": "22ae33e7e93c2d42524e7b01a66021d4"
+  },
+  {
+    "nombre": "Cuatro HD",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/Cuatro_HD_B/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "193be40bb296833376ed175df676898c",
+    "key": "b3c0940e95d002c12b00b62d49e33e77"
+  },
+  {
+    "nombre": "Telecinco",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/Telecinco_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "9e50300e0f017c1f0530872407bab429",
+    "key": "570286e1e20decf9039b465551d66fa1"
+  },
+  {
+    "nombre": "LaSexta",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/La_Sexta_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "c5c11187dfbcd7f510476c3bdbcca9b9",
+    "key": "7ce9a4d00d62cded522d7b597c921b9d"
+  },
+  {
+    "nombre": "Atreseries",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/Atreseries_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "3a7c504d770ba33ce3fb15490af0622c",
+    "key": "ca245d465a0afe9a79e2a0b980c96c06"
+  },
+  {
+    "nombre": "Neox",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Neox_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "de52558331eaebf4e64afd1a29b8147c",
+    "key": "c1428d543ca470e6f085899828ac442e"
+  },
+  {
+    "nombre": "Nova",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/NOVA_HD_B/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "9da2c93972f0c2d5904fdd5b1869ccff",
+    "key": "8fc401fb609f404ad32536a48c3b61ac"
+  },
+  {
+    "nombre": "FDF",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/FDF_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "b78575ebae962ff1818d1a4920419450",
+    "key": "d53c30a2172b6826cdd90aa0f420c573"
+  },
+  {
+    "nombre": "Divinity",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Divinity_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "98bf90e780111590239c3eb5cf3f31af",
+    "key": "34470939de7cee65b2ed233302f9a27b"
+  },
+  {
+    "nombre": "Energy",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Energy_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "0e3ee9e756605e7da4ac62c1ff9c0ed4",
+    "key": "6ecd14b91901983d229d034f2aec3bbd"
+  },
+  {
+    "nombre": "MEGA",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Mega_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "1961bc1fcdbcff17bc56e04abd908a8a",
+    "key": "55a2cdec44bd52a94af30e9a5dc5383b"
+  },
+  {
+    "nombre": "Be Mad TV",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r1/__c/BeMadTV_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "517f1f86c2feae6abd574f61731bdf7a",
+    "key": "9401610de3771804887fad9e0c3b1307"
+  },
+  {
+    "nombre": "Clan",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/Clan_HD_A/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "5432cd170289e6430388808959bc5bf3",
+    "key": "7855017ea5e6e6cb22d75d00d267e8b8"
+  },
+  {
+    "nombre": "TCM",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r2/__c/TCM_HD_A/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "04bbddd6a74f290646a50057733fb992",
+    "key": "90854705154fd5b33b430bbe1aa2a78f"
+  },
+  {
+    "nombre": "Canal Hollywood",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/HWD_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "b45d5423083c241e3b455deb09ff11e5",
+    "key": "1cc0c110d828d638c7e53d6055205ae6"
+  },
+  {
+    "nombre": "STAR CHANNEL",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-p1/__c/FOX_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "13ff6a1cc570dc53f7ce42e70db1ad82",
+    "key": "8d97281b0a59e66cc56f954cf738589c"
+  },
+  {
+    "nombre": "Warner",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/TNT_HD_B/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "1f5cdba60223ed2b1dfb47b6ddf49a63",
+    "key": "41ccf772d994b23182bcb2f829bfe526"
+  },
+  {
+    "nombre": "AMC",
+    "categoria": "España",
+    "url": "https://requestrouter3.cdn.agiletv.net/__cl/cg:lv-r3/__c/AMC_HD/__op/dash-wv/__f/manifest.mpd",
+    "keyId": "0feb7c47084408d66c6b5ce716727f33",
+    "key": "85afb2740cb742d96f0c2b32ab50b372"
+  }
 ]
