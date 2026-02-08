@@ -1127,13 +1127,13 @@
     "keyId": "5061291f547143b40b8abedfdff59174",
     "key": "fb0a1787499cbc22c2ecaf1b43dd4da7"
   },
-  {
-    "nombre": "Quiero",
-    "categoria": "Música",
-    "url": "https://chromecast.cvattv.com.ar/live/c6eds/Quiero_HD/SA_Live_dash_enc_C/Quiero_HD.mpd",
-    "keyId": "a354b0c82a3a720c4a6f52ed5a1190f4",
-    "key": "45a76dcc84f058cfabc8b958d7303b28"
-  },
+    {
+        "nombre": "Quiero",
+        "categoria": "Música",
+        "url": "https://lilac01.pontiscloud.com/live/eds/QuieroMusica/live_dash_cld/QuieroMusica.mpd",
+        "keyId": "d62845f01d257a91fd73d62751828dc1",
+        "key": "b600539e698a707de23e57d4cdb99d9a"
+    },
   {
     "nombre": "Vorterix",
     "categoria": "Música",
