@@ -1113,9 +1113,9 @@
     {
         "nombre": "Quiero",
         "categoria": "Música",
-        "url": "https://chromecast.cvattv.com.ar/live/c6eds/Quiero_HD/SA_Live_dash_enc_C/Quiero_HD.mpd",
-        "keyId": "a354b0c82a3a720c4a6f52ed5a1190f4",
-        "key": "45a76dcc84f058cfabc8b958d7303b28"
+        "url": "https://lilac01.pontiscloud.com/live/eds/QuieroMusica/live_dash_cld/QuieroMusica.mpd",
+        "keyId": "bad94ad091751a8adf0369f80ca83d17",
+        "key": "be43a68903a920561dc14daf19229d97"
     },
     {
         "nombre": "Vorterix",
