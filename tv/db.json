@@ -229,7 +229,7 @@
   {
     "nombre": "ESPN (Uruguay)",
     "categoria": "Deportes",
-    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN-Bolivia/live_dash_cld/ESPN-Bolivia.mpd&Origin=https://player.sensa.com.ar/",
+    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN-Bolivia/live_dash_cld/ESPN-Bolivia.mpd",
     "keyId": "e1ef5c825da48fbeeaa30e8f60ce44bd",
     "key": "982d1273c4a1cf6ddb8b2306a025d2f7",
     "epg": ""
@@ -237,7 +237,7 @@
   {
     "nombre": "ESPN 2 (Uruguay)",
     "categoria": "Deportes",
-    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN2Bolivia/live_dash_cld/ESPN2Bolivia.mpd&Origin=https://player.sensa.com.ar/",
+    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN2Bolivia/live_dash_cld/ESPN2Bolivia.mpd",
     "keyId": "bbf6811ca9cccba8e73817b3c1e03433",
     "key": "27a8d785579f23dde39ac1937cf7bd53",
     "epg": ""
@@ -264,21 +264,21 @@
   {
     "nombre": "ESPN 5 (Uruguay)",
     "categoria": "Deportes",
-    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN5Bolivia/live_dash_cld/ESPN5Bolivia.mpd&Origin=https://player.sensa.com.ar/",
+    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN5Bolivia/live_dash_cld/ESPN5Bolivia.mpd",
     "keyId": "afadc56db7e9690efdaded5bba0e6d5d",
     "key": "3363a5880018821bdd854ddcdf879780"
   },
   {
     "nombre": "ESPN 6 (Uruguay)",
     "categoria": "Deportes",
-    "url": "https://lilac01.pontiscloud.com/bpk-tv/ESPN6Bolivia/default/index.mpd&Origin=https://player.sensa.com.ar/",
+    "url": "https://lilac01.pontiscloud.com/bpk-tv/ESPN6Bolivia/default/index.mpd",
     "keyId": "263b433faed40d221c8de4b77113efce",
     "key": "0ce509689c0a6a9be57d366ce4129650"
   },
   {
     "nombre": "ESPN 7 (Uruguay)",
     "categoria": "Deportes",
-    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN7Bolivia/live_dash_cld/ESPN7Bolivia.mpd&Origin=https://player.sensa.com.ar/",
+    "url": "https://lilac01.pontiscloud.com/live/eds/ESPN7Bolivia/live_dash_cld/ESPN7Bolivia.mpd",
     "keyId": "055b26873d74bc9a7f10bd10900f461c",
     "key": "55ff1f66dd94290476672e0c1143c1a2"
   },
