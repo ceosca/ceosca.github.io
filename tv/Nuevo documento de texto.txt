@@ -1,0 +1,67 @@
+### Canales no actualizados
+
+Los siguientes canales **no se modificaron** porque no se encontró una coincidencia clara en la segunda lista o porque la versión disponible pertenecía a una región diferente (ej: canales de España en la lista 1 vs canales de Latam en la lista 2), prefiriendo mantener la integridad de la señal original:
+
+*   Canal de la ciudad
+*   Diputados TV
+*   KZO
+*   Mix TV
+*   Telemax
+*   NBA TV
+*   A3 Cine
+*   Pasiones
+*   Kidoo
+*   Arirang
+*   Bandeirantes
+*   BBC World News
+*   Bloomberg
+*   Canal 21
+*   DNews
+*   Euronews
+*   Fox News
+*   Hola TV
+*   Latam Rural
+*   Rede Record
+*   Telesur
+*   Tv Galicia
+*   TV5 Monde
+*   Quiero
+*   Canal 4 (Uruguay)
+*   Canal 10 (Uruguay)
+*   Canal 12 (Uruguay)
+*   Teve Ciudad
+*   TV Nacional (Uruguay)
+*   UCL
+*   5 Días
+*   ABC TV
+*   América (Paraguay)
+*   C9N
+*   Canal PRO
+*   GEN TV
+*   HEI NOW
+*   LA Tele
+*   Mega TV
+*   Nanduti
+*   Noticias
+*   Paraguay TV
+*   Paravisión
+*   RPC
+*   SNT
+*   Sur TV
+*   Telefuturo
+*   TV Camara
+*   Unicanal
+*   UnionTV
+*   Universo
+*   Venus Media
+*   Hustler
+*   Sextreme
+*   Venus
+*   Neox (España)
+*   Energy (España)
+*   MEGA (España)
+*   AMC (España) - *La lista 2 solo tenía AMC Latam*
+*   Canal Hollywood (España)
+*   STAR CHANNEL (España) - *La lista 2 no tenía la señal de España, solo Latam*
+*   TCM (España) - *La lista 2 solo tenía TCM Latam*
+*   Warner (España) - *La lista 2 solo tenía Warner Latam*
