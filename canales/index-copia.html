@@ -94,20 +94,12 @@ const P={
         this.a=$("a");
         this.k=new shaka.Player(this.a);
         this.k.configure({streaming:{followRedirects:!0,restrictions:{maxHeight:0}}});
-        
-        // MODIFICACIÓN PARA TOKENS DE FLOW
         this.k.getNetworkingEngine().registerRequestFilter((t,r)=>{
             if(t==shaka.net.NetworkingEngine.RequestType.MANIFEST||t==shaka.net.NetworkingEngine.RequestType.SEGMENT){
                 let p=r.uris[0].split("|");r.uris[0]=p[0];
                 if(p.length>1)for(let i=1;i<p.length;i++){let h=p[i].split("=");if(h.length===2)r.headers[h[0]]=h[1]}
-                
-                // DETECCIÓN DE TOK Y ASIGNACIÓN DE ORIGIN
-                if(r.uris[0].indexOf("tok_") > -1){
-                    r.headers["Origin"] = "https://portal.app.flow.com.ar";
-                }
             }
         });
-        
         this.a.addEventListener("play",()=>{U(!0);S("Play")});
         this.a.addEventListener("pause",()=>{U(!1);S("Pausa")});
         $("vd").innerText="100%"
@@ -125,11 +117,13 @@ const P={
             if(this.ac.state==="suspended")this.ac.resume();
             this.a.volume=1;
             
-            // LOGICA DRM
+            // LOGICA DRM ACTUALIZADA PARA SOPORTAR AMBOS FORMATOS
             let c={};
             if(d.clearkeys) {
+                // Formato MundoGo: objeto con multiples llaves
                 c={clearKeys:d.clearkeys};
             } else if(d.keyId && d.key) {
+                // Formato Argentina: keyId y key individuales
                 c={clearKeys:{[d.keyId.replace(/-/g,"")]:d.key.replace(/-/g,"")}};
             }
             
