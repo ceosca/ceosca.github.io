@@ -1522,12 +1522,11 @@
         "keyId": "1f5cdba60223ed2b1dfb47b6ddf49a63",
         "key": "41ccf772d994b23182bcb2f829bfe526"
     },
-    {
-        "nombre": "TyC multi",
-        "categoria": "",
-        "url": "https://francope.elementfx.com/TyCSports.m3u8",
-        "epg_id": "",
-        "keyId": "",
-        "key": ""
-    }
+{
+  "nombre": "Telemundo",
+  "categoria": "Internacional",
+  "url": "https://live-oneapp-prd-news.akamaized.net/Content/CMAF_OL2-CTR-4s-v2/Live/channel(kasa)/master.mpd",
+  "keyId": "0a650504ba2f3f849c2909e9a425f2d9",
+  "key": "f9809d1b37c6ed8db4f5fbcc7eda260"
+}
 ]
