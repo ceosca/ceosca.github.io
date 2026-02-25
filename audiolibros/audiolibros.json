@@ -1,0 +1,5399 @@
+[
+    {
+        "nombre": "Cloruro de Sodio",
+        "autor": "Jussi Adler-Olsen",
+        "genero": "Policíaca, negra y suspense",
+        "anio": 2023,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/cloruro-de-sodio.m4b",
+        "sinopsis": "El día de su sesenta cumpleaños, una mujer se suicida. Su muerte conduce a la reapertura de un caso sin resolver desde 1988, en el que colaboraron el jefe de la policía Marcus Jacobsson y su investigador principal, Carl Mørck. Pronto queda claro que, durante tres décadas, han caído en la trampa de un asesino astuto contra el que nunca se encontraron pruebas. Elige a sus víctimas y el momento de la muerte con gran cuidado y precisión, y hasta el momento nadie ha podido detenerlo.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 12166,
+                "titulo": "Créditos iniciales"
+            },
+            {
+                "inicio": 12166,
+                "fin": 19166,
+                "titulo": "Dedicatoria"
+            },
+            {
+                "inicio": 19166,
+                "fin": 237747,
+                "titulo": "Prólogo"
+            },
+            {
+                "inicio": 237747,
+                "fin": 475310,
+                "titulo": "1"
+            },
+            {
+                "inicio": 475310,
+                "fin": 1226359,
+                "titulo": "2"
+            },
+            {
+                "inicio": 1226359,
+                "fin": 1815402,
+                "titulo": "3"
+            },
+            {
+                "inicio": 1815402,
+                "fin": 2545692,
+                "titulo": "4"
+            },
+            {
+                "inicio": 2545692,
+                "fin": 2799184,
+                "titulo": "5"
+            },
+            {
+                "inicio": 2799184,
+                "fin": 3104990,
+                "titulo": "6"
+            },
+            {
+                "inicio": 3104990,
+                "fin": 3784336,
+                "titulo": "7"
+            },
+            {
+                "inicio": 3784336,
+                "fin": 4302489,
+                "titulo": "8"
+            },
+            {
+                "inicio": 4302489,
+                "fin": 4901726,
+                "titulo": "9"
+            },
+            {
+                "inicio": 4901726,
+                "fin": 5555483,
+                "titulo": "10"
+            },
+            {
+                "inicio": 5555483,
+                "fin": 6245440,
+                "titulo": "11"
+            },
+            {
+                "inicio": 6245440,
+                "fin": 6461292,
+                "titulo": "12"
+            },
+            {
+                "inicio": 6461292,
+                "fin": 7402721,
+                "titulo": "13"
+            },
+            {
+                "inicio": 7402721,
+                "fin": 8383601,
+                "titulo": "14"
+            },
+            {
+                "inicio": 8383601,
+                "fin": 9062575,
+                "titulo": "15"
+            },
+            {
+                "inicio": 9062575,
+                "fin": 9573088,
+                "titulo": "16"
+            },
+            {
+                "inicio": 9573088,
+                "fin": 10775463,
+                "titulo": "17"
+            },
+            {
+                "inicio": 10775463,
+                "fin": 11810028,
+                "titulo": "18"
+            },
+            {
+                "inicio": 11810028,
+                "fin": 12557965,
+                "titulo": "19"
+            },
+            {
+                "inicio": 12557965,
+                "fin": 12913741,
+                "titulo": "20"
+            },
+            {
+                "inicio": 12913741,
+                "fin": 13339734,
+                "titulo": "21"
+            },
+            {
+                "inicio": 13339734,
+                "fin": 14063314,
+                "titulo": "22"
+            },
+            {
+                "inicio": 14063314,
+                "fin": 14680570,
+                "titulo": "23"
+            },
+            {
+                "inicio": 14680570,
+                "fin": 15664144,
+                "titulo": "24"
+            },
+            {
+                "inicio": 15664144,
+                "fin": 16769320,
+                "titulo": "25"
+            },
+            {
+                "inicio": 16769320,
+                "fin": 17610369,
+                "titulo": "26"
+            },
+            {
+                "inicio": 17610369,
+                "fin": 19040369,
+                "titulo": "27"
+            },
+            {
+                "inicio": 19040369,
+                "fin": 19638004,
+                "titulo": "28"
+            },
+            {
+                "inicio": 19638004,
+                "fin": 20082526,
+                "titulo": "29"
+            },
+            {
+                "inicio": 20082526,
+                "fin": 20756949,
+                "titulo": "30"
+            },
+            {
+                "inicio": 20756949,
+                "fin": 21353098,
+                "titulo": "31"
+            },
+            {
+                "inicio": 21353098,
+                "fin": 22067367,
+                "titulo": "32"
+            },
+            {
+                "inicio": 22067367,
+                "fin": 22726233,
+                "titulo": "33"
+            },
+            {
+                "inicio": 22726233,
+                "fin": 23116955,
+                "titulo": "34"
+            },
+            {
+                "inicio": 23116955,
+                "fin": 24010760,
+                "titulo": "35"
+            },
+            {
+                "inicio": 24010760,
+                "fin": 24814193,
+                "titulo": "36"
+            },
+            {
+                "inicio": 24814193,
+                "fin": 25594917,
+                "titulo": "37"
+            },
+            {
+                "inicio": 25594917,
+                "fin": 26076800,
+                "titulo": "38"
+            },
+            {
+                "inicio": 26076800,
+                "fin": 26737036,
+                "titulo": "39"
+            },
+            {
+                "inicio": 26737036,
+                "fin": 27778706,
+                "titulo": "40"
+            },
+            {
+                "inicio": 27778706,
+                "fin": 29224078,
+                "titulo": "41"
+            },
+            {
+                "inicio": 29224078,
+                "fin": 29938323,
+                "titulo": "42"
+            },
+            {
+                "inicio": 29938323,
+                "fin": 30768389,
+                "titulo": "43"
+            },
+            {
+                "inicio": 30768389,
+                "fin": 31526357,
+                "titulo": "44"
+            },
+            {
+                "inicio": 31526357,
+                "fin": 32518499,
+                "titulo": "45"
+            },
+            {
+                "inicio": 32518499,
+                "fin": 33019585,
+                "titulo": "46"
+            },
+            {
+                "inicio": 33019585,
+                "fin": 33420825,
+                "titulo": "47"
+            },
+            {
+                "inicio": 33420825,
+                "fin": 34750562,
+                "titulo": "48"
+            },
+            {
+                "inicio": 34750562,
+                "fin": 35197964,
+                "titulo": "49"
+            },
+            {
+                "inicio": 35197964,
+                "fin": 35747348,
+                "titulo": "50"
+            },
+            {
+                "inicio": 35747348,
+                "fin": 36006622,
+                "titulo": "51"
+            },
+            {
+                "inicio": 36006622,
+                "fin": 37534564,
+                "titulo": "52"
+            },
+            {
+                "inicio": 37534564,
+                "fin": 38242540,
+                "titulo": "53"
+            },
+            {
+                "inicio": 38242540,
+                "fin": 39410016,
+                "titulo": "54"
+            },
+            {
+                "inicio": 39410016,
+                "fin": 39949903,
+                "titulo": "55"
+            },
+            {
+                "inicio": 39949903,
+                "fin": 41198765,
+                "titulo": "56"
+            },
+            {
+                "inicio": 41198765,
+                "fin": 41800974,
+                "titulo": "57"
+            },
+            {
+                "inicio": 41800974,
+                "fin": 42149737,
+                "titulo": "58"
+            },
+            {
+                "inicio": 42149737,
+                "fin": 42612951,
+                "titulo": "59"
+            },
+            {
+                "inicio": 42612951,
+                "fin": 43509403,
+                "titulo": "60"
+            },
+            {
+                "inicio": 43509403,
+                "fin": 43886448,
+                "titulo": "61"
+            },
+            {
+                "inicio": 43886448,
+                "fin": 44467086,
+                "titulo": "62"
+            },
+            {
+                "inicio": 44467086,
+                "fin": 45113947,
+                "titulo": "63"
+            },
+            {
+                "inicio": 45113947,
+                "fin": 45998000,
+                "titulo": "64"
+            },
+            {
+                "inicio": 45998000,
+                "fin": 46667454,
+                "titulo": "65"
+            },
+            {
+                "inicio": 46667454,
+                "fin": 46942564,
+                "titulo": "Epílogo"
+            },
+            {
+                "inicio": 46942564,
+                "fin": 46960756,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "El caso Hartung",
+        "autor": "Søren Sveistrup, Lisa Pram - translator",
+        "genero": "Misterio, Suspense, Negra y suspense",
+        "anio": 2019,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/el-caso-hartung.m4b",
+        "sinopsis": "Una ventosa mañana de octubre en un tranquilo suburbio de Copenhague, la policía realiza un terrible descubrimiento. Una joven ha sido asesinada y abandonada en un parque infantil.... ",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 9635,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 9635,
+                "fin": 13814,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 13814,
+                "fin": 807866,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 807866,
+                "fin": 979600,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 979600,
+                "fin": 1077448,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 1077448,
+                "fin": 1367883,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 1367883,
+                "fin": 1720478,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 1720478,
+                "fin": 2191425,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 2191425,
+                "fin": 2317741,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 2317741,
+                "fin": 2584375,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 2584375,
+                "fin": 2947674,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 2947674,
+                "fin": 3519953,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 3519953,
+                "fin": 3823368,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 3823368,
+                "fin": 4077371,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 4077371,
+                "fin": 4564247,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 4564247,
+                "fin": 4817065,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 4817065,
+                "fin": 5056184,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 5056184,
+                "fin": 5710057,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 5710057,
+                "fin": 6206429,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 6206429,
+                "fin": 6441020,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 6441020,
+                "fin": 6579341,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 6579341,
+                "fin": 7129398,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 7129398,
+                "fin": 7380498,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 7380498,
+                "fin": 8243583,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 8243583,
+                "fin": 8616959,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 8616959,
+                "fin": 8908787,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 8908787,
+                "fin": 8989058,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 8989058,
+                "fin": 9458449,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 9458449,
+                "fin": 9640934,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 9640934,
+                "fin": 10049651,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 10049651,
+                "fin": 11023913,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 11023913,
+                "fin": 11569744,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 11569744,
+                "fin": 11947532,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 11947532,
+                "fin": 12465081,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 12465081,
+                "fin": 12611413,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 12611413,
+                "fin": 12779873,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 12779873,
+                "fin": 13017668,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 13017668,
+                "fin": 13249217,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 13249217,
+                "fin": 13626100,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 13626100,
+                "fin": 13927773,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 13927773,
+                "fin": 14148803,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 14148803,
+                "fin": 14498588,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 14498588,
+                "fin": 14847119,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 14847119,
+                "fin": 14943133,
+                "titulo": "Capítulo 44"
+            },
+            {
+                "inicio": 14943133,
+                "fin": 15141710,
+                "titulo": "Capítulo 45"
+            },
+            {
+                "inicio": 15141710,
+                "fin": 15260851,
+                "titulo": "Capítulo 46"
+            },
+            {
+                "inicio": 15260851,
+                "fin": 15490891,
+                "titulo": "Capítulo 47"
+            },
+            {
+                "inicio": 15490891,
+                "fin": 16211382,
+                "titulo": "Capítulo 48"
+            },
+            {
+                "inicio": 16211382,
+                "fin": 16608954,
+                "titulo": "Capítulo 49"
+            },
+            {
+                "inicio": 16608954,
+                "fin": 17585144,
+                "titulo": "Capítulo 50"
+            },
+            {
+                "inicio": 17585144,
+                "fin": 17837359,
+                "titulo": "Capítulo 51"
+            },
+            {
+                "inicio": 17837359,
+                "fin": 18425450,
+                "titulo": "Capítulo 52"
+            },
+            {
+                "inicio": 18425450,
+                "fin": 19011614,
+                "titulo": "Capítulo 53"
+            },
+            {
+                "inicio": 19011614,
+                "fin": 19370873,
+                "titulo": "Capítulo 54"
+            },
+            {
+                "inicio": 19370873,
+                "fin": 19583335,
+                "titulo": "Capítulo 55"
+            },
+            {
+                "inicio": 19583335,
+                "fin": 19741044,
+                "titulo": "Capítulo 56"
+            },
+            {
+                "inicio": 19741044,
+                "fin": 20004915,
+                "titulo": "Capítulo 57"
+            },
+            {
+                "inicio": 20004915,
+                "fin": 20477975,
+                "titulo": "Capítulo 58"
+            },
+            {
+                "inicio": 20477975,
+                "fin": 20639632,
+                "titulo": "Capítulo 59"
+            },
+            {
+                "inicio": 20639632,
+                "fin": 20767643,
+                "titulo": "Capítulo 60"
+            },
+            {
+                "inicio": 20767643,
+                "fin": 21042033,
+                "titulo": "Capítulo 61"
+            },
+            {
+                "inicio": 21042033,
+                "fin": 21159595,
+                "titulo": "Capítulo 62"
+            },
+            {
+                "inicio": 21159595,
+                "fin": 21638181,
+                "titulo": "Capítulo 63"
+            },
+            {
+                "inicio": 21638181,
+                "fin": 22091132,
+                "titulo": "Capítulo 64"
+            },
+            {
+                "inicio": 22091132,
+                "fin": 22961973,
+                "titulo": "Capítulo 65"
+            },
+            {
+                "inicio": 22961973,
+                "fin": 23834857,
+                "titulo": "Capítulo 66"
+            },
+            {
+                "inicio": 23834857,
+                "fin": 24273319,
+                "titulo": "Capítulo 67"
+            },
+            {
+                "inicio": 24273319,
+                "fin": 24928353,
+                "titulo": "Capítulo 68"
+            },
+            {
+                "inicio": 24928353,
+                "fin": 25462597,
+                "titulo": "Capítulo 69"
+            },
+            {
+                "inicio": 25462597,
+                "fin": 25781430,
+                "titulo": "Capítulo 70"
+            },
+            {
+                "inicio": 25781430,
+                "fin": 26186060,
+                "titulo": "Capítulo 71"
+            },
+            {
+                "inicio": 26186060,
+                "fin": 26579127,
+                "titulo": "Capítulo 72"
+            },
+            {
+                "inicio": 26579127,
+                "fin": 26979555,
+                "titulo": "Capítulo 73"
+            },
+            {
+                "inicio": 26979555,
+                "fin": 27136591,
+                "titulo": "Capítulo 74"
+            },
+            {
+                "inicio": 27136591,
+                "fin": 27302335,
+                "titulo": "Capítulo 75"
+            },
+            {
+                "inicio": 27302335,
+                "fin": 27508690,
+                "titulo": "Capítulo 76"
+            },
+            {
+                "inicio": 27508690,
+                "fin": 27783103,
+                "titulo": "Capítulo 77"
+            },
+            {
+                "inicio": 27783103,
+                "fin": 28263430,
+                "titulo": "Capítulo 78"
+            },
+            {
+                "inicio": 28263430,
+                "fin": 28520382,
+                "titulo": "Capítulo 79"
+            },
+            {
+                "inicio": 28520382,
+                "fin": 28698989,
+                "titulo": "Capítulo 80"
+            },
+            {
+                "inicio": 28698989,
+                "fin": 29637702,
+                "titulo": "Capítulo 81"
+            },
+            {
+                "inicio": 29637702,
+                "fin": 30249756,
+                "titulo": "Capítulo 82"
+            },
+            {
+                "inicio": 30249756,
+                "fin": 30896083,
+                "titulo": "Capítulo 83"
+            },
+            {
+                "inicio": 30896083,
+                "fin": 31742171,
+                "titulo": "Capítulo 84"
+            },
+            {
+                "inicio": 31742171,
+                "fin": 32109766,
+                "titulo": "Capítulo 85"
+            },
+            {
+                "inicio": 32109766,
+                "fin": 32455255,
+                "titulo": "Capítulo 86"
+            },
+            {
+                "inicio": 32455255,
+                "fin": 33252814,
+                "titulo": "Capítulo 87"
+            },
+            {
+                "inicio": 33252814,
+                "fin": 33641260,
+                "titulo": "Capítulo 88"
+            },
+            {
+                "inicio": 33641260,
+                "fin": 34297989,
+                "titulo": "Capítulo 89"
+            },
+            {
+                "inicio": 34297989,
+                "fin": 35286416,
+                "titulo": "Capítulo 90"
+            },
+            {
+                "inicio": 35286416,
+                "fin": 36168240,
+                "titulo": "Capítulo 91"
+            },
+            {
+                "inicio": 36168240,
+                "fin": 36811990,
+                "titulo": "Capítulo 92"
+            },
+            {
+                "inicio": 36811990,
+                "fin": 37443131,
+                "titulo": "Capítulo 93"
+            },
+            {
+                "inicio": 37443131,
+                "fin": 37968134,
+                "titulo": "Capítulo 94"
+            },
+            {
+                "inicio": 37968134,
+                "fin": 38466875,
+                "titulo": "Capítulo 95"
+            },
+            {
+                "inicio": 38466875,
+                "fin": 39498444,
+                "titulo": "Capítulo 96"
+            },
+            {
+                "inicio": 39498444,
+                "fin": 39806363,
+                "titulo": "Capítulo 97"
+            },
+            {
+                "inicio": 39806363,
+                "fin": 40003059,
+                "titulo": "Capítulo 98"
+            },
+            {
+                "inicio": 40003059,
+                "fin": 40340746,
+                "titulo": "Capítulo 99"
+            },
+            {
+                "inicio": 40340746,
+                "fin": 40770871,
+                "titulo": "Capítulo 100"
+            },
+            {
+                "inicio": 40770871,
+                "fin": 41684785,
+                "titulo": "Capítulo 101"
+            },
+            {
+                "inicio": 41684785,
+                "fin": 42188866,
+                "titulo": "Capítulo 102"
+            },
+            {
+                "inicio": 42188866,
+                "fin": 43368741,
+                "titulo": "Capítulo 103"
+            },
+            {
+                "inicio": 43368741,
+                "fin": 43621908,
+                "titulo": "Capítulo 104"
+            },
+            {
+                "inicio": 43621908,
+                "fin": 44222236,
+                "titulo": "Capítulo 105"
+            },
+            {
+                "inicio": 44222236,
+                "fin": 44611727,
+                "titulo": "Capítulo 106"
+            },
+            {
+                "inicio": 44611727,
+                "fin": 45039276,
+                "titulo": "Capítulo 107"
+            },
+            {
+                "inicio": 45039276,
+                "fin": 45604333,
+                "titulo": "Capítulo 108"
+            },
+            {
+                "inicio": 45604333,
+                "fin": 46490777,
+                "titulo": "Capítulo 109"
+            },
+            {
+                "inicio": 46490777,
+                "fin": 46800949,
+                "titulo": "Capítulo 110"
+            },
+            {
+                "inicio": 46800949,
+                "fin": 47067932,
+                "titulo": "Capítulo 111"
+            },
+            {
+                "inicio": 47067932,
+                "fin": 47278351,
+                "titulo": "Capítulo 112"
+            },
+            {
+                "inicio": 47278351,
+                "fin": 47662618,
+                "titulo": "Capítulo 113"
+            },
+            {
+                "inicio": 47662618,
+                "fin": 48262644,
+                "titulo": "Capítulo 114"
+            },
+            {
+                "inicio": 48262644,
+                "fin": 48835271,
+                "titulo": "Capítulo 115"
+            },
+            {
+                "inicio": 48835271,
+                "fin": 49096518,
+                "titulo": "Capítulo 116"
+            },
+            {
+                "inicio": 49096518,
+                "fin": 49325141,
+                "titulo": "Capítulo 117"
+            },
+            {
+                "inicio": 49325141,
+                "fin": 49993202,
+                "titulo": "Capítulo 118"
+            },
+            {
+                "inicio": 49993202,
+                "fin": 50457159,
+                "titulo": "Capítulo 119"
+            },
+            {
+                "inicio": 50457159,
+                "fin": 50837687,
+                "titulo": "Capítulo 120"
+            },
+            {
+                "inicio": 50837687,
+                "fin": 51295096,
+                "titulo": "Capítulo 121"
+            },
+            {
+                "inicio": 51295096,
+                "fin": 51533518,
+                "titulo": "Capítulo 122"
+            },
+            {
+                "inicio": 51533518,
+                "fin": 51817242,
+                "titulo": "Capítulo 123"
+            },
+            {
+                "inicio": 51817242,
+                "fin": 52084619,
+                "titulo": "Capítulo 124"
+            },
+            {
+                "inicio": 52084619,
+                "fin": 52504273,
+                "titulo": "Capítulo 125"
+            },
+            {
+                "inicio": 52504273,
+                "fin": 53285183,
+                "titulo": "Capítulo 126"
+            },
+            {
+                "inicio": 53285183,
+                "fin": 53979598,
+                "titulo": "Capítulo 127"
+            },
+            {
+                "inicio": 53979598,
+                "fin": 54122238,
+                "titulo": "Capítulo 128"
+            },
+            {
+                "inicio": 54122238,
+                "fin": 54287958,
+                "titulo": "Capítulo 129"
+            },
+            {
+                "inicio": 54287958,
+                "fin": 54688989,
+                "titulo": "Capítulo 130"
+            },
+            {
+                "inicio": 54688989,
+                "fin": 55197320,
+                "titulo": "Capítulo 131"
+            },
+            {
+                "inicio": 55197320,
+                "fin": 55343443,
+                "titulo": "Capítulo 132"
+            },
+            {
+                "inicio": 55343443,
+                "fin": 55446609,
+                "titulo": "Capítulo 133"
+            },
+            {
+                "inicio": 55446609,
+                "fin": 55494994,
+                "titulo": "Capítulo 134"
+            }
+        ]
+    },
+    {
+        "nombre": "El efecto Marcus 5",
+        "autor": "Jussi Adler-Olsen, Juan Mari Mendizabal",
+        "genero": "Misterio, Policíaca, negra y suspense, Negra y suspense",
+        "anio": 2024,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/el-efecto-marcus-5.m4b",
+        "sinopsis": "La investigación arrastrará a Carl, Assad, Rose y Gordon, el nuevo miembro del Departamento Q, a una ciénaga de corrupción y crímenes en el mundo de la política y la economía, cuyos tentáculos llegan hasta la selva africana.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 1090547,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 1090547,
+                "fin": 1764900,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 1764900,
+                "fin": 4002421,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 4002421,
+                "fin": 7045558,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 7045558,
+                "fin": 9454814,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 9454814,
+                "fin": 10886695,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 10886695,
+                "fin": 12410272,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 12410272,
+                "fin": 14552219,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 14552219,
+                "fin": 16346378,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 16346378,
+                "fin": 18057015,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 18057015,
+                "fin": 19843953,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 19843953,
+                "fin": 21240284,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 21240284,
+                "fin": 22576592,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 22576592,
+                "fin": 24147352,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 24147352,
+                "fin": 25541710,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 25541710,
+                "fin": 27519353,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 27519353,
+                "fin": 29070469,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 29070469,
+                "fin": 30990387,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 30990387,
+                "fin": 33101568,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 33101568,
+                "fin": 36049016,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 36049016,
+                "fin": 37534187,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 37534187,
+                "fin": 38988058,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 38988058,
+                "fin": 40229443,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 40229443,
+                "fin": 41233125,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 41233125,
+                "fin": 42711585,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 42711585,
+                "fin": 43936344,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 43936344,
+                "fin": 44525318,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 44525318,
+                "fin": 46327999,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 46327999,
+                "fin": 46768597,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 46768597,
+                "fin": 48531572,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 48531572,
+                "fin": 50824496,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 50824496,
+                "fin": 52291788,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 52291788,
+                "fin": 53994158,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 53994158,
+                "fin": 55251634,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 55251634,
+                "fin": 56923215,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 56923215,
+                "fin": 58525879,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 58525879,
+                "fin": 59614128,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 59614128,
+                "fin": 61055553,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 61055553,
+                "fin": 62448007,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 62448007,
+                "fin": 64155068,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 64155068,
+                "fin": 65867098,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 65867098,
+                "fin": 67214691,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 67214691,
+                "fin": 70027858,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 70027858,
+                "fin": 70824999,
+                "titulo": "Capítulo 44"
+            },
+            {
+                "inicio": 70824999,
+                "fin": 71737702,
+                "titulo": "Capítulo 45"
+            }
+        ]
+    },
+    {
+        "nombre": "El mensaje que llegó en una botella 3",
+        "autor": "Jussi Adler-Olsen, Juan Mari Mendizabal - translator",
+        "genero": "Misterio, Literatura y ficción, Policíaca, negra y suspense, Negra y suspense",
+        "anio": 2024,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/el-mensaje-que-llego-en-una-botella-3.m4b",
+        "sinopsis": "¿Puede un terrible hecho del pasado seguir teniendo consecuencias devastadoras? Cuando una botella que contiene un mensaje escrito con sangre humana llega al Departamento Q, el subcomisario Carl Mørck y sus asistentes Assad y Rose logran descifrar algunas palabras de lo que fue la última señal de vida de dos chicos desaparecidos en los años noventa. Pero ¿por qué su familia nunca denunció su desaparición? Carl Mørck intuye que no se trata de un caso aislado y que el criminal podría seguir actuando con total impunidad.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 542881,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 542881,
+                "fin": 1328319,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 1328319,
+                "fin": 1836325,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 1836325,
+                "fin": 2581337,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 2581337,
+                "fin": 4094743,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 4094743,
+                "fin": 5172775,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 5172775,
+                "fin": 6724309,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 6724309,
+                "fin": 7893689,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 7893689,
+                "fin": 9409139,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 9409139,
+                "fin": 10145838,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 10145838,
+                "fin": 12133791,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 12133791,
+                "fin": 13706315,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 13706315,
+                "fin": 14506753,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 14506753,
+                "fin": 16450890,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 16450890,
+                "fin": 17809977,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 17809977,
+                "fin": 18885989,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 18885989,
+                "fin": 20364031,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 20364031,
+                "fin": 22252718,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 22252718,
+                "fin": 23738887,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 23738887,
+                "fin": 24463976,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 24463976,
+                "fin": 26397896,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 26397896,
+                "fin": 28835991,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 28835991,
+                "fin": 29938822,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 29938822,
+                "fin": 31073186,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 31073186,
+                "fin": 33109274,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 33109274,
+                "fin": 34697402,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 34697402,
+                "fin": 36260847,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 36260847,
+                "fin": 37806134,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 37806134,
+                "fin": 40780447,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 40780447,
+                "fin": 41175906,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 41175906,
+                "fin": 41838975,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 41838975,
+                "fin": 43680572,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 43680572,
+                "fin": 45654755,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 45654755,
+                "fin": 47101218,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 47101218,
+                "fin": 47662397,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 47662397,
+                "fin": 48932157,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 48932157,
+                "fin": 50452692,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 50452692,
+                "fin": 51634564,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 51634564,
+                "fin": 52503501,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 52503501,
+                "fin": 53669235,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 53669235,
+                "fin": 55406644,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 55406644,
+                "fin": 57267444,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 57267444,
+                "fin": 59958358,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 59958358,
+                "fin": 60808161,
+                "titulo": "Capítulo 44"
+            },
+            {
+                "inicio": 60808161,
+                "fin": 61706355,
+                "titulo": "Capítulo 45"
+            },
+            {
+                "inicio": 61706355,
+                "fin": 63387526,
+                "titulo": "Capítulo 46"
+            },
+            {
+                "inicio": 63387526,
+                "fin": 64705815,
+                "titulo": "Capítulo 47"
+            },
+            {
+                "inicio": 64705815,
+                "fin": 65757191,
+                "titulo": "Capítulo 48"
+            },
+            {
+                "inicio": 65757191,
+                "fin": 66293362,
+                "titulo": "Capítulo 49"
+            },
+            {
+                "inicio": 66293362,
+                "fin": 67329389,
+                "titulo": "Capítulo 50"
+            },
+            {
+                "inicio": 67329389,
+                "fin": 68402917,
+                "titulo": "Capítulo 51"
+            },
+            {
+                "inicio": 68402917,
+                "fin": 69224113,
+                "titulo": "Capítulo 52"
+            },
+            {
+                "inicio": 69224113,
+                "fin": 70133383,
+                "titulo": "Capítulo 53"
+            },
+            {
+                "inicio": 70133383,
+                "fin": 71582685,
+                "titulo": "Capítulo 54"
+            }
+        ]
+    },
+    {
+        "nombre": "Expediente 64 4",
+        "autor": "Jussi Adler-Olsen, Juan Mari Mendizabal - translator",
+        "genero": "Misterio, Policíaca, negra y suspense, Negra y suspense",
+        "anio": 2024,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/expediente-64-4.m4b",
+        "sinopsis": "Varias desapariciones ocurridas en los años ochenta ponen de nuevo en marcha a Carl Mørck. Su investigación lo conduce hasta Nete Hermansen, una mujer que ha hecho todo lo posible por ocultar su trágico pasado hasta que este le vuelve a dar alcance. Mientras Carl se enfrenta a las sombras de su propia existencia, y a los secretos de sus colaboradores Assad y Rose, deberá indagar en la historia del líder de un partido político de extrema derecha que defiende una siniestra ideología racista.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 933278,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 933278,
+                "fin": 2945008,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 2945008,
+                "fin": 4307090,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 4307090,
+                "fin": 4983649,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 4983649,
+                "fin": 6339810,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 6339810,
+                "fin": 7643053,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 7643053,
+                "fin": 8964036,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 8964036,
+                "fin": 10057440,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 10057440,
+                "fin": 11742279,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 11742279,
+                "fin": 13049353,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 13049353,
+                "fin": 14339871,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 14339871,
+                "fin": 15323654,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 15323654,
+                "fin": 16657524,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 16657524,
+                "fin": 18196821,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 18196821,
+                "fin": 19395644,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 19395644,
+                "fin": 20990111,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 20990111,
+                "fin": 22298996,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 22298996,
+                "fin": 24153689,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 24153689,
+                "fin": 24958446,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 24958446,
+                "fin": 25735432,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 25735432,
+                "fin": 27158374,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 27158374,
+                "fin": 30037718,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 30037718,
+                "fin": 31842117,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 31842117,
+                "fin": 33093045,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 33093045,
+                "fin": 34979434,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 34979434,
+                "fin": 36600442,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 36600442,
+                "fin": 38699781,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 38699781,
+                "fin": 39279815,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 39279815,
+                "fin": 41204981,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 41204981,
+                "fin": 42236875,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 42236875,
+                "fin": 43528972,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 43528972,
+                "fin": 44420362,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 44420362,
+                "fin": 46028320,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 46028320,
+                "fin": 47699901,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 47699901,
+                "fin": 48568582,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 48568582,
+                "fin": 50893619,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 50893619,
+                "fin": 52429084,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 52429084,
+                "fin": 53470127,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 53470127,
+                "fin": 54367671,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 54367671,
+                "fin": 57003089,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 57003089,
+                "fin": 58161044,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 58161044,
+                "fin": 58866628,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 58866628,
+                "fin": 60292008,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 60292008,
+                "fin": 62166044,
+                "titulo": "Capítulo 44"
+            },
+            {
+                "inicio": 62166044,
+                "fin": 62968014,
+                "titulo": "Capítulo 45"
+            },
+            {
+                "inicio": 62968014,
+                "fin": 64526908,
+                "titulo": "Capítulo 46"
+            },
+            {
+                "inicio": 64526908,
+                "fin": 65986119,
+                "titulo": "Capítulo 47"
+            },
+            {
+                "inicio": 65986119,
+                "fin": 66901798,
+                "titulo": "Capítulo 48"
+            }
+        ]
+    },
+    {
+        "nombre": "From the Wizarding Archive",
+        "autor": "J.K. Rowling, Evanna Lynch - foreword",
+        "genero": "Fantasía",
+        "anio": 2024,
+        "idioma": "English",
+        "url": "https://archive.org/download/audiolibros/from-the-wizarding-archive.m4b",
+        "sinopsis": "If you’ve ever wondered why Squibs are never offered a place at Hogwarts, what happened when Vernon Dursley first met James Potter, or how Dumbledore and McGonagall formed their lifelong friendship, From the Wizarding Archive should go straight to the top of your wish list. Containing 80 articles written by J.K. Rowling for the original Pottermore website and available for the first time in audio, exclusively from Audible, Harry Potter fans everywhere are in for a treat.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 670010,
+                "titulo": "Foreword"
+            },
+            {
+                "inicio": 670010,
+                "fin": 1720945,
+                "titulo": "Chapter 1: The Dursleys"
+            },
+            {
+                "inicio": 1720945,
+                "fin": 4387803,
+                "titulo": "Chapter 2: The Potters and the Malfoys"
+            },
+            {
+                "inicio": 4387803,
+                "fin": 7515577,
+                "titulo": "Chapter 3: Wands"
+            },
+            {
+                "inicio": 7515577,
+                "fin": 9245602,
+                "titulo": "Chapter 4: How the Wizarding World Works"
+            },
+            {
+                "inicio": 9245602,
+                "fin": 9838569,
+                "titulo": "Chapter 5: The Tri-Wizard Schools"
+            },
+            {
+                "inicio": 9838569,
+                "fin": 10547033,
+                "titulo": "Chapter 6: Alternate Histories"
+            },
+            {
+                "inicio": 10547033,
+                "fin": 11824293,
+                "titulo": "Chapter 7: Dark Creatures"
+            },
+            {
+                "inicio": 11824293,
+                "fin": 12757642,
+                "titulo": "Chapter 8: Animal Magic"
+            },
+            {
+                "inicio": 12757642,
+                "fin": 13450200,
+                "titulo": "Chapter 9: Wizarding Pastimes"
+            },
+            {
+                "inicio": 13450200,
+                "fin": 14778125,
+                "titulo": "Chapter 10: Fame in the Wizarding World"
+            },
+            {
+                "inicio": 14778125,
+                "fin": 15684678,
+                "titulo": "Chapter 11: Wizarding Transport"
+            },
+            {
+                "inicio": 15684678,
+                "fin": 16300726,
+                "titulo": "Chapter 12: The Journey to Hogwarts"
+            },
+            {
+                "inicio": 16300726,
+                "fin": 16697322,
+                "titulo": "Chapter 13: Sorting"
+            },
+            {
+                "inicio": 16697322,
+                "fin": 23648377,
+                "titulo": "Chapter 14: The Hogwarts Curriculum"
+            },
+            {
+                "inicio": 23648377,
+                "fin": 24808027,
+                "titulo": "Chapter 15: Magical Artifacts"
+            },
+            {
+                "inicio": 24808027,
+                "fin": 27480759,
+                "titulo": "Chapter 16: Hogwarts Alumni"
+            },
+            {
+                "inicio": 27480759,
+                "fin": 28981871,
+                "titulo": "Chapter 17: Exploring Hogwarts"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter and the Chamber of Secrets (Full-Cast Edition)",
+        "autor": "J.K. Rowling",
+        "genero": "Habilidades sociales y para la vida, Literatura y ficción, Fantasía y magia, Vida en familia",
+        "anio": 2025,
+        "idioma": "English",
+        "url": "https://archive.org/download/audiolibros/harry-potter-and-the-chamber-of-secrets-full-cast-edition.m4b",
+        "sinopsis": "Get ready to be transported to the world of Harry Potter in a captivating production that features hundreds of unique voices and immersive sound design that brings the wizarding world vividly to life in Dolby Atmos. You’ll hear footsteps echoing through the corridors of Hogwarts and the heart-racing whoosh of the Golden Snitch as it darts past your ears in the heat of a Quidditch match. Also featuring an electrifying new musical score, The Full-Cast Audio Editions present J.K. Rowling’s iconic series as a truly spellbinding listening event for the whole family.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 1109040,
+                "titulo": "Chapter One - The Worst Birthday"
+            },
+            {
+                "inicio": 1109040,
+                "fin": 2343374,
+                "titulo": "Chapter Two - Dobby's Warning"
+            },
+            {
+                "inicio": 2343374,
+                "fin": 3996832,
+                "titulo": "Chapter Three - The Burrow"
+            },
+            {
+                "inicio": 3996832,
+                "fin": 6228426,
+                "titulo": "Chapter Four - At Flourish and Blotts"
+            },
+            {
+                "inicio": 6228426,
+                "fin": 8357342,
+                "titulo": "Chapter Five - The Whomping Willow"
+            },
+            {
+                "inicio": 8357342,
+                "fin": 10174384,
+                "titulo": "Chapter Six - Gilderoy Lockhart"
+            },
+            {
+                "inicio": 10174384,
+                "fin": 11901014,
+                "titulo": "Chapter Seven - Mudbloods and Murmurs"
+            },
+            {
+                "inicio": 11901014,
+                "fin": 13732514,
+                "titulo": "Chapter Eight - The Deathday Party"
+            },
+            {
+                "inicio": 13732514,
+                "fin": 15741680,
+                "titulo": "Chapter Nine - The Writing on the Wall"
+            },
+            {
+                "inicio": 15741680,
+                "fin": 17798069,
+                "titulo": "Chapter Ten - The Rogue Bludger"
+            },
+            {
+                "inicio": 17798069,
+                "fin": 20077944,
+                "titulo": "Chapter Eleven - The Duelling Club"
+            },
+            {
+                "inicio": 20077944,
+                "fin": 22156402,
+                "titulo": "Chapter Twelve - The Polyjuice Potion"
+            },
+            {
+                "inicio": 22156402,
+                "fin": 24319346,
+                "titulo": "Chapter Thirteen - The Very Secret Diary"
+            },
+            {
+                "inicio": 24319346,
+                "fin": 25827929,
+                "titulo": "Chapter Fourteen - Cornelius Fudge"
+            },
+            {
+                "inicio": 25827929,
+                "fin": 27716402,
+                "titulo": "Chapter Fifteen - Aragog"
+            },
+            {
+                "inicio": 27716402,
+                "fin": 30008443,
+                "titulo": "Chapter Sixteen - The Chamber of Secrets"
+            },
+            {
+                "inicio": 30008443,
+                "fin": 32275693,
+                "titulo": "Chapter Seventeen - The Heir of Slytherin"
+            },
+            {
+                "inicio": 32275693,
+                "fin": 34623205,
+                "titulo": "Chapter Eighteen - Dobby's Reward"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter and the Prisoner of Azkaban (Full-Cast Edition)",
+        "autor": "J.K. Rowling",
+        "genero": "Habilidades sociales y para la vida, Literatura y ficción, Fantasía y magia, Vida en familia",
+        "anio": 2026,
+        "idioma": "English",
+        "url": "https://archive.org/download/audiolibros/harry-potter-and-the-prisoner-of-azkaban-full-cast-edition.m4b",
+        "sinopsis": "Get ready to be transported to the world of Harry Potter in a captivating production that features hundreds of unique voices and immersive sound design that brings the wizarding world vividly to life in Dolby Atmos. You’ll hear footsteps echoing through the corridors of Hogwarts and the heart-racing whoosh of the Golden Snitch as it darts past your ears in the heat of a Quidditch match. Also featuring an electrifying new musical score, The Full-Cast Audio Editions present J.K. Rowling’s iconic series as a truly spellbinding listening event for the whole family.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 1531270,
+                "titulo": "Chapter One - Owl Post"
+            },
+            {
+                "inicio": 1531270,
+                "fin": 3045707,
+                "titulo": "Chapter Two - Aunt Marge's Big Mistake"
+            },
+            {
+                "inicio": 3045707,
+                "fin": 4680616,
+                "titulo": "Chapter Three - The Knight Bus"
+            },
+            {
+                "inicio": 4680616,
+                "fin": 6499775,
+                "titulo": "Chapter Four - The Leaky Cauldron"
+            },
+            {
+                "inicio": 6499775,
+                "fin": 8977765,
+                "titulo": "Chapter Five - The Dementor"
+            },
+            {
+                "inicio": 8977765,
+                "fin": 11495542,
+                "titulo": "Chapter Six - Talons and Tea Leaves"
+            },
+            {
+                "inicio": 11495542,
+                "fin": 13111819,
+                "titulo": "Chapter Seven - The Boggart in the Wardrobe"
+            },
+            {
+                "inicio": 13111819,
+                "fin": 15033462,
+                "titulo": "Chapter Eight - Flight of the Fat Lady"
+            },
+            {
+                "inicio": 15033462,
+                "fin": 17030161,
+                "titulo": "Chapter Nine - Grim Defeat"
+            },
+            {
+                "inicio": 17030161,
+                "fin": 19723120,
+                "titulo": "Chapter Ten - The Marauder's Map"
+            },
+            {
+                "inicio": 19723120,
+                "fin": 21836865,
+                "titulo": "Chapter Eleven - The Firebolt"
+            },
+            {
+                "inicio": 21836865,
+                "fin": 23634389,
+                "titulo": "Chapter Twelve - The Patronus"
+            },
+            {
+                "inicio": 23634389,
+                "fin": 25209275,
+                "titulo": "Chapter Thirteen - Gryffindor versus Ravenclaw"
+            },
+            {
+                "inicio": 25209275,
+                "fin": 27301097,
+                "titulo": "Chapter Fourteen - Snape's Grudge"
+            },
+            {
+                "inicio": 27301097,
+                "fin": 29428363,
+                "titulo": "Chapter Fifteen - The Quidditch Final"
+            },
+            {
+                "inicio": 29428363,
+                "fin": 31080103,
+                "titulo": "Chapter Sixteen - Professor Trelawney's Prediction"
+            },
+            {
+                "inicio": 31080103,
+                "fin": 32614591,
+                "titulo": "Chapter Seventeen - Cat, Rat and Dog"
+            },
+            {
+                "inicio": 32614591,
+                "fin": 33545347,
+                "titulo": "Chapter Eighteen - Moony, Wormtail, Padfoot and Prongs"
+            },
+            {
+                "inicio": 33545347,
+                "fin": 35443617,
+                "titulo": "Chapter Nineteen - The Servant of Lord Voldemort"
+            },
+            {
+                "inicio": 35443617,
+                "fin": 36298427,
+                "titulo": "Chapter Twenty - The Dementor's Kiss"
+            },
+            {
+                "inicio": 36298427,
+                "fin": 38953800,
+                "titulo": "Chapter Twenty-One - Hermione's Secret"
+            },
+            {
+                "inicio": 38953800,
+                "fin": 41533254,
+                "titulo": "Chapter Twenty-Two - Owl Post Again"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter y el cáliz de fuego",
+        "autor": "J.K. Rowling",
+        "genero": "Desconocido",
+        "anio": 2020,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/harry-potter-y-el-caliz-de-fuego.m4b",
+        "sinopsis": "\"Habrá tres pruebas, espaciadas en el curso escolar, que medirán a los campeones en muchos aspectos diferentes: sus habilidades mágicas...\"",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 20300,
+                "titulo": "Créditos de apertura"
+            },
+            {
+                "inicio": 20300,
+                "fin": 1756843,
+                "titulo": "Capítulo 1: La Mansión de los Ryddle"
+            },
+            {
+                "inicio": 1756843,
+                "fin": 2822963,
+                "titulo": "Capítulo 2: La cicatriz"
+            },
+            {
+                "inicio": 2822963,
+                "fin": 4016561,
+                "titulo": "Capítulo 3: La invitación"
+            },
+            {
+                "inicio": 4016561,
+                "fin": 5178301,
+                "titulo": "Capítulo 4: Retorno a La Madriguera"
+            },
+            {
+                "inicio": 5178301,
+                "fin": 6600476,
+                "titulo": "Capítulo 5: Sortilegios Weasley"
+            },
+            {
+                "inicio": 6600476,
+                "fin": 7576875,
+                "titulo": "Capítulo 6: El traslador"
+            },
+            {
+                "inicio": 7576875,
+                "fin": 9713737,
+                "titulo": "Capítulo 7: Bagman y Crouch"
+            },
+            {
+                "inicio": 9713737,
+                "fin": 12177072,
+                "titulo": "Capítulo 8: El Campeonato Mundial de Quidditch"
+            },
+            {
+                "inicio": 12177072,
+                "fin": 15209412,
+                "titulo": "Capítulo 9: La Marca Tenebrosa"
+            },
+            {
+                "inicio": 15209412,
+                "fin": 16509009,
+                "titulo": "Capítulo 10: Alboroto en el Ministerio"
+            },
+            {
+                "inicio": 16509009,
+                "fin": 17833103,
+                "titulo": "Capítulo 11: En el expreso de Hogwarts"
+            },
+            {
+                "inicio": 17833103,
+                "fin": 20202536,
+                "titulo": "Capítulo 12:  El Torneo de los Tres Magos"
+            },
+            {
+                "inicio": 20202536,
+                "fin": 21872282,
+                "titulo": "Capítulo 13: Ojoloco Moody"
+            },
+            {
+                "inicio": 21872282,
+                "fin": 23841914,
+                "titulo": "Capítulo 14: Maleficios imperdonables"
+            },
+            {
+                "inicio": 23841914,
+                "fin": 25929829,
+                "titulo": "Capítulo 15:  Beauxbatons y Durmstrang"
+            },
+            {
+                "inicio": 25929829,
+                "fin": 28401964,
+                "titulo": "Capítulo 16: El cáliz de fuego"
+            },
+            {
+                "inicio": 28401964,
+                "fin": 30122075,
+                "titulo": "Capítulo 17: Los cuatro campeones"
+            },
+            {
+                "inicio": 30122075,
+                "fin": 32763995,
+                "titulo": "Capítulo 18: La comprobación de las varitas mágicas"
+            },
+            {
+                "inicio": 32763995,
+                "fin": 35209915,
+                "titulo": "Capítulo 19: El colacuerno húngaro"
+            },
+            {
+                "inicio": 35209915,
+                "fin": 37960016,
+                "titulo": "Capítulo 20: La primera prueba"
+            },
+            {
+                "inicio": 37960016,
+                "fin": 40201763,
+                "titulo": "Capítulo 21: El Frente de Liberación de los Elfos Domésticos"
+            },
+            {
+                "inicio": 40201763,
+                "fin": 41978855,
+                "titulo": "Capítulo 22: Una prueba inesperada"
+            },
+            {
+                "inicio": 41978855,
+                "fin": 45309432,
+                "titulo": "Capítulo 23:  El baile de Navidad"
+            },
+            {
+                "inicio": 45309432,
+                "fin": 47851738,
+                "titulo": "Capítulo 24: La primicia de Rita Skeeter"
+            },
+            {
+                "inicio": 47851738,
+                "fin": 50137603,
+                "titulo": "Capítulo 25: El huevo y el ojo"
+            },
+            {
+                "inicio": 50137603,
+                "fin": 53406020,
+                "titulo": "Capítulo 26: La segunda prueba"
+            },
+            {
+                "inicio": 53406020,
+                "fin": 56302686,
+                "titulo": "Capítulo 27: El regreso de Canuto"
+            },
+            {
+                "inicio": 56302686,
+                "fin": 59270474,
+                "titulo": "Capítulo 28: La locura del señor Crouch"
+            },
+            {
+                "inicio": 59270474,
+                "fin": 61036142,
+                "titulo": "Capítulo 29: El sueño"
+            },
+            {
+                "inicio": 61036142,
+                "fin": 63736181,
+                "titulo": "Capítulo 30: El pensadero"
+            },
+            {
+                "inicio": 63736181,
+                "fin": 66936331,
+                "titulo": "Capítulo 31:  La tercera prueba"
+            },
+            {
+                "inicio": 66936331,
+                "fin": 67792659,
+                "titulo": "Capítulo 32: Hueso, carne y sangre"
+            },
+            {
+                "inicio": 67792659,
+                "fin": 69684156,
+                "titulo": "Capítulo 33:  Los mortífagos"
+            },
+            {
+                "inicio": 69684156,
+                "fin": 70898095,
+                "titulo": "Capítulo 34:  Priori incantatem"
+            },
+            {
+                "inicio": 70898095,
+                "fin": 73364820,
+                "titulo": "Capítulo 35: La poción de la verdad"
+            },
+            {
+                "inicio": 73364820,
+                "fin": 75870926,
+                "titulo": "Capítulo 36: Caminos separados"
+            },
+            {
+                "inicio": 75870926,
+                "fin": 77861226,
+                "titulo": "Capítulo 37: El comienzo"
+            },
+            {
+                "inicio": 77861226,
+                "fin": 77981594,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter y el Misterio del Príncipe",
+        "autor": "J.K. Rowling",
+        "genero": "Desconocido",
+        "anio": 2021,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/harry-potter-y-el-misterio-del-principe.m4b",
+        "sinopsis": "En efecto, suspendido en el cielo encima del castillo, había un reluciente cráneo verde con lengua de serpiente, la marca que dejaban...",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 19828,
+                "titulo": "Créditos de apertura"
+            },
+            {
+                "inicio": 19828,
+                "fin": 2053988,
+                "titulo": "Cápitulo 1: El otro ministro"
+            },
+            {
+                "inicio": 2053988,
+                "fin": 4123489,
+                "titulo": "Cápitulo 2: La calle de la Hilandera"
+            },
+            {
+                "inicio": 4123489,
+                "fin": 6034793,
+                "titulo": "Cápitulo 3: Reencuentros y noticias"
+            },
+            {
+                "inicio": 6034793,
+                "fin": 8532749,
+                "titulo": "Cápitulo 4: Horace Slughorn"
+            },
+            {
+                "inicio": 8532749,
+                "fin": 10938173,
+                "titulo": "Cápitulo 5: Flegggrrr"
+            },
+            {
+                "inicio": 10938173,
+                "fin": 13373063,
+                "titulo": "Cápitulo 6: La escapada de Draco"
+            },
+            {
+                "inicio": 13373063,
+                "fin": 16107769,
+                "titulo": "Cápitulo 7: El Club de las Eminencias"
+            },
+            {
+                "inicio": 16107769,
+                "fin": 17899699,
+                "titulo": "Cápitulo 8: La victoria de Snape"
+            },
+            {
+                "inicio": 17899699,
+                "fin": 20514474,
+                "titulo": "Cápitulo 9: El Príncipe Mestizo"
+            },
+            {
+                "inicio": 20514474,
+                "fin": 23026710,
+                "titulo": "Cápitulo 10: La casa de los Gaunt"
+            },
+            {
+                "inicio": 23026710,
+                "fin": 25069485,
+                "titulo": "Cápitulo 11: Con la ayuda de Hermione"
+            },
+            {
+                "inicio": 25069485,
+                "fin": 27227268,
+                "titulo": "Cápitulo 12: Plata y ópalos"
+            },
+            {
+                "inicio": 27227268,
+                "fin": 29509557,
+                "titulo": "Cápitulo 13: El enigma"
+            },
+            {
+                "inicio": 29509557,
+                "fin": 32128140,
+                "titulo": "Cápitulo 14: Felix Felicis"
+            },
+            {
+                "inicio": 32128140,
+                "fin": 34490213,
+                "titulo": "Cápitulo 15: El Juramento Inquebrantable"
+            },
+            {
+                "inicio": 34490213,
+                "fin": 37019725,
+                "titulo": "Cápitulo 16: Una Navidad glacial"
+            },
+            {
+                "inicio": 37019725,
+                "fin": 39774911,
+                "titulo": "Cápitulo 17: Un recuerdo borroso"
+            },
+            {
+                "inicio": 39774911,
+                "fin": 42631615,
+                "titulo": "Cápitulo 18: Sorpresa de cumpleaños"
+            },
+            {
+                "inicio": 42631615,
+                "fin": 45297962,
+                "titulo": "Cápitulo 19: Espionaje élfico"
+            },
+            {
+                "inicio": 45297962,
+                "fin": 48200827,
+                "titulo": "Cápitulo 20: La petición de Lord Voldemort"
+            },
+            {
+                "inicio": 48200827,
+                "fin": 50548666,
+                "titulo": "Cápitulo 21: La Sala Incognoscible"
+            },
+            {
+                "inicio": 50548666,
+                "fin": 53101630,
+                "titulo": "Cápitulo 22: Despues del entierro"
+            },
+            {
+                "inicio": 53101630,
+                "fin": 55743875,
+                "titulo": "Cápitulo 23: Horrocruxes"
+            },
+            {
+                "inicio": 55743875,
+                "fin": 58221467,
+                "titulo": "Cápitulo 24: ¡Sectumsempra!"
+            },
+            {
+                "inicio": 58221467,
+                "fin": 60423879,
+                "titulo": "Cápitulo 25: Las palabras de la vidente"
+            },
+            {
+                "inicio": 60423879,
+                "fin": 63131441,
+                "titulo": "Cápitulo 26: La cueva"
+            },
+            {
+                "inicio": 63131441,
+                "fin": 65216894,
+                "titulo": "Cápitulo 27: La torre alcanzada por el rayo"
+            },
+            {
+                "inicio": 65216894,
+                "fin": 66805765,
+                "titulo": "Cápitulo 28: La huida del príncipe"
+            },
+            {
+                "inicio": 66805765,
+                "fin": 69297730,
+                "titulo": "Cápitulo 29: El lamento del fénix"
+            },
+            {
+                "inicio": 69297730,
+                "fin": 71661103,
+                "titulo": "Cápitulo 30: El sepulcro blanco"
+            },
+            {
+                "inicio": 71661103,
+                "fin": 71783538,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter y el prisionero de Azkaban",
+        "autor": "J.K. Rowling",
+        "genero": "Desconocido",
+        "anio": 2020,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/harry-potter-y-el-prisionero-de-azkaban.m4b",
+        "sinopsis": "\"Bienvenido al autobús noctámbulo, transporte de emergencia para el brujo abandonado a su suerte. Levante la varita, suba a bordo y lo...\"",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 20399,
+                "titulo": "Créditos de apertura"
+            },
+            {
+                "inicio": 20399,
+                "fin": 1407290,
+                "titulo": "Capítulo 1: Búhos mensajeros"
+            },
+            {
+                "inicio": 1407290,
+                "fin": 2897778,
+                "titulo": "Capítulo 2: El error de tía Marge"
+            },
+            {
+                "inicio": 2897778,
+                "fin": 4601797,
+                "titulo": "Capítulo 3:  El autobús noctámbulo"
+            },
+            {
+                "inicio": 4601797,
+                "fin": 6608326,
+                "titulo": "Capítulo 4: El Caldero Chorreante"
+            },
+            {
+                "inicio": 6608326,
+                "fin": 9248829,
+                "titulo": "Capítulo 5: El dementor"
+            },
+            {
+                "inicio": 9248829,
+                "fin": 11942877,
+                "titulo": "Capítulo 6: Posos de té y garras de hipogrifo"
+            },
+            {
+                "inicio": 11942877,
+                "fin": 13724010,
+                "titulo": "Capítulo 7:  El boggart del armario ropero"
+            },
+            {
+                "inicio": 13724010,
+                "fin": 15776561,
+                "titulo": "Capítulo 8: La huida de la Señora Gorda"
+            },
+            {
+                "inicio": 15776561,
+                "fin": 17870977,
+                "titulo": "Capítulo 9:  La derrota"
+            },
+            {
+                "inicio": 17870977,
+                "fin": 20728447,
+                "titulo": "Capítulo 10: El Mapa del Merodeador"
+            },
+            {
+                "inicio": 20728447,
+                "fin": 22933692,
+                "titulo": "Capítulo 11: La Saeta de Fuego"
+            },
+            {
+                "inicio": 22933692,
+                "fin": 24839562,
+                "titulo": "Capítulo 12: El Patronus"
+            },
+            {
+                "inicio": 24839562,
+                "fin": 26448124,
+                "titulo": "Capítulo 13: Gryffindor contra Ravenclaw"
+            },
+            {
+                "inicio": 26448124,
+                "fin": 28674290,
+                "titulo": "Capítulo 14:  El rencor de Snape"
+            },
+            {
+                "inicio": 28674290,
+                "fin": 30948777,
+                "titulo": "Capítulo 15: La final de Quidditch"
+            },
+            {
+                "inicio": 30948777,
+                "fin": 32692711,
+                "titulo": "Capítulo 16: La predicción de la profesora Trelawney"
+            },
+            {
+                "inicio": 32692711,
+                "fin": 34384354,
+                "titulo": "Capítulo 17: El perro, el gato y la rata"
+            },
+            {
+                "inicio": 34384354,
+                "fin": 35263879,
+                "titulo": "Capítulo 18: Lunático, Colagusano, Canuto y Cornamenta"
+            },
+            {
+                "inicio": 35263879,
+                "fin": 37352722,
+                "titulo": "Capítulo 19: El vasallo de lord Voldemort"
+            },
+            {
+                "inicio": 37352722,
+                "fin": 38137138,
+                "titulo": "Capítulo 20: El beso del dementor"
+            },
+            {
+                "inicio": 38137138,
+                "fin": 41042627,
+                "titulo": "Capítulo 21: El secreto de Hermione"
+            },
+            {
+                "inicio": 41042627,
+                "fin": 42956727,
+                "titulo": "Capítulo 22: Más búhos mensajeros"
+            },
+            {
+                "inicio": 42956727,
+                "fin": 43075338,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter y la cámara secreta",
+        "autor": "J.K. Rowling",
+        "genero": "Desconocido",
+        "anio": 2020,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/harry-potter-y-la-camara-secreta.m4b",
+        "sinopsis": "\"Hay una conspiración, Harry Potter. Una conspiración para hacer que este año sucedan las cosas más terribles en el Colegio Hogwarts de...\"",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 19800,
+                "titulo": "Créditos de Apertura"
+            },
+            {
+                "inicio": 19800,
+                "fin": 1081096,
+                "titulo": "Capítulo 1: El peor cumpleaños"
+            },
+            {
+                "inicio": 1081096,
+                "fin": 2331397,
+                "titulo": "Capítulo 2: La advertencia de Dobby"
+            },
+            {
+                "inicio": 2331397,
+                "fin": 4121353,
+                "titulo": "Capítulo 3: La Madriguera"
+            },
+            {
+                "inicio": 4121353,
+                "fin": 6444486,
+                "titulo": "Capítulo 4: En Flourish y Blotts"
+            },
+            {
+                "inicio": 6444486,
+                "fin": 8687696,
+                "titulo": "Capítulo 5: El sauce boxeador"
+            },
+            {
+                "inicio": 8687696,
+                "fin": 10495183,
+                "titulo": "Capítulo 6: Gilderoy Lockhart"
+            },
+            {
+                "inicio": 10495183,
+                "fin": 12309776,
+                "titulo": "Capítulo 7: Los sangre sucia y una voz misteriosa"
+            },
+            {
+                "inicio": 12309776,
+                "fin": 14162496,
+                "titulo": "Capítulo 8: El cumpleaños de muerte"
+            },
+            {
+                "inicio": 14162496,
+                "fin": 16363561,
+                "titulo": "Capítulo 9: La pintada en el muro"
+            },
+            {
+                "inicio": 16363561,
+                "fin": 18480454,
+                "titulo": "Capítulo 10: La bludger loca"
+            },
+            {
+                "inicio": 18480454,
+                "fin": 20949756,
+                "titulo": "Capítulo 11: El club de duelo"
+            },
+            {
+                "inicio": 20949756,
+                "fin": 23161154,
+                "titulo": "Capítulo 12: La pocion multijugos"
+            },
+            {
+                "inicio": 23161154,
+                "fin": 25414952,
+                "titulo": "Capítulo 13: El diario secretisimo"
+            },
+            {
+                "inicio": 25414952,
+                "fin": 27018452,
+                "titulo": "Capítulo 14: Cornelius Fudge"
+            },
+            {
+                "inicio": 27018452,
+                "fin": 28929547,
+                "titulo": "Capítulo 15: Aragog"
+            },
+            {
+                "inicio": 28929547,
+                "fin": 31240489,
+                "titulo": "Capítulo 16: La Cámara de los secretos"
+            },
+            {
+                "inicio": 31240489,
+                "fin": 33578204,
+                "titulo": "Capítulo 17: El heredero de Slytherin"
+            },
+            {
+                "inicio": 33578204,
+                "fin": 35131604,
+                "titulo": "Capítulo 18: La recompensa de Dobby"
+            },
+            {
+                "inicio": 35131604,
+                "fin": 35244734,
+                "titulo": "Créditos Finales"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter y la Orden del Fénix",
+        "autor": "J.K. Rowling",
+        "genero": "Desconocido",
+        "anio": 2021,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/harry-potter-y-la-orden-del-fenix.m4b",
+        "sinopsis": "\"Compartes los pensamientos y las emociones con el Señor Tenebroso. El director cree que no es conveniente que eso continúe ocurriendo...\"",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 23265,
+                "titulo": "Créditos de apertura"
+            },
+            {
+                "inicio": 23265,
+                "fin": 2494657,
+                "titulo": "Capítulo 1: Dudley, dementado"
+            },
+            {
+                "inicio": 2494657,
+                "fin": 5184642,
+                "titulo": "Capítulo 2: Una bandada de lechuzas"
+            },
+            {
+                "inicio": 5184642,
+                "fin": 7435027,
+                "titulo": "Capítulo 3: La avanzada"
+            },
+            {
+                "inicio": 7435027,
+                "fin": 9809824,
+                "titulo": "Capítulo 4: El número doce de Grimmauld Place"
+            },
+            {
+                "inicio": 9809824,
+                "fin": 12147957,
+                "titulo": "Capítulo 5: La Orden del Fénix"
+            },
+            {
+                "inicio": 12147957,
+                "fin": 14981534,
+                "titulo": "Capítulo 6: La noble y ancestral casa de los Black"
+            },
+            {
+                "inicio": 14981534,
+                "fin": 16936514,
+                "titulo": "Capítulo 7: El Ministerio de Magia"
+            },
+            {
+                "inicio": 16936514,
+                "fin": 18864118,
+                "titulo": "Capítulo 8: La audiencia"
+            },
+            {
+                "inicio": 18864118,
+                "fin": 22235655,
+                "titulo": "Capítulo 9: Las tribulaciones de la señora Weasley"
+            },
+            {
+                "inicio": 22235655,
+                "fin": 24662790,
+                "titulo": "Capítulo 10: Luna Lovegood"
+            },
+            {
+                "inicio": 24662790,
+                "fin": 27231451,
+                "titulo": "Capítulo 11: La nueva canción del Sombrero Seleccionador"
+            },
+            {
+                "inicio": 27231451,
+                "fin": 30865281,
+                "titulo": "Capítulo 12: La profesora Umbridge"
+            },
+            {
+                "inicio": 30865281,
+                "fin": 34510465,
+                "titulo": "Capítulo 13: Castigo con Dolores"
+            },
+            {
+                "inicio": 34510465,
+                "fin": 37840810,
+                "titulo": "Capítulo 14: Percy y Canuto"
+            },
+            {
+                "inicio": 37840810,
+                "fin": 40760788,
+                "titulo": "Capítulo 15: La suprema inquisidora de Howarts"
+            },
+            {
+                "inicio": 40760788,
+                "fin": 43146522,
+                "titulo": "Capítulo 16:Reunión  en Cabeza de Puerco"
+            },
+            {
+                "inicio": 43146522,
+                "fin": 46017297,
+                "titulo": "Capítulo 17: El Decreto de Enseñanza n.º 24"
+            },
+            {
+                "inicio": 46017297,
+                "fin": 48940201,
+                "titulo": "Capítulo 18: El Ejército de Dumbledore"
+            },
+            {
+                "inicio": 48940201,
+                "fin": 51766023,
+                "titulo": "Capítulo 19: El león y la serpiente"
+            },
+            {
+                "inicio": 51766023,
+                "fin": 54321193,
+                "titulo": "Capítulo 20: La historia de Hagrid"
+            },
+            {
+                "inicio": 54321193,
+                "fin": 57410027,
+                "titulo": "Capítulo 21: El ojo de la serpiente"
+            },
+            {
+                "inicio": 57410027,
+                "fin": 60703847,
+                "titulo": "Capítulo 22: \tHospital San Mungo de Enfermedades y Heridas Mágicas"
+            },
+            {
+                "inicio": 60703847,
+                "fin": 63773641,
+                "titulo": "Capítulo 23: Navidad en la sala de confinamiento"
+            },
+            {
+                "inicio": 63773641,
+                "fin": 67268383,
+                "titulo": "Capítulo 24: Oclumancia"
+            },
+            {
+                "inicio": 67268383,
+                "fin": 70489269,
+                "titulo": "Capítulo 25: El escarabajo, acorralado"
+            },
+            {
+                "inicio": 70489269,
+                "fin": 73989862,
+                "titulo": "Capítulo 26: Predecible e impredecible"
+            },
+            {
+                "inicio": 73989862,
+                "fin": 77228952,
+                "titulo": "Capítulo 27: El centauro y la delatora"
+            },
+            {
+                "inicio": 77228952,
+                "fin": 80591154,
+                "titulo": "Capítulo 28: El peor recuerdo de Snape"
+            },
+            {
+                "inicio": 80591154,
+                "fin": 83652426,
+                "titulo": "Capítulo 29: Orientación vocacional"
+            },
+            {
+                "inicio": 83652426,
+                "fin": 87042771,
+                "titulo": "Capítulo 30: Grawp"
+            },
+            {
+                "inicio": 87042771,
+                "fin": 90409989,
+                "titulo": "Capítulo 31: TIMOS"
+            },
+            {
+                "inicio": 90409989,
+                "fin": 92990770,
+                "titulo": "Capítulo 32: Por la chimenea"
+            },
+            {
+                "inicio": 92990770,
+                "fin": 94683620,
+                "titulo": "Capítulo 33: Pelea y huida"
+            },
+            {
+                "inicio": 94683620,
+                "fin": 96849577,
+                "titulo": "Capítulo 34: El Departamento de Misterios"
+            },
+            {
+                "inicio": 96849577,
+                "fin": 100178993,
+                "titulo": "Capítulo 35: Detrás del velo"
+            },
+            {
+                "inicio": 100178993,
+                "fin": 101889235,
+                "titulo": "Capítulo 36: El único al que temió"
+            },
+            {
+                "inicio": 101889235,
+                "fin": 105230447,
+                "titulo": "Capítulo 37: La profecía perdida"
+            },
+            {
+                "inicio": 105230447,
+                "fin": 108349513,
+                "titulo": "Capítulo 38: Empieza la segunda guerra"
+            },
+            {
+                "inicio": 108349513,
+                "fin": 108467026,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter y la piedra filosofal",
+        "autor": "J.K. Rowling",
+        "genero": "Ciencia ficción y fantasía",
+        "anio": 2020,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/harry-potter-y-la-piedra-filosofal.m4b",
+        "sinopsis": "Con las manos temblorosas, Harry le dio la vuelta al sobre y vio un sello de lacre púrpura con un escudo de armas: un león, un águila, un...",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 19850,
+                "titulo": "Créditos de apertura"
+            },
+            {
+                "inicio": 19850,
+                "fin": 1910351,
+                "titulo": "El niño que sobrevivió"
+            },
+            {
+                "inicio": 1910351,
+                "fin": 3232193,
+                "titulo": "El vidrio que se desvaneció"
+            },
+            {
+                "inicio": 3232193,
+                "fin": 4714508,
+                "titulo": "Las cartas de nadie"
+            },
+            {
+                "inicio": 4714508,
+                "fin": 6239083,
+                "titulo": "El guardián de las llaves"
+            },
+            {
+                "inicio": 6239083,
+                "fin": 8980918,
+                "titulo": "El callejon Diagon"
+            },
+            {
+                "inicio": 8980918,
+                "fin": 11386598,
+                "titulo": "El viaje desde el andén nueve y tres cuartos"
+            },
+            {
+                "inicio": 11386598,
+                "fin": 13209109,
+                "titulo": "El sombrero seleccionador"
+            },
+            {
+                "inicio": 13209109,
+                "fin": 14399479,
+                "titulo": "El profesor de pociones"
+            },
+            {
+                "inicio": 14399479,
+                "fin": 16296317,
+                "titulo": "El duelo a medianoche"
+            },
+            {
+                "inicio": 16296317,
+                "fin": 17893060,
+                "titulo": "Halloween"
+            },
+            {
+                "inicio": 17893060,
+                "fin": 19173431,
+                "titulo": "Quidditch"
+            },
+            {
+                "inicio": 19173431,
+                "fin": 21289140,
+                "titulo": "El espejo de Oesed"
+            },
+            {
+                "inicio": 21289140,
+                "fin": 22540463,
+                "titulo": "Nicolás Flamel"
+            },
+            {
+                "inicio": 22540463,
+                "fin": 23844727,
+                "titulo": "Norberto, el ridgeback noruego"
+            },
+            {
+                "inicio": 23844727,
+                "fin": 25874592,
+                "titulo": "El bosque prohibido"
+            },
+            {
+                "inicio": 25874592,
+                "fin": 28379398,
+                "titulo": "A través de la trampilla"
+            },
+            {
+                "inicio": 28379398,
+                "fin": 30685198,
+                "titulo": "El hombre con dos caras"
+            },
+            {
+                "inicio": 30685198,
+                "fin": 30799343,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "Harry Potter y las Reliquias de la Muerte",
+        "autor": "J.K. Rowling",
+        "genero": "Desconocido",
+        "anio": 2021,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/harry-potter-y-las-reliquias-de-la-muerte.m4b",
+        "sinopsis": "Entregadme a Harry Potter -dijo la voz de Voldemort- y nadie sufrirá ningún daño. Entregadme a Harry Potter y dejaré el colegio...\n ",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 19921,
+                "titulo": "Créditos de apertura"
+            },
+            {
+                "inicio": 19921,
+                "fin": 1552832,
+                "titulo": "Capítulo 1: El ascenso del Señor de las Tinieblas"
+            },
+            {
+                "inicio": 1552832,
+                "fin": 3408454,
+                "titulo": "Capítulo 2: In Memoriam"
+            },
+            {
+                "inicio": 3408454,
+                "fin": 4865784,
+                "titulo": "Capítulo 3: La despedida de los Dursley"
+            },
+            {
+                "inicio": 4865784,
+                "fin": 7180813,
+                "titulo": "Capítulo 4: Los siete Potter"
+            },
+            {
+                "inicio": 7180813,
+                "fin": 9919026,
+                "titulo": "Capítulo 5: El guerrero caído"
+            },
+            {
+                "inicio": 9919026,
+                "fin": 12702936,
+                "titulo": "Capítulo 6: El ghoul en pijama"
+            },
+            {
+                "inicio": 12702936,
+                "fin": 15617876,
+                "titulo": "Capítulo 7: El testamento de Albus Dumbledore"
+            },
+            {
+                "inicio": 15617876,
+                "fin": 18560889,
+                "titulo": "Capítulo 8: La boda"
+            },
+            {
+                "inicio": 18560889,
+                "fin": 20413585,
+                "titulo": "Capítulo 9: Un lugar donde esconderse"
+            },
+            {
+                "inicio": 20413585,
+                "fin": 23362658,
+                "titulo": "Capítulo 10: El relato de Kreacher"
+            },
+            {
+                "inicio": 23362658,
+                "fin": 25834747,
+                "titulo": "Capítulo 11: El soborno"
+            },
+            {
+                "inicio": 25834747,
+                "fin": 28526450,
+                "titulo": "Capítulo 12: La magia es poder"
+            },
+            {
+                "inicio": 28526450,
+                "fin": 31226698,
+                "titulo": "Capítulo 13: La Comisión de Registro de Hijos de Muggles"
+            },
+            {
+                "inicio": 31226698,
+                "fin": 33062328,
+                "titulo": "Capítulo 14: El ladrón"
+            },
+            {
+                "inicio": 33062328,
+                "fin": 36099544,
+                "titulo": "Capítulo 15: La venganza de los duendes"
+            },
+            {
+                "inicio": 36099544,
+                "fin": 38253287,
+                "titulo": "Capítulo 16: El valle de Godric"
+            },
+            {
+                "inicio": 38253287,
+                "fin": 40689919,
+                "titulo": "Capítulo 17: El secreto de Bathilda"
+            },
+            {
+                "inicio": 40689919,
+                "fin": 42295230,
+                "titulo": "Capítulo 18: Vida y Mentiras de Albus Dumbledore"
+            },
+            {
+                "inicio": 42295230,
+                "fin": 45204667,
+                "titulo": "Capítulo 19: La cierva plateada"
+            },
+            {
+                "inicio": 45204667,
+                "fin": 47199841,
+                "titulo": "Capítulo 20: Xenophilius Lovegood"
+            },
+            {
+                "inicio": 47199841,
+                "fin": 49363522,
+                "titulo": "Capítulo 21: «La fábula de los tres hermanos»"
+            },
+            {
+                "inicio": 49363522,
+                "fin": 52035186,
+                "titulo": "Capítulo 22: Las Reliquias de la Muerte"
+            },
+            {
+                "inicio": 52035186,
+                "fin": 55797213,
+                "titulo": "Capítulo 23: La Mansión Malfoy"
+            },
+            {
+                "inicio": 55797213,
+                "fin": 58879754,
+                "titulo": "Capítulo 24: El fabricante de varitas"
+            },
+            {
+                "inicio": 58879754,
+                "fin": 60852382,
+                "titulo": "Capítulo 25: El Refugio"
+            },
+            {
+                "inicio": 60852382,
+                "fin": 63903623,
+                "titulo": "Capítulo 26: Gringotts"
+            },
+            {
+                "inicio": 63903623,
+                "fin": 65101703,
+                "titulo": "Capítulo 27: El último escondite"
+            },
+            {
+                "inicio": 65101703,
+                "fin": 67201646,
+                "titulo": "Capítulo 28: El otro espejo"
+            },
+            {
+                "inicio": 67201646,
+                "fin": 69230373,
+                "titulo": "Capítulo 29: La diadema perdida"
+            },
+            {
+                "inicio": 69230373,
+                "fin": 71493947,
+                "titulo": "Capítulo 30: La huida de Snape"
+            },
+            {
+                "inicio": 71493947,
+                "fin": 75200292,
+                "titulo": "Capítulo 31: La batalla de Hogwarts"
+            },
+            {
+                "inicio": 75200292,
+                "fin": 77821778,
+                "titulo": "Capítulo 32: La Varita de Saúco"
+            },
+            {
+                "inicio": 77821778,
+                "fin": 81732273,
+                "titulo": "Capítulo 33: La historia del príncipe"
+            },
+            {
+                "inicio": 81732273,
+                "fin": 83468498,
+                "titulo": "Capítulo 34: Otra vez el bosque"
+            },
+            {
+                "inicio": 83468498,
+                "fin": 85808976,
+                "titulo": "Capítulo 35: King's Cross"
+            },
+            {
+                "inicio": 85808976,
+                "fin": 89160265,
+                "titulo": "Capítulo 36: La falla del plan"
+            },
+            {
+                "inicio": 89160265,
+                "fin": 89920091,
+                "titulo": "Epílogo: Diecinueve años después"
+            },
+            {
+                "inicio": 89920091,
+                "fin": 89990328,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "La mujer que arañaba las paredes 1",
+        "autor": "Jussi Adler-Olsen, Juan Mari Mendizabal - translator",
+        "genero": "Misterio, Negra y suspense",
+        "anio": 2000,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/la-mujer-que-aranaba-las-paredes-1.m4b",
+        "sinopsis": "En Copenhague, el policía Carl Mørck está atravesando una de las épocas más negras de su vida. Tras ser sorprendido por el ataque de un asesino, un compañero suyo resulta muerto y otro gravemente herido. Su sentimiento de culpabilidad aumenta cuando su jefe y la prensa dudan de su actuación. Relegado a un nuevo departamento dedicado a casos no resueltos, Carl Mørck ve una oportunidad de demostrar su valía al descubrir las numerosas irregularidades cometidas en el caso de Merete Lynggaard. Cuando en 2002 esta mujer, una joven promesa de la política danesa, desapareció mientras realizaba un viaje en ferry, la policía decidió cerrar el caso por falta de pruebas. Sin embargo, Merete Lynggaard sigue viva aunque sometida a un terrible cautiverio. Encerrada y expuesta a los caprichos de sus secuestradores, sabe que morirá el 15 de mayo de 2007. Carl Mørck ha de utilizar todo su ingenio e intuición.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 241068,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 241068,
+                "fin": 546317,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 546317,
+                "fin": 797626,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 797626,
+                "fin": 1662429,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 1662429,
+                "fin": 2964766,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 2964766,
+                "fin": 3339512,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 3339512,
+                "fin": 4767678,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 4767678,
+                "fin": 5151109,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 5151109,
+                "fin": 5664873,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 5664873,
+                "fin": 6501882,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 6501882,
+                "fin": 7396082,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 7396082,
+                "fin": 7761656,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 7761656,
+                "fin": 8452217,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 8452217,
+                "fin": 9988588,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 9988588,
+                "fin": 10687346,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 10687346,
+                "fin": 12918713,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 12918713,
+                "fin": 13663562,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 13663562,
+                "fin": 15902313,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 15902313,
+                "fin": 16768579,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 16768579,
+                "fin": 17872803,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 17872803,
+                "fin": 18161496,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 18161496,
+                "fin": 19396890,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 19396890,
+                "fin": 20210958,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 20210958,
+                "fin": 22391451,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 22391451,
+                "fin": 24013782,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 24013782,
+                "fin": 25619581,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 25619581,
+                "fin": 26979573,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 26979573,
+                "fin": 29071458,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 29071458,
+                "fin": 32151608,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 32151608,
+                "fin": 33884443,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 33884443,
+                "fin": 35200550,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 35200550,
+                "fin": 36934616,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 36934616,
+                "fin": 39356132,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 39356132,
+                "fin": 41295392,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 41295392,
+                "fin": 42736515,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 42736515,
+                "fin": 44589165,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 44589165,
+                "fin": 48069232,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 48069232,
+                "fin": 49720751,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 49720751,
+                "fin": 51656784,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 51656784,
+                "fin": 54157317,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 54157317,
+                "fin": 56170417,
+                "titulo": "Capítulo 41"
+            }
+        ]
+    },
+    {
+        "nombre": "Los chicos que cayeron en la trampa 2",
+        "autor": "Jussi Adler-Olsen, Nicolás de Miguel - translator",
+        "genero": "Negra y suspense, Misterio",
+        "anio": 2024,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/los-chicos-que-cayeron-en-la-trampa-2.m4b",
+        "sinopsis": "A finales de los años noventa, la policía encuentra, en una casa de veraneo en el norte de Dinamarca, a dos hermanos adolescentes brutalmente asesinados. Han sido golpeados, torturados y violados sin compasión. La investigación policial apunta a que los culpables pueden hallarse entre un grupo de jóvenes de buena familia, hijos de padres exitosos, ricos, cultos. Sin embargo, el caso se cierra muy pronto por falta de pruebas concluyentes hasta que, pocos años más tarde, uno de los sospechosos se entrega sin razón aparente y confiesa el crimen. Supuestamente, el misterio se ha resuelto.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 206100,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 206100,
+                "fin": 755343,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 755343,
+                "fin": 1000127,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 1000127,
+                "fin": 2068987,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 2068987,
+                "fin": 2479121,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 2479121,
+                "fin": 3243707,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 3243707,
+                "fin": 4312196,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 4312196,
+                "fin": 5726175,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 5726175,
+                "fin": 7250379,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 7250379,
+                "fin": 8655000,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 8655000,
+                "fin": 11347330,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 11347330,
+                "fin": 11852201,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 11852201,
+                "fin": 13978289,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 13978289,
+                "fin": 14440760,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 14440760,
+                "fin": 16817786,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 16817786,
+                "fin": 17952057,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 17952057,
+                "fin": 18977752,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 18977752,
+                "fin": 20931757,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 20931757,
+                "fin": 21962490,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 21962490,
+                "fin": 24479718,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 24479718,
+                "fin": 25498609,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 25498609,
+                "fin": 28282820,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 28282820,
+                "fin": 29661853,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 29661853,
+                "fin": 31988817,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 31988817,
+                "fin": 33268770,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 33268770,
+                "fin": 34845010,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 34845010,
+                "fin": 37961801,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 37961801,
+                "fin": 39921379,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 39921379,
+                "fin": 41036261,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 41036261,
+                "fin": 43118974,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 43118974,
+                "fin": 44478804,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 44478804,
+                "fin": 45946119,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 45946119,
+                "fin": 47358681,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 47358681,
+                "fin": 49347493,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 49347493,
+                "fin": 49980259,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 49980259,
+                "fin": 52030650,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 52030650,
+                "fin": 53094820,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 53094820,
+                "fin": 53951659,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 53951659,
+                "fin": 54380020,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 54380020,
+                "fin": 55878728,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 55878728,
+                "fin": 56583523,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 56583523,
+                "fin": 57604040,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 57604040,
+                "fin": 59421303,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 59421303,
+                "fin": 60264560,
+                "titulo": "Capítulo 44"
+            }
+        ]
+    },
+    {
+        "nombre": "Selfies 7",
+        "autor": "Jussi Adler-Olsen, Juan Mari Mendizabal - translator",
+        "genero": "Misterio, Policíaca, negra y suspense, Negra y suspense",
+        "anio": 2024,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/selfies-7.m4b",
+        "sinopsis": "Ellas son jóvenes, guapas y viven de las subvenciones estatales. Su único sueño es convertirse en las estrellas de un famoso reality show. Pero lo que no se pueden imaginar es que son el blanco de una persona desequilibrada cuyo objetivo es eliminarlas de una en una. Al inigualable trío de investigadores del Departamento Q, compuesto por el cínico inspector Carl Mørck y sus fieles Assad y Rose, se une Gordon, que será decisivo en esta investigación.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 1114045,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 1114045,
+                "fin": 2611964,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 2611964,
+                "fin": 3029110,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 3029110,
+                "fin": 4183675,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 4183675,
+                "fin": 4939438,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 4939438,
+                "fin": 6266365,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 6266365,
+                "fin": 6738612,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 6738612,
+                "fin": 7031090,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 7031090,
+                "fin": 7586046,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 7586046,
+                "fin": 9362906,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 9362906,
+                "fin": 11265456,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 11265456,
+                "fin": 12726943,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 12726943,
+                "fin": 14172245,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 14172245,
+                "fin": 15883811,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 15883811,
+                "fin": 16377861,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 16377861,
+                "fin": 17922498,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 17922498,
+                "fin": 19387909,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 19387909,
+                "fin": 20871037,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 20871037,
+                "fin": 22279443,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 22279443,
+                "fin": 24040212,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 24040212,
+                "fin": 25103802,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 25103802,
+                "fin": 26043304,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 26043304,
+                "fin": 26987566,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 26987566,
+                "fin": 28171087,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 28171087,
+                "fin": 29173817,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 29173817,
+                "fin": 31512739,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 31512739,
+                "fin": 32989876,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 32989876,
+                "fin": 33843162,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 33843162,
+                "fin": 35040963,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 35040963,
+                "fin": 36902994,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 36902994,
+                "fin": 37699322,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 37699322,
+                "fin": 39476321,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 39476321,
+                "fin": 40573812,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 40573812,
+                "fin": 42518529,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 42518529,
+                "fin": 43820889,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 43820889,
+                "fin": 44817303,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 44817303,
+                "fin": 46975063,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 46975063,
+                "fin": 47792544,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 47792544,
+                "fin": 48430024,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 48430024,
+                "fin": 49417940,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 49417940,
+                "fin": 50423155,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 50423155,
+                "fin": 50820425,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 50820425,
+                "fin": 52460914,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 52460914,
+                "fin": 55358578,
+                "titulo": "Capítulo 44"
+            },
+            {
+                "inicio": 55358578,
+                "fin": 55919641,
+                "titulo": "Capítulo 45"
+            },
+            {
+                "inicio": 55919641,
+                "fin": 56934422,
+                "titulo": "Capítulo 46"
+            },
+            {
+                "inicio": 56934422,
+                "fin": 57745077,
+                "titulo": "Capítulo 47"
+            },
+            {
+                "inicio": 57745077,
+                "fin": 58330057,
+                "titulo": "Capítulo 48"
+            },
+            {
+                "inicio": 58330057,
+                "fin": 59754949,
+                "titulo": "Capítulo 49"
+            },
+            {
+                "inicio": 59754949,
+                "fin": 60853717,
+                "titulo": "Capítulo 50"
+            },
+            {
+                "inicio": 60853717,
+                "fin": 61820828,
+                "titulo": "Capítulo 51"
+            },
+            {
+                "inicio": 61820828,
+                "fin": 63366557,
+                "titulo": "Capítulo 52"
+            },
+            {
+                "inicio": 63366557,
+                "fin": 63954509,
+                "titulo": "Capítulo 53"
+            },
+            {
+                "inicio": 63954509,
+                "fin": 65291676,
+                "titulo": "Capítulo 54"
+            },
+            {
+                "inicio": 65291676,
+                "fin": 67442284,
+                "titulo": "Capítulo 55"
+            },
+            {
+                "inicio": 67442284,
+                "fin": 68444921,
+                "titulo": "Capítulo 56"
+            },
+            {
+                "inicio": 68444921,
+                "fin": 69288043,
+                "titulo": "Capítulo 57"
+            }
+        ]
+    },
+    {
+        "nombre": "Siete metros cuadrados",
+        "autor": "Jussi Adler-Olsen",
+        "genero": "Literatura y ficción, Suspense",
+        "anio": 2025,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/siete-metros-cuadrados.m4b",
+        "sinopsis": "Solo necesitas 7 m2 para conocer al gran maestro de la novela negra.El desenlace de la serie, el mejor Jussi Adler-Olsen.El inspector Carl Mørck está en la cárcel. Después de quince años, un caso nunca resuelto del pasado lo ha alcanzado de lleno, y los cargos de tráfico de drogas y asesinato amenazan con destruir su vida y su carrera. Pero todo indica que lo están incriminando injustamente. Alguien ofrece una recompensa de un millón de dólares por su cabeza, y así lo pone en grave peligro entre los criminales y los funcionarios corruptos de la prisión, pero ¿por qué?",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 15324,
+                "titulo": "Créditos iniciales"
+            },
+            {
+                "inicio": 15324,
+                "fin": 22324,
+                "titulo": "Dedicatoria"
+            },
+            {
+                "inicio": 22324,
+                "fin": 314304,
+                "titulo": "Prólogo I. 2005"
+            },
+            {
+                "inicio": 314304,
+                "fin": 607455,
+                "titulo": "Prólogo II. Sábado, 26. de diciembre de 2020"
+            },
+            {
+                "inicio": 607455,
+                "fin": 1800449,
+                "titulo": "1.. Carl"
+            },
+            {
+                "inicio": 1800449,
+                "fin": 2323548,
+                "titulo": "2. Eddie Jansen"
+            },
+            {
+                "inicio": 2323548,
+                "fin": 2948025,
+                "titulo": "3. Malthe"
+            },
+            {
+                "inicio": 2948025,
+                "fin": 3480063,
+                "titulo": "4. Carl"
+            },
+            {
+                "inicio": 3480063,
+                "fin": 4501160,
+                "titulo": "5. Carl"
+            },
+            {
+                "inicio": 4501160,
+                "fin": 5487381,
+                "titulo": "6. Assad"
+            },
+            {
+                "inicio": 5487381,
+                "fin": 6093584,
+                "titulo": "7. Eddie Jansen"
+            },
+            {
+                "inicio": 6093584,
+                "fin": 6895415,
+                "titulo": "8. Carl"
+            },
+            {
+                "inicio": 6895415,
+                "fin": 7589691,
+                "titulo": "9. Rose"
+            },
+            {
+                "inicio": 7589691,
+                "fin": 7994112,
+                "titulo": "10. Pelle Hyttested / Mona"
+            },
+            {
+                "inicio": 7994112,
+                "fin": 8578395,
+                "titulo": "11. Malthe por la tarde / Carl por la noche"
+            },
+            {
+                "inicio": 8578395,
+                "fin": 9729547,
+                "titulo": "12. Assad"
+            },
+            {
+                "inicio": 9729547,
+                "fin": 10198148,
+                "titulo": "13. Malthe / Carl"
+            },
+            {
+                "inicio": 10198148,
+                "fin": 10354046,
+                "titulo": "14. Eddie Jansen"
+            },
+            {
+                "inicio": 10354046,
+                "fin": 11464192,
+                "titulo": "15. Mona / Rose"
+            },
+            {
+                "inicio": 11464192,
+                "fin": 12065449,
+                "titulo": "16. Carl"
+            },
+            {
+                "inicio": 12065449,
+                "fin": 12431581,
+                "titulo": "17. Malthe"
+            },
+            {
+                "inicio": 12431581,
+                "fin": 12729330,
+                "titulo": "18. Eddie Jansen"
+            },
+            {
+                "inicio": 12729330,
+                "fin": 13242142,
+                "titulo": "19. Mona"
+            },
+            {
+                "inicio": 13242142,
+                "fin": 15384786,
+                "titulo": "20. Gordon / Mona"
+            },
+            {
+                "inicio": 15384786,
+                "fin": 16472896,
+                "titulo": "21. Rose"
+            },
+            {
+                "inicio": 16472896,
+                "fin": 17192017,
+                "titulo": "22. Malthe"
+            },
+            {
+                "inicio": 17192017,
+                "fin": 17950241,
+                "titulo": "23. Eddie Jansen"
+            },
+            {
+                "inicio": 17950241,
+                "fin": 19267787,
+                "titulo": "24. Carl"
+            },
+            {
+                "inicio": 19267787,
+                "fin": 19796923,
+                "titulo": "25. Eddie Jansen"
+            },
+            {
+                "inicio": 19796923,
+                "fin": 20252219,
+                "titulo": "26. Carl"
+            },
+            {
+                "inicio": 20252219,
+                "fin": 21235491,
+                "titulo": "27. Rose"
+            },
+            {
+                "inicio": 21235491,
+                "fin": 21682869,
+                "titulo": "28. Assad"
+            },
+            {
+                "inicio": 21682869,
+                "fin": 22479963,
+                "titulo": "29. Torben Victor"
+            },
+            {
+                "inicio": 22479963,
+                "fin": 23205679,
+                "titulo": "30. Carl"
+            },
+            {
+                "inicio": 23205679,
+                "fin": 23992696,
+                "titulo": "31. Wayne Peters"
+            },
+            {
+                "inicio": 23992696,
+                "fin": 24645803,
+                "titulo": "32. Mona / Rose"
+            },
+            {
+                "inicio": 24645803,
+                "fin": 25629098,
+                "titulo": "33. Malthe / Carl"
+            },
+            {
+                "inicio": 25629098,
+                "fin": 25956615,
+                "titulo": "34. Cees Pauwels"
+            },
+            {
+                "inicio": 25956615,
+                "fin": 26580535,
+                "titulo": "35. Femke Jansen"
+            },
+            {
+                "inicio": 26580535,
+                "fin": 27227884,
+                "titulo": "36. Gordon"
+            },
+            {
+                "inicio": 27227884,
+                "fin": 28133137,
+                "titulo": "37. Carl"
+            },
+            {
+                "inicio": 28133137,
+                "fin": 28772945,
+                "titulo": "38. Eddie"
+            },
+            {
+                "inicio": 28772945,
+                "fin": 29673037,
+                "titulo": "39. Terje Ploug"
+            },
+            {
+                "inicio": 29673037,
+                "fin": 30500758,
+                "titulo": "40. Mona / Carl"
+            },
+            {
+                "inicio": 30500758,
+                "fin": 31491065,
+                "titulo": "41. Femke / Cees / Eddie"
+            },
+            {
+                "inicio": 31491065,
+                "fin": 32708719,
+                "titulo": "42. Mona / Assad"
+            },
+            {
+                "inicio": 32708719,
+                "fin": 33249767,
+                "titulo": "43. Femke / Cees Pauwels"
+            },
+            {
+                "inicio": 33249767,
+                "fin": 33894190,
+                "titulo": "44. Assad"
+            },
+            {
+                "inicio": 33894190,
+                "fin": 34688637,
+                "titulo": "45. Wayne Peters / Cees Pauwels"
+            },
+            {
+                "inicio": 34688637,
+                "fin": 35266999,
+                "titulo": "46. Femke"
+            },
+            {
+                "inicio": 35266999,
+                "fin": 36861536,
+                "titulo": "47. Femke"
+            },
+            {
+                "inicio": 36861536,
+                "fin": 38076868,
+                "titulo": "48. Molise / Ploug"
+            },
+            {
+                "inicio": 38076868,
+                "fin": 38624882,
+                "titulo": "49. Kenneth"
+            },
+            {
+                "inicio": 38624882,
+                "fin": 39348346,
+                "titulo": "50. Carl"
+            },
+            {
+                "inicio": 39348346,
+                "fin": 39891971,
+                "titulo": "51. Wayne Peters / Christan Mandrup"
+            },
+            {
+                "inicio": 39891971,
+                "fin": 40297182,
+                "titulo": "52. Pelle Hyttested"
+            },
+            {
+                "inicio": 40297182,
+                "fin": 40979570,
+                "titulo": "53. Ploug"
+            },
+            {
+                "inicio": 40979570,
+                "fin": 42241853,
+                "titulo": "54. Kenneth / Assad"
+            },
+            {
+                "inicio": 42241853,
+                "fin": 43618192,
+                "titulo": "55. Carl"
+            },
+            {
+                "inicio": 43618192,
+                "fin": 44342143,
+                "titulo": "56. Femke / Cees"
+            },
+            {
+                "inicio": 44342143,
+                "fin": 44964925,
+                "titulo": "57. Carl"
+            },
+            {
+                "inicio": 44964925,
+                "fin": 46249685,
+                "titulo": "58. Femke"
+            },
+            {
+                "inicio": 46249685,
+                "fin": 47141215,
+                "titulo": "59. Hardy / Assad"
+            },
+            {
+                "inicio": 47141215,
+                "fin": 47582069,
+                "titulo": "60. Hardy / Carl"
+            },
+            {
+                "inicio": 47582069,
+                "fin": 47789887,
+                "titulo": "61. Femke"
+            },
+            {
+                "inicio": 47789887,
+                "fin": 48548506,
+                "titulo": "62. Marcus"
+            },
+            {
+                "inicio": 48548506,
+                "fin": 49238463,
+                "titulo": "63. Rose / Merete Lynggaard"
+            },
+            {
+                "inicio": 49238463,
+                "fin": 49796299,
+                "titulo": "64. Gordon"
+            },
+            {
+                "inicio": 49796299,
+                "fin": 50325156,
+                "titulo": "65. Rose"
+            },
+            {
+                "inicio": 50325156,
+                "fin": 51302878,
+                "titulo": "66. Carl"
+            },
+            {
+                "inicio": 51302878,
+                "fin": 52094864,
+                "titulo": "67. Bente / Assad"
+            },
+            {
+                "inicio": 52094864,
+                "fin": 53077369,
+                "titulo": "68. Bente"
+            },
+            {
+                "inicio": 53077369,
+                "fin": 53566520,
+                "titulo": "69. Mona / Merete"
+            },
+            {
+                "inicio": 53566520,
+                "fin": 54116020,
+                "titulo": "70. Bente Hansen"
+            },
+            {
+                "inicio": 54116020,
+                "fin": 54591286,
+                "titulo": "71. Wayne Peeters"
+            },
+            {
+                "inicio": 54591286,
+                "fin": 55076977,
+                "titulo": "72. Bente"
+            },
+            {
+                "inicio": 55076977,
+                "fin": 56333548,
+                "titulo": "73. Assad / Merete"
+            },
+            {
+                "inicio": 56333548,
+                "fin": 56927723,
+                "titulo": "74. Carl / Bente"
+            },
+            {
+                "inicio": 56927723,
+                "fin": 57894207,
+                "titulo": "75. Assad / Rose"
+            },
+            {
+                "inicio": 57894207,
+                "fin": 58239766,
+                "titulo": "76. Carl"
+            },
+            {
+                "inicio": 58239766,
+                "fin": 58846526,
+                "titulo": "77. Departamento Q / Carl"
+            },
+            {
+                "inicio": 58846526,
+                "fin": 59464269,
+                "titulo": "Epílogo. Carl"
+            },
+            {
+                "inicio": 59464269,
+                "fin": 59604958,
+                "titulo": "Nota"
+            },
+            {
+                "inicio": 59604958,
+                "fin": 59997932,
+                "titulo": "Agradecimientos"
+            },
+            {
+                "inicio": 59997932,
+                "fin": 60012924,
+                "titulo": "Créditos finales"
+            }
+        ]
+    },
+    {
+        "nombre": "Sin límites 6",
+        "autor": "Jussi Adler-Olsen, Juan Mari Mendizabal - translator",
+        "genero": "Misterio, Policíaca, negra y suspense, Negra y suspense",
+        "anio": 2000,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/sin-limites-6.m4b",
+        "sinopsis": "El comisario Christian Habersaat lleva diecisiete años intentando en vano esclarecer la muerte de una joven que apareció colgando cabeza abajo de un árbol. Desesperado, le pide ayuda a Carl Mørck, que, malhumorado como siempre, no le hace demasiado caso. Poco después, Habersaat muere en extrañas circunstancias y, al cabo de unos días, fallece también su hijo.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 220588,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 220588,
+                "fin": 1215145,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 1215145,
+                "fin": 1839970,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 1839970,
+                "fin": 4006949,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 4006949,
+                "fin": 4601588,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 4601588,
+                "fin": 5354680,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 5354680,
+                "fin": 6681955,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 6681955,
+                "fin": 7856420,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 7856420,
+                "fin": 10368656,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 10368656,
+                "fin": 10927746,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 10927746,
+                "fin": 12284789,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 12284789,
+                "fin": 12838027,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 12838027,
+                "fin": 14689586,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 14689586,
+                "fin": 15851791,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 15851791,
+                "fin": 17743195,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 17743195,
+                "fin": 18688757,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 18688757,
+                "fin": 20322675,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 20322675,
+                "fin": 21899240,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 21899240,
+                "fin": 23267591,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 23267591,
+                "fin": 25280830,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 25280830,
+                "fin": 26899655,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 26899655,
+                "fin": 27631710,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 27631710,
+                "fin": 29208275,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 29208275,
+                "fin": 30596897,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 30596897,
+                "fin": 32360707,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 32360707,
+                "fin": 33918649,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 33918649,
+                "fin": 34874660,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 34874660,
+                "fin": 36709407,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 36709407,
+                "fin": 38551446,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 38551446,
+                "fin": 38988608,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 38988608,
+                "fin": 40605483,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 40605483,
+                "fin": 41542175,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 41542175,
+                "fin": 43294074,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 43294074,
+                "fin": 44203947,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 44203947,
+                "fin": 45614025,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 45614025,
+                "fin": 45902463,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 45902463,
+                "fin": 47676769,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 47676769,
+                "fin": 49685318,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 49685318,
+                "fin": 51107981,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 51107981,
+                "fin": 51782543,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 51782543,
+                "fin": 53567716,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 53567716,
+                "fin": 54101751,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 54101751,
+                "fin": 56043589,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 56043589,
+                "fin": 56842401,
+                "titulo": "Capítulo 44"
+            },
+            {
+                "inicio": 56842401,
+                "fin": 59295287,
+                "titulo": "Capítulo 45"
+            },
+            {
+                "inicio": 59295287,
+                "fin": 60179201,
+                "titulo": "Capítulo 46"
+            },
+            {
+                "inicio": 60179201,
+                "fin": 61296847,
+                "titulo": "Capítulo 47"
+            },
+            {
+                "inicio": 61296847,
+                "fin": 62425197,
+                "titulo": "Capítulo 48"
+            },
+            {
+                "inicio": 62425197,
+                "fin": 63949076,
+                "titulo": "Capítulo 49"
+            },
+            {
+                "inicio": 63949076,
+                "fin": 65554132,
+                "titulo": "Capítulo 50"
+            },
+            {
+                "inicio": 65554132,
+                "fin": 67175233,
+                "titulo": "Capítulo 51"
+            },
+            {
+                "inicio": 67175233,
+                "fin": 68029541,
+                "titulo": "Capítulo 52"
+            },
+            {
+                "inicio": 68029541,
+                "fin": 69985566,
+                "titulo": "Capítulo 53"
+            },
+            {
+                "inicio": 69985566,
+                "fin": 72193342,
+                "titulo": "Capítulo 54"
+            },
+            {
+                "inicio": 72193342,
+                "fin": 73645987,
+                "titulo": "Capítulo 55"
+            }
+        ]
+    },
+    {
+        "nombre": "The Boyfriend",
+        "autor": "Freida McFadden",
+        "genero": "Negra y suspense",
+        "anio": 2024,
+        "idioma": "English",
+        "url": "https://archive.org/download/audiolibros/the-boyfriend.m4b",
+        "sinopsis": "Sydney Shaw, like every single woman in New York, has terrible luck with dating. She’s seen it all: men who lie in their dating profile, men who stick her with the dinner bill, and worst of all, men who can't shut up about their mothers. But finally, she hits the jackpot. Her new boyfriend is utterly perfect. He's charming, handsome, and works as a doctor at a local hospital. Sydney is swept off her feet. Then the brutal murder of a young woman—the latest in a string of deaths across the coast—confounds police. The primary suspect? A mystery man who dates his victims before he kills them.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 153783,
+                "titulo": "Prologue"
+            },
+            {
+                "inicio": 153783,
+                "fin": 620550,
+                "titulo": "Chapter 1"
+            },
+            {
+                "inicio": 620550,
+                "fin": 1410701,
+                "titulo": "Chapter 2"
+            },
+            {
+                "inicio": 1410701,
+                "fin": 1945177,
+                "titulo": "Chapter 3"
+            },
+            {
+                "inicio": 1945177,
+                "fin": 3049796,
+                "titulo": "Chapter 4"
+            },
+            {
+                "inicio": 3049796,
+                "fin": 3589311,
+                "titulo": "Chapter 5"
+            },
+            {
+                "inicio": 3589311,
+                "fin": 4090745,
+                "titulo": "Chapter 6"
+            },
+            {
+                "inicio": 4090745,
+                "fin": 4738488,
+                "titulo": "Chapter 7"
+            },
+            {
+                "inicio": 4738488,
+                "fin": 5573477,
+                "titulo": "Chapter 8"
+            },
+            {
+                "inicio": 5573477,
+                "fin": 6009501,
+                "titulo": "Chapter 9"
+            },
+            {
+                "inicio": 6009501,
+                "fin": 6829281,
+                "titulo": "Chapter 10"
+            },
+            {
+                "inicio": 6829281,
+                "fin": 7188331,
+                "titulo": "Chapter 11"
+            },
+            {
+                "inicio": 7188331,
+                "fin": 8046331,
+                "titulo": "Chapter 12"
+            },
+            {
+                "inicio": 8046331,
+                "fin": 8968557,
+                "titulo": "Chapter 13"
+            },
+            {
+                "inicio": 8968557,
+                "fin": 9362785,
+                "titulo": "Chapter 14"
+            },
+            {
+                "inicio": 9362785,
+                "fin": 10025830,
+                "titulo": "Chapter 15"
+            },
+            {
+                "inicio": 10025830,
+                "fin": 10660547,
+                "titulo": "Chapter 16"
+            },
+            {
+                "inicio": 10660547,
+                "fin": 11326750,
+                "titulo": "Chapter 17"
+            },
+            {
+                "inicio": 11326750,
+                "fin": 11559971,
+                "titulo": "Chapter 18"
+            },
+            {
+                "inicio": 11559971,
+                "fin": 11847457,
+                "titulo": "Chapter 19"
+            },
+            {
+                "inicio": 11847457,
+                "fin": 12194200,
+                "titulo": "Chapter 20"
+            },
+            {
+                "inicio": 12194200,
+                "fin": 12343806,
+                "titulo": "Chapter 21"
+            },
+            {
+                "inicio": 12343806,
+                "fin": 13080853,
+                "titulo": "Chapter 22"
+            },
+            {
+                "inicio": 13080853,
+                "fin": 13404794,
+                "titulo": "Chapter 23"
+            },
+            {
+                "inicio": 13404794,
+                "fin": 14202585,
+                "titulo": "Chapter 24"
+            },
+            {
+                "inicio": 14202585,
+                "fin": 14904709,
+                "titulo": "Chapter 25"
+            },
+            {
+                "inicio": 14904709,
+                "fin": 15676168,
+                "titulo": "Chapter 26"
+            },
+            {
+                "inicio": 15676168,
+                "fin": 15929683,
+                "titulo": "Chapter 27"
+            },
+            {
+                "inicio": 15929683,
+                "fin": 16736344,
+                "titulo": "Chapter 28"
+            },
+            {
+                "inicio": 16736344,
+                "fin": 17342756,
+                "titulo": "Chapter 29"
+            },
+            {
+                "inicio": 17342756,
+                "fin": 17657084,
+                "titulo": "Chapter 30"
+            },
+            {
+                "inicio": 17657084,
+                "fin": 17886102,
+                "titulo": "Chapter 31"
+            },
+            {
+                "inicio": 17886102,
+                "fin": 18587739,
+                "titulo": "Chapter 32"
+            },
+            {
+                "inicio": 18587739,
+                "fin": 19126256,
+                "titulo": "Chapter 33"
+            },
+            {
+                "inicio": 19126256,
+                "fin": 19532001,
+                "titulo": "Chapter 34"
+            },
+            {
+                "inicio": 19532001,
+                "fin": 19747203,
+                "titulo": "Chapter 35"
+            },
+            {
+                "inicio": 19747203,
+                "fin": 20098613,
+                "titulo": "Chapter 36"
+            },
+            {
+                "inicio": 20098613,
+                "fin": 20767649,
+                "titulo": "Chapter 37"
+            },
+            {
+                "inicio": 20767649,
+                "fin": 21045568,
+                "titulo": "Chapter 38"
+            },
+            {
+                "inicio": 21045568,
+                "fin": 21707290,
+                "titulo": "Chapter 39"
+            },
+            {
+                "inicio": 21707290,
+                "fin": 21912600,
+                "titulo": "Chapter 40"
+            },
+            {
+                "inicio": 21912600,
+                "fin": 22138437,
+                "titulo": "Chapter 41"
+            },
+            {
+                "inicio": 22138437,
+                "fin": 22408879,
+                "titulo": "Chapter 42"
+            },
+            {
+                "inicio": 22408879,
+                "fin": 22909106,
+                "titulo": "Chapter 43"
+            },
+            {
+                "inicio": 22909106,
+                "fin": 23363892,
+                "titulo": "Chapter 44"
+            },
+            {
+                "inicio": 23363892,
+                "fin": 23679962,
+                "titulo": "Chapter 45"
+            },
+            {
+                "inicio": 23679962,
+                "fin": 24209330,
+                "titulo": "Chapter 46"
+            },
+            {
+                "inicio": 24209330,
+                "fin": 24818807,
+                "titulo": "Chapter 47"
+            },
+            {
+                "inicio": 24818807,
+                "fin": 25030549,
+                "titulo": "Chapter 48"
+            },
+            {
+                "inicio": 25030549,
+                "fin": 25717998,
+                "titulo": "Chapter 49"
+            },
+            {
+                "inicio": 25717998,
+                "fin": 26340571,
+                "titulo": "Chapter 50"
+            },
+            {
+                "inicio": 26340571,
+                "fin": 26804250,
+                "titulo": "Chapter 51"
+            },
+            {
+                "inicio": 26804250,
+                "fin": 27254136,
+                "titulo": "Chapter 52"
+            },
+            {
+                "inicio": 27254136,
+                "fin": 27717350,
+                "titulo": "Chapter 53"
+            },
+            {
+                "inicio": 27717350,
+                "fin": 27932645,
+                "titulo": "Chapter 54"
+            },
+            {
+                "inicio": 27932645,
+                "fin": 28149333,
+                "titulo": "Chapter 55"
+            },
+            {
+                "inicio": 28149333,
+                "fin": 28565388,
+                "titulo": "Chapter 56"
+            },
+            {
+                "inicio": 28565388,
+                "fin": 28922487,
+                "titulo": "Chapter 57"
+            },
+            {
+                "inicio": 28922487,
+                "fin": 29413565,
+                "titulo": "Chapter 58"
+            },
+            {
+                "inicio": 29413565,
+                "fin": 29912794,
+                "titulo": "Chapter 59"
+            },
+            {
+                "inicio": 29912794,
+                "fin": 30264181,
+                "titulo": "Chapter 60"
+            },
+            {
+                "inicio": 30264181,
+                "fin": 31265727,
+                "titulo": "Chapter 61"
+            },
+            {
+                "inicio": 31265727,
+                "fin": 31975584,
+                "titulo": "Chapter 62"
+            },
+            {
+                "inicio": 31975584,
+                "fin": 32586756,
+                "titulo": "Chapter 63"
+            },
+            {
+                "inicio": 32586756,
+                "fin": 33146728,
+                "titulo": "Chapter 64"
+            },
+            {
+                "inicio": 33146728,
+                "fin": 33635195,
+                "titulo": "Epilogue"
+            }
+        ]
+    },
+    {
+        "nombre": "Tres enigmas para la Organización",
+        "autor": "Eduardo Mendoza",
+        "genero": "Misterio, Negra y suspense, Literatura y ficción",
+        "anio": 2024,
+        "idioma": "Spanish",
+        "url": "https://archive.org/download/audiolibros/tres-enigmas-para-la-organizacion.m4b",
+        "sinopsis": "No vuelve con un detective chiflado, sino con nueve. No vuelve con un caso, sino con tres.Vuelve el mejor Eduardo Mendoza. Barcelona, primavera de 2022. Los miembros de una organización gubernamental secreta se enfrentan a la peligrosísima investigación de tres casos que tal vez estén relacionados entre sí, o tal vez no: la aparición de un cuerpo sin vida en un hotel de Las Ramblas, la desaparición de un millonario británico en su yate y las singulares finanzas de Conservas Fernández.",
+        "capitulos": [
+            {
+                "inicio": 0,
+                "fin": 11028,
+                "titulo": "Capítulo 1"
+            },
+            {
+                "inicio": 11028,
+                "fin": 1022233,
+                "titulo": "Capítulo 2"
+            },
+            {
+                "inicio": 1022233,
+                "fin": 1437429,
+                "titulo": "Capítulo 3"
+            },
+            {
+                "inicio": 1437429,
+                "fin": 2214995,
+                "titulo": "Capítulo 4"
+            },
+            {
+                "inicio": 2214995,
+                "fin": 2807103,
+                "titulo": "Capítulo 5"
+            },
+            {
+                "inicio": 2807103,
+                "fin": 3499522,
+                "titulo": "Capítulo 6"
+            },
+            {
+                "inicio": 3499522,
+                "fin": 3866466,
+                "titulo": "Capítulo 7"
+            },
+            {
+                "inicio": 3866466,
+                "fin": 4647701,
+                "titulo": "Capítulo 8"
+            },
+            {
+                "inicio": 4647701,
+                "fin": 4989521,
+                "titulo": "Capítulo 9"
+            },
+            {
+                "inicio": 4989521,
+                "fin": 5592218,
+                "titulo": "Capítulo 10"
+            },
+            {
+                "inicio": 5592218,
+                "fin": 6024619,
+                "titulo": "Capítulo 11"
+            },
+            {
+                "inicio": 6024619,
+                "fin": 6257143,
+                "titulo": "Capítulo 12"
+            },
+            {
+                "inicio": 6257143,
+                "fin": 6860676,
+                "titulo": "Capítulo 13"
+            },
+            {
+                "inicio": 6860676,
+                "fin": 7356096,
+                "titulo": "Capítulo 14"
+            },
+            {
+                "inicio": 7356096,
+                "fin": 7703930,
+                "titulo": "Capítulo 15"
+            },
+            {
+                "inicio": 7703930,
+                "fin": 8571125,
+                "titulo": "Capítulo 16"
+            },
+            {
+                "inicio": 8571125,
+                "fin": 9198783,
+                "titulo": "Capítulo 17"
+            },
+            {
+                "inicio": 9198783,
+                "fin": 9430680,
+                "titulo": "Capítulo 18"
+            },
+            {
+                "inicio": 9430680,
+                "fin": 9984383,
+                "titulo": "Capítulo 19"
+            },
+            {
+                "inicio": 9984383,
+                "fin": 10205088,
+                "titulo": "Capítulo 20"
+            },
+            {
+                "inicio": 10205088,
+                "fin": 10387387,
+                "titulo": "Capítulo 21"
+            },
+            {
+                "inicio": 10387387,
+                "fin": 11079388,
+                "titulo": "Capítulo 22"
+            },
+            {
+                "inicio": 11079388,
+                "fin": 12188256,
+                "titulo": "Capítulo 23"
+            },
+            {
+                "inicio": 12188256,
+                "fin": 12814869,
+                "titulo": "Capítulo 24"
+            },
+            {
+                "inicio": 12814869,
+                "fin": 13556467,
+                "titulo": "Capítulo 25"
+            },
+            {
+                "inicio": 13556467,
+                "fin": 14513314,
+                "titulo": "Capítulo 26"
+            },
+            {
+                "inicio": 14513314,
+                "fin": 15002395,
+                "titulo": "Capítulo 27"
+            },
+            {
+                "inicio": 15002395,
+                "fin": 15419378,
+                "titulo": "Capítulo 28"
+            },
+            {
+                "inicio": 15419378,
+                "fin": 16044203,
+                "titulo": "Capítulo 29"
+            },
+            {
+                "inicio": 16044203,
+                "fin": 16500359,
+                "titulo": "Capítulo 30"
+            },
+            {
+                "inicio": 16500359,
+                "fin": 17135958,
+                "titulo": "Capítulo 31"
+            },
+            {
+                "inicio": 17135958,
+                "fin": 18119346,
+                "titulo": "Capítulo 32"
+            },
+            {
+                "inicio": 18119346,
+                "fin": 18935527,
+                "titulo": "Capítulo 33"
+            },
+            {
+                "inicio": 18935527,
+                "fin": 19369531,
+                "titulo": "Capítulo 34"
+            },
+            {
+                "inicio": 19369531,
+                "fin": 19529075,
+                "titulo": "Capítulo 35"
+            },
+            {
+                "inicio": 19529075,
+                "fin": 20426108,
+                "titulo": "Capítulo 36"
+            },
+            {
+                "inicio": 20426108,
+                "fin": 20649669,
+                "titulo": "Capítulo 37"
+            },
+            {
+                "inicio": 20649669,
+                "fin": 21094029,
+                "titulo": "Capítulo 38"
+            },
+            {
+                "inicio": 21094029,
+                "fin": 21687391,
+                "titulo": "Capítulo 39"
+            },
+            {
+                "inicio": 21687391,
+                "fin": 22266705,
+                "titulo": "Capítulo 40"
+            },
+            {
+                "inicio": 22266705,
+                "fin": 22660190,
+                "titulo": "Capítulo 41"
+            },
+            {
+                "inicio": 22660190,
+                "fin": 23684190,
+                "titulo": "Capítulo 42"
+            },
+            {
+                "inicio": 23684190,
+                "fin": 24269123,
+                "titulo": "Capítulo 43"
+            },
+            {
+                "inicio": 24269123,
+                "fin": 24708073,
+                "titulo": "Capítulo 44"
+            },
+            {
+                "inicio": 24708073,
+                "fin": 25009630,
+                "titulo": "Capítulo 45"
+            },
+            {
+                "inicio": 25009630,
+                "fin": 25466877,
+                "titulo": "Capítulo 46"
+            },
+            {
+                "inicio": 25466877,
+                "fin": 25855509,
+                "titulo": "Capítulo 47"
+            },
+            {
+                "inicio": 25855509,
+                "fin": 26239218,
+                "titulo": "Capítulo 48"
+            },
+            {
+                "inicio": 26239218,
+                "fin": 26837851,
+                "titulo": "Capítulo 49"
+            },
+            {
+                "inicio": 26837851,
+                "fin": 27058556,
+                "titulo": "Capítulo 50"
+            },
+            {
+                "inicio": 27058556,
+                "fin": 27627003,
+                "titulo": "Capítulo 51"
+            },
+            {
+                "inicio": 27627003,
+                "fin": 28303678,
+                "titulo": "Capítulo 52"
+            },
+            {
+                "inicio": 28303678,
+                "fin": 28784075,
+                "titulo": "Capítulo 53"
+            },
+            {
+                "inicio": 28784075,
+                "fin": 29308265,
+                "titulo": "Capítulo 54"
+            },
+            {
+                "inicio": 29308265,
+                "fin": 29633948,
+                "titulo": "Capítulo 55"
+            },
+            {
+                "inicio": 29633948,
+                "fin": 30008973,
+                "titulo": "Capítulo 56"
+            },
+            {
+                "inicio": 30008973,
+                "fin": 30322860,
+                "titulo": "Capítulo 57"
+            },
+            {
+                "inicio": 30322860,
+                "fin": 31014373,
+                "titulo": "Capítulo 58"
+            },
+            {
+                "inicio": 31014373,
+                "fin": 31869192,
+                "titulo": "Capítulo 59"
+            },
+            {
+                "inicio": 31869192,
+                "fin": 32427051,
+                "titulo": "Capítulo 60"
+            },
+            {
+                "inicio": 32427051,
+                "fin": 32513997,
+                "titulo": "Capítulo 61"
+            }
+        ]
+    }
+]

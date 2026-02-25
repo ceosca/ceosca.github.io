@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiolibros</title>
+    <style>
+        html,body{margin:0;padding:0;box-sizing:border-box}
+        :root{--pc:#4CAF50;--pcd:#3e8e41;--tc:#333;--bc:#f4f4f4;--w:#fff;--s:0 0 5px rgba(0,0,0,.1);--fo:3px solid #007bff;--foo:2px}
+        body{font-family:Arial,sans-serif;background-color:var(--bc);font-size:1.2em;line-height:1.6;color:var(--tc)}
+        h2{font-size:1.8em;margin-bottom:.5em}
+        h3{font-size:1.4em;margin:1em 0 .5em}
+        .c{width:95%;margin:10px auto;background-color:var(--w);padding:15px;box-shadow:var(--s)}
+        .b{padding:12px 18px;border:none;cursor:pointer;border-radius:5px;transition:background-color .2s ease,box-shadow .2s ease;font-size:1em;background-color:var(--pc);color:var(--w);margin-top:5px}
+        .b:hover,.b:focus{box-shadow:var(--s);outline:none}
+        .bp:hover,.bp:focus{background-color:var(--pcd)}
+        .sl{list-style-type:none;padding:0}
+        .sl li{margin-bottom:10px}
+        .sl button{width:100%;text-align:left;font-size:1.1em;display:block}
+        .m{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.7)}
+        .mc{background-color:var(--w);padding:20px;border:1px solid #888;width:100%;position:relative;border-radius:10px}
+        .m .mc{margin:15% auto;padding-top:60px;padding-bottom:70px;width:90%}
+        .fh{position:fixed;top:0;left:0;width:100%;background-color:var(--w);padding:10px 20px;z-index:2;box-shadow:0 2px 5px rgba(0,0,0,.2);display:flex;justify-content:flex-end}
+        .fp{position:fixed;bottom:0;left:0;width:100%;background-color:#f0f0f0;padding:10px;text-align:center;z-index:2;box-shadow:0 -2px 5px rgba(0,0,0,.2);display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap}
+        .fp button{background-color:#555;color:var(--w);transition:background-color .3s;font-size:.9em;padding:8px 12px;margin-bottom:5px}
+        .fp button:hover{background-color:#777}
+        .fp #ti,.fp #ci{font-size:.8em;color:var(--tc);width:100%;text-align:center}
+        .tc{margin-top:1em;width:100%}
+        .tc label{display:block;margin-bottom:.5em;font-size:1.1em}
+        .tc select{width:100%;padding:10px;font-size:1em;border:1px solid #ccc;border-radius:5px;margin-bottom:1em;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px top 50%;background-size:1.5em}
+        .h{display:none !important}
+        *:focus{outline:var(--fo);outline-offset:var(--foo)}
+        @media (max-width:600px){
+            body{font-size:1.1em}
+            h2{font-size:1.5em}
+            .c{padding:10px}
+            .sl button{padding:12px 15px;font-size:1em}
+            .m .mc{margin:20% auto}
+        }
+        #selector-audiolibros{text-align:center;margin-bottom:20px}
+        #selector-audiolibros h2{margin-bottom:10px}
+        #selector-audiolibros ul{list-style:none;padding:0;display:flex;justify-content:center;flex-wrap:wrap}
+        #selector-audiolibros li{margin:5px 10px}
+        #selector-audiolibros a{text-decoration:none;color:var(--pc);font-weight:bold;padding:8px 12px;border:2px solid var(--pc);border-radius:5px;transition:background-color .2s ease,color .2s ease;display:block}
+        #selector-audiolibros a:hover{background-color:var(--pc);color:var(--w)}
+        #acc-info{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+        #audiolibros-lista h2{margin-top:0}
+        .categorias{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+        .categoria-btn{background-color:#e0e0e0;color:var(--tc);padding:8px 15px;border-radius:20px;border:none;cursor:pointer;font-size:.9em}
+        .categoria-btn:hover,.categoria-btn.activa{background-color:var(--pc);color:var(--w)}
+        .autor-info{color:#666;font-size:.9em;margin-bottom:10px}
+        #si div{margin-bottom:10px}
+    </style>
+</head>
+<body>
+    <div class="c">
+        <div id="selector-audiolibros">
+            <h2>🎧 Audiolibros disponibles</h2>
+            <div class="categorias" id="categorias">
+                <button class="categoria-btn activa" data-categoria="todos">Todos</button>
+            </div>
+        </div>
+
+        <div id="mc">
+            <main>
+                <div id="audiolibros-lista">
+                    <h2>Lista de Audiolibros</h2>
+                    <ul id="audiolibros-list" class="sl"></ul>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="sM" class="m" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="mc" tabindex="-1">
+            <header class="fh">
+                <h2 id="modal-title">Reproduciendo Audiolibro</h2>
+                <button class="close b bp" id="cb" aria-label="Regresar">Regresar</button>
+            </header>
+            <main>
+                <div id="si" aria-live="polite"></div>
+            </main>
+            <audio id="ap">Audio no soportado.</audio>
+            <h2>Reproductor</h2>
+            <footer class="fp">
+                <div id="ci"></div>
+                <div id="ti"></div>
+                <button id="ppb" class="b" aria-label="Reproducir/Pausar (Alt + K)">Reproducir</button>
+                <button id="fb" class="b" aria-label="Avanzar 15 segundos (Alt + L)">Avanzar</button>
+                <button id="bb" class="b" aria-label="Retroceder 15 segundos (Alt + J)">Retroceder</button>
+                <button id="reb" class="b" aria-label="Reiniciar capítulo (Alt + R)">Reiniciar capítulo</button>
+                <button id="ncb" class="b" aria-label="Siguiente capítulo (Alt + S)">Siguiente capítulo</button>
+                <button id="pcb" class="b" aria-label="Capítulo anterior (Alt + A)">Capítulo anterior</button>
+                <button id="ivb" class="b" aria-label="Subir volumen (Alt + O)">Subir volumen</button>
+                <button id="dvb" class="b" aria-label="Bajar volumen (Alt + U)">Bajar volumen</button>
+                <section class="tc" id="casc">
+                    <label for="c">Capítulo:</label>
+                    <select id="c"></select>
+                </section>
+            </footer>
+        </div>
+    </div>
+    <div id="acc-info" aria-live="polite"></div>
+
+    <script>
+        // Variables globales
+        const AUDIO = document.getElementById('ap');
+        const MODAL = document.getElementById("sM");
+        const CLOSE_BTN = document.getElementById("cb");
+        const PLAY_PAUSE_BTN = document.getElementById('ppb');
+        const CHAPTER_SELECT = document.getElementById('c');
+        const CHAPTER_INFO = document.getElementById('ci');
+        const TIME_INFO = document.getElementById('ti');
+        const AUDIOBOOKS_LIST = document.getElementById('audiolibros-list');
+        const CATEGORIAS_DIV = document.getElementById('categorias');
+        const SI_DIV = document.getElementById('si');
+        const REB = document.getElementById('reb');
+        const ACCI = document.getElementById('acc-info');
+        
+        let audioLibros = [];
+        let audioLibroActual = null;
+        let capituloActual = 0;
+        let isPlaying = false;
+        let intervalTimer = null;
+        let isManuallySwitchingChapter = false;
+        let categorias = new Set(['todos']);
+
+        // Funciones de utilidad
+        const formatTime = (t) => {
+            const m = Math.floor(t / 60);
+            const s = Math.floor(t % 60);
+            return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        };
+
+        const slugify = (texto) => {
+            return texto.toLowerCase()
+                .replace(/[áàäâ]/g, 'a')
+                .replace(/[éèëê]/g, 'e')
+                .replace(/[íìïî]/g, 'i')
+                .replace(/[óòöô]/g, 'o')
+                .replace(/[úùüû]/g, 'u')
+                .replace(/[ñ]/g, 'n')
+                .replace(/[^a-z0-9\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-');
+        };
+
+        // Cargar audiolibros desde JSON
+        const cargarAudiolibros = async () => {
+            try {
+                const respuesta = await fetch('audiolibros.json');
+                if (!respuesta.ok) throw new Error(`Error al cargar: ${respuesta.status}`);
+                audioLibros = await respuesta.json();
+                
+                // Extraer categorías (géneros) únicos
+                audioLibros.forEach(libro => {
+                    if (libro.genero) {
+                        libro.genero.split(';').map(g => g.trim()).forEach(g => {
+                            if (g) categorias.add(g);
+                        });
+                    }
+                });
+                
+                mostrarCategorias();
+                mostrarAudiolibros(audioLibros);
+            } catch (error) {
+                console.error('Error:', error);
+                AUDIOBOOKS_LIST.innerHTML = '<li>Error al cargar los audiolibros</li>';
+            }
+        };
+
+        // Mostrar categorías
+        const mostrarCategorias = () => {
+            CATEGORIAS_DIV.innerHTML = '<button class="categoria-btn activa" data-categoria="todos">Todos</button>';
+            Array.from(categorias).filter(c => c !== 'todos').sort().forEach(categoria => {
+                const btn = document.createElement('button');
+                btn.className = 'categoria-btn';
+                btn.dataset.categoria = categoria;
+                btn.textContent = categoria;
+                btn.addEventListener('click', () => filtrarPorCategoria(categoria));
+                CATEGORIAS_DIV.appendChild(btn);
+            });
+            
+            // Activar botón "Todos"
+            document.querySelectorAll('.categoria-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.categoria-btn').forEach(b => b.classList.remove('activa'));
+                    this.classList.add('activa');
+                });
+            });
+        };
+
+        // Filtrar por categoría
+        const filtrarPorCategoria = (categoria) => {
+            if (categoria === 'todos') {
+                mostrarAudiolibros(audioLibros);
+            } else {
+                const filtrados = audioLibros.filter(libro => 
+                    libro.genero && libro.genero.split(';').map(g => g.trim()).includes(categoria)
+                );
+                mostrarAudiolibros(filtrados);
+            }
+        };
+
+        // Mostrar lista de audiolibros
+        const mostrarAudiolibros = (libros) => {
+            AUDIOBOOKS_LIST.innerHTML = '';
+            
+            if (!libros || libros.length === 0) {
+                AUDIOBOOKS_LIST.innerHTML = '<li>No hay audiolibros disponibles</li>';
+                return;
+            }
+
+            // Ordenar alfabéticamente
+            libros.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+
+            libros.forEach(libro => {
+                const li = document.createElement('li');
+                const btn = document.createElement('button');
+                btn.className = 'b';
+                btn.textContent = libro.nombre;
+                
+                const autorSpan = document.createElement('div');
+                autorSpan.className = 'autor-info';
+                autorSpan.textContent = `Autor: ${libro.autor} | Año: ${libro.anio || 'N/A'} | Idioma: ${libro.idioma}`;
+                
+                btn.addEventListener('click', () => abrirAudiolibro(libro));
+                
+                li.appendChild(btn);
+                li.appendChild(autorSpan);
+                AUDIOBOOKS_LIST.appendChild(li);
+            });
+        };
+
+        // Abrir audiolibro en modal
+        const abrirAudiolibro = (libro) => {
+            audioLibroActual = libro;
+            capituloActual = 0;
+            isPlaying = false;
+            
+            mostrarInfoLibro(libro);
+            cargarCapitulos(libro);
+            
+            // Cargar audio
+            AUDIO.src = libro.url;
+            
+            MODAL.style.display = "block";
+            MODAL.setAttribute("aria-hidden", "false");
+            document.querySelector('#sM .mc').focus();
+            
+            // Actualizar UI
+            PLAY_PAUSE_BTN.textContent = 'Reproducir';
+            isPlaying = false;
+            
+            // Iniciar timer de actualización
+            clearInterval(intervalTimer);
+            intervalTimer = setInterval(actualizarTiempo, 1000);
+        };
+
+        // Mostrar información del libro
+        const mostrarInfoLibro = (libro) => {
+            SI_DIV.innerHTML = `
+                <h2>${libro.nombre}</h2>
+                <div><strong>Autor:</strong> ${libro.autor}</div>
+                <div><strong>Género:</strong> ${libro.genero}</div>
+                <div><strong>Año:</strong> ${libro.anio || 'N/A'}</div>
+                <div><strong>Idioma:</strong> ${libro.idioma}</div>
+                ${libro.narrador ? `<div><strong>Narrador:</strong> ${libro.narrador}</div>` : ''}
+                ${libro.editorial ? `<div><strong>Editorial:</strong> ${libro.editorial}</div>` : ''}
+                ${libro.sinopsis ? `<div><strong>Sinopsis:</strong> ${libro.sinopsis}</div>` : ''}
+                <div><strong>Duración total:</strong> ${formatTime(libro.duracion / 1000)}</div>
+            `;
+        };
+
+        // Cargar capítulos en el select
+        const cargarCapitulos = (libro) => {
+            CHAPTER_SELECT.innerHTML = '';
+            libro.capitulos.forEach((cap, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = cap.titulo;
+                CHAPTER_SELECT.appendChild(option);
+            });
+            CHAPTER_SELECT.value = capituloActual;
+        };
+
+        // Actualizar información de tiempo
+        const actualizarTiempo = () => {
+            if (!audioLibroActual || !audioLibroActual.capitulos[capituloActual]) return;
+            
+            const currentTime = AUDIO.currentTime;
+            const capitulo = audioLibroActual.capitulos[capituloActual];
+            const inicio = capitulo.inicio / 1000;
+            const fin = capitulo.fin / 1000;
+            
+            // Actualizar tiempo transcurrido
+            const tiempoEnCapitulo = currentTime - inicio;
+            const duracionCapitulo = fin - inicio;
+            TIME_INFO.textContent = `${formatTime(tiempoEnCapitulo)} / ${formatTime(duracionCapitulo)}`;
+            
+            // Actualizar título del capítulo actual
+            CHAPTER_INFO.textContent = isPlaying ? 
+                `Reproduciendo: ${capitulo.titulo}` : 
+                capitulo.titulo;
+            
+            // Verificar si cambió de capítulo automáticamente
+            if (!isManuallySwitchingChapter) {
+                let nuevoCapitulo = capituloActual;
+                for (let i = 0; i < audioLibroActual.capitulos.length; i++) {
+                    const cap = audioLibroActual.capitulos[i];
+                    if (currentTime >= cap.inicio/1000 && currentTime <= cap.fin/1000) {
+                        nuevoCapitulo = i;
+                        break;
+                    }
+                }
+                
+                if (nuevoCapitulo !== capituloActual) {
+                    capituloActual = nuevoCapitulo;
+                    CHAPTER_SELECT.value = capituloActual;
+                    actualizarTiempo();
+                }
+            }
+        };
+
+        // Cambiar de capítulo
+        const cambiarCapitulo = (avanzar = true) => {
+            if (!audioLibroActual) return;
+            
+            isManuallySwitchingChapter = true;
+            
+            if (avanzar && capituloActual < audioLibroActual.capitulos.length - 1) {
+                capituloActual++;
+            } else if (!avanzar && capituloActual > 0) {
+                capituloActual--;
+            }
+            
+            CHAPTER_SELECT.value = capituloActual;
+            AUDIO.currentTime = audioLibroActual.capitulos[capituloActual].inicio / 1000;
+            
+            if (isPlaying) {
+                AUDIO.play().catch(() => {});
+            }
+            
+            setTimeout(() => { isManuallySwitchingChapter = false; }, 100);
+        };
+
+        // Reiniciar capítulo
+        const reiniciarCapitulo = () => {
+            if (!audioLibroActual) return;
+            isManuallySwitchingChapter = true;
+            AUDIO.currentTime = audioLibroActual.capitulos[capituloActual].inicio / 1000;
+            if (!isPlaying) {
+                AUDIO.play().catch(() => {});
+                isPlaying = true;
+                PLAY_PAUSE_BTN.textContent = 'Pausar';
+            }
+            setTimeout(() => { isManuallySwitchingChapter = false; }, 100);
+        };
+
+        // Cerrar modal
+        const cerrarModal = () => {
+            MODAL.style.display = "none";
+            MODAL.setAttribute("aria-hidden", "true");
+            AUDIO.pause();
+            clearInterval(intervalTimer);
+            isPlaying = false;
+            PLAY_PAUSE_BTN.textContent = 'Reproducir';
+        };
+
+        // Event Listeners
+        CLOSE_BTN.addEventListener('click', cerrarModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === MODAL) cerrarModal();
+        });
+
+        PLAY_PAUSE_BTN.addEventListener('click', () => {
+            if (isPlaying) {
+                AUDIO.pause();
+                PLAY_PAUSE_BTN.textContent = 'Reproducir';
+            } else {
+                AUDIO.play().catch(() => {});
+                PLAY_PAUSE_BTN.textContent = 'Pausar';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        AUDIO.addEventListener('play', () => {
+            isPlaying = true;
+            PLAY_PAUSE_BTN.textContent = 'Pausar';
+        });
+
+        AUDIO.addEventListener('pause', () => {
+            isPlaying = false;
+            PLAY_PAUSE_BTN.textContent = 'Reproducir';
+        });
+
+        AUDIO.addEventListener('ended', () => {
+            if (capituloActual < audioLibroActual.capitulos.length - 1) {
+                cambiarCapitulo(true);
+            } else {
+                // Último capítulo terminado
+                isPlaying = false;
+                PLAY_PAUSE_BTN.textContent = 'Reproducir';
+            }
+        });
+
+        CHAPTER_SELECT.addEventListener('change', (e) => {
+            if (!audioLibroActual) return;
+            isManuallySwitchingChapter = true;
+            capituloActual = parseInt(e.target.value);
+            AUDIO.currentTime = audioLibroActual.capitulos[capituloActual].inicio / 1000;
+            if (isPlaying) {
+                AUDIO.play().catch(() => {});
+            }
+            setTimeout(() => { isManuallySwitchingChapter = false; }, 100);
+        });
+
+        // Botones de control
+        document.getElementById('fb').addEventListener('click', () => {
+            AUDIO.currentTime += 15;
+        });
+
+        document.getElementById('bb').addEventListener('click', () => {
+            AUDIO.currentTime -= 15;
+        });
+
+        REB.addEventListener('click', reiniciarCapitulo);
+
+        document.getElementById('ncb').addEventListener('click', () => cambiarCapitulo(true));
+        document.getElementById('pcb').addEventListener('click', () => cambiarCapitulo(false));
+
+        document.getElementById('ivb').addEventListener('click', () => {
+            AUDIO.volume = Math.min(1, AUDIO.volume + 0.05);
+        });
+
+        document.getElementById('dvb').addEventListener('click', () => {
+            AUDIO.volume = Math.max(0, AUDIO.volume - 0.05);
+        });
+
+        // Atajos de teclado
+        document.addEventListener('keydown', (event) => {
+            const modalVisible = MODAL.style.display === "block";
+
+            if (event.altKey && modalVisible) {
+                if (event.key === 'ArrowLeft') {
+                    cerrarModal();
+                    event.preventDefault();
+                    return;
+                }
+
+                const k = event.key.toLowerCase();
+                let handled = false;
+
+                switch (k) {
+                    case 'k': PLAY_PAUSE_BTN.click(); handled = true; break;
+                    case 'j': document.getElementById('bb').click(); handled = true; break;
+                    case 'l': document.getElementById('fb').click(); handled = true; break;
+                    case 'u': document.getElementById('dvb').click(); handled = true; break;
+                    case 'o': document.getElementById('ivb').click(); handled = true; break;
+                    case 'r': REB.click(); handled = true; break;
+                    case 'a': document.getElementById('pcb').click(); handled = true; break;
+                    case 's': document.getElementById('ncb').click(); handled = true; break;
+                    case 'c': CHAPTER_SELECT.focus(); handled = true; break;
+                    case 'i':
+                        if (audioLibroActual && audioLibroActual.capitulos[capituloActual]) {
+                            ACCI.textContent = `${audioLibroActual.nombre}. ${audioLibroActual.capitulos[capituloActual].titulo}. ${TIME_INFO.textContent}`;
+                        }
+                        handled = true;
+                        break;
+                }
+
+                if (handled) {
+                    event.preventDefault();
+                }
+            }
+        });
+
+        // Inicializar
+        window.onload = cargarAudiolibros;
+    </script>
+</body>
+</html>
