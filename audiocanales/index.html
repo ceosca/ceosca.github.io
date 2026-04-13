@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Player TV - HLS</title>
-    <!-- Reproductor HLS.js vía CDN para reproducir m3u8 -->
+    <title>Audio Player TV</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
         body {
@@ -18,10 +17,8 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            cursor: none; /* Ocultar cursor */
+            cursor: none;
         }
-        
-        /* Contenedor de información que aparece y desaparece */
         #infoContainer {
             text-align: center;
             opacity: 0; 
@@ -34,11 +31,8 @@
             transform: translate(-50%, -50%);
             width: 80%;
         }
-        
         h1 { margin: 0; font-size: 3rem; text-shadow: 2px 2px 4px #000; font-weight: bold; }
         h2 { margin: 15px 0 0 0; color: #f1c40f; font-size: 2rem; text-shadow: 1px 1px 2px #000; font-weight: normal; }
-
-        /* Número de canal grande */
         #channelNum { 
             font-size: 8rem; 
             font-weight: bold; 
@@ -50,8 +44,6 @@
             display: none; 
             z-index: 20;
         }
-
-        /* Selector nativo (oculto) */
         #channelSelector {
             display: none;
             font-size: 1.5rem;
@@ -67,37 +59,30 @@
 </head>
 <body>
 
-    <!-- Feedback visual -->
     <div id="infoContainer">
         <h1 id="channelName"></h1>
         <h2 id="audioInfo"></h2>
     </div>
     
-    <!-- Buffer numérico -->
     <div id="channelNum"></div>
 
-    <!-- Elementos ocultos -->
     <audio id="audioPlayer" autoplay style="display:none;"></audio>
     <select id="channelSelector" onchange="changeChannelManually()"></select>
 
-    <script type='text/javascript'>
-        // CONFIGURACIÓN: Apuntamos al nuevo archivo JSON
-        const K = [
-            {n:"Base Audio", u:"audiocanales/audiocanales.json"} 
-        ];
+    <script>
+        const K = [{n:"Base TV", u:"/audiocanales/db.json"}];
 
-        // VARIABLES
         var hls = null;
         var canales = [];
         var currentChannelIndex = 0;
-        var previousChannelIndex = -1; // Para Recall
+        var previousChannelIndex = -1;
         var channelNumberBuffer = "";
         var timeoutId = null;
         var infoTimer = null;
+        var audioElement = document.getElementById('audioPlayer');
 
-        // INICIO
         function initApp() {
-            cargarBaseDatos(K[0].u); 
+            cargarBaseDatos(K[0].u);
         }
 
         function cargarBaseDatos(url) {
@@ -105,13 +90,13 @@
                 .then(response => response.json())
                 .then(data => {
                     canales = data;
-                    cargarOpciones(); // Llena el select oculto
+                    cargarOpciones();
                     if(canales.length > 0) {
                         currentChannelIndex = 0;
-                        cargarStream(false); // Carga inicial silenciosa
+                        cargarStream(false);
                     }
                 })
-                .catch(err => console.error('Error DB:', err));
+                .catch(err => console.error(err));
         }
 
         function cargarOpciones() {
@@ -130,91 +115,51 @@
             if (!canales[currentChannelIndex]) return;
             var selectedValue = canales[currentChannelIndex];
             
-            // UI Feedback
             if(showInfo) showFeedback((currentChannelIndex + 1) + ". " + selectedValue.nombre, "");
             document.getElementById("channelSelector").selectedIndex = currentChannelIndex;
 
-            var url = selectedValue.url;
-            var audioNode = document.getElementById('audioPlayer');
-
-            // Prevenir bloqueos de contenido mixto (HTTP en sitios HTTPS)
-            if (window.location.protocol === 'https:' && url.startsWith('http://')) {
-                url = url.replace(/^http:\/\//i, 'https://');
-            }
-
-            // Destruir instancia anterior si existe
-            if (hls) {
-                hls.destroy();
-                hls = null;
-            }
-
-            // Inicializar reproductor HLS para m3u8
             if (Hls.isSupported()) {
+                if (hls) {
+                    hls.destroy();
+                }
                 hls = new Hls();
-                hls.loadSource(url);
-                hls.attachMedia(audioNode);
+                hls.loadSource(selectedValue.url);
+                hls.attachMedia(audioElement);
                 hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                    audioNode.play().catch(()=>{});
+                    audioElement.play().catch(()=>{});
                 });
-                
-                hls.on(Hls.Events.ERROR, function (event, data) {
-                    if (data.fatal) {
-                        switch (data.type) {
-                            case Hls.ErrorTypes.NETWORK_ERROR:
-                                console.error("Error de red fatal", data);
-                                hls.startLoad();
-                                break;
-                            case Hls.ErrorTypes.MEDIA_ERROR:
-                                console.error("Error multimedia fatal", data);
-                                hls.recoverMediaError();
-                                break;
-                            default:
-                                hls.destroy();
-                                if(showInfo) showFeedback("Error", "No se pudo cargar la transmisión");
-                                break;
-                        }
-                    }
+                hls.on(Hls.Events.ERROR, function(event, data) {
+                    if (data.fatal && showInfo) showFeedback("Error", "No se pudo cargar");
                 });
-            } 
-            // Soporte nativo para Safari (iOS/macOS) que reproducen m3u8 sin librerías
-            else if (audioNode.canPlayType('application/vnd.apple.mpegurl')) {
-                audioNode.src = url;
-                audioNode.addEventListener('loadedmetadata', function() {
-                    audioNode.play().catch(()=>{});
+            } else if (audioElement.canPlayType('application/vnd.apple.mpegurl')) {
+                audioElement.src = selectedValue.url;
+                audioElement.addEventListener('loadedmetadata', function() {
+                    audioElement.play().catch(()=>{});
                 });
             }
         }
 
-        // --- LÓGICA DE AUDIO HLS ---
         function changeAudioTrack(offset) {
-            if (!hls) {
+            if (!hls || !hls.audioTracks || hls.audioTracks.length <= 1) {
                 showFeedback(null, "Audio Único");
                 return;
             }
 
             var tracks = hls.audioTracks;
-            if (!tracks || tracks.length <= 1) {
-                showFeedback(null, "Audio Único");
-                return;
-            }
-
             var currentIndex = hls.audioTrack;
-            if(currentIndex === -1) currentIndex = 0;
+            if (currentIndex === -1) currentIndex = 0;
 
             var newIndex = (currentIndex + offset + tracks.length) % tracks.length;
-            hls.audioTrack = newIndex; // Cambiar el idioma
+            hls.audioTrack = newIndex;
             
-            // Obtener etiqueta amigable
-            var newTrack = tracks[newIndex];
-            var label = newTrack.name || newTrack.lang || newTrack.language || ("Pista " + (newIndex + 1));
+            var newLang = tracks[newIndex].language || tracks[newIndex].name || "UNK";
+            var label = newLang.toUpperCase();
+            if(label === 'ES') label = 'ESPAÑOL';
+            else if(label === 'EN') label = 'INGLÉS';
             
-            if(label.toUpperCase() === 'ES' || label.toUpperCase() === 'SPA') label = 'ESPAÑOL';
-            else if(label.toUpperCase() === 'EN' || label.toUpperCase() === 'ENG') label = 'INGLÉS';
-            
-            showFeedback(null, "Audio: " + label.toUpperCase());
+            showFeedback(null, "Audio: " + label);
         }
 
-        // --- CONTROL ---
         function changeChannel(offset) {
             previousChannelIndex = currentChannelIndex;
             if (channelNumberBuffer !== "") {
@@ -230,7 +175,6 @@
             }
         }
 
-        // Función Recall / Zapping (Volver al anterior)
         function recallChannel() {
             if (previousChannelIndex !== -1 && previousChannelIndex !== currentChannelIndex) {
                 var temp = currentChannelIndex;
@@ -250,7 +194,6 @@
             document.getElementById("channelSelector").blur();
         }
 
-        // --- UI ---
         function showFeedback(title, sub) {
             var con = document.getElementById("infoContainer");
             if(title) document.getElementById("channelName").innerText = title;
@@ -269,7 +212,6 @@
             timeoutId = setTimeout(() => { el.style.display = "none"; }, 2000);
         }
 
-        // --- TECLADO ---
         document.addEventListener("keydown", function(event) {
             var keyCode = event.keyCode;
             var sel = document.getElementById("channelSelector");
@@ -278,7 +220,7 @@
                 event.preventDefault();
             }
 
-            if (keyCode === 13) { // Enter
+            if (keyCode === 13) {
                 if (sel.style.display === "block") {
                     changeChannelManually();
                 } else {
@@ -286,23 +228,22 @@
                     sel.focus(); 
                 }
             } 
-            else if (keyCode === 37) { // Izquierda (Canal -)
+            else if (keyCode === 37) {
                 changeChannel(-1);
             } 
-            else if (keyCode === 39) { // Derecha (Canal +)
+            else if (keyCode === 39) {
                 changeChannel(1);
             } 
-            else if (keyCode === 38) { // Arriba (Audio Anterior)
+            else if (keyCode === 38) {
                 if(sel.style.display !== "block") changeAudioTrack(-1);
             } 
-            else if (keyCode === 40) { // Abajo (Audio Siguiente)
+            else if (keyCode === 40) {
                 if(sel.style.display !== "block") changeAudioTrack(1);
             } 
-            else if (keyCode === 229 || keyCode === 8) { // RECALL (Botón de retorno en controles de TV/Android)
+            else if (keyCode === 229 || keyCode === 8) { 
                 recallChannel();
             }
             else {
-                // Números
                 var pressedKey = parseInt(event.key);
                 if (!isNaN(pressedKey) && pressedKey >= 0 && pressedKey <= 9) {
                     clearTimeout(timeoutId);
